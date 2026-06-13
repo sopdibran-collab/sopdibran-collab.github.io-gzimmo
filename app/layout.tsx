@@ -3,7 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd, PlausibleScript } from "@/components/seo/JsonLd";
-import { localBusinessSchema } from "@/lib/schema";
+import { organizationJsonLd } from "@/lib/schema";
 import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
 
@@ -39,7 +39,7 @@ export default function RootLayout({
         <PlausibleScript />
       </head>
       <body className="min-h-screen antialiased">
-        <JsonLd data={localBusinessSchema()} />
+        <JsonLd data={organizationJsonLd()} />
         <Header />
         <main>{children}</main>
         <Footer />

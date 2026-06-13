@@ -7,6 +7,7 @@ import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ContactForm } from "@/components/content/ContactForm";
 import { Button } from "@/components/ui/Button";
+import { GoogleMap, GoogleMapsLink } from "@/components/seo/GoogleMap";
 
 export const metadata = createMetadata({
   title: "Contact",
@@ -57,7 +58,9 @@ export default function ContactPage() {
               <p>
                 <span className="font-medium text-foreground">Adresse</span>
                 <br />
-                {formatAddress()}
+                <GoogleMapsLink className="hover:text-accent">
+                  {formatAddress()}
+                </GoogleMapsLink>
               </p>
               <p>
                 <span className="font-medium text-foreground">Zone</span>
@@ -72,6 +75,23 @@ export default function ContactPage() {
 
           <div className="lg:col-span-7">
             <ContactForm />
+          </div>
+        </div>
+
+        <div className="mt-20 border-t border-border pt-16">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="font-display text-display-sm text-foreground">Nous trouver</h2>
+              <p className="mt-2 text-sm text-muted">
+                Route de Raboud 8, 1680 Romont FR
+              </p>
+            </div>
+            <GoogleMapsLink className="shrink-0 text-sm font-medium text-foreground transition-colors hover:text-accent">
+              Ouvrir dans Google Maps →
+            </GoogleMapsLink>
+          </div>
+          <div className="mt-8">
+            <GoogleMap />
           </div>
         </div>
       </Section>
