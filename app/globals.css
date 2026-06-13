@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-surface: #f5f7f8;
+  --color-foreground: #1e2227;
+  --color-muted: #626262;
+  --color-accent: #41988e;
+  --color-accent-hover: #368077;
+  --color-success: #2fa36b;
+  --color-border: #e8eaec;
+  --color-border-subtle: #f0f2f4;
+  --color-inverse: #1e2227;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --text-display-xl: clamp(2.5rem, 5vw, 4rem);
+  --text-display-lg: clamp(2rem, 4vw, 3rem);
+  --text-display-md: clamp(1.75rem, 3vw, 2.25rem);
+  --text-display-sm: clamp(1.375rem, 2.5vw, 1.75rem);
+
+  --spacing-section: clamp(5rem, 8vw, 7.5rem);
+  --spacing-container: clamp(1.25rem, 4vw, 5rem);
+
+  --ease-premium: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    letter-spacing: -0.011em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .text-display-xl {
+    font-size: var(--text-display-xl);
+  }
+
+  .text-display-lg {
+    font-size: var(--text-display-lg);
+  }
+
+  .text-display-md {
+    font-size: var(--text-display-md);
+  }
+
+  .text-display-sm {
+    font-size: var(--text-display-sm);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .py-section {
+    padding-block: var(--spacing-section);
+  }
+
+  .px-container {
+    padding-inline: var(--spacing-container);
+  }
+}

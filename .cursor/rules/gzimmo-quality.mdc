@@ -1,0 +1,41 @@
+---
+description: Stack qualité UI pour Gzimmo — skills actifs et interdits
+globs: "**/*.{tsx,ts,css}"
+alwaysApply: true
+---
+
+# Gzimmo — Skills qualité frontend
+
+## Skills actifs (par priorité)
+
+| Skill | Rôle sur ce projet |
+|-------|-------------------|
+| **design-taste-frontend** | Indispensable. Hiérarchie, rythme, retenue couleur `#41988E`, zéro AI slop |
+| **minimalist-skill** | Densité Linear / Notion : listes éditoriales, bordures hairline, peu de décor |
+| **soft-skill** | Surfaces calmes, transitions douces, premium discret |
+| **output-skill** | Aucun placeholder visuel, aucun faux submit, aucun composant à moitié fini |
+| **redesign-skill** | Itérer le site existant sans le réécrire — améliorer, pas regénérer |
+| **image-to-code-skill** | Quand maquette / screenshot fourni — fidélité pixel et structure |
+
+## Skill à NE PAS utiliser
+
+- **industrial-brutalist-ui** (`Downloads/SKILL.md`) — incompatible avec Gzimmo (rouge hazard, monospace, CRT). Ne pas appliquer.
+
+## Règles output-skill
+
+- Pas de blocs gris « image à venir »
+- Formulaire : `mailto:` fonctionnel ou API réelle — jamais de faux succès silencieux
+- Contenu réalisations : fiches éditoriales crédibles dans `data/`
+- Images : afficher uniquement si le fichier existe dans `public/`
+
+## Règles minimalist-skill
+
+- Navigation légère, labels Inter 500, titres Sora
+- Séparateurs `1px` `--color-border`, pas d'ombres portées
+- Un CTA primaire par zone de lecture
+
+## Règles soft-skill
+
+- Fond blanc / `#F5F7F8`, pas de gradients
+- Hover : transition couleur 200ms, pas de scale agressif
+- Focus visible accent, outline-offset généreux

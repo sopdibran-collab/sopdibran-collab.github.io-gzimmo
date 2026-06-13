@@ -1,24 +1,68 @@
 # Gzimmo Sàrl — Site web
 
-Site officiel de **Gzimmo Sàrl**, entreprise de nettoyage professionnel basée à Romont (FR), active dans toute la Suisse romande.
+Site officiel de **Gzimmo Sàrl**, nettoyage professionnel en Suisse romande.
 
 - **Domaine :** [gzimmo.ch](https://gzimmo.ch)
 - **Contact :** info@gzimmo.ch
+- **Repo :** [github.com/sopdibran-collab/gzimmo](https://github.com/sopdibran-collab/gzimmo)
 
-## Assets
+## Démarrage
 
-Les logos de marque sont dans `assets/` :
+```bash
+npm install
+npm run dev
+```
+
+Ouvrir [http://localhost:3000](http://localhost:3000).
+
+## Stack
+
+- Next.js 15 (App Router)
+- Tailwind CSS 4
+- Framer Motion
+- TypeScript
+
+## Structure
+
+```
+app/           Pages et routes
+components/    UI, layout, contenu, SEO
+data/          Contenu statique (prêt pour Sanity)
+lib/           Metadata, schema.org, utils
+assets/        Logos source
+public/        Assets servis (logos, images)
+```
+
+## Logos
 
 | Fichier | Usage |
 |---------|--------|
-| `horizontal.svg` / `horizontal.png` | Logo principal (header, footer) |
-| `monochrome_noir.svg` | Fonds clairs |
-| `icon_only.svg` / `icon_only.png` | Favicon, petites tailles |
+| `horizontal.svg` | Header, logo principal |
+| `monochrome_noir.svg` | Variante fond clair |
+| `icon_only.svg` / `.png` | Favicon |
 
-## Stack (à venir)
+## Variables d'environnement
 
-- Next.js (App Router)
-- Tailwind CSS
-- Framer Motion
-- Sanity (CMS)
-- Plausible Analytics
+Copier `.env.example` vers `.env.local` :
+
+```bash
+cp .env.example .env.local
+```
+
+## Build
+
+```bash
+npm run build
+npm start
+```
+
+## Pages
+
+- `/` — Accueil
+- `/services` — Services
+- `/services/[slug]` — Détail service
+- `/realisations` — Portfolio
+- `/a-propos` — À propos
+- `/contact` — Devis
+- `/faq` — FAQ
+- `/seo/[slug]` — Pages locales SEO
