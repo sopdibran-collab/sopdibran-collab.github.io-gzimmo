@@ -1,4 +1,4 @@
-import { company } from "@/data/company";
+import { company, teamExperienceLabel } from "@/data/company";
 import { homepageFaq } from "@/data/faq";
 import { formatPhoneHref } from "@/lib/utils";
 import { createMetadata } from "@/lib/metadata";
@@ -37,8 +37,8 @@ export default function HomePage() {
               en Suisse romande
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted">
-              Plus de {company.experienceYears} ans d&apos;expertise. Intervention rapide.
-              Un espace parfaitement entretenu, à chaque passage.
+              {teamExperienceLabel(true)}. Intervention rapide. Un espace parfaitement
+              entretenu, à chaque passage.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">

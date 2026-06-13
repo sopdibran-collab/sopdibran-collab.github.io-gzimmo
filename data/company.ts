@@ -14,11 +14,18 @@ export const company = {
   },
   url: "https://gzimmo.ch",
   areaServed: "Suisse romande",
-  experienceYears: 15,
-  foundedYear: 2010,
+  /** Expérience cumulée des collaborateurs dans le nettoyage — pas l'ancienneté de l'entreprise */
+  teamExperienceYears: 15,
 } as const;
 
 export function formatAddress() {
   const { street, postalCode, city, region } = company.address;
   return `${street}, ${postalCode} ${city} ${region}`;
+}
+
+export function teamExperienceLabel(short = false) {
+  if (short) {
+    return `Plus de ${company.teamExperienceYears} ans d'expérience dans le nettoyage`;
+  }
+  return `Notre équipe cumule plus de ${company.teamExperienceYears} ans d'expérience dans le nettoyage professionnel`;
 }

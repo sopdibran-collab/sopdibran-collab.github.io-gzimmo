@@ -39,7 +39,7 @@ export const locations: Location[] = [
     city: "Neuchâtel",
     title: "Nettoyage professionnel à Neuchâtel",
     description:
-      "Entretien de locaux et nettoyage spécialisé à Neuchâtel. Plus de 15 ans d'expérience.",
+      "Entretien de locaux et nettoyage spécialisé à Neuchâtel. Équipe expérimentée, devis gratuit.",
     intro:
       "Un service discret et minutieux pour les particuliers et entreprises du canton de Neuchâtel.",
   },
@@ -104,7 +104,7 @@ export const locations: Location[] = [
     description:
       "Entreprise de nettoyage basée à Romont (FR). Intervention dans toute la Suisse romande.",
     intro:
-      "Depuis Romont, Gzimmo assure un service de proximité fondé sur plus de 15 ans d'expérience.",
+      "Depuis Romont, Gzimmo assure un service de proximité porté par une équipe expérimentée dans le nettoyage professionnel.",
   },
 ];
 

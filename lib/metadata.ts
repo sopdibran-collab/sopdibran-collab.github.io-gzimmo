@@ -3,7 +3,7 @@ import { company } from "@/data/company";
 
 const defaultTitle = `${company.name} — ${company.tagline}`;
 const defaultDescription =
-  "Gzimmo Sàrl : nettoyage professionnel en Suisse romande. Plus de 15 ans d'expérience, intervention rapide, devis gratuit. Romont (FR).";
+  `Gzimmo Sàrl : nettoyage professionnel en Suisse romande. Équipe avec plus de ${company.teamExperienceYears} ans d'expérience dans le métier, intervention rapide, devis gratuit. Romont (FR).`;
 
 type PageMetadataOptions = {
   title?: string;

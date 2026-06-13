@@ -1,4 +1,4 @@
-import { company } from "@/data/company";
+import { company, teamExperienceLabel } from "@/data/company";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
@@ -10,7 +10,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 export const metadata = createMetadata({
   title: "À propos",
   description:
-    "Gzimmo Sàrl : plus de 15 ans d'expérience en nettoyage professionnel, basée à Romont (FR), active dans toute la Suisse romande.",
+    "Gzimmo Sàrl : équipe expérimentée en nettoyage professionnel, basée à Romont (FR), active dans toute la Suisse romande.",
   path: "/a-propos",
 });
 
@@ -25,7 +25,7 @@ const values = [
   },
   {
     title: "Fiabilité",
-    text: "Plus de 15 ans d'expérience auprès de particuliers, régies et entreprises en Suisse romande.",
+    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises en Suisse romande.`,
   },
 ];
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <PageIntro
           badge="À propos"
           title="La maîtrise d'un espace parfaitement entretenu"
-          description={`${company.name} accompagne particuliers et professionnels en Suisse romande depuis plus de ${company.experienceYears} ans. Basée à ${company.address.city} (${company.address.region}), notre équipe intervient avec rigueur, discrétion et le souci du détail.`}
+          description={`${company.name} accompagne particuliers et professionnels en Suisse romande. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()} — avec rigueur, discrétion et le souci du détail.`}
         />
 
         <div className="mt-16 grid gap-12 md:grid-cols-3">
