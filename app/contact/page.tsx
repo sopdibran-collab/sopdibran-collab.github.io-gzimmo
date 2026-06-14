@@ -6,7 +6,7 @@ import { Section } from "@/components/layout/Section";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ContactForm } from "@/components/content/ContactForm";
-import { Button } from "@/components/ui/Button";
+import { ContactActions } from "@/components/ui/ContactActions";
 import { GoogleMap, GoogleMapsLink } from "@/components/seo/GoogleMap";
 
 export const metadata = createMetadata({
@@ -17,10 +17,6 @@ export const metadata = createMetadata({
 });
 
 export default function ContactPage() {
-  const callHref = company.phone
-    ? formatPhoneHref(company.phone)
-    : `mailto:${company.email}`;
-
   return (
     <>
       <JsonLd
@@ -67,9 +63,7 @@ export default function ContactPage() {
                 <br />
                 {company.areaServed}
               </p>
-              <Button variant="secondary" href={callHref} external>
-                Appeler
-              </Button>
+              <ContactActions className="pt-2" showDevis={false} />
             </div>
           </div>
 

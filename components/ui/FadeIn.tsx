@@ -21,6 +21,7 @@ export function FadeIn({
   return (
     <motion.div
       className={className}
+      style={{ transform: "translateZ(0)" }}
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { company, formatAddress } from "@/data/company";
 import { footerNav } from "@/data/navigation";
@@ -6,20 +5,15 @@ import { services } from "@/data/services";
 import { formatPhoneHref } from "@/lib/utils";
 import { romontRegionLocations } from "@/data/locations";
 import { GoogleMapsLink } from "@/components/seo/GoogleMap";
+import { Logo } from "@/components/ui/Logo";
 import { Divider } from "@/components/ui/Badge";
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-[1200px] px-container py-section">
-        <div className="relative mb-12 h-9 w-[148px]">
-          <Image
-            src="/monochrome_noir.svg"
-            alt={company.name}
-            fill
-            className="object-contain object-left"
-            sizes="148px"
-          />
+        <div className="mb-12">
+          <Logo variant="monochrome" className="h-11 w-[220px] sm:h-12 sm:w-[240px]" />
         </div>
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
