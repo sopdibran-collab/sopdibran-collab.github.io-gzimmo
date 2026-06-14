@@ -31,8 +31,8 @@ const sizes = {
       "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
   },
   footer: {
-    horizontal: "w-[min(88vw,300px)] sm:w-[360px] lg:w-[400px]",
-    monochrome: "w-[min(88vw,300px)] sm:w-[360px] lg:w-[400px]",
+    horizontal: "w-[min(85vw,270px)] sm:w-[300px] lg:w-[340px]",
+    monochrome: "w-[min(85vw,270px)] sm:w-[300px] lg:w-[340px]",
   },
 } as const;
 
