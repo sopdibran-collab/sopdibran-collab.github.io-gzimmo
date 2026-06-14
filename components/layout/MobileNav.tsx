@@ -61,7 +61,7 @@ export function MobileNav({
         className="fixed inset-x-0 top-[4.5rem] z-[210] max-h-[calc(100vh-4.5rem)] max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain border-t border-border bg-[#ffffff] px-container py-8 shadow-[0_24px_48px_rgba(30,34,39,0.14)] sm:top-20 sm:max-h-[calc(100vh-5rem)] sm:max-h-[calc(100dvh-5rem)]"
       >
         <div className="mb-8">
-          <Logo className="h-12 max-w-[240px] sm:max-w-[260px]" />
+          <Logo className="w-[min(80vw,260px)] max-h-14" />
         </div>
 
         <nav className="flex flex-col gap-5" aria-label="Navigation mobile">

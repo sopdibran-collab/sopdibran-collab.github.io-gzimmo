@@ -14,12 +14,22 @@ const sources = {
   monochrome: "/monochrome_noir.svg",
 } as const;
 
+/** Ratio réel du lockup après recadrage du viewBox SVG (3105×997). */
+const LOGO_ASPECT = 3105 / 997;
+
 const dimensions = {
-  horizontal: { width: 280, height: 52 },
-  monochrome: { width: 260, height: 52 },
+  horizontal: { width: 3105, height: 997 },
+  monochrome: { width: 3105, height: 997 },
 } as const;
 
-/** SVG natif — évite les bugs Safari avec next/image + fill. */
+const defaultSizes = {
+  horizontal:
+    "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+  monochrome:
+    "w-[min(68vw,220px)] max-h-[3.25rem] sm:w-[min(48vw,260px)] sm:max-h-[4.25rem] lg:w-[280px] lg:max-h-[4.5rem]",
+} as const;
+
+/** SVG natif — viewBox recadré pour un rendu à la bonne échelle (Safari + Chrome). */
 export function Logo({
   variant = "horizontal",
   linked = true,
@@ -37,10 +47,11 @@ export function Logo({
       decoding="async"
       fetchPriority={priority ? "high" : "auto"}
       className={cn(
-        "block h-11 w-auto max-w-[min(62vw,260px)] object-contain object-left sm:h-12 sm:max-w-[280px]",
-        variant === "monochrome" && "max-w-[min(62vw,240px)] sm:max-w-[260px]",
+        "block h-auto object-contain object-left",
+        defaultSizes[variant],
         className,
       )}
+      style={{ aspectRatio: LOGO_ASPECT }}
     />
   );
 
