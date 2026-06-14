@@ -1,13 +1,18 @@
 import { notFound } from "next/navigation";
 import { locations, getLocationBySlug } from "@/data/locations";
 import { services } from "@/data/services";
-import { createMetadata } from "@/lib/metadata";
-import { breadcrumbSchema, localBusinessSchema } from "@/lib/schema";
+import { localPageMetadata } from "@/lib/metadata";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  localBusinessSchema,
+  locationPageSchema,
+} from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
+import { LocalAreaLinks, LocalSeoBody } from "@/components/seo/LocalSeoContent";
 import { TextLink } from "@/components/ui/TextLink";
-import { ContactCta } from "@/components/content/ContactCta";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -21,12 +26,7 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const location = getLocationBySlug(slug);
   if (!location) return {};
-
-  return createMetadata({
-    title: location.title,
-    description: location.description,
-    path: `/seo/${location.slug}`,
-  });
+  return localPageMetadata(location);
 }
 
 export default async function LocalSeoPage({ params }: Props) {
@@ -35,53 +35,60 @@ export default async function LocalSeoPage({ params }: Props) {
 
   if (!location) notFound();
 
+  const relatedLocations = locations
+    .filter((l) => l.slug !== location.slug && l.canton === location.canton)
+    .slice(0, 6);
+
   return (
     <>
       <JsonLd
         data={[
           localBusinessSchema(),
+          locationPageSchema(location),
+          faqPageSchema(location.faqs),
           breadcrumbSchema([
             { name: "Accueil", path: "/" },
+            { name: "Zones", path: "/zones" },
             { name: location.city, path: `/seo/${location.slug}` },
           ]),
         ]}
       />
 
       <Section>
-        <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: location.city }]} />
-        <PageIntro badge={location.city} title={location.title} description={location.intro} />
+        <Breadcrumb
+          items={[
+            { label: "Accueil", href: "/" },
+            { label: "Zones", href: "/zones" },
+            { label: location.city },
+          ]}
+        />
+        <PageIntro badge={location.cantonName} title={location.title} description={location.intro} />
 
-        <div className="mt-16 max-w-2xl space-y-6 text-muted">
-          <p>
-            Vous recherchez une entreprise de nettoyage professionnel à {location.city} ?
-            Gzimmo intervient avec la même exigence qu&apos;à Romont : travail minutieux,
-            produits de qualité et devis gratuit sous 24 heures.
-          </p>
-          <p>
-            Que ce soit pour l&apos;entretien régulier de bureaux, un nettoyage de fin de bail
-            ou une remise en état après chantier, notre équipe s&apos;adapte à vos besoins et
-            à votre planning.
-          </p>
-        </div>
+        <LocalSeoBody location={location} />
 
-        <div className="mt-16">
+        <div className="mt-16 border-t border-border pt-16">
           <h2 className="font-display text-display-sm text-foreground">
-            Nos prestations à {location.city}
+            Tous nos services
           </h2>
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {services.map((service) => (
               <li key={service.slug}>
                 <TextLink href={`/services/${service.slug}`} showArrow={false}>
-                  {service.title}
+                  {service.title} — {location.city}
                 </TextLink>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="mt-16">
-          <ContactCta />
-        </div>
+        {relatedLocations.length > 0 ? (
+          <div className="mt-16 border-t border-border pt-16">
+            <LocalAreaLinks
+              locations={relatedLocations}
+              title={`Autres communes en ${location.cantonName}`}
+            />
+          </div>
+        ) : null}
       </Section>
     </>
   );

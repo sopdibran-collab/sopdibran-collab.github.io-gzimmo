@@ -1,26 +1,22 @@
-import Image from "next/image";
 import Link from "next/link";
 import { company, formatAddress } from "@/data/company";
 import { footerNav } from "@/data/navigation";
 import { services } from "@/data/services";
 import { formatPhoneHref } from "@/lib/utils";
+import { romontRegionLocations } from "@/data/locations";
+import { GoogleMapsLink } from "@/components/seo/GoogleMap";
+import { Logo } from "@/components/ui/Logo";
 import { Divider } from "@/components/ui/Badge";
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-[1200px] px-container py-section">
-        <div className="relative mb-12 h-9 w-[148px]">
-          <Image
-            src="/monochrome_noir.svg"
-            alt={company.name}
-            fill
-            className="object-contain object-left"
-            sizes="148px"
-          />
+        <div className="mb-12">
+          <Logo variant="monochrome" className="h-11 w-[220px] sm:h-12 sm:w-[240px]" />
         </div>
 
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="mb-4 text-sm font-medium text-foreground">Navigation</p>
             <ul className="space-y-3">
@@ -54,6 +50,30 @@ export function Footer() {
           </div>
 
           <div>
+            <p className="mb-4 text-sm font-medium text-foreground">Romont &amp; région</p>
+            <ul className="space-y-3">
+              {romontRegionLocations.map((loc) => (
+                <li key={loc.slug}>
+                  <Link
+                    href={`/seo/${loc.slug}`}
+                    className="text-sm text-muted transition-colors hover:text-accent"
+                  >
+                    {loc.city}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/zones"
+                  className="text-sm font-medium text-foreground transition-colors hover:text-accent"
+                >
+                  Toutes les zones →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <p className="mb-4 text-sm font-medium text-foreground">Contact</p>
             <ul className="space-y-3 text-sm text-muted">
               <li>
@@ -72,7 +92,11 @@ export function Footer() {
                   {company.phoneDisplay}
                 </a>
               </li>
-              <li>{formatAddress()}</li>
+              <li>
+                <GoogleMapsLink className="transition-colors hover:text-accent">
+                  {formatAddress()}
+                </GoogleMapsLink>
+              </li>
               <li>{company.areaServed}</li>
             </ul>
           </div>
@@ -80,9 +104,16 @@ export function Footer() {
 
         <Divider className="my-10" />
 
-        <div className="flex flex-col gap-2 text-sm text-muted md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {company.legalName}</p>
-          <p>Nettoyage professionnel — Suisse romande</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/mentions-legales" className="transition-colors hover:text-accent">
+              Mentions légales
+            </Link>
+            <Link href="/politique-confidentialite" className="transition-colors hover:text-accent">
+              Confidentialité
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

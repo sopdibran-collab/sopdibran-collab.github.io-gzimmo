@@ -5,33 +5,37 @@ import { locations } from "@/data/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = company.url;
+  const now = new Date();
 
   const staticRoutes = [
-    "",
-    "/services",
-    "/realisations",
-    "/a-propos",
-    "/contact",
-    "/faq",
-  ].map((path) => ({
+    { path: "", priority: 1 },
+    { path: "/zones", priority: 0.9 },
+    { path: "/services", priority: 0.85 },
+    { path: "/contact", priority: 0.85 },
+    { path: "/a-propos", priority: 0.8 },
+    { path: "/faq", priority: 0.8 },
+    { path: "/realisations", priority: 0.7 },
+    { path: "/mentions-legales", priority: 0.3 },
+    { path: "/politique-confidentialite", priority: 0.3 },
+  ].map(({ path, priority }) => ({
     url: `${base}${path}`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: path === "" ? 1 : 0.8,
+    priority,
   }));
 
   const serviceRoutes = services.map((service) => ({
     url: `${base}/services/${service.slug}`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.75,
   }));
 
   const localRoutes = locations.map((location) => ({
     url: `${base}/seo/${location.slug}`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: location.priority,
   }));
 
   return [...staticRoutes, ...serviceRoutes, ...localRoutes];
