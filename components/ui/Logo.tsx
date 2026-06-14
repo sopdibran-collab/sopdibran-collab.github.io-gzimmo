@@ -26,9 +26,9 @@ const dimensions = {
 const sizes = {
   header: {
     horizontal:
-      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+      "w-[min(68vw,200px)] max-h-9 sm:w-[min(44vw,220px)] sm:max-h-10 lg:w-[220px] lg:max-h-11",
     monochrome:
-      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+      "w-[min(68vw,200px)] max-h-9 sm:w-[min(44vw,220px)] sm:max-h-10 lg:w-[220px] lg:max-h-11",
   },
   footer: {
     horizontal: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
