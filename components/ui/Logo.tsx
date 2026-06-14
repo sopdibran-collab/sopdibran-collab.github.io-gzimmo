@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { company } from "@/data/company";
 import { cn } from "@/lib/utils";
@@ -15,37 +14,40 @@ const sources = {
   monochrome: "/monochrome_noir.svg",
 } as const;
 
+const dimensions = {
+  horizontal: { width: 280, height: 52 },
+  monochrome: { width: 260, height: 52 },
+} as const;
+
+/** SVG natif — évite les bugs Safari avec next/image + fill. */
 export function Logo({
   variant = "horizontal",
   linked = true,
   className,
   priority = false,
 }: LogoProps) {
+  const { width, height } = dimensions[variant];
+
   const image = (
-    <span
+    <img
+      src={sources[variant]}
+      alt={linked ? "" : company.name}
+      width={width}
+      height={height}
+      decoding="async"
+      fetchPriority={priority ? "high" : "auto"}
       className={cn(
-        "relative block shrink-0",
-        variant === "horizontal"
-          ? "h-10 w-[min(52vw,220px)] sm:h-11 sm:w-[240px]"
-          : "h-10 w-[min(52vw,200px)] sm:h-11 sm:w-[220px]",
+        "block h-11 w-auto max-w-[min(62vw,260px)] object-contain object-left sm:h-12 sm:max-w-[280px]",
+        variant === "monochrome" && "max-w-[min(62vw,240px)] sm:max-w-[260px]",
         className,
       )}
-    >
-      <Image
-        src={sources[variant]}
-        alt={linked ? "" : company.name}
-        fill
-        className="object-contain object-left"
-        priority={priority}
-        sizes={variant === "horizontal" ? "240px" : "220px"}
-      />
-    </span>
+    />
   );
 
   if (!linked) return image;
 
   return (
-    <Link href="/" className="inline-block" aria-label={`${company.name} — Accueil`}>
+    <Link href="/" className="inline-flex shrink-0 items-center" aria-label={`${company.name} — Accueil`}>
       {image}
     </Link>
   );

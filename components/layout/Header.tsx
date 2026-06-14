@@ -11,7 +11,7 @@ export function Header() {
   const mailHref = `mailto:${company.email}`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
+    <header className="sticky top-0 z-50 border-b border-border bg-[#ffffff] supports-[position:sticky]:top-0">
       <div className="mx-auto flex h-[4.5rem] max-w-[1200px] items-center justify-between gap-4 px-container sm:h-20">
         <Logo priority />
 
