@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-[1200px] px-container py-section">
         <div className="mb-12">
-          <Logo variant="monochrome" className="w-[min(80vw,260px)] sm:w-[300px] lg:w-[320px] max-h-16 sm:max-h-[4.5rem]" />
+          <Logo variant="monochrome" size="footer" />
         </div>
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">

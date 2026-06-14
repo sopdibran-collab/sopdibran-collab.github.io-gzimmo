@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 type LogoProps = {
   variant?: "horizontal" | "monochrome";
+  size?: "header" | "footer";
   linked?: boolean;
   className?: string;
   priority?: boolean;
@@ -22,16 +23,23 @@ const dimensions = {
   monochrome: { width: 3105, height: 997 },
 } as const;
 
-const defaultSizes = {
-  horizontal:
-    "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
-  monochrome:
-    "w-[min(68vw,220px)] max-h-[3.25rem] sm:w-[min(48vw,260px)] sm:max-h-[4.25rem] lg:w-[280px] lg:max-h-[4.5rem]",
+const sizes = {
+  header: {
+    horizontal:
+      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+    monochrome:
+      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+  },
+  footer: {
+    horizontal: "w-[min(88vw,300px)] sm:w-[360px] lg:w-[400px]",
+    monochrome: "w-[min(88vw,300px)] sm:w-[360px] lg:w-[400px]",
+  },
 } as const;
 
 /** SVG natif — viewBox recadré pour un rendu à la bonne échelle (Safari + Chrome). */
 export function Logo({
   variant = "horizontal",
+  size = "header",
   linked = true,
   className,
   priority = false,
@@ -48,7 +56,7 @@ export function Logo({
       fetchPriority={priority ? "high" : "auto"}
       className={cn(
         "block h-auto object-contain object-left",
-        defaultSizes[variant],
+        sizes[size][variant],
         className,
       )}
       style={{ aspectRatio: LOGO_ASPECT }}
