@@ -138,4 +138,11 @@
   .animate-fade-in-up {
     animation: fade-in-up 0.55s var(--ease-premium) both;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .service-preview,
+    .service-preview img {
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
