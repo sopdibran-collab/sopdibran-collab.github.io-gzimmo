@@ -12,10 +12,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-[#ffffff] supports-[position:sticky]:top-0">
-      <div className="mx-auto flex h-[4.5rem] max-w-[1200px] items-center justify-between gap-4 px-container sm:h-20">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-container">
         <Logo priority />
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Navigation principale">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Navigation principale">
           {mainNav.map((item) => (
             <Link
               key={item.href}
@@ -44,7 +44,7 @@ export function Header() {
           <Button href="/contact">Devis</Button>
         </div>
 
-        <MobileNav callHref={callHref} mailHref={mailHref} />
+        <MobileNav />
       </div>
     </header>
   );

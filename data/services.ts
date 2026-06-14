@@ -5,6 +5,13 @@ export type Service = {
   description: string;
   intro: string;
   benefits: string[];
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    objectPosition: string;
+  };
 };
 
 export const services: Service[] = [
@@ -21,6 +28,13 @@ export const services: Service[] = [
       "Intervention discrète et efficace",
       "Finitions soignées à chaque passage",
     ],
+    image: {
+      src: "/images/services/entretien-locaux.webp",
+      alt: "Entretien professionnel de locaux commerciaux",
+      width: 1500,
+      height: 919,
+      objectPosition: "center 45%",
+    },
   },
   {
     slug: "nettoyage-appartements",
@@ -35,6 +49,13 @@ export const services: Service[] = [
       "Produits professionnels adaptés",
       "Résultat visible dès la première visite",
     ],
+    image: {
+      src: "/images/services/nettoyage-appartements.webp",
+      alt: "Nettoyage d'appartement soigné",
+      width: 1500,
+      height: 1000,
+      objectPosition: "center 45%",
+    },
   },
   {
     slug: "nettoyage-maisons",
@@ -49,6 +70,13 @@ export const services: Service[] = [
       "Attention particulière aux matériaux",
       "Équipe expérimentée et fiable",
     ],
+    image: {
+      src: "/images/services/nettoyage-maisons.webp",
+      alt: "Nettoyage de maison individuelle",
+      width: 1500,
+      height: 1000,
+      objectPosition: "center 45%",
+    },
   },
   {
     slug: "nettoyage-apres-chantier",
@@ -63,6 +91,13 @@ export const services: Service[] = [
       "Vitres, sols et surfaces traités",
       "Intervention rapide après travaux",
     ],
+    image: {
+      src: "/images/services/nettoyage-apres-chantier.webp",
+      alt: "Remise en état après travaux",
+      width: 1500,
+      height: 1000,
+      objectPosition: "center 45%",
+    },
   },
   {
     slug: "nettoyage-fin-de-bail",
@@ -77,6 +112,13 @@ export const services: Service[] = [
       "Respect des standards de restitution",
       "Devis clair avant intervention",
     ],
+    image: {
+      src: "/images/services/nettoyage-fin-de-bail.webp",
+      alt: "Nettoyage de fin de bail",
+      width: 1500,
+      height: 1021,
+      objectPosition: "center 45%",
+    },
   },
   {
     slug: "nettoyage-bureaux",
@@ -91,6 +133,13 @@ export const services: Service[] = [
       "Confidentialité et discrétion",
       "Environnement sain pour vos équipes",
     ],
+    image: {
+      src: "/images/services/nettoyage-bureaux.webp",
+      alt: "Nettoyage de bureaux professionnels",
+      width: 1500,
+      height: 842,
+      objectPosition: "center 45%",
+    },
   },
   {
     slug: "nettoyage-vitres",
@@ -105,6 +154,13 @@ export const services: Service[] = [
       "Accès sécurisé en hauteur",
       "Résultat net et durable",
     ],
+    image: {
+      src: "/images/services/nettoyage-vitres.webp",
+      alt: "Nettoyage de vitres sans traces",
+      width: 1500,
+      height: 1000,
+      objectPosition: "center 45%",
+    },
   },
 ];
 
