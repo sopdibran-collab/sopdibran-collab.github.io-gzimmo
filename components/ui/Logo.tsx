@@ -15,12 +15,12 @@ const sources = {
   monochrome: "/monochrome_noir.svg",
 } as const;
 
-/** Ratio réel du lockup après recadrage du viewBox SVG (3105×997). */
-const LOGO_ASPECT = 3105 / 997;
+/** Ratio réel du lockup après recadrage du viewBox SVG (3540×997). */
+const LOGO_ASPECT = 3540 / 997;
 
 const dimensions = {
-  horizontal: { width: 3105, height: 997 },
-  monochrome: { width: 3105, height: 997 },
+  horizontal: { width: 3540, height: 997 },
+  monochrome: { width: 3540, height: 997 },
 } as const;
 
 const sizes = {
@@ -31,8 +31,8 @@ const sizes = {
       "w-[min(68vw,200px)] max-h-9 sm:w-[min(44vw,220px)] sm:max-h-10 lg:w-[220px] lg:max-h-11",
   },
   footer: {
-    horizontal: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
-    monochrome: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
+    horizontal: "w-[min(88vw,280px)] sm:w-[310px] lg:w-[352px]",
+    monochrome: "w-[min(88vw,280px)] sm:w-[310px] lg:w-[352px]",
   },
 } as const;
 

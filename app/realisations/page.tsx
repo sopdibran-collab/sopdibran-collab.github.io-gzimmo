@@ -1,10 +1,9 @@
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
-import { ContactCta } from "@/components/content/ContactCta";
 
 export const metadata = createMetadata({
   title: "Réalisations",
@@ -23,7 +22,7 @@ export default function RealisationsPage() {
         ])}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb
           items={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]}
         />
@@ -32,15 +31,13 @@ export default function RealisationsPage() {
           title="La précision, visible"
           description="Chaque projet reflète notre exigence : des espaces remis en ordre avec méthode et discrétion."
         />
+      </PageHero>
 
-        <div className="mt-16">
-          <RealisationGrid showHeader={false} />
-        </div>
+      <PageMain variant="accent">
+        <RealisationGrid showHeader={false} />
+      </PageMain>
 
-        <div className="mt-16">
-          <ContactCta />
-        </div>
-      </Section>
+      <PageCta />
     </>
   );
 }

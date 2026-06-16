@@ -1,10 +1,11 @@
 import { company, formatAddress } from "@/data/company";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain } from "@/components/layout/PageLayout";
 import { LegalSection } from "@/components/content/LegalSection";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
+import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
   title: "Mentions légales",
@@ -23,13 +24,15 @@ export default function MentionsLegalesPage() {
         ])}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb
           items={[{ label: "Accueil", href: "/" }, { label: "Mentions légales" }]}
         />
         <PageIntro badge="Légal" title="Mentions légales" />
+      </PageHero>
 
-        <div className="mt-16 max-w-3xl">
+      <PageMain variant="surface">
+        <ContentCard className="max-w-3xl">
           <LegalSection title="Éditeur du site">
             <p>
               <strong className="text-foreground">{company.legalName}</strong>
@@ -111,8 +114,8 @@ export default function MentionsLegalesPage() {
               impératif.
             </p>
           </LegalSection>
-        </div>
-      </Section>
+        </ContentCard>
+      </PageMain>
     </>
   );
 }

@@ -4,6 +4,7 @@ import { createMetadata } from "@/lib/metadata";
 import { faqPageSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { AccentLine } from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/Badge";
 import { ContactActions } from "@/components/ui/ContactActions";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ServiceList } from "@/components/content/ServiceList";
@@ -11,7 +12,7 @@ import { WhyList } from "@/components/content/WhyList";
 import { StatsBand } from "@/components/content/StatsBand";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { Testimonial } from "@/components/content/Testimonial";
-import { FaqList } from "@/components/content/FaqList";
+import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { ContactCta } from "@/components/content/ContactCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TextLink } from "@/components/ui/TextLink";
@@ -23,15 +24,16 @@ export default function HomePage() {
     <>
       <JsonLd data={faqPageSchema(homepageFaq)} />
 
-      <Section className="pb-0">
+      <Section variant="hero" className="pb-0">
         <FadeIn>
           <div className="max-w-3xl">
-            <h1 className="font-display text-display-xl font-semibold text-foreground">
+            <Badge className="text-accent/90">Gzimmo Sàrl · Suisse romande</Badge>
+            <h1 className="mt-5 font-display text-display-xl font-semibold text-foreground">
               Nettoyage professionnel
               <br />
               en Suisse romande
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted">
+            <p className="mt-6 max-w-xl text-lg text-muted leading-relaxed">
               {teamExperienceLabel(true)}. Intervention rapide. Un espace parfaitement
               entretenu, à chaque passage.
             </p>
@@ -43,11 +45,11 @@ export default function HomePage() {
         </FadeIn>
       </Section>
 
-      <Section variant="surface">
+      <Section variant="accent">
         <ServiceList />
       </Section>
 
-      <Section>
+      <Section variant="surface">
         <WhyList />
       </Section>
 
@@ -55,29 +57,27 @@ export default function HomePage() {
         <StatsBand />
       </Section>
 
-      <Section>
+      <Section variant="default">
         <RealisationGrid />
       </Section>
 
-      <Section variant="surface">
+      <Section variant="accent">
         <Testimonial />
       </Section>
 
-      <Section>
-        <div>
-          <h2 className="font-display text-display-md text-foreground">
-            Questions fréquentes
-          </h2>
-          <div className="mt-10">
-            <FaqList items={homepageFaq} />
-          </div>
-          <div className="mt-6">
-            <TextLink href="/faq">Toutes les questions</TextLink>
-          </div>
+      <Section variant="surface">
+        <FadeIn>
+          <FaqSectionHeader />
+        </FadeIn>
+        <div className="mt-10">
+          <FaqList items={homepageFaq} />
+        </div>
+        <div className="mt-6">
+          <TextLink href="/faq">Toutes les questions</TextLink>
         </div>
       </Section>
 
-      <Section>
+      <Section variant="default" className="pt-0">
         <ContactCta />
       </Section>
     </>

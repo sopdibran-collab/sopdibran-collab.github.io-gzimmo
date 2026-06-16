@@ -8,9 +8,9 @@ export function LegalSection({
   children: ReactNode;
 }) {
   return (
-    <section className="mt-10 border-t border-border pt-10 first:mt-0 first:border-0 first:pt-0">
+    <section className="mt-8 rounded-xl border border-border/70 bg-white/60 p-8 first:mt-0">
       <h2 className="font-display text-display-sm text-foreground">{title}</h2>
-      <div className="prose-legal mt-4 space-y-4 text-muted">{children}</div>
+      <div className="prose-legal mt-4 space-y-4 text-base text-muted leading-relaxed">{children}</div>
     </section>
   );
 }

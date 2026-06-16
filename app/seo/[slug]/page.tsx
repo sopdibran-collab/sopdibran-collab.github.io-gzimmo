@@ -8,11 +8,13 @@ import {
   localBusinessSchema,
   locationPageSchema,
 } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { LocalAreaLinks, LocalSeoBody } from "@/components/seo/LocalSeoContent";
 import { TextLink } from "@/components/ui/TextLink";
+import { Badge } from "@/components/ui/Badge";
+import { ContentCard } from "@/components/ui/ContentCard";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -54,7 +56,7 @@ export default async function LocalSeoPage({ params }: Props) {
         ]}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb
           items={[
             { label: "Accueil", href: "/" },
@@ -63,13 +65,14 @@ export default async function LocalSeoPage({ params }: Props) {
           ]}
         />
         <PageIntro badge={location.cantonName} title={location.title} description={location.intro} />
+      </PageHero>
 
+      <PageMain variant="surface">
         <LocalSeoBody location={location} />
 
-        <div className="mt-16 border-t border-border pt-16">
-          <h2 className="font-display text-display-sm text-foreground">
-            Tous nos services
-          </h2>
+        <ContentCard className="mt-12">
+          <Badge className="text-accent/90">Services</Badge>
+          <h2 className="mt-4 font-display text-display-sm text-foreground">Tous nos services</h2>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {services.map((service) => (
               <li key={service.slug}>
@@ -79,17 +82,19 @@ export default async function LocalSeoPage({ params }: Props) {
               </li>
             ))}
           </ul>
-        </div>
+        </ContentCard>
 
         {relatedLocations.length > 0 ? (
-          <div className="mt-16 border-t border-border pt-16">
+          <ContentCard className="mt-8">
             <LocalAreaLinks
               locations={relatedLocations}
               title={`Autres communes en ${location.cantonName}`}
             />
-          </div>
+          </ContentCard>
         ) : null}
-      </Section>
+      </PageMain>
+
+      <PageCta />
     </>
   );
 }

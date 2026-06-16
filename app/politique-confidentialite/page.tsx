@@ -1,10 +1,11 @@
 import { company, formatAddress } from "@/data/company";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain } from "@/components/layout/PageLayout";
 import { LegalSection } from "@/components/content/LegalSection";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
+import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
   title: "Politique de confidentialité",
@@ -23,7 +24,7 @@ export default function PolitiqueConfidentialitePage() {
         ])}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb
           items={[
             { label: "Accueil", href: "/" },
@@ -35,8 +36,10 @@ export default function PolitiqueConfidentialitePage() {
           title="Politique de confidentialité"
           description="Comment nous traitons vos données personnelles, conformément à la législation suisse (nLPD)."
         />
+      </PageHero>
 
-        <div className="mt-16 max-w-3xl">
+      <PageMain variant="surface">
+        <ContentCard className="max-w-3xl">
           <LegalSection title="Responsable du traitement">
             <p>
               <strong className="text-foreground">{company.legalName}</strong>
@@ -157,8 +160,8 @@ export default function PolitiqueConfidentialitePage() {
               .
             </p>
           </LegalSection>
-        </div>
-      </Section>
+        </ContentCard>
+      </PageMain>
     </>
   );
 }

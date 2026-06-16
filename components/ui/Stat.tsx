@@ -10,16 +10,26 @@ export function Stat({
   inverse?: boolean;
 }) {
   return (
-    <div className="text-center md:text-left">
+    <div
+      className={cn(
+        "relative text-center md:text-left",
+        inverse && "md:px-8 md:first:pl-0 md:last:pr-0",
+      )}
+    >
       <p
         className={cn(
-          "font-display text-display-lg font-semibold tracking-tight",
+          "font-display text-[clamp(2.75rem,5.5vw,4.25rem)] font-semibold leading-none tracking-tight",
           inverse ? "text-white" : "text-foreground",
         )}
       >
-        {value}
+        <span className={cn(inverse && "text-accent")}>{value}</span>
       </p>
-      <p className={cn("mt-2 text-sm", inverse ? "text-white/60" : "text-muted")}>
+      <p
+        className={cn(
+          "mt-4 max-w-[14rem] text-base font-medium leading-snug md:mx-0 md:max-w-none",
+          inverse ? "mx-auto text-white/75" : "text-muted",
+        )}
+      >
         {label}
       </p>
     </div>

@@ -11,7 +11,7 @@ export function GoogleMap({ className, title }: GoogleMapProps) {
   return (
     <div
       className={cn(
-        "aspect-[4/3] w-full overflow-hidden border border-border bg-surface md:aspect-[16/9]",
+        "aspect-[4/3] w-full overflow-hidden rounded-xl border border-border/80 bg-surface shadow-[0_8px_32px_rgba(30,34,39,0.05)] md:aspect-[16/9]",
         className,
       )}
     >

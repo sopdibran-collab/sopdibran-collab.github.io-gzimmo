@@ -1,11 +1,12 @@
 import { company, teamExperienceLabel } from "@/data/company";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
-import { ContactCta } from "@/components/content/ContactCta";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { ValueCards } from "@/components/content/ValueCards";
+import { StatsBand } from "@/components/content/StatsBand";
+import { Section } from "@/components/layout/Section";
 
 export const metadata = createMetadata({
   title: "À propos",
@@ -39,29 +40,24 @@ export default function AboutPage() {
         ])}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À propos" }]} />
         <PageIntro
           badge="À propos"
           title="La maîtrise d'un espace parfaitement entretenu"
           description={`${company.name} accompagne particuliers et professionnels en Suisse romande. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()} — avec rigueur, discrétion et le souci du détail.`}
         />
+      </PageHero>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-3">
-          {values.map((value, index) => (
-            <FadeIn key={value.title} delay={index * 0.08}>
-              <article>
-                <h2 className="font-display text-display-sm text-foreground">{value.title}</h2>
-                <p className="mt-4 text-muted">{value.text}</p>
-              </article>
-            </FadeIn>
-          ))}
-        </div>
+      <PageMain>
+        <ValueCards items={values} />
+      </PageMain>
 
-        <div className="mt-16">
-          <ContactCta />
-        </div>
+      <Section variant="inverse">
+        <StatsBand />
       </Section>
+
+      <PageCta />
     </>
   );
 }
