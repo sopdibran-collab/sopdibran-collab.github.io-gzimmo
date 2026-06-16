@@ -15,12 +15,12 @@ const sources = {
   monochrome: "/monochrome_noir.svg",
 } as const;
 
-/** Ratio réel du lockup après recadrage du viewBox SVG (3540×997). */
-const LOGO_ASPECT = 3540 / 997;
+/** Ratio réel du lockup — viewBox 3540×1160 (inclut le toit et le bas du crochet). */
+const LOGO_ASPECT = 3540 / 1160;
 
 const dimensions = {
-  horizontal: { width: 3540, height: 997 },
-  monochrome: { width: 3540, height: 997 },
+  horizontal: { width: 3540, height: 1160 },
+  monochrome: { width: 3540, height: 1160 },
 } as const;
 
 const sizes = {
@@ -55,11 +55,10 @@ export function Logo({
       decoding="async"
       fetchPriority={priority ? "high" : "auto"}
       className={cn(
-        "block h-auto object-contain object-left",
+        "block h-auto",
         sizes[size][variant],
         className,
       )}
-      style={{ aspectRatio: LOGO_ASPECT }}
     />
   );
 
