@@ -10,7 +10,7 @@ import { Divider } from "@/components/ui/Badge";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="section-surface border-t border-border/80">
       <div className="mx-auto max-w-[1200px] px-container py-section">
         <div className="mb-12">
           <Logo variant="monochrome" size="footer" />

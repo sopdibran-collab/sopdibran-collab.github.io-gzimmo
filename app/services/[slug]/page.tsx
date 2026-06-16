@@ -1,12 +1,12 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { services, getServiceBySlug } from "@/data/services";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
-import { ContactCta } from "@/components/content/ContactCta";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { BenefitsList } from "@/components/content/BenefitsList";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -47,7 +47,7 @@ export default async function ServicePage({ params }: Props) {
         ]}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb
           items={[
             { label: "Accueil", href: "/" },
@@ -55,30 +55,32 @@ export default async function ServicePage({ params }: Props) {
             { label: service.title },
           ]}
         />
-        <PageIntro badge="Service" title={service.title} description={service.intro} />
-
-        <FadeIn>
-          <div className="mt-16 max-w-2xl">
-            <h2 className="font-display text-display-sm text-foreground">
-              Ce que comprend notre prestation
-            </h2>
-            <ul className="mt-6 space-y-4">
-              {service.benefits.map((benefit) => (
-                <li
-                  key={benefit}
-                  className="flex gap-4 before:shrink-0 before:text-accent before:content-['—']"
-                >
-                  {benefit}
-                </li>
-              ))}
-            </ul>
+        <div className="mt-8 grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <PageIntro badge="Service" title={service.title} description={service.intro} />
+          <div className="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(30,34,39,0.1)] lg:aspect-[4/3]">
+            <Image
+              src={service.image.src}
+              alt={service.image.alt}
+              width={service.image.width}
+              height={service.image.height}
+              className="h-full w-full object-cover"
+              style={{ objectPosition: service.image.objectPosition }}
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent"
+            />
           </div>
-        </FadeIn>
-
-        <div className="mt-16">
-          <ContactCta />
         </div>
-      </Section>
+      </PageHero>
+
+      <PageMain>
+        <BenefitsList benefits={service.benefits} />
+      </PageMain>
+
+      <PageCta />
     </>
   );
 }

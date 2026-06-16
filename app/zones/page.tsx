@@ -1,11 +1,11 @@
 import { locations, romontRegionLocations } from "@/data/locations";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { LocalAreaLinks } from "@/components/seo/LocalSeoContent";
-import { ContactCta } from "@/components/content/ContactCta";
+import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
   title: "Zones d'intervention — nettoyage Suisse romande",
@@ -28,33 +28,33 @@ export default function ZonesPage() {
         ])}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           badge="Suisse romande"
           title="Où intervenons-nous ?"
           description="Basés à Romont (FR), nous couvrons en priorité la Glâne et le canton de Fribourg, puis l'ensemble de la Suisse romande."
         />
+      </PageHero>
 
-        <div className="mt-16">
+      <PageMain variant="surface">
+        <ContentCard>
           <LocalAreaLinks
             locations={romontRegionLocations}
             title="Romont et région — zone prioritaire"
           />
-        </div>
+        </ContentCard>
 
-        <div className="mt-16 border-t border-border pt-16">
+        <ContentCard className="mt-8">
           <LocalAreaLinks locations={fribourgLocations} title="Canton de Fribourg" />
-        </div>
+        </ContentCard>
 
-        <div className="mt-16 border-t border-border pt-16">
+        <ContentCard className="mt-8">
           <LocalAreaLinks locations={otherLocations} title="Autres cantons — Suisse romande" />
-        </div>
+        </ContentCard>
+      </PageMain>
 
-        <div className="mt-16">
-          <ContactCta />
-        </div>
-      </Section>
+      <PageCta />
     </>
   );
 }

@@ -1,11 +1,10 @@
 import { faqItems } from "@/data/faq";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
-import { Section } from "@/components/layout/Section";
+import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { FaqList } from "@/components/content/FaqList";
-import { ContactCta } from "@/components/content/ContactCta";
 
 export const metadata = createMetadata({
   title: "FAQ",
@@ -27,22 +26,20 @@ export default function FaqPage() {
         ]}
       />
 
-      <Section>
+      <PageHero>
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "FAQ" }]} />
         <PageIntro
           badge="FAQ"
           title="Vos questions, nos réponses"
           description="Des informations claires pour vous aider à préparer votre demande de devis."
         />
+      </PageHero>
 
-        <div className="mt-16">
-          <FaqList items={faqItems} />
-        </div>
+      <PageMain variant="surface">
+        <FaqList items={faqItems} />
+      </PageMain>
 
-        <div className="mt-16">
-          <ContactCta />
-        </div>
-      </Section>
+      <PageCta />
     </>
   );
 }

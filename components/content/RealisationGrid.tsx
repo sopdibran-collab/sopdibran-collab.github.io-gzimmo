@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Realisation } from "@/data/realisations";
 import { featuredRealisations, realisations } from "@/data/realisations";
+import { Badge } from "@/components/ui/Badge";
 import { TextLink } from "@/components/ui/TextLink";
 import { FadeIn } from "@/components/ui/FadeIn";
 
@@ -22,8 +23,9 @@ export function RealisationGrid({
     <div>
       {showHeader ? (
         <FadeIn>
-          <h2 className="font-display text-display-md text-foreground">Nos réalisations</h2>
-          <p className="mt-4 max-w-xl text-muted">
+          <Badge>Réalisations</Badge>
+          <h2 className="mt-4 font-display text-display-md text-foreground">Nos réalisations</h2>
+          <p className="mt-4 max-w-xl text-muted leading-relaxed">
             Des interventions concrètes, partout en Suisse romande — toujours avec la même
             exigence de finition.
           </p>
@@ -33,8 +35,8 @@ export function RealisationGrid({
       <div
         className={
           showHeader
-            ? "mt-12 divide-y divide-border border-t border-border"
-            : "divide-y divide-border border-t border-border"
+            ? "mt-12 flex flex-col gap-6"
+            : "flex flex-col gap-6"
         }
       >
         {list.map((item, index) => (
@@ -55,9 +57,9 @@ export function RealisationGrid({
 
 function RealisationRow({ item }: { item: Realisation }) {
   return (
-    <article className="grid gap-6 py-8 md:grid-cols-12 md:items-start md:gap-10">
+    <article className="grid gap-6 rounded-2xl border border-border/70 bg-white/60 p-6 py-8 transition-[border-color,box-shadow] duration-300 hover:border-accent/20 hover:shadow-[0_12px_40px_rgba(30,34,39,0.06)] md:grid-cols-12 md:items-start md:gap-10 md:p-8">
       {item.image ? (
-        <div className="relative aspect-[4/3] overflow-hidden bg-surface md:col-span-5">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-surface md:col-span-5">
           <Image
             src={item.image}
             alt=""

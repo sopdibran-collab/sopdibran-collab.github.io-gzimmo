@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Badge } from "@/components/ui/Badge";
 
 type JsonLdProps = {
   data: Record<string, unknown> | Record<string, unknown>[];
@@ -46,12 +47,8 @@ export function PageIntro({
 }) {
   return (
     <header className="max-w-2xl">
-      {badge ? (
-        <p className="mb-4 text-sm font-medium tracking-wide text-muted uppercase">
-          {badge}
-        </p>
-      ) : null}
-      <h1 className="font-display text-display-md text-foreground">{title}</h1>
+      {badge ? <Badge className="text-accent/90">{badge}</Badge> : null}
+      <h1 className="mt-4 font-display text-display-md text-foreground">{title}</h1>
       {description ? (
         <p className="mt-5 text-lg leading-relaxed text-muted">{description}</p>
       ) : null}
