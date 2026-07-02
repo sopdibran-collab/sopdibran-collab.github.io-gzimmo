@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { locations, getLocationBySlug } from "@/data/locations";
 import { services } from "@/data/services";
+import { getServicePath } from "@/lib/service-paths";
 import { localPageMetadata } from "@/lib/metadata";
 import {
   breadcrumbSchema,
@@ -76,7 +77,7 @@ export default async function LocalSeoPage({ params }: Props) {
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {services.map((service) => (
               <li key={service.slug}>
-                <TextLink href={`/services/${service.slug}`} showArrow={false}>
+                <TextLink href={getServicePath(service.slug)} showArrow={false}>
                   {service.title} — {location.city}
                 </TextLink>
               </li>

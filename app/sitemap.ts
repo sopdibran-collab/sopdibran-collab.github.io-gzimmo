@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
+import { getServicePath } from "@/lib/service-paths";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = company.url;
@@ -25,10 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const serviceRoutes = services.map((service) => ({
-    url: `${base}/services/${service.slug}`,
+    url: `${base}${getServicePath(service.slug)}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.75,
+    priority: service.slug === "nettoyage-fin-de-bail" ? 0.95 : 0.8,
   }));
 
   const localRoutes = locations.map((location) => ({

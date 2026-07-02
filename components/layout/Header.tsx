@@ -27,21 +27,20 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 xl:flex">
-          <Button variant="ghost" href={mailHref} external className="px-4">
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={callHref}
+            className="hidden text-sm font-medium text-foreground transition-colors hover:text-accent xl:inline"
+          >
+            {company.phoneDisplay}
+          </a>
+          <Button variant="ghost" href={mailHref} external className="hidden px-3 xl:inline-flex">
             E-mail
           </Button>
           <Button variant="secondary" href={callHref} external className="px-4">
             Appeler
           </Button>
           <Button href="/contact">Devis gratuit</Button>
-        </div>
-
-        <div className="hidden items-center gap-2 lg:flex xl:hidden">
-          <Button variant="secondary" href={callHref} external className="px-4">
-            Appeler
-          </Button>
-          <Button href="/contact">Devis</Button>
         </div>
 
         <MobileNav />

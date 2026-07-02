@@ -2,6 +2,7 @@ import Link from "next/link";
 import { company, formatAddress } from "@/data/company";
 import { footerNav } from "@/data/navigation";
 import { services } from "@/data/services";
+import { getServicePath } from "@/lib/service-paths";
 import { formatPhoneHref } from "@/lib/utils";
 import { romontRegionLocations } from "@/data/locations";
 import { GoogleMapsLink } from "@/components/seo/GoogleMap";
@@ -39,7 +40,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={getServicePath(service.slug)}
                     className="text-sm text-muted transition-colors hover:text-accent"
                   >
                     {service.shortTitle}

@@ -1,12 +1,12 @@
 import { company } from "./company";
 
 export const whyItems = [
+  "Expertise des exigences immobilières — régies, propriétaires, promoteurs",
+  "Checklist rigoureuse et devis transparent avant intervention",
   `Plus de ${company.teamExperienceYears} ans d'expérience cumulée dans le nettoyage`,
-  "Intervention rapide, planning flexible",
-  "Travail minutieux, finitions soignées",
-  "Produits professionnels de qualité",
-  "Devis gratuit, sans engagement",
-  "Couverture : toute la Suisse romande",
+  "Produits professionnels fournis, adaptés à chaque surface",
+  "Réponse sous 24 h, intervention en Suisse romande",
+  "Garantie de remise de bail sur nos prestations fin de bail",
 ];
 
 export const stats = [

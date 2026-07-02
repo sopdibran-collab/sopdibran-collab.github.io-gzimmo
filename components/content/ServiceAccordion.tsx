@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { services, type Service } from "@/data/services";
+import { getServicePath } from "@/lib/service-paths";
 import { cn } from "@/lib/utils";
 import { TextLink } from "@/components/ui/TextLink";
 
@@ -179,7 +180,7 @@ function ServiceRow({
               >
                 <p className="max-w-xl text-base text-muted leading-relaxed">{service.intro}</p>
                 <div className="mt-6">
-                  <TextLink href={`/services/${service.slug}`}>En savoir plus</TextLink>
+                  <TextLink href={getServicePath(service.slug)}>En savoir plus</TextLink>
                 </div>
               </div>
             </div>
@@ -221,7 +222,7 @@ function ServiceRow({
           ) : null}
         </div>
 
-        <Link href={`/services/${service.slug}`} className="sr-only" tabIndex={-1}>
+        <Link href={getServicePath(service.slug)} className="sr-only" tabIndex={-1}>
           {service.title}
         </Link>
       </article>

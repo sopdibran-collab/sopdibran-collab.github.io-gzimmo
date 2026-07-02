@@ -2,6 +2,7 @@ import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { faqItems } from "@/data/faq";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
+import { getServicePath } from "@/lib/service-paths";
 
 export function localBusinessSchema() {
   return {
@@ -56,7 +57,7 @@ export function localBusinessSchema() {
           "@type": "Service",
           name: service.title,
           description: service.description,
-          url: `${company.url}/services/${service.slug}`,
+          url: `${company.url}${getServicePath(service.slug)}`,
         },
       })),
     },
@@ -101,13 +102,14 @@ export function faqPageSchema(items = faqItems) {
   };
 }
 
-export function serviceSchema(service: (typeof services)[number]) {
+export function serviceSchema(service: (typeof services)[number], path?: string) {
+  const servicePath = path ?? `/services/${service.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.title,
     description: service.description,
-    url: `${company.url}/services/${service.slug}`,
+    url: `${company.url}${servicePath}`,
     provider: { "@id": `${company.url}/#organization` },
     areaServed: {
       "@type": "AdministrativeArea",

@@ -1,23 +1,29 @@
-import { teamExperienceLabel } from "@/data/company";
 import { homepageFaq } from "@/data/faq";
 import { createMetadata } from "@/lib/metadata";
 import { faqPageSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { AccentLine } from "@/components/ui/Badge";
 import { Badge } from "@/components/ui/Badge";
-import { ContactActions } from "@/components/ui/ContactActions";
+import { ConversionCta } from "@/components/ui/ConversionCta";
+import { ReassuranceBand } from "@/components/ui/ReassuranceBand";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { ServiceList } from "@/components/content/ServiceList";
+import { ServiceCardGrid } from "@/components/content/ServiceCardGrid";
 import { WhyList } from "@/components/content/WhyList";
 import { StatsBand } from "@/components/content/StatsBand";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { Testimonial } from "@/components/content/Testimonial";
 import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { ContactCta } from "@/components/content/ContactCta";
+import { HomeZoneGrid } from "@/components/content/HomeZoneGrid";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TextLink } from "@/components/ui/TextLink";
 
-export const metadata = createMetadata();
+export const metadata = createMetadata({
+  title: "Nettoyage professionnel en Suisse romande",
+  description:
+    "Gzimmo Sàrl — entreprise de nettoyage à Romont (FR). Fins de bail, régies, chantiers, bureaux. Devis gratuit, réponse sous 24 h. 076 214 23 42.",
+  path: "/",
+});
 
 export default function HomePage() {
   return (
@@ -27,18 +33,19 @@ export default function HomePage() {
       <Section variant="hero" className="pb-0">
         <FadeIn>
           <div className="max-w-3xl">
-            <Badge className="text-accent/90">Gzimmo Sàrl · Suisse romande</Badge>
+            <Badge className="text-accent/90">Gzimmo Sàrl · Romont (FR) · Suisse romande</Badge>
             <h1 className="mt-5 font-display text-display-xl font-semibold text-foreground">
               Nettoyage professionnel
               <br />
-              en Suisse romande
+              pour l&apos;immobilier en Suisse romande
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted leading-relaxed">
-              {teamExperienceLabel(true)}. Intervention rapide. Un espace parfaitement
-              entretenu, à chaque passage.
+              Fins de bail, régies, chantiers, bureaux — une équipe experte des exigences
+              immobilières, basée à Romont. Devis gratuit, réponse sous 24 h.
             </p>
 
-            <ContactActions className="mt-10" />
+            <ConversionCta className="mt-10" />
+            <ReassuranceBand className="mt-8" />
 
             <AccentLine className="mt-14" />
           </div>
@@ -46,7 +53,7 @@ export default function HomePage() {
       </Section>
 
       <Section variant="accent">
-        <ServiceList />
+        <ServiceCardGrid />
       </Section>
 
       <Section variant="surface">
@@ -58,26 +65,31 @@ export default function HomePage() {
       </Section>
 
       <Section variant="default">
-        <RealisationGrid />
+        <HomeZoneGrid />
       </Section>
 
       <Section variant="accent">
-        <Testimonial />
+        <RealisationGrid />
       </Section>
 
       <Section variant="surface">
+        <Testimonial />
+      </Section>
+
+      <Section variant="default">
         <FadeIn>
           <FaqSectionHeader />
         </FadeIn>
         <div className="mt-10">
           <FaqList items={homepageFaq} />
         </div>
+        <ConversionCta className="mt-10" />
         <div className="mt-6">
           <TextLink href="/faq">Toutes les questions</TextLink>
         </div>
       </Section>
 
-      <Section variant="default" className="pt-0">
+      <Section variant="surface" className="pt-0">
         <ContactCta />
       </Section>
     </>

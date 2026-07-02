@@ -1,5 +1,5 @@
 import { AccentLine } from "@/components/ui/Badge";
-import { ContactActions } from "@/components/ui/ContactActions";
+import { ConversionCta } from "@/components/ui/ConversionCta";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export function ContactCta() {
@@ -12,13 +12,13 @@ export function ContactCta() {
         />
         <AccentLine className="mb-8" />
         <h2 className="max-w-xl font-display text-display-md text-foreground">
-          Prêt à retrouver un espace impeccable ?
+          Prêt à obtenir un devis gratuit ?
         </h2>
         <p className="mt-5 max-w-lg text-base text-muted leading-relaxed">
-          Demandez votre devis gratuit. Nous vous répondons sous 24 heures.
+          Réponse sous 24 heures. Sans engagement.
         </p>
 
-        <ContactActions className="mt-10" />
+        <ConversionCta className="mt-10" />
       </div>
     </FadeIn>
   );

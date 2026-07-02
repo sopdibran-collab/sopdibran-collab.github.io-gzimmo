@@ -19,4 +19,9 @@ export const testimonials = [
   },
 ] as const;
 
-export const homepageTestimonial = testimonials[0];
+export const homepageTestimonial = {
+  quote:
+    "Excellent travail pour notre état des lieux — la régie a validé sans aucune remarque. Équipe ponctuelle, discrète et très professionnelle.",
+  author: "Client particulier",
+  location: "Fribourg",
+};

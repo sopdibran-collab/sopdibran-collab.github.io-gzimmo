@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 import { JsonLd, PlausibleScript } from "@/components/seo/JsonLd";
 import { organizationJsonLd } from "@/lib/schema";
 import { createMetadata } from "@/lib/metadata";
@@ -39,11 +40,12 @@ export default function RootLayout({
       <head>
         <PlausibleScript />
       </head>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased pb-20 lg:pb-0">
         <JsonLd data={organizationJsonLd()} />
         <Header />
         <main>{children}</main>
         <Footer />
+        <StickyMobileCta />
         <SpeedInsights />
       </body>
     </html>

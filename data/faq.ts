@@ -66,4 +66,30 @@ export const faqItems: FaqItem[] = [
   },
 ];
 
-export const homepageFaq = faqItems.slice(0, 4);
+export const homepageFaq: FaqItem[] = [
+  {
+    question: "Combien coûte un nettoyage fin de bail en Suisse romande ?",
+    answer:
+      "Le tarif dépend de la surface, de l'état du logement et des exigences de la régie. Gzimmo établit un devis gratuit et personnalisé avant toute intervention. Contactez-nous au 076 214 23 42.",
+  },
+  {
+    question: "Intervenez-vous pour les régies et les entreprises ?",
+    answer:
+      "Oui. Nous travaillons avec des particuliers, des régies immobilières et des entreprises pour l'entretien régulier ou les prestations ponctuelles (fin de bail, après chantier, bureaux).",
+  },
+  {
+    question: "Quel délai pour obtenir un devis ?",
+    answer:
+      "Nous répondons sous 24 heures. Décrivez votre besoin par téléphone, e-mail ou formulaire — devis gratuit, sans engagement.",
+  },
+  {
+    question: "Fournissez-vous les produits de nettoyage ?",
+    answer:
+      "Oui. Gzimmo fournit tous les produits nécessaires — exclusivement professionnels, adaptés à chaque type de surface et de matériau.",
+  },
+  {
+    question: "Couvrez-vous toute la Suisse romande depuis Romont ?",
+    answer:
+      "Oui. Bien que basés à Romont (Route de Raboud 8), nous intervenons dans toute la Suisse romande : Fribourg, Vaud, Genève, Neuchâtel et Valais romand.",
+  },
+];

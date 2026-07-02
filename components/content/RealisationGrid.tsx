@@ -24,10 +24,12 @@ export function RealisationGrid({
       {showHeader ? (
         <FadeIn>
           <Badge>Réalisations</Badge>
-          <h2 className="mt-4 font-display text-display-md text-foreground">Nos réalisations</h2>
+          <h2 className="mt-4 font-display text-display-md text-foreground">
+            Des interventions concrètes, des résultats mesurables
+          </h2>
           <p className="mt-4 max-w-xl text-muted leading-relaxed">
-            Des interventions concrètes, partout en Suisse romande — toujours avec la même
-            exigence de finition.
+            Type de client, lieu, problème et résultat — la même exigence partout en Suisse
+            romande.
           </p>
         </FadeIn>
       ) : null}
@@ -72,12 +74,23 @@ function RealisationRow({ item }: { item: Realisation }) {
 
       <div className={item.image ? "md:col-span-7" : "md:col-span-12"}>
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm text-muted">
-          <span>{item.service}</span>
+          <span>{item.clientType}</span>
           <span aria-hidden="true">·</span>
           <span>{item.location}</span>
+          <span aria-hidden="true">·</span>
+          <span>{item.service}</span>
         </div>
         <h3 className="mt-3 font-display text-display-sm text-foreground">{item.title}</h3>
-        <p className="mt-3 max-w-prose text-muted">{item.description}</p>
+        <dl className="mt-4 space-y-3 text-sm">
+          <div>
+            <dt className="font-medium text-foreground">Problème</dt>
+            <dd className="mt-1 text-muted">{item.problem}</dd>
+          </div>
+          <div>
+            <dt className="font-medium text-foreground">Résultat</dt>
+            <dd className="mt-1 text-muted">{item.result}</dd>
+          </div>
+        </dl>
         <Link
           href="/contact"
           className="mt-5 inline-block text-sm font-medium text-foreground transition-colors hover:text-accent"

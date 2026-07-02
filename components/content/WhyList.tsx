@@ -8,10 +8,11 @@ export function WhyList() {
       <FadeIn className="lg:col-span-5">
         <Badge>Pourquoi Gzimmo</Badge>
         <h2 className="mt-4 font-display text-display-md text-foreground">
-          Pourquoi nous confier vos espaces
+          Pourquoi confier votre nettoyage à Gzimmo ?
         </h2>
         <p className="mt-5 max-w-md text-muted leading-relaxed">
-          Précision, discrétion et finitions soignées — notre exigence se lit dans chaque détail.
+          Expertise immobilière, rigueur et réactivité — notre exigence se lit dans chaque
+          intervention.
         </p>
       </FadeIn>
 

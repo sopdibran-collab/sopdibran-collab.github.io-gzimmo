@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "@/data/services";
+import { getServicePath } from "@/lib/service-paths";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { TextLink } from "@/components/ui/TextLink";
@@ -11,7 +12,7 @@ export function ServiceCatalogList() {
         <FadeIn key={service.slug} delay={index * 0.04}>
           <li className="list-none border-b border-border/70 last:border-b-0">
             <Link
-              href={`/services/${service.slug}`}
+              href={getServicePath(service.slug)}
               className={cn(
                 "group relative flex min-h-[4.75rem] flex-col gap-4 overflow-hidden py-8",
                 "transition-colors duration-500 hover:bg-white/50 md:flex-row md:items-center md:gap-10",
