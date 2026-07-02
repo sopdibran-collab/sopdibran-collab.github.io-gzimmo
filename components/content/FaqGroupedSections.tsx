@@ -1,5 +1,5 @@
 import { getFaqsGroupedByCategory } from "@/data/faq";
-import { FaqAccordion } from "@/components/content/FaqAccordion";
+import { FaqList } from "@/components/content/FaqList";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export function FaqGroupedSections() {
@@ -20,7 +20,7 @@ export function FaqGroupedSections() {
               <p className="mt-3 text-sm text-muted leading-relaxed">{group.description}</p>
             </div>
             <div className="mt-8">
-              <FaqAccordion items={group.items} singleOpen />
+              <FaqList items={group.items} animated={false} />
             </div>
           </section>
         </FadeIn>
