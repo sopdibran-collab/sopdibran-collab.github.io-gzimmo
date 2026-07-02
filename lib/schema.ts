@@ -1,5 +1,6 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { faqItems } from "@/data/faq";
+import { featuredGoogleReview } from "@/data/google-reviews";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
 import { getServicePath } from "@/lib/service-paths";
@@ -163,6 +164,29 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
 
 export function organizationJsonLd() {
   return [websiteSchema(), localBusinessSchema()];
+}
+
+export function googleReviewSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: { "@id": `${company.url}/#organization` },
+    reviewBody: featuredGoogleReview.quote,
+    author: {
+      "@type": "Person",
+      name: featuredGoogleReview.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Google",
+    },
+    url: featuredGoogleReview.url,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: featuredGoogleReview.rating ?? 5,
+      bestRating: 5,
+    },
+  };
 }
 
 export function fullAddressString() {

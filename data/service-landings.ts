@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/data/faq";
+import { featuredGoogleReview } from "@/data/google-reviews";
 import { getServicePath } from "@/lib/service-paths";
 
 export type ServiceLanding = {
@@ -147,18 +148,7 @@ export const serviceLandings: ServiceLanding[] = [
       { label: "Nettoyage fin de bail à Fribourg", href: "/seo/nettoyage-fribourg" },
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
     ],
-    testimonials: [
-      {
-        quote:
-          "Excellent travail pour notre état des lieux — la régie a validé sans aucune remarque. Équipe ponctuelle, discrète et très professionnelle.",
-        author: "Client particulier, Fribourg",
-      },
-      {
-        quote:
-          "Nous faisons appel à Gzimmo pour tous nos fins de bail en Glâne. Résultat constant, devis clair, jamais de mauvaise surprise.",
-        author: "Régie immobilière, Romont",
-      },
-    ],
+    testimonials: [],
   },
   {
     slug: "nettoyage-apres-chantier",
@@ -200,7 +190,12 @@ export const serviceLandings: ServiceLanding[] = [
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
       { label: "Entreprise de nettoyage à Fribourg", href: "/seo/nettoyage-fribourg" },
     ],
-    testimonials: [],
+    testimonials: [
+      {
+        quote: featuredGoogleReview.quote,
+        author: featuredGoogleReview.author,
+      },
+    ],
   },
   {
     slug: "nettoyage-bureaux",

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ServiceLanding } from "@/data/service-landings";
 import { getRelatedServices } from "@/data/service-landings";
+import { featuredGoogleReview } from "@/data/google-reviews";
+import { StarRating } from "@/components/ui/StarRating";
 import { getServiceBySlug } from "@/data/services";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { FaqList } from "@/components/content/FaqList";
@@ -156,7 +158,30 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   key={item.author}
                   className="rounded-xl border border-border/80 bg-white/70 p-6"
                 >
-                  <blockquote className="text-muted leading-relaxed">&ldquo;{item.quote}&rdquo;</blockquote>
+                  <div className="mb-4 flex flex-wrap items-center gap-3">
+                    {featuredGoogleReview.rating ? (
+                      <StarRating
+                        rating={featuredGoogleReview.rating}
+                        className="text-sm tracking-[0.12em]"
+                      />
+                    ) : null}
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 px-2.5 py-1 text-xs font-medium text-foreground">
+                      Avis Google
+                    </span>
+                    {landing.slug === "nettoyage-apres-chantier" ? (
+                      <a
+                        href={featuredGoogleReview.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-muted transition-colors hover:text-accent"
+                      >
+                        Voir sur Google →
+                      </a>
+                    ) : null}
+                  </div>
+                  <blockquote className="whitespace-pre-line text-sm text-muted leading-relaxed">
+                    &ldquo;{item.quote}&rdquo;
+                  </blockquote>
                   <figcaption className="mt-4 text-sm font-medium text-foreground">
                     — {item.author}
                   </figcaption>

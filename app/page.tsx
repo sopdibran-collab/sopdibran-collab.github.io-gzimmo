@@ -1,6 +1,6 @@
 import { homepageFaq } from "@/data/faq";
 import { createMetadata } from "@/lib/metadata";
-import { faqPageSchema } from "@/lib/schema";
+import { faqPageSchema, googleReviewSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { AccentLine } from "@/components/ui/Badge";
 import { Badge } from "@/components/ui/Badge";
@@ -28,7 +28,7 @@ export const metadata = createMetadata({
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={faqPageSchema(homepageFaq)} />
+      <JsonLd data={[faqPageSchema(homepageFaq), googleReviewSchema()]} />
 
       <Section variant="hero" className="pb-0">
         <FadeIn>
