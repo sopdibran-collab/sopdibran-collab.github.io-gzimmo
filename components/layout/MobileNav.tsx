@@ -4,9 +4,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { mainNav } from "@/data/navigation";
+import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
-export function MobileNav() {
+export function MobileNav({
+  callHref,
+  mailHref,
+}: {
+  callHref: string;
+  mailHref: string;
+}) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -50,20 +58,46 @@ export function MobileNav() {
       />
       <div
         id="mobile-menu"
-        className="fixed inset-x-0 top-16 z-[210] max-h-[calc(100vh-4rem)] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-[#ffffff] px-container py-6 shadow-[0_24px_48px_rgba(30,34,39,0.14)]"
+        className="fixed inset-x-0 top-[4.5rem] z-[210] max-h-[calc(100vh-4.5rem)] max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain border-t border-border bg-[#ffffff] px-container py-8 shadow-[0_24px_48px_rgba(30,34,39,0.14)] sm:top-20 sm:max-h-[calc(100vh-5rem)] sm:max-h-[calc(100dvh-5rem)]"
       >
-        <nav className="flex flex-col gap-4" aria-label="Navigation mobile">
+        <div className="mb-8">
+          <Logo className="w-[min(80vw,260px)] max-h-14" />
+        </div>
+
+        <nav className="flex flex-col gap-5" aria-label="Navigation mobile">
           {mainNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-display text-lg font-semibold text-foreground"
+              className="font-display text-xl font-semibold text-foreground"
               onClick={() => setOpen(false)}
             >
               {item.label}
             </Link>
           ))}
         </nav>
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-8">
+          <Button href="/contact" onClick={() => setOpen(false)}>
+            Demander un devis
+          </Button>
+          <Button
+            variant="secondary"
+            href={callHref}
+            external
+            onClick={() => setOpen(false)}
+          >
+            Appeler
+          </Button>
+          <Button
+            variant="secondary"
+            href={mailHref}
+            external
+            onClick={() => setOpen(false)}
+          >
+            Écrire un e-mail
+          </Button>
+        </div>
       </div>
     </>
   ) : null;
@@ -75,7 +109,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-        className="relative z-[220] flex h-10 w-10 items-center justify-center rounded-md border border-border bg-[#ffffff]"
+        className="relative z-[220] flex h-11 w-11 items-center justify-center rounded-md border border-border bg-[#ffffff]"
         onClick={() => setOpen((v) => !v)}
       >
         <span className="sr-only">Menu</span>
