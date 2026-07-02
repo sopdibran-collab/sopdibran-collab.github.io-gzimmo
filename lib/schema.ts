@@ -1,5 +1,5 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
-import { faqItems } from "@/data/faq";
+import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
 import { featuredGoogleReview } from "@/data/google-reviews";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
@@ -88,11 +88,15 @@ export function websiteSchema() {
   };
 }
 
-export function faqPageSchema(items = faqItems) {
+export function faqPageSchema(items: readonly (FaqItem | FaqContent)[] = faqItems) {
+  const normalized = items.every((item) => "id" in item)
+    ? (items as FaqItem[])
+    : normalizeFaqItems(items);
+
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
+    mainEntity: normalized.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {

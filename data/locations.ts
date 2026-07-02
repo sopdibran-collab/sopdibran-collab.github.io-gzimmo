@@ -1,4 +1,5 @@
-import type { FaqItem } from "@/data/faq";
+import type { FaqContent } from "@/data/faq";
+import { faq, getFaqsByIds } from "@/data/faq";
 
 export type Location = {
   slug: string;
@@ -15,10 +16,10 @@ export type Location = {
   nearbyCommunes: string[];
   servicesHighlight: string[];
   sections: { title: string; body: string }[];
-  faqs: FaqItem[];
+  faqs: FaqContent[];
 };
 
-const romontFaqs: FaqItem[] = [
+const romontFaqs: FaqContent[] = [
   {
     question: "Quelle entreprise de nettoyage appeler à Romont (FR) ?",
     answer:

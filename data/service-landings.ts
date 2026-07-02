@@ -1,4 +1,5 @@
-import type { FaqItem } from "@/data/faq";
+import type { FaqContent, FaqItem } from "@/data/faq";
+import { faq, getFaqById, getFaqsByIds } from "@/data/faq";
 import { featuredGoogleReview } from "@/data/google-reviews";
 import { getServicePath } from "@/lib/service-paths";
 
@@ -13,7 +14,7 @@ export type ServiceLanding = {
   guarantee?: { title: string; paragraphs: string[] };
   process: { title: string; items: string[] };
   whyGzimmo: { title: string; description: string }[];
-  faqs: FaqItem[];
+  faqs: readonly (FaqItem | FaqContent)[];
   relatedServiceSlugs: string[];
   relatedLocalLinks: { label: string; href: string }[];
   testimonials: { quote: string; author: string }[];
@@ -37,23 +38,7 @@ const sharedWhy = [
   },
 ];
 
-const sharedFaqs: FaqItem[] = [
-  {
-    question: "Intervenez-vous dans toute la Suisse romande ?",
-    answer:
-      "Oui. Nos équipes se déplacent depuis notre siège à Romont (FR) pour couvrir l'ensemble de la Suisse romande : canton de Fribourg, Vaud, Genève, Neuchâtel et Valais romand.",
-  },
-  {
-    question: "Fournissez-vous les produits de nettoyage ?",
-    answer:
-      "Oui. Gzimmo fournit tous les produits nécessaires à l'intervention — exclusivement professionnels, sélectionnés pour respecter chaque type de surface sans l'abîmer.",
-  },
-  {
-    question: "Le devis est-il gratuit ?",
-    answer:
-      "Oui, sans engagement. Décrivez votre besoin par téléphone, e-mail ou formulaire — nous répondons sous 24 heures avec une proposition claire.",
-  },
-];
+const sharedFaqs = getFaqsByIds(["zone-suisse-romande", "produits-fournis", "devis-gratuit"]);
 
 export const serviceLandings: ServiceLanding[] = [
   {
@@ -117,26 +102,25 @@ export const serviceLandings: ServiceLanding[] = [
     ],
     faqs: [
       ...sharedFaqs,
-      {
-        question: "Que se passe-t-il si la régie n'est pas satisfaite ?",
-        answer:
-          "Gzimmo applique une garantie de remise de bail. Si un point ne correspond pas aux exigences de la régie lors de l'état des lieux, nous revenons corriger sans frais supplémentaires. Notre objectif est un état des lieux validé du premier coup.",
-      },
-      {
-        question: "Combien coûte un nettoyage fin de bail ?",
-        answer:
-          "Le tarif dépend de la surface, du nombre de pièces, de l'état du logement et des exigences de votre régie. Gzimmo établit un devis gratuit et personnalisé avant toute intervention. Contactez-nous au 076 214 23 42 ou via info@gzimmo.ch.",
-      },
-      {
-        question: "Combien de temps à l'avance dois-je vous contacter ?",
-        answer:
-          "Idéalement 1 à 2 semaines avant la date de l'état des lieux. En cas d'urgence, contactez-nous — nous faisons notre maximum pour intervenir dans les délais.",
-      },
-      {
-        question: "Travaillez-vous directement avec les régies immobilières ?",
-        answer:
-          "Oui. Nous collaborons régulièrement avec des régies et agences immobilières en Suisse romande pour des nettoyages de fin de bail, d'entretien régulier et de remise en état après travaux.",
-      },
+      faq(
+        "garantie-regie",
+        "qualite",
+        "Que se passe-t-il si la régie n'est pas satisfaite ?",
+        "Gzimmo applique une garantie de remise de bail. Si un point ne correspond pas aux exigences de la régie lors de l'état des lieux, nous revenons corriger sans frais supplémentaires. Notre objectif est un état des lieux validé du premier coup.",
+      ),
+      getFaqById("cout-fin-de-bail")!,
+      faq(
+        "delai-fin-bail",
+        "delais",
+        "Combien de temps à l'avance dois-je vous contacter ?",
+        "Idéalement 1 à 2 semaines avant la date de l'état des lieux. En cas d'urgence, contactez-nous — nous faisons notre maximum pour intervenir dans les délais.",
+      ),
+      faq(
+        "regies-partenaires",
+        "zone",
+        "Travaillez-vous directement avec les régies immobilières ?",
+        "Oui. Nous collaborons régulièrement avec des régies et agences immobilières en Suisse romande pour des nettoyages de fin de bail, d'entretien régulier et de remise en état après travaux.",
+      ),
     ],
     relatedServiceSlugs: [
       "nettoyage-apres-chantier",
