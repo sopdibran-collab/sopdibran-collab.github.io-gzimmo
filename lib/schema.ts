@@ -1,6 +1,6 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
-import { featuredGoogleReview } from "@/data/google-reviews";
+import { featuredGoogleReview, type GoogleReview } from "@/data/google-reviews";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
 import { getServicePath } from "@/lib/service-paths";
@@ -190,6 +190,38 @@ export function googleReviewSchema() {
       ratingValue: featuredGoogleReview.rating ?? 5,
       bestRating: 5,
     },
+  };
+}
+
+export function googleReviewsLocalBusinessSchema(reviews: readonly GoogleReview[]) {
+  const reviewCount = reviews.length;
+  const ratingValue =
+    reviewCount > 0
+      ? reviews.reduce((sum, review) => sum + review.rating, 0) / reviewCount
+      : 5;
+
+  return {
+    ...localBusinessSchema(),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: ratingValue.toFixed(1),
+      reviewCount,
+      bestRating: 5,
+    },
+    review: reviews.map((review) => ({
+      "@type": "Review",
+      reviewBody: review.text,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: review.rating,
+        bestRating: 5,
+      },
+      author: {
+        "@type": "Person",
+        name: "Client Gzimmo",
+      },
+      url: review.url,
+    })),
   };
 }
 
