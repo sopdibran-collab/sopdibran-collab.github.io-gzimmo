@@ -1,20 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { mainNav } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
-import { Logo } from "@/components/ui/Logo";
+import { HeaderNavLink } from "@/components/layout/HeaderNavLink";
 import { cn } from "@/lib/utils";
 
-export function MobileNav({
-  callHref,
-  mailHref,
-}: {
+type MobileNavProps = {
   callHref: string;
-  mailHref: string;
-}) {
+};
+
+export function MobileNav({ callHref }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -28,6 +25,7 @@ export function MobileNav({
       document.body.style.position = "";
       document.body.style.inset = "";
       document.body.style.width = "";
+      document.body.style.top = "";
       return;
     }
 
@@ -53,33 +51,28 @@ export function MobileNav({
       <button
         type="button"
         aria-label="Fermer le menu"
-        className="fixed inset-0 z-[200] bg-[#1e2227]/25"
+        className="fixed inset-0 z-[200] bg-[#1e2227]/20 backdrop-blur-[1px]"
         onClick={() => setOpen(false)}
       />
       <div
         id="mobile-menu"
-        className="fixed inset-x-0 top-[4.5rem] z-[210] max-h-[calc(100vh-4.5rem)] max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain border-t border-border bg-[#ffffff] px-container py-8 shadow-[0_24px_48px_rgba(30,34,39,0.14)] sm:top-20 sm:max-h-[calc(100vh-5rem)] sm:max-h-[calc(100dvh-5rem)]"
+        className="fixed inset-x-0 top-16 z-[210] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-[#ffffff] px-container py-8"
       >
-        <div className="mb-8">
-          <Logo className="w-[min(80vw,260px)] max-h-14" />
-        </div>
-
-        <nav className="flex flex-col gap-5" aria-label="Navigation mobile">
+        <nav className="flex flex-col gap-1" aria-label="Navigation mobile">
           {mainNav.map((item) => (
-            <Link
+            <HeaderNavLink
               key={item.href}
               href={item.href}
-              className="font-display text-xl font-semibold text-foreground"
+              label={item.label}
               onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
+              className="py-3.5 font-display text-lg font-semibold"
+            />
           ))}
         </nav>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-8">
+        <div className="mt-8 flex flex-col gap-2.5 border-t border-border pt-8">
           <Button href="/contact" onClick={() => setOpen(false)}>
-            Demander un devis
+            Devis gratuit
           </Button>
           <Button
             variant="secondary"
@@ -89,46 +82,38 @@ export function MobileNav({
           >
             Appeler
           </Button>
-          <Button
-            variant="secondary"
-            href={mailHref}
-            external
-            onClick={() => setOpen(false)}
-          >
-            Écrire un e-mail
-          </Button>
         </div>
       </div>
     </>
   ) : null;
 
   return (
-    <div className="lg:hidden">
+    <>
       <button
         type="button"
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-        className="relative z-[220] flex h-11 w-11 items-center justify-center rounded-md border border-border bg-[#ffffff]"
-        onClick={() => setOpen((v) => !v)}
+        className="relative z-[220] flex h-10 w-10 items-center justify-center rounded-md border border-border bg-[#ffffff] text-foreground transition-colors hover:border-foreground/15 hover:bg-surface"
+        onClick={() => setOpen((value) => !value)}
       >
         <span className="sr-only">Menu</span>
         <span className="flex flex-col gap-1.5" aria-hidden="true">
           <span
             className={cn(
-              "block h-0.5 w-5 bg-foreground transition-transform duration-200",
+              "block h-0.5 w-5 bg-current transition-transform duration-200",
               open && "translate-y-2 rotate-45",
             )}
           />
           <span
             className={cn(
-              "block h-0.5 w-5 bg-foreground transition-opacity duration-200",
+              "block h-0.5 w-5 bg-current transition-opacity duration-200",
               open && "opacity-0",
             )}
           />
           <span
             className={cn(
-              "block h-0.5 w-5 bg-foreground transition-transform duration-200",
+              "block h-0.5 w-5 bg-current transition-transform duration-200",
               open && "-translate-y-2 -rotate-45",
             )}
           />
@@ -136,6 +121,6 @@ export function MobileNav({
       </button>
 
       {mounted && menu ? createPortal(menu, document.body) : null}
-    </div>
+    </>
   );
 }
