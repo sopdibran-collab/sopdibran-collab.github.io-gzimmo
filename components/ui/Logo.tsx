@@ -15,24 +15,24 @@ const sources = {
   monochrome: "/monochrome_noir.svg",
 } as const;
 
-/** Ratio réel du lockup — viewBox 3540×1160 (inclut le toit et le bas du crochet). */
-const LOGO_ASPECT = 3540 / 1160;
+/** Ratio réel du lockup après recadrage du viewBox SVG (3105×997). */
+const LOGO_ASPECT = 3105 / 997;
 
 const dimensions = {
-  horizontal: { width: 3540, height: 1160 },
-  monochrome: { width: 3540, height: 1160 },
+  horizontal: { width: 3105, height: 997 },
+  monochrome: { width: 3105, height: 997 },
 } as const;
 
 const sizes = {
   header: {
     horizontal:
-      "w-[min(68vw,200px)] max-h-9 sm:w-[min(44vw,220px)] sm:max-h-10 lg:w-[220px] lg:max-h-11",
+      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
     monochrome:
-      "w-[min(68vw,200px)] max-h-9 sm:w-[min(44vw,220px)] sm:max-h-10 lg:w-[220px] lg:max-h-11",
+      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
   },
   footer: {
-    horizontal: "w-[min(88vw,280px)] sm:w-[310px] lg:w-[352px]",
-    monochrome: "w-[min(88vw,280px)] sm:w-[310px] lg:w-[352px]",
+    horizontal: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
+    monochrome: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
   },
 } as const;
 
@@ -55,10 +55,11 @@ export function Logo({
       decoding="async"
       fetchPriority={priority ? "high" : "auto"}
       className={cn(
-        "block h-auto",
+        "block h-auto object-contain object-left",
         sizes[size][variant],
         className,
       )}
+      style={{ aspectRatio: LOGO_ASPECT }}
     />
   );
 
