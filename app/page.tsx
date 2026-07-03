@@ -1,6 +1,7 @@
 import { homepageFaq } from "@/data/faq";
+import { googleReviews } from "@/data/google-reviews";
 import { createMetadata } from "@/lib/metadata";
-import { faqPageSchema, googleReviewSchema } from "@/lib/schema";
+import { faqPageSchema, googleReviewsLocalBusinessSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { AccentLine } from "@/components/ui/Badge";
 import { Badge } from "@/components/ui/Badge";
@@ -11,7 +12,7 @@ import { ServiceCardGrid } from "@/components/content/ServiceCardGrid";
 import { WhyList } from "@/components/content/WhyList";
 import { StatsBand } from "@/components/content/StatsBand";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
-import { Testimonial } from "@/components/content/Testimonial";
+import { GoogleReviewsSlider } from "@/components/content/GoogleReviewsSlider";
 import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { ContactCta } from "@/components/content/ContactCta";
 import { HomeZoneGrid } from "@/components/content/HomeZoneGrid";
@@ -28,7 +29,9 @@ export const metadata = createMetadata({
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={[faqPageSchema(homepageFaq), googleReviewSchema()]} />
+      <JsonLd
+        data={[faqPageSchema(homepageFaq), googleReviewsLocalBusinessSchema(googleReviews)]}
+      />
 
       <Section variant="hero" className="pb-0">
         <FadeIn>
@@ -73,7 +76,21 @@ export default function HomePage() {
       </Section>
 
       <Section variant="surface">
-        <Testimonial />
+        <FadeIn>
+          <Badge>Avis clients</Badge>
+          <h2 className="mt-4 font-display text-display-md text-foreground">
+            Ce que disent nos clients
+          </h2>
+          <p className="mt-4 max-w-xl text-muted leading-relaxed">
+            Retours authentiques recueillis sur Google — nettoyage professionnel en Suisse romande.
+          </p>
+        </FadeIn>
+        <div className="mt-10">
+          <GoogleReviewsSlider reviews={googleReviews} />
+        </div>
+        <div className="mt-8 text-center">
+          <TextLink href="/avis">Tous les avis clients</TextLink>
+        </div>
       </Section>
 
       <Section variant="default">

@@ -13,6 +13,7 @@ export const footerNav = {
     { label: "Services", href: "/services" },
     { label: "Zones d'intervention", href: "/zones" },
     { label: "Réalisations", href: "/realisations" },
+    { label: "Avis clients", href: "/avis" },
     { label: "À propos", href: "/a-propos" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
