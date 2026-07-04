@@ -5,6 +5,10 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 import { JsonLd, PlausibleScript } from "@/components/seo/JsonLd";
+import {
+  GoogleTagManagerNoscript,
+  GoogleTagManagerScript,
+} from "@/components/seo/GoogleTagManager";
 import { organizationJsonLd } from "@/lib/schema";
 import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
@@ -38,9 +42,11 @@ export default function RootLayout({
   return (
     <html lang="fr-CH" className={`${inter.variable} ${sora.variable}`}>
       <head>
+        <GoogleTagManagerScript />
         <PlausibleScript />
       </head>
       <body className="min-h-screen antialiased pb-20 lg:pb-0">
+        <GoogleTagManagerNoscript />
         <JsonLd data={organizationJsonLd()} />
         <Header />
         <main>{children}</main>
