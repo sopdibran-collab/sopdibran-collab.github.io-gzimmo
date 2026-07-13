@@ -13,8 +13,8 @@ export function HomeZoneGrid() {
           Nous intervenons dans toute la Suisse romande
         </h2>
         <p className="mt-4 max-w-xl text-muted leading-relaxed">
-          Depuis notre siège à Romont (FR), nos équipes couvrent Fribourg, Vaud, Genève,
-          Neuchâtel et le Valais romand.
+          Depuis notre siège à Romont (FR), nos équipes couvrent en priorité le canton de Fribourg
+          et le canton de Vaud, puis la Suisse romande.
         </p>
       </FadeIn>
 

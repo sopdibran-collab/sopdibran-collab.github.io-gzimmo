@@ -89,6 +89,24 @@ export function LocalSeoBody({ location }: { location: Location }) {
         </div>
       ) : null}
 
+      {location.priorityLinks && location.priorityLinks.length > 0 ? (
+        <div className="mt-10">
+          <p className="text-sm font-medium text-foreground">Pages utiles</p>
+          <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            {location.priorityLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  {link.label} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       {location.faqs.length > 0 ? (
         <div className="mt-16 border-t border-border/80 pt-16">
           <Badge className="text-accent/90">FAQ</Badge>

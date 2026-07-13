@@ -106,7 +106,7 @@ export const services: Service[] = [
     description:
       "Nettoyage de fin de bail conforme aux exigences des régies et propriétaires.",
     intro:
-      "Un état des lieux facilité grâce à un nettoyage complet et méthodique.",
+      "Vous avez un déménagement à gérer ? Laissez-nous nous occuper du nettoyage de fin de bail — conforme aux régies, sans stress à l'état des lieux.",
     benefits: [
       "Checklist rigoureuse",
       "Respect des standards de restitution",
@@ -160,6 +160,27 @@ export const services: Service[] = [
       width: 1500,
       height: 1000,
       objectPosition: "center 45%",
+    },
+  },
+  {
+    slug: "conciergerie",
+    title: "Services de conciergerie",
+    shortTitle: "Conciergerie",
+    description:
+      "Conciergerie pour régies et immeubles en Fribourg et Vaud — parties communes, coordination et réactivité.",
+    intro:
+      "Un interlocuteur de confiance pour vos immeubles : entretien des espaces communs, coordination des prestataires et suivi au quotidien.",
+    benefits: [
+      "Point de contact unique pour la régie",
+      "Entretien régulier des parties communes",
+      "Réactivité et discrétion sur site",
+    ],
+    image: {
+      src: "/images/services/entretien-locaux.webp",
+      alt: "Conciergerie et entretien d'immeuble",
+      width: 1500,
+      height: 919,
+      objectPosition: "center 55%",
     },
   },
 ];

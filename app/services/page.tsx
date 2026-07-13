@@ -9,7 +9,7 @@ import { ServiceCatalogList, ServiceCatalogFooter } from "@/components/content/S
 export const metadata = createMetadata({
   title: "Services de nettoyage",
   description:
-    "Découvrez les services de nettoyage professionnel Gzimmo : entretien de locaux, appartements, bureaux, fin de bail, après chantier et vitres en Suisse romande.",
+    "Découvrez les services Gzimmo : entretien de locaux, conciergerie, fin de bail, après chantier, bureaux et vitres — priorité Fribourg et Vaud.",
   path: "/services",
 });
 

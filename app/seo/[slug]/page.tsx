@@ -14,6 +14,7 @@ import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { LocalAreaLinks, LocalSeoBody } from "@/components/seo/LocalSeoContent";
 import { TextLink } from "@/components/ui/TextLink";
+import { ConversionCta } from "@/components/ui/ConversionCta";
 import { Badge } from "@/components/ui/Badge";
 import { ContentCard } from "@/components/ui/ContentCard";
 
@@ -65,7 +66,9 @@ export default async function LocalSeoPage({ params }: Props) {
             { label: location.city },
           ]}
         />
-        <PageIntro badge={location.cantonName} title={location.title} description={location.intro} />
+        <PageIntro badge={location.cantonName} title={location.title} description={location.intro}>
+          <ConversionCta devisHref={`/contact?ville=${location.city}`} />
+        </PageIntro>
       </PageHero>
 
       <PageMain variant="surface">

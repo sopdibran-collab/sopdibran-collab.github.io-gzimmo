@@ -53,7 +53,41 @@ export function Footer() {
           <div>
             <p className="mb-4 text-sm font-medium text-foreground">Romont &amp; région</p>
             <ul className="space-y-3">
-              {romontRegionLocations.map((loc) => (
+              <li>
+                <Link
+                  href="/entreprise-nettoyage-romont"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Entreprise de nettoyage Romont
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/conciergerie"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Conciergerie régies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/nettoyage-fin-de-bail-romont"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Fin de bail Romont
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/nettoyage-fin-de-bail-fribourg"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Fin de bail Fribourg
+                </Link>
+              </li>
+              {romontRegionLocations
+                .filter((loc) => !loc.isHeadquarters)
+                .map((loc) => (
                 <li key={loc.slug}>
                   <Link
                     href={`/seo/${loc.slug}`}

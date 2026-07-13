@@ -8,6 +8,7 @@ const serviceSlugs = [
   "nettoyage-fin-de-bail",
   "nettoyage-bureaux",
   "nettoyage-vitres",
+  "conciergerie",
 ] as const;
 
 const serviceRedirects = serviceSlugs.map((slug) => ({
@@ -21,7 +22,25 @@ const nextConfig: NextConfig = {
     formats: ["image/webp"],
   },
   async redirects() {
-    return serviceRedirects;
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.gzimmo.ch" }],
+        destination: "https://gzimmo.ch/:path*",
+        permanent: true,
+      },
+      {
+        source: "/entreprise-nettoyage-romont",
+        destination: "/seo/nettoyage-romont",
+        permanent: true,
+      },
+      {
+        source: "/seo/nettoyage-sion",
+        destination: "/zones",
+        permanent: true,
+      },
+      ...serviceRedirects,
+    ];
   },
 };
 

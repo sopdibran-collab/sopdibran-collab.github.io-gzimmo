@@ -9,9 +9,9 @@ import { GoogleMap, GoogleMapsLink } from "@/components/seo/GoogleMap";
 import { SectionDivider } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Contact",
+  title: "Contact — devis gratuit sous 24 h",
   description:
-    "Contactez Gzimmo pour un devis gratuit de nettoyage professionnel en Suisse romande. Réponse sous 24 heures.",
+    "Devis gratuit de nettoyage à Romont et en Suisse romande. Gzimmo Sàrl — réponse sous 24 h. 076 214 23 42 · info@gzimmo.ch",
   path: "/contact",
 });
 

@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/Badge";
 import { ConversionCta } from "@/components/ui/ConversionCta";
 import { ReassuranceBand } from "@/components/ui/ReassuranceBand";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { ServiceCardGrid } from "@/components/content/ServiceCardGrid";
+import { ServiceList } from "@/components/content/ServiceList";
 import { WhyList } from "@/components/content/WhyList";
 import { StatsBand } from "@/components/content/StatsBand";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
@@ -16,6 +16,7 @@ import { GoogleReviewsSlider } from "@/components/content/GoogleReviewsSlider";
 import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { ContactCta } from "@/components/content/ContactCta";
 import { HomeZoneGrid } from "@/components/content/HomeZoneGrid";
+import { LocalMoneyLinks } from "@/components/content/LocalMoneyLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TextLink } from "@/components/ui/TextLink";
 
@@ -43,8 +44,8 @@ export default function HomePage() {
               pour l&apos;immobilier en Suisse romande
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted leading-relaxed">
-              Fins de bail, régies, chantiers, bureaux — une équipe experte des exigences
-              immobilières, basée à Romont. Devis gratuit, réponse sous 24 h.
+              Fins de bail, régies, chantiers, bureaux — une équipe experte basée à Romont,
+              priorité canton de Fribourg et canton de Vaud. Devis gratuit, réponse sous 24 h.
             </p>
 
             <ConversionCta className="mt-10" />
@@ -56,7 +57,8 @@ export default function HomePage() {
       </Section>
 
       <Section variant="accent">
-        <ServiceCardGrid />
+        <ServiceList showIntro={false} />
+        <LocalMoneyLinks />
       </Section>
 
       <Section variant="surface">

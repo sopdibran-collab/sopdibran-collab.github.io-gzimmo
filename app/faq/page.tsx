@@ -8,9 +8,9 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ConversionCta } from "@/components/ui/ConversionCta";
 
 export const metadata = createMetadata({
-  title: "Questions fréquentes",
+  title: "FAQ nettoyage — tarifs, zone, délais",
   description:
-    "FAQ Gzimmo Sàrl : tarifs, zone d'intervention, prestations, délais et assurances. Nettoyage professionnel en Suisse romande. Devis gratuit sous 24 h.",
+    "FAQ Gzimmo : tarifs fin de bail, zone Romont & Suisse romande, délais et garanties. Devis gratuit — 076 214 23 42.",
   path: "/faq",
 });
 

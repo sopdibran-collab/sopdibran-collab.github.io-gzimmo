@@ -45,12 +45,12 @@ export const serviceLandings: ServiceLanding[] = [
     slug: "nettoyage-fin-de-bail",
     h1: "Nettoyage de fin de bail avec garantie en Suisse romande",
     subtitle:
-      "Confiez votre état des lieux à des professionnels. Service conforme aux exigences strictes des régies immobilières et des propriétaires.",
-    metaTitle: "Nettoyage de fin de bail avec garantie en Suisse romande",
+      "Vous déménagez ? Laissez-nous nous occuper du nettoyage pendant que vous avancez. Service conforme aux exigences des régies immobilières.",
+    metaTitle: "Nettoyage fin de bail — devis gratuit | Garantie régie",
     metaDescription:
-      "Nettoyage fin de bail conforme aux exigences des régies immobilières. Devis gratuit, garantie de remise de bail. Intervention depuis Romont dans toute la Suisse romande. 076 214 23 42.",
+      "Vous déménagez ? On s'occupe du nettoyage fin de bail. Conforme aux régies, devis gratuit sous 24 h, garantie remise de bail. Gzimmo Romont — 076 214 23 42.",
     intro:
-      "En Suisse romande, la restitution d'un logement est une étape décisive. Une régie exigeante, un propriétaire attentif, un état des lieux qui peut coûter cher si le nettoyage n'est pas à la hauteur. Gzimmo Sàrl intervient depuis son siège à Romont (FR) pour des nettoyages de fin de bail rigoureux, méthodiques et conformes aux standards des régies immobilières. Sanitaires impeccables, cuisines dégraissées, sols lessivés, vitres sans traces — chaque intervention suit une checklist précise, établie avant le début des travaux.",
+      "Un déménagement, c'est déjà assez de stress. Confiez-nous le nettoyage de fin de bail : Gzimmo Sàrl intervient depuis Romont (FR) avec une checklist rigoureuse, adaptée aux standards des régies fribourgeoises et vaudoises. Sanitaires impeccables, cuisines dégraissées, sols lessivés, vitres sans traces — pendant que vous finalisez votre installation, nous préparons la remise des clés.",
     forWho: [
       {
         profile: "Locataires",
@@ -128,8 +128,8 @@ export const serviceLandings: ServiceLanding[] = [
       "entretien-locaux",
     ],
     relatedLocalLinks: [
-      { label: "Nettoyage fin de bail à Romont", href: "/seo/nettoyage-romont" },
-      { label: "Nettoyage fin de bail à Fribourg", href: "/seo/nettoyage-fribourg" },
+      { label: "Nettoyage fin de bail à Romont", href: "/nettoyage-fin-de-bail-romont" },
+      { label: "Nettoyage fin de bail à Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
     ],
     testimonials: [],
@@ -355,6 +355,70 @@ export const serviceLandings: ServiceLanding[] = [
     relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
+    ],
+    testimonials: [],
+  },
+  {
+    slug: "conciergerie",
+    h1: "Services de conciergerie pour régies et immeubles",
+    subtitle:
+      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien en Fribourg et Vaud.",
+    metaTitle: "Conciergerie pour régies — Fribourg & Vaud",
+    metaDescription:
+      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Gzimmo Sàrl, Romont — devis gratuit. 076 214 23 42.",
+    intro:
+      "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
+    forWho: [
+      {
+        profile: "Régies immobilières",
+        situation:
+          "Vous gérez un ou plusieurs immeubles et cherchez un partenaire pour l'entretien courant et la coordination.",
+      },
+      {
+        profile: "Syndics et PPE",
+        situation: "Vous souhaitez externaliser le suivi des parties communes avec un prestataire local.",
+      },
+      {
+        profile: "Propriétaires institutionnels",
+        situation: "Vous avez besoin d'une présence régulière et d'un interlocuteur unique sur site.",
+      },
+    ],
+    process: {
+      title: "Notre accompagnement conciergerie inclut :",
+      items: [
+        "Entretien planifié des halls, cages d'escalier et espaces communs.",
+        "Coordination avec les autres corps de métier et prestataires du bâtiment.",
+        "Remontée des besoins et interventions ponctuelles selon votre planning.",
+        "Discrétion et respect des consignes de la régie.",
+        "Devis transparent et facturation claire.",
+      ],
+    },
+    whyGzimmo: [
+      {
+        title: "Basés à Romont, actifs en Fribourg et Vaud",
+        description:
+          "Proximité avec les immeubles de la Glâne, de Fribourg et du canton de Vaud — réactivité et suivi de proximité.",
+      },
+      ...sharedWhy,
+    ],
+    faqs: [
+      ...sharedFaqs,
+      {
+        question: "Proposez-vous la conciergerie en complément du nettoyage ?",
+        answer:
+          "Oui. La conciergerie peut être combinée à l'entretien de locaux, au nettoyage des parties communes ou à des prestations ponctuelles selon votre immeuble.",
+      },
+      {
+        question: "Intervenez-vous pour des régies à Fribourg et dans le canton de Vaud ?",
+        answer:
+          "Oui. Notre priorité géographique est le canton de Fribourg (Romont, Glâne, Fribourg) et le canton de Vaud (Lausanne, Morges, Yverdon et agglomérations).",
+      },
+    ],
+    relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],
+    relatedLocalLinks: [
+      { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
+      { label: "Nettoyage à Fribourg", href: "/seo/nettoyage-fribourg" },
+      { label: "Nettoyage à Lausanne", href: "/seo/nettoyage-lausanne" },
     ],
     testimonials: [],
   },

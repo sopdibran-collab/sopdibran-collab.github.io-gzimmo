@@ -1,9 +1,9 @@
-/** Villes mises en avant sur la homepage — liens vers pages locales SEO existantes. */
+/** Villes mises en avant — priorité Romont, canton de Fribourg et canton de Vaud. */
 export const homepageZones = [
   {
     city: "Romont",
     label: "Romont",
-    href: "/seo/nettoyage-romont",
+    href: "/entreprise-nettoyage-romont",
     note: "Siège",
   },
   {
@@ -12,23 +12,23 @@ export const homepageZones = [
     href: "/seo/nettoyage-fribourg",
   },
   {
+    city: "Bulle",
+    label: "Bulle · Gruyère",
+    href: "/seo/nettoyage-bulle",
+  },
+  {
     city: "Lausanne",
     label: "Lausanne",
     href: "/seo/nettoyage-lausanne",
   },
   {
-    city: "Genève",
-    label: "Genève",
-    href: "/seo/nettoyage-geneve",
+    city: "Yverdon-les-Bains",
+    label: "Yverdon-les-Bains",
+    href: "/seo/nettoyage-yverdon-les-bains",
   },
   {
-    city: "Neuchâtel",
-    label: "Neuchâtel",
-    href: "/seo/nettoyage-neuchatel",
-  },
-  {
-    city: "Sion",
-    label: "Sion",
-    href: "/seo/nettoyage-sion",
+    city: "Morges",
+    label: "Morges",
+    href: "/seo/nettoyage-morges",
   },
 ] as const;

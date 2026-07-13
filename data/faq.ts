@@ -82,7 +82,7 @@ export const faqItems: FaqItem[] = [
     id: "zone-suisse-romande",
     category: "zone",
     question: "Quelle zone couvrez-vous en Suisse romande ?",
-    answer: `Gzimmo intervient dans toute la Suisse romande : canton de Fribourg (Romont, Glâne, Broye, Gruyère), Vaud, Genève, Neuchâtel et Valais romand. Siège : ${siege}.`,
+    answer: `Gzimmo intervient en priorité dans le canton de Fribourg (Romont, Glâne, Broye, Gruyère) et le canton de Vaud (Lausanne, Morges, Yverdon). Siège : ${siege}.`,
   },
   {
     id: "entreprise-romont",

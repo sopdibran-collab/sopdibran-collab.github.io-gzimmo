@@ -37,7 +37,6 @@ export function localBusinessSchema() {
       { "@type": "AdministrativeArea", name: "Canton de Vaud" },
       { "@type": "AdministrativeArea", name: "Canton de Genève" },
       { "@type": "AdministrativeArea", name: "Canton de Neuchâtel" },
-      { "@type": "AdministrativeArea", name: "Valais romand" },
       ...locations.map((loc) => ({
         "@type": "City",
         name: loc.city,

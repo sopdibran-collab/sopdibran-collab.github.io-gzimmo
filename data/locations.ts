@@ -17,6 +17,7 @@ export type Location = {
   servicesHighlight: string[];
   sections: { title: string; body: string }[];
   faqs: FaqContent[];
+  priorityLinks?: { label: string; href: string }[];
 };
 
 const romontFaqs: FaqContent[] = [
@@ -49,9 +50,9 @@ export const locations: Location[] = [
     canton: "FR",
     cantonName: "Fribourg",
     district: "Glâne",
-    title: "Entreprise de nettoyage à Romont (FR)",
+    title: "Entreprise de nettoyage à Romont (FR) — Gzimmo Sàrl",
     description:
-      "Gzimmo Sàrl : entreprise de nettoyage à Romont, Route de Raboud 8. Fin de bail, bureaux, après chantier. Devis gratuit, intervention rapide en Glâne.",
+      "Entreprise de nettoyage à Romont, Route de Raboud 8. Fin de bail, bureaux, après chantier en Glâne. Devis gratuit — 076 214 23 42.",
     intro:
       "Basée à Romont, Gzimmo est votre entreprise de nettoyage de proximité en Glâne — équipe expérimentée, finitions soignées, devis gratuit sous 24 h.",
     geo: { latitude: 46.6917, longitude: 6.9111 },
@@ -70,6 +71,7 @@ export const locations: Location[] = [
       "Nettoyage fin de bail",
       "Entretien de bureaux",
       "Nettoyage après chantier",
+      "Conciergerie régies",
       "Nettoyage d'appartements",
     ],
     sections: [
@@ -85,8 +87,18 @@ export const locations: Location[] = [
         title: "Pourquoi choisir Gzimmo à Romont ?",
         body: "Une équipe qui cumule plus de 15 ans d'expérience dans le nettoyage professionnel, des produits de qualité, un devis gratuit et une réponse rapide. Nous traitons chaque espace avec la précision qu'exigent les surfaces modernes.",
       },
+      {
+        title: "Nettoyage fin de bail à Romont et en Glâne",
+        body: "Notre prestation phare en zone locale : fin de bail conforme aux régies fribourgeoises, avec garantie de remise de bail. Intervention rapide depuis notre siège Route de Raboud 8 — idéal pour les locataires et régies de Romont, Vuisternens, Ursy et Estavayer.",
+      },
     ],
     faqs: romontFaqs,
+    priorityLinks: [
+      { label: "Nettoyage fin de bail à Romont", href: "/nettoyage-fin-de-bail-romont" },
+      { label: "Conciergerie pour régies", href: "/conciergerie" },
+      { label: "Nettoyage fin de bail — toute la Suisse romande", href: "/nettoyage-fin-de-bail" },
+      { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
+    ],
   },
   {
     slug: "nettoyage-estavayer",
@@ -190,9 +202,9 @@ export const locations: Location[] = [
     canton: "FR",
     cantonName: "Fribourg",
     district: "Sarine",
-    title: "Nettoyage professionnel à Fribourg",
+    title: "Nettoyage professionnel à Fribourg — Gzimmo Sàrl",
     description:
-      "Nettoyage professionnel à Fribourg et agglomération. Gzimmo, basé à Romont : bureaux, fin de bail, après chantier. Devis gratuit.",
+      "Nettoyage professionnel à Fribourg et agglomération. Fin de bail, bureaux, après chantier depuis Romont. Devis gratuit sous 24 h — 076 214 23 42.",
     intro:
       "Depuis Romont, nous couvrons Fribourg et son agglomération avec des prestations de nettoyage professionnel planifiées et soignées.",
     geo: { latitude: 46.8065, longitude: 7.1619 },
@@ -208,6 +220,10 @@ export const locations: Location[] = [
         title: "Depuis Romont, pour Fribourg",
         body: "Notre siège à Romont est idéalement situé pour desservir Fribourg et l'ensemble du canton. Même équipe, même exigence, devis gratuit sous 24 h.",
       },
+      {
+        title: "Fin de bail à Fribourg et agglomération",
+        body: "Nous réalisons des nettoyages de fin de bail conformes aux standards des régies fribourgeoises : sanitaires, cuisines, sols, vitres et détails souvent oubliés. Garantie de remise de bail incluse.",
+      },
     ],
     faqs: [
       {
@@ -215,6 +231,15 @@ export const locations: Location[] = [
         answer:
           "Oui : Fribourg, Marly, Villars-sur-Glâne, Givisiez et les communes limitrophes.",
       },
+      {
+        question: "Proposez-vous le nettoyage fin de bail à Fribourg ?",
+        answer:
+          "Oui. Nous intervenons régulièrement à Fribourg pour des fins de bail conformes aux exigences des régies. Devis gratuit avant intervention.",
+      },
+    ],
+    priorityLinks: [
+      { label: "Nettoyage fin de bail à Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
+      { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
     ],
   },
   {
@@ -325,33 +350,6 @@ export const locations: Location[] = [
       {
         question: "Intervenez-vous à Neuchâtel ?",
         answer: "Oui. Neuchâtel et les communes du canton font partie de notre couverture Suisse romande.",
-      },
-    ],
-  },
-  {
-    slug: "nettoyage-sion",
-    city: "Sion",
-    canton: "VS",
-    cantonName: "Valais",
-    title: "Nettoyage professionnel à Sion",
-    description:
-      "Nettoyage professionnel à Sion et Valais romand. Gzimmo : bureaux, fin de bail. Devis gratuit sous 24 h.",
-    intro:
-      "Sion et le Valais romand : prestations de nettoyage professionnel avec la rigueur Gzimmo.",
-    geo: { latitude: 46.2331, longitude: 7.3606 },
-    priority: 0.65,
-    nearbyCommunes: ["Sierre", "Conthey", "Martigny"],
-    servicesHighlight: ["Bureaux", "Fin de bail", "Après chantier"],
-    sections: [
-      {
-        title: "Nettoyage en Valais romand",
-        body: "Depuis Romont, nous desservons Sion et le Valais romand pour l'entretien de bureaux, les fins de bail et les remises en état.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Couvrez-vous le Valais romand ?",
-        answer: "Oui. Sion, Sierre et les communes du Valais romand font partie de notre zone.",
       },
     ],
   },

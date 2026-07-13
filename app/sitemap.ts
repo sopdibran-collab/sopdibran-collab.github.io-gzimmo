@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
+import { geoServiceLandings } from "@/data/geo-service-landings";
 import { getServicePath } from "@/lib/service-paths";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -40,5 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: location.priority,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...localRoutes];
+  const geoServiceRoutes = geoServiceLandings.map((landing) => ({
+    url: `${base}/${landing.path}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: landing.priority,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...geoServiceRoutes, ...localRoutes];
 }
