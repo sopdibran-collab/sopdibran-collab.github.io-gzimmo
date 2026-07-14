@@ -50,7 +50,7 @@ export const locations: Location[] = [
     canton: "FR",
     cantonName: "Fribourg",
     district: "Glâne",
-    title: "Entreprise de nettoyage à Romont (FR) — Gzimmo Sàrl",
+    title: "Entreprise de nettoyage à Romont (FR)",
     description:
       "Entreprise de nettoyage à Romont, Route de Raboud 8. Fin de bail, bureaux, après chantier en Glâne. Devis gratuit — 076 214 23 42.",
     intro:
@@ -202,7 +202,7 @@ export const locations: Location[] = [
     canton: "FR",
     cantonName: "Fribourg",
     district: "Sarine",
-    title: "Nettoyage professionnel à Fribourg — Gzimmo Sàrl",
+    title: "Nettoyage professionnel à Fribourg",
     description:
       "Nettoyage professionnel à Fribourg et agglomération. Fin de bail, bureaux, après chantier depuis Romont. Devis gratuit sous 24 h — 076 214 23 42.",
     intro:
