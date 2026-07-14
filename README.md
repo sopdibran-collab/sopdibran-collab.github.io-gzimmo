@@ -60,7 +60,7 @@ npm start
 
 - `/` — Accueil
 - `/services` — Services
-- `/services/[slug]` — Détail service
+- `/nettoyage-fin-de-bail` — Détail service (et pages dédiées par ville)
 - `/realisations` — Portfolio
 - `/a-propos` — À propos
 - `/contact` — Devis

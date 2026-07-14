@@ -107,7 +107,7 @@ export function faqPageSchema(items: readonly (FaqItem | FaqContent)[] = faqItem
 }
 
 export function serviceSchema(service: (typeof services)[number], path?: string) {
-  const servicePath = path ?? `/services/${service.slug}`;
+  const servicePath = path ?? getServicePath(service.slug);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -120,6 +120,20 @@ export function serviceSchema(service: (typeof services)[number], path?: string)
       name: "Suisse romande",
     },
     serviceType: service.title,
+  };
+}
+
+export function zonesItemListSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Zones d'intervention Gzimmo",
+    itemListElement: locations.map((location, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: location.title,
+      url: `${company.url}/seo/${location.slug}`,
+    })),
   };
 }
 

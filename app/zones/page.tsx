@@ -1,6 +1,6 @@
 import { locations, romontRegionLocations } from "@/data/locations";
 import { createMetadata } from "@/lib/metadata";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, zonesItemListSchema } from "@/lib/schema";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
@@ -22,10 +22,13 @@ export default function ZonesPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "Accueil", path: "/" },
-          { name: "Zones d'intervention", path: "/zones" },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", path: "/" },
+            { name: "Zones d'intervention", path: "/zones" },
+          ]),
+          zonesItemListSchema(),
+        ]}
       />
 
       <PageHero>
