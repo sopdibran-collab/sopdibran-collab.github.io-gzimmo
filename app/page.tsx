@@ -38,10 +38,8 @@ export default function HomePage() {
         <FadeIn>
           <div className="max-w-3xl">
             <Badge className="text-accent/90">Gzimmo Sàrl · Romont (FR) · Suisse romande</Badge>
-            <h1 className="mt-5 font-display text-display-xl font-semibold text-foreground">
-              Nettoyage professionnel
-              <br />
-              pour l&apos;immobilier en Suisse romande
+            <h1 className="mt-5 text-balance font-display text-display-xl font-semibold text-foreground">
+              Nettoyage professionnel pour l&apos;immobilier en Suisse romande
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted leading-relaxed">
               Fins de bail, régies, chantiers, bureaux — une équipe experte basée à Romont,
