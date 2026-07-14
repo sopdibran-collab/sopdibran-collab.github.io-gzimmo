@@ -1,9 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { GoogleReviewCard } from "@/components/content/GoogleReviewCard";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { StarRating } from "@/components/ui/StarRating";
 import { googleReviews as defaultReviews, type GoogleReview } from "@/data/google-reviews";
 import { googleReviewsLocalBusinessSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
@@ -17,7 +16,6 @@ type GoogleReviewsSliderProps = {
 };
 
 const SWIPE_THRESHOLD_PX = 48;
-const TRANSITION_EASE = [0.25, 0.1, 0.25, 1] as const;
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -46,7 +44,6 @@ export function GoogleReviewsSlider({
   className,
 }: GoogleReviewsSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const pointerStartX = useRef<number | null>(null);
   const reviewCount = reviews.length;
@@ -55,23 +52,18 @@ export function GoogleReviewsSlider({
     (index: number) => {
       if (reviewCount === 0) return;
       const nextIndex = ((index % reviewCount) + reviewCount) % reviewCount;
-      setDirection(
-        nextIndex > currentIndex ? 1 : nextIndex < currentIndex ? -1 : 0,
-      );
       setCurrentIndex(nextIndex);
     },
-    [currentIndex, reviewCount],
+    [reviewCount],
   );
 
   const goNext = useCallback(() => {
     if (reviewCount === 0) return;
-    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % reviewCount);
   }, [reviewCount]);
 
   const goPrev = useCallback(() => {
     if (reviewCount === 0) return;
-    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + reviewCount) % reviewCount);
   }, [reviewCount]);
 
@@ -97,8 +89,6 @@ export function GoogleReviewsSlider({
   };
 
   if (reviewCount === 0) return null;
-
-  const currentReview = reviews[currentIndex];
 
   return (
     <>
@@ -139,63 +129,18 @@ export function GoogleReviewsSlider({
             Avis {currentIndex + 1} sur {reviewCount}
           </p>
 
-          <div className="overflow-hidden rounded-md border border-border/70 bg-surface shadow-[0_8px_32px_rgba(30,34,39,0.04)]">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.article
-                key={currentReview.id}
-                custom={direction}
-                initial={{ opacity: 0, x: direction >= 0 ? 20 : -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction >= 0 ? -20 : 20 }}
-                transition={{ duration: 0.35, ease: TRANSITION_EASE }}
-                className="px-8 py-10 sm:px-12 sm:py-14"
-              >
-                <header className="flex flex-wrap items-center gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background px-3 py-1 text-xs font-medium text-foreground">
-                    <span
-                      aria-hidden="true"
-                      className="size-1.5 rounded-full bg-success"
-                    />
-                    Avis Google
-                    <span className="sr-only">, vérifié</span>
-                  </span>
-                  <StarRating
-                    rating={currentReview.rating}
-                    className="text-sm tracking-[0.14em] text-accent"
-                  />
-                </header>
-
-                <div className="mt-8">
-                  <span
-                    aria-hidden="true"
-                    className="font-display text-5xl leading-none text-accent/15 sm:text-6xl"
-                  >
-                    &ldquo;
-                  </span>
-                  <blockquote className="-mt-4">
-                    <p className="font-display text-lg leading-[1.75] text-foreground sm:text-xl sm:leading-[1.8]">
-                      {currentReview.text}
-                    </p>
-                  </blockquote>
-                </div>
-
-                <footer className="mt-10 space-y-2 border-t border-border/60 pt-8">
-                  <a
-                    href={currentReview.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-accent underline decoration-accent/30 underline-offset-[3px] transition-colors hover:text-accent-hover hover:decoration-accent"
-                  >
-                    Voir l&apos;avis sur Google Maps
-                  </a>
-                  {currentReview.contextLabel ? (
-                    <p className="text-sm text-muted">
-                      Avis client — {currentReview.contextLabel}
-                    </p>
-                  ) : null}
-                </footer>
-              </motion.article>
-            </AnimatePresence>
+          <div className="overflow-hidden">
+            {reviews.map((review, index) => (
+              <GoogleReviewCard
+                key={review.id}
+                review={review}
+                className={cn(
+                  "transition-opacity duration-300",
+                  index === currentIndex ? "opacity-100" : "hidden",
+                )}
+                aria-hidden={index !== currentIndex}
+              />
+            ))}
           </div>
 
           <div className="mt-8 flex items-center justify-between gap-4">

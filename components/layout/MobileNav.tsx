@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { mainNav } from "@/data/navigation";
@@ -89,6 +90,16 @@ export function MobileNav({ callHref }: MobileNavProps) {
 
   return (
     <>
+      <nav className="sr-only lg:hidden" aria-label="Navigation mobile">
+        {mainNav.map((item) => (
+          <Link key={item.href} href={item.href}>
+            {item.label}
+          </Link>
+        ))}
+        <Link href="/contact">Devis gratuit</Link>
+        <a href={callHref}>Appeler</a>
+      </nav>
+
       <button
         type="button"
         aria-expanded={open}

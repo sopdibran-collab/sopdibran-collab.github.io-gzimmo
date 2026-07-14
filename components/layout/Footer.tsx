@@ -55,7 +55,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/entreprise-nettoyage-romont"
+                  href="/seo/nettoyage-romont"
                   className="text-sm text-muted transition-colors hover:text-accent"
                 >
                   Entreprise de nettoyage Romont

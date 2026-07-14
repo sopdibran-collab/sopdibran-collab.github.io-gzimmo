@@ -3,7 +3,7 @@ export const homepageZones = [
   {
     city: "Romont",
     label: "Romont",
-    href: "/entreprise-nettoyage-romont",
+    href: "/seo/nettoyage-romont",
     note: "Siège",
   },
   {

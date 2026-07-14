@@ -1,4 +1,4 @@
-import { GoogleReviewsSlider } from "@/components/content/GoogleReviewsSlider";
+import { GoogleReviewsList } from "@/components/content/GoogleReviewsList";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { JsonLd, PageIntro } from "@/components/seo/JsonLd";
@@ -38,7 +38,7 @@ export default function AvisPage() {
       </PageHero>
 
       <PageMain variant="default">
-        <GoogleReviewsSlider reviews={googleReviews} />
+        <GoogleReviewsList reviews={googleReviews} />
         <p className="mx-auto mt-12 max-w-[760px] text-center text-sm text-muted">
           <a
             href={googleReviewsProfileUrl}
