@@ -99,6 +99,46 @@ export function Footer() {
               ))}
               <li>
                 <Link
+                  href="/seo/nettoyage-fribourg"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Fribourg
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/seo/nettoyage-lausanne"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Lausanne
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/seo/nettoyage-geneve"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Genève
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/seo/nettoyage-morges"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Morges
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/seo/nettoyage-yverdon-les-bains"
+                  className="text-sm text-muted transition-colors hover:text-accent"
+                >
+                  Yverdon-les-Bains
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/zones"
                   className="text-sm font-medium text-foreground transition-colors hover:text-accent"
                 >
