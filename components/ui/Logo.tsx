@@ -3,7 +3,7 @@ import { company } from "@/data/company";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
-  variant?: "horizontal" | "monochrome";
+  variant?: "horizontal" | "monochrome" | "monochromeInverse";
   size?: "header" | "footer";
   linked?: boolean;
   className?: string;
@@ -13,6 +13,7 @@ type LogoProps = {
 const sources = {
   horizontal: "/horizontal.svg",
   monochrome: "/monochrome_noir.svg",
+  monochromeInverse: "/monochrome_blanc.svg",
 } as const;
 
 /** Ratio réel du lockup après recadrage du viewBox SVG (3105×997). */
@@ -21,6 +22,7 @@ const LOGO_ASPECT = 3105 / 997;
 const dimensions = {
   horizontal: { width: 3105, height: 997 },
   monochrome: { width: 3105, height: 997 },
+  monochromeInverse: { width: 3105, height: 997 },
 } as const;
 
 const sizes = {
@@ -29,10 +31,13 @@ const sizes = {
       "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
     monochrome:
       "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+    monochromeInverse:
+      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
   },
   footer: {
-    horizontal: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
-    monochrome: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
+    horizontal: "w-[min(92vw,480px)] sm:w-[600px] lg:w-[760px]",
+    monochrome: "w-[min(92vw,480px)] sm:w-[600px] lg:w-[760px]",
+    monochromeInverse: "w-[min(92vw,480px)] sm:w-[600px] lg:w-[760px]",
   },
 } as const;
 
