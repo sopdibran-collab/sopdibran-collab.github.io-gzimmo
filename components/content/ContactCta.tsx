@@ -1,25 +1,51 @@
-import { AccentLine } from "@/components/ui/Badge";
-import { ConversionCta } from "@/components/ui/ConversionCta";
+import { company } from "@/data/company";
+import { formatPhoneHref, cn } from "@/lib/utils";
+import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 
-export function ContactCta() {
-  return (
-    <FadeIn>
-      <div className="relative overflow-hidden rounded-2xl border border-accent/15 bg-gradient-to-br from-accent-muted via-white to-surface px-8 py-12 md:px-12 md:py-14">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-accent/10 blur-3xl"
-        />
-        <AccentLine className="mb-8" />
-        <h2 className="max-w-xl font-display text-display-md text-foreground">
-          Prêt à obtenir un devis gratuit ?
-        </h2>
-        <p className="mt-5 max-w-lg text-base text-muted leading-relaxed">
-          Réponse sous 24 heures. Sans engagement.
-        </p>
+type ContactCtaProps = {
+  className?: string;
+};
 
-        <ConversionCta className="mt-10" />
-      </div>
-    </FadeIn>
+/** Bandeau CTA pleine largeur — pas de cadre inset dans une section. */
+export function ContactCta({ className }: ContactCtaProps) {
+  const callHref = formatPhoneHref(company.phone);
+
+  return (
+    <section
+      className={cn(
+        "border-y border-border/70 bg-accent-muted/55",
+        className,
+      )}
+    >
+      <FadeIn className="mx-auto flex max-w-[1200px] flex-col gap-8 px-container py-10 md:flex-row md:items-center md:justify-between md:gap-16 md:py-12">
+        <div className="max-w-xl">
+          <h2 className="font-display text-display-sm text-foreground md:text-display-md">
+            Parlons de votre prochain chantier
+          </h2>
+          <p className="mt-3 text-muted leading-relaxed">
+            Devis gratuit et réponse sous 24 h.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-3">
+          <a
+            href={callHref}
+            className="text-base font-medium text-foreground transition-colors duration-200 hover:text-accent"
+          >
+            {company.phoneDisplay}
+          </a>
+          <a
+            href={`mailto:${company.email}`}
+            className="text-base font-medium text-foreground transition-colors duration-200 hover:text-accent"
+          >
+            {company.email}
+          </a>
+          <Button href="/contact" className="shadow-none sm:ml-2">
+            Demander un devis
+          </Button>
+        </div>
+      </FadeIn>
+    </section>
   );
 }

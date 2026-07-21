@@ -27,6 +27,7 @@
   --text-display-sm: clamp(1.375rem, 2.5vw, 1.75rem);
 
   --spacing-section: clamp(5rem, 8vw, 7.5rem);
+  --spacing-footer: clamp(2.5rem, 5vw, 3.5rem);
   --spacing-container: clamp(1.25rem, 4vw, 5rem);
 
   --ease-premium: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -107,6 +108,10 @@
 
   .py-section {
     padding-block: var(--spacing-section);
+  }
+
+  .py-footer {
+    padding-block: var(--spacing-footer);
   }
 
   .px-container {

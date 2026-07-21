@@ -60,12 +60,15 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA desktop */}
-        <div className="hidden shrink-0 items-center gap-2 lg:flex">
-          <Button variant="secondary" href={callHref} external className="px-4">
-            Appeler
-          </Button>
-          <Button href="/contact" className="px-4">
+        {/* CTA desktop — retenu, confiance suisse */}
+        <div className="hidden shrink-0 items-center gap-5 lg:flex">
+          <a
+            href={callHref}
+            className="text-sm font-medium text-muted transition-colors duration-200 hover:text-accent"
+          >
+            {company.phoneDisplay}
+          </a>
+          <Button href="/contact" variant="ghost" className="px-0 font-medium text-accent hover:text-accent-hover">
             Devis gratuit
           </Button>
         </div>

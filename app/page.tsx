@@ -3,22 +3,12 @@ import { googleReviews } from "@/data/google-reviews";
 import { createMetadata } from "@/lib/metadata";
 import { faqPageSchema, googleReviewsLocalBusinessSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
-import { AccentLine } from "@/components/ui/Badge";
-import { Badge } from "@/components/ui/Badge";
-import { ConversionCta } from "@/components/ui/ConversionCta";
-import { ReassuranceBand } from "@/components/ui/ReassuranceBand";
-import { FadeIn } from "@/components/ui/FadeIn";
-import { ServiceList } from "@/components/content/ServiceList";
-import { WhyList } from "@/components/content/WhyList";
-import { StatsBand } from "@/components/content/StatsBand";
+import { HomeHero } from "@/components/content/HomeHero";
+import { HomePrestationsGrid } from "@/components/content/HomePrestationsGrid";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
-import { GoogleReviewsSlider } from "@/components/content/GoogleReviewsSlider";
-import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
+import { HomeFeaturedReview } from "@/components/content/HomeFeaturedReview";
 import { ContactCta } from "@/components/content/ContactCta";
-import { HomeZoneGrid } from "@/components/content/HomeZoneGrid";
-import { LocalMoneyLinks } from "@/components/content/LocalMoneyLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { TextLink } from "@/components/ui/TextLink";
 
 export const metadata = createMetadata({
   title: "Nettoyage professionnel en Suisse romande",
@@ -34,81 +24,21 @@ export default function HomePage() {
         data={[faqPageSchema(homepageFaq), googleReviewsLocalBusinessSchema(googleReviews)]}
       />
 
-      <Section variant="hero" className="pb-0">
-        <FadeIn>
-          <div className="max-w-3xl">
-            <Badge className="text-accent/90">Gzimmo Sàrl · Romont (FR) · Suisse romande</Badge>
-            <h1 className="mt-5 text-balance font-display text-display-xl font-semibold text-foreground">
-              Nettoyage professionnel pour l&apos;immobilier en Suisse romande
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted leading-relaxed">
-              Fins de bail, régies, chantiers, bureaux — une équipe experte basée à Romont,
-              priorité canton de Fribourg et canton de Vaud. Devis gratuit, réponse sous 24 h.
-            </p>
+      <HomeHero />
 
-            <ConversionCta className="mt-10" />
-            <ReassuranceBand className="mt-8" />
-
-            <AccentLine className="mt-14" />
-          </div>
-        </FadeIn>
-      </Section>
-
-      <Section variant="accent">
-        <ServiceList showIntro={false} />
-        <LocalMoneyLinks />
+      <Section variant="default">
+        <HomePrestationsGrid />
       </Section>
 
       <Section variant="surface">
-        <WhyList />
-      </Section>
-
-      <Section variant="inverse">
-        <StatsBand />
-      </Section>
-
-      <Section variant="default">
-        <HomeZoneGrid />
-      </Section>
-
-      <Section variant="accent">
         <RealisationGrid />
       </Section>
 
-      <Section variant="surface">
-        <FadeIn>
-          <Badge>Avis clients</Badge>
-          <h2 className="mt-4 font-display text-display-md text-foreground">
-            Ce que disent nos clients
-          </h2>
-          <p className="mt-4 max-w-xl text-muted leading-relaxed">
-            Retours authentiques recueillis sur Google — nettoyage professionnel en Suisse romande.
-          </p>
-        </FadeIn>
-        <div className="mt-10">
-          <GoogleReviewsSlider reviews={googleReviews} />
-        </div>
-        <div className="mt-8 text-center">
-          <TextLink href="/avis">Tous les avis clients</TextLink>
-        </div>
-      </Section>
-
       <Section variant="default">
-        <FadeIn>
-          <FaqSectionHeader />
-        </FadeIn>
-        <div className="mt-10">
-          <FaqList items={homepageFaq} />
-        </div>
-        <ConversionCta className="mt-10" />
-        <div className="mt-6">
-          <TextLink href="/faq">Toutes les questions</TextLink>
-        </div>
+        <HomeFeaturedReview />
       </Section>
 
-      <Section variant="surface" className="pt-0">
-        <ContactCta />
-      </Section>
+      <ContactCta />
     </>
   );
 }

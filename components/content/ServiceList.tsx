@@ -7,7 +7,7 @@ export function ServiceList({ showIntro = true }: { showIntro?: boolean }) {
   return (
     <div>
       <FadeIn>
-        <Badge className="text-accent/90">Nos services</Badge>
+        <Badge className="text-accent/90">Prestations</Badge>
         <h2 className="mt-4 font-display text-display-md text-foreground">
           Ce que nous prenons en charge
         </h2>
@@ -15,7 +15,11 @@ export function ServiceList({ showIntro = true }: { showIntro?: boolean }) {
           <p className="mt-4 max-w-xl text-muted leading-relaxed">
             Survolez un service pour l&apos;aperçu, cliquez pour en savoir plus.
           </p>
-        ) : null}
+        ) : (
+          <p className="mt-4 max-w-xl text-muted leading-relaxed">
+            Fins de bail, régies, chantiers, bureaux — chaque prestation avec la même exigence.
+          </p>
+        )}
       </FadeIn>
 
       <ServiceAccordion />
