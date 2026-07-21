@@ -15,14 +15,14 @@ const headingClass = "mb-4 text-sm font-medium text-white";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden section-footer text-white border-t border-white/10">
+    <footer className="relative overflow-hidden section-footer text-white border-t border-white/[0.08]">
       <div aria-hidden="true" className="section-footer-glow pointer-events-none absolute inset-0" />
-      <div className="relative mx-auto max-w-[1200px] px-container py-section">
-        <div className="mb-12">
+      <div className="relative mx-auto max-w-[1200px] px-container py-footer">
+        <div className="mb-8">
           <Logo variant="monochromeInverse" size="footer" />
         </div>
 
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div>
             <p className={headingClass}>Navigation</p>
             <ul className="space-y-3">
@@ -146,7 +146,7 @@ export function Footer() {
           </div>
         </div>
 
-        <Divider className="my-10 bg-white/20" />
+        <Divider className="my-8 bg-white/15" />
 
         <div className="flex flex-col gap-4 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {company.legalName}</p>
