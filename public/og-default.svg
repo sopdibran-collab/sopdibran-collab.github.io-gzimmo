@@ -1,30 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
-  <rect width="1200" height="630" fill="#1E2227"/>
-  <rect width="5" height="630" fill="#41988E"/>
-  <rect x="780" width="420" height="630" fill="#2A3038"/>
-  <line x1="96" y1="168" x2="520" y2="168" stroke="#41988E" stroke-width="2"/>
-  <line x1="96" y1="510" x2="1104" y2="510" stroke="#2E343A" stroke-width="1"/>
-
-  <g transform="translate(96,72)">
-    <path fill="#41988E" d="M0 62 L44 18 L88 62 V98 H0 Z M28 44 H60 V72 H28 Z"/>
-    <text x="108" y="78" fill="#FFFFFF" font-family="Sora, Inter, Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-1">Gzimmo</text>
-  </g>
-
-  <text x="96" y="196" fill="#41988E" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="2.2">GZIMMO SÀRL · ROMONT (FR)</text>
-  <text x="96" y="268" fill="#FFFFFF" font-family="Sora, Inter, Arial, sans-serif" font-size="52" font-weight="600" letter-spacing="-1.2">Nettoyage professionnel</text>
-  <text x="96" y="332" fill="#FFFFFF" font-family="Sora, Inter, Arial, sans-serif" font-size="52" font-weight="600" letter-spacing="-1.2">en Suisse romande</text>
-  <text x="96" y="404" fill="#B0B6C2" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="400">Fin de bail · Bureaux · Régies · Après chantier</text>
-  <text x="96" y="558" fill="#626A72" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="400">Devis gratuit · Réponse sous 24 h</text>
-  <text x="1044" y="558" fill="#41988E" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500" text-anchor="end">gzimmo.ch</text>
-
-  <g font-family="Inter, Arial, sans-serif" font-size="22" fill="#B0B6C2">
-    <rect x="840" y="200" width="240" height="44" stroke="#3A424A" stroke-width="1" fill="none"/>
-    <text x="860" y="230">Fin de bail</text>
-    <rect x="840" y="258" width="240" height="44" stroke="#3A424A" stroke-width="1" fill="none"/>
-    <text x="860" y="288">Conciergerie</text>
-    <rect x="840" y="316" width="240" height="44" stroke="#3A424A" stroke-width="1" fill="none"/>
-    <text x="860" y="346">Bureaux</text>
-    <rect x="840" y="374" width="240" height="44" stroke="#3A424A" stroke-width="1" fill="none"/>
-    <text x="860" y="404">Vitres</text>
-  </g>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect width="4" height="630" fill="#41988E"/>
+  <rect y="534" width="1200" height="96" fill="#F5F7F8"/>
+  <line x1="80" y1="534" x2="1120" y2="534" stroke="#E8EAEC" stroke-width="1"/>
+  <text x="80" y="300" fill="#1E2227" font-family="Sora, Inter, Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-1.2">Nettoyage professionnel</text>
+  <text x="80" y="368" fill="#1E2227" font-family="Sora, Inter, Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-1.2">en Suisse romande</text>
+  <text x="80" y="430" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="400">Fin de bail Â· Bureaux Â· RÃ©gies Â· AprÃ¨s chantier</text>
+  <text x="80" y="590" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="400">Devis gratuit Â· RÃ©ponse sous 24 h</text>
+  <text x="1120" y="590" fill="#41988E" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500" text-anchor="end">gzimmo.ch</text>
 </svg>

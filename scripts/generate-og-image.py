@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -14,55 +13,41 @@ ROOT = Path(__file__).resolve().parents[1]
 WIDTH, HEIGHT = 1200, 630
 OUT_JPG = ROOT / "public" / "og-default.jpg"
 OUT_PNG = ROOT / "public" / "og-default.png"
-TEXT_SVG = ROOT / "public" / "horizontal.svg"
+OUT_SVG = ROOT / "public" / "og-default.svg"
+LOGO_SVG = ROOT / "public" / "horizontal.svg"
+FONTS_DIR = ROOT / "scripts" / "fonts"
 
-# Brand tokens (gzimmo.ch)
-BG = (30, 34, 39)  # #1E2227
-BG_SOFT = (42, 48, 56)  # #2A3038
+# Brand tokens — aligned with app/globals.css
+BG = (255, 255, 255)
+SURFACE = (245, 247, 248)  # #F5F7F8
+FOREGROUND = (30, 34, 39)  # #1E2227
+MUTED = (98, 98, 98)  # #626262
 ACCENT = (65, 152, 142)  # #41988E
-WHITE = (255, 255, 255)
-MUTED = (176, 182, 194)
-SUBTLE = (98, 106, 114)
+BORDER = (232, 234, 236)  # #E8EAEC
 
-SANS_CANDIDATES = [
-    "/System/Library/Fonts/Supplemental/Arial.ttf",
-    "/System/Library/Fonts/Helvetica.ttc",
-    "/Library/Fonts/Arial.ttf",
-]
+REQUIRED_FONTS = (
+    "Sora-SemiBold.ttf",
+    "Inter-Regular.ttf",
+    "Inter-Medium.ttf",
+)
 
 
-def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    for path in SANS_CANDIDATES:
-        if Path(path).exists():
-            try:
-                return ImageFont.truetype(path, size, index=1 if bold and path.endswith(".ttc") else 0)
-            except OSError:
-                return ImageFont.truetype(path, size)
-    return ImageFont.load_default()
+def ensure_fonts() -> None:
+    """Vendored fonts in scripts/fonts/ (Sora + Inter, latin subset)."""
+    FONTS_DIR.mkdir(parents=True, exist_ok=True)
+    missing = [name for name in REQUIRED_FONTS if not (FONTS_DIR / name).is_file()]
+    if missing:
+        raise FileNotFoundError(
+            f"Missing fonts in {FONTS_DIR}: {', '.join(missing)}. "
+            "Add the TTF files (Sora 600, Inter 400/500) before running npm run og:image."
+        )
 
 
-def prepare_gzimmo_text_svg(svg: str) -> str:
-    """Full lockup on dark background — keep teal symbol, white wordmark."""
-
-    def process_shape(match: re.Match[str]) -> str:
-        tag = match.group(0)
-        lower = tag.lower()
-        if "fill:none" in lower or "fill-opacity:0" in lower:
-            return ""
-        if "#41988e" in lower or "#41988E" in tag:
-            return tag
-        tag = re.sub(r'\s*style="[^"]*"', "", tag)
-        if 'fill="' in tag:
-            tag = re.sub(r'fill="[^"]*"', 'fill="#FFFFFF"', tag)
-        elif "<path" in tag:
-            tag = tag.replace("<path ", '<path fill="#FFFFFF" ', 1)
-        elif "<rect" in tag:
-            tag = tag.replace("<rect ", '<rect fill="#FFFFFF" ', 1)
-        return tag
-
-    svg = re.sub(r"<path[^>]*/>", process_shape, svg)
-    svg = re.sub(r"<rect[^>]*/>", process_shape, svg)
-    return svg
+def load_font(name: str, size: int) -> ImageFont.FreeTypeFont:
+    path = FONTS_DIR / name
+    if not path.exists():
+        raise FileNotFoundError(f"Missing font: {path}. Run ensure_fonts() first.")
+    return ImageFont.truetype(path, size)
 
 
 def render_svg_to_png(
@@ -72,7 +57,7 @@ def render_svg_to_png(
     fit_width: int | None = None,
     fit_height: int | None = None,
 ) -> Image.Image:
-    with tempfile.NamedTemporaryFile("w", suffix=".svg", delete=False) as tmp:
+    with tempfile.NamedTemporaryFile("w", suffix=".svg", delete=False, encoding="utf-8") as tmp:
         tmp.write(svg_content)
         tmp_path = Path(tmp.name)
 
@@ -97,112 +82,95 @@ def paste_rgba(base: Image.Image, overlay: Image.Image, position: tuple[int, int
     base.paste(overlay, position, overlay)
 
 
+def text_width(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont) -> int:
+    bbox = draw.textbbox((0, 0), text, font=font)
+    return bbox[2] - bbox[0]
+
+
 def build_background() -> Image.Image:
-    """Flat premium surface — no gradient, hairline structure only."""
     img = Image.new("RGB", (WIDTH, HEIGHT), BG)
     draw = ImageDraw.Draw(img)
 
-    # Accent bar (editorial anchor)
-    draw.rectangle([0, 0, 5, HEIGHT], fill=ACCENT)
+    # Accent anchor — same restraint as site hairlines
+    draw.rectangle([0, 0, 4, HEIGHT], fill=ACCENT)
 
-    # Soft right panel — flat tone shift, not gradient
-    draw.rectangle([WIDTH - 420, 0, WIDTH, HEIGHT], fill=BG_SOFT)
-
-    # Hairline separators
-    draw.line([(96, HEIGHT - 120), (WIDTH - 96, HEIGHT - 120)], fill=(46, 52, 58), width=1)
-    draw.line([(96, 168), (520, 168)], fill=ACCENT, width=2)
+    # Soft footer band
+    draw.rectangle([0, HEIGHT - 96, WIDTH, HEIGHT], fill=SURFACE)
+    draw.line([(80, HEIGHT - 96), (WIDTH - 80, HEIGHT - 96)], fill=BORDER, width=1)
 
     return img
 
 
+def build_svg_source() -> str:
+    """Light editorial OG — source SVG kept in sync with raster output."""
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" fill="none">
+  <rect width="{WIDTH}" height="{HEIGHT}" fill="#FFFFFF"/>
+  <rect width="4" height="{HEIGHT}" fill="#41988E"/>
+  <rect y="{HEIGHT - 96}" width="{WIDTH}" height="96" fill="#F5F7F8"/>
+  <line x1="80" y1="{HEIGHT - 96}" x2="{WIDTH - 80}" y2="{HEIGHT - 96}" stroke="#E8EAEC" stroke-width="1"/>
+  <text x="80" y="300" fill="#1E2227" font-family="Sora, Inter, Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-1.2">Nettoyage professionnel</text>
+  <text x="80" y="368" fill="#1E2227" font-family="Sora, Inter, Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-1.2">en Suisse romande</text>
+  <text x="80" y="430" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="400">Fin de bail · Bureaux · Régies · Après chantier</text>
+  <text x="80" y="{HEIGHT - 40}" fill="#626262" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="400">Devis gratuit · Réponse sous 24 h</text>
+  <text x="{WIDTH - 80}" y="{HEIGHT - 40}" fill="#41988E" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="500" text-anchor="end">gzimmo.ch</text>
+</svg>
+"""
+
+
 def main() -> None:
-    if not TEXT_SVG.exists():
-        raise FileNotFoundError(f"Missing text SVG: {TEXT_SVG}")
+    if not LOGO_SVG.exists():
+        raise FileNotFoundError(f"Missing logo SVG: {LOGO_SVG}")
+
+    ensure_fonts()
 
     img = build_background()
     draw = ImageDraw.Draw(img)
 
-    font_display = load_font(52, bold=True)
-    font_lead = load_font(28)
-    font_meta = load_font(22)
-    font_url = load_font(20)
-    font_badge = load_font(18)
+    font_display = load_font("Sora-SemiBold.ttf", 54)
+    font_lead = load_font("Inter-Regular.ttf", 26)
+    font_meta = load_font("Inter-Regular.ttf", 20)
+    font_url = load_font("Inter-Medium.ttf", 20)
 
-    margin_left = 96
+    margin_left = 80
+    content_top = 80
 
     with tempfile.TemporaryDirectory() as tmp_dir:
         tmp = Path(tmp_dir)
-        text_png = render_svg_to_png(
-            prepare_gzimmo_text_svg(TEXT_SVG.read_text()),
-            tmp / "text.png",
-            fit_width=480,
+        logo_png = render_svg_to_png(
+            LOGO_SVG.read_text(encoding="utf-8"),
+            tmp / "logo.png",
+            fit_width=300,
         )
-        text_png = trim_transparent(text_png)
+        logo_png = trim_transparent(logo_png)
 
-    paste_rgba(img, text_png, (margin_left, 78))
+    paste_rgba(img, logo_png, (margin_left, content_top))
 
-    # Eyebrow
-    draw.text(
-        (margin_left, 196),
-        "GZIMMO SÀRL · ROMONT (FR)",
-        font=font_badge,
-        fill=ACCENT,
-    )
+    logo_bottom = content_top + logo_png.height + 40
 
-    # Headline
+    draw.text((margin_left, logo_bottom), "Nettoyage professionnel", font=font_display, fill=FOREGROUND)
+    draw.text((margin_left, logo_bottom + 68), "en Suisse romande", font=font_display, fill=FOREGROUND)
     draw.text(
-        (margin_left, 238),
-        "Nettoyage professionnel",
-        font=font_display,
-        fill=WHITE,
-    )
-    draw.text(
-        (margin_left, 302),
-        "en Suisse romande",
-        font=font_display,
-        fill=WHITE,
-    )
-
-    # Lead
-    draw.text(
-        (margin_left, 388),
+        (margin_left, logo_bottom + 148),
         "Fin de bail · Bureaux · Régies · Après chantier",
         font=font_lead,
         fill=MUTED,
     )
 
-    # Trust line
-    draw.text(
-        (margin_left, HEIGHT - 72),
-        "Devis gratuit · Réponse sous 24 h",
-        font=font_meta,
-        fill=SUBTLE,
-    )
+    footer_y = HEIGHT - 40
+    draw.text((margin_left, footer_y), "Devis gratuit · Réponse sous 24 h", font=font_meta, fill=MUTED)
 
-    # URL
     url_text = "gzimmo.ch"
-    url_bbox = draw.textbbox((0, 0), url_text, font=font_url)
-    url_w = url_bbox[2] - url_bbox[0]
-    draw.text(
-        (WIDTH - 96 - url_w, HEIGHT - 72),
-        url_text,
-        font=font_url,
-        fill=ACCENT,
-    )
-
-    # Right panel — service chips (text only, minimal)
-    chips = ["Fin de bail", "Conciergerie", "Bureaux", "Vitres"]
-    chip_y = 200
-    for chip in chips:
-        draw.rectangle([WIDTH - 360, chip_y, WIDTH - 120, chip_y + 44], outline=(58, 66, 74), width=1)
-        draw.text((WIDTH - 340, chip_y + 10), chip, font=font_meta, fill=MUTED)
-        chip_y += 58
+    url_x = WIDTH - 80 - text_width(draw, url_text, font_url)
+    draw.text((url_x, footer_y), url_text, font=font_url, fill=ACCENT)
 
     OUT_JPG.parent.mkdir(parents=True, exist_ok=True)
-    img.save(OUT_JPG, format="JPEG", quality=92, optimize=True, subsampling=0)
+    img.save(OUT_JPG, format="JPEG", quality=93, optimize=True, subsampling=0)
     img.save(OUT_PNG, format="PNG", optimize=True)
+    OUT_SVG.write_text(build_svg_source(), encoding="utf-8")
+
     print(f"Wrote {OUT_JPG}")
     print(f"Wrote {OUT_PNG}")
+    print(f"Wrote {OUT_SVG}")
 
 
 if __name__ == "__main__":
