@@ -29,9 +29,5 @@ export function PageMain({
 }
 
 export function PageCta() {
-  return (
-    <Section variant="default" className="pt-0">
-      <ContactCta />
-    </Section>
-  );
+  return <ContactCta />;
 }

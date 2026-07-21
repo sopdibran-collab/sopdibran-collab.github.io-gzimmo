@@ -24,6 +24,7 @@ export const realisations: Realisation[] = [
       "Environnement de travail impeccable, sans perturbation des équipes. Intervention en soirée, résultat constant.",
     description:
       "Intervention hebdomadaire en dehors des heures de bureau. Sols, sanitaires et espaces communs maintenus à un niveau constant.",
+    image: "/images/realisations/bureaux.jpg",
   },
   {
     id: "fin-bail-fribourg",
@@ -37,6 +38,7 @@ export const realisations: Realisation[] = [
       "État des lieux validé du premier coup. Locataire libéré sans retenue sur la garantie.",
     description:
       "Appartement 4.5 pièces remis aux standards de la régie. Cuisines, sanitaires et surfaces vitrées traités en profondeur.",
+    image: "/images/realisations/fin-de-bail.jpg",
   },
   {
     id: "chantier-morges",
@@ -50,6 +52,7 @@ export const realisations: Realisation[] = [
       "Livraison dans les délais. Surfaces prêtes à être habitées, sans résidu de chantier.",
     description:
       "Élimination des poussières de construction et remise en état complète avant livraison au propriétaire.",
+    image: "/images/realisations/salle-de-bain.jpg",
   },
   {
     id: "vitres-romont",

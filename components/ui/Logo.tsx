@@ -35,9 +35,9 @@ const sizes = {
       "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
   },
   footer: {
-    horizontal: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
-    monochrome: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
-    monochromeInverse: "w-[min(81vw,257px)] sm:w-[285px] lg:w-[323px]",
+    horizontal: "w-[min(88vw,360px)] sm:w-[420px] lg:w-[480px]",
+    monochrome: "w-[min(88vw,360px)] sm:w-[420px] lg:w-[480px]",
+    monochromeInverse: "w-[min(88vw,360px)] sm:w-[420px] lg:w-[480px]",
   },
 } as const;
 

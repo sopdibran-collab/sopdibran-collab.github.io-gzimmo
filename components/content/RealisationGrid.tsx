@@ -23,45 +23,73 @@ export function RealisationGrid({
     <div>
       {showHeader ? (
         <FadeIn>
-          <Badge>Réalisations</Badge>
-          <h2 className="mt-4 font-display text-display-md text-foreground">
-            Des interventions concrètes, des résultats mesurables
-          </h2>
-          <p className="mt-4 max-w-xl text-muted leading-relaxed">
-            Type de client, lieu, problème et résultat — la même exigence partout en Suisse
-            romande.
-          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Badge>Réalisations</Badge>
+              <h2 className="mt-4 font-display text-display-md text-foreground">
+                Des interventions concrètes, des résultats mesurables
+              </h2>
+            </div>
+            <TextLink href="/realisations">Voir plus de réalisations</TextLink>
+          </div>
         </FadeIn>
       ) : null}
 
       <div
         className={
           showHeader
-            ? "mt-12 flex flex-col gap-6"
-            : "flex flex-col gap-6"
+            ? "mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+            : "flex flex-col gap-8"
         }
       >
         {list.map((item, index) => (
           <FadeIn key={item.id} delay={index * 0.05}>
-            <RealisationRow item={item} />
+            {showHeader ? <RealisationCard item={item} /> : <RealisationRow item={item} />}
           </FadeIn>
         ))}
       </div>
+    </div>
+  );
+}
 
-      {showHeader ? (
-        <div className="mt-10">
-          <TextLink href="/realisations">Voir toutes nos réalisations</TextLink>
+function RealisationCard({ item }: { item: Realisation }) {
+  return (
+    <article className="group flex h-full flex-col">
+      {item.image ? (
+        <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+          <Image
+            src={item.image}
+            alt=""
+            fill
+            className="object-cover transition-[opacity] duration-300 group-hover:opacity-95"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
         </div>
       ) : null}
-    </div>
+      <div className="flex flex-1 flex-col border-b border-border/80 pt-5 pb-6">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted">
+          <span>{item.location}</span>
+          <span aria-hidden="true">·</span>
+          <span>{item.service}</span>
+        </div>
+        <h3 className="mt-2 font-display text-lg font-semibold text-foreground">{item.title}</h3>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">{item.result}</p>
+        <Link
+          href="/contact"
+          className="mt-4 text-sm font-medium text-foreground transition-colors duration-200 hover:text-accent"
+        >
+          Demander un devis similaire
+        </Link>
+      </div>
+    </article>
   );
 }
 
 function RealisationRow({ item }: { item: Realisation }) {
   return (
-    <article className="grid gap-6 rounded-2xl border border-border/70 bg-white/60 p-6 py-8 transition-[border-color,box-shadow] duration-300 hover:border-accent/20 hover:shadow-[0_12px_40px_rgba(30,34,39,0.06)] md:grid-cols-12 md:items-start md:gap-10 md:p-8">
+    <article className="grid gap-6 border-b border-border/80 pb-10 last:border-0 md:grid-cols-12 md:items-start md:gap-10">
       {item.image ? (
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-surface md:col-span-5">
+        <div className="relative aspect-[4/3] overflow-hidden bg-surface md:col-span-5">
           <Image
             src={item.image}
             alt=""
