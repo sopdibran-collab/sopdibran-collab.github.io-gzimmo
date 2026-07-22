@@ -24,7 +24,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={cn("relative z-10 mx-auto w-full max-w-[1200px] px-container", className)}>
+    <div className={cn("relative z-10 mx-auto w-full max-w-[1200px] min-w-0 px-container", className)}>
       {children}
     </div>
   );

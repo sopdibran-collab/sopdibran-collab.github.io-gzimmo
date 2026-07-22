@@ -24,7 +24,7 @@ export function RealisationGrid({
       {showHeader ? (
         <FadeIn>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
+            <div className="min-w-0">
               <Badge>Réalisations</Badge>
               <h2 className="mt-4 font-display text-display-md text-foreground">
                 Des interventions concrètes, des résultats mesurables

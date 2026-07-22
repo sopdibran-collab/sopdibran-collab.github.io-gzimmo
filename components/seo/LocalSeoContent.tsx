@@ -76,11 +76,11 @@ export function LocalSeoBody({ location }: { location: Location }) {
           <h2 className="mt-4 font-display text-display-sm text-foreground">
             Prestations à {location.city}
           </h2>
-          <ul className="mt-6 flex flex-wrap gap-3">
+          <ul className="mt-6 flex flex-wrap gap-2 sm:gap-3">
             {location.servicesHighlight.map((service) => (
               <li
                 key={service}
-                className="rounded-full border border-border/80 bg-white/70 px-4 py-2 text-sm text-foreground shadow-sm transition-colors hover:border-accent/30 hover:text-accent"
+                className="max-w-full break-words rounded-full border border-border/80 bg-white/70 px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:border-accent/30 hover:text-accent sm:px-4"
               >
                 {service}
               </li>

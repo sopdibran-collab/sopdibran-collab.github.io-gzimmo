@@ -36,30 +36,30 @@ export function HomeFeaturedReview() {
 
   return (
     <FadeIn>
-      <div className="grid items-center gap-10 lg:grid-cols-[7rem_minmax(0,1fr)_auto] lg:gap-14">
+      <div className="grid min-w-0 items-center gap-8 lg:grid-cols-[7rem_minmax(0,1fr)_auto] lg:gap-14">
         <p className="font-display text-sm font-medium tracking-[0.12em] text-muted uppercase">
           Avis
         </p>
 
-        <blockquote className="border-y border-border/80 py-10 text-center lg:border-y-0 lg:border-x lg:border-border/80 lg:px-14 lg:py-6">
+        <blockquote className="min-w-0 border-y border-border/80 py-10 text-center lg:border-y-0 lg:border-x lg:border-border/80 lg:px-14 lg:py-6">
           <div className="flex justify-center">
             <StarRating
               rating={rating}
               className="inline-flex text-base tracking-[0.18em] text-accent"
             />
           </div>
-          <p className="mx-auto mt-6 max-w-3xl font-display text-lg leading-relaxed text-foreground italic sm:text-xl sm:leading-[1.7]">
+          <p className="mx-auto mt-6 max-w-3xl break-words font-display text-lg leading-relaxed text-foreground italic sm:text-xl sm:leading-[1.7]">
             &ldquo;{quote}&rdquo;
           </p>
-          <footer className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <footer className="mt-8 flex min-w-0 flex-wrap items-center justify-center gap-3 text-sm">
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-medium text-foreground transition-colors duration-200 hover:text-accent"
+              className="inline-flex max-w-full min-w-0 items-center gap-3 font-medium text-foreground transition-colors duration-200 hover:text-accent"
             >
               <GoogleMark />
-              <span>
+              <span className="min-w-0 break-words text-left">
                 Avis Google
                 <span className="text-muted"> · {meta}</span>
               </span>

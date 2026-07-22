@@ -28,16 +28,16 @@ const dimensions = {
 const sizes = {
   header: {
     horizontal:
-      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+      "w-auto max-w-[min(148px,calc(100vw-7.5rem))] max-h-10 sm:max-w-[min(220px,calc(100vw-8rem))] sm:max-h-[3.25rem] lg:w-[300px] lg:max-w-none lg:max-h-[4.5rem]",
     monochrome:
-      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+      "w-auto max-w-[min(148px,calc(100vw-7.5rem))] max-h-10 sm:max-w-[min(220px,calc(100vw-8rem))] sm:max-h-[3.25rem] lg:w-[300px] lg:max-w-none lg:max-h-[4.5rem]",
     monochromeInverse:
-      "w-[min(72vw,240px)] max-h-[3.25rem] sm:w-[min(52vw,280px)] sm:max-h-[4.25rem] lg:w-[300px] lg:max-h-[4.5rem]",
+      "w-auto max-w-[min(148px,calc(100vw-7.5rem))] max-h-10 sm:max-w-[min(220px,calc(100vw-8rem))] sm:max-h-[3.25rem] lg:w-[300px] lg:max-w-none lg:max-h-[4.5rem]",
   },
   footer: {
-    horizontal: "w-[min(88vw,360px)] sm:w-[420px] lg:w-[480px]",
-    monochrome: "w-[min(88vw,360px)] sm:w-[420px] lg:w-[480px]",
-    monochromeInverse: "w-[min(88vw,360px)] sm:w-[420px] lg:w-[480px]",
+    horizontal: "w-full max-w-[min(100%,360px)] sm:max-w-[420px] lg:max-w-[480px]",
+    monochrome: "w-full max-w-[min(100%,360px)] sm:max-w-[420px] lg:max-w-[480px]",
+    monochromeInverse: "w-full max-w-[min(100%,360px)] sm:max-w-[420px] lg:max-w-[480px]",
   },
 } as const;
 
@@ -71,7 +71,11 @@ export function Logo({
   if (!linked) return image;
 
   return (
-    <Link href="/" className="inline-flex shrink-0 items-center" aria-label={`${company.name} — Accueil`}>
+    <Link
+      href="/"
+      className="inline-flex max-w-full min-w-0 shrink items-center"
+      aria-label={`${company.name} — Accueil`}
+    >
       {image}
     </Link>
   );

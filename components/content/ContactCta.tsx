@@ -18,8 +18,8 @@ export function ContactCta({ className }: ContactCtaProps) {
         className,
       )}
     >
-      <FadeIn className="mx-auto flex max-w-[1200px] flex-col gap-8 px-container py-10 md:flex-row md:items-center md:justify-between md:gap-16 md:py-12">
-        <div className="max-w-xl">
+      <FadeIn className="mx-auto flex w-full max-w-[1200px] min-w-0 flex-col gap-8 px-container py-10 md:flex-row md:items-center md:justify-between md:gap-10 md:py-12">
+        <div className="min-w-0 max-w-xl">
           <h2 className="font-display text-display-sm text-foreground md:text-display-md">
             Parlons de votre prochain chantier
           </h2>
@@ -28,7 +28,7 @@ export function ContactCta({ className }: ContactCtaProps) {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-3">
+        <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3">
           <a
             href={callHref}
             className="text-base font-medium text-foreground transition-colors duration-200 hover:text-accent"
@@ -37,11 +37,11 @@ export function ContactCta({ className }: ContactCtaProps) {
           </a>
           <a
             href={`mailto:${company.email}`}
-            className="text-base font-medium text-foreground transition-colors duration-200 hover:text-accent"
+            className="break-all text-base font-medium text-foreground transition-colors duration-200 hover:text-accent"
           >
             {company.email}
           </a>
-          <Button href="/contact" className="shadow-none sm:ml-2">
+          <Button href="/contact" className="w-full shadow-none sm:ml-2 sm:w-auto">
             Demander un devis
           </Button>
         </div>

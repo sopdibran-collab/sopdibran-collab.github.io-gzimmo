@@ -90,7 +90,7 @@ export function MobileNav({ callHref }: MobileNavProps) {
 
   return (
     <>
-      <nav className="sr-only lg:hidden" aria-label="Navigation mobile">
+      <nav className="sr-only" aria-label="Navigation mobile">
         {mainNav.map((item) => (
           <Link key={item.href} href={item.href}>
             {item.label}
