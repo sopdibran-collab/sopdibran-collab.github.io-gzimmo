@@ -13,7 +13,7 @@ export function GoogleReviewCard({ review, className, "aria-hidden": ariaHidden 
     <article
       aria-hidden={ariaHidden}
       className={cn(
-        "rounded-md border border-border/70 bg-surface px-8 py-10 shadow-[0_8px_32px_rgba(30,34,39,0.04)] sm:px-12 sm:py-14",
+        "rounded-md border border-border/70 bg-surface px-5 py-8 shadow-[0_8px_32px_rgba(30,34,39,0.04)] sm:px-12 sm:py-14",
         className,
       )}
     >

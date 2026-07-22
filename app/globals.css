@@ -57,6 +57,13 @@
     min-height: 100vh;
     min-height: 100dvh;
     overflow-x: clip;
+    max-width: 100%;
+  }
+
+  main {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   img,
@@ -129,6 +136,8 @@
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
+    inset-inline-start: 0;
+    top: 0;
   }
 
   @keyframes fade-in-up {

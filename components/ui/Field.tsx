@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 const fieldClass =
-  "w-full rounded-md border border-border bg-background px-4 py-2.5 text-sm text-foreground shadow-[0_1px_2px_rgba(30,34,39,0.04)] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted/60 focus:border-accent focus:shadow-[0_0_0_3px_rgba(65,152,142,0.12)]";
+  "w-full max-w-full rounded-md border border-border bg-background px-4 py-2.5 text-base text-foreground shadow-[0_1px_2px_rgba(30,34,39,0.04)] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted/60 focus:border-accent focus:shadow-[0_0_0_3px_rgba(65,152,142,0.12)]";
 
 type FieldLabelProps = {
   label: string;

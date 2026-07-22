@@ -44,9 +44,9 @@ export function Header() {
           : "border-border/60 bg-[#ffffff]/85 backdrop-blur-[2px]",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-6 px-container lg:h-[4.5rem]">
+      <div className="mx-auto flex h-16 max-w-[1200px] min-w-0 items-center gap-3 px-container sm:gap-6 lg:h-[4.5rem]">
         {/* Logo */}
-        <div className="shrink-0">
+        <div className="min-w-0 shrink">
           <Logo priority />
         </div>
 
@@ -74,7 +74,7 @@ export function Header() {
         </div>
 
         {/* Mobile — téléphone + menu */}
-        <div className="ml-auto flex items-center gap-2 lg:hidden">
+        <div className="ml-auto flex shrink-0 items-center gap-2 lg:hidden">
           <a
             href={callHref}
             aria-label={`Appeler le ${company.phoneDisplay}`}
