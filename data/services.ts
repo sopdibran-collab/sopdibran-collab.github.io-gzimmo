@@ -83,17 +83,17 @@ export const services: Service[] = [
     title: "Nettoyage après chantier",
     shortTitle: "Nettoyage après chantier",
     description:
-      "Remise en état après travaux : poussières, résidus et finitions propres.",
+      "Remise en état après chantier, rénovation ou travaux — prestataire pour entreprises, promoteurs et artisans en Suisse romande.",
     intro:
-      "Nous transformons un chantier en espace prêt à être habité ou livré.",
+      "Votre chantier est terminé : nous livrons un espace conforme, prêt à la réception ou à l'occupation.",
     benefits: [
-      "Élimination des poussières fines",
-      "Vitres, sols et surfaces traités",
-      "Intervention rapide après travaux",
+      "Cadre professionnel pour entreprises et artisans",
+      "Après rénovation, travaux ou fin de chantier",
+      "Planning aligné sur vos délais de livraison",
     ],
     image: {
       src: "/images/services/nettoyage-apres-chantier.webp",
-      alt: "Remise en état après travaux",
+      alt: "Remise en état après travaux pour entreprises",
       width: 1500,
       height: 1000,
       objectPosition: "center 45%",
@@ -104,17 +104,17 @@ export const services: Service[] = [
     title: "Nettoyage fin de bail",
     shortTitle: "Nettoyage fin de bail",
     description:
-      "Nettoyage de fin de bail conforme aux exigences des régies et propriétaires.",
+      "Vous déménagez ? On s'occupe du nettoyage de fin de bail — pour que vous récupériez votre garantie sans vous épuiser.",
     intro:
-      "Vous avez un déménagement à gérer ? Laissez-nous nous occuper du nettoyage de fin de bail — conforme aux régies, sans stress à l'état des lieux.",
+      "Assez de cartons comme ça. On prépare votre logement pour l'état des lieux pendant que vous avancez ailleurs.",
     benefits: [
-      "Checklist rigoureuse",
-      "Respect des standards de restitution",
-      "Devis clair avant intervention",
+      "On parle simple, devis clair avant de démarrer",
+      "Checklist pensée pour votre état des lieux",
+      "Garantie de remise de bail incluse",
     ],
     image: {
       src: "/images/services/nettoyage-fin-de-bail.webp",
-      alt: "Nettoyage de fin de bail",
+      alt: "Nettoyage de fin de bail pour particuliers",
       width: 1500,
       height: 1021,
       objectPosition: "center 45%",

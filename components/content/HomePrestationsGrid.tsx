@@ -7,11 +7,11 @@ import { TextLink } from "@/components/ui/TextLink";
 /** Grille Prestations — disposition mockup (3×2, pleine largeur). */
 const homePrestations = [
   { label: "Fin de bail", slug: "nettoyage-fin-de-bail" },
-  { label: "Régies", slug: "conciergerie" },
-  { label: "Chantiers", slug: "nettoyage-apres-chantier" },
+  { label: "Après chantier", slug: "nettoyage-apres-chantier" },
   { label: "Bureaux", slug: "nettoyage-bureaux" },
   { label: "Appartements", slug: "nettoyage-appartements" },
   { label: "Vitres", slug: "nettoyage-vitres" },
+  { label: "Régies", slug: "conciergerie" },
 ] as const;
 
 export function HomePrestationsGrid() {
@@ -23,7 +23,8 @@ export function HomePrestationsGrid() {
           Ce que nous prenons en charge
         </h2>
         <p className="mt-4 max-w-2xl text-muted leading-relaxed">
-          Six interventions centrales pour l&apos;immobilier — devis clair, exécution précise.
+            Six interventions centrales — fin de bail pour les particuliers, après chantier pour
+            les entreprises. Devis clair, exécution précise.
         </p>
       </FadeIn>
 

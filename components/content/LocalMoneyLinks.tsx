@@ -9,12 +9,16 @@ const moneyLinks = [
     note: "Siège",
   },
   {
-    label: "Fin de bail à Romont",
+    label: "Fin de bail à Romont (particuliers)",
     href: "/nettoyage-fin-de-bail-romont",
   },
   {
-    label: "Fin de bail à Fribourg",
+    label: "Fin de bail à Fribourg (particuliers)",
     href: "/nettoyage-fin-de-bail-fribourg",
+  },
+  {
+    label: "Après chantier & rénovation (entreprises)",
+    href: "/nettoyage-apres-chantier",
   },
 ] as const;
 

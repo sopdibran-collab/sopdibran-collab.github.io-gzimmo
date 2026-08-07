@@ -43,60 +43,65 @@ const sharedFaqs = getFaqsByIds(["zone-suisse-romande", "produits-fournis", "dev
 export const serviceLandings: ServiceLanding[] = [
   {
     slug: "nettoyage-fin-de-bail",
-    h1: "Nettoyage de fin de bail avec garantie en Suisse romande",
+    h1: "Vous déménagez ? On s'occupe du nettoyage de fin de bail",
     subtitle:
-      "Vous déménagez ? Laissez-nous nous occuper du nettoyage pendant que vous avancez. Service conforme aux exigences des régies immobilières.",
-    metaTitle: "Nettoyage fin de bail — devis gratuit | Garantie régie",
+      "Cartons, dates, stress… Le grand ménage, c'est nous. Vous nous donnez la date d'état des lieux — on vous ramène un logement prêt pour la régie.",
+    metaTitle: "Nettoyage fin de bail — devis gratuit | Vous déménagez ?",
     metaDescription:
-      "Vous déménagez ? On s'occupe du nettoyage fin de bail. Conforme aux régies, devis gratuit sous 24 h, garantie remise de bail. Gzimmo Romont — 076 214 23 42.",
+      "Vous déménagez ? Gzimmo s'occupe de votre fin de bail en Suisse romande. Devis gratuit sous 24 h, checklist régie, garantie pour votre caution. Romont — 076 214 23 42.",
     intro:
-      "Un déménagement, c'est déjà assez de stress. Confiez-nous le nettoyage de fin de bail : Gzimmo Sàrl intervient depuis Romont (FR) avec une checklist rigoureuse, adaptée aux standards des régies fribourgeoises et vaudoises. Sanitaires impeccables, cuisines dégraissées, sols lessivés, vitres sans traces — pendant que vous finalisez votre installation, nous préparons la remise des clés.",
+      "Honnêtement : entre les cartons, le nouvel appart et le boulot, le nettoyage de fin de bail est la dernière chose dont vous avez envie. Et pourtant, c'est souvent là que la régie chipote — et que la garantie locative trinque. Chez Gzimmo, on le sait. Vous nous dites juste la surface, l'état et la date : on vous envoie un devis clair, on passe pendant que vous avancez ailleurs, et on vise un état des lieux validé du premier coup. Simple, humain, local — depuis Romont.",
     forWho: [
       {
-        profile: "Locataires",
+        profile: "Vous quittez votre appart",
         situation:
-          "Vous quittez un appartement ou une maison et souhaitez récupérer votre garantie sans stress.",
+          "Vous voulez récupérer votre garantie sans y passer trois soirs. On s'adapte à votre planning — même serré.",
       },
       {
-        profile: "Régies immobilières",
+        profile: "Vous déménagez en famille",
         situation:
-          "Vous gérez un parc locatif et avez besoin d'un prestataire fiable, réactif et conforme à vos standards.",
+          "École, travail, cartons : vous n'avez plus une minute. On prend le relais sur le nettoyage, vous gardez l'énergie pour le reste.",
       },
       {
-        profile: "Propriétaires",
-        situation: "Vous préparez un logement pour un nouveau locataire ou une vente.",
+        profile: "Vous êtes proprio particulier",
+        situation:
+          "Vous remettez un logement en location ou à la vente. Vous voulez un résultat nickel, sans y consacrer le week-end.",
       },
       {
-        profile: "Agences immobilières",
-        situation: "Vous mandatez des nettoyages de fin de bail pour vos mandats de gestion.",
+        profile: "Votre régie est pointilleuse",
+        situation:
+          "Joints, four, vitres, placards… On connaît la chanson. On ne « passe un coup » : on prépare vraiment l'état des lieux.",
       },
     ],
     guarantee: {
-      title: "Garantie de remise de bail",
+      title: "Votre garantie locative, on y tient autant que vous",
       paragraphs: [
-        "Le nettoyage de fin de bail en Suisse requiert une rigueur absolue. Les régies immobilières appliquent des standards de restitution stricts : un oubli sur les joints de salle de bain, un four mal dégraissé ou des vitres laissées avec des traces peut entraîner une retenue sur la garantie locative.",
-        "Gzimmo connaît ces exigences. Nous travaillons régulièrement avec des régies du canton de Fribourg, du Vaud et de Genève. Checklist rigoureuse adaptée à votre régie, devis clair établi avant toute intervention, engagement sur un résultat irréprochable.",
-        "Si un point n'est pas conforme aux attentes de la régie, nous intervenons à nouveau sans frais supplémentaires dans le cadre de notre garantie de remise de bail.",
+        "Un oubli (joint, four, traces sur les vitres) et hop — retenue sur la caution. Frustrant, surtout quand vous avez tout bien fait le reste. On est là pour éviter ça.",
+        "Avant : devis transparent, posé avec vous. Pendant : checklist complète, pensée pour les régies fribourgeoises et vaudoises. Après : si un point juste coince à l'état des lieux, on revient le corriger — garantie de remise de bail, sans frais en plus.",
+        "Vous gardez la main : devis avant, résultat à l'arrivée, et un vrai numéro si besoin. Pas de plateforme anonyme.",
       ],
     },
     process: {
-      title: "Notre processus de nettoyage complet inclut :",
+      title: "Concrètement, chez vous, on fait :",
       items: [
-        "Nettoyage minutieux et détartrage des sanitaires et salles de bain (joints, robinetterie, parois de douche).",
-        "Dégraissage en profondeur des cuisines, fours, plaques de cuisson et hottes.",
-        "Lessivage des sols, plinthes et murs selon les matériaux (carrelage, parquet, stratifié).",
-        "Nettoyage des vitres intérieures et extérieures sans rayures.",
-        "Dépoussiérage des radiateurs, prises, interrupteurs et plinthes électriques.",
-        "Nettoyage des placards intérieurs et extérieurs, des portes et chambranles.",
-        "Aspiration et lavage des surfaces en hauteur (luminaires, corniches).",
-        "Évacuation des déchets de nettoyage en fin d'intervention.",
+        "Salles de bain et WC : détartrage, joints, robinetterie, douche.",
+        "Cuisine : four, plaques, hotte — le vrai dégraissage.",
+        "Sols et plinthes, selon le type de sol.",
+        "Vitres (intérieur, et extérieur si on peut y accéder).",
+        "Les détails qui font la différence : radiateurs, prises, placards, portes.",
+        "On repart avec les déchets du nettoyage — vous ne gardez rien.",
       ],
     },
     whyGzimmo: [
       {
-        title: "Expertise des régies immobilières",
+        title: "Une vraie équipe à Romont, pas un standard",
         description:
-          "Nous connaissons les standards de restitution appliqués par les régies fribourgeoises, vaudoises et genevoises. Pas de mauvaise surprise à l'état des lieux.",
+          "Vous parlez à des gens du coin. Réponse sous 24 h, devis expliqué clairement, date fixée avec vous.",
+      },
+      {
+        title: "On se met à votre place",
+        description:
+          "Déménagement + état des lieux le même week-end ? On connaît. On s'organise autour de votre calendrier.",
       },
       ...sharedWhy,
     ],
@@ -105,21 +110,21 @@ export const serviceLandings: ServiceLanding[] = [
       faq(
         "garantie-regie",
         "qualite",
-        "Que se passe-t-il si la régie n'est pas satisfaite ?",
-        "Gzimmo applique une garantie de remise de bail. Si un point ne correspond pas aux exigences de la régie lors de l'état des lieux, nous revenons corriger sans frais supplémentaires. Notre objectif est un état des lieux validé du premier coup.",
+        "Et si la régie n'est pas contente ?",
+        "On a une garantie de remise de bail. Point juste non validé ? On revient le corriger, sans vous facturer à nouveau. Le but : que vous récupériez votre garantie.",
       ),
       getFaqById("cout-fin-de-bail")!,
       faq(
         "delai-fin-bail",
         "delais",
-        "Combien de temps à l'avance dois-je vous contacter ?",
-        "Idéalement 1 à 2 semaines avant la date de l'état des lieux. En cas d'urgence, contactez-nous — nous faisons notre maximum pour intervenir dans les délais.",
+        "J'ai l'état des lieux bientôt — trop tard ?",
+        "Idéalement 1–2 semaines à l'avance. Mais si c'est pour bientôt : appelez quand même. On fait tout pour vous caser.",
       ),
       faq(
-        "regies-partenaires",
-        "zone",
-        "Travaillez-vous directement avec les régies immobilières ?",
-        "Oui. Nous collaborons régulièrement avec des régies et agences immobilières en Suisse romande pour des nettoyages de fin de bail, d'entretien régulier et de remise en état après travaux.",
+        "fin-bail-particulier",
+        "prestations",
+        "C'est bien pour les particuliers, pas seulement les régies ?",
+        "Oui — et c'est même la majorité de nos fins de bail. La régie fixe le niveau d'exigence ; vous, vous voulez juste un logement rendu propre sans y laisser votre week-end. On fait le lien.",
       ),
     ],
     relatedServiceSlugs: [
@@ -136,39 +141,91 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-apres-chantier",
-    h1: "Nettoyage après chantier en Suisse romande",
+    h1: "Nettoyage après chantier, rénovation et travaux pour les professionnels",
     subtitle:
-      "Remise en état complète après travaux : poussières, résidus et surfaces prêtes à être livrées ou habitées.",
-    metaTitle: "Nettoyage après chantier en Suisse romande",
+      "Fin de chantier, après rénovation, après construction : prestation structurée, délais respectés, espaces prêts à la réception. Gzimmo Sàrl — Romont (FR).",
+    metaTitle: "Nettoyage après chantier & rénovation — entreprises | Suisse romande",
     metaDescription:
-      "Remise en état après travaux en Suisse romande. Élimination des poussières, nettoyage sols et vitres. Devis gratuit depuis Romont. 076 214 23 42.",
+      "Nettoyage après chantier, après rénovation, après travaux et fin de chantier en Suisse romande. Prestataire pour entreprises, promoteurs et artisans. Devis sous 24 h — 076 214 23 42.",
     intro:
-      "Après une rénovation ou un chantier, les poussières fines s'infiltrent partout. Gzimmo intervient pour transformer un espace en travaux en lieu prêt à être habité ou livré — sols, vitres, sanitaires et surfaces traités en profondeur.",
+      "À l'approche de la réception, chaque jour compte. Poussières fines, résidus de joints, sols à reprendre, menuiseries marquées : un nettoyage de fin de chantier insuffisant retarde la livraison et expose votre image auprès du maître d'ouvrage ou du client final. Gzimmo Sàrl intervient auprès des entreprises générales, promoteurs, artisans et gestionnaires de sites en Suisse romande — nettoyage après chantier, après rénovation, après travaux ou nettoyage de clôture de chantier — selon un planning coordonné avec vos équipes et un devis formalisé avant intervention.",
     forWho: [
-      { profile: "Particuliers", situation: "Vous terminez des travaux chez vous et souhaitez une remise en état complète." },
-      { profile: "Promoteurs", situation: "Vous livrez un bien et devez garantir des finitions impeccables." },
-      { profile: "Artisans", situation: "Vous mandatez un nettoyage final avant réception des travaux." },
-      { profile: "Entreprises", situation: "Vous réaménagez vos locaux et avez besoin d'une intervention rapide." },
+      {
+        profile: "Entreprises générales et promoteurs",
+        situation:
+          "Livraison d'immeubles, logements ou locaux tertiaires. Vous exigez un prestataire fiable pour le nettoyage après construction ou la fin de chantier, sans compromettre la date de réception.",
+      },
+      {
+        profile: "Artisans et corps de métier",
+        situation:
+          "Peinture, carrelage, menuiserie : vous souhaitez présenter un ouvrage propre avant visite client. Nous intervenons en nettoyage après travaux, sur créneau convenu.",
+      },
+      {
+        profile: "Entreprises et facility management",
+        situation:
+          "Réaménagement de bureaux après travaux : intervention discrète, éventuellement hors heures d'activité, afin de permettre une reprise d'exploitation sans friction.",
+      },
+      {
+        profile: "Partenariats et marchés récurrents",
+        situation:
+          "Volume régulier de chantiers : nous pouvons formaliser un cadre de collaboration (interlocuteur dédié, délais de réponse, conditions tarifaires).",
+      },
     ],
+    guarantee: {
+      title: "Engagement qualité et conditions de collaboration",
+      paragraphs: [
+        "Un nettoyage après rénovation ou après travaux insuffisant se constate immédiatement et engage votre responsabilité perçue auprès du client final. Notre rôle est de sécuriser cette étape critique de la livraison.",
+        "Gzimmo Sàrl intervient comme prestataire professionnel : devis détaillé préalable, fournitures professionnelles incluses, respect des autres corps de métier présents sur site, évacuation des déchets liés au nettoyage. L'objectif est un local apte à l'occupation ou à la visite de réception.",
+        "Pour un partenariat durable (cantons de Fribourg et de Vaud, Suisse romande), nous sommes ouverts à la définition d'un accord-cadre : priorisation du planning, conditions annoncées, même niveau d'exigence sur chaque intervention.",
+      ],
+    },
     process: {
-      title: "Notre intervention après chantier inclut :",
+      title: "Périmètre type — nettoyage après chantier / fin de chantier",
       items: [
-        "Élimination des poussières fines sur toutes les surfaces.",
-        "Nettoyage des sols (carrelage, parquet, béton) selon le matériau.",
-        "Vitres intérieures et extérieures sans traces ni résidus.",
-        "Sanitaires, cuisines et équipements encrassés par les travaux.",
-        "Plinthes, radiateurs, interrupteurs et menuiseries.",
-        "Évacuation des déchets de nettoyage en fin d'intervention.",
+        "Aspiration et élimination des poussières fines, y compris après rénovation.",
+        "Traitement des sols (carrelage, parquet, béton) selon le matériau et l'état du site.",
+        "Vitres et menuiseries : intérieur et extérieur selon accès, sans résidus.",
+        "Sanitaires et cuisines encrassés par les travaux.",
+        "Plinthes, radiateurs, appareillages électriques et boîtiers.",
+        "Nettoyage de clôture de chantier avant réception ou livraison.",
+        "Coordination possible avec le chef de chantier ou le conducteur de travaux.",
       ],
     },
     whyGzimmo: [
       {
-        title: "Intervention rapide après travaux",
-        description: "Nous planifions l'intervention selon votre calendrier de livraison ou de réception.",
+        title: "Alignement sur vos délais de livraison",
+        description:
+          "L'intervention est planifiée selon votre calendrier de réception. Les urgences de fin de chantier sont examinées au cas par cas.",
+      },
+      {
+        title: "Cadre B2B clair",
+        description:
+          "Devis sous 24 h, facturation transparente, interlocuteur identifiable. Adapté aux entreprises générales, promoteurs et artisans recherchant un prestataire récurrent.",
       },
       ...sharedWhy,
     ],
-    faqs: sharedFaqs,
+    faqs: [
+      ...sharedFaqs,
+      getFaqById("apres-chantier")!,
+      faq(
+        "apres-renovation",
+        "prestations",
+        "Couvrez-vous également le nettoyage après rénovation et après travaux ?",
+        "Oui. Après rénovation, après travaux, fin de chantier ou nettoyage de clôture de chantier : même exigence de résultat (poussières, sols, vitres, sanitaires). Le devis est adapté à l'état réel du site.",
+      ),
+      faq(
+        "partenariat-entreprises",
+        "zone",
+        "Proposez-vous des partenariats aux entreprises et artisans ?",
+        "Oui. Nous collaborons déjà avec des professionnels du bâtiment et de l'immobilier en Suisse romande. Pour un volume régulier, un cadre peut être défini (délais, conditions, zones prioritaires Fribourg et Vaud). Contactez-nous pour en discuter.",
+      ),
+      faq(
+        "delai-fin-chantier",
+        "delais",
+        "Quel délai faut-il prévoir pour un nettoyage de fin de chantier ?",
+        "Dès que la date de réception est connue, nous recommandons de nous en informer. Un délai de 48 à 72 heures suffit souvent à planifier ; les urgences sont étudiées individuellement. Devis gratuit sous 24 h.",
+      ),
+    ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "entretien-locaux", "nettoyage-vitres"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },

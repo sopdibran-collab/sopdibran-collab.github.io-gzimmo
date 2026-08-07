@@ -70,7 +70,7 @@ export const faqItems: FaqItem[] = [
     id: "cout-fin-de-bail",
     category: "tarifs",
     question: "Combien coûte un nettoyage fin de bail en Suisse romande ?",
-    answer: `Le tarif dépend de la surface, de l'état du logement et des exigences de la régie. Gzimmo établit un devis gratuit et personnalisé avant toute intervention. Contactez-nous au ${phoneDisplay} ou à ${email}.`,
+    answer: `Franchement, ça dépend de la taille, de l'état et de ce que veut votre régie. On ne sort pas un prix au hasard : on vous envoie un devis gratuit, personnalisé, avant de venir. Appelez le ${phoneDisplay} ou écrivez à ${email} — on répond sous 24 h.`,
   },
   {
     id: "devis-gratuit",
@@ -95,21 +95,21 @@ export const faqItems: FaqItem[] = [
     category: "zone",
     question: "Intervenez-vous pour les régies et les entreprises ?",
     answer:
-      "Oui. Nous travaillons avec des particuliers, des régies immobilières et des entreprises pour l'entretien régulier ou les prestations ponctuelles (fin de bail, après chantier, bureaux).",
+      "Oui. Pour les professionnels : nettoyage après chantier, après rénovation, après travaux et fin de chantier, y compris dans le cadre d'un partenariat. Pour les particuliers : principalement le nettoyage de fin de bail. Entretien de bureaux et conciergerie sur devis.",
   },
   {
     id: "apres-chantier",
     category: "prestations",
-    question: "Proposez-vous le nettoyage après chantier ?",
+    question: "Proposez-vous le nettoyage après chantier, après rénovation et après travaux ?",
     answer:
-      "Oui. Nous réalisons des remises en état complètes après travaux : élimination des poussières, nettoyage des sols, vitres et surfaces. Intervention en Suisse romande, devis gratuit.",
+      "Oui. Gzimmo Sàrl réalise le nettoyage après chantier, après rénovation, après travaux, ainsi que la fin de chantier et le nettoyage de clôture de chantier : poussières fines, sols, vitres, sanitaires. Prestations destinées aux entreprises, promoteurs et artisans en Suisse romande. Devis gratuit. Partenariats sur demande.",
   },
   {
     id: "interventions-ponctuelles",
     category: "prestations",
     question: "Proposez-vous des interventions ponctuelles ?",
     answer:
-      "Oui : entretien régulier ou mission ponctuelle (fin de bail, après chantier, vitres). Le planning s'adapte à vos horaires.",
+      "Oui : entretien régulier ou mission ponctuelle (fin de bail pour particuliers, après chantier pour professionnels, vitres). Le planning s'adapte à vos horaires.",
   },
   {
     id: "produits-fournis",
