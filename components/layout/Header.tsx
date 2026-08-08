@@ -5,24 +5,11 @@ import { mainNav } from "@/data/navigation";
 import { company } from "@/data/company";
 import { formatPhoneHref } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { ArrowRightIcon, PhoneIcon } from "@/components/ui/ContactIcons";
 import { Logo } from "@/components/ui/Logo";
 import { HeaderNavLink } from "@/components/layout/HeaderNavLink";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { cn } from "@/lib/utils";
-
-function PhoneIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="size-[18px]">
-      <path
-        d="M5.5 3.5h2l1.2 3-1.6 1.1a9.5 9.5 0 0 0 4.3 4.3L12.5 10l3 1.2v2a1 1 0 0 1-1 1A12.5 12.5 0 0 1 3.5 5.5a1 1 0 0 1 1-2Z"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export function Header() {
   const callHref = formatPhoneHref(company.phone);
@@ -44,15 +31,15 @@ export function Header() {
           : "border-border/60 bg-[#ffffff]/85 backdrop-blur-[2px]",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1200px] min-w-0 items-center gap-3 px-container sm:gap-6 lg:h-[4.5rem]">
+      <div className="mx-auto flex h-16 max-w-[1200px] min-w-0 items-center gap-3 px-container sm:gap-6 lg:h-[4.5rem] lg:gap-3 xl:gap-6">
         {/* Logo */}
         <div className="min-w-0 shrink">
-          <Logo priority />
+          <Logo priority className="lg:w-[220px] xl:w-[270px] 2xl:w-[300px]" />
         </div>
 
         {/* Navigation — centrée sur desktop */}
         <nav
-          className="hidden min-w-0 flex-1 items-center justify-center gap-5 lg:flex xl:gap-6"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex xl:gap-5"
           aria-label="Navigation principale"
         >
           {mainNav.map((item) => (
@@ -60,16 +47,24 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA desktop — retenu, confiance suisse */}
-        <div className="hidden shrink-0 items-center gap-5 lg:flex">
-          <a
+        {/* CTA desktop — actions identifiables, une seule priorité visuelle */}
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
+          <Button
             href={callHref}
-            className="text-sm font-medium text-muted transition-colors duration-200 hover:text-accent"
+            external
+            variant="secondary"
+            aria-label={`Appeler le ${company.phoneDisplay}`}
+            className="h-10 whitespace-nowrap border-border/90 bg-white px-3 text-[13px] text-foreground shadow-none hover:border-accent/35 hover:bg-accent-muted/45 hover:text-accent-hover"
           >
+            <PhoneIcon className="size-4 shrink-0" />
             {company.phoneDisplay}
-          </a>
-          <Button href="/contact" variant="ghost" className="px-0 font-medium text-accent hover:text-accent-hover">
+          </Button>
+          <Button
+            href="/contact"
+            className="h-10 whitespace-nowrap px-4 shadow-none"
+          >
             Devis gratuit
+            <ArrowRightIcon className="size-4 shrink-0" />
           </Button>
         </div>
 
