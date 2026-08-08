@@ -16,7 +16,10 @@ export function HomeHero() {
 
   return (
     <>
-      <section className="relative isolate min-h-[min(88svh,780px)] overflow-hidden bg-inverse">
+      <section
+        id="home-hero"
+        className="relative isolate min-h-[min(88svh,780px)] overflow-hidden bg-inverse"
+      >
         <Image
           src="/images/hero/appartement-suisse.jpg"
           alt=""
@@ -34,7 +37,7 @@ export function HomeHero() {
           className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/45 via-transparent to-[#1e2227]/20"
         />
 
-        <div className="relative z-10 mx-auto flex min-h-[min(88svh,780px)] w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-14 pt-28 sm:pb-16 lg:pb-20">
+        <div className="relative z-10 mx-auto flex min-h-[min(88svh,780px)] w-full max-w-[1200px] min-w-0 flex-col justify-center px-container pb-28 pt-16 sm:pb-24 sm:pt-20 lg:justify-end lg:pb-20 lg:pt-28">
           <FadeIn className="min-w-0 max-w-2xl">
             <p className="font-display text-[clamp(1.75rem,8vw,3.5rem)] font-semibold tracking-[-0.03em] text-white">
               {company.name.replace(" Sàrl", "")}
@@ -55,7 +58,7 @@ export function HomeHero() {
                 href={callHref}
                 external
                 variant="secondary"
-                className="w-full border-white/35 bg-white/10 text-white hover:border-white/55 hover:bg-white/15 sm:w-auto"
+                className="hidden border-white/35 bg-white/10 text-white hover:border-white/55 hover:bg-white/15 sm:inline-flex sm:w-auto"
               >
                 {company.phoneDisplay}
               </Button>
