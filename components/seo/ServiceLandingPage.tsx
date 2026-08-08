@@ -87,17 +87,27 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           <p className="max-w-3xl text-muted leading-relaxed">{landing.intro}</p>
         </FadeIn>
 
-        <ContentCard className="mt-12">
-          <h2 className="font-display text-display-sm text-foreground">À qui s&apos;adresse ce service ?</h2>
-          <ul className="mt-8 divide-y divide-border/80">
-            {landing.forWho.map((item) => (
-              <li key={item.profile} className="grid gap-2 py-5 first:pt-0 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8">
-                <span className="text-sm font-medium text-foreground">{item.profile}</span>
-                <span className="text-sm text-muted leading-relaxed">{item.situation}</span>
-              </li>
-            ))}
-          </ul>
-        </ContentCard>
+        <section className="mt-12 border-y border-border/80 py-8 md:py-10">
+          <div className="grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
+            <div>
+              <span className="mb-5 block h-px w-10 bg-accent" aria-hidden="true" />
+              <h2 className="font-display text-display-sm text-foreground">
+                À qui s&apos;adresse ce service ?
+              </h2>
+            </div>
+            <ul className="divide-y divide-border/80 border-t border-border/80 lg:border-t-0">
+              {landing.forWho.map((item) => (
+                <li
+                  key={item.profile}
+                  className="grid gap-2 py-5 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8 lg:first:pt-0"
+                >
+                  <span className="text-sm font-medium text-foreground">{item.profile}</span>
+                  <span className="text-sm text-muted leading-relaxed">{item.situation}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         {landing.guarantee ? (
           <ContentCard className="mt-8 border-accent/20 bg-accent-muted/30">

@@ -1,6 +1,7 @@
 import { company } from "@/data/company";
 import { formatPhoneHref, cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { ArrowRightIcon, MailIcon, PhoneIcon } from "@/components/ui/ContactIcons";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 type ContactCtaProps = {
@@ -18,8 +19,8 @@ export function ContactCta({ className }: ContactCtaProps) {
         className,
       )}
     >
-      <FadeIn className="mx-auto flex w-full max-w-[1200px] min-w-0 flex-col gap-8 px-container py-10 md:flex-row md:items-center md:justify-between md:gap-10 md:py-12">
-        <div className="min-w-0 max-w-xl">
+      <FadeIn className="mx-auto flex w-full max-w-[1200px] min-w-0 flex-col gap-8 px-container py-10 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:py-12">
+        <div className="min-w-0 max-w-[25rem]">
           <h2 className="font-display text-display-sm text-foreground md:text-display-md">
             Parlons de votre prochain chantier
           </h2>
@@ -28,21 +29,33 @@ export function ContactCta({ className }: ContactCtaProps) {
           </p>
         </div>
 
-        <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3">
-          <a
+        <div className="flex min-w-0 flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center lg:max-w-[31rem] lg:justify-end">
+          <Button
             href={callHref}
-            className="text-base font-medium text-foreground transition-colors duration-200 hover:text-accent"
+            external
+            variant="secondary"
+            aria-label={`Appeler le ${company.phoneDisplay}`}
+            className="h-11 w-full justify-start border-accent/15 bg-background px-3.5 text-sm shadow-none hover:border-accent/40 hover:bg-background hover:text-accent-hover sm:h-10 sm:w-auto"
           >
+            <PhoneIcon className="size-4 shrink-0" />
             {company.phoneDisplay}
-          </a>
-          <a
+          </Button>
+          <Button
             href={`mailto:${company.email}`}
-            className="break-all text-base font-medium text-foreground transition-colors duration-200 hover:text-accent"
+            external
+            variant="secondary"
+            aria-label={`Écrire à ${company.email}`}
+            className="h-11 w-full justify-start border-accent/15 bg-background px-3.5 text-sm shadow-none hover:border-accent/40 hover:bg-background hover:text-accent-hover sm:h-10 sm:w-auto"
           >
+            <MailIcon className="size-4 shrink-0" />
             {company.email}
-          </a>
-          <Button href="/contact" className="w-full shadow-none sm:ml-2 sm:w-auto">
+          </Button>
+          <Button
+            href="/contact"
+            className="h-11 w-full px-4 shadow-none sm:h-10 sm:w-auto"
+          >
             Demander un devis
+            <ArrowRightIcon className="size-4 shrink-0" />
           </Button>
         </div>
       </FadeIn>
