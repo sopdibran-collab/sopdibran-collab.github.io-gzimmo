@@ -22,7 +22,7 @@ export function HomeHero() {
       >
         <Image
           src="/images/hero/appartement-suisse.jpg"
-          alt=""
+          alt="Appartement propre après nettoyage professionnel Gzimmo en Suisse romande"
           fill
           priority
           sizes="100vw"

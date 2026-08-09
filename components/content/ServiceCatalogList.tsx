@@ -30,7 +30,7 @@ export function ServiceCatalogList() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={service.image.src}
-                    alt=""
+                    alt={service.image.alt}
                     width={service.image.width}
                     height={service.image.height}
                     loading={index < 2 ? "eager" : "lazy"}
@@ -57,7 +57,7 @@ export function ServiceCatalogList() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={service.image.src}
-                  alt=""
+                  alt={service.image.alt}
                   width={service.image.width}
                   height={service.image.height}
                   loading="lazy"
