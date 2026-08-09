@@ -52,6 +52,10 @@ export function RealisationGrid({
   );
 }
 
+function realisationAlt(item: Realisation) {
+  return `${item.title} — ${item.service} à ${item.location}`;
+}
+
 function RealisationCard({ item }: { item: Realisation }) {
   return (
     <article className="group flex h-full flex-col">
@@ -59,7 +63,7 @@ function RealisationCard({ item }: { item: Realisation }) {
         <div className="relative aspect-[4/3] overflow-hidden bg-surface">
           <Image
             src={item.image}
-            alt=""
+            alt={realisationAlt(item)}
             fill
             className="object-cover transition-[opacity] duration-300 group-hover:opacity-95"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -92,7 +96,7 @@ function RealisationRow({ item }: { item: Realisation }) {
         <div className="relative aspect-[4/3] overflow-hidden bg-surface md:col-span-5">
           <Image
             src={item.image}
-            alt=""
+            alt={realisationAlt(item)}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 40vw"

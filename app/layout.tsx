@@ -3,7 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
+import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { JsonLd, PlausibleScript } from "@/components/seo/JsonLd";
 import {
   GoogleTagManagerNoscript,
@@ -45,13 +45,13 @@ export default function RootLayout({
         <GoogleTagManagerScript />
         <PlausibleScript />
       </head>
-      <body className="min-h-screen antialiased pb-20 lg:pb-0">
+      <body className="min-h-screen antialiased pb-[calc(3.75rem+env(safe-area-inset-bottom))] lg:pb-0">
         <GoogleTagManagerNoscript />
         <JsonLd data={organizationJsonLd()} />
         <Header />
         <main>{children}</main>
         <Footer />
-        <StickyMobileCta />
+        <MobileBottomNav />
         <SpeedInsights />
       </body>
     </html>

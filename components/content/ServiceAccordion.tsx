@@ -27,13 +27,12 @@ function ServiceImage({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={service.image.src}
-        alt=""
+        alt={service.image.alt}
         width={service.image.width}
         height={service.image.height}
         loading={priority ? "eager" : "lazy"}
         decoding="async"
         draggable={false}
-        aria-hidden="true"
         className={cn(
           "h-full w-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]",
           imageClassName,

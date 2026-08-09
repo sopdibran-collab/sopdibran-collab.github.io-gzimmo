@@ -7,6 +7,16 @@ export const mainNav = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
+/** Bottom bar mobile — 4 liens + Appel = 5 slots max (style app native). */
+export const mobileBottomNav = [
+  { label: "Accueil", href: "/", icon: "home" },
+  { label: "Services", href: "/services", icon: "services" },
+  { label: "Réalisations", href: "/realisations", icon: "work" },
+  { label: "Contact", href: "/contact", icon: "contact" },
+] as const;
+
+export type MobileBottomNavIcon = (typeof mobileBottomNav)[number]["icon"];
+
 export const footerNav = {
   pages: [
     { label: "Accueil", href: "/" },

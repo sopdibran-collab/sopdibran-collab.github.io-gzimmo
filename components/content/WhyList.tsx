@@ -19,7 +19,7 @@ export function WhyList() {
         <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-lg bg-surface">
           <Image
             src="/images/brand/couloir-propre.jpg"
-            alt=""
+            alt="Couloir d'immeuble propre après entretien professionnel Gzimmo"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 40vw"

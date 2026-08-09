@@ -54,7 +54,7 @@ export function Logo({
   const image = (
     <img
       src={sources[variant]}
-      alt={linked ? "" : company.name}
+      alt={company.name}
       width={width}
       height={height}
       decoding="async"
