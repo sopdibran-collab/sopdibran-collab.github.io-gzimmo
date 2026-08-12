@@ -29,7 +29,7 @@ const sharedWhy = [
   {
     title: "Réactivité depuis Romont",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons rapidement en Glâne, en Fribourg et dans toute la Suisse romande. Devis sous 24 h.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons en priorité en Glâne, dans le canton de Fribourg et le canton de Vaud. Devis sous 24 h.",
   },
   {
     title: "Devis transparent avant intervention",
@@ -46,9 +46,9 @@ export const serviceLandings: ServiceLanding[] = [
     h1: "Nettoyage de fin de bail avec garantie en Suisse romande",
     subtitle:
       "Vous déménagez ? Laissez-nous nous occuper du nettoyage pendant que vous avancez. Service conforme aux exigences des régies immobilières.",
-    metaTitle: "Nettoyage fin de bail — devis gratuit | Garantie régie",
+    metaTitle: "Nettoyage fin de bail Romont–Fribourg | Garantie régie",
     metaDescription:
-      "Vous déménagez ? On s'occupe du nettoyage fin de bail. Conforme aux régies, devis gratuit sous 24 h, garantie remise de bail. Gzimmo Romont — 076 214 23 42.",
+      "Fin de bail conforme régies (FR/VD). Checklist, devis sous 24 h, garantie reprise. Gzimmo Romont — 076 214 23 42.",
     intro:
       "Un déménagement, c'est déjà assez de stress. Confiez-nous le nettoyage de fin de bail : Gzimmo Sàrl intervient depuis Romont (FR) avec une checklist rigoureuse, adaptée aux standards des régies fribourgeoises et vaudoises. Sanitaires impeccables, cuisines dégraissées, sols lessivés, vitres sans traces — pendant que vous finalisez votre installation, nous préparons la remise des clés.",
     forWho: [
@@ -136,43 +136,92 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-apres-chantier",
-    h1: "Nettoyage après chantier en Suisse romande",
+    h1: "Nettoyage après chantier, rénovation ou travaux — Fribourg & Vaud",
     subtitle:
-      "Remise en état complète après travaux : poussières, résidus et surfaces prêtes à être livrées ou habitées.",
-    metaTitle: "Nettoyage après chantier en Suisse romande",
+      "Poussières fines, résidus de plâtre et traces de chantier : on remet l'espace prêt à livrer ou à habiter — depuis Romont.",
+    metaTitle: "Nettoyage après chantier & rénovation | Fribourg–Vaud",
     metaDescription:
-      "Remise en état après travaux en Suisse romande. Élimination des poussières, nettoyage sols et vitres. Devis gratuit depuis Romont. 076 214 23 42.",
+      "Nettoyage après chantier, après rénovation ou après travaux à Romont, Fribourg et Vaud. Poussières fines, sols, vitres. Devis gratuit — 076 214 23 42.",
     intro:
-      "Après une rénovation ou un chantier, les poussières fines s'infiltrent partout. Gzimmo intervient pour transformer un espace en travaux en lieu prêt à être habité ou livré — sols, vitres, sanitaires et surfaces traités en profondeur.",
+      "En une phrase : après rénovation ou chantier, Gzimmo élimine poussières fines et résidus pour rendre l'espace livrable — depuis Romont (FR), sur Fribourg et Vaud. Les poussières de plâtre et de coupe s'infiltrent dans les radiateurs, joints et menuiseries : un passage ménage classique ne suffit pas. Notre équipe (plus de 15 ans d'expérience cumulée dans le nettoyage) applique une checklist chantier, des produits professionnels et un planning calé sur votre réception.",
     forWho: [
-      { profile: "Particuliers", situation: "Vous terminez des travaux chez vous et souhaitez une remise en état complète." },
-      { profile: "Promoteurs", situation: "Vous livrez un bien et devez garantir des finitions impeccables." },
-      { profile: "Artisans", situation: "Vous mandatez un nettoyage final avant réception des travaux." },
-      { profile: "Entreprises", situation: "Vous réaménagez vos locaux et avez besoin d'une intervention rapide." },
+      {
+        profile: "Particuliers",
+        situation:
+          "Vous venez de rénover cuisine, salle de bain ou appartement et voulez habiter sans poussière fine.",
+      },
+      {
+        profile: "Promoteurs & directions de travaux",
+        situation:
+          "Vous livrez un lot et devez présenter des finitions propres à la réception.",
+      },
+      {
+        profile: "Artisans & entreprises générales",
+        situation:
+          "Vous mandatez le nettoyage final avant état des lieux ou remise des clés.",
+      },
+      {
+        profile: "Régies & propriétaires",
+        situation:
+          "Remise en état après travaux locatifs avant remise en location.",
+      },
     ],
     process: {
-      title: "Notre intervention après chantier inclut :",
+      title: "Checklist typique après chantier / rénovation",
       items: [
-        "Élimination des poussières fines sur toutes les surfaces.",
-        "Nettoyage des sols (carrelage, parquet, béton) selon le matériau.",
-        "Vitres intérieures et extérieures sans traces ni résidus.",
-        "Sanitaires, cuisines et équipements encrassés par les travaux.",
-        "Plinthes, radiateurs, interrupteurs et menuiseries.",
+        "Aspiration et élimination des poussières fines (plâtre, sciure, ciment) sur sols et surfaces hautes.",
+        "Lessivage des sols selon matériau (carrelage, parquet, béton ciré) sans abîmer les finitions neuves.",
+        "Vitres intérieures / extérieures sans voile ni résidus de silicone ou de joints.",
+        "Sanitaires et cuisines débarrassés des traces de travaux (calcaire de chantier, projections).",
+        "Plinthes, radiateurs, prises, interrupteurs, chambranles et menuiseries.",
         "Évacuation des déchets de nettoyage en fin d'intervention.",
       ],
     },
     whyGzimmo: [
       {
-        title: "Intervention rapide après travaux",
-        description: "Nous planifions l'intervention selon votre calendrier de livraison ou de réception.",
+        title: "Spécialistes de la poussière de rénovation",
+        description:
+          "Ce n'est pas un ménage standard : on traite les zones où la poussière fine reste après les artisans.",
+      },
+      {
+        title: "Avis Google après chantier",
+        description:
+          "Des clients ont noté notre intervention après rénovation sur Google Maps — détail et lieu prêt à être utilisé.",
+      },
+      {
+        title: "Planning calé sur la livraison",
+        description:
+          "On intervient selon votre réception, pas « quand on peut ». Devis sous 24 h depuis Romont.",
       },
       ...sharedWhy,
     ],
-    faqs: sharedFaqs,
+    faqs: [
+      ...sharedFaqs,
+      faq(
+        "apres-renovation-vs-chantier",
+        "services",
+        "Nettoyage après rénovation ou après chantier : est-ce la même chose ?",
+        "Oui pour l'essentiel : poussières fines, résidus et surfaces à protéger. « Après rénovation », « après travaux » et « après construction » décrivent le même besoin. On adapte la checklist au type de travaux (plâtrerie, peinture, carrelage, etc.).",
+      ),
+      faq(
+        "poussiere-fine",
+        "qualite",
+        "Pourquoi un ménage classique ne suffit-il pas après travaux ?",
+        "La poussière de plâtre et de coupe se loge dans les radiateurs, joints, prises et textiles. Sans aspiration ciblée et lessivage adapté, elle réapparaît dès qu'on ouvre une fenêtre ou qu'on chauffe.",
+      ),
+      faq(
+        "delai-livraison-chantier",
+        "delais",
+        "Pouvez-vous intervenir juste avant une livraison ou un état des lieux ?",
+        "Oui, si le planning le permet. Prévenez-nous dès que la date de réception est connue — idéalement quelques jours à l'avance. En urgence, contactez le 076 214 23 42.",
+      ),
+      getFaqById("apres-chantier")!,
+    ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "entretien-locaux", "nettoyage-vitres"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
       { label: "Entreprise de nettoyage à Fribourg", href: "/seo/nettoyage-fribourg" },
+      { label: "Nettoyage fin de bail Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
     ],
     testimonials: [
       {

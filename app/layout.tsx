@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/layout/Header";
+import { HeaderOffset } from "@/components/layout/HeaderOffset";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { JsonLd, PlausibleScript } from "@/components/seo/JsonLd";
@@ -49,6 +50,7 @@ export default function RootLayout({
         <GoogleTagManagerNoscript />
         <JsonLd data={organizationJsonLd()} />
         <Header />
+        <HeaderOffset />
         <main>{children}</main>
         <Footer />
         <MobileBottomNav />

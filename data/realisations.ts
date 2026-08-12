@@ -69,4 +69,8 @@ export const realisations: Realisation[] = [
   },
 ];
 
-export const featuredRealisations = realisations.slice(0, 3);
+export const featuredRealisations: Realisation[] = [
+  realisations.find((item) => item.id === "fin-bail-fribourg")!,
+  realisations.find((item) => item.id === "bureaux-lausanne")!,
+  realisations.find((item) => item.id === "chantier-morges")!,
+];

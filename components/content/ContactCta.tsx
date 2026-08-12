@@ -1,64 +1,41 @@
 import { company } from "@/data/company";
 import { formatPhoneHref, cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
-import { ArrowRightIcon, MailIcon, PhoneIcon } from "@/components/ui/ContactIcons";
-import { FadeIn } from "@/components/ui/FadeIn";
 
 type ContactCtaProps = {
   className?: string;
 };
 
-/** Bandeau CTA pleine largeur — pas de cadre inset dans une section. */
+/** CTA final — un message, un bouton. */
 export function ContactCta({ className }: ContactCtaProps) {
   const callHref = formatPhoneHref(company.phone);
 
   return (
-    <section
-      className={cn(
-        "border-y border-border/70 bg-accent-muted/55",
-        className,
-      )}
-    >
-      <FadeIn className="mx-auto flex w-full max-w-[1200px] min-w-0 flex-col gap-8 px-container py-10 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:py-12">
-        <div className="min-w-0 max-w-[25rem]">
-          <h2 className="font-display text-display-sm text-foreground md:text-display-md">
-            Parlons de votre prochain chantier
+    <section className={cn("bg-inverse text-white", className)}>
+      <div className="mx-auto grid w-full max-w-[1200px] min-w-0 gap-8 px-container py-16 sm:py-20 lg:grid-cols-12 lg:items-end lg:gap-10 lg:py-24">
+        <div className="lg:col-span-8">
+          <h2 className="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em]">
+            Prochaine fin de bail,<br className="hidden sm:block" /> on s&apos;en charge.
           </h2>
-          <p className="mt-3 text-muted leading-relaxed">
-            Devis gratuit et réponse sous 24 h.
+          <p className="mt-4 max-w-md text-white/65 leading-relaxed">
+            Décrivez le bien — on revient sous 24 h avec un devis clair.
           </p>
         </div>
-
-        <div className="flex min-w-0 flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center lg:max-w-[31rem] lg:justify-end">
-          <Button
-            href={callHref}
-            external
-            variant="secondary"
-            aria-label={`Appeler le ${company.phoneDisplay}`}
-            className="h-11 w-full justify-start border-accent/15 bg-background px-3.5 text-sm shadow-none hover:border-accent/40 hover:bg-background hover:text-accent-hover sm:h-10 sm:w-auto"
-          >
-            <PhoneIcon className="size-4 shrink-0" />
-            {company.phoneDisplay}
-          </Button>
-          <Button
-            href={`mailto:${company.email}`}
-            external
-            variant="secondary"
-            aria-label={`Écrire à ${company.email}`}
-            className="h-11 w-full justify-start border-accent/15 bg-background px-3.5 text-sm shadow-none hover:border-accent/40 hover:bg-background hover:text-accent-hover sm:h-10 sm:w-auto"
-          >
-            <MailIcon className="size-4 shrink-0" />
-            {company.email}
-          </Button>
+        <div className="flex flex-col gap-3 sm:items-start lg:col-span-4 lg:items-end">
           <Button
             href="/contact"
-            className="h-11 w-full px-4 shadow-none sm:h-10 sm:w-auto"
+            className="w-full bg-white text-foreground shadow-none hover:bg-white/90 sm:w-auto"
           >
             Demander un devis
-            <ArrowRightIcon className="size-4 shrink-0" />
           </Button>
+          <a
+            href={callHref}
+            className="text-sm font-medium text-white/60 transition-colors duration-200 hover:text-white"
+          >
+            {company.phoneDisplay}
+          </a>
         </div>
-      </FadeIn>
+      </div>
     </section>
   );
 }

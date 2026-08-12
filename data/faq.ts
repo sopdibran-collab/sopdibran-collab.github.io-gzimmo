@@ -102,7 +102,7 @@ export const faqItems: FaqItem[] = [
     category: "prestations",
     question: "Proposez-vous le nettoyage après chantier ?",
     answer:
-      "Oui. Nous réalisons des remises en état complètes après travaux : élimination des poussières, nettoyage des sols, vitres et surfaces. Intervention en Suisse romande, devis gratuit.",
+      "Oui. Remise en état après chantier, après rénovation ou après travaux : poussières fines, sols, vitres et surfaces. Priorité Fribourg (Romont, Glâne) et Vaud — devis gratuit.",
   },
   {
     id: "interventions-ponctuelles",
