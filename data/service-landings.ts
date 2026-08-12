@@ -199,7 +199,7 @@ export const serviceLandings: ServiceLanding[] = [
       ...sharedFaqs,
       faq(
         "apres-renovation-vs-chantier",
-        "services",
+        "prestations",
         "Nettoyage après rénovation ou après chantier : est-ce la même chose ?",
         "Oui pour l'essentiel : poussières fines, résidus et surfaces à protéger. « Après rénovation », « après travaux » et « après construction » décrivent le même besoin. On adapte la checklist au type de travaux (plâtrerie, peinture, carrelage, etc.).",
       ),
