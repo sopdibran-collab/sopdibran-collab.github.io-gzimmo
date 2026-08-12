@@ -35,8 +35,7 @@ export function localBusinessSchema() {
     areaServed: [
       { "@type": "AdministrativeArea", name: "Canton de Fribourg" },
       { "@type": "AdministrativeArea", name: "Canton de Vaud" },
-      { "@type": "AdministrativeArea", name: "Canton de Genève" },
-      { "@type": "AdministrativeArea", name: "Canton de Neuchâtel" },
+      { "@type": "City", name: "Romont" },
       ...locations.map((loc) => ({
         "@type": "City",
         name: loc.city,

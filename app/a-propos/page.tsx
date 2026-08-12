@@ -11,7 +11,7 @@ import { Section } from "@/components/layout/Section";
 export const metadata = createMetadata({
   title: "À propos",
   description:
-    "Gzimmo Sàrl : équipe expérimentée en nettoyage professionnel, basée à Romont (FR), active dans toute la Suisse romande.",
+    "Gzimmo Sàrl : plus de 15 ans d'expérience cumulée en nettoyage, basée à Romont (FR), active en Fribourg et Vaud.",
   path: "/a-propos",
 });
 

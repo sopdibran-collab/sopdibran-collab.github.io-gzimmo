@@ -1,11 +1,10 @@
 import { featuredGoogleReview, googleReviews } from "@/data/google-reviews";
 import { StarRating } from "@/components/ui/StarRating";
-import { FadeIn } from "@/components/ui/FadeIn";
 import { TextLink } from "@/components/ui/TextLink";
 
 function GoogleMark() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="size-6 shrink-0">
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5 shrink-0">
       <path
         fill="#4285F4"
         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"
@@ -26,7 +25,7 @@ function GoogleMark() {
   );
 }
 
-/** Avis home — mise en page mockup, contenu = avis Google existants. */
+/** Un avis Google réel — preuve locale. */
 export function HomeFeaturedReview() {
   const review = googleReviews[1] ?? googleReviews[0];
   const rating = review?.rating ?? featuredGoogleReview.rating ?? 5;
@@ -35,42 +34,42 @@ export function HomeFeaturedReview() {
   const meta = review?.contextLabel ?? featuredGoogleReview.location ?? "Google";
 
   return (
-    <FadeIn>
-      <div className="grid min-w-0 items-center gap-8 lg:grid-cols-[7rem_minmax(0,1fr)_auto] lg:gap-14">
-        <p className="font-display text-sm font-medium tracking-[0.12em] text-muted uppercase">
-          Avis
+    <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+      <div className="lg:col-span-4">
+        <h2 className="font-display text-display-sm text-foreground">
+          Ce qu&apos;on nous laisse sur Google
+        </h2>
+        <p className="mt-3 text-sm text-muted leading-relaxed">
+          Avis vérifiés — pas de témoignages inventés.
         </p>
-
-        <blockquote className="min-w-0 border-y border-border/80 py-10 text-center lg:border-y-0 lg:border-x lg:border-border/80 lg:px-14 lg:py-6">
-          <div className="flex justify-center">
-            <StarRating
-              rating={rating}
-              className="inline-flex text-base tracking-[0.18em] text-accent"
-            />
-          </div>
-          <p className="mx-auto mt-6 max-w-3xl break-words font-display text-lg leading-relaxed text-foreground italic sm:text-xl sm:leading-[1.7]">
-            &ldquo;{quote}&rdquo;
-          </p>
-          <footer className="mt-8 flex min-w-0 flex-wrap items-center justify-center gap-3 text-sm">
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex max-w-full min-w-0 items-center gap-3 font-medium text-foreground transition-colors duration-200 hover:text-accent"
-            >
-              <GoogleMark />
-              <span className="min-w-0 break-words text-left">
-                Avis Google
-                <span className="text-muted"> · {meta}</span>
-              </span>
-            </a>
-          </footer>
-        </blockquote>
-
-        <div className="lg:justify-self-end">
-          <TextLink href="/avis">Tous les avis</TextLink>
+        <div className="mt-6">
+          <TextLink href="/avis">Lire tous les avis</TextLink>
         </div>
       </div>
-    </FadeIn>
+
+      <blockquote className="lg:col-span-8">
+        <StarRating
+          rating={rating}
+          className="inline-flex text-base tracking-[0.16em] text-accent"
+        />
+        <p className="mt-5 font-display text-[1.35rem] leading-snug tracking-[-0.02em] text-foreground sm:text-2xl sm:leading-[1.35]">
+          &ldquo;{quote}&rdquo;
+        </p>
+        <footer className="mt-6">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-accent"
+          >
+            <GoogleMark />
+            <span>
+              Voir sur Google
+              <span className="text-muted"> · {meta}</span>
+            </span>
+          </a>
+        </footer>
+      </blockquote>
+    </div>
   );
 }

@@ -152,6 +152,16 @@
     }
   }
 
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.05);
+    }
+
+    to {
+      transform: scale(1.12);
+    }
+  }
+
   .animate-fade-in-up {
     animation: fade-in-up 0.55s var(--ease-premium) both;
   }

@@ -5,15 +5,16 @@ import { faqPageSchema, googleReviewsLocalBusinessSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { HomeHero } from "@/components/content/HomeHero";
 import { HomePrestationsGrid } from "@/components/content/HomePrestationsGrid";
+import { WhyList } from "@/components/content/WhyList";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { HomeFeaturedReview } from "@/components/content/HomeFeaturedReview";
 import { ContactCta } from "@/components/content/ContactCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createMetadata({
-  title: "Nettoyage professionnel en Suisse romande",
+  title: "Nettoyage fin de bail & régies à Romont",
   description:
-    "Gzimmo Sàrl — entreprise de nettoyage à Romont (FR). Fins de bail, régies, chantiers, bureaux. Devis gratuit, réponse sous 24 h. 076 214 23 42.",
+    "Gzimmo Sàrl — nettoyage à Romont (FR). Fins de bail pour régies, chantiers, bureaux. Devis gratuit, réponse sous 24 h. 076 214 23 42.",
   path: "/",
 });
 
@@ -31,10 +32,14 @@ export default function HomePage() {
       </Section>
 
       <Section variant="surface">
-        <RealisationGrid />
+        <WhyList />
       </Section>
 
       <Section variant="default">
+        <RealisationGrid />
+      </Section>
+
+      <Section variant="surface">
         <HomeFeaturedReview />
       </Section>
 
