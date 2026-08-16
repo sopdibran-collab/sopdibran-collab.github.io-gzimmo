@@ -15,7 +15,13 @@ export const metadata = createMetadata({
   path: "/contact",
 });
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string }>;
+}) {
+  const params = await searchParams;
+
   return (
     <>
       <JsonLd
@@ -29,8 +35,8 @@ export default function ContactPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Contact" }]} />
         <PageIntro
           badge="Contact"
-          title="Demandez votre devis gratuit"
-          description="Décrivez votre besoin. Nous vous répondons sous 24 heures, sans engagement."
+          title="Parlons de votre devis"
+          description="Le plus simple : appelez-nous et expliquez la situation. Un échange suffit pour un devis sur mesure, sans engagement."
         />
       </PageHero>
 
@@ -40,7 +46,7 @@ export default function ContactPage() {
             <ContactInfoCard />
           </div>
           <div className="lg:col-span-7">
-            <ContactForm />
+            <ContactForm defaultService={params.service} />
           </div>
         </div>
 

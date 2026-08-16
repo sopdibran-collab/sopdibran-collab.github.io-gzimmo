@@ -83,7 +83,7 @@ export const services: Service[] = [
     title: "Nettoyage après chantier",
     shortTitle: "Nettoyage après chantier",
     description:
-      "Remise en état après travaux : poussières, résidus et finitions propres.",
+      "Remise en état après chantier, rénovation, construction ou travaux : poussières fines, sols, vitres.",
     intro:
       "Nous transformons un chantier en espace prêt à être habité ou livré.",
     benefits: [
@@ -104,7 +104,7 @@ export const services: Service[] = [
     title: "Nettoyage fin de bail",
     shortTitle: "Nettoyage fin de bail",
     description:
-      "Nettoyage de fin de bail conforme aux exigences des régies et propriétaires.",
+      "Nettoyage de fin de bail conforme aux régies : état des lieux, remise des clés, devis et garantie de reprise.",
     intro:
       "Vous avez un déménagement à gérer ? Laissez-nous nous occuper du nettoyage de fin de bail — conforme aux régies, sans stress à l'état des lieux.",
     benefits: [

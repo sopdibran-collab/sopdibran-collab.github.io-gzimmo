@@ -1,5 +1,6 @@
 import type { FaqContent, FaqItem } from "@/data/faq";
 import { faq, getFaqById, getFaqsByIds } from "@/data/faq";
+import { finDeBailPriceFaqs } from "@/data/fin-de-bail-faq";
 import { featuredGoogleReview } from "@/data/google-reviews";
 import { getServicePath } from "@/lib/service-paths";
 
@@ -9,7 +10,14 @@ export type ServiceLanding = {
   subtitle: string;
   metaTitle: string;
   metaDescription: string;
+  /** Exact SERP title (≤ 60 chars) — skips the Gzimmo suffix. */
+  absoluteTitle?: boolean;
   intro: string;
+  audienceHeading?: string;
+  whyHeading?: string;
+  faqHeading?: string;
+  sections?: { title: string; body: string }[];
+  schemaServiceTypes?: string[];
   forWho: { profile: string; situation: string }[];
   guarantee?: { title: string; paragraphs: string[] };
   process: { title: string; items: string[] };
@@ -18,6 +26,11 @@ export type ServiceLanding = {
   relatedServiceSlugs: string[];
   relatedLocalLinks: { label: string; href: string }[];
   testimonials: { quote: string; author: string }[];
+  heroCtaLabel?: string;
+  showPriceQuote?: boolean;
+  showInterventionZones?: boolean;
+  useFinDeBailFaq?: boolean;
+  preferCallCta?: boolean;
 };
 
 const sharedWhy = [
@@ -29,7 +42,7 @@ const sharedWhy = [
   {
     title: "Réactivité depuis Romont",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons en priorité en Glâne, dans le canton de Fribourg et le canton de Vaud. Devis sous 24 h.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, Vaud et Neuchâtel, et en Valais jusqu'à Martigny. Devis sous 24 h.",
   },
   {
     title: "Devis transparent avant intervention",
@@ -43,14 +56,38 @@ const sharedFaqs = getFaqsByIds(["zone-suisse-romande", "produits-fournis", "dev
 export const serviceLandings: ServiceLanding[] = [
   {
     slug: "nettoyage-fin-de-bail",
-    h1: "Nettoyage de fin de bail avec garantie en Suisse romande",
+    h1: "Nettoyage fin de bail avec garantie d'état des lieux",
     subtitle:
-      "Vous déménagez ? Laissez-nous nous occuper du nettoyage pendant que vous avancez. Service conforme aux exigences des régies immobilières.",
-    metaTitle: "Nettoyage fin de bail Romont–Fribourg | Garantie régie",
+      "Appelez-nous, expliquez le logement et la date de remise des clés : devis gratuit, sur mesure, garantie d'état des lieux auprès de votre régie.",
+    metaTitle: "Nettoyage Fin de Bail avec Garantie d'État des Lieux",
     metaDescription:
-      "Fin de bail conforme régies (FR/VD). Checklist, devis sous 24 h, garantie reprise. Gzimmo Romont — 076 214 23 42.",
+      "Prix d'un nettoyage fin de bail : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Sion–Martigny. 076 214 23 42.",
+    absoluteTitle: true,
+    heroCtaLabel: "Préférer nous écrire",
+    showPriceQuote: true,
+    showInterventionZones: true,
+    useFinDeBailFaq: true,
+    preferCallCta: true,
+    audienceHeading: "Locataires, régies et propriétaires",
+    whyHeading: "Pourquoi les régies valident nos fins de bail",
+    faqHeading: "Prix, devis et garantie de remise de bail",
+    schemaServiceTypes: [
+      "Nettoyage fin de bail",
+      "Nettoyage de fin de bail",
+      "Remise d'appartement",
+    ],
     intro:
-      "Un déménagement, c'est déjà assez de stress. Confiez-nous le nettoyage de fin de bail : Gzimmo Sàrl intervient depuis Romont (FR) avec une checklist rigoureuse, adaptée aux standards des régies fribourgeoises et vaudoises. Sanitaires impeccables, cuisines dégraissées, sols lessivés, vitres sans traces — pendant que vous finalisez votre installation, nous préparons la remise des clés.",
+      "Vous déménagez ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl intervient depuis Romont pour les locataires et les régies — Fribourg, Vaud, Neuchâtel, et Valais jusqu'à Martigny.",
+    sections: [
+      {
+        title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
+        body: "Le prix dépend de la surface, de l'état du logement et de ce que votre régie exige à l'état des lieux — pas d'un forfait unique en ligne. Appelez-nous : vous décrivez la situation, nous établissons un devis gratuit et détaillé. Le tarif convenu est le tarif final, avant la remise des clés.",
+      },
+      {
+        title: "Pour les régies : checklist, état des lieux, remise des clés",
+        body: "Nous travaillons pour des locataires et directement pour des régies : turnovers, sorties, appartements à remettre en location. La checklist suit les points qui bloquent le plus souvent une restitution — joints, four, traces sur vitres — pour limiter les reprises le jour de l'état des lieux.",
+      },
+    ],
     forWho: [
       {
         profile: "Locataires",
@@ -75,12 +112,12 @@ export const serviceLandings: ServiceLanding[] = [
       title: "Garantie de remise de bail",
       paragraphs: [
         "Le nettoyage de fin de bail en Suisse requiert une rigueur absolue. Les régies immobilières appliquent des standards de restitution stricts : un oubli sur les joints de salle de bain, un four mal dégraissé ou des vitres laissées avec des traces peut entraîner une retenue sur la garantie locative.",
-        "Gzimmo connaît ces exigences. Nous travaillons régulièrement avec des régies du canton de Fribourg, du Vaud et de Genève. Checklist rigoureuse adaptée à votre régie, devis clair établi avant toute intervention, engagement sur un résultat irréprochable.",
+        "Gzimmo connaît ces exigences. Nous travaillons avec des régies dans les cantons de Fribourg, de Vaud et de Neuchâtel, et en Valais jusqu'à Martigny. Checklist adaptée, devis clair avant intervention.",
         "Si un point n'est pas conforme aux attentes de la régie, nous intervenons à nouveau sans frais supplémentaires dans le cadre de notre garantie de remise de bail.",
       ],
     },
     process: {
-      title: "Notre processus de nettoyage complet inclut :",
+      title: "Checklist de remise de bail (état des lieux)",
       items: [
         "Nettoyage minutieux et détartrage des sanitaires et salles de bain (joints, robinetterie, parois de douche).",
         "Dégraissage en profondeur des cuisines, fours, plaques de cuisson et hottes.",
@@ -96,32 +133,11 @@ export const serviceLandings: ServiceLanding[] = [
       {
         title: "Expertise des régies immobilières",
         description:
-          "Nous connaissons les standards de restitution appliqués par les régies fribourgeoises, vaudoises et genevoises. Pas de mauvaise surprise à l'état des lieux.",
+          "Nous connaissons les standards de restitution des régies fribourgeoises, vaudoises et neuchâteloises. Pas de mauvaise surprise à l'état des lieux.",
       },
       ...sharedWhy,
     ],
-    faqs: [
-      ...sharedFaqs,
-      faq(
-        "garantie-regie",
-        "qualite",
-        "Que se passe-t-il si la régie n'est pas satisfaite ?",
-        "Gzimmo applique une garantie de remise de bail. Si un point ne correspond pas aux exigences de la régie lors de l'état des lieux, nous revenons corriger sans frais supplémentaires. Notre objectif est un état des lieux validé du premier coup.",
-      ),
-      getFaqById("cout-fin-de-bail")!,
-      faq(
-        "delai-fin-bail",
-        "delais",
-        "Combien de temps à l'avance dois-je vous contacter ?",
-        "Idéalement 1 à 2 semaines avant la date de l'état des lieux. En cas d'urgence, contactez-nous — nous faisons notre maximum pour intervenir dans les délais.",
-      ),
-      faq(
-        "regies-partenaires",
-        "zone",
-        "Travaillez-vous directement avec les régies immobilières ?",
-        "Oui. Nous collaborons régulièrement avec des régies et agences immobilières en Suisse romande pour des nettoyages de fin de bail, d'entretien régulier et de remise en état après travaux.",
-      ),
-    ],
+    faqs: finDeBailPriceFaqs,
     relatedServiceSlugs: [
       "nettoyage-apres-chantier",
       "nettoyage-appartements",
@@ -131,19 +147,43 @@ export const serviceLandings: ServiceLanding[] = [
       { label: "Nettoyage fin de bail à Romont", href: "/nettoyage-fin-de-bail-romont" },
       { label: "Nettoyage fin de bail à Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
+      { label: "Nettoyage à Lausanne et agglomération", href: "/seo/nettoyage-lausanne" },
     ],
     testimonials: [],
   },
   {
     slug: "nettoyage-apres-chantier",
-    h1: "Nettoyage après chantier, rénovation ou travaux — Fribourg & Vaud",
+    h1: "Nettoyage après travaux et chantier — rénovation et construction",
     subtitle:
-      "Poussières fines, résidus de plâtre et traces de chantier : on remet l'espace prêt à livrer ou à habiter — depuis Romont.",
-    metaTitle: "Nettoyage après chantier & rénovation | Fribourg–Vaud",
+      "Que ce soit après la construction d'une maison neuve ou la rénovation d'un appartement, notre équipe assure un nettoyage après travaux complet et rapide.",
+    metaTitle: "Nettoyage Après Chantier & Rénovation en Suisse | Devis Gratuit",
     metaDescription:
-      "Nettoyage après chantier, après rénovation ou après travaux à Romont, Fribourg et Vaud. Poussières fines, sols, vitres. Devis gratuit — 076 214 23 42.",
+      "Après chantier, rénovation, construction ou travaux. Poussières fines, devis gratuit. Fribourg, Vaud, Neuchâtel, Sion–Martigny. 076 214 23 42.",
+    absoluteTitle: true,
+    heroCtaLabel: "Demander un devis gratuit",
+    showInterventionZones: true,
+    audienceHeading: "Après rénovation, construction ou fin de chantier",
+    whyHeading: "Un nettoyage de fin de chantier, pas un ménage classique",
+    faqHeading: "Après rénovation, travaux ou construction",
+    schemaServiceTypes: [
+      "Nettoyage après chantier",
+      "Nettoyage après rénovation",
+      "Nettoyage après travaux",
+      "Nettoyage après construction",
+      "Nettoyage de fin de chantier",
+    ],
     intro:
-      "En une phrase : après rénovation ou chantier, Gzimmo élimine poussières fines et résidus pour rendre l'espace livrable — depuis Romont (FR), sur Fribourg et Vaud. Les poussières de plâtre et de coupe s'infiltrent dans les radiateurs, joints et menuiseries : un passage ménage classique ne suffit pas. Notre équipe (plus de 15 ans d'expérience cumulée dans le nettoyage) applique une checklist chantier, des produits professionnels et un planning calé sur votre réception.",
+      "Confiez-nous le nettoyage fin de chantier : nous éliminons poussières fines, résidus de peinture et gravats pour vous livrer un bien prêt à habiter. Après rénovation, construction ou travaux, un ménage classique ne suffit pas — Gzimmo applique une checklist chantier depuis Romont.",
+    sections: [
+      {
+        title: "Après rénovation, construction ou fin de chantier : même exigence",
+        body: "« Nettoyage après rénovation », « après travaux », « après construction » ou « fin de chantier » décrivent le même besoin : enlever ce que les artisans laissent. Cuisine refaite, appartement neuf, immeuble livré — on adapte la checklist (plâtre, peinture, carrelage, menuiseries) pour que le lieu soit habitable ou présentable à la réception.",
+      },
+      {
+        title: "Romont, Fribourg, Vaud, Neuchâtel et Valais jusqu'à Martigny",
+        body: "Nous partons de Romont pour les chantiers du canton de Fribourg, du canton de Vaud (de Bex à Nyon, Crissier, Yverdon, Vevey…), du canton de Neuchâtel, et en Valais jusqu'à Martigny (Sion compris). Devis sous 24 h.",
+      },
+    ],
     forWho: [
       {
         profile: "Particuliers",
@@ -215,12 +255,25 @@ export const serviceLandings: ServiceLanding[] = [
         "Pouvez-vous intervenir juste avant une livraison ou un état des lieux ?",
         "Oui, si le planning le permet. Prévenez-nous dès que la date de réception est connue — idéalement quelques jours à l'avance. En urgence, contactez le 076 214 23 42.",
       ),
+      faq(
+        "apres-chantier-vs-fin-bail",
+        "prestations",
+        "Quelle différence entre nettoyage après chantier et fin de bail ?",
+        "Après chantier (rénovation, construction, travaux), on enlève poussières fines et résidus pour une livraison ou un emménagement. La fin de bail vise l'état des lieux et les standards de la régie — sanitaires, cuisine, joints, vitres — pour la remise des clés. Les deux peuvent se succéder sur un même logement.",
+      ),
+      faq(
+        "prix-apres-chantier",
+        "tarifs",
+        "Combien coûte un nettoyage après rénovation ou après chantier ?",
+        "Le tarif dépend de la surface, du type de travaux (plâtre, peinture, carrelage) et du niveau de poussière. Devis gratuit sous 24 h, sans engagement — pas de forfait unique, pour rester juste vis-à-vis de votre chantier.",
+      ),
       getFaqById("apres-chantier")!,
     ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "entretien-locaux", "nettoyage-vitres"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
       { label: "Entreprise de nettoyage à Fribourg", href: "/seo/nettoyage-fribourg" },
+      { label: "Nettoyage à Lausanne et agglomération", href: "/seo/nettoyage-lausanne" },
       { label: "Nettoyage fin de bail Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
     ],
     testimonials: [

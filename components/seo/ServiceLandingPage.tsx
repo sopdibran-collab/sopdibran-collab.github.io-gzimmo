@@ -7,6 +7,9 @@ import { StarRating } from "@/components/ui/StarRating";
 import { getServiceBySlug } from "@/data/services";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { FaqList } from "@/components/content/FaqList";
+import { FinDeBailPriceFaq } from "@/components/content/FinDeBailPriceFaq";
+import { FinDeBailPriceQuote } from "@/components/content/FinDeBailPriceQuote";
+import { InterventionZones } from "@/components/content/InterventionZones";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/Badge";
@@ -33,7 +36,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
     <>
       <JsonLd
         data={[
-          serviceSchema(service, path),
+          serviceSchema(service, path, { serviceTypes: landing.schemaServiceTypes }),
           faqPageSchema(landing.faqs),
           breadcrumbSchema([
             { name: "Accueil", path: "/" },
@@ -59,7 +62,12 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 {landing.h1}
               </h1>
               <p className="mt-5 text-lg text-muted leading-relaxed">{landing.subtitle}</p>
-              <ConversionCta className="mt-8" devisHref={`/contact?service=${landing.slug}`} />
+              <ConversionCta
+                className="mt-8"
+                devisHref={`/contact?service=${landing.slug}`}
+                devisLabel={landing.heroCtaLabel}
+                preferCall={landing.preferCallCta}
+              />
               <ReassuranceBand className="mt-8" />
             </div>
             <div className="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(30,34,39,0.1)] lg:aspect-[4/3]">
@@ -87,12 +95,23 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           <p className="max-w-3xl text-muted leading-relaxed">{landing.intro}</p>
         </FadeIn>
 
+        {landing.sections?.length ? (
+          <div className="mt-12 space-y-8">
+            {landing.sections.map((section) => (
+              <ContentCard key={section.title}>
+                <h2 className="font-display text-display-sm text-foreground">{section.title}</h2>
+                <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
+              </ContentCard>
+            ))}
+          </div>
+        ) : null}
+
         <section className="mt-12 border-y border-border/80 py-8 md:py-10">
           <div className="grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
             <div>
               <span className="mb-5 block h-px w-10 bg-accent" aria-hidden="true" />
               <h2 className="font-display text-display-sm text-foreground">
-                À qui s&apos;adresse ce service ?
+                {landing.audienceHeading ?? "À qui s'adresse ce service ?"}
               </h2>
             </div>
             <ul className="divide-y divide-border/80 border-t border-border/80 lg:border-t-0">
@@ -120,6 +139,8 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </ContentCard>
         ) : null}
 
+        {landing.showPriceQuote ? <FinDeBailPriceQuote /> : null}
+
         <ContentCard className="mt-8">
           <h2 className="font-display text-display-sm text-foreground">{landing.process.title}</h2>
           <ul className="mt-6 space-y-3">
@@ -130,11 +151,18 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </li>
             ))}
           </ul>
-          <ConversionCta className="mt-8" devisHref={`/contact?service=${landing.slug}`} />
+          <ConversionCta
+            className="mt-8"
+            devisHref={`/contact?service=${landing.slug}`}
+            devisLabel={landing.heroCtaLabel}
+            preferCall={landing.preferCallCta}
+          />
         </ContentCard>
 
         <div className="mt-12">
-          <h2 className="font-display text-display-sm text-foreground">Pourquoi choisir Gzimmo ?</h2>
+          <h2 className="font-display text-display-sm text-foreground">
+            {landing.whyHeading ?? "Pourquoi choisir Gzimmo ?"}
+          </h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {landing.whyGzimmo.map((item) => (
               <li
@@ -148,16 +176,20 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </ul>
         </div>
 
-        <div className="mt-16 border-t border-border/80 pt-16">
-          <Badge className="text-accent/90">FAQ</Badge>
-          <h2 className="mt-4 font-display text-display-sm text-foreground">
-            Questions fréquentes — {service.shortTitle.toLowerCase()}
-          </h2>
-          <div className="mt-8">
-            <FaqList items={landing.faqs} />
+        {landing.useFinDeBailFaq ? (
+          <FinDeBailPriceFaq devisHref={`/contact?service=${landing.slug}`} />
+        ) : (
+          <div className="mt-16 border-t border-border/80 pt-16">
+            <Badge className="text-accent/90">FAQ</Badge>
+            <h2 className="mt-4 font-display text-display-sm text-foreground">
+              {landing.faqHeading ?? `Questions fréquentes — ${service.shortTitle.toLowerCase()}`}
+            </h2>
+            <div className="mt-8">
+              <FaqList items={landing.faqs} />
+            </div>
+            <ConversionCta className="mt-10" devisHref={`/contact?service=${landing.slug}`} />
           </div>
-          <ConversionCta className="mt-10" devisHref={`/contact?service=${landing.slug}`} />
-        </div>
+        )}
 
         {landing.testimonials.length > 0 ? (
           <div className="mt-16 border-t border-border/80 pt-16">
@@ -232,6 +264,16 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             </ul>
           </ContentCard>
         </div>
+
+        {landing.showInterventionZones ? (
+          <InterventionZones
+            servicePhrase={
+              landing.slug === "nettoyage-apres-chantier"
+                ? "nettoyage après chantier"
+                : "nettoyage fin de bail"
+            }
+          />
+        ) : null}
 
         <ContentCard className="mt-8">
           <NapBlock />

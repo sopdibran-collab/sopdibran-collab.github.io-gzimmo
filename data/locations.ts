@@ -37,9 +37,9 @@ const romontFaqs: FaqContent[] = [
       "Oui. Nous réalisons des nettoyages de fin de bail conformes aux exigences des régies et propriétaires du canton de Fribourg. Devis gratuit avant intervention.",
   },
   {
-    question: "Gzimmo couvre-t-il toute la Suisse romande depuis Romont ?",
+    question: "Gzimmo intervient-il hors de Romont ?",
     answer:
-      "Oui. Bien que basés à Romont, nous intervenons dans toute la Suisse romande : Fribourg, Vaud, Genève, Neuchâtel et Valais romand.",
+      "Oui. Priorité aux cantons de Fribourg, Vaud et Neuchâtel, et au Valais jusqu'à Martigny. Siège : Route de Raboud 8, 1680 Romont FR.",
   },
 ];
 

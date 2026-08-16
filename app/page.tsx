@@ -9,13 +9,24 @@ import { WhyList } from "@/components/content/WhyList";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { HomeFeaturedReview } from "@/components/content/HomeFeaturedReview";
 import { ContactCta } from "@/components/content/ContactCta";
+import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createMetadata({
-  title: "Nettoyage fin de bail & régies à Romont",
+  title: "Après chantier & fin de bail | Devis Romont",
   description:
-    "Gzimmo Sàrl — nettoyage à Romont (FR). Fins de bail pour régies, chantiers, bureaux. Devis gratuit, réponse sous 24 h. 076 214 23 42.",
+    "Nettoyage après rénovation, travaux ou fin de bail à Romont, Fribourg et Vaud. Devis gratuit sous 24 h, garantie régie. 076 214 23 42.",
   path: "/",
+  absoluteTitle: true,
+  keywords: [
+    "nettoyage après rénovation",
+    "nettoyage après chantier",
+    "nettoyage après travaux",
+    "nettoyage fin de bail",
+    "devis nettoyage",
+    "Romont",
+    "Fribourg",
+  ],
 });
 
 export default function HomePage() {
@@ -41,6 +52,16 @@ export default function HomePage() {
 
       <Section variant="surface">
         <HomeFeaturedReview />
+      </Section>
+
+      <Section variant="default">
+        <FaqSectionHeader
+          title="Prix, devis et garantie régie"
+          description="Les questions que posent locataires et régies avant un état des lieux, une remise des clés ou une livraison de chantier."
+        />
+        <div className="mt-8">
+          <FaqList items={homepageFaq} />
+        </div>
       </Section>
 
       <ContactCta />

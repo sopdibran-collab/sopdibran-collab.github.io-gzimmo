@@ -69,20 +69,20 @@ export const faqItems: FaqItem[] = [
   {
     id: "cout-fin-de-bail",
     category: "tarifs",
-    question: "Combien coûte un nettoyage fin de bail en Suisse romande ?",
-    answer: `Le tarif dépend de la surface, de l'état du logement et des exigences de la régie. Gzimmo établit un devis gratuit et personnalisé avant toute intervention. Contactez-nous au ${phoneDisplay} ou à ${email}.`,
+    question: "Quel est le prix d'un nettoyage de fin de bail ?",
+    answer: `Il n'y a pas de tarif unique : le prix dépend de la surface, de l'état du logement et de la checklist de votre régie. Appelez le ${phoneDisplay} pour expliquer la situation — devis gratuit, sur mesure, avant intervention. ${email}`,
   },
   {
     id: "devis-gratuit",
     category: "tarifs",
     question: "Le devis est-il gratuit et sous quel délai répondez-vous ?",
-    answer: `Oui, sans engagement. Décrivez votre besoin par téléphone, e-mail ou formulaire — nous répondons sous 24 heures avec une proposition claire. ${phoneDisplay} · ${email}`,
+    answer: `Oui, sans engagement. Le plus simple est d'appeler le ${phoneDisplay} : vous expliquez la situation, nous établissons un devis sur mesure. E-mail ou formulaire restent possibles — réponse sous 24 heures. ${email}`,
   },
   {
     id: "zone-suisse-romande",
     category: "zone",
     question: "Quelle zone couvrez-vous en Suisse romande ?",
-    answer: `Gzimmo intervient en priorité dans le canton de Fribourg (Romont, Glâne, Broye, Gruyère) et le canton de Vaud (Lausanne, Morges, Yverdon). Siège : ${siege}.`,
+    answer: `Gzimmo intervient dans le canton de Fribourg (Romont, Glâne, Broye, Gruyère), le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux), le canton de Neuchâtel, et en Valais jusqu'à Martigny (Sion compris). Siège : ${siege}.`,
   },
   {
     id: "entreprise-romont",
@@ -100,9 +100,22 @@ export const faqItems: FaqItem[] = [
   {
     id: "apres-chantier",
     category: "prestations",
-    question: "Proposez-vous le nettoyage après chantier ?",
+    question: "Proposez-vous le nettoyage après chantier, rénovation ou travaux ?",
     answer:
-      "Oui. Remise en état après chantier, après rénovation ou après travaux : poussières fines, sols, vitres et surfaces. Priorité Fribourg (Romont, Glâne) et Vaud — devis gratuit.",
+      "Oui. Après chantier, après rénovation, après construction ou en fin de chantier : poussières fines, sols, vitres et surfaces. Priorité Romont, Fribourg et Vaud — devis gratuit.",
+  },
+  {
+    id: "garantie-remise-bail",
+    category: "qualite",
+    question: "Que se passe-t-il si la régie refuse l'état des lieux ?",
+    answer:
+      "Sur le nettoyage de fin de bail, Gzimmo applique une garantie de remise de bail : si un point n'est pas validé par la régie, nous revenons corriger sans frais supplémentaires. L'objectif est une remise des clés validée du premier coup.",
+  },
+  {
+    id: "zone-hors-prioritaire",
+    category: "zone",
+    question: "Intervenez-vous à Sion, Martigny ou en Valais ?",
+    answer: `Oui jusqu'à Martigny : Sion, Martigny et le Chablais valaisan. Au-delà (Sierre, Haut-Valais), écrivez-nous pour confirmer le déplacement. Priorité : Fribourg, Vaud, Neuchâtel. ${phoneDisplay} · ${email}`,
   },
   {
     id: "interventions-ponctuelles",
@@ -157,13 +170,13 @@ export function getFaqsByIds(ids: string[]) {
   return ids.map((id) => faqById.get(id)).filter((item): item is FaqItem => Boolean(item));
 }
 
-/** 5 questions orientées conversion — références vers faqItems (même contenu). */
+/** FAQ accueil = JSON-LD visible (prix, chantier, garantie, zone). */
 export const homepageFaqIds = [
   "cout-fin-de-bail",
-  "regies-entreprises",
+  "apres-chantier",
+  "garantie-remise-bail",
   "devis-gratuit",
   "zone-suisse-romande",
-  "produits-fournis",
 ] as const;
 
 export const homepageFaq = getFaqsByIds([...homepageFaqIds]);
