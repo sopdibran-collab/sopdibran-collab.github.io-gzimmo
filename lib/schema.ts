@@ -1,14 +1,52 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
 import { featuredGoogleReview, type GoogleReview } from "@/data/google-reviews";
+import { extraSchemaCities } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
 import { getServicePath } from "@/lib/service-paths";
 
+const romontGeo = {
+  "@type": "GeoCoordinates" as const,
+  latitude: 46.6917,
+  longitude: 6.9111,
+};
+
+/** Zone : Fribourg, Vaud, Neuchâtel, Valais jusqu'à Martigny. */
+export function priorityAreaServed() {
+  const fromLandings = locations
+    .filter((location) => location.canton === "FR" || location.canton === "VD" || location.canton === "NE")
+    .map((location) => ({
+      "@type": "City",
+      name: location.city,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: location.cantonName,
+      },
+    }));
+
+  const extras = extraSchemaCities.map((city) => ({
+    "@type": "City",
+    name: city.name,
+    containedInPlace: {
+      "@type": "AdministrativeArea",
+      name: city.cantonName,
+    },
+  }));
+
+  return [
+    { "@type": "AdministrativeArea", name: "Canton de Fribourg" },
+    { "@type": "AdministrativeArea", name: "Canton de Vaud" },
+    { "@type": "AdministrativeArea", name: "Canton de Neuchâtel" },
+    ...fromLandings,
+    ...extras,
+  ];
+}
+
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@type": ["LocalBusiness", "CleaningService"],
     "@id": `${company.url}/#organization`,
     name: company.legalName,
     alternateName: "Gzimmo",
@@ -19,6 +57,7 @@ export function localBusinessSchema() {
     image: `${company.url}/horizontal.png`,
     logo: `${company.url}/icon_only.png`,
     priceRange: "$$",
+    currenciesAccepted: "CHF",
     address: {
       "@type": "PostalAddress",
       streetAddress: company.address.street,
@@ -27,25 +66,17 @@ export function localBusinessSchema() {
       postalCode: company.address.postalCode,
       addressCountry: company.address.country,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 46.6917,
-      longitude: 6.9111,
-    },
-    areaServed: [
-      { "@type": "AdministrativeArea", name: "Canton de Fribourg" },
-      { "@type": "AdministrativeArea", name: "Canton de Vaud" },
-      { "@type": "City", name: "Romont" },
-      ...locations.map((loc) => ({
-        "@type": "City",
-        name: loc.city,
-        containedInPlace: {
-          "@type": "AdministrativeArea",
-          name: loc.cantonName,
-        },
-      })),
+    geo: romontGeo,
+    areaServed: priorityAreaServed(),
+    knowsAbout: [
+      ...services.map((s) => s.title),
+      "Nettoyage après rénovation",
+      "Nettoyage après travaux",
+      "Nettoyage après construction",
+      "Nettoyage de fin de chantier",
+      "État des lieux",
+      "Remise des clés",
     ],
-    knowsAbout: services.map((s) => s.title),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Services de nettoyage Gzimmo",
@@ -53,7 +84,7 @@ export function localBusinessSchema() {
         "@type": "Offer",
         position: index + 1,
         itemOffered: {
-          "@type": "Service",
+          "@type": "CleaningService",
           name: service.title,
           description: service.description,
           url: `${company.url}${getServicePath(service.slug)}`,
@@ -105,20 +136,36 @@ export function faqPageSchema(items: readonly (FaqItem | FaqContent)[] = faqItem
   };
 }
 
-export function serviceSchema(service: (typeof services)[number], path?: string) {
+export function serviceSchema(
+  service: (typeof services)[number],
+  path?: string,
+  options?: { serviceTypes?: string[] },
+) {
   const servicePath = path ?? getServicePath(service.slug);
+  const serviceTypes = options?.serviceTypes?.length
+    ? options.serviceTypes
+    : [service.title];
+
   return {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": "CleaningService",
     name: service.title,
     description: service.description,
     url: `${company.url}${servicePath}`,
     provider: { "@id": `${company.url}/#organization` },
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Suisse romande",
+    areaServed: priorityAreaServed(),
+    serviceType: serviceTypes,
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${company.url}/contact`,
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: company.phone,
+        contactType: "customer service",
+        areaServed: "CH",
+        availableLanguage: ["French"],
+      },
     },
-    serviceType: service.title,
   };
 }
 

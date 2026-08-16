@@ -25,7 +25,7 @@ export function ContactActions({
       )}
     >
       {showDevis ? <Button href="/contact">{devisLabel}</Button> : null}
-      <Button variant="secondary" href={callHref} external>
+      <Button variant={showDevis ? "secondary" : "primary"} href={callHref} external>
         Appeler
       </Button>
       <Button variant="secondary" href={mailHref} external>

@@ -25,7 +25,7 @@ const regionLinks = [
   { label: "Romont", href: "/seo/nettoyage-romont" },
   { label: "Fribourg", href: "/seo/nettoyage-fribourg" },
   { label: "Lausanne", href: "/seo/nettoyage-lausanne" },
-  { label: "Genève", href: "/seo/nettoyage-geneve" },
+  { label: "Neuchâtel", href: "/seo/nettoyage-neuchatel" },
 ] as const;
 
 const chipClass =

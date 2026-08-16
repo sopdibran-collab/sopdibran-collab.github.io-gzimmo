@@ -9,6 +9,8 @@ type ConversionCtaProps = {
   devisLabel?: string;
   callLabel?: string;
   compact?: boolean;
+  /** Phone first — devis sur mesure après un échange, pas un calculateur. */
+  preferCall?: boolean;
 };
 
 export function ConversionCta({
@@ -17,8 +19,20 @@ export function ConversionCta({
   devisLabel = "Demander un devis gratuit",
   callLabel = `Appeler le ${company.phoneDisplay}`,
   compact = false,
+  preferCall = false,
 }: ConversionCtaProps) {
   const callHref = formatPhoneHref(company.phone);
+
+  const callButton = (
+    <Button href={callHref} external variant={preferCall ? "primary" : "secondary"}>
+      {callLabel}
+    </Button>
+  );
+  const devisButton = (
+    <Button href={devisHref} variant={preferCall ? "secondary" : "primary"}>
+      {devisLabel}
+    </Button>
+  );
 
   return (
     <div
@@ -27,10 +41,17 @@ export function ConversionCta({
         className,
       )}
     >
-      <Button href={devisHref}>{devisLabel}</Button>
-      <Button variant="secondary" href={callHref} external>
-        {callLabel}
-      </Button>
+      {preferCall ? (
+        <>
+          {callButton}
+          {devisButton}
+        </>
+      ) : (
+        <>
+          {devisButton}
+          {callButton}
+        </>
+      )}
     </div>
   );
 }

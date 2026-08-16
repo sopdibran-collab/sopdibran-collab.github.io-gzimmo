@@ -11,6 +11,8 @@ type PageMetadataOptions = {
   path?: string;
   keywords?: string[];
   geo?: { placename: string; region: string; lat: number; lng: number };
+  /** Exact `<title>` — no « — Gzimmo Sàrl » suffix. Use to stay ≤ 60 characters. */
+  absoluteTitle?: boolean;
 };
 
 export function createMetadata({
@@ -19,8 +21,13 @@ export function createMetadata({
   path = "",
   keywords = [],
   geo,
+  absoluteTitle = false,
 }: PageMetadataOptions = {}): Metadata {
-  const pageTitle = title ? `${title} — ${company.name}` : defaultTitle;
+  const pageTitle = title
+    ? absoluteTitle
+      ? title
+      : `${title} — ${company.name}`
+    : defaultTitle;
   const url = `${company.url}${path}`;
 
   const defaultKeywords = [

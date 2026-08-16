@@ -8,7 +8,11 @@ import { Button } from "@/components/ui/Button";
 import { ContentCard } from "@/components/ui/ContentCard";
 import { Input, Select, Textarea } from "@/components/ui/Field";
 
-export function ContactForm() {
+type ContactFormProps = {
+  defaultService?: string;
+};
+
+export function ContactForm({ defaultService = "" }: ContactFormProps) {
   const [opened, setOpened] = useState(false);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -49,7 +53,7 @@ export function ContactForm() {
           <Input label="Téléphone" name="phone" type="tel" autoComplete="tel" />
         </div>
         <Input label="Localité" name="city" autoComplete="address-level2" />
-        <Select label="Type de prestation" name="service" defaultValue="">
+        <Select label="Type de prestation" name="service" defaultValue={defaultService || ""}>
           <option value="" disabled>
             Sélectionner
           </option>
@@ -65,7 +69,7 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Surface, fréquence, délai souhaité…"
+          placeholder="Logement, régie, date de remise des clés, ce qui compte pour vous…"
         />
         <Button type="submit">Envoyer la demande</Button>
         <p className="text-sm text-muted">

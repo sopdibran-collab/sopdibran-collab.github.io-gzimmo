@@ -9,18 +9,22 @@ export function ContactInfoCard() {
     <ContentCard>
       <div id="appeler" className="space-y-6 text-sm">
         <div>
-          <p className="font-medium text-foreground">E-mail</p>
-          <a href={`mailto:${company.email}`} className="mt-1 block text-muted hover:text-accent">
-            {company.email}
-          </a>
-        </div>
-        <div>
           <p className="font-medium text-foreground">Téléphone</p>
           <a
             href={formatPhoneHref(company.phone)}
             className="mt-1 block text-muted hover:text-accent"
           >
             {company.phoneDisplay}
+          </a>
+          <p className="mt-2 text-sm text-muted leading-relaxed">
+            Appelez pour un devis sur mesure : vous expliquez la situation, nous
+            établissons le tarif ensemble.
+          </p>
+        </div>
+        <div>
+          <p className="font-medium text-foreground">E-mail</p>
+          <a href={`mailto:${company.email}`} className="mt-1 block text-muted hover:text-accent">
+            {company.email}
           </a>
         </div>
         <div>

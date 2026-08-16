@@ -10,12 +10,17 @@ import { ArrowRightIcon, PhoneIcon } from "@/components/ui/ContactIcons";
 import { Logo } from "@/components/ui/Logo";
 import { HeaderNavLink } from "@/components/layout/HeaderNavLink";
 
+/** Taille logo fixe — évite le « saut » au scroll. */
+const logoDesktopClass = "w-[200px] max-w-[200px] max-h-10";
+const logoMobileClass = "max-h-8 w-auto max-w-[148px]";
+
 export function Header() {
   const pathname = usePathname();
   const callHref = formatPhoneHref(company.phone);
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
-  const overHero = isHome && !scrolled;
+  /** Home = toujours le même langage (logo blanc) ; le scroll ne change que l’opacité du fond. */
+  const onDark = isHome;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -28,8 +33,10 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
-        overHero
-          ? "border-b border-transparent bg-transparent"
+        onDark
+          ? scrolled
+            ? "border-b border-white/10 bg-[#1e2227]/92 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
           : "border-b border-border/80 bg-[#ffffff]/90 backdrop-blur-md",
       )}
     >
@@ -37,18 +44,18 @@ export function Header() {
       <div className="mx-auto flex h-12 max-w-[1200px] min-w-0 items-center px-container lg:hidden">
         <Logo
           priority
-          variant={overHero ? "monochromeInverse" : "horizontal"}
-          className="max-h-8"
+          variant={onDark ? "monochromeInverse" : "horizontal"}
+          className={logoMobileClass}
         />
       </div>
 
       {/* Desktop */}
-      <div className="mx-auto hidden h-[4.5rem] max-w-[1200px] min-w-0 items-center gap-3 px-container lg:flex xl:gap-6">
-        <div className="min-w-0 shrink">
+      <div className="mx-auto hidden h-14 max-w-[1200px] min-w-0 items-center gap-3 px-container lg:flex xl:gap-6">
+        <div className="min-w-0 shrink-0">
           <Logo
             priority
-            variant={overHero ? "monochromeInverse" : "horizontal"}
-            className="lg:w-[220px] xl:w-[270px] 2xl:w-[300px]"
+            variant={onDark ? "monochromeInverse" : "horizontal"}
+            className={logoDesktopClass}
           />
         </div>
 
@@ -61,12 +68,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               label={item.label}
-              className={
-                overHero
-                  ? "text-white/80 hover:text-white data-[active]:text-white"
-                  : undefined
-              }
-              overDark={overHero}
+              overDark={onDark}
             />
           ))}
         </nav>
@@ -78,8 +80,8 @@ export function Header() {
             variant="secondary"
             aria-label={`Appeler le ${company.phoneDisplay}`}
             className={cn(
-              "h-10 whitespace-nowrap px-3 text-[13px] shadow-none",
-              overHero
+              "h-9 whitespace-nowrap px-3 text-[13px] shadow-none",
+              onDark
                 ? "border-white/30 bg-white/10 text-white hover:border-white/50 hover:bg-white/15 hover:text-white"
                 : "border-border/90 bg-white text-foreground hover:border-accent/35 hover:bg-accent-muted/45 hover:text-accent-hover",
             )}
@@ -90,8 +92,8 @@ export function Header() {
           <Button
             href="/contact"
             className={cn(
-              "h-10 whitespace-nowrap px-4 shadow-none",
-              overHero && "bg-white text-foreground hover:bg-white/90",
+              "h-9 whitespace-nowrap px-4 shadow-none",
+              onDark && "bg-white text-foreground hover:bg-white/90",
             )}
           >
             Devis

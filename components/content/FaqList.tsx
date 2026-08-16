@@ -44,11 +44,20 @@ export function FaqList({ items, animated = true }: FaqListProps) {
   );
 }
 
-export function FaqSectionHeader() {
+export function FaqSectionHeader({
+  title = "Questions fréquentes",
+  description,
+}: {
+  title?: string;
+  description?: string;
+}) {
   return (
     <>
       <Badge>FAQ</Badge>
-      <h2 className="mt-4 font-display text-display-md text-foreground">Questions fréquentes</h2>
+      <h2 className="mt-4 font-display text-display-md text-foreground">{title}</h2>
+      {description ? (
+        <p className="mt-4 max-w-2xl text-muted leading-relaxed">{description}</p>
+      ) : null}
     </>
   );
 }

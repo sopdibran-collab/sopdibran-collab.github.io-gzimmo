@@ -35,10 +35,10 @@ export function HomeHero() {
             Gzimmo
           </p>
           <h1 className="mt-5 max-w-xl text-balance font-display text-[clamp(1.25rem,3.8vw,1.85rem)] font-semibold leading-snug tracking-[-0.02em] text-white/95">
-            On prépare vos fins de bail comme les régies les attendent — depuis Romont.
+            Après rénovation ou fin de bail, on remet le logement comme la régie l&apos;attend — depuis Romont.
           </h1>
           <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-white/70 sm:text-base">
-            Fribourg et Vaud. Chantiers, bureaux, vitres : même exigence, même équipe.
+            Fribourg, Vaud, Neuchâtel — Valais jusqu&apos;à Martigny. Devis sous 24 h.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
