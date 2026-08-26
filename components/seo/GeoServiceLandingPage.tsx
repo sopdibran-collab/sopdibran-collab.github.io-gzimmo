@@ -89,7 +89,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
             Checklist complète, garantie régie et processus détaillé sur notre page dédiée.
           </p>
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
-            <TextLink href={servicePath}>Nettoyage fin de bail — Suisse romande</TextLink>
+            <TextLink href={servicePath}>Voir le service</TextLink>
             <TextLink href={landing.localPageHref}>{landing.localPageLabel}</TextLink>
           </div>
         </ContentCard>

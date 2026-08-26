@@ -76,28 +76,28 @@ export const locations: Location[] = [
     ],
     sections: [
       {
-        title: "Votre nettoyeur professionnel à Romont",
+        title: "Votre entreprise de nettoyage à Romont",
         body: "Gzimmo Sàrl est installée Route de Raboud 8 à Romont. Nous connaissons les attentes des particuliers, régies et entreprises du canton de Fribourg : ponctualité, discrétion et un résultat irréprochable à chaque passage.",
       },
       {
         title: "Intervention en Glâne et en Suisse romande",
-        body: "Depuis notre siège romontais, nous intervenons en priorité dans le district de la Glâne, puis dans toute la Suisse romande. Que vous soyez à Romont, Estavayer ou Fribourg, la même exigence de qualité s'applique.",
+        body: "Depuis notre siège romontais, nous intervenons en priorité dans le district de la Glâne, puis dans les cantons de Fribourg, Vaud et Neuchâtel, et en Valais jusqu'à Martigny. Que vous soyez à Romont, Estavayer ou Fribourg, la même exigence de qualité s'applique.",
       },
       {
         title: "Pourquoi choisir Gzimmo à Romont ?",
         body: "Une équipe qui cumule plus de 15 ans d'expérience dans le nettoyage professionnel, des produits de qualité, un devis gratuit et une réponse rapide. Nous traitons chaque espace avec la précision qu'exigent les surfaces modernes.",
       },
       {
-        title: "Nettoyage fin de bail à Romont et en Glâne",
-        body: "Notre prestation phare en zone locale : fin de bail conforme aux régies fribourgeoises, avec garantie de remise de bail. Intervention rapide depuis notre siège Route de Raboud 8 — idéal pour les locataires et régies de Romont, Vuisternens, Ursy et Estavayer.",
+        title: "Nos prestations depuis Romont",
+        body: "Depuis le siège de Romont, nous proposons notamment le nettoyage de fin de bail, le nettoyage après chantier, l'entretien de bureaux et la conciergerie pour régies. Chaque prestation a sa page dédiée — le détail checklist et garantie se trouve sur les pages service.",
       },
     ],
     faqs: romontFaqs,
     priorityLinks: [
       { label: "Nettoyage fin de bail à Romont", href: "/nettoyage-fin-de-bail-romont" },
-      { label: "Conciergerie pour régies", href: "/conciergerie" },
-      { label: "Nettoyage fin de bail — toute la Suisse romande", href: "/nettoyage-fin-de-bail" },
+      { label: "Nettoyage fin de bail (Suisse romande)", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
+      { label: "Conciergerie pour régies", href: "/conciergerie" },
     ],
   },
   {

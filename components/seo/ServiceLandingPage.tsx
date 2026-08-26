@@ -95,6 +95,16 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           <p className="max-w-3xl text-muted leading-relaxed">{landing.intro}</p>
         </FadeIn>
 
+        {landing.slug === "nettoyage-fin-de-bail" ? (
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+            {landing.relatedLocalLinks.slice(0, 2).map((item) => (
+              <TextLink key={item.href} href={item.href}>
+                {item.label}
+              </TextLink>
+            ))}
+          </div>
+        ) : null}
+
         {landing.sections?.length ? (
           <div className="mt-12 space-y-8">
             {landing.sections.map((section) => (

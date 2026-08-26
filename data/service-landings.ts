@@ -59,9 +59,9 @@ export const serviceLandings: ServiceLanding[] = [
     h1: "Nettoyage fin de bail avec garantie d'état des lieux",
     subtitle:
       "Appelez-nous, expliquez le logement et la date de remise des clés : devis gratuit, sur mesure, garantie d'état des lieux auprès de votre régie.",
-    metaTitle: "Nettoyage Fin de Bail avec Garantie d'État des Lieux",
+    metaTitle: "Nettoyage fin de bail | Garantie d'état des lieux — Gzimmo",
     metaDescription:
-      "Prix d'un nettoyage fin de bail : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Sion–Martigny. 076 214 23 42.",
+      "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Neuchâtel, Valais jusqu'à Martigny. 076 214 23 42.",
     absoluteTitle: true,
     heroCtaLabel: "Préférer nous écrire",
     showPriceQuote: true,
@@ -77,7 +77,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Remise d'appartement",
     ],
     intro:
-      "Vous déménagez ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl intervient depuis Romont pour les locataires et les régies — Fribourg, Vaud, Neuchâtel, et Valais jusqu'à Martigny.",
+      "Vous déménagez en Suisse romande ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl couvre les cantons de Fribourg, Vaud et Neuchâtel, et le Valais jusqu'à Martigny. Pour Romont ou Fribourg ville, des pages locales détaillent l'intervention près de chez vous.",
     sections: [
       {
         title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
@@ -146,7 +146,7 @@ export const serviceLandings: ServiceLanding[] = [
     relatedLocalLinks: [
       { label: "Nettoyage fin de bail à Romont", href: "/nettoyage-fin-de-bail-romont" },
       { label: "Nettoyage fin de bail à Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
-      { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
+      { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
       { label: "Nettoyage à Lausanne et agglomération", href: "/seo/nettoyage-lausanne" },
     ],
     testimonials: [],
