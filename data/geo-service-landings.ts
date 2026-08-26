@@ -33,19 +33,19 @@ export const geoServiceLandings: GeoServiceLanding[] = [
     geo: { latitude: 46.6917, longitude: 6.9111 },
     h1: "Nettoyage fin de bail à Romont (FR)",
     subtitle:
-      "Vous déménagez ? On s'occupe du nettoyage fin de bail à Romont — devis gratuit, garantie régie, intervention rapide en Glâne.",
+      "Vous déménagez à Romont ou en Glâne ? Devis gratuit, checklist adaptée aux régies locales, garantie de remise de bail — siège Route de Raboud 8.",
     metaTitle: "Nettoyage fin de bail à Romont — devis gratuit | Garantie régie",
-    metaDescription: `Fin de bail à Romont et en Glâne. Conforme aux régies fribourgeoises, devis gratuit sous 24 h. Gzimmo — ${phoneDisplay}.`,
+    metaDescription: `Fin de bail à Romont et en Glâne. Conforme aux régies de Romont, devis gratuit sous 24 h. Gzimmo — ${phoneDisplay}.`,
     intro:
-      "Quitter un logement à Romont ou dans le district de la Glâne impose un nettoyage de fin de bail irréprochable. Vous déménagez ? Laissez-nous nous occuper du nettoyage pendant que vous finalisez votre installation. Gzimmo Sàrl, installée à Romont, intervient en priorité en Glâne avec une checklist adaptée à votre régie et une garantie de remise de bail.",
+      "À Romont, l'état des lieux de sortie suit les standards des régies immobilières de la ville et du district de la Glâne. Gzimmo Sàrl, basée Route de Raboud 8, prépare votre appartement ou maison pour la remise des clés : sanitaires, cuisine, sols, vitres et détails souvent retenus. Intervention locale — pas une page générique Suisse romande.",
     sections: [
       {
-        title: "Pourquoi confier votre fin de bail à une entreprise locale à Romont ?",
-        body: "Notre siège est à Romont : nous intervenons rapidement à Romont, Vuisternens-devant-Romont, Ursy, Estavayer, Mézières et les communes voisines. Pas de sous-traitance opaque — la même équipe expérimentée, des produits professionnels fournis et un devis détaillé avant toute intervention.",
+        title: "Régies de Romont et état des lieux en Glâne",
+        body: "Les régies et propriétaires de Romont attendent un logement prêt pour l'état des lieux : joints détartrés, four dégraissé, vitres sans traces, placards et radiateurs inclus. Nous adaptons la checklist à votre régie et à la date de remise des clés — Vuisternens-devant-Romont, Ursy, Mézières, Estavayer et communes voisines comprises.",
       },
       {
-        title: "Garantie régie et état des lieux",
-        body: "Nous connaissons les exigences des régies immobilières du canton de Fribourg. Si un point n'est pas validé lors de l'état des lieux, nous revenons corriger dans le cadre de notre garantie de remise de bail — sans frais supplémentaires.",
+        title: "Pourquoi une équipe basée à Romont pour votre fin de bail ?",
+        body: "Notre siège est à Romont : planning réactif en Glâne, même équipe du devis à l'intervention, produits professionnels fournis. Pas de sous-traitance opaque. Vous déménagez ; on s'occupe du nettoyage pendant que vous finalisez votre installation.",
       },
       {
         title: "Demandez votre devis fin de bail à Romont",
@@ -65,7 +65,7 @@ export const geoServiceLandings: GeoServiceLanding[] = [
       {
         question: "La garantie régie s'applique-t-elle à Romont ?",
         answer:
-          "Oui. Notre garantie de remise de bail couvre les interventions à Romont et dans tout le canton de Fribourg. L'objectif : un état des lieux validé du premier coup.",
+          "Oui. Notre garantie de remise de bail couvre les interventions à Romont et dans le district de la Glâne. L'objectif : un état des lieux validé du premier coup par votre régie à Romont.",
       },
     ],
     localPageHref: "/seo/nettoyage-romont",

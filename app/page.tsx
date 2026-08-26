@@ -1,10 +1,10 @@
 import { homepageFaq } from "@/data/faq";
-import { googleReviews } from "@/data/google-reviews";
 import { createMetadata } from "@/lib/metadata";
-import { faqPageSchema, googleReviewsLocalBusinessSchema } from "@/lib/schema";
+import { faqPageSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { HomeHero } from "@/components/content/HomeHero";
 import { HomePrestationsGrid } from "@/components/content/HomePrestationsGrid";
+import { LocalMoneyLinks } from "@/components/content/LocalMoneyLinks";
 import { WhyList } from "@/components/content/WhyList";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { HomeFeaturedReview } from "@/components/content/HomeFeaturedReview";
@@ -13,12 +13,13 @@ import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createMetadata({
-  title: "Après chantier & fin de bail | Devis Romont",
+  title: "Gzimmo | Nettoyage fin de bail et après chantier à Romont",
   description:
-    "Nettoyage après rénovation, travaux ou fin de bail à Romont, Fribourg et Vaud. Devis gratuit sous 24 h, garantie régie. 076 214 23 42.",
+    "Gzimmo Sàrl à Romont : nettoyage fin de bail et après chantier. Devis gratuit sous 24 h, garantie régie. Fribourg, Vaud, Neuchâtel — 076 214 23 42.",
   path: "/",
   absoluteTitle: true,
   keywords: [
+    "Gzimmo",
     "nettoyage après rénovation",
     "nettoyage après chantier",
     "nettoyage après travaux",
@@ -32,14 +33,14 @@ export const metadata = createMetadata({
 export default function HomePage() {
   return (
     <>
-      <JsonLd
-        data={[faqPageSchema(homepageFaq), googleReviewsLocalBusinessSchema(googleReviews)]}
-      />
+      {/* LocalBusiness is emitted once in the root layout (organizationJsonLd). */}
+      <JsonLd data={faqPageSchema(homepageFaq)} />
 
       <HomeHero />
 
       <Section variant="default">
         <HomePrestationsGrid />
+        <LocalMoneyLinks />
       </Section>
 
       <Section variant="surface">
