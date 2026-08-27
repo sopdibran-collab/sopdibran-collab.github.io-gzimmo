@@ -13,6 +13,8 @@ type PageMetadataOptions = {
   geo?: { placename: string; region: string; lat: number; lng: number };
   /** Exact `<title>` — no « — Gzimmo Sàrl » suffix. Use to stay ≤ 60 characters. */
   absoluteTitle?: boolean;
+  /** Thank-you / utility pages — robots noindex,nofollow */
+  noindex?: boolean;
 };
 
 export function createMetadata({
@@ -22,6 +24,7 @@ export function createMetadata({
   keywords = [],
   geo,
   absoluteTitle = false,
+  noindex = false,
 }: PageMetadataOptions = {}): Metadata {
   const pageTitle = title
     ? absoluteTitle
@@ -70,7 +73,9 @@ export function createMetadata({
       description,
       images: ["/og-default.jpg"],
     },
-    robots: { index: true, follow: true },
+    robots: noindex
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
     other: {
       "geo.region": geoMeta.region,
       "geo.placename": geoMeta.placename,

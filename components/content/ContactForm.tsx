@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
 import { buildContactMailto, parseContactForm } from "@/lib/contact";
@@ -13,32 +13,18 @@ type ContactFormProps = {
 };
 
 export function ContactForm({ defaultService = "" }: ContactFormProps) {
-  const [opened, setOpened] = useState(false);
+  const router = useRouter();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const values = parseContactForm(event.currentTarget);
     const mailto = buildContactMailto(values);
+    // Mailto opens the client without unloading the page in most browsers;
+    // then land on the dedicated thank-you route (agency absolute rule).
     window.location.href = mailto;
-    setOpened(true);
-  }
-
-  if (opened) {
-    return (
-      <ContentCard>
-        <p className="font-medium text-foreground">Votre client mail va s&apos;ouvrir.</p>
-        <p className="mt-2 text-muted leading-relaxed">
-          Envoyez le message pour transmettre votre demande à {company.email}. Nous vous
-          répondons sous 24 heures.
-        </p>
-        <p className="mt-6 text-sm text-muted">
-          Le message ne s&apos;est pas ouvert ?{" "}
-          <a href={`mailto:${company.email}`} className="font-medium text-foreground hover:text-accent">
-            Écrivez-nous directement
-          </a>
-        </p>
-      </ContentCard>
-    );
+    window.setTimeout(() => {
+      router.push("/merci");
+    }, 400);
   }
 
   return (
