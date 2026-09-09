@@ -10,6 +10,7 @@ import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { HomeFeaturedReview } from "@/components/content/HomeFeaturedReview";
 import { ContactCta } from "@/components/content/ContactCta";
 import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
+import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createMetadata({
@@ -37,6 +38,8 @@ export default function HomePage() {
       <JsonLd data={faqPageSchema(homepageFaq)} />
 
       <HomeHero />
+
+      <GarantieRemiseBail />
 
       <Section variant="default">
         <HomePrestationsGrid />

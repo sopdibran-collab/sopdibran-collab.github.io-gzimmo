@@ -7,6 +7,7 @@ import { buildContactMailto, parseContactForm } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
 import { ContentCard } from "@/components/ui/ContentCard";
 import { Input, Select, Textarea } from "@/components/ui/Field";
+import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 
 type ContactFormProps = {
   defaultService?: string;
@@ -29,6 +30,7 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
 
   return (
     <ContentCard>
+      <GarantieRemiseBail variant="inline" className="mb-6" />
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid gap-6 md:grid-cols-2">
           <Input label="Prénom" name="firstName" required autoComplete="given-name" />
