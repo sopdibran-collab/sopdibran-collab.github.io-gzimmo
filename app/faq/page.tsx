@@ -6,6 +6,7 @@ import { FaqGroupedSections } from "@/components/content/FaqGroupedSections";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ConversionCta } from "@/components/ui/ConversionCta";
+import { HashScroll } from "@/components/ui/HashScroll";
 
 export const metadata = createMetadata({
   title: "FAQ nettoyage — tarifs, zone, délais",
@@ -17,6 +18,7 @@ export const metadata = createMetadata({
 export default function FaqPage() {
   return (
     <>
+      <HashScroll />
       <JsonLd
         data={[
           faqPageSchema(faqItems),
