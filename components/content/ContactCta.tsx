@@ -1,6 +1,7 @@
 import { company } from "@/data/company";
 import { formatPhoneHref, cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 
 type ContactCtaProps = {
   className?: string;
@@ -20,6 +21,11 @@ export function ContactCta({ className }: ContactCtaProps) {
           <p className="mt-4 max-w-md text-white/65 leading-relaxed">
             Décrivez le bien ou le chantier — devis clair sous 24 h, sans engagement.
           </p>
+          <GarantieRemiseBail
+            variant="inline"
+            tone="dark"
+            className="mt-6 max-w-xl border-white/15 bg-white/[0.06]"
+          />
         </div>
         <div className="flex flex-col gap-3 sm:items-start lg:col-span-4 lg:items-end">
           <Button

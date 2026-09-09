@@ -13,8 +13,13 @@ function faqRowKey(item: FaqItem | FaqContent, index: number) {
 }
 
 function FaqRow({ item }: { item: FaqItem | FaqContent }) {
+  const anchorId = "id" in item ? item.id : undefined;
+
   return (
-    <div className="py-8 transition-colors duration-300 hover:bg-white/50 md:-mx-4 md:rounded-lg md:px-4">
+    <div
+      id={anchorId}
+      className="scroll-mt-28 py-8 transition-colors duration-300 hover:bg-white/50 md:-mx-4 md:rounded-lg md:px-4"
+    >
       <dt className="text-base font-medium text-foreground md:text-[1.05rem]">{item.question}</dt>
       <dd className="mt-3 max-w-2xl text-muted leading-relaxed">{item.answer}</dd>
     </div>
