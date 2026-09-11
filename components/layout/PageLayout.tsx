@@ -47,11 +47,11 @@ export function PageHero({
         className="object-cover"
         style={image.position ? { objectPosition: image.position } : undefined}
       />
-      {/* Soft white wash — keeps existing dark typography over the soft photo */}
-      <div aria-hidden="true" className="absolute inset-0 bg-white/82" />
+      {/* Soft white wash — photo stays visible, dark typography stays readable */}
+      <div aria-hidden="true" className="absolute inset-0 bg-white/68" />
       <div
         aria-hidden="true"
-        className="section-hero-glow pointer-events-none absolute inset-0 opacity-50"
+        className="section-hero-glow pointer-events-none absolute inset-0 opacity-40"
       />
       <Container>{children}</Container>
     </section>
