@@ -40,7 +40,13 @@ export default function AboutPage() {
         ])}
       />
 
-      <PageHero>
+      <PageHero
+        image={{
+          src: "/images/hero/hero-a-propos.jpg",
+          alt: "Rue paisible à Romont",
+          position: "center 40%",
+        }}
+      >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À propos" }]} />
         <PageIntro
           badge="À propos"

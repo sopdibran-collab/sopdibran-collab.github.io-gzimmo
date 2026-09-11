@@ -31,7 +31,13 @@ export default function ZonesPage() {
         ]}
       />
 
-      <PageHero>
+      <PageHero
+        image={{
+          src: "/images/hero/hero-zones.jpg",
+          alt: "Vue sur Romont et environs",
+          position: "center 40%",
+        }}
+      >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           badge="Suisse romande"

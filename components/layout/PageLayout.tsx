@@ -1,14 +1,60 @@
+import Image from "next/image";
 import { ContactCta } from "@/components/content/ContactCta";
-import { Section } from "@/components/layout/Section";
+import { Container, Section } from "@/components/layout/Section";
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 type SectionVariant = "default" | "surface" | "inverse" | "accent" | "hero";
 
-export function PageHero({ children }: { children: ReactNode }) {
+export type PageHeroImage = {
+  src: string;
+  alt: string;
+  /** object-position, e.g. "center 40%" */
+  position?: string;
+  priority?: boolean;
+};
+
+export function PageHero({
+  children,
+  image,
+  className,
+}: {
+  children: ReactNode;
+  image?: PageHeroImage;
+  className?: string;
+}) {
+  if (!image) {
+    return (
+      <Section variant="hero" className={cn("pb-0", className)}>
+        {children}
+      </Section>
+    );
+  }
+
   return (
-    <Section variant="hero" className="pb-0">
-      {children}
-    </Section>
+    <section
+      className={cn(
+        "relative isolate overflow-hidden bg-surface py-section pb-0",
+        className,
+      )}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        priority={image.priority ?? true}
+        sizes="100vw"
+        className="object-cover"
+        style={image.position ? { objectPosition: image.position } : undefined}
+      />
+      {/* Soft white wash — keeps existing dark typography over the soft photo */}
+      <div aria-hidden="true" className="absolute inset-0 bg-white/82" />
+      <div
+        aria-hidden="true"
+        className="section-hero-glow pointer-events-none absolute inset-0 opacity-50"
+      />
+      <Container>{children}</Container>
+    </section>
   );
 }
 
