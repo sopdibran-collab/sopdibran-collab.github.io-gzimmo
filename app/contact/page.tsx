@@ -31,7 +31,13 @@ export default async function ContactPage({
         ])}
       />
 
-      <PageHero>
+      <PageHero
+        image={{
+          src: "/images/hero/hero-contact.jpg",
+          alt: "Rue de village sous un ciel gris",
+          position: "center 40%",
+        }}
+      >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Contact" }]} />
         <PageIntro
           badge="Contact"

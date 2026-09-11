@@ -29,7 +29,13 @@ export default function FaqPage() {
         ]}
       />
 
-      <PageHero>
+      <PageHero
+        image={{
+          src: "/images/hero/hero-faq.jpg",
+          alt: "Carnet et clés sur un plan de cuisine",
+          position: "center 45%",
+        }}
+      >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "FAQ" }]} />
         <PageIntro
           badge="FAQ"

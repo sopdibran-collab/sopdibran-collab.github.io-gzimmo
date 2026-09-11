@@ -22,7 +22,13 @@ export default function RealisationsPage() {
         ])}
       />
 
-      <PageHero>
+      <PageHero
+        image={{
+          src: "/images/hero/hero-realisations.jpg",
+          alt: "Appartement après nettoyage",
+          position: "center 45%",
+        }}
+      >
         <Breadcrumb
           items={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]}
         />
