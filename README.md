@@ -37,8 +37,10 @@ public/        Assets servis (logos, images)
 
 | Fichier | Usage |
 |---------|--------|
-| `horizontal.svg` | Header, logo principal |
+| `horizontal.svg` | Logo couleur (fonds clairs) |
+| `horizontal_on_dark.svg` | Header sombre : marque `#41988E` + wordmark blanc |
 | `monochrome_noir.svg` | Variante fond clair |
+| `monochrome_blanc.svg` | Footer / aplats blancs |
 | `icon_only.svg` / `.png` | Favicon |
 
 ## Variables d'environnement

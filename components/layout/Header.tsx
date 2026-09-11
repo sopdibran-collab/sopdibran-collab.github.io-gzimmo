@@ -10,17 +10,24 @@ import { ArrowRightIcon, PhoneIcon } from "@/components/ui/ContactIcons";
 import { Logo } from "@/components/ui/Logo";
 import { HeaderNavLink } from "@/components/layout/HeaderNavLink";
 
-/** Taille logo fixe — évite le « saut » au scroll. */
-const logoDesktopClass = "w-[200px] max-w-[200px] max-h-10";
-const logoMobileClass = "max-h-8 w-auto max-w-[148px]";
+/**
+ * Taille logo fixe — même échelle home / pages intérieures (évite saut + squash).
+ * Mobile un peu plus compact pour laisser respirer la barre.
+ */
+const logoDesktopClass = "h-9 w-auto max-w-[200px]";
+const logoMobileClass = "h-7 w-auto max-w-[148px]";
 
 export function Header() {
   const pathname = usePathname();
   const callHref = formatPhoneHref(company.phone);
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
-  /** Home = toujours le même langage (logo blanc) ; le scroll ne change que l’opacité du fond. */
-  const onDark = isHome;
+
+  /**
+   * Identité unique : chrome sombre partout (home + intérieures).
+   * Home en haut de page reste transparent sur le hero ; au scroll / ailleurs = fond gris.
+   */
+  const solidChrome = !isHome || scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -33,30 +40,20 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
-        onDark
-          ? scrolled
-            ? "border-b border-white/10 bg-[#1e2227]/92 backdrop-blur-md"
-            : "border-b border-transparent bg-transparent"
-          : "border-b border-border/80 bg-[#ffffff]/90 backdrop-blur-md",
+        solidChrome
+          ? "border-b border-white/10 bg-[#1e2227]/96 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent",
       )}
     >
       {/* Mobile : logo seule — nav = bottom bar */}
       <div className="mx-auto flex h-12 max-w-[1200px] min-w-0 items-center px-container lg:hidden">
-        <Logo
-          priority
-          variant={onDark ? "monochromeInverse" : "horizontal"}
-          className={logoMobileClass}
-        />
+        <Logo priority variant="onDark" className={logoMobileClass} />
       </div>
 
       {/* Desktop */}
       <div className="mx-auto hidden h-14 max-w-[1200px] min-w-0 items-center gap-3 px-container lg:flex xl:gap-6">
         <div className="min-w-0 shrink-0">
-          <Logo
-            priority
-            variant={onDark ? "monochromeInverse" : "horizontal"}
-            className={logoDesktopClass}
-          />
+          <Logo priority variant="onDark" className={logoDesktopClass} />
         </div>
 
         <nav
@@ -68,33 +65,27 @@ export function Header() {
               key={item.href}
               href={item.href}
               label={item.label}
-              overDark={onDark}
+              overDark
             />
           ))}
         </nav>
 
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
+          {/* Secondaire calme — pas de verre / glow */}
           <Button
             href={callHref}
             external
             variant="secondary"
             aria-label={`Appeler le ${company.phoneDisplay}`}
-            className={cn(
-              "h-9 whitespace-nowrap px-3 text-[13px] shadow-none",
-              onDark
-                ? "border-white/30 bg-white/10 text-white hover:border-white/50 hover:bg-white/15 hover:text-white"
-                : "border-border/90 bg-white text-foreground hover:border-accent/35 hover:bg-accent-muted/45 hover:text-accent-hover",
-            )}
+            className="h-9 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white shadow-none hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
           >
             <PhoneIcon className="size-4 shrink-0" />
             {company.phoneDisplay}
           </Button>
+          {/* Primaire : accent solide — un seul CTA fort */}
           <Button
             href="/contact"
-            className={cn(
-              "h-9 whitespace-nowrap px-4 shadow-none",
-              onDark && "bg-white text-foreground hover:bg-white/90",
-            )}
+            className="h-9 whitespace-nowrap border-transparent bg-accent px-4 text-white shadow-none hover:bg-accent-hover hover:text-white"
           >
             Devis
             <ArrowRightIcon className="size-4 shrink-0" />
