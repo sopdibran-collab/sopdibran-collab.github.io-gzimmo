@@ -43,7 +43,7 @@ export default function AboutPage() {
       <PageHero
         image={{
           src: "/images/hero/hero-a-propos.jpg",
-          alt: "Rue paisible à Romont",
+          alt: "Matériel de nettoyage professionnel",
           position: "center 40%",
         }}
       >

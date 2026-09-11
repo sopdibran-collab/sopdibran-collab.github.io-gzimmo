@@ -32,7 +32,7 @@ export default function FaqPage() {
       <PageHero
         image={{
           src: "/images/hero/hero-faq.jpg",
-          alt: "Matériel de nettoyage professionnel",
+          alt: "Carnet et clés sur un plan de cuisine",
           position: "center 45%",
         }}
       >
