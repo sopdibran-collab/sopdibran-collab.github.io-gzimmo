@@ -20,13 +20,18 @@ export function HomeHero() {
         sizes="100vw"
         className="scale-105 object-cover object-[center_45%] animate-[hero-zoom_18s_ease-out_forwards] motion-reduce:animate-none motion-reduce:scale-100"
       />
+      {/* Teal-tinted dark veil — inverse + accent (brand), not neutral gray */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[#1e2227]/55"
+        className="absolute inset-0 bg-inverse/45"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/80 via-[#1e2227]/25 to-[#1e2227]/35"
+        className="absolute inset-0 bg-accent/25"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-inverse/75 via-accent/20 to-inverse/30"
       />
 
       <div className="relative z-10 mx-auto flex min-h-[min(100svh,860px)] w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24">

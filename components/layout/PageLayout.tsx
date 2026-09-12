@@ -47,11 +47,16 @@ export function PageHero({
         className="object-cover"
         style={image.position ? { objectPosition: image.position } : undefined}
       />
-      {/* Soft white wash — photo stays visible, dark typography stays readable */}
-      <div aria-hidden="true" className="absolute inset-0 bg-white/68" />
+      {/* Soft brand wash — surface + accent-muted, dark typography stays readable */}
+      <div aria-hidden="true" className="absolute inset-0 bg-surface/70" />
+      <div aria-hidden="true" className="absolute inset-0 bg-accent-muted/80" />
       <div
         aria-hidden="true"
-        className="section-hero-glow pointer-events-none absolute inset-0 opacity-40"
+        className="absolute inset-0 bg-accent/10"
+      />
+      <div
+        aria-hidden="true"
+        className="section-hero-glow pointer-events-none absolute inset-0 opacity-50"
       />
       <Container>{children}</Container>
     </section>
