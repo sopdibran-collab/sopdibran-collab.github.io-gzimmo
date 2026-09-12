@@ -37,7 +37,7 @@ export default function AvisPage() {
         />
       </PageHero>
 
-      <PageMain variant="default">
+      <PageMain variant="surface">
         <GoogleReviewsList reviews={googleReviews} />
         <p className="mx-auto mt-12 max-w-[760px] text-center text-sm text-muted">
           <a

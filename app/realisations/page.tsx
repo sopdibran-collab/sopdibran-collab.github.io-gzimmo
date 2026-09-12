@@ -39,7 +39,7 @@ export default function RealisationsPage() {
         />
       </PageHero>
 
-      <PageMain variant="accent">
+      <PageMain variant="surface">
         <RealisationGrid showHeader={false} />
       </PageMain>
 
