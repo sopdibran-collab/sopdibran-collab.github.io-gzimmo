@@ -46,7 +46,7 @@ export default async function ContactPage({
         />
       </PageHero>
 
-      <PageMain variant="accent">
+      <PageMain variant="surface">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <ContactInfoCard />

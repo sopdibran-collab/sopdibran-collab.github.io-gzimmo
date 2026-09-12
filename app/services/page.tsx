@@ -32,7 +32,7 @@ export default function ServicesPage() {
         />
       </PageHero>
 
-      <PageMain variant="accent">
+      <PageMain variant="surface">
         <ServiceCatalogList />
         <ServiceCatalogFooter />
       </PageMain>
