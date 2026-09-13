@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ContactCta } from "@/components/content/ContactCta";
-import { Container, Section } from "@/components/layout/Section";
+import { Section } from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
@@ -14,6 +14,11 @@ export type PageHeroImage = {
   priority?: boolean;
 };
 
+/**
+ * Split hero: text column | sharp photo.
+ * No full-bleed photo behind text, no stacked washes.
+ * Without `image`, keeps the soft section-hero gradient (legal / SEO).
+ */
 export function PageHero({
   children,
   image,
@@ -32,34 +37,27 @@ export function PageHero({
   }
 
   return (
-    <section
-      className={cn(
-        "relative isolate overflow-hidden bg-surface py-section pb-0",
-        className,
-      )}
-    >
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        priority={image.priority ?? true}
-        sizes="100vw"
-        className="object-cover"
-        style={image.position ? { objectPosition: image.position } : undefined}
-      />
-      {/* Soft brand wash — surface + accent-muted, dark typography stays readable */}
-      <div aria-hidden="true" className="absolute inset-0 bg-surface/70" />
-      <div aria-hidden="true" className="absolute inset-0 bg-accent-muted/80" />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-accent/10"
-      />
-      <div
-        aria-hidden="true"
-        className="section-hero-glow pointer-events-none absolute inset-0 opacity-50"
-      />
-      <Container>{children}</Container>
-    </section>
+    <Section variant="hero" className={cn("pb-0", className)}>
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+        <div className="min-w-0">{children}</div>
+        <div
+          className={cn(
+            "relative aspect-[4/3] w-full overflow-hidden rounded-2xl",
+            "bg-surface lg:aspect-auto lg:min-h-[min(28rem,52vh)] lg:self-stretch",
+          )}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            priority={image.priority ?? true}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+            style={image.position ? { objectPosition: image.position } : undefined}
+          />
+        </div>
+      </div>
+    </Section>
   );
 }
 
