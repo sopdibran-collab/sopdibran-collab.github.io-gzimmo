@@ -29,7 +29,7 @@ export const finDeBailPriceFaqs: FaqItem[] = [
   faq(
     "fin-de-bail-regie-zones-gsc",
     "zone",
-    "Intervenez-vous à Fribourg, Sion, et pour les régies ?",
-    "Oui. Nous travaillons pour locataires et régies à Fribourg, en Glâne (Romont), dans le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux, Crissier…), dans le canton de Neuchâtel, et en Valais jusqu'à Martigny (Sion compris). Le nettoyage de fin de bail suit les standards de restitution de votre régie.",
+    "Intervenez-vous à Fribourg, en Vaud et pour les régies ?",
+    "Oui. Nous travaillons pour locataires et régies à Fribourg, en Glâne (Romont), dans le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux, Crissier…) et dans le canton de Neuchâtel. Le nettoyage de fin de bail suit les standards de restitution de votre régie.",
   ),
 ];

@@ -39,7 +39,7 @@ const romontFaqs: FaqContent[] = [
   {
     question: "Gzimmo intervient-il hors de Romont ?",
     answer:
-      "Oui. Priorité aux cantons de Fribourg, Vaud et Neuchâtel, et au Valais jusqu'à Martigny. Siège : Route de Raboud 8, 1680 Romont FR.",
+      "Oui. Priorité aux cantons de Fribourg, Vaud et Neuchâtel. Siège : Route de Raboud 8, 1680 Romont FR.",
   },
 ];
 
@@ -81,7 +81,7 @@ export const locations: Location[] = [
       },
       {
         title: "Intervention en Glâne et en Suisse romande",
-        body: "Depuis notre siège romontais, nous intervenons en priorité dans le district de la Glâne, puis dans les cantons de Fribourg, Vaud et Neuchâtel, et en Valais jusqu'à Martigny. Que vous soyez à Romont, Estavayer ou Fribourg, la même exigence de qualité s'applique.",
+        body: "Depuis notre siège romontais, nous intervenons en priorité dans le district de la Glâne, puis dans les cantons de Fribourg, Vaud et Neuchâtel. Que vous soyez à Romont, Estavayer ou Fribourg, la même exigence de qualité s'applique.",
       },
       {
         title: "Pourquoi choisir Gzimmo à Romont ?",

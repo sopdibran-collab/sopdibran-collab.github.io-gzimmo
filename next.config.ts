@@ -39,6 +39,26 @@ const nextConfig: NextConfig = {
         destination: "/zones",
         permanent: true,
       },
+      {
+        source: "/valais",
+        destination: "/zones",
+        permanent: true,
+      },
+      {
+        source: "/valais/:path*",
+        destination: "/zones",
+        permanent: true,
+      },
+      {
+        source: "/seo/nettoyage-martigny",
+        destination: "/zones",
+        permanent: true,
+      },
+      {
+        source: "/seo/nettoyage-valais",
+        destination: "/zones",
+        permanent: true,
+      },
       ...serviceRedirects,
     ];
   },

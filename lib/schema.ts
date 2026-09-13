@@ -12,7 +12,7 @@ const romontGeo = {
   longitude: 6.9111,
 };
 
-/** Zone : Fribourg, Vaud, Neuchâtel, Valais jusqu'à Martigny. */
+/** Zone : Fribourg, Vaud, Neuchâtel. */
 export function priorityAreaServed() {
   const fromLandings = locations
     .filter((location) => location.canton === "FR" || location.canton === "VD" || location.canton === "NE")
@@ -170,11 +170,15 @@ export function serviceSchema(
 }
 
 export function zonesItemListSchema() {
+  const zoneLocations = locations.filter(
+    (location) => location.canton === "FR" || location.canton === "VD" || location.canton === "NE",
+  );
+
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Zones d'intervention Gzimmo",
-    itemListElement: locations.map((location, index) => ({
+    name: "Zones d'intervention Gzimmo — Fribourg, Vaud, Neuchâtel",
+    itemListElement: zoneLocations.map((location, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: location.title,
