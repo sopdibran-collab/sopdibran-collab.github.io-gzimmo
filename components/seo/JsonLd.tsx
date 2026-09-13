@@ -39,18 +39,39 @@ export function PageIntro({
   title,
   description,
   children,
+  onDark = false,
 }: {
   badge?: string;
   title: string;
   description?: string;
   children?: ReactNode;
+  /** Light typography for full-bleed dark-veil heroes */
+  onDark?: boolean;
 }) {
   return (
     <header className="max-w-2xl">
-      {badge ? <Badge className="text-accent/90">{badge}</Badge> : null}
-      <h1 className="mt-4 font-display text-display-md text-foreground">{title}</h1>
+      {badge ? (
+        <Badge className={onDark ? "text-white/70" : "text-accent/90"}>{badge}</Badge>
+      ) : null}
+      <h1
+        className={
+          onDark
+            ? "mt-4 font-display text-display-md text-white"
+            : "mt-4 font-display text-display-md text-foreground"
+        }
+      >
+        {title}
+      </h1>
       {description ? (
-        <p className="mt-5 text-lg leading-relaxed text-muted">{description}</p>
+        <p
+          className={
+            onDark
+              ? "mt-5 text-lg leading-relaxed text-white/70"
+              : "mt-5 text-lg leading-relaxed text-muted"
+          }
+        >
+          {description}
+        </p>
       ) : null}
       {children ? <div className="mt-8">{children}</div> : null}
     </header>

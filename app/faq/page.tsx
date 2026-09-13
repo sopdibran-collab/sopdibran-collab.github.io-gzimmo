@@ -38,6 +38,7 @@ export default function FaqPage() {
       >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "FAQ" }]} />
         <PageIntro
+          onDark
           badge="FAQ"
           title="Questions fréquentes"
           description="Tarifs, zone d'intervention, prestations et délais — des réponses claires pour préparer votre demande de devis."

@@ -40,6 +40,7 @@ export default async function ContactPage({
       >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Contact" }]} />
         <PageIntro
+          onDark
           badge="Contact"
           title="Parlons de votre devis"
           description="Le plus simple : appelez-nous et expliquez la situation. Un échange suffit pour un devis sur mesure, sans engagement."

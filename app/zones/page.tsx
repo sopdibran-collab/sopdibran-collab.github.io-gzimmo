@@ -40,6 +40,7 @@ export default function ZonesPage() {
       >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
+          onDark
           badge="Suisse romande"
           title="Où intervenons-nous ?"
           description="Basés à Romont (FR), nous couvrons en priorité la Glâne et le canton de Fribourg, puis l'ensemble de la Suisse romande."

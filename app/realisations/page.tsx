@@ -33,6 +33,7 @@ export default function RealisationsPage() {
           items={[{ label: "Accueil", href: "/" }, { label: "Réalisations" }]}
         />
         <PageIntro
+          onDark
           badge="Réalisations"
           title="La précision, visible"
           description="Chaque projet reflète notre exigence : des espaces remis en ordre avec méthode et discrétion."

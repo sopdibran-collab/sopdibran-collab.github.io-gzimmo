@@ -56,13 +56,14 @@ export default function ServicesPage() {
       >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Services" }]} />
         <PageIntro
+          onDark
           badge="Services"
           title="Des prestations précises, adaptées à chaque espace"
           description="Chaque intervention est planifiée avec soin — du nettoyage régulier aux remises en état ponctuelles."
         >
           <div className="flex flex-col gap-4 sm:gap-5">
             <ConversionCta devisLabel="Demander un devis" />
-            <TextLink href="/nettoyage-fin-de-bail">
+            <TextLink href="/nettoyage-fin-de-bail" className="text-white/80 hover:text-white">
               Priorité : nettoyage fin de bail
             </TextLink>
           </div>
