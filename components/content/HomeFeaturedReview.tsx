@@ -56,7 +56,7 @@ export function HomeFeaturedReview() {
           rating={rating}
           className="inline-flex text-base tracking-[0.16em] text-accent"
         />
-        <p className="mt-5 font-display text-[1.35rem] leading-snug tracking-[-0.02em] text-foreground sm:text-2xl sm:leading-[1.35]">
+        <p className="mt-5 whitespace-pre-line font-display text-[1.35rem] leading-snug tracking-[-0.02em] text-foreground sm:text-2xl sm:leading-[1.35]">
           &ldquo;{quote}&rdquo;
         </p>
         <footer className="mt-6">

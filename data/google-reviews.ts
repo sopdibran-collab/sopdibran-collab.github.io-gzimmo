@@ -55,7 +55,8 @@ export const googleReviews: GoogleReview[] = [
     id: "review-demenagement-express",
     rating: 5,
     author: "Henrique Costa",
-    text: "Suite à un déménagement de dernière minute, j'ai fait appel à Gzimmo pour un nettoyage express de qualité ! En moins d'une journée, l'appartement était impeccable et prêt à accueillir de nouveaux locataires !",
+    // Texte verbatim Google Maps (2026-09-13) — orthographe d’origine conservée
+    text: "Suite à un déménagement de dernière minute j'ai fait appel à Gzimmo pour un nettoyage express de qualité! En moins de une journée l'appartement était niquel prêt à accueillir des nouveau locataire!!",
     url: company.googleMapsUrl,
     contextLabel: "Nettoyage express après déménagement",
   },
