@@ -238,7 +238,7 @@ export const serviceLandings: ServiceLanding[] = [
     faqs: [
       ...sharedFaqs,
       faq(
-        "apres-renovation-vs-chantier",
+        "apres-renovation-ou-chantier",
         "prestations",
         "Nettoyage après rénovation ou après chantier : est-ce la même chose ?",
         "Oui pour l'essentiel : poussières fines, résidus et surfaces à protéger. « Après rénovation », « après travaux » et « après construction » décrivent le même besoin. On adapte la checklist au type de travaux (plâtrerie, peinture, carrelage, etc.).",
@@ -256,7 +256,7 @@ export const serviceLandings: ServiceLanding[] = [
         "Oui, si le planning le permet. Prévenez-nous dès que la date de réception est connue — idéalement quelques jours à l'avance. En urgence, contactez le 076 214 23 42.",
       ),
       faq(
-        "apres-chantier-vs-fin-bail",
+        "apres-chantier-ou-fin-bail",
         "prestations",
         "Quelle différence entre nettoyage après chantier et fin de bail ?",
         "Après chantier (rénovation, construction, travaux), on enlève poussières fines et résidus pour une livraison ou un emménagement. La fin de bail vise l'état des lieux et les standards de la régie — sanitaires, cuisine, joints, vitres — pour la remise des clés. Les deux peuvent se succéder sur un même logement.",
