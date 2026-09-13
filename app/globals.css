@@ -30,6 +30,12 @@
   --spacing-footer: clamp(2.5rem, 5vw, 3.5rem);
   --spacing-container: clamp(1.25rem, 4vw, 5rem);
 
+  /**
+   * Photo heroes (HomeHero + image PageHero) — same band at every breakpoint.
+   * Mobile: nearly full viewport; desktop capped so ultra-tall screens stay coherent.
+   */
+  --hero-photo-min-height: min(100svh, 860px);
+
   --ease-premium: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -111,6 +117,11 @@
 
   .font-display {
     font-family: var(--font-display);
+  }
+
+  /** Shared frame for full-bleed décor photo heroes */
+  .min-h-hero-photo {
+    min-height: var(--hero-photo-min-height);
   }
 
   .py-section {

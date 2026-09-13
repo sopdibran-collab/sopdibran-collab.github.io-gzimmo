@@ -16,7 +16,7 @@ export type PageHeroImage = {
 
 /**
  * Full-bleed PageHero when `image` is set: soft décor photo + dark gray veil + light copy.
- * Same language as HomeHero — no split grid, no rounded photo column.
+ * Same height token as HomeHero (`.min-h-hero-photo`) — no split grid.
  * Without `image`, keeps the soft section-hero gradient (legal / SEO).
  */
 export function PageHero({
@@ -39,7 +39,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "relative isolate overflow-hidden bg-[#1e2227] py-section pb-0",
+        "relative isolate min-h-hero-photo overflow-hidden bg-[#1e2227]",
         className,
       )}
     >
@@ -57,7 +57,15 @@ export function PageHero({
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/80 via-[#1e2227]/25 to-[#1e2227]/35"
       />
-      <Container>{children}</Container>
+      <Container
+        className={cn(
+          "flex min-h-hero-photo flex-col justify-end",
+          /* HeaderOffset already clears the fixed bar — lighter top pad than HomeHero */
+          "pb-16 pt-10 sm:pb-20 sm:pt-12 lg:pb-24",
+        )}
+      >
+        {children}
+      </Container>
     </section>
   );
 }

@@ -6,7 +6,7 @@ import { GoogleMapsLink } from "@/components/seo/GoogleMap";
 
 /**
  * Full-bleed home hero: soft photo + dark gray veil + white copy.
- * Matches the original Accueil look Dibran preferred (no split columns).
+ * Height: shared `--hero-photo-min-height` / `.min-h-hero-photo` with image PageHero.
  */
 export function HomeHero() {
   const callHref = formatPhoneHref(company.phone);
@@ -14,7 +14,7 @@ export function HomeHero() {
   return (
     <section
       id="home-hero"
-      className="relative isolate min-h-[min(100svh,860px)] overflow-hidden bg-inverse"
+      className="relative isolate min-h-hero-photo overflow-hidden bg-inverse"
     >
       <Image
         src="/images/realisations/fin-de-bail.jpg"
@@ -30,7 +30,7 @@ export function HomeHero() {
         className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/80 via-[#1e2227]/25 to-[#1e2227]/35"
       />
 
-      <div className="relative z-10 mx-auto flex min-h-[min(100svh,860px)] w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24">
+      <div className="relative z-10 mx-auto flex min-h-hero-photo w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24">
         <div className="min-w-0 max-w-3xl animate-fade-in-up motion-reduce:animate-none">
           <p className="font-display text-[clamp(2.75rem,12vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
             Gzimmo
