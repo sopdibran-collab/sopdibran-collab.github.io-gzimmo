@@ -49,7 +49,7 @@ export default function ServicesPage() {
 
       <PageHero
         image={{
-          src: "/images/services/nettoyage-fin-de-bail.webp",
+          src: "/images/hero/services-hub-soft.jpg",
           alt: "Nettoyage de fin de bail prêt pour l'état des lieux",
           position: "center 45%",
         }}
