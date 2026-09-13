@@ -42,7 +42,7 @@ const sharedWhy = [
   {
     title: "Réactivité depuis Romont",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, Vaud et Neuchâtel, et en Valais jusqu'à Martigny. Devis sous 24 h.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, Vaud et Neuchâtel. Devis sous 24 h.",
   },
   {
     title: "Devis transparent avant intervention",
@@ -61,7 +61,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Appelez-nous, expliquez le logement et la date de remise des clés : devis gratuit, sur mesure, garantie d'état des lieux auprès de votre régie.",
     metaTitle: "Nettoyage fin de bail | Garantie d'état des lieux — Gzimmo",
     metaDescription:
-      "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Neuchâtel, Valais jusqu'à Martigny. 076 214 23 42.",
+      "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
     absoluteTitle: true,
     heroCtaLabel: "Préférer nous écrire",
     showPriceQuote: true,
@@ -77,7 +77,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Remise d'appartement",
     ],
     intro:
-      "Vous déménagez en Suisse romande ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl couvre les cantons de Fribourg, Vaud et Neuchâtel, et le Valais jusqu'à Martigny. Pour Romont ou Fribourg ville, des pages locales détaillent l'intervention près de chez vous.",
+      "Vous déménagez en Suisse romande ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl couvre les cantons de Fribourg, Vaud et Neuchâtel. Pour Romont ou Fribourg ville, des pages locales détaillent l'intervention près de chez vous.",
     sections: [
       {
         title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
@@ -112,7 +112,7 @@ export const serviceLandings: ServiceLanding[] = [
       title: "Garantie de remise de bail",
       paragraphs: [
         "Le nettoyage de fin de bail en Suisse requiert une rigueur absolue. Les régies immobilières appliquent des standards de restitution stricts : un oubli sur les joints de salle de bain, un four mal dégraissé ou des vitres laissées avec des traces peut entraîner une retenue sur la garantie locative.",
-        "Gzimmo connaît ces exigences. Nous travaillons avec des régies dans les cantons de Fribourg, de Vaud et de Neuchâtel, et en Valais jusqu'à Martigny. Checklist adaptée, devis clair avant intervention.",
+        "Gzimmo connaît ces exigences. Nous travaillons avec des régies dans les cantons de Fribourg, de Vaud et de Neuchâtel. Checklist adaptée, devis clair avant intervention.",
         "Si un point n'est pas conforme aux attentes de la régie, nous intervenons à nouveau sans frais supplémentaires dans le cadre de notre garantie de remise de bail.",
       ],
     },
@@ -158,7 +158,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Que ce soit après la construction d'une maison neuve ou la rénovation d'un appartement, notre équipe assure un nettoyage après travaux complet et rapide.",
     metaTitle: "Nettoyage Après Chantier & Rénovation en Suisse | Devis Gratuit",
     metaDescription:
-      "Après chantier, rénovation, construction ou travaux. Poussières fines, devis gratuit. Fribourg, Vaud, Neuchâtel, Sion–Martigny. 076 214 23 42.",
+      "Après chantier, rénovation, construction ou travaux. Poussières fines, devis gratuit. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     showInterventionZones: true,
@@ -180,8 +180,8 @@ export const serviceLandings: ServiceLanding[] = [
         body: "« Nettoyage après rénovation », « après travaux », « après construction » ou « fin de chantier » décrivent le même besoin : enlever ce que les artisans laissent. Cuisine refaite, appartement neuf, immeuble livré — on adapte la checklist (plâtre, peinture, carrelage, menuiseries) pour que le lieu soit habitable ou présentable à la réception.",
       },
       {
-        title: "Romont, Fribourg, Vaud, Neuchâtel et Valais jusqu'à Martigny",
-        body: "Nous partons de Romont pour les chantiers du canton de Fribourg, du canton de Vaud (de Bex à Nyon, Crissier, Yverdon, Vevey…), du canton de Neuchâtel, et en Valais jusqu'à Martigny (Sion compris). Devis sous 24 h.",
+        title: "Romont, Fribourg, Vaud et Neuchâtel",
+        body: "Nous partons de Romont pour les chantiers du canton de Fribourg, du canton de Vaud (de Bex à Nyon, Crissier, Yverdon, Vevey…) et du canton de Neuchâtel. Devis sous 24 h.",
       },
     ],
     forWho: [

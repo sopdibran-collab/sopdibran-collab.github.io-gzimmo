@@ -8,7 +8,7 @@ type InterventionZonesProps = {
 };
 
 /**
- * Ancrage local sans landings dupliquées — villes GSC + couverture VD / FR / NE / VS jusqu'à Martigny.
+ * Ancrage local sans landings dupliquées — villes GSC + couverture VD / FR / NE.
  */
 export function InterventionZones({
   servicePhrase = "nettoyage fin de bail",
@@ -20,10 +20,9 @@ export function InterventionZones({
         Zones d&apos;intervention
       </h2>
       <p className="mt-4 max-w-2xl text-muted leading-relaxed">
-        Nous intervenons rapidement pour votre {servicePhrase} à Sion, Fribourg, dans les
+        Nous intervenons rapidement pour votre {servicePhrase} à Fribourg, dans les
         cantons de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux, Chexbres,
-        Oron-la-Ville, Palézieux), de Fribourg et de Neuchâtel, et en Valais jusqu&apos;à
-        Martigny.
+        Oron-la-Ville, Palézieux), de Fribourg et de Neuchâtel.
       </p>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-2">

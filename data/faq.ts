@@ -82,7 +82,7 @@ export const faqItems: FaqItem[] = [
     id: "zone-suisse-romande",
     category: "zone",
     question: "Quelle zone couvrez-vous en Suisse romande ?",
-    answer: `Gzimmo intervient dans le canton de Fribourg (Romont, Glâne, Broye, Gruyère), le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux), le canton de Neuchâtel, et en Valais jusqu'à Martigny (Sion compris). Siège : ${siege}.`,
+    answer: `Gzimmo intervient dans le canton de Fribourg (Romont, Glâne, Broye, Gruyère), le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux) et le canton de Neuchâtel. Siège : ${siege}.`,
   },
   {
     id: "entreprise-romont",
@@ -114,8 +114,8 @@ export const faqItems: FaqItem[] = [
   {
     id: "zone-hors-prioritaire",
     category: "zone",
-    question: "Intervenez-vous à Sion, Martigny ou en Valais ?",
-    answer: `Oui jusqu'à Martigny : Sion, Martigny et le Chablais valaisan. Au-delà (Sierre, Haut-Valais), écrivez-nous pour confirmer le déplacement. Priorité : Fribourg, Vaud, Neuchâtel. ${phoneDisplay} · ${email}`,
+    question: "Intervenez-vous dans le canton de Neuchâtel ?",
+    answer: `Oui. Notre zone d'intervention couvre les cantons de Fribourg, Vaud et Neuchâtel. Siège : ${siege}. ${phoneDisplay} · ${email}`,
   },
   {
     id: "interventions-ponctuelles",

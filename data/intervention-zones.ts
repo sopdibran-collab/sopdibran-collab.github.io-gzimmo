@@ -1,5 +1,5 @@
 /**
- * Villes GSC + couverture demandée (VD, FR, NE, Valais jusqu'à Martigny).
+ * Villes GSC + couverture demandée (VD, FR, NE).
  * Pas de landing dupliquée : lien vers page existante, sinon ancre locale.
  */
 
@@ -18,7 +18,6 @@ export type InterventionCanton = {
 
 /** Extraits du CSV (villes / cantons nommés), hors bruit (Berne, Genève 1 imp., Winterthur). */
 export const gscNamedPlaces = [
-  "Sion",
   "Fribourg",
   "Crissier",
   "Romont",
@@ -67,20 +66,9 @@ export const interventionCantons: InterventionCanton[] = [
     heading: "Canton de Neuchâtel",
     places: [{ name: "Neuchâtel", href: "/seo/nettoyage-neuchatel" }],
   },
-  {
-    id: "valais",
-    canton: "Valais",
-    heading: "Valais jusqu'à Martigny",
-    places: [
-      { name: "Sion", fromGsc: true },
-      { name: "Martigny" },
-    ],
-  },
 ];
 
 export const extraSchemaCities: { name: string; cantonName: string }[] = [
-  { name: "Sion", cantonName: "Valais" },
-  { name: "Martigny", cantonName: "Valais" },
   { name: "Crissier", cantonName: "Vaud" },
   { name: "Bex", cantonName: "Vaud" },
   { name: "Vevey", cantonName: "Vaud" },

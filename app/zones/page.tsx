@@ -8,16 +8,24 @@ import { LocalAreaLinks } from "@/components/seo/LocalSeoContent";
 import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Zones d'intervention — nettoyage Suisse romande",
+  title: "Zones d'intervention — Fribourg, Vaud, Neuchâtel",
   description:
-    "Gzimmo intervient à Romont, en Glâne, en Fribourg et dans toute la Suisse romande. Entreprise de nettoyage professionnel — devis gratuit.",
+    "Gzimmo intervient à Romont, en Glâne, dans les cantons de Fribourg, Vaud et Neuchâtel. Entreprise de nettoyage professionnel — devis gratuit.",
   path: "/zones",
-  keywords: ["zones intervention", "Glâne", "Romont", "nettoyage Fribourg"],
+  keywords: [
+    "zones intervention",
+    "Glâne",
+    "Romont",
+    "nettoyage Fribourg",
+    "nettoyage Vaud",
+    "nettoyage Neuchâtel",
+  ],
 });
 
 export default function ZonesPage() {
   const fribourgLocations = locations.filter((l) => l.canton === "FR");
-  const otherLocations = locations.filter((l) => l.canton !== "FR");
+  const vaudLocations = locations.filter((l) => l.canton === "VD");
+  const neuchatelLocations = locations.filter((l) => l.canton === "NE");
 
   return (
     <>
@@ -41,9 +49,9 @@ export default function ZonesPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           onDark
-          badge="Suisse romande"
+          badge="Fribourg · Vaud · Neuchâtel"
           title="Où intervenons-nous ?"
-          description="Basés à Romont (FR), nous couvrons en priorité la Glâne et le canton de Fribourg, puis l'ensemble de la Suisse romande."
+          description="Basés à Romont (FR), nous couvrons les cantons de Fribourg, Vaud et Neuchâtel — en priorité la Glâne et le canton de Fribourg."
         />
       </PageHero>
 
@@ -60,7 +68,11 @@ export default function ZonesPage() {
         </ContentCard>
 
         <ContentCard className="mt-8">
-          <LocalAreaLinks locations={otherLocations} title="Autres cantons — Suisse romande" />
+          <LocalAreaLinks locations={vaudLocations} title="Canton de Vaud" />
+        </ContentCard>
+
+        <ContentCard className="mt-8">
+          <LocalAreaLinks locations={neuchatelLocations} title="Canton de Neuchâtel" />
         </ContentCard>
       </PageMain>
 
