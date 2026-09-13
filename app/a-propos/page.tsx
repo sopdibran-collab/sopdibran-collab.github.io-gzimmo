@@ -49,6 +49,7 @@ export default function AboutPage() {
       >
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À propos" }]} />
         <PageIntro
+          onDark
           badge="À propos"
           title="La maîtrise d'un espace parfaitement entretenu"
           description={`${company.name} accompagne particuliers et professionnels en Suisse romande. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()} — avec rigueur, discrétion et le souci du détail.`}

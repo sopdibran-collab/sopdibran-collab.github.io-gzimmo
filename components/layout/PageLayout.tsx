@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ContactCta } from "@/components/content/ContactCta";
-import { Section } from "@/components/layout/Section";
+import { Container, Section } from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
@@ -15,8 +15,8 @@ export type PageHeroImage = {
 };
 
 /**
- * Split hero: text column | sharp photo.
- * No full-bleed photo behind text, no stacked washes.
+ * Full-bleed PageHero when `image` is set: soft décor photo + dark gray veil + light copy.
+ * Same language as HomeHero — no split grid, no rounded photo column.
  * Without `image`, keeps the soft section-hero gradient (legal / SEO).
  */
 export function PageHero({
@@ -37,27 +37,28 @@ export function PageHero({
   }
 
   return (
-    <Section variant="hero" className={cn("pb-0", className)}>
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
-        <div className="min-w-0">{children}</div>
-        <div
-          className={cn(
-            "relative aspect-[4/3] w-full overflow-hidden rounded-2xl",
-            "bg-surface lg:aspect-auto lg:min-h-[min(28rem,52vh)] lg:self-stretch",
-          )}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            priority={image.priority ?? true}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-            style={image.position ? { objectPosition: image.position } : undefined}
-          />
-        </div>
-      </div>
-    </Section>
+    <section
+      className={cn(
+        "relative isolate overflow-hidden bg-[#1e2227] py-section pb-0",
+        className,
+      )}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        priority={image.priority ?? true}
+        sizes="100vw"
+        className="object-cover"
+        style={image.position ? { objectPosition: image.position } : undefined}
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-[#1e2227]/55" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/80 via-[#1e2227]/25 to-[#1e2227]/35"
+      />
+      <Container>{children}</Container>
+    </section>
   );
 }
 
