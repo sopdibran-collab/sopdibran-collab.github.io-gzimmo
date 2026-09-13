@@ -17,7 +17,7 @@ export function HomeHero() {
       className="relative isolate min-h-hero-photo overflow-hidden bg-inverse"
     >
       <Image
-        src="/images/realisations/fin-de-bail.jpg"
+        src="/images/hero/appartement-suisse-soft.jpg"
         alt="Fin de bail réalisée par Gzimmo — appartement remis aux standards d’une régie à Fribourg"
         fill
         priority
