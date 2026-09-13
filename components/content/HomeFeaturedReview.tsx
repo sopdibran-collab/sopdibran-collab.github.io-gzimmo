@@ -1,4 +1,4 @@
-import { featuredGoogleReview, googleReviews } from "@/data/google-reviews";
+import { featuredGoogleReview } from "@/data/google-reviews";
 import { StarRating } from "@/components/ui/StarRating";
 import { TextLink } from "@/components/ui/TextLink";
 
@@ -25,13 +25,17 @@ function GoogleMark() {
   );
 }
 
-/** Un avis Google réel — preuve locale. */
+/** Un avis Google réel — Patrick Eigenmann (featured). */
 export function HomeFeaturedReview() {
-  const review = googleReviews[1] ?? googleReviews[0];
-  const rating = review?.rating ?? featuredGoogleReview.rating ?? 5;
-  const quote = review?.text ?? featuredGoogleReview.quote;
-  const url = review?.url ?? featuredGoogleReview.url;
-  const meta = review?.contextLabel ?? featuredGoogleReview.location ?? "Google";
+  const rating = featuredGoogleReview.rating ?? 5;
+  const quote = featuredGoogleReview.quote;
+  const url = featuredGoogleReview.url;
+  const meta = [
+    featuredGoogleReview.author,
+    featuredGoogleReview.location ?? "Google",
+  ]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
@@ -52,7 +56,7 @@ export function HomeFeaturedReview() {
           rating={rating}
           className="inline-flex text-base tracking-[0.16em] text-accent"
         />
-        <p className="mt-5 font-display text-[1.35rem] leading-snug tracking-[-0.02em] text-foreground sm:text-2xl sm:leading-[1.35]">
+        <p className="mt-5 whitespace-pre-line font-display text-[1.35rem] leading-snug tracking-[-0.02em] text-foreground sm:text-2xl sm:leading-[1.35]">
           &ldquo;{quote}&rdquo;
         </p>
         <footer className="mt-6">

@@ -41,6 +41,9 @@ export function GoogleReviewCard({ review, className, "aria-hidden": ariaHidden 
       </div>
 
       <footer className="mt-10 space-y-2 border-t border-border/60 pt-8">
+        {review.author ? (
+          <p className="text-sm font-medium text-foreground">{review.author}</p>
+        ) : null}
         <a
           href={review.url}
           target="_blank"

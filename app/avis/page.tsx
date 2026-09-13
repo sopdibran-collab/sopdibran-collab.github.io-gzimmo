@@ -10,7 +10,7 @@ import { breadcrumbSchema, googleReviewsLocalBusinessSchema } from "@/lib/schema
 export const metadata = createMetadata({
   title: "Avis clients",
   description:
-    "Avis Google de clients Gzimmo Sàrl : nettoyage d'appartements, locaux commerciaux et fin de chantier en Suisse romande. Ponctualité, rigueur et résultat irréprochable.",
+    "Avis Google de clients Gzimmo Sàrl : nettoyage d'appartements, locaux commerciaux et après chantier en Suisse romande. Ponctualité, rigueur et résultat irréprochable.",
   path: "/avis",
   keywords: ["avis Google", "témoignages clients", "nettoyage professionnel Romont"],
 });

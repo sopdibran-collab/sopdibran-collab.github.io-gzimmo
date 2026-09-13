@@ -1,6 +1,10 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
-import { featuredGoogleReview, type GoogleReview } from "@/data/google-reviews";
+import {
+  featuredGoogleReview,
+  googleBusinessPublicRating,
+  type GoogleReview,
+} from "@/data/google-reviews";
 import { extraSchemaCities } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
@@ -256,20 +260,19 @@ export function googleReviewSchema() {
   };
 }
 
+/**
+ * LocalBusiness + avis affichés + AggregateRating Google public.
+ * `aggregateRating` = chiffres Google pile-à-pile (`googleBusinessPublicRating`),
+ * jamais dérivés de `reviews.length` (sous-ensemble UI ≠ total Google).
+ */
 export function googleReviewsLocalBusinessSchema(reviews: readonly GoogleReview[]) {
-  const reviewCount = reviews.length;
-  const ratingValue =
-    reviewCount > 0
-      ? reviews.reduce((sum, review) => sum + review.rating, 0) / reviewCount
-      : 5;
-
   return {
     ...localBusinessSchema(),
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: ratingValue.toFixed(1),
-      reviewCount,
-      bestRating: 5,
+      ratingValue: googleBusinessPublicRating.ratingValue,
+      reviewCount: googleBusinessPublicRating.reviewCount,
+      bestRating: googleBusinessPublicRating.bestRating,
     },
     review: reviews.map((review) => ({
       "@type": "Review",
@@ -281,7 +284,7 @@ export function googleReviewsLocalBusinessSchema(reviews: readonly GoogleReview[
       },
       author: {
         "@type": "Person",
-        name: "Client Gzimmo",
+        name: review.author ?? "Client Google",
       },
       url: review.url,
     })),
