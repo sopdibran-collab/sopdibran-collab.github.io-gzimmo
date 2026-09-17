@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Demande préparée",
+  title: "Demande reçue",
   description:
-    "Votre client mail va s'ouvrir pour transmettre la demande à Gzimmo Sàrl. Réponse sous 24 heures — 076 214 23 42 · info@gzimmo.ch",
+    "Votre demande de devis a bien été transmise à Gzimmo Sàrl. Réponse sous 24 heures — 076 214 23 42 · info@gzimmo.ch",
   path: "/merci",
   noindex: true,
 });
@@ -21,8 +21,8 @@ export default function MerciPage() {
     <>
       <PageHero>
         <PageIntro
-          title="Merci — votre message est prêt à partir"
-          description={`Votre client mail va s'ouvrir pour envoyer la demande à ${company.email}. Dès réception, nous vous répondons sous 24 heures. Pour une urgence, appelez-nous.`}
+          title="Merci — nous avons bien reçu votre demande"
+          description={`Nous vous répondons sous 24 heures à l'adresse indiquée. Pour une urgence, appelez le ${company.phoneDisplay}.`}
         />
       </PageHero>
 
@@ -62,16 +62,6 @@ export default function MerciPage() {
               Retour à l&apos;accueil
             </Button>
           </div>
-
-          <p className="mt-8 text-sm text-muted">
-            Le message ne s&apos;est pas ouvert ?{" "}
-            <a
-              href={`mailto:${company.email}`}
-              className="font-medium text-foreground transition-colors duration-200 hover:text-accent"
-            >
-              Écrivez-nous directement
-            </a>
-          </p>
         </ContentCard>
       </PageMain>
     </>
