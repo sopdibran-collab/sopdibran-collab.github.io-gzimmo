@@ -51,6 +51,26 @@ Copier `.env.example` vers `.env.local` :
 cp .env.example .env.local
 ```
 
+### Formulaire de devis (Resend)
+
+Le formulaire `/contact` envoie un e-mail structuré à **info@gzimmo.ch** via l’API Route `POST /api/devis` et [Resend](https://resend.com).
+
+| Variable | Obligatoire | Description |
+|----------|-------------|-------------|
+| `RESEND_API_KEY` | Oui (prod) | Clé API Resend |
+| `EMAIL_FROM` | Non | Expéditeur. Défaut : `Gzimmo <onboarding@resend.dev>` (jusqu’à vérification du domaine) |
+
+**Mise en place (Vercel) — Dibran**
+
+1. Créer un compte [Resend](https://resend.com) et une API Key.
+2. Dans le projet Vercel → Settings → Environment Variables :
+   - `RESEND_API_KEY` = la clé
+   - (optionnel) `EMAIL_FROM` = `Gzimmo <info@gzimmo.ch>` après vérification du domaine `gzimmo.ch` dans Resend
+3. Redeploy.
+4. Test : ouvrir `/contact`, envoyer une demande, vérifier la boîte `info@gzimmo.ch` (et les logs Resend / Vercel si besoin).
+
+Sans `RESEND_API_KEY`, le formulaire affiche une erreur claire (pas de faux succès). Le téléphone reste visible à côté du formulaire.
+
 ## Build
 
 ```bash

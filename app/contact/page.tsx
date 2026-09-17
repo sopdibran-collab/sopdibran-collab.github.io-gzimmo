@@ -18,7 +18,7 @@ export const metadata = createMetadata({
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ service?: string }>;
+  searchParams: Promise<{ service?: string; ville?: string }>;
 }) {
   const params = await searchParams;
 
@@ -43,7 +43,7 @@ export default async function ContactPage({
           onDark
           badge="Contact"
           title="Parlons de votre devis"
-          description="Le plus simple : appelez-nous et expliquez la situation. Un échange suffit pour un devis sur mesure, sans engagement."
+          description="Appelez-nous ou envoyez le formulaire — un échange suffit pour un devis sur mesure, sans engagement. Réponse sous 24 h."
         />
       </PageHero>
 
@@ -53,7 +53,7 @@ export default async function ContactPage({
             <ContactInfoCard />
           </div>
           <div className="lg:col-span-7">
-            <ContactForm defaultService={params.service} />
+            <ContactForm defaultService={params.service} defaultCommune={params.ville} />
           </div>
         </div>
 
