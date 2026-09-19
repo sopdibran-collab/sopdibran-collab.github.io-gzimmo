@@ -1,12 +1,11 @@
 /**
- * Villes GSC + couverture demandée (VD, FR, NE).
- * Pas de landing dupliquée : lien vers page existante, sinon ancre locale.
+ * Zones d'intervention — Fribourg, Vaud, Neuchâtel.
+ * Lien vers une page locale existante, sinon libellé sans lien.
  */
 
 export type InterventionPlace = {
   name: string;
   href?: string;
-  fromGsc?: boolean;
 };
 
 export type InterventionCanton = {
@@ -16,26 +15,16 @@ export type InterventionCanton = {
   places: InterventionPlace[];
 };
 
-/** Extraits du CSV (villes / cantons nommés), hors bruit (Berne, Genève 1 imp., Winterthur). */
-export const gscNamedPlaces = [
-  "Fribourg",
-  "Crissier",
-  "Romont",
-  "Estavayer",
-  "Vuisternens-devant-Romont",
-  "Vaud",
-] as const;
-
 export const interventionCantons: InterventionCanton[] = [
   {
     id: "fribourg",
     canton: "Fribourg",
     heading: "Canton de Fribourg",
     places: [
-      { name: "Romont", href: "/seo/nettoyage-romont", fromGsc: true },
-      { name: "Fribourg", href: "/seo/nettoyage-fribourg", fromGsc: true },
-      { name: "Estavayer", href: "/seo/nettoyage-estavayer", fromGsc: true },
-      { name: "Vuisternens-devant-Romont", href: "/seo/nettoyage-vuisternens-devant-romont", fromGsc: true },
+      { name: "Romont", href: "/seo/nettoyage-romont" },
+      { name: "Fribourg", href: "/seo/nettoyage-fribourg" },
+      { name: "Estavayer", href: "/seo/nettoyage-estavayer" },
+      { name: "Vuisternens-devant-Romont", href: "/seo/nettoyage-vuisternens-devant-romont" },
       { name: "Bulle", href: "/seo/nettoyage-bulle" },
       { name: "Ursy", href: "/seo/nettoyage-ursy" },
       { name: "Châtel-Saint-Denis", href: "/seo/nettoyage-chatel-saint-denis" },
@@ -51,7 +40,7 @@ export const interventionCantons: InterventionCanton[] = [
       { name: "Morges", href: "/seo/nettoyage-morges" },
       { name: "Nyon", href: "/seo/nettoyage-nyon" },
       { name: "Payerne", href: "/seo/nettoyage-payerne" },
-      { name: "Crissier", fromGsc: true },
+      { name: "Crissier" },
       { name: "Bex" },
       { name: "Vevey" },
       { name: "Montreux" },

@@ -170,7 +170,7 @@ export function getFaqsByIds(ids: string[]) {
   return ids.map((id) => faqById.get(id)).filter((item): item is FaqItem => Boolean(item));
 }
 
-/** FAQ accueil = JSON-LD visible (prix, chantier, garantie, zone). */
+/** FAQ affichée sur l'accueil (prix, chantier, garantie, zone). */
 export const homepageFaqIds = [
   "cout-fin-de-bail",
   "apres-chantier",

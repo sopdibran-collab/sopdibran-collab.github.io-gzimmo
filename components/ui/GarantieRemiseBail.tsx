@@ -9,17 +9,16 @@ export const GARANTIE_REMISE_BAIL_COPY =
 
 type GarantieRemiseBailProps = {
   className?: string;
-  /** Full-bleed homepage strip, or compact box near forms / CTAs. */
+  /** Bandeau pleine largeur, ou encadré compact près des formulaires / CTA. */
   variant?: "band" | "inline";
-  /** Link to the FAQ answer about régie refusal. */
+  /** Lien vers la réponse FAQ sur le refus de régie. */
   showFaqLink?: boolean;
-  /** Tone for dark sections (ContactCta). */
+  /** Ton pour sections sombres (ContactCta). */
   tone?: "light" | "dark";
 };
 
 /**
- * Elevates the fin-de-bail régie promise already documented in the FAQ.
- * Copy stays within existing claims: return to fix objections at no extra charge.
+ * Bandeau garantie de remise de bail (promesse déjà documentée dans la FAQ).
  */
 export function GarantieRemiseBail({
   className,

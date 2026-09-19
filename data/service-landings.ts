@@ -10,7 +10,7 @@ export type ServiceLanding = {
   subtitle: string;
   metaTitle: string;
   metaDescription: string;
-  /** Exact SERP title (≤ 60 chars) — skips the Gzimmo suffix. */
+  /** Titre absolu (sans suffixe Gzimmo). */
   absoluteTitle?: boolean;
   intro: string;
   audienceHeading?: string;
@@ -85,7 +85,7 @@ export const serviceLandings: ServiceLanding[] = [
       },
       {
         title: "Pour les régies : checklist, état des lieux, remise des clés",
-        body: "Nous travaillons pour des locataires et directement pour des régies : turnovers, sorties, appartements à remettre en location. La checklist suit les points qui bloquent le plus souvent une restitution — joints, four, traces sur vitres — pour limiter les reprises le jour de l'état des lieux.",
+        body: "Nous travaillons pour des locataires et directement pour des régies : sorties de bail, appartements à remettre en location. La checklist suit les points qui bloquent le plus souvent une restitution — joints, four, traces sur vitres — pour limiter les reprises le jour de l'état des lieux.",
       },
     ],
     forWho: [

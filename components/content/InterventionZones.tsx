@@ -7,9 +7,7 @@ type InterventionZonesProps = {
   servicePhrase?: string;
 };
 
-/**
- * Ancrage local sans landings dupliquées — villes GSC + couverture VD / FR / NE.
- */
+/** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
 export function InterventionZones({
   servicePhrase = "nettoyage fin de bail",
 }: InterventionZonesProps) {

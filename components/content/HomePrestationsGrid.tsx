@@ -13,7 +13,7 @@ const homePrestations = [
   {
     label: "Régies & conciergerie",
     slug: "conciergerie",
-    detail: "Interventions planifiées pour vos entrées, sorties et turnovers.",
+    detail: "Interventions planifiées pour les entrées et sorties de locataires.",
     image: "/images/services/entretien-locaux.webp",
   },
   {

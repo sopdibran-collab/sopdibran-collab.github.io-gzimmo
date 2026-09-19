@@ -8,7 +8,7 @@ type FinDeBailPriceFaqProps = {
 };
 
 /**
- * FAQ prix / fin de bail (4 questions GSC) — le JSON-LD FAQPage est émis par la page.
+ * FAQ prix / fin de bail — le JSON-LD FAQPage est émis par la page.
  */
 export function FinDeBailPriceFaq({
   devisHref = "/contact?service=nettoyage-fin-de-bail",
