@@ -65,7 +65,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
         </FadeIn>
       </PageHero>
 
-      <PageMain variant="default">
+      <PageMain variant="surface">
         <FadeIn>
           <p className="max-w-3xl text-muted leading-relaxed">{landing.intro}</p>
         </FadeIn>
@@ -95,7 +95,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
         </ContentCard>
       </PageMain>
 
-      <PageMain variant="surface">
+      <PageMain variant="default">
         <Badge className="text-accent/90">FAQ</Badge>
         <h2 className="mt-4 font-display text-display-sm text-foreground">
           Questions fréquentes — fin de bail à {landing.city}
@@ -109,7 +109,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
         />
       </PageMain>
 
-      <PageMain variant="default">
+      <PageMain variant="surface">
         <ContentCard>
           <NapBlock />
         </ContentCard>

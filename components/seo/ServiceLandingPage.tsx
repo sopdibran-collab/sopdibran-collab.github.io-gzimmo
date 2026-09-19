@@ -25,9 +25,9 @@ type ServiceLandingPageProps = {
   landing: ServiceLanding;
 };
 
-/** Home-page rhythm: white (`default`) ↔ muted (`surface`). */
+/** After soft PageHero (near-white), start muted so the first band reads clearly. */
 function rhythmVariant(blockIndex: number): "default" | "surface" {
-  return blockIndex % 2 === 1 ? "surface" : "default";
+  return blockIndex % 2 === 0 ? "surface" : "default";
 }
 
 export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
