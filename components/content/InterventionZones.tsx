@@ -2,9 +2,12 @@ import Link from "next/link";
 import { interventionCantons } from "@/data/intervention-zones";
 import { Badge } from "@/components/ui/Badge";
 import { TextLink } from "@/components/ui/TextLink";
+import { cn } from "@/lib/utils";
 
 type InterventionZonesProps = {
   servicePhrase?: string;
+  /** When rendered as its own page section, drop the top hairline separator. */
+  className?: string;
 };
 
 /**
@@ -12,9 +15,13 @@ type InterventionZonesProps = {
  */
 export function InterventionZones({
   servicePhrase = "nettoyage fin de bail",
+  className,
 }: InterventionZonesProps) {
   return (
-    <section className="mt-16 border-t border-border/80 pt-16" aria-labelledby="zones-intervention">
+    <section
+      className={cn("mt-16 border-t border-border/80 pt-16", className)}
+      aria-labelledby="zones-intervention"
+    >
       <Badge className="text-accent/90">Zones d&apos;intervention</Badge>
       <h2 id="zones-intervention" className="mt-4 font-display text-display-sm text-foreground">
         Zones d&apos;intervention

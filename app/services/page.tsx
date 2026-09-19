@@ -72,22 +72,25 @@ export default function ServicesPage() {
 
       <GarantieRemiseBail />
 
-      <PageMain variant="surface">
+      <PageMain variant="default">
         <ServiceCardGrid
           slugs={[...prioritySlugs]}
           badge="Prioritaires"
           title="Les demandes les plus fréquentes"
           description="Fin de bail, après chantier et entretien de locaux — les trois prestations qui structurent notre activité."
         />
+      </PageMain>
 
+      <PageMain variant="surface">
         <ServiceCardGrid
-          className="mt-16 border-t border-border pt-16"
           badge="Catalogue"
           title="Toutes les prestations"
           description="Chaque service mène à une page dédiée : périmètre, bénéfices et demande de devis."
         />
+      </PageMain>
 
-        <ValueCards className="mt-16 border-t border-border pt-16" items={reassurance} />
+      <PageMain variant="default">
+        <ValueCards items={reassurance} />
       </PageMain>
 
       <PageCta />
