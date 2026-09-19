@@ -1,9 +1,8 @@
 import { company } from "@/data/company";
 
 /**
- * Chiffres publics Google Business Profile (vérifiés 2026-09-13).
- * À utiliser pour AggregateRating — ne jamais dériver de la liste affichée
- * (certains avis réseau sont exclus de l’UI).
+ * Note publique Google Business Profile (vérifiée 2026-09-13).
+ * Source AggregateRating schema — distincte de la liste d’avis affichée.
  */
 export const googleBusinessPublicRating = {
   ratingValue: "5.0",
@@ -11,7 +10,7 @@ export const googleBusinessPublicRating = {
   bestRating: 5,
 } as const;
 
-/** Avis mis en avant (format legacy — composant Testimonial). */
+/** Avis mis en avant (composant Testimonial / accueil). */
 export type FeaturedGoogleReview = {
   quote: string;
   author: string;
@@ -45,11 +44,7 @@ Très bonne expérience pour un nettoyage après chantier, nous referons appel �
   rating: 5,
 };
 
-/**
- * Avis affichés sur le site.
- * Exclus volontairement : avis réseau Markaj / Sopjani (ex. review-fin-de-chantier).
- * AggregateRating doit rester aligné sur `googleBusinessPublicRating`, pas sur cette liste.
- */
+/** Avis Google affichés sur le site (textes verbatim Maps). */
 export const googleReviews: GoogleReview[] = [
   {
     id: "review-demenagement-express",
