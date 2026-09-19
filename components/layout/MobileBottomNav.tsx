@@ -57,7 +57,7 @@ export function MobileBottomNav() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex flex-col items-center justify-center gap-0.5 rounded-md px-0.5 py-2",
+                  "flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-md px-1 py-2",
                   "transition-colors duration-200",
                   active ? "text-accent" : "text-muted hover:text-foreground",
                 )}
@@ -76,7 +76,7 @@ export function MobileBottomNav() {
             href={callHref}
             aria-label={`Appeler le ${company.phoneDisplay}`}
             className={cn(
-              "flex flex-col items-center justify-center gap-0.5 rounded-md px-0.5 py-2",
+              "flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-md px-1 py-2",
               "text-muted transition-colors duration-200 hover:text-accent",
             )}
           >

@@ -1,6 +1,6 @@
 import type { FaqContent, FaqItem } from "@/data/faq";
 import { Badge } from "@/components/ui/Badge";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { cn } from "@/lib/utils";
 
 type FaqListProps = {
   items: readonly (FaqItem | FaqContent)[];
@@ -12,37 +12,33 @@ function faqRowKey(item: FaqItem | FaqContent, index: number) {
   return "id" in item ? item.id : `${item.question}-${index}`;
 }
 
-function FaqRow({ item }: { item: FaqItem | FaqContent }) {
-  const anchorId = "id" in item ? item.id : undefined;
-
-  return (
-    <div
-      id={anchorId}
-      className="scroll-mt-28 py-8 transition-colors duration-300 hover:bg-white/50 md:-mx-4 md:rounded-lg md:px-4"
-    >
-      <dt className="text-base font-medium text-foreground md:text-[1.05rem]">{item.question}</dt>
-      <dd className="mt-3 max-w-2xl text-muted leading-relaxed">{item.answer}</dd>
-    </div>
-  );
-}
-
-/** Liste FAQ éditoriale — réponses visibles (homepage, services, page FAQ). */
+/**
+ * FAQ en description list valide :
+ * chaque entrée = un seul `div` enfant direct de `dl`, contenant `dt` + `dd`.
+ * (Pas de wrapper d’animation supplémentaire — HTML + a11y.)
+ */
 export function FaqList({ items, animated = true }: FaqListProps) {
   return (
     <dl className="divide-y divide-border/80 border-t border-border/80">
       {items.map((item, index) => {
         const key = faqRowKey(item, index);
-        if (!animated) {
-          return (
-            <div key={key}>
-              <FaqRow item={item} />
-            </div>
-          );
-        }
+        const anchorId = "id" in item ? item.id : undefined;
+
         return (
-          <FadeIn key={key} delay={index * 0.05}>
-            <FaqRow item={item} />
-          </FadeIn>
+          <div
+            key={key}
+            id={anchorId}
+            className={cn(
+              "scroll-mt-28 py-8 transition-colors duration-300 hover:bg-white/50 md:-mx-4 md:rounded-lg md:px-4",
+              animated && "animate-fade-in-up motion-reduce:animate-none",
+            )}
+            style={animated ? { animationDelay: `${index * 0.05}s` } : undefined}
+          >
+            <dt className="text-base font-medium text-foreground md:text-[1.05rem]">
+              {item.question}
+            </dt>
+            <dd className="mt-3 max-w-2xl text-muted leading-relaxed">{item.answer}</dd>
+          </div>
         );
       })}
     </dl>
