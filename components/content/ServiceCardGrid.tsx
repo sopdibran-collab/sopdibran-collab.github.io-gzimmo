@@ -67,36 +67,34 @@ export function ServiceCardGrid({
         )}
       >
         {list.map((service, index) => (
-          <FadeIn key={service.slug} delay={index * 0.04}>
-            <li className="h-full">
-              <Link
-                href={getServicePath(service.slug)}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 bg-white/85 shadow-[0_8px_32px_rgba(30,34,39,0.05)] transition-[border-color,box-shadow] duration-200 hover:border-accent/25"
-              >
-                <div className="relative aspect-[5/3] overflow-hidden bg-surface">
-                  <Image
-                    src={service.image.src}
-                    alt={service.image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.03]"
-                    style={{ objectPosition: service.image.objectPosition }}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent">
-                    {service.shortTitle}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
-                    {service.description}
-                  </p>
-                  <span className="mt-4 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-accent">
-                    En savoir plus
-                    <span aria-hidden="true"> →</span>
-                  </span>
-                </div>
-              </Link>
-            </li>
+          <FadeIn key={service.slug} as="li" delay={index * 0.04} className="h-full">
+            <Link
+              href={getServicePath(service.slug)}
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 bg-white/85 shadow-[0_8px_32px_rgba(30,34,39,0.05)] transition-[border-color,box-shadow] duration-200 hover:border-accent/25"
+            >
+              <div className="relative aspect-[5/3] overflow-hidden bg-surface">
+                <Image
+                  src={service.image.src}
+                  alt={service.image.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.03]"
+                  style={{ objectPosition: service.image.objectPosition }}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent">
+                  {service.shortTitle}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                  {service.description}
+                </p>
+                <span className="mt-4 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-accent">
+                  En savoir plus
+                  <span aria-hidden="true"> →</span>
+                </span>
+              </div>
+            </Link>
           </FadeIn>
         ))}
       </ul>

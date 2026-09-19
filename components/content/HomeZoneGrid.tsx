@@ -20,25 +20,23 @@ export function HomeZoneGrid() {
 
       <ul className="mt-10 grid gap-0 border-t border-border/80 sm:grid-cols-2 lg:grid-cols-3">
         {homepageZones.map((zone, index) => (
-          <FadeIn key={zone.city} delay={index * 0.03}>
-            <li className="border-b border-border/80">
-              <Link
-                href={zone.href}
-                className="group flex items-center justify-between px-1 py-4 transition-colors duration-200 hover:text-accent"
-              >
-                <span>
-                  <span className="font-medium text-foreground transition-colors group-hover:text-accent">
-                    {zone.label}
-                  </span>
-                  {"note" in zone && zone.note ? (
-                    <span className="ml-2 text-xs text-accent">{zone.note}</span>
-                  ) : null}
+          <FadeIn key={zone.city} as="li" delay={index * 0.03} className="border-b border-border/80">
+            <Link
+              href={zone.href}
+              className="group flex min-h-11 items-center justify-between px-1 py-4 transition-colors duration-200 hover:text-accent"
+            >
+              <span>
+                <span className="font-medium text-foreground transition-colors group-hover:text-accent">
+                  {zone.label}
                 </span>
-                <span className="text-muted transition-colors group-hover:text-accent" aria-hidden="true">
-                  →
-                </span>
-              </Link>
-            </li>
+                {"note" in zone && zone.note ? (
+                  <span className="ml-2 text-xs text-accent">{zone.note}</span>
+                ) : null}
+              </span>
+              <span className="text-muted transition-colors group-hover:text-accent" aria-hidden="true">
+                →
+              </span>
+            </Link>
           </FadeIn>
         ))}
       </ul>

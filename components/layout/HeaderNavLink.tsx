@@ -34,11 +34,12 @@ export function HeaderNavLink({
       aria-current={active ? "page" : undefined}
       data-active={active ? "" : undefined}
       className={cn(
-        "relative whitespace-nowrap px-1 py-2 text-sm font-medium transition-colors duration-200",
+        /* Zone tactile ≥ 44×24 : padding généreux, layout header desktop inchangé */
+        "relative inline-flex min-h-11 items-center whitespace-nowrap px-2.5 py-2 text-sm font-medium transition-colors duration-200",
         overDark
           ? active
             ? "text-white"
-            : "text-white/75 hover:text-white"
+            : "text-white/80 hover:text-white"
           : active
             ? "text-foreground"
             : "text-muted hover:text-foreground",
@@ -49,7 +50,7 @@ export function HeaderNavLink({
       <span
         aria-hidden="true"
         className={cn(
-          "absolute inset-x-1 -bottom-px h-px origin-center transition-transform duration-200",
+          "absolute inset-x-2.5 -bottom-px h-px origin-center transition-transform duration-200",
           overDark ? "bg-white" : "bg-accent",
           active ? "scale-x-100" : "scale-x-0",
         )}

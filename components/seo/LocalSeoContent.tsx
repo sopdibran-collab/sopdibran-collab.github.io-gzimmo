@@ -92,12 +92,12 @@ export function LocalSeoBody({ location }: { location: Location }) {
       {location.priorityLinks && location.priorityLinks.length > 0 ? (
         <div className="mt-10">
           <p className="text-sm font-medium text-foreground">Pages utiles</p>
-          <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-y-3">
             {location.priorityLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-muted transition-colors hover:text-accent"
+                  className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-accent"
                 >
                   {link.label} →
                 </Link>

@@ -35,7 +35,7 @@ export function InterventionZones({
                   {place.href ? (
                     <Link
                       href={place.href}
-                      className="inline-flex rounded-md px-2.5 py-1 text-sm text-muted transition-colors hover:bg-surface hover:text-accent"
+                      className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-accent"
                     >
                       {place.name}
                     </Link>

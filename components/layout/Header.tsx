@@ -77,7 +77,7 @@ export function Header() {
             external
             variant="secondary"
             aria-label={`Appeler le ${company.phoneDisplay}`}
-            className="h-9 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white shadow-none hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
+            className="h-11 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white shadow-none hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
           >
             <PhoneIcon className="size-4 shrink-0" />
             {company.phoneDisplay}
@@ -85,7 +85,7 @@ export function Header() {
           {/* Primaire : accent solide — un seul CTA fort */}
           <Button
             href="/contact"
-            className="h-9 whitespace-nowrap border-transparent bg-accent px-4 text-white shadow-none hover:bg-accent-hover hover:text-white"
+            className="h-11 whitespace-nowrap border-transparent bg-accent px-4 text-white shadow-none hover:bg-accent-hover hover:text-white"
           >
             Devis
             <ArrowRightIcon className="size-4 shrink-0" />

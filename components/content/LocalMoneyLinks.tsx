@@ -22,21 +22,19 @@ export function LocalMoneyLinks() {
   return (
     <div className="mt-10 border-t border-border/80 pt-10">
       <p className="text-sm font-medium text-foreground">Recherches fréquentes</p>
-      <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-8">
+      <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3">
         {moneyLinks.map((link, index) => (
-          <FadeIn key={link.href} delay={index * 0.03}>
-            <li>
-              <Link
-                href={link.href}
-                className="text-sm text-muted transition-colors hover:text-accent"
-              >
-                {link.label}
-                {"note" in link && link.note ? (
-                  <span className="ml-1.5 text-xs text-accent">({link.note})</span>
-                ) : null}
-                <span aria-hidden="true"> →</span>
-              </Link>
-            </li>
+          <FadeIn key={link.href} as="li" delay={index * 0.03}>
+            <Link
+              href={link.href}
+              className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-accent"
+            >
+              {link.label}
+              {"note" in link && link.note ? (
+                <span className="ml-1.5 text-xs text-accent">({link.note})</span>
+              ) : null}
+              <span aria-hidden="true"> →</span>
+            </Link>
           </FadeIn>
         ))}
       </ul>

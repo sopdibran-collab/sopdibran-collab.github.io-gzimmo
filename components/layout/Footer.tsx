@@ -28,11 +28,13 @@ const regionLinks = [
   { label: "Neuchâtel", href: "/seo/nettoyage-neuchatel" },
 ] as const;
 
+/** Chips footer : contraste AA + zone tactile ≥ 24px (confort ~36–44). */
 const chipClass =
-  "inline-flex items-center rounded-md px-1.5 py-1 text-[11px] font-medium leading-none text-white/70 transition-colors hover:bg-white/10 hover:text-white";
+  "inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-[12px] font-medium leading-none text-white/80 transition-colors hover:bg-white/15 hover:text-white";
 
+/** Labels uppercase — blanc/70 sur fond teal sombre ≈ 5.5:1 (AA). */
 const labelClass =
-  "mb-1.5 text-[10px] font-medium uppercase tracking-[0.08em] text-white/45";
+  "mb-1.5 text-[10px] font-medium uppercase tracking-[0.08em] text-white/70";
 
 function LinkRow({
   label,
@@ -44,7 +46,7 @@ function LinkRow({
   return (
     <div className="min-w-0">
       <p className={labelClass}>{label}</p>
-      <div className="flex flex-wrap gap-x-0.5 gap-y-0.5">{children}</div>
+      <div className="flex flex-wrap gap-x-1.5 gap-y-1.5">{children}</div>
     </div>
   );
 }
@@ -64,7 +66,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] space-y-3 px-container py-3 sm:py-4">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Logo variant="monochromeInverse" size="footer" className="max-h-7 max-w-[140px]" />
-          <p className="max-w-md text-[11px] leading-snug text-white/55">
+          <p className="max-w-md text-[11px] leading-snug text-white/75">
             {company.tagline} · Romont (FR) · Suisse romande
           </p>
         </div>
@@ -100,28 +102,28 @@ export function Footer() {
 
           <div className="min-w-0">
             <p className={labelClass}>Contact</p>
-            <ul className="space-y-1 text-[11px] text-white/70">
+            <ul className="space-y-1 text-[12px] text-white/80">
               <li>
-                <GoogleMapsLink className="inline-flex items-start gap-1.5 transition-colors hover:text-white">
-                  <MapPin className="mt-0.5 size-3 shrink-0 stroke-[1.5]" aria-hidden />
+                <GoogleMapsLink className="inline-flex min-h-9 items-start gap-1.5 py-1.5 transition-colors hover:text-white">
+                  <MapPin className="mt-0.5 size-3.5 shrink-0 stroke-[1.5]" aria-hidden />
                   <span>{formatAddress()}</span>
                 </GoogleMapsLink>
               </li>
               <li>
                 <a
                   href={callHref}
-                  className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
+                  className="inline-flex min-h-9 items-center gap-1.5 py-1.5 transition-colors hover:text-white"
                 >
-                  <Phone className="size-3 stroke-[1.5]" aria-hidden />
+                  <Phone className="size-3.5 stroke-[1.5]" aria-hidden />
                   {company.phoneDisplay}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${company.email}`}
-                  className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
+                  className="inline-flex min-h-9 items-center gap-1.5 py-1.5 transition-colors hover:text-white"
                 >
-                  <Mail className="size-3 stroke-[1.5]" aria-hidden />
+                  <Mail className="size-3.5 stroke-[1.5]" aria-hidden />
                   {company.email}
                 </a>
               </li>
@@ -131,15 +133,21 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-x-4 gap-y-1 px-container py-2 text-[10px] text-white/45">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-x-4 gap-y-1 px-container py-2 text-[11px] text-white/70">
           <p>
             © {new Date().getFullYear()} {company.legalName}
           </p>
           <div className="flex flex-wrap gap-x-3">
-            <Link href="/mentions-legales" className="hover:text-white">
+            <Link
+              href="/mentions-legales"
+              className="inline-flex min-h-9 items-center hover:text-white"
+            >
               Mentions légales
             </Link>
-            <Link href="/politique-confidentialite" className="hover:text-white">
+            <Link
+              href="/politique-confidentialite"
+              className="inline-flex min-h-9 items-center hover:text-white"
+            >
               Confidentialité
             </Link>
           </div>
