@@ -2,9 +2,12 @@ import { finDeBailPriceFaqs } from "@/data/fin-de-bail-faq";
 import { FaqList } from "@/components/content/FaqList";
 import { Badge } from "@/components/ui/Badge";
 import { ConversionCta } from "@/components/ui/ConversionCta";
+import { cn } from "@/lib/utils";
 
 type FinDeBailPriceFaqProps = {
   devisHref?: string;
+  /** When rendered as its own page section, drop the top hairline separator. */
+  className?: string;
 };
 
 /**
@@ -12,9 +15,10 @@ type FinDeBailPriceFaqProps = {
  */
 export function FinDeBailPriceFaq({
   devisHref = "/contact?service=nettoyage-fin-de-bail",
+  className,
 }: FinDeBailPriceFaqProps) {
   return (
-    <div className="mt-16 border-t border-border/80 pt-16">
+    <div className={cn("mt-16 border-t border-border/80 pt-16", className)}>
       <Badge className="text-accent/90">FAQ</Badge>
       <h2 className="mt-4 font-display text-display-sm text-foreground">
         Prix, devis et garantie d&apos;état des lieux

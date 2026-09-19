@@ -65,7 +65,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
         </FadeIn>
       </PageHero>
 
-      <PageMain variant="surface">
+      <PageMain variant="default">
         <FadeIn>
           <p className="max-w-3xl text-muted leading-relaxed">{landing.intro}</p>
         </FadeIn>
@@ -93,22 +93,24 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
             <TextLink href={landing.localPageHref}>{landing.localPageLabel}</TextLink>
           </div>
         </ContentCard>
+      </PageMain>
 
-        <div className="mt-16 border-t border-border/80 pt-16">
-          <Badge className="text-accent/90">FAQ</Badge>
-          <h2 className="mt-4 font-display text-display-sm text-foreground">
-            Questions fréquentes — fin de bail à {landing.city}
-          </h2>
-          <div className="mt-8">
-            <FaqList items={landing.faqs} />
-          </div>
-          <ConversionCta
-            className="mt-10"
-            devisHref={`/contact?service=${landing.serviceSlug}&ville=${landing.city}`}
-          />
+      <PageMain variant="surface">
+        <Badge className="text-accent/90">FAQ</Badge>
+        <h2 className="mt-4 font-display text-display-sm text-foreground">
+          Questions fréquentes — fin de bail à {landing.city}
+        </h2>
+        <div className="mt-8">
+          <FaqList items={landing.faqs} />
         </div>
+        <ConversionCta
+          className="mt-10"
+          devisHref={`/contact?service=${landing.serviceSlug}&ville=${landing.city}`}
+        />
+      </PageMain>
 
-        <ContentCard className="mt-12">
+      <PageMain variant="default">
+        <ContentCard>
           <NapBlock />
         </ContentCard>
       </PageMain>

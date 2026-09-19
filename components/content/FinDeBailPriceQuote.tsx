@@ -1,16 +1,20 @@
 import { company } from "@/data/company";
-import { formatPhoneHref } from "@/lib/utils";
+import { formatPhoneHref, cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { ContentCard } from "@/components/ui/ContentCard";
+
+type FinDeBailPriceQuoteProps = {
+  className?: string;
+};
 
 /**
  * Intention « prix » — devis sur mesure au téléphone, pas de calculateur.
  */
-export function FinDeBailPriceQuote() {
+export function FinDeBailPriceQuote({ className }: FinDeBailPriceQuoteProps) {
   const callHref = formatPhoneHref(company.phone);
 
   return (
-    <ContentCard className="mt-8 border-accent/20 bg-accent-muted/30">
+    <ContentCard className={cn("border-accent/20 bg-accent-muted/30", className)}>
       <h2 className="font-display text-display-sm text-foreground">
         Prix d&apos;un nettoyage de fin de bail
       </h2>

@@ -25,12 +25,30 @@ type ServiceLandingPageProps = {
   landing: ServiceLanding;
 };
 
+/** Home-page rhythm: white (`default`) ↔ muted (`surface`). */
+function rhythmVariant(blockIndex: number): "default" | "surface" {
+  return blockIndex % 2 === 1 ? "surface" : "default";
+}
+
 export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
   const service = getServiceBySlug(landing.slug);
   const relatedServices = getRelatedServices(landing.relatedServiceSlugs);
   const path = getServicePath(landing.slug);
 
   if (!service) return null;
+
+  let block = 0;
+  const nextVariant = () => rhythmVariant(block++);
+
+  const introVariant = nextVariant();
+  const audienceVariant = nextVariant();
+  const offerVariant =
+    landing.guarantee || landing.showPriceQuote ? nextVariant() : null;
+  const processVariant = nextVariant();
+  const whyVariant = nextVariant();
+  const faqVariant = nextVariant();
+  const testimonialsVariant = landing.testimonials.length > 0 ? nextVariant() : null;
+  const closingVariant = nextVariant();
 
   return (
     <>
@@ -90,7 +108,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         </FadeIn>
       </PageHero>
 
-      <PageMain>
+      <PageMain variant={introVariant}>
         <FadeIn>
           <p className="max-w-3xl text-muted leading-relaxed">{landing.intro}</p>
         </FadeIn>
@@ -115,43 +133,53 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             ))}
           </div>
         ) : null}
+      </PageMain>
 
-        <section className="mt-12 border-y border-border/80 py-8 md:py-10">
-          <div className="grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
-            <div>
-              <span className="mb-5 block h-px w-10 bg-accent" aria-hidden="true" />
-              <h2 className="font-display text-display-sm text-foreground">
-                {landing.audienceHeading ?? "À qui s'adresse ce service ?"}
-              </h2>
-            </div>
-            <ul className="divide-y divide-border/80 border-t border-border/80 lg:border-t-0">
-              {landing.forWho.map((item) => (
-                <li
-                  key={item.profile}
-                  className="grid gap-2 py-5 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8 lg:first:pt-0"
-                >
-                  <span className="text-sm font-medium text-foreground">{item.profile}</span>
-                  <span className="text-sm text-muted leading-relaxed">{item.situation}</span>
-                </li>
-              ))}
-            </ul>
+      <PageMain variant={audienceVariant}>
+        <div className="grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
+          <div>
+            <span className="mb-5 block h-px w-10 bg-accent" aria-hidden="true" />
+            <h2 className="font-display text-display-sm text-foreground">
+              {landing.audienceHeading ?? "À qui s'adresse ce service ?"}
+            </h2>
           </div>
-        </section>
+          <ul className="divide-y divide-border/80 border-t border-border/80 lg:border-t-0">
+            {landing.forWho.map((item) => (
+              <li
+                key={item.profile}
+                className="grid gap-2 py-5 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8 lg:first:pt-0"
+              >
+                <span className="text-sm font-medium text-foreground">{item.profile}</span>
+                <span className="text-sm text-muted leading-relaxed">{item.situation}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </PageMain>
 
-        {landing.guarantee ? (
-          <ContentCard className="mt-8 border-accent/20 bg-accent-muted/30">
-            <h2 className="font-display text-display-sm text-foreground">{landing.guarantee.title}</h2>
-            <div className="mt-6 space-y-4 text-muted leading-relaxed">
-              {landing.guarantee.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-              ))}
-            </div>
-          </ContentCard>
-        ) : null}
+      {offerVariant ? (
+        <PageMain variant={offerVariant}>
+          {landing.guarantee ? (
+            <ContentCard className="border-accent/20 bg-accent-muted/30">
+              <h2 className="font-display text-display-sm text-foreground">
+                {landing.guarantee.title}
+              </h2>
+              <div className="mt-6 space-y-4 text-muted leading-relaxed">
+                {landing.guarantee.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                ))}
+              </div>
+            </ContentCard>
+          ) : null}
 
-        {landing.showPriceQuote ? <FinDeBailPriceQuote /> : null}
+          {landing.showPriceQuote ? (
+            <FinDeBailPriceQuote className={landing.guarantee ? "mt-8" : undefined} />
+          ) : null}
+        </PageMain>
+      ) : null}
 
-        <ContentCard className="mt-8">
+      <PageMain variant={processVariant}>
+        <ContentCard>
           <h2 className="font-display text-display-sm text-foreground">{landing.process.title}</h2>
           <ul className="mt-6 space-y-3">
             {landing.process.items.map((item) => (
@@ -168,28 +196,33 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             preferCall={landing.preferCallCta}
           />
         </ContentCard>
+      </PageMain>
 
-        <div className="mt-12">
-          <h2 className="font-display text-display-sm text-foreground">
-            {landing.whyHeading ?? "Pourquoi choisir Gzimmo ?"}
-          </h2>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {landing.whyGzimmo.map((item) => (
-              <li
-                key={item.title}
-                className="rounded-xl border border-border/80 bg-white/70 p-6"
-              >
-                <h3 className="font-medium text-foreground">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">{item.description}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <PageMain variant={whyVariant}>
+        <h2 className="font-display text-display-sm text-foreground">
+          {landing.whyHeading ?? "Pourquoi choisir Gzimmo ?"}
+        </h2>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          {landing.whyGzimmo.map((item) => (
+            <li
+              key={item.title}
+              className="rounded-xl border border-border/80 bg-white/70 p-6"
+            >
+              <h3 className="font-medium text-foreground">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted leading-relaxed">{item.description}</p>
+            </li>
+          ))}
+        </ul>
+      </PageMain>
 
+      <PageMain variant={faqVariant}>
         {landing.useFinDeBailFaq ? (
-          <FinDeBailPriceFaq devisHref={`/contact?service=${landing.slug}`} />
+          <FinDeBailPriceFaq
+            devisHref={`/contact?service=${landing.slug}`}
+            className="mt-0 border-t-0 pt-0"
+          />
         ) : (
-          <div className="mt-16 border-t border-border/80 pt-16">
+          <>
             <Badge className="text-accent/90">FAQ</Badge>
             <h2 className="mt-4 font-display text-display-sm text-foreground">
               {landing.faqHeading ?? `Questions fréquentes — ${service.shortTitle.toLowerCase()}`}
@@ -198,52 +231,54 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               <FaqList items={landing.faqs} />
             </div>
             <ConversionCta className="mt-10" devisHref={`/contact?service=${landing.slug}`} />
-          </div>
+          </>
         )}
+      </PageMain>
 
-        {landing.testimonials.length > 0 ? (
-          <div className="mt-16 border-t border-border/80 pt-16">
-            <h2 className="font-display text-display-sm text-foreground">Ce que disent nos clients</h2>
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
-              {landing.testimonials.map((item) => (
-                <figure
-                  key={item.author}
-                  className="rounded-xl border border-border/80 bg-white/70 p-6"
-                >
-                  <div className="mb-4 flex flex-wrap items-center gap-3">
-                    {featuredGoogleReview.rating ? (
-                      <StarRating
-                        rating={featuredGoogleReview.rating}
-                        className="text-sm tracking-[0.12em]"
-                      />
-                    ) : null}
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 px-2.5 py-1 text-xs font-medium text-foreground">
-                      Avis Google
-                    </span>
-                    {landing.slug === "nettoyage-apres-chantier" ? (
-                      <a
-                        href={featuredGoogleReview.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-muted transition-colors hover:text-accent"
-                      >
-                        Voir sur Google →
-                      </a>
-                    ) : null}
-                  </div>
-                  <blockquote className="whitespace-pre-line text-sm text-muted leading-relaxed">
-                    &ldquo;{item.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-4 text-sm font-medium text-foreground">
-                    — {item.author}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+      {testimonialsVariant ? (
+        <PageMain variant={testimonialsVariant}>
+          <h2 className="font-display text-display-sm text-foreground">Ce que disent nos clients</h2>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {landing.testimonials.map((item) => (
+              <figure
+                key={item.author}
+                className="rounded-xl border border-border/80 bg-white/70 p-6"
+              >
+                <div className="mb-4 flex flex-wrap items-center gap-3">
+                  {featuredGoogleReview.rating ? (
+                    <StarRating
+                      rating={featuredGoogleReview.rating}
+                      className="text-sm tracking-[0.12em]"
+                    />
+                  ) : null}
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 px-2.5 py-1 text-xs font-medium text-foreground">
+                    Avis Google
+                  </span>
+                  {landing.slug === "nettoyage-apres-chantier" ? (
+                    <a
+                      href={featuredGoogleReview.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-muted transition-colors hover:text-accent"
+                    >
+                      Voir sur Google →
+                    </a>
+                  ) : null}
+                </div>
+                <blockquote className="whitespace-pre-line text-sm text-muted leading-relaxed">
+                  &ldquo;{item.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-4 text-sm font-medium text-foreground">
+                  — {item.author}
+                </figcaption>
+              </figure>
+            ))}
           </div>
-        ) : null}
+        </PageMain>
+      ) : null}
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+      <PageMain variant={closingVariant}>
+        <div className="grid gap-8 lg:grid-cols-2">
           <ContentCard>
             <h2 className="font-display text-lg font-semibold text-foreground">Nos autres prestations</h2>
             <ul className="mt-6 space-y-3">
@@ -277,6 +312,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
         {landing.showInterventionZones ? (
           <InterventionZones
+            className="mt-16 border-t-0 pt-0"
             servicePhrase={
               landing.slug === "nettoyage-apres-chantier"
                 ? "nettoyage après chantier"
