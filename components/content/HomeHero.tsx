@@ -32,13 +32,10 @@ export function HomeHero() {
 
       <div className="relative z-10 mx-auto flex min-h-hero-photo w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24">
         <div className="min-w-0 max-w-3xl animate-fade-in-up motion-reduce:animate-none">
-          <p className="font-display text-[clamp(2.75rem,12vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
-            Gzimmo
-          </p>
-          <h1 className="mt-5 max-w-xl text-balance font-display text-[clamp(1.25rem,3.8vw,1.85rem)] font-semibold leading-snug tracking-[-0.02em] text-white/95">
+          <h1 className="max-w-3xl text-balance font-display text-[clamp(1.85rem,6.5vw,3.25rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-white">
             Nettoyage fin de bail et après chantier — on remet le logement comme la régie l&apos;attend.
           </h1>
-          <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-white/70 sm:text-base">
+          <p className="mt-5 max-w-md text-[0.95rem] leading-relaxed text-white/70 sm:text-base">
             Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg, Vaud, Neuchâtel. Devis sous 24 h.
           </p>
 

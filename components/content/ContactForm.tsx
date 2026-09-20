@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { company } from "@/data/company";
 import { formatPhoneHref } from "@/lib/utils";
@@ -18,9 +19,10 @@ type ContactFormProps = {
   defaultCommune?: string;
 };
 
-type FormStatus = "idle" | "submitting" | "success" | "error";
+type FormStatus = "idle" | "submitting" | "error";
 
 export function ContactForm({ defaultService = "", defaultCommune = "" }: ContactFormProps) {
+  const router = useRouter();
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const defaultPrestation = mapServiceSlugToPrestation(defaultService);
@@ -63,43 +65,14 @@ export function ContactForm({ defaultService = "", defaultCommune = "" }: Contac
         return;
       }
 
-      setStatus("success");
       form.reset();
+      router.push("/merci");
     } catch {
       setStatus("error");
       setErrorMessage(
         "Impossible de joindre le serveur. Vérifiez votre connexion ou appelez-nous.",
       );
     }
-  }
-
-  if (status === "success") {
-    return (
-      <ContentCard>
-        <div role="status" className="space-y-4">
-          <p className="font-display text-xl text-foreground">Demande envoyée</p>
-          <p className="text-muted leading-relaxed">
-            Merci. Nous avons bien reçu votre demande de devis et vous répondons sous 24 h.
-            Pour une urgence, appelez-nous.
-          </p>
-          <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap">
-            <Button href={formatPhoneHref(company.phone)} external>
-              Appeler {company.phoneDisplay}
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() => {
-                setStatus("idle");
-                setErrorMessage("");
-              }}
-            >
-              Envoyer une autre demande
-            </Button>
-          </div>
-        </div>
-      </ContentCard>
-    );
   }
 
   return (

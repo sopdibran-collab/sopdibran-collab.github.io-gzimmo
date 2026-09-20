@@ -2,7 +2,7 @@ import { company } from "@/data/company";
 
 /**
  * Note publique Google Business Profile (vérifiée 2026-09-13).
- * Source AggregateRating schema — distincte de la liste d’avis affichée.
+ * `reviewCount` doit rester aligné sur le nombre d’avis Maps affichés ci-dessous.
  */
 export const googleBusinessPublicRating = {
   ratingValue: "5.0",
@@ -70,6 +70,14 @@ export const googleReviews: GoogleReview[] = [
     text: featuredGoogleReview.quote,
     url: featuredGoogleReview.url,
     contextLabel: "Nettoyage après rénovation / après chantier",
+  },
+  {
+    id: "review-fin-de-chantier",
+    rating: 5,
+    // Texte verbatim Google Maps — lien Maps public
+    text: "Service de nettoyage exceptionnel ! Ponctuels, minutieux et très professionnels. Leurs services ont été rendus pour un nettoyage de fin de chantier, et le résultat est impeccable, chaque détail est soigné. Une équipe sérieuse et sympathique, que je recommande sans hésiter.",
+    url: "https://maps.app.goo.gl/JUgNKLN95Ee9iVkV8",
+    contextLabel: "Nettoyage fin de chantier",
   },
 ];
 

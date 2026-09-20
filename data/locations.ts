@@ -300,33 +300,6 @@ export const locations: Location[] = [
     ],
   },
   {
-    slug: "nettoyage-geneve",
-    city: "Genève",
-    canton: "GE",
-    cantonName: "Genève",
-    title: "Nettoyage professionnel à Genève",
-    description:
-      "Nettoyage professionnel à Genève et canton. Gzimmo : bureaux, fin de bail, après chantier. Devis gratuit sous 24 h.",
-    intro:
-      "Genève et son canton : nettoyage professionnel rigoureux, produits de qualité, équipe expérimentée.",
-    geo: { latitude: 46.2044, longitude: 6.1432 },
-    priority: 0.75,
-    nearbyCommunes: ["Carouge", "Lancy", "Meyrin", "Vernier"],
-    servicesHighlight: ["Bureaux", "Fin de bail", "Après chantier"],
-    sections: [
-      {
-        title: "Service de nettoyage à Genève",
-        body: "Genève exige ponctualité et discrétion. Gzimmo intervient pour les entreprises, régies et particuliers du canton, avec un devis gratuit avant chaque mission.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Couvrez-vous tout le canton de Genève ?",
-        answer: "Oui. Genève ville et les communes du canton font partie de notre zone Suisse romande.",
-      },
-    ],
-  },
-  {
     slug: "nettoyage-neuchatel",
     city: "Neuchâtel",
     canton: "NE",

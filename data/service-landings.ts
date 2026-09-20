@@ -321,7 +321,7 @@ export const serviceLandings: ServiceLanding[] = [
     relatedServiceSlugs: ["entretien-locaux", "nettoyage-vitres", "nettoyage-fin-de-bail"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Lausanne", href: "/seo/nettoyage-lausanne" },
-      { label: "Entreprise de nettoyage à Genève", href: "/seo/nettoyage-geneve" },
+      { label: "Entreprise de nettoyage à Fribourg", href: "/seo/nettoyage-fribourg" },
     ],
     testimonials: [],
   },

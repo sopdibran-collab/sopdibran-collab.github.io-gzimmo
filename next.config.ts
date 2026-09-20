@@ -40,6 +40,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/seo/nettoyage-geneve",
+        destination: "/zones",
+        permanent: true,
+      },
+      {
         source: "/valais",
         destination: "/zones",
         permanent: true,
