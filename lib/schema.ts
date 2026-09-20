@@ -261,9 +261,8 @@ export function googleReviewSchema() {
 }
 
 /**
- * LocalBusiness + avis affichés + AggregateRating Google public.
- * `aggregateRating` = chiffres Google pile-à-pile (`googleBusinessPublicRating`),
- * jamais dérivés de `reviews.length` (sous-ensemble UI ≠ total Google).
+ * LocalBusiness + avis affichés + AggregateRating.
+ * `reviewCount` = nombre d’avis Maps listés (aligné UI / schema).
  */
 export function googleReviewsLocalBusinessSchema(reviews: readonly GoogleReview[]) {
   return {
@@ -271,7 +270,7 @@ export function googleReviewsLocalBusinessSchema(reviews: readonly GoogleReview[
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: googleBusinessPublicRating.ratingValue,
-      reviewCount: googleBusinessPublicRating.reviewCount,
+      reviewCount: reviews.length,
       bestRating: googleBusinessPublicRating.bestRating,
     },
     review: reviews.map((review) => ({
