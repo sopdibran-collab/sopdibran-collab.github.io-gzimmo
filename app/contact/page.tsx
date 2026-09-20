@@ -1,5 +1,7 @@
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
+import { company } from "@/data/company";
+import { formatPhoneHref } from "@/lib/utils";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
@@ -7,6 +9,8 @@ import { ContactForm } from "@/components/content/ContactForm";
 import { ContactInfoCard } from "@/components/content/ContactInfoCard";
 import { GoogleMap, GoogleMapsLink } from "@/components/seo/GoogleMap";
 import { SectionDivider } from "@/components/ui/ContentCard";
+import { Button } from "@/components/ui/Button";
+import { HashScroll } from "@/components/ui/HashScroll";
 
 export const metadata = createMetadata({
   title: "Contact — devis gratuit sous 24 h",
@@ -21,9 +25,11 @@ export default async function ContactPage({
   searchParams: Promise<{ service?: string; ville?: string }>;
 }) {
   const params = await searchParams;
+  const callHref = formatPhoneHref(company.phone);
 
   return (
     <>
+      <HashScroll />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Accueil", path: "/" },
@@ -44,7 +50,22 @@ export default async function ContactPage({
           badge="Contact"
           title="Parlons de votre devis"
           description="Appelez-nous ou envoyez le formulaire — un échange suffit pour un devis sur mesure, sans engagement. Réponse sous 24 h."
-        />
+        >
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+            <Button
+              href="#formulaire"
+              className="w-full bg-white text-foreground shadow-none hover:bg-white/90 sm:w-auto"
+            >
+              Remplir le formulaire
+            </Button>
+            <a
+              href={callHref}
+              className="text-sm font-medium text-white/80 transition-colors duration-200 hover:text-white"
+            >
+              {company.phoneDisplay}
+            </a>
+          </div>
+        </PageIntro>
       </PageHero>
 
       <PageMain variant="surface">
@@ -52,7 +73,7 @@ export default async function ContactPage({
           <div className="lg:col-span-5">
             <ContactInfoCard />
           </div>
-          <div className="lg:col-span-7">
+          <div id="formulaire" className="scroll-mt-28 lg:col-span-7 lg:scroll-mt-24">
             <ContactForm defaultService={params.service} defaultCommune={params.ville} />
           </div>
         </div>
