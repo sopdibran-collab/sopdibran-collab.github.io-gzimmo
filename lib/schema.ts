@@ -1,10 +1,5 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
-import {
-  featuredGoogleReview,
-  googleBusinessPublicRating,
-  type GoogleReview,
-} from "@/data/google-reviews";
 import { extraSchemaCities } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
@@ -235,59 +230,6 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
 
 export function organizationJsonLd() {
   return [websiteSchema(), localBusinessSchema()];
-}
-
-export function googleReviewSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@id": `${company.url}/#organization` },
-    reviewBody: featuredGoogleReview.quote,
-    author: {
-      "@type": "Person",
-      name: featuredGoogleReview.author,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Google",
-    },
-    url: featuredGoogleReview.url,
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: featuredGoogleReview.rating ?? 5,
-      bestRating: 5,
-    },
-  };
-}
-
-/**
- * LocalBusiness + avis affichés + AggregateRating.
- * `reviewCount` = nombre d’avis Maps listés (aligné UI / schema).
- */
-export function googleReviewsLocalBusinessSchema(reviews: readonly GoogleReview[]) {
-  return {
-    ...localBusinessSchema(),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: googleBusinessPublicRating.ratingValue,
-      reviewCount: reviews.length,
-      bestRating: googleBusinessPublicRating.bestRating,
-    },
-    review: reviews.map((review) => ({
-      "@type": "Review",
-      reviewBody: review.text,
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: review.rating,
-        bestRating: 5,
-      },
-      author: {
-        "@type": "Person",
-        name: review.author ?? "Client Google",
-      },
-      url: review.url,
-    })),
-  };
 }
 
 export function fullAddressString() {

@@ -2,7 +2,7 @@ import { company } from "@/data/company";
 
 /**
  * Note publique Google Business Profile (vérifiée 2026-09-13).
- * `reviewCount` doit rester aligné sur le nombre d’avis Maps affichés ci-dessous.
+ * Affichage UI uniquement — ne pas réémettre AggregateRating / Review en JSON-LD.
  */
 export const googleBusinessPublicRating = {
   ratingValue: "5.0",

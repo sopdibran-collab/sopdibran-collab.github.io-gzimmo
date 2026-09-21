@@ -156,7 +156,7 @@ export const serviceLandings: ServiceLanding[] = [
     h1: "Nettoyage après travaux et chantier — rénovation et construction",
     subtitle:
       "Que ce soit après la construction d'une maison neuve ou la rénovation d'un appartement, notre équipe assure un nettoyage après travaux complet et rapide.",
-    metaTitle: "Nettoyage Après Chantier & Rénovation en Suisse | Devis Gratuit",
+    metaTitle: "Nettoyage Après Chantier Fribourg, Vaud & Neuchâtel | Devis Gratuit",
     metaDescription:
       "Après chantier, rénovation, construction ou travaux. Poussières fines, devis gratuit. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
     absoluteTitle: true,

@@ -17,6 +17,31 @@ const serviceRedirects = serviceSlugs.map((slug) => ({
   permanent: true,
 }));
 
+/** Anciennes URLs hors zone FR/VD/NE → hub zones (pas de pages recoonstruites). */
+const outOfZoneRedirects = [
+  // Genève (ASCII + UTF-8 + percent-encoding)
+  "/seo/nettoyage-geneve",
+  "/seo/nettoyage-genève",
+  "/seo/nettoyage-gen%C3%A8ve",
+  "/geneve",
+  "/genève",
+  "/gen%C3%A8ve",
+  "/nettoyage-fin-de-bail-geneve",
+  "/nettoyage-fin-de-bail-genève",
+  "/nettoyage-fin-de-bail-gen%C3%A8ve",
+  // Valais / Sion / villes VS
+  "/seo/nettoyage-sion",
+  "/seo/nettoyage-monthey",
+  "/seo/nettoyage-sierre",
+  "/seo/nettoyage-martigny",
+  "/seo/nettoyage-valais",
+  "/valais",
+].map((source) => ({
+  source,
+  destination: "/zones",
+  permanent: true,
+}));
+
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp"],
@@ -35,35 +60,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/seo/nettoyage-sion",
-        destination: "/zones",
-        permanent: true,
-      },
-      {
-        source: "/seo/nettoyage-geneve",
-        destination: "/zones",
-        permanent: true,
-      },
-      {
-        source: "/valais",
-        destination: "/zones",
-        permanent: true,
-      },
-      {
         source: "/valais/:path*",
         destination: "/zones",
         permanent: true,
       },
-      {
-        source: "/seo/nettoyage-martigny",
-        destination: "/zones",
-        permanent: true,
-      },
-      {
-        source: "/seo/nettoyage-valais",
-        destination: "/zones",
-        permanent: true,
-      },
+      ...outOfZoneRedirects,
       ...serviceRedirects,
     ];
   },
