@@ -8,6 +8,7 @@
     "vercel-build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "indexnow": "node scripts/ping-indexnow.mjs",
     "og:image": "python3 scripts/generate-og-image.py"
   },
   "dependencies": {

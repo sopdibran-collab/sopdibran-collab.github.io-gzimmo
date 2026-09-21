@@ -5,7 +5,7 @@ import { JsonLd, PageIntro } from "@/components/seo/JsonLd";
 import { company } from "@/data/company";
 import { googleReviews, googleReviewsProfileUrl } from "@/data/google-reviews";
 import { createMetadata } from "@/lib/metadata";
-import { breadcrumbSchema, googleReviewsLocalBusinessSchema } from "@/lib/schema";
+import { breadcrumbSchema, localBusinessSchema } from "@/lib/schema";
 
 export const metadata = createMetadata({
   title: "Avis clients",
@@ -24,7 +24,8 @@ export default function AvisPage() {
             { name: "Accueil", path: "/" },
             { name: "Avis clients", path: "/avis" },
           ]),
-          googleReviewsLocalBusinessSchema(googleReviews),
+          // NAP visible uniquement — pas d'AggregateRating / Review Google (Vault).
+          localBusinessSchema(),
         ]}
       />
 
