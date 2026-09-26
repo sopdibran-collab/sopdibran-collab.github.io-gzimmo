@@ -23,6 +23,11 @@ export type ServiceLanding = {
   schemaServiceTypes?: string[];
   /** Place the checklist before the audience block (fin de chantier → publics). */
   processBeforeAudience?: boolean;
+  /**
+   * Rythme WHITE → SOFT → … → DARK (hero + CTA) → BRAND (footer).
+   * Une surface par unité d’information, sans couleur nouvelle.
+   */
+  visualRhythm?: boolean;
   priceSection?: { id?: string; title: string; body: string; factors: string[] };
   forWho: { profile: string; situation: string }[];
   guarantee?: { title: string; paragraphs: string[] };
@@ -170,6 +175,7 @@ export const serviceLandings: ServiceLanding[] = [
     heroCtaLabel: "Demander un devis gratuit",
     showInterventionZones: true,
     processBeforeAudience: true,
+    visualRhythm: true,
     audienceHeading: "Pour qui ?",
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",

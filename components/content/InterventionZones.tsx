@@ -11,6 +11,8 @@ type InterventionZonesProps = {
   compact?: boolean;
   /** When rendered as its own page section, drop the top hairline separator. */
   className?: string;
+  /** Chips sur fond SOFT : le survol repasse au blanc, pas au même gris. */
+  onSoft?: boolean;
 };
 
 /** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
@@ -19,6 +21,7 @@ export function InterventionZones({
   heading = "Zones d'intervention",
   compact = false,
   className,
+  onSoft = false,
 }: InterventionZonesProps) {
   return (
     <section
@@ -49,7 +52,10 @@ export function InterventionZones({
                   {place.href ? (
                     <Link
                       href={place.href}
-                      className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-accent"
+                      className={cn(
+                        "inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors duration-200 hover:text-accent",
+                        onSoft ? "hover:bg-background" : "hover:bg-surface",
+                      )}
                     >
                       {place.name}
                     </Link>

@@ -10,13 +10,15 @@ const items = [
 
 type ReassuranceBandProps = {
   className?: string;
+  tone?: "default" | "dark";
 };
 
-export function ReassuranceBand({ className }: ReassuranceBandProps) {
+export function ReassuranceBand({ className, tone = "default" }: ReassuranceBandProps) {
   return (
     <ul
       className={cn(
-        "flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted",
+        "flex flex-wrap gap-x-6 gap-y-2 text-sm",
+        tone === "dark" ? "text-white/70" : "text-muted",
         className,
       )}
       aria-label="Garanties Gzimmo"
