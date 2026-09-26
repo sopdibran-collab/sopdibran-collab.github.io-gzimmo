@@ -86,6 +86,7 @@ export const serviceLandings: ServiceLanding[] = [
     schemaServiceTypes: [
       "Nettoyage fin de bail",
       "Nettoyage de fin de bail",
+      "Nettoyage après déménagement",
       "Remise d'appartement",
     ],
     intro:

@@ -1,4 +1,5 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
+import { entityKnowsAbout, entitySameAs } from "@/data/entity";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
 import { extraSchemaCities } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
@@ -67,15 +68,7 @@ export function localBusinessSchema() {
     },
     geo: romontGeo,
     areaServed: priorityAreaServed(),
-    knowsAbout: [
-      ...services.map((s) => s.title),
-      "Nettoyage après rénovation",
-      "Nettoyage après travaux",
-      "Nettoyage après construction",
-      "Nettoyage de fin de chantier",
-      "État des lieux",
-      "Remise des clés",
-    ],
+    knowsAbout: [...services.map((s) => s.title), ...entityKnowsAbout],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Services de nettoyage Gzimmo",
@@ -99,7 +92,7 @@ export function localBusinessSchema() {
       availableLanguage: ["French"],
     },
     hasMap: company.googleMapsUrl,
-    sameAs: [company.googleMapsUrl],
+    sameAs: [...entitySameAs],
   };
 }
 
