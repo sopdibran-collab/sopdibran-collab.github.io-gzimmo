@@ -1,4 +1,5 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
+import { entityKnowsAbout, entitySameAs } from "@/data/entity";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
 import { extraSchemaCities } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
@@ -11,7 +12,12 @@ const romontGeo = {
   longitude: 6.9111,
 };
 
-/** Zone : Fribourg, Vaud, Neuchâtel. */
+/**
+ * Couverture commerciale : toute la Suisse romande (siège Romont).
+ * Représentation raisonnable : la Romandie en tête, puis le détail
+ * vérifiable (cantons FR/VD/NE, villes avec pages et preuves).
+ * Pas de liste de 500 communes.
+ */
 export function priorityAreaServed() {
   const fromLandings = locations
     .filter((location) => location.canton === "FR" || location.canton === "VD" || location.canton === "NE")
@@ -34,6 +40,7 @@ export function priorityAreaServed() {
   }));
 
   return [
+    { "@type": "AdministrativeArea", name: "Suisse romande" },
     { "@type": "AdministrativeArea", name: "Canton de Fribourg" },
     { "@type": "AdministrativeArea", name: "Canton de Vaud" },
     { "@type": "AdministrativeArea", name: "Canton de Neuchâtel" },
@@ -67,15 +74,7 @@ export function localBusinessSchema() {
     },
     geo: romontGeo,
     areaServed: priorityAreaServed(),
-    knowsAbout: [
-      ...services.map((s) => s.title),
-      "Nettoyage après rénovation",
-      "Nettoyage après travaux",
-      "Nettoyage après construction",
-      "Nettoyage de fin de chantier",
-      "État des lieux",
-      "Remise des clés",
-    ],
+    knowsAbout: [...services.map((s) => s.title), ...entityKnowsAbout],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Services de nettoyage Gzimmo",
@@ -99,7 +98,7 @@ export function localBusinessSchema() {
       availableLanguage: ["French"],
     },
     hasMap: company.googleMapsUrl,
-    sameAs: [company.googleMapsUrl],
+    sameAs: [...entitySameAs],
   };
 }
 
@@ -176,7 +175,7 @@ export function zonesItemListSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Zones d'intervention Gzimmo — Fribourg, Vaud, Neuchâtel",
+    name: "Zones d'intervention Gzimmo — Suisse romande",
     itemListElement: zoneLocations.map((location, index) => ({
       "@type": "ListItem",
       position: index + 1,

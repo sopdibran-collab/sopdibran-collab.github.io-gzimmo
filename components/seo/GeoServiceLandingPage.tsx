@@ -49,7 +49,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
         />
         <FadeIn>
           <div className="max-w-2xl">
-            <Badge className="text-accent/90">
+            <Badge className="text-accent">
               {service.shortTitle} · {landing.city}
             </Badge>
             <h1 className="mt-5 font-display text-display-lg font-semibold text-foreground">
@@ -67,7 +67,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
 
       <PageMain variant="surface">
         <FadeIn>
-          <p className="max-w-3xl text-muted leading-relaxed">{landing.intro}</p>
+          <p className="text-reading text-muted">{landing.intro}</p>
         </FadeIn>
 
         <div className="mt-12 space-y-8">
@@ -75,7 +75,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
             <FadeIn key={section.title} delay={index * 0.04}>
               <ContentCard>
                 <h2 className="font-display text-display-sm text-foreground">{section.title}</h2>
-                <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
+                <p className="mt-4 text-reading text-muted">{section.body}</p>
               </ContentCard>
             </FadeIn>
           ))}
@@ -85,7 +85,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
           <h2 className="font-display text-display-sm text-foreground">
             Tout savoir sur notre prestation fin de bail
           </h2>
-          <p className="mt-4 text-sm text-muted leading-relaxed">
+          <p className="mt-4 max-w-[65ch] text-base text-muted leading-relaxed">
             Checklist complète, garantie régie et processus détaillé sur notre page dédiée.
           </p>
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
@@ -96,7 +96,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
       </PageMain>
 
       <PageMain variant="default">
-        <Badge className="text-accent/90">FAQ</Badge>
+        <Badge className="text-accent">FAQ</Badge>
         <h2 className="mt-4 font-display text-display-sm text-foreground">
           Questions fréquentes — fin de bail à {landing.city}
         </h2>

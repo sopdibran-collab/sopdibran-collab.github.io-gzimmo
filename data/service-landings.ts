@@ -23,6 +23,11 @@ export type ServiceLanding = {
   schemaServiceTypes?: string[];
   /** Place the checklist before the audience block (fin de chantier → publics). */
   processBeforeAudience?: boolean;
+  /**
+   * Rythme WHITE → SOFT → … → DARK (hero + CTA) → BRAND (footer).
+   * Une surface par unité d’information, sans couleur nouvelle.
+   */
+  visualRhythm?: boolean;
   priceSection?: { id?: string; title: string; body: string; factors: string[] };
   forWho: { profile: string; situation: string }[];
   guarantee?: { title: string; paragraphs: string[] };
@@ -33,6 +38,11 @@ export type ServiceLanding = {
   relatedLocalLinks: { label: string; href: string }[];
   testimonials: { quote: string; author: string; url?: string }[];
   proofLink?: { label: string; href: string; detail: string };
+  /**
+   * Clarification d’intention (ex. appartements « entre deux locataires »
+   * → fin de bail). Rendu sous l’intro, sans nouveau H2.
+   */
+  relatedNote?: { text: string; linkLabel: string; href: string };
   heroCtaLabel?: string;
   showPriceQuote?: boolean;
   showInterventionZones?: boolean;
@@ -49,7 +59,7 @@ const sharedWhy = [
   {
     title: "Réactivité depuis Romont",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, Vaud et Neuchâtel. Devis sous 24 h.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons dans toute la Suisse romande. Devis sous 24 h.",
   },
   {
     title: "Devis transparent avant intervention",
@@ -81,6 +91,7 @@ export const serviceLandings: ServiceLanding[] = [
     schemaServiceTypes: [
       "Nettoyage fin de bail",
       "Nettoyage de fin de bail",
+      "Nettoyage après déménagement",
       "Remise d'appartement",
     ],
     intro:
@@ -170,6 +181,7 @@ export const serviceLandings: ServiceLanding[] = [
     heroCtaLabel: "Demander un devis gratuit",
     showInterventionZones: true,
     processBeforeAudience: true,
+    visualRhythm: true,
     audienceHeading: "Pour qui ?",
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
@@ -432,6 +444,11 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage complet d'appartements pour particuliers et régies en Suisse romande. Devis gratuit, intervention depuis Romont. 076 214 23 42.",
     intro:
       "Que ce soit pour une remise en état ponctuelle ou un entretien approfondi, Gzimmo traite chaque pièce avec méthode : sols, sanitaires, cuisine, surfaces et détails.",
+    relatedNote: {
+      text: "Vous quittez un logement et avez besoin d'une remise en état pour l'état des lieux ? Consultez notre service de",
+      linkLabel: "nettoyage fin de bail",
+      href: "/nettoyage-fin-de-bail",
+    },
     forWho: [
       { profile: "Particuliers", situation: "Vous souhaitez un appartement remis en ordre sans y consacrer vos week-ends." },
       { profile: "Régies", situation: "Vous mandatez des nettoyages entre deux locataires." },
@@ -526,10 +543,10 @@ export const serviceLandings: ServiceLanding[] = [
     slug: "conciergerie",
     h1: "Services de conciergerie pour régies et immeubles",
     subtitle:
-      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien en Fribourg et Vaud.",
+      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, dans toute la Suisse romande.",
     metaTitle: "Conciergerie pour régies — Fribourg & Vaud",
     metaDescription:
-      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Gzimmo Sàrl, Romont — devis gratuit. 076 214 23 42.",
+      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Toute la Suisse romande, depuis Romont. 076 214 23 42.",
     intro:
       "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
     forWho: [
@@ -559,9 +576,9 @@ export const serviceLandings: ServiceLanding[] = [
     },
     whyGzimmo: [
       {
-        title: "Basés à Romont, actifs en Fribourg et Vaud",
+        title: "Basés à Romont, actifs en Suisse romande",
         description:
-          "Proximité avec les immeubles de la Glâne, de Fribourg et du canton de Vaud — réactivité et suivi de proximité.",
+          "Proximité avec les immeubles de la Glâne, de Fribourg et du canton de Vaud — et intervention dans toute la Suisse romande.",
       },
       ...sharedWhy,
     ],

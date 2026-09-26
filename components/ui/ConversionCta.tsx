@@ -24,12 +24,17 @@ export function ConversionCta({
   const callHref = formatPhoneHref(company.phone);
 
   const callButton = (
-    <Button href={callHref} external variant={preferCall ? "primary" : "secondary"}>
+    <Button
+      href={callHref}
+      external
+      variant={preferCall ? "primary" : "secondary"}
+      className="w-full sm:w-auto"
+    >
       {callLabel}
     </Button>
   );
   const devisButton = (
-    <Button href={devisHref} variant={preferCall ? "secondary" : "primary"}>
+    <Button href={devisHref} variant={preferCall ? "secondary" : "primary"} className="w-full sm:w-auto">
       {devisLabel}
     </Button>
   );

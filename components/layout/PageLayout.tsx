@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-type SectionVariant = "default" | "surface" | "inverse" | "accent" | "hero";
+type SectionVariant = "default" | "surface" | "inverse" | "accent" | "hero" | "paper" | "soft";
 
 export type PageHeroImage = {
   src: string;
@@ -23,11 +23,24 @@ export function PageHero({
   children,
   image,
   className,
+  tone = "soft",
 }: {
   children: ReactNode;
   image?: PageHeroImage;
   className?: string;
+  /** `dark` : hero aplati sur l’inverse existant. Le HeaderOffset reprend la même teinte. */
+  tone?: "soft" | "dark";
 }) {
+  if (!image && tone === "dark") {
+    return (
+      <section
+        className={cn("relative bg-inverse pt-14 pb-14 text-white lg:pt-16 lg:pb-20", className)}
+      >
+        <Container>{children}</Container>
+      </section>
+    );
+  }
+
   if (!image) {
     return (
       <Section variant="hero" className={cn("pb-0", className)}>
@@ -74,13 +87,15 @@ export function PageMain({
   children,
   variant = "surface",
   className,
+  density = "default",
 }: {
   children: ReactNode;
   variant?: SectionVariant;
   className?: string;
+  density?: "default" | "band";
 }) {
   return (
-    <Section variant={variant} className={className}>
+    <Section variant={variant} density={density} className={className}>
       {children}
     </Section>
   );

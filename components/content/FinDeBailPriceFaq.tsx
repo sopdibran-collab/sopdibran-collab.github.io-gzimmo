@@ -19,7 +19,7 @@ export function FinDeBailPriceFaq({
 }: FinDeBailPriceFaqProps) {
   return (
     <div className={cn("mt-16 border-t border-border/80 pt-16", className)}>
-      <Badge className="text-accent/90">FAQ</Badge>
+      <Badge className="text-accent">FAQ</Badge>
       <h2 className="mt-4 font-display text-display-sm text-foreground">
         Prix, devis et garantie d&apos;état des lieux
       </h2>

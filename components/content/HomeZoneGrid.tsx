@@ -8,7 +8,7 @@ export function HomeZoneGrid() {
   return (
     <div>
       <FadeIn>
-        <Badge className="text-accent/90">Zones d&apos;intervention</Badge>
+        <Badge className="text-accent">Zones d&apos;intervention</Badge>
         <h2 className="mt-4 font-display text-display-md text-foreground">
           Nous intervenons dans toute la Suisse romande
         </h2>

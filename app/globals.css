@@ -58,7 +58,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     line-height: 1.65;
     letter-spacing: -0.011em;
     min-height: 100vh;
@@ -114,6 +114,24 @@
 
   .text-display-sm {
     font-size: var(--text-display-sm);
+  }
+
+  /**
+   * Paragraphes longs.
+   * Mobile : 16 px, la colonne fait déjà la mesure.
+   * Desktop : 18 px. 52ch et non 65ch : dans Inter le « 0 » est plus large
+   * que la moyenne des glyphes, 52ch tombe vers 65–70 caractères.
+   */
+  .text-reading {
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 52ch;
+  }
+
+  @media (min-width: 64rem) {
+    .text-reading {
+      font-size: 1.125rem;
+    }
   }
 
   .font-display {

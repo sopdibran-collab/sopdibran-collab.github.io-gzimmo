@@ -17,7 +17,7 @@ const serviceRedirects = serviceSlugs.map((slug) => ({
   permanent: true,
 }));
 
-/** Anciennes URLs hors zone FR/VD/NE → hub zones (pas de pages recoonstruites). */
+/** Anciennes URLs locales sans page dédiée → hub zones (pas de pages reconstruites). */
 const outOfZoneRedirects = [
   // Genève (ASCII + UTF-8 + percent-encoding)
   "/seo/nettoyage-geneve",

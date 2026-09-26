@@ -11,6 +11,8 @@ type InterventionZonesProps = {
   compact?: boolean;
   /** When rendered as its own page section, drop the top hairline separator. */
   className?: string;
+  /** Chips sur fond SOFT : le survol repasse au blanc, pas au même gris. */
+  onSoft?: boolean;
 };
 
 /** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
@@ -19,6 +21,7 @@ export function InterventionZones({
   heading = "Zones d'intervention",
   compact = false,
   className,
+  onSoft = false,
 }: InterventionZonesProps) {
   return (
     <section
@@ -27,14 +30,14 @@ export function InterventionZones({
     >
       {compact ? null : (
         <>
-          <Badge className="text-accent/90">Zones d&apos;intervention</Badge>
+          <Badge className="text-accent">Zones d&apos;intervention</Badge>
           <h2 id="zones-intervention" className="mt-4 font-display text-display-sm text-foreground">
             {heading}
           </h2>
           <p className="mt-4 max-w-2xl text-muted leading-relaxed">
-            Nous intervenons rapidement pour votre {servicePhrase} à Fribourg, dans les
-            cantons de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux, Chexbres,
-            Oron-la-Ville, Palézieux), de Fribourg et de Neuchâtel.
+            Nous intervenons dans toute la Suisse romande pour votre {servicePhrase}. Les
+            pages publiées détaillent Fribourg et les cantons de Vaud (de Bex à Nyon, Yverdon,
+            Payerne, Vevey, Montreux, Chexbres, Oron-la-Ville, Palézieux) et de Neuchâtel.
           </p>
         </>
       )}
@@ -49,7 +52,10 @@ export function InterventionZones({
                   {place.href ? (
                     <Link
                       href={place.href}
-                      className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-accent"
+                      className={cn(
+                        "inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors duration-200 hover:text-accent",
+                        onSoft ? "hover:bg-background" : "hover:bg-surface",
+                      )}
                     >
                       {place.name}
                     </Link>

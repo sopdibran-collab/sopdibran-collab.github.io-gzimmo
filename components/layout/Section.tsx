@@ -5,7 +5,9 @@ type SectionProps = {
   id?: string;
   children: ReactNode;
   className?: string;
-  variant?: "default" | "surface" | "inverse" | "accent" | "hero";
+  variant?: "default" | "surface" | "inverse" | "accent" | "hero" | "paper" | "soft";
+  /** `band` : rythme éditorial, plus serré qu’un `py-section` plein. */
+  density?: "default" | "band";
 };
 
 const variants = {
@@ -14,6 +16,15 @@ const variants = {
   inverse: "section-inverse text-white",
   accent: "section-accent",
   hero: "section-hero",
+  /** WHITE — aplats, sans dégradé. */
+  paper: "bg-background",
+  /** SOFT — preuve, listes, informations. Hairline pour marquer l’unité. */
+  soft: "border-y border-border bg-surface",
+};
+
+const densityClass = {
+  default: "py-section",
+  band: "py-14 sm:py-16 lg:py-20",
 };
 
 export function Container({
@@ -30,11 +41,22 @@ export function Container({
   );
 }
 
-export function Section({ id, children, className, variant = "default" }: SectionProps) {
+export function Section({
+  id,
+  children,
+  className,
+  variant = "default",
+  density = "default",
+}: SectionProps) {
   return (
     <section
       id={id}
-      className={cn("relative overflow-hidden py-section", variants[variant], className)}
+      className={cn(
+        "relative overflow-hidden",
+        densityClass[density],
+        variants[variant],
+        className,
+      )}
     >
       {variant === "inverse" ? (
         <div aria-hidden="true" className="section-inverse-glow pointer-events-none absolute inset-0" />

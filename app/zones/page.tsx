@@ -8,9 +8,9 @@ import { LocalAreaLinks } from "@/components/seo/LocalSeoContent";
 import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Zones d'intervention — Fribourg, Vaud, Neuchâtel",
+  title: "Zones d'intervention — Suisse romande",
   description:
-    "Gzimmo intervient à Romont, en Glâne, dans les cantons de Fribourg, Vaud et Neuchâtel. Entreprise de nettoyage professionnel — devis gratuit.",
+    "Gzimmo intervient dans toute la Suisse romande depuis Romont. Pages locales : Fribourg, Vaud et Neuchâtel. Devis gratuit.",
   path: "/zones",
   keywords: [
     "zones intervention",
@@ -49,9 +49,9 @@ export default function ZonesPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           onDark
-          badge="Fribourg · Vaud · Neuchâtel"
+          badge="Suisse romande"
           title="Où intervenons-nous ?"
-          description="Basés à Romont (FR), nous couvrons les cantons de Fribourg, Vaud et Neuchâtel — en priorité la Glâne et le canton de Fribourg."
+          description="Basés à Romont (FR), nous intervenons dans toute la Suisse romande. Les pages ci-dessous détaillent Fribourg, Vaud et Neuchâtel — en priorité la Glâne."
         />
       </PageHero>
 

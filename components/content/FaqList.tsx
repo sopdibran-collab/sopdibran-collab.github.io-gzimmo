@@ -34,10 +34,10 @@ export function FaqList({ items, animated = true }: FaqListProps) {
             )}
             style={animated ? { animationDelay: `${index * 0.05}s` } : undefined}
           >
-            <dt className="text-base font-medium text-foreground md:text-[1.05rem]">
+            <dt className="text-lg font-medium text-foreground">
               {item.question}
             </dt>
-            <dd className="mt-3 max-w-2xl text-muted leading-relaxed">{item.answer}</dd>
+            <dd className="mt-3 text-reading text-muted">{item.answer}</dd>
           </div>
         );
       })}

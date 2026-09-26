@@ -73,6 +73,7 @@ export const locations: Location[] = [
       "Nettoyage après chantier",
       "Conciergerie régies",
       "Nettoyage d'appartements",
+      "Nettoyage vitres",
     ],
     sections: [
       {
@@ -372,11 +373,11 @@ export const locations: Location[] = [
     geo: { latitude: 46.5112, longitude: 6.4985 },
     priority: 0.7,
     nearbyCommunes: ["Tolochenaz", "Lonay", "Préverenges"],
-    servicesHighlight: ["Locaux", "Fin de bail", "Vitres"],
+    servicesHighlight: ["Après chantier", "Locaux", "Fin de bail", "Vitres"],
     sections: [
       {
         title: "Nettoyage sur la Côte vaudoise",
-        body: "Morges et les communes de la Côte bénéficient de nos prestations d'entretien régulier et de nettoyage ponctuel.",
+        body: "Morges et les communes de la Côte bénéficient de nos prestations d'entretien régulier et de nettoyage ponctuel. Après la rénovation d'un immeuble à Morges, notre équipe a remis les surfaces en état avant livraison — le détail du passage est sur la page après chantier.",
       },
     ],
     faqs: [
@@ -384,6 +385,10 @@ export const locations: Location[] = [
         question: "Couvrez-vous Morges et la Côte ?",
         answer: "Oui. Morges, Tolochenaz et la Côte vaudoise font partie de notre zone.",
       },
+    ],
+    priorityLinks: [
+      { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
+      { label: "Réalisation à Morges", href: "/realisations" },
     ],
   },
   {
