@@ -82,7 +82,7 @@ export const faqItems: FaqItem[] = [
     id: "zone-suisse-romande",
     category: "zone",
     question: "Quelle zone couvrez-vous en Suisse romande ?",
-    answer: `Gzimmo intervient dans le canton de Fribourg (Romont, Glâne, Broye, Gruyère), le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux) et le canton de Neuchâtel. Siège : ${siege}.`,
+    answer: `Gzimmo intervient dans toute la Suisse romande depuis son siège à Romont. Les pages locales détaillent le canton de Fribourg (Romont, Glâne, Broye, Gruyère), le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux) et le canton de Neuchâtel. Siège : ${siege}.`,
   },
   {
     id: "entreprise-romont",

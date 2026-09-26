@@ -36,7 +36,7 @@ export function HomeHero() {
             Nettoyage fin de bail et après chantier — on remet le logement comme la régie l&apos;attend.
           </h1>
           <p className="mt-5 max-w-md text-[0.95rem] leading-relaxed text-white/70 sm:text-base">
-            Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg, Vaud, Neuchâtel. Devis sous 24 h.
+            Gzimmo Sàrl, Route de Raboud 8 à Romont. Toute la Suisse romande. Devis sous 24 h.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">

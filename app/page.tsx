@@ -16,7 +16,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const metadata = createMetadata({
   title: "Gzimmo | Nettoyage fin de bail et après chantier à Romont",
   description:
-    "Gzimmo Sàrl à Romont : nettoyage fin de bail et après chantier. Devis gratuit sous 24 h, garantie régie. Fribourg, Vaud, Neuchâtel — 076 214 23 42.",
+    "Gzimmo Sàrl à Romont : nettoyage fin de bail et après chantier. Devis gratuit sous 24 h, garantie régie. Toute la Suisse romande — 076 214 23 42.",
   path: "/",
   absoluteTitle: true,
   keywords: [

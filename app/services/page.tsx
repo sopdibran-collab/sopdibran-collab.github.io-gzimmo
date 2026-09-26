@@ -12,7 +12,7 @@ import { TextLink } from "@/components/ui/TextLink";
 export const metadata = createMetadata({
   title: "Services de nettoyage",
   description:
-    "Services de nettoyage Gzimmo : fin de bail, après chantier, entretien de locaux, bureaux et vitres — Fribourg, Vaud, Neuchâtel. Devis sous 24 h.",
+    "Services de nettoyage Gzimmo : fin de bail, après chantier, entretien de locaux, bureaux et vitres — toute la Suisse romande. Devis sous 24 h.",
   path: "/services",
 });
 
@@ -28,8 +28,8 @@ const reassurance = [
     text: "Réponse claire et chiffrée — sans engagement, avant toute intervention.",
   },
   {
-    title: "Zones FR / VD / NE",
-    text: "Basés à Romont : Fribourg en priorité, puis Vaud et Neuchâtel selon le chantier.",
+    title: "Suisse romande",
+    text: "Basés à Romont. Toute la Suisse romande ; les pages locales détaillent Fribourg, Vaud et Neuchâtel.",
   },
   {
     title: "Garantie régie",

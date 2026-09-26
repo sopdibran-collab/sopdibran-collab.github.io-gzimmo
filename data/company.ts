@@ -20,7 +20,8 @@ export const company = {
   googleMapsPlaceUrl: "https://www.google.com/maps?cid=4510858104661923219",
   googleMapsEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d722146.2448747047!2d7.2172082500000005!3d46.512005599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4626471abee245df%3A0x3e99c98bf090d593!2sGzimmo%20S%C3%A0rl!5e1!3m2!1sfr!2sch!4v1781389480796!5m2!1sfr!2sch",
-  areaServed: "Fribourg, Vaud, Neuchâtel",
+  /** Couverture commerciale. Le détail publié (pages locales) reste FR / VD / NE. */
+  areaServed: "Toute la Suisse romande",
   /** Expérience cumulée des collaborateurs dans le nettoyage */
   teamExperienceYears: 15,
 } as const;

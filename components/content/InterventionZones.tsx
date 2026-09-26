@@ -35,9 +35,9 @@ export function InterventionZones({
             {heading}
           </h2>
           <p className="mt-4 max-w-2xl text-muted leading-relaxed">
-            Nous intervenons rapidement pour votre {servicePhrase} à Fribourg, dans les
-            cantons de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux, Chexbres,
-            Oron-la-Ville, Palézieux), de Fribourg et de Neuchâtel.
+            Nous intervenons dans toute la Suisse romande pour votre {servicePhrase}. Les
+            pages publiées détaillent Fribourg et les cantons de Vaud (de Bex à Nyon, Yverdon,
+            Payerne, Vevey, Montreux, Chexbres, Oron-la-Ville, Palézieux) et de Neuchâtel.
           </p>
         </>
       )}

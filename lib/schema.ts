@@ -175,7 +175,7 @@ export function zonesItemListSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Zones d'intervention Gzimmo — Fribourg, Vaud, Neuchâtel",
+    name: "Zones d'intervention Gzimmo — Suisse romande",
     itemListElement: zoneLocations.map((location, index) => ({
       "@type": "ListItem",
       position: index + 1,
