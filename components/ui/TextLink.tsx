@@ -13,7 +13,7 @@ export function TextLink({ href, children, className, showArrow = true }: TextLi
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-accent",
+        "group inline-flex items-center gap-2 text-base font-medium text-foreground transition-colors hover:text-accent",
         className,
       )}
     >

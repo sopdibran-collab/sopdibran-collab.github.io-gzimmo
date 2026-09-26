@@ -75,7 +75,7 @@ export default async function LocalSeoPage({ params }: Props) {
         <LocalSeoBody location={location} />
 
         <ContentCard className="mt-12">
-          <Badge className="text-accent/90">Services</Badge>
+          <Badge className="text-accent">Services</Badge>
           <h2 className="mt-4 font-display text-display-sm text-foreground">Tous nos services</h2>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {services.map((service) => (

@@ -23,7 +23,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
                 }
               >
                 <h2 className="font-display text-display-sm text-foreground">{section.title}</h2>
-                <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
+                <p className="mt-4 text-reading text-muted">{section.body}</p>
               </section>
             </FadeIn>
           ))}
@@ -32,7 +32,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
         <aside className="lg:col-span-5">
           <FadeIn delay={0.1}>
             <ContentCard>
-              <Badge className="text-accent/90">Contact</Badge>
+              <Badge className="text-accent">Contact</Badge>
               <p className="mt-4 text-sm font-medium text-foreground">Coordonnées</p>
               <address className="mt-4 space-y-2 text-sm not-italic text-muted">
                 <p className="font-medium text-foreground">{company.legalName}</p>
@@ -72,7 +72,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
 
       {location.servicesHighlight.length > 0 ? (
         <div className="mt-16 border-t border-border/80 pt-16">
-          <Badge className="text-accent/90">Prestations</Badge>
+          <Badge className="text-accent">Prestations</Badge>
           <h2 className="mt-4 font-display text-display-sm text-foreground">
             Prestations à {location.city}
           </h2>
@@ -109,7 +109,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
 
       {location.faqs.length > 0 ? (
         <div className="mt-16 border-t border-border/80 pt-16">
-          <Badge className="text-accent/90">FAQ</Badge>
+          <Badge className="text-accent">FAQ</Badge>
           <h2 className="mt-4 font-display text-display-sm text-foreground">
             Questions fréquentes — {location.city}
           </h2>

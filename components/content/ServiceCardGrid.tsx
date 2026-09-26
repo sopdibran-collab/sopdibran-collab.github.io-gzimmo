@@ -42,7 +42,7 @@ export function ServiceCardGrid({
     <div className={className}>
       {!hideHeader && (badge || title || description) ? (
         <FadeIn>
-          {badge ? <Badge className="text-accent/90">{badge}</Badge> : null}
+          {badge ? <Badge className="text-accent">{badge}</Badge> : null}
           {title ? (
             <h2
               className={cn(

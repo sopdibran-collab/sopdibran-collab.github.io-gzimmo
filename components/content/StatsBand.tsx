@@ -8,7 +8,7 @@ export function StatsBand() {
   return (
     <div>
       <FadeIn>
-        <Badge className="text-accent/90">Gzimmo en chiffres</Badge>
+        <Badge className="text-accent">Gzimmo en chiffres</Badge>
         <p className="mt-5 max-w-lg text-lg text-white/80 leading-relaxed">
           {teamExperienceLabel(false)} au service de particuliers, régies et entreprises en Suisse
           romande.

@@ -30,7 +30,7 @@ export function InterventionZones({
     >
       {compact ? null : (
         <>
-          <Badge className="text-accent/90">Zones d&apos;intervention</Badge>
+          <Badge className="text-accent">Zones d&apos;intervention</Badge>
           <h2 id="zones-intervention" className="mt-4 font-display text-display-sm text-foreground">
             {heading}
           </h2>
