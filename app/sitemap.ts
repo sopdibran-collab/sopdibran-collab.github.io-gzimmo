@@ -31,7 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${getServicePath(service.slug)}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: service.slug === "nettoyage-fin-de-bail" ? 0.95 : 0.8,
+    priority:
+      service.slug === "nettoyage-fin-de-bail" || service.slug === "nettoyage-apres-chantier"
+        ? 0.95
+        : 0.8,
   }));
 
   const localRoutes = locations.map((location) => ({

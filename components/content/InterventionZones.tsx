@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 type InterventionZonesProps = {
   servicePhrase?: string;
+  heading?: string;
   /** When rendered as its own page section, drop the top hairline separator. */
   className?: string;
 };
@@ -13,6 +14,7 @@ type InterventionZonesProps = {
 /** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
 export function InterventionZones({
   servicePhrase = "nettoyage fin de bail",
+  heading = "Zones d'intervention",
   className,
 }: InterventionZonesProps) {
   return (
@@ -22,7 +24,7 @@ export function InterventionZones({
     >
       <Badge className="text-accent/90">Zones d&apos;intervention</Badge>
       <h2 id="zones-intervention" className="mt-4 font-display text-display-sm text-foreground">
-        Zones d&apos;intervention
+        {heading}
       </h2>
       <p className="mt-4 max-w-2xl text-muted leading-relaxed">
         Nous intervenons rapidement pour votre {servicePhrase} à Fribourg, dans les

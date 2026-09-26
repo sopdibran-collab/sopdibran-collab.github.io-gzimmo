@@ -238,6 +238,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
+      { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Nettoyage fin de bail à Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
       { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
     ],
@@ -256,12 +257,15 @@ export const locations: Location[] = [
     geo: { latitude: 46.6175, longitude: 7.0569 },
     priority: 0.8,
     nearbyCommunes: ["La Tour-de-Trême", "Riaz", "Vuadens", "Broc"],
-    servicesHighlight: ["Entretien locaux", "Fin de bail", "Nettoyage vitres"],
+    servicesHighlight: ["Après chantier", "Entretien locaux", "Fin de bail"],
     sections: [
       {
         title: "Nettoyage en Gruyère",
-        body: "Bulle, carrefour de la Gruyère, accueille commerces et entreprises qui nécessitent un entretien régulier et fiable. Gzimmo intervient avec la même rigueur qu'à Romont.",
+        body: "Bulle, carrefour de la Gruyère, accueille commerces et entreprises qui nécessitent un entretien régulier et fiable. Gzimmo intervient avec la même rigueur qu'à Romont. Pour un nettoyage après chantier ou une fin de chantier, le détail du passage est sur la page service.",
       },
+    ],
+    priorityLinks: [
+      { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
     ],
     faqs: [
       {

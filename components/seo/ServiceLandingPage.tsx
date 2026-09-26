@@ -25,6 +25,38 @@ type ServiceLandingPageProps = {
   landing: ServiceLanding;
 };
 
+function ProcessSection({
+  landing,
+  variant,
+}: {
+  landing: ServiceLanding;
+  variant: "default" | "surface";
+}) {
+  return (
+    <PageMain variant={variant}>
+      <ContentCard>
+        <h2 id={landing.process.id} className="font-display text-display-sm text-foreground">
+          {landing.process.title}
+        </h2>
+        <ul className="mt-6 space-y-3">
+          {landing.process.items.map((item) => (
+            <li key={item} className="flex gap-3 text-sm text-muted leading-relaxed">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <ConversionCta
+          className="mt-8"
+          devisHref={`/contact?service=${landing.slug}`}
+          devisLabel={landing.heroCtaLabel}
+          preferCall={landing.preferCallCta}
+        />
+      </ContentCard>
+    </PageMain>
+  );
+}
+
 /** After soft PageHero (near-white), start muted so the first band reads clearly. */
 function rhythmVariant(blockIndex: number): "default" | "surface" {
   return blockIndex % 2 === 0 ? "surface" : "default";
@@ -41,14 +73,17 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
   const nextVariant = () => rhythmVariant(block++);
 
   const introVariant = nextVariant();
+  const earlyProcessVariant = landing.processBeforeAudience ? nextVariant() : null;
   const audienceVariant = nextVariant();
   const offerVariant =
     landing.guarantee || landing.showPriceQuote ? nextVariant() : null;
-  const processVariant = nextVariant();
+  const priceVariant = landing.priceSection ? nextVariant() : null;
+  const processVariant = landing.processBeforeAudience ? null : nextVariant();
   const whyVariant = nextVariant();
   const faqVariant = nextVariant();
   const testimonialsVariant = landing.testimonials.length > 0 ? nextVariant() : null;
   const closingVariant = nextVariant();
+  const localWithPrice = Boolean(landing.priceSection && landing.showInterventionZones);
 
   return (
     <>
@@ -127,7 +162,12 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           <div className="mt-12 space-y-8">
             {landing.sections.map((section) => (
               <ContentCard key={section.title}>
-                <h2 className="font-display text-display-sm text-foreground">{section.title}</h2>
+                <h2
+                  id={section.id}
+                  className="font-display text-display-sm text-foreground"
+                >
+                  {section.title}
+                </h2>
                 <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
               </ContentCard>
             ))}
@@ -135,11 +175,15 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         ) : null}
       </PageMain>
 
+      {earlyProcessVariant ? (
+        <ProcessSection landing={landing} variant={earlyProcessVariant} />
+      ) : null}
+
       <PageMain variant={audienceVariant}>
         <div className="grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
           <div>
             <span className="mb-5 block h-px w-10 bg-accent" aria-hidden="true" />
-            <h2 className="font-display text-display-sm text-foreground">
+            <h2 id="publics" className="font-display text-display-sm text-foreground">
               {landing.audienceHeading ?? "À qui s'adresse ce service ?"}
             </h2>
           </div>
@@ -149,8 +193,8 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 key={item.profile}
                 className="grid gap-2 py-5 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8 lg:first:pt-0"
               >
-                <span className="text-sm font-medium text-foreground">{item.profile}</span>
-                <span className="text-sm text-muted leading-relaxed">{item.situation}</span>
+                <h3 className="text-sm font-medium text-foreground">{item.profile}</h3>
+                <p className="text-sm text-muted leading-relaxed">{item.situation}</p>
               </li>
             ))}
           </ul>
@@ -178,25 +222,60 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         </PageMain>
       ) : null}
 
-      <PageMain variant={processVariant}>
-        <ContentCard>
-          <h2 className="font-display text-display-sm text-foreground">{landing.process.title}</h2>
-          <ul className="mt-6 space-y-3">
-            {landing.process.items.map((item) => (
-              <li key={item} className="flex gap-3 text-sm text-muted leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <ConversionCta
-            className="mt-8"
-            devisHref={`/contact?service=${landing.slug}`}
-            devisLabel={landing.heroCtaLabel}
-            preferCall={landing.preferCallCta}
-          />
-        </ContentCard>
-      </PageMain>
+      {priceVariant && landing.priceSection ? (
+        <PageMain variant={priceVariant}>
+          <ContentCard>
+            <h2 id={landing.priceSection.id} className="font-display text-display-sm text-foreground">
+              {landing.priceSection.title}
+            </h2>
+            <p className="mt-4 text-muted leading-relaxed">{landing.priceSection.body}</p>
+            <ul className="mt-6 space-y-3">
+              {landing.priceSection.factors.map((factor) => (
+                <li key={factor} className="flex gap-3 text-sm text-muted leading-relaxed">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                  {factor}
+                </li>
+              ))}
+            </ul>
+            <TextLink className="mt-8" href={`/contact?service=${landing.slug}`}>
+              Demander un devis gratuit
+            </TextLink>
+          </ContentCard>
+
+          {localWithPrice ? (
+            <>
+              <div className="mt-12">
+                <h2 id="local" className="font-display text-display-sm text-foreground">
+                  Villes desservies
+                </h2>
+                <ul className="mt-5 flex flex-wrap gap-x-1 gap-y-2">
+                  {landing.relatedLocalLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors duration-200 hover:bg-surface hover:text-accent"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-sm text-muted leading-relaxed">
+                  Vevey, Crissier, Montreux et les autres communes sans page propre sont
+                  indiquées dans les zones. Le siège est à Romont.
+                </p>
+              </div>
+              <InterventionZones
+                className="mt-12 border-t-0 pt-0"
+                heading="Zones desservies"
+                servicePhrase="nettoyage après chantier"
+              />
+            </>
+          ) : null}
+        </PageMain>
+      ) : null}
+
+      {processVariant ? <ProcessSection landing={landing} variant={processVariant} /> : null}
 
       <PageMain variant={whyVariant}>
         <h2 className="font-display text-display-sm text-foreground">
@@ -278,7 +357,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
       ) : null}
 
       <PageMain variant={closingVariant}>
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className={localWithPrice ? "grid gap-8" : "grid gap-8 lg:grid-cols-2"}>
           <ContentCard>
             <h2 className="font-display text-lg font-semibold text-foreground">Nos autres prestations</h2>
             <ul className="mt-6 space-y-3">
@@ -291,33 +370,31 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               ))}
             </ul>
           </ContentCard>
-          <ContentCard>
-            <h2 className="font-display text-lg font-semibold text-foreground">
-              Nous intervenons aussi près de chez vous
-            </h2>
-            <ul className="mt-6 space-y-3">
-              {landing.relatedLocalLinks.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-muted transition-colors hover:text-accent"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </ContentCard>
+          {localWithPrice ? null : (
+            <ContentCard>
+              <h2 className="font-display text-lg font-semibold text-foreground">
+                Nous intervenons aussi près de chez vous
+              </h2>
+              <ul className="mt-6 space-y-3">
+                {landing.relatedLocalLinks.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-muted transition-colors hover:text-accent"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </ContentCard>
+          )}
         </div>
 
-        {landing.showInterventionZones ? (
+        {landing.showInterventionZones && !localWithPrice ? (
           <InterventionZones
             className="mt-16 border-t-0 pt-0"
-            servicePhrase={
-              landing.slug === "nettoyage-apres-chantier"
-                ? "nettoyage après chantier"
-                : "nettoyage fin de bail"
-            }
+            servicePhrase="nettoyage fin de bail"
           />
         ) : null}
 

@@ -16,11 +16,14 @@ export type ServiceLanding = {
   audienceHeading?: string;
   whyHeading?: string;
   faqHeading?: string;
-  sections?: { title: string; body: string }[];
+  sections?: { id?: string; title: string; body: string }[];
   schemaServiceTypes?: string[];
+  /** Place the checklist before the audience block (fin de chantier → publics). */
+  processBeforeAudience?: boolean;
+  priceSection?: { id?: string; title: string; body: string; factors: string[] };
   forWho: { profile: string; situation: string }[];
   guarantee?: { title: string; paragraphs: string[] };
-  process: { title: string; items: string[] };
+  process: { id?: string; title: string; items: string[] };
   whyGzimmo: { title: string; description: string }[];
   faqs: readonly (FaqItem | FaqContent)[];
   relatedServiceSlugs: string[];
@@ -153,18 +156,19 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-apres-chantier",
-    h1: "Nettoyage après travaux et chantier — rénovation et construction",
+    h1: "Nettoyage après chantier",
     subtitle:
       "Que ce soit après la construction d'une maison neuve ou la rénovation d'un appartement, notre équipe assure un nettoyage après travaux complet et rapide.",
-    metaTitle: "Nettoyage Après Chantier Fribourg, Vaud & Neuchâtel | Devis Gratuit",
+    metaTitle: "Nettoyage après chantier et rénovation | Gzimmo",
     metaDescription:
-      "Après chantier, rénovation, construction ou travaux. Poussières fines, devis gratuit. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
+      "Nettoyage après chantier, rénovation, construction ou travaux. Fin de chantier depuis Romont. Devis gratuit. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     showInterventionZones: true,
-    audienceHeading: "Après rénovation, construction ou fin de chantier",
+    processBeforeAudience: true,
+    audienceHeading: "Particulier, promoteur ou régie",
     whyHeading: "Un nettoyage de fin de chantier, pas un ménage classique",
-    faqHeading: "Après rénovation, travaux ou construction",
+    faqHeading: "Questions fréquentes",
     schemaServiceTypes: [
       "Nettoyage après chantier",
       "Nettoyage après rénovation",
@@ -173,41 +177,44 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage de fin de chantier",
     ],
     intro:
-      "Confiez-nous le nettoyage fin de chantier : nous éliminons poussières fines, résidus de peinture et gravats pour vous livrer un bien prêt à habiter. Après rénovation, construction ou travaux, un ménage classique ne suffit pas — Gzimmo applique une checklist chantier depuis Romont.",
+      "Le nettoyage après chantier couvre trois situations — rénovation, construction, travaux — puis le passage de fin de chantier, avant d'habiter ou de livrer. Depuis Romont, Gzimmo enlève poussières fines, résidus de peinture et gravats. Un ménage classique ne suffit pas.",
     sections: [
       {
-        title: "Après rénovation, construction ou fin de chantier : même exigence",
-        body: "« Nettoyage après rénovation », « après travaux », « après construction » ou « fin de chantier » décrivent le même besoin : enlever ce que les artisans laissent. Cuisine refaite, appartement neuf, immeuble livré — on adapte la checklist (plâtre, peinture, carrelage, menuiseries) pour que le lieu soit habitable ou présentable à la réception.",
+        id: "renovation",
+        title: "Nettoyage après rénovation",
+        body: "Cuisine, salle de bain ou appartement rénové : plâtre, peinture et poussière fine sur des surfaces neuves. Le passage prépare le logement pour y habiter, sans abîmer carrelage, parquet ou béton ciré.",
       },
       {
-        title: "Romont, Fribourg, Vaud et Neuchâtel",
-        body: "Nous partons de Romont pour les chantiers du canton de Fribourg, du canton de Vaud (de Bex à Nyon, Crissier, Yverdon, Vevey…) et du canton de Neuchâtel. Devis sous 24 h.",
+        id: "construction",
+        title: "Nettoyage après construction",
+        body: "Maison neuve ou immeuble à livrer : poussières de construction et résidus de joints. Le lieu doit être présentable à la réception.",
+      },
+      {
+        id: "travaux",
+        title: "Nettoyage après travaux",
+        body: "Après des travaux localisés, la poussière fine reste dans les radiateurs, les prises et les joints. On lessive selon le matériau et on traite les vitres, sanitaires et cuisines touchés par le chantier.",
       },
     ],
     forWho: [
       {
-        profile: "Particuliers",
+        profile: "Particulier",
         situation:
           "Vous venez de rénover cuisine, salle de bain ou appartement et voulez habiter sans poussière fine.",
       },
       {
-        profile: "Promoteurs & directions de travaux",
+        profile: "Promoteur",
         situation:
-          "Vous livrez un lot et devez présenter des finitions propres à la réception.",
+          "Vous livrez un lot et devez présenter des finitions propres à la réception. Les entreprises générales qui mandatent le nettoyage final avant cette réception suivent le même passage.",
       },
       {
-        profile: "Artisans & entreprises générales",
+        profile: "Régie",
         situation:
-          "Vous mandatez le nettoyage final avant état des lieux ou remise des clés.",
-      },
-      {
-        profile: "Régies & propriétaires",
-        situation:
-          "Remise en état après travaux locatifs avant remise en location.",
+          "Remise en état après travaux locatifs, avant une remise en location. Si un état des lieux de fin de bail suit, cette checklist est une prestation distincte.",
       },
     ],
     process: {
-      title: "Checklist typique après chantier / rénovation",
+      id: "fin-de-chantier",
+      title: "Nettoyage de fin de chantier",
       items: [
         "Aspiration et élimination des poussières fines (plâtre, sciure, ciment) sur sols et surfaces hautes.",
         "Lessivage des sols selon matériau (carrelage, parquet, béton ciré) sans abîmer les finitions neuves.",
@@ -215,6 +222,17 @@ export const serviceLandings: ServiceLanding[] = [
         "Sanitaires et cuisines débarrassés des traces de travaux (calcaire de chantier, projections).",
         "Plinthes, radiateurs, prises, interrupteurs, chambranles et menuiseries.",
         "Évacuation des déchets de nettoyage en fin d'intervention.",
+        "Passage calé sur la date de réception, dès que le planning le permet.",
+      ],
+    },
+    priceSection: {
+      id: "prix",
+      title: "Prix d'un nettoyage après chantier",
+      body: "Il n'y a pas de forfait unique. Le devis est gratuit, sous 24 h, sans engagement : le tarif convenu est le tarif final. Le montant dépend du chantier réel, pas d'un prix au mètre carré publié.",
+      factors: [
+        "Surface à traiter",
+        "Type de travaux : plâtre, peinture, carrelage",
+        "Niveau de poussière fine laissé par les artisans",
       ],
     },
     whyGzimmo: [
@@ -240,8 +258,8 @@ export const serviceLandings: ServiceLanding[] = [
       faq(
         "apres-renovation-ou-chantier",
         "prestations",
-        "Nettoyage après rénovation ou après chantier : est-ce la même chose ?",
-        "Oui pour l'essentiel : poussières fines, résidus et surfaces à protéger. « Après rénovation », « après travaux » et « après construction » décrivent le même besoin. On adapte la checklist au type de travaux (plâtrerie, peinture, carrelage, etc.).",
+        "Nettoyage après rénovation, construction ou travaux : quelle différence ?",
+        "Les résidus changent : plâtre et peinture après rénovation, poussières de construction sur un neuf, traces localisées après des travaux. Le nettoyage de fin de chantier est le passage commun — enlever ce que les artisans laissent, pour habiter ou livrer. La checklist s'adapte (plâtre, peinture, carrelage, menuiseries).",
       ),
       faq(
         "poussiere-fine",
@@ -269,12 +287,16 @@ export const serviceLandings: ServiceLanding[] = [
       ),
       getFaqById("apres-chantier")!,
     ],
-    relatedServiceSlugs: ["nettoyage-fin-de-bail", "entretien-locaux", "nettoyage-vitres"],
+    relatedServiceSlugs: ["nettoyage-fin-de-bail", "conciergerie", "nettoyage-vitres"],
     relatedLocalLinks: [
-      { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
-      { label: "Entreprise de nettoyage à Fribourg", href: "/seo/nettoyage-fribourg" },
-      { label: "Nettoyage à Lausanne et agglomération", href: "/seo/nettoyage-lausanne" },
-      { label: "Nettoyage fin de bail Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
+      { label: "Romont", href: "/seo/nettoyage-romont" },
+      { label: "Fribourg", href: "/seo/nettoyage-fribourg" },
+      { label: "Bulle", href: "/seo/nettoyage-bulle" },
+      { label: "Payerne", href: "/seo/nettoyage-payerne" },
+      { label: "Lausanne", href: "/seo/nettoyage-lausanne" },
+      { label: "Yverdon", href: "/seo/nettoyage-yverdon-les-bains" },
+      { label: "Morges", href: "/seo/nettoyage-morges" },
+      { label: "Nyon", href: "/seo/nettoyage-nyon" },
     ],
     testimonials: [
       {
