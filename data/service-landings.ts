@@ -38,6 +38,11 @@ export type ServiceLanding = {
   relatedLocalLinks: { label: string; href: string }[];
   testimonials: { quote: string; author: string; url?: string }[];
   proofLink?: { label: string; href: string; detail: string };
+  /**
+   * Clarification d’intention (ex. appartements « entre deux locataires »
+   * → fin de bail). Rendu sous l’intro, sans nouveau H2.
+   */
+  relatedNote?: { text: string; linkLabel: string; href: string };
   heroCtaLabel?: string;
   showPriceQuote?: boolean;
   showInterventionZones?: boolean;
@@ -439,6 +444,11 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage complet d'appartements pour particuliers et régies en Suisse romande. Devis gratuit, intervention depuis Romont. 076 214 23 42.",
     intro:
       "Que ce soit pour une remise en état ponctuelle ou un entretien approfondi, Gzimmo traite chaque pièce avec méthode : sols, sanitaires, cuisine, surfaces et détails.",
+    relatedNote: {
+      text: "Vous quittez un logement et avez besoin d'une remise en état pour l'état des lieux ? Consultez notre service de",
+      linkLabel: "nettoyage fin de bail",
+      href: "/nettoyage-fin-de-bail",
+    },
     forWho: [
       { profile: "Particuliers", situation: "Vous souhaitez un appartement remis en ordre sans y consacrer vos week-ends." },
       { profile: "Régies", situation: "Vous mandatez des nettoyages entre deux locataires." },

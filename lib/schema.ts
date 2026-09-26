@@ -12,7 +12,12 @@ const romontGeo = {
   longitude: 6.9111,
 };
 
-/** Zone : Fribourg, Vaud, Neuchâtel. */
+/**
+ * Couverture commerciale : toute la Suisse romande (siège Romont).
+ * Représentation raisonnable : la Romandie en tête, puis le détail
+ * vérifiable (cantons FR/VD/NE, villes avec pages et preuves).
+ * Pas de liste de 500 communes.
+ */
 export function priorityAreaServed() {
   const fromLandings = locations
     .filter((location) => location.canton === "FR" || location.canton === "VD" || location.canton === "NE")
@@ -35,6 +40,7 @@ export function priorityAreaServed() {
   }));
 
   return [
+    { "@type": "AdministrativeArea", name: "Suisse romande" },
     { "@type": "AdministrativeArea", name: "Canton de Fribourg" },
     { "@type": "AdministrativeArea", name: "Canton de Vaud" },
     { "@type": "AdministrativeArea", name: "Canton de Neuchâtel" },

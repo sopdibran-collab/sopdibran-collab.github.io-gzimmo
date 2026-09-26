@@ -16,8 +16,10 @@ export const entityIdentity = {
   telephone: company.phoneDisplay,
   email: company.email,
   site: company.url,
-  zonePrincipale: "Romont / Fribourg",
-  zonesSecondaires: "Vaud / Neuchâtel (si réellement desservies)",
+  zonePrincipale: "Romont / Fribourg (siège)",
+  zonesSecondaires: "Toute la Suisse romande, villes et villages inclus",
+  /** Priorité documentée (pages locales et preuves) : FR, VD, NE. */
+  prioriteDocumentee: "Fribourg, Vaud, Neuchâtel",
   experience: `Plus de ${company.teamExperienceYears} ans d'expérience cumulée dans le nettoyage`,
   devis: "Devis gratuit, réponse sous 24 h",
   langue: "français",
@@ -32,7 +34,7 @@ export const entityIdentity = {
  * sur le site). Chaque page doit pouvoir s’y rattacher.
  */
 export const entityDefinition =
-  "Gzimmo Sàrl est une entreprise de nettoyage et d’entretien basée à Romont, spécialisée dans le nettoyage fin de bail, le nettoyage après chantier, l’entretien de locaux et la conciergerie, pour particuliers, régies, propriétaires et entreprises en Suisse romande.";
+  "Gzimmo Sàrl est une entreprise de nettoyage et d’entretien basée à Romont, qui intervient dans toute la Suisse romande. Elle est spécialisée dans le nettoyage fin de bail, le nettoyage après chantier, l’entretien de locaux et la conciergerie, pour particuliers, régies, propriétaires et entreprises.";
 
 export type EntityServiceEntry = {
   slug: string;
@@ -65,7 +67,7 @@ export const entityServices: EntityServiceEntry[] = [
       "avant réception",
     ],
     clients: ["particuliers", "promoteurs", "entreprises générales", "régies"],
-    zones: ["Fribourg", "Vaud", "Neuchâtel"],
+    zones: ["Suisse romande"],
     preuves: {
       avis: ["review-apres-renovation", "review-fin-de-chantier"],
       realisations: [{ id: "chantier-morges", lieu: "Morges" }],
@@ -85,7 +87,7 @@ export const entityServices: EntityServiceEntry[] = [
       "avant nouvelle entrée",
     ],
     clients: ["locataires", "régies", "propriétaires", "agences immobilières"],
-    zones: ["Fribourg", "Vaud", "Neuchâtel"],
+    zones: ["Suisse romande"],
     preuves: {
       avis: ["review-demenagement-express"],
       realisations: [{ id: "fin-bail-fribourg", lieu: "Fribourg" }],
@@ -96,7 +98,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage d'appartements",
     contextes: ["remise en état", "entre deux locataires"],
     clients: ["particuliers", "régies", "propriétaires"],
-    zones: ["Fribourg", "Vaud", "Neuchâtel"],
+    zones: ["Suisse romande"],
     preuves: { avis: ["review-appartements-commercial"] },
     renvoi: {
       vers: "/nettoyage-fin-de-bail",
@@ -108,7 +110,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage de maisons",
     contextes: ["grand nettoyage", "avant vente"],
     clients: ["propriétaires", "familles", "régies"],
-    zones: ["Fribourg", "Vaud", "Neuchâtel"],
+    zones: ["Suisse romande"],
     preuves: {},
   },
   {
@@ -116,7 +118,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage de bureaux",
     contextes: ["entretien régulier", "espaces de travail"],
     clients: ["PME", "grandes entreprises", "coworkings", "cabinets professionnels"],
-    zones: ["Fribourg", "Vaud", "Neuchâtel"],
+    zones: ["Suisse romande"],
     preuves: { realisations: [{ id: "bureaux-lausanne", lieu: "Lausanne" }] },
   },
   {
@@ -124,7 +126,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Entretien de locaux",
     contextes: ["entretien professionnel", "locaux commerciaux", "immeubles"],
     clients: ["commerces", "régies", "professions libérales"],
-    zones: ["Fribourg", "Vaud", "Neuchâtel"],
+    zones: ["Suisse romande"],
     preuves: { avis: ["review-appartements-commercial"] },
   },
   {
@@ -132,7 +134,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Services de conciergerie",
     contextes: ["parties communes", "immeubles"],
     clients: ["régies immobilières", "syndics et PPE", "propriétaires institutionnels"],
-    zones: ["Fribourg", "Vaud"],
+    zones: ["Suisse romande"],
     preuves: {},
   },
   {
@@ -140,7 +142,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage de vitres",
     contextes: ["vitrines", "baies vitrées", "façades vitrées"],
     clients: ["particuliers", "commerces", "bureaux", "régies"],
-    zones: ["Fribourg", "Vaud", "Neuchâtel"],
+    zones: ["Suisse romande"],
     preuves: { realisations: [{ id: "vitres-romont", lieu: "Romont" }] },
   },
 ];
@@ -160,6 +162,12 @@ export const entityKnowsAbout: string[] = [
 /**
  * Profils externes authentiques uniquement. Aucun annuaire, réseau ou
  * partenaire n’est avéré dans le dépôt à ce jour : seul Google Maps est émis.
+ *
+ * Les deux URLs désignent le même établissement (à vérifier humainement) :
+ * - `googleMapsUrl` : lien court partagé de la fiche ;
+ * - `googleMapsPlaceUrl` : même fiche via son CID (`company.googlePlaceCid`,
+ *   cohérent avec l’embed `googleMapsEmbed` « Gzimmo Sàrl »).
+ * Si le lien court ne résout pas vers ce CID, ne garder que l’URL CID.
  */
 export const entitySameAs: string[] = [
   company.googleMapsUrl,

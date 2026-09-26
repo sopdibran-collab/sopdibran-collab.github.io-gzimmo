@@ -12,12 +12,13 @@ const navLinks = footerNav.pages.filter((item) =>
   ["/", "/realisations", "/avis", "/a-propos", "/contact"].includes(item.href),
 );
 
+/** 6 services principaux + voir tout (maisons et entretien-locaux via /services). */
 const footerServices = [
   { slug: "nettoyage-fin-de-bail", label: "Fin de bail" },
-  { slug: "conciergerie", label: "Régies" },
   { slug: "nettoyage-apres-chantier", label: "Après chantier" },
   { slug: "nettoyage-bureaux", label: "Bureaux" },
   { slug: "nettoyage-appartements", label: "Appartements" },
+  { slug: "conciergerie", label: "Conciergerie" },
   { slug: "nettoyage-vitres", label: "Vitres" },
 ] as const;
 
@@ -90,6 +91,9 @@ export function Footer() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/services" className={chipClass}>
+              Tous les services
+            </Link>
           </LinkRow>
 
           <LinkRow label="Région">

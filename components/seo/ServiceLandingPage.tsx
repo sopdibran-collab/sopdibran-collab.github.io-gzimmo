@@ -223,6 +223,15 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </div>
         ) : null}
 
+        {landing.relatedNote ? (
+          <p className="mt-6 max-w-2xl text-sm text-muted leading-relaxed">
+            {landing.relatedNote.text}{" "}
+            <TextLink href={landing.relatedNote.href}>
+              {landing.relatedNote.linkLabel}
+            </TextLink>
+          </p>
+        ) : null}
+
         {landing.sections?.length ? (
           landing.sectionLayout === "grid" ? (
             <div className="mt-10">
