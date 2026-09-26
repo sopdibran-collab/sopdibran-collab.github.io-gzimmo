@@ -6,6 +6,9 @@ import { cn } from "@/lib/utils";
 
 type InterventionZonesProps = {
   servicePhrase?: string;
+  heading?: string;
+  /** Listes de communes seulement — le titre est déjà porté par la section parente. */
+  compact?: boolean;
   /** When rendered as its own page section, drop the top hairline separator. */
   className?: string;
 };
@@ -13,24 +16,30 @@ type InterventionZonesProps = {
 /** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
 export function InterventionZones({
   servicePhrase = "nettoyage fin de bail",
+  heading = "Zones d'intervention",
+  compact = false,
   className,
 }: InterventionZonesProps) {
   return (
     <section
       className={cn("mt-16 border-t border-border/80 pt-16", className)}
-      aria-labelledby="zones-intervention"
+      aria-labelledby={compact ? "local" : "zones-intervention"}
     >
-      <Badge className="text-accent/90">Zones d&apos;intervention</Badge>
-      <h2 id="zones-intervention" className="mt-4 font-display text-display-sm text-foreground">
-        Zones d&apos;intervention
-      </h2>
-      <p className="mt-4 max-w-2xl text-muted leading-relaxed">
-        Nous intervenons rapidement pour votre {servicePhrase} à Fribourg, dans les
-        cantons de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux, Chexbres,
-        Oron-la-Ville, Palézieux), de Fribourg et de Neuchâtel.
-      </p>
+      {compact ? null : (
+        <>
+          <Badge className="text-accent/90">Zones d&apos;intervention</Badge>
+          <h2 id="zones-intervention" className="mt-4 font-display text-display-sm text-foreground">
+            {heading}
+          </h2>
+          <p className="mt-4 max-w-2xl text-muted leading-relaxed">
+            Nous intervenons rapidement pour votre {servicePhrase} à Fribourg, dans les
+            cantons de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux, Chexbres,
+            Oron-la-Ville, Palézieux), de Fribourg et de Neuchâtel.
+          </p>
+        </>
+      )}
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-2">
+      <div className={cn("grid gap-10 lg:grid-cols-2", compact ? "mt-8" : "mt-10")}>
         {interventionCantons.map((group) => (
           <div key={group.id}>
             <h3 className="font-display text-lg font-semibold text-foreground">{group.heading}</h3>

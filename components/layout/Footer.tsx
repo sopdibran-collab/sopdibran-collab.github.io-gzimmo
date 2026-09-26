@@ -15,7 +15,7 @@ const navLinks = footerNav.pages.filter((item) =>
 const footerServices = [
   { slug: "nettoyage-fin-de-bail", label: "Fin de bail" },
   { slug: "conciergerie", label: "Régies" },
-  { slug: "nettoyage-apres-chantier", label: "Chantiers" },
+  { slug: "nettoyage-apres-chantier", label: "Après chantier" },
   { slug: "nettoyage-bureaux", label: "Bureaux" },
   { slug: "nettoyage-appartements", label: "Appartements" },
   { slug: "nettoyage-vitres", label: "Vitres" },
