@@ -1,7 +1,7 @@
 import type { FaqContent, FaqItem } from "@/data/faq";
 import { faq, getFaqById, getFaqsByIds } from "@/data/faq";
 import { finDeBailPriceFaqs } from "@/data/fin-de-bail-faq";
-import { featuredGoogleReview } from "@/data/google-reviews";
+import { featuredGoogleReview, googleReviews } from "@/data/google-reviews";
 import { getServicePath } from "@/lib/service-paths";
 
 export type ServiceLanding = {
@@ -16,19 +16,23 @@ export type ServiceLanding = {
   audienceHeading?: string;
   whyHeading?: string;
   faqHeading?: string;
-  sections?: { id?: string; title: string; body: string }[];
+  sections?: { id?: string; title: string; body: string; href?: string }[];
+  /** Cartes courtes plutôt que paragraphes empilés. */
+  sectionLayout?: "stack" | "grid";
+  inclusionGroups?: { title: string; items: string[] }[];
   schemaServiceTypes?: string[];
   /** Place the checklist before the audience block (fin de chantier → publics). */
   processBeforeAudience?: boolean;
   priceSection?: { id?: string; title: string; body: string; factors: string[] };
   forWho: { profile: string; situation: string }[];
   guarantee?: { title: string; paragraphs: string[] };
-  process: { id?: string; title: string; items: string[] };
+  process: { id?: string; title: string; items: string[]; numbered?: boolean };
   whyGzimmo: { title: string; description: string }[];
   faqs: readonly (FaqItem | FaqContent)[];
   relatedServiceSlugs: string[];
   relatedLocalLinks: { label: string; href: string }[];
-  testimonials: { quote: string; author: string }[];
+  testimonials: { quote: string; author: string; url?: string }[];
+  proofLink?: { label: string; href: string; detail: string };
   heroCtaLabel?: string;
   showPriceQuote?: boolean;
   showInterventionZones?: boolean;
@@ -166,8 +170,8 @@ export const serviceLandings: ServiceLanding[] = [
     heroCtaLabel: "Demander un devis gratuit",
     showInterventionZones: true,
     processBeforeAudience: true,
-    audienceHeading: "Particulier, promoteur ou régie",
-    whyHeading: "Un nettoyage de fin de chantier, pas un ménage classique",
+    audienceHeading: "Pour qui ?",
+    whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     schemaServiceTypes: [
       "Nettoyage après chantier",
@@ -177,22 +181,49 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage de fin de chantier",
     ],
     intro:
-      "Le nettoyage après chantier couvre trois situations — rénovation, construction, travaux — puis le passage de fin de chantier, avant d'habiter ou de livrer. Depuis Romont, Gzimmo enlève poussières fines, résidus de peinture et gravats. Un ménage classique ne suffit pas.",
+      "On enlève ce que les artisans laissent — poussières fines, peinture, joints — pour que le lieu soit habitable ou livrable. Depuis Romont.",
+    sectionLayout: "grid",
     sections: [
       {
         id: "renovation",
-        title: "Nettoyage après rénovation",
-        body: "Cuisine, salle de bain ou appartement rénové : plâtre, peinture et poussière fine sur des surfaces neuves. Le passage prépare le logement pour y habiter, sans abîmer carrelage, parquet ou béton ciré.",
+        title: "Après une rénovation",
+        body: "Plâtre et peinture sur des surfaces neuves. Pour habiter.",
       },
       {
         id: "construction",
-        title: "Nettoyage après construction",
-        body: "Maison neuve ou immeuble à livrer : poussières de construction et résidus de joints. Le lieu doit être présentable à la réception.",
+        title: "Après une construction",
+        body: "Poussières et joints. Pour la réception d'un neuf.",
       },
       {
         id: "travaux",
-        title: "Nettoyage après travaux",
-        body: "Après des travaux localisés, la poussière fine reste dans les radiateurs, les prises et les joints. On lessive selon le matériau et on traite les vitres, sanitaires et cuisines touchés par le chantier.",
+        title: "Après des travaux",
+        body: "Poussière fine dans les radiateurs, les prises et les joints.",
+      },
+      {
+        id: "reception",
+        title: "Avant la réception",
+        body: "Le passage de fin de chantier, calé sur la date de livraison.",
+        href: "#fin-de-chantier",
+      },
+      {
+        id: "remise-des-cles",
+        title: "Avant la remise des clés",
+        body: "Autre besoin : l'état des lieux et la checklist régie.",
+        href: "/nettoyage-fin-de-bail",
+      },
+    ],
+    inclusionGroups: [
+      {
+        title: "Surfaces",
+        items: ["Sols", "Carrelage", "Parquet", "Béton ciré", "Plinthes", "Menuiseries"],
+      },
+      {
+        title: "Résidus de chantier",
+        items: ["Poussière de plâtre", "Ciment", "Sciure", "Traces de peinture", "Silicone", "Joints"],
+      },
+      {
+        title: "Équipements",
+        items: ["Vitres", "Sanitaires", "Cuisine", "Radiateurs", "Prises", "Interrupteurs"],
       },
     ],
     forWho: [
@@ -214,20 +245,18 @@ export const serviceLandings: ServiceLanding[] = [
     ],
     process: {
       id: "fin-de-chantier",
-      title: "Nettoyage de fin de chantier",
+      title: "Comment ça se passe",
+      numbered: true,
       items: [
-        "Aspiration et élimination des poussières fines (plâtre, sciure, ciment) sur sols et surfaces hautes.",
-        "Lessivage des sols selon matériau (carrelage, parquet, béton ciré) sans abîmer les finitions neuves.",
-        "Vitres intérieures / extérieures sans voile ni résidus de silicone ou de joints.",
-        "Sanitaires et cuisines débarrassés des traces de travaux (calcaire de chantier, projections).",
-        "Plinthes, radiateurs, prises, interrupteurs, chambranles et menuiseries.",
-        "Évacuation des déchets de nettoyage en fin d'intervention.",
-        "Passage calé sur la date de réception, dès que le planning le permet.",
+        "Vous décrivez le chantier. Devis gratuit sous 24 h.",
+        "On cale le passage sur la date de réception, si le planning le permet.",
+        "Surfaces, résidus et équipements sont traités sans abîmer les finitions neuves.",
+        "Les déchets de nettoyage partent en fin d'intervention.",
       ],
     },
     priceSection: {
       id: "prix",
-      title: "Prix d'un nettoyage après chantier",
+      title: "Combien ça coûte ?",
       body: "Il n'y a pas de forfait unique. Le devis est gratuit, sous 24 h, sans engagement : le tarif convenu est le tarif final. Le montant dépend du chantier réel, pas d'un prix au mètre carré publié.",
       factors: [
         "Surface à traiter",
@@ -302,8 +331,19 @@ export const serviceLandings: ServiceLanding[] = [
       {
         quote: featuredGoogleReview.quote,
         author: featuredGoogleReview.author,
+        url: featuredGoogleReview.url,
+      },
+      {
+        quote: googleReviews.find((review) => review.id === "review-fin-de-chantier")!.text,
+        author: "Avis Google",
+        url: googleReviews.find((review) => review.id === "review-fin-de-chantier")!.url,
       },
     ],
+    proofLink: {
+      label: "Réalisation à Morges",
+      href: "/realisations",
+      detail: "Promoteur — poussières fines après rénovation d'un immeuble, livraison dans les délais.",
+    },
   },
   {
     slug: "nettoyage-bureaux",
@@ -361,7 +401,7 @@ export const serviceLandings: ServiceLanding[] = [
       { profile: "Commerces", situation: "Vous accueillez du public et devez maintenir des locaux irréprochables." },
       { profile: "Régies", situation: "Vous gérez des parties communes et espaces partagés." },
       { profile: "Professions libérales", situation: "Vous souhaitez un entretien discret entre les consultations." },
-      { profile: "Industries légères", situation: "Vous avez besoin d'un entretien régulier de vos locaux techniques." },
+      { profile: "Locaux d'activité", situation: "Vous avez besoin d'un entretien régulier de vos locaux techniques." },
     ],
     process: {
       title: "Notre entretien de locaux inclut :",
@@ -476,7 +516,7 @@ export const serviceLandings: ServiceLanding[] = [
     },
     whyGzimmo: sharedWhy,
     faqs: sharedFaqs,
-    relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],
+    relatedServiceSlugs: ["nettoyage-apres-chantier", "entretien-locaux", "nettoyage-bureaux"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Romont", href: "/seo/nettoyage-romont" },
     ],

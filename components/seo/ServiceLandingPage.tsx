@@ -38,14 +38,27 @@ function ProcessSection({
         <h2 id={landing.process.id} className="font-display text-display-sm text-foreground">
           {landing.process.title}
         </h2>
-        <ul className="mt-6 space-y-3">
-          {landing.process.items.map((item) => (
-            <li key={item} className="flex gap-3 text-sm text-muted leading-relaxed">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        {landing.process.numbered ? (
+          <ol className="mt-6 space-y-4">
+            {landing.process.items.map((item, index) => (
+              <li key={item} className="flex gap-4 text-sm text-muted leading-relaxed">
+                <span className="font-display text-base font-semibold text-accent" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <ul className="mt-6 space-y-3">
+            {landing.process.items.map((item) => (
+              <li key={item} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
         <ConversionCta
           className="mt-8"
           devisHref={`/contact?service=${landing.slug}`}
@@ -159,18 +172,76 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         ) : null}
 
         {landing.sections?.length ? (
-          <div className="mt-12 space-y-8">
-            {landing.sections.map((section) => (
-              <ContentCard key={section.title}>
-                <h2
-                  id={section.id}
-                  className="font-display text-display-sm text-foreground"
-                >
-                  {section.title}
-                </h2>
-                <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
-              </ContentCard>
-            ))}
+          landing.sectionLayout === "grid" ? (
+            <div className="mt-10">
+              <h2 className="font-display text-display-sm text-foreground">
+                Dans quelles situations ?
+              </h2>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {landing.sections.map((section) => {
+                  const card = (
+                    <>
+                      <h3 id={section.id} className="font-medium text-foreground">
+                        {section.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-muted leading-relaxed">{section.body}</p>
+                      {section.href ? (
+                        <span className="mt-3 inline-block text-sm font-medium text-accent">Voir →</span>
+                      ) : null}
+                    </>
+                  );
+                  return (
+                    <li key={section.title}>
+                      {section.href ? (
+                        <Link
+                          href={section.href}
+                          className="block h-full rounded-xl border border-border/80 bg-white/70 p-5 transition-colors duration-200 hover:border-accent/40"
+                        >
+                          {card}
+                        </Link>
+                      ) : (
+                        <div className="h-full rounded-xl border border-border/80 bg-white/70 p-5">
+                          {card}
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : (
+            <div className="mt-12 space-y-8">
+              {landing.sections.map((section) => (
+                <ContentCard key={section.title}>
+                  <h2 id={section.id} className="font-display text-display-sm text-foreground">
+                    {section.title}
+                  </h2>
+                  <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
+                </ContentCard>
+              ))}
+            </div>
+          )
+        ) : null}
+
+        {landing.inclusionGroups?.length ? (
+          <div className="mt-12">
+            <h2 id="inclus" className="font-display text-display-sm text-foreground">
+              Ce qui est inclus
+            </h2>
+            <div className="mt-6 grid gap-8 md:grid-cols-3">
+              {landing.inclusionGroups.map((group) => (
+                <div key={group.title}>
+                  <h3 className="text-sm font-medium text-foreground">{group.title}</h3>
+                  <ul className="mt-3 space-y-2">
+                    {group.items.map((item) => (
+                      <li key={item} className="text-sm text-muted leading-relaxed">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         ) : null}
       </PageMain>
@@ -246,7 +317,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <>
               <div className="mt-12">
                 <h2 id="local" className="font-display text-display-sm text-foreground">
-                  Villes desservies
+                  Où intervenons-nous ?
                 </h2>
                 <ul className="mt-5 flex flex-wrap gap-x-1 gap-y-2">
                   {landing.relatedLocalLinks.map((item) => (
@@ -266,8 +337,8 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 </p>
               </div>
               <InterventionZones
-                className="mt-12 border-t-0 pt-0"
-                heading="Zones desservies"
+                className="mt-8 border-t-0 pt-0"
+                compact
                 servicePhrase="nettoyage après chantier"
               />
             </>
@@ -320,7 +391,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {landing.testimonials.map((item) => (
               <figure
-                key={item.author}
+                key={item.author + item.quote.slice(0, 24)}
                 className="rounded-xl border border-border/80 bg-white/70 p-6"
               >
                 <div className="mb-4 flex flex-wrap items-center gap-3">
@@ -333,9 +404,9 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 px-2.5 py-1 text-xs font-medium text-foreground">
                     Avis Google
                   </span>
-                  {landing.slug === "nettoyage-apres-chantier" ? (
+                  {item.url ? (
                     <a
-                      href={featuredGoogleReview.url}
+                      href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-muted transition-colors hover:text-accent"
@@ -353,6 +424,15 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </figure>
             ))}
           </div>
+          {landing.proofLink ? (
+            <Link
+              href={landing.proofLink.href}
+              className="mt-6 block rounded-xl border border-border/80 bg-white/70 p-5 transition-colors duration-200 hover:border-accent/40"
+            >
+              <p className="text-sm font-medium text-foreground">{landing.proofLink.label}</p>
+              <p className="mt-2 text-sm text-muted leading-relaxed">{landing.proofLink.detail}</p>
+            </Link>
+          ) : null}
         </PageMain>
       ) : null}
 
