@@ -7,7 +7,7 @@ export function ServiceList({ showIntro = true }: { showIntro?: boolean }) {
   return (
     <div>
       <FadeIn>
-        <Badge className="text-accent/90">Prestations</Badge>
+        <Badge className="text-accent">Prestations</Badge>
         <h2 className="mt-4 font-display text-display-md text-foreground">
           Ce que nous prenons en charge
         </h2>

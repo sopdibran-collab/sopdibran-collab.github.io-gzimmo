@@ -17,7 +17,7 @@ export function FaqGroupedSections() {
               >
                 {group.title}
               </h2>
-              <p className="mt-3 text-sm text-muted leading-relaxed">{group.description}</p>
+              <p className="mt-3 text-reading text-muted">{group.description}</p>
             </div>
             <div className="mt-8">
               <FaqList items={group.items} animated={false} />

@@ -32,7 +32,7 @@ export function WhyList() {
           {whyItems.map((item) => (
             <li
               key={item}
-              className="py-5 text-[0.9375rem] leading-relaxed text-foreground/90 first:pt-6 last:pb-6"
+              className="py-5 text-base leading-relaxed text-foreground/90 first:pt-6 last:pb-6"
             >
               <span className="mb-2 block font-display text-sm font-medium text-accent">—</span>
               {item}

@@ -52,7 +52,7 @@ export function GarantieRemiseBail({
       >
         <p
           className={cn(
-            "min-w-0 text-[0.9375rem] leading-snug font-medium tracking-[-0.01em]",
+            "min-w-0 text-base leading-snug font-medium tracking-[-0.01em]",
             isDark ? "text-white/95" : "text-foreground",
           )}
         >
@@ -66,7 +66,7 @@ export function GarantieRemiseBail({
           <Link
             href={GARANTIE_FAQ_HREF}
             className={cn(
-              "shrink-0 text-sm font-medium transition-colors duration-200",
+              "shrink-0 text-base font-medium transition-colors duration-200",
               isDark
                 ? "text-white/70 hover:text-white"
                 : "text-accent hover:text-accent-hover",

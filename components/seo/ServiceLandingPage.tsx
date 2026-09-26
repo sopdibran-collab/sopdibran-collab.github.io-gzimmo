@@ -52,7 +52,7 @@ function ProcessSection({
         {landing.process.numbered ? (
           <ol className="mt-6 space-y-4">
             {landing.process.items.map((item, index) => (
-              <li key={item} className="flex gap-4 text-sm text-muted leading-relaxed">
+              <li key={item} className="flex gap-4 text-base text-muted leading-relaxed">
                 <span className="font-display text-base font-semibold text-accent" aria-hidden="true">
                   {index + 1}
                 </span>
@@ -63,7 +63,7 @@ function ProcessSection({
         ) : (
           <ul className="mt-6 space-y-3">
             {landing.process.items.map((item) => (
-              <li key={item} className="flex gap-3 text-sm text-muted leading-relaxed">
+              <li key={item} className="flex gap-3 text-base text-muted leading-relaxed">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                 {item}
               </li>
@@ -151,7 +151,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         <FadeIn>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div className="max-w-xl">
-              <Badge className={rhythm ? "text-white/60" : "text-accent/90"}>
+              <Badge className={rhythm ? "text-white/60" : "text-accent"}>
                 {service.shortTitle}
               </Badge>
               <h1
@@ -210,7 +210,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
       <PageMain variant={introVariant} density={bandDensity}>
         <FadeIn>
-          <p className="max-w-2xl text-muted leading-relaxed">{landing.intro}</p>
+          <p className="text-reading text-muted">{landing.intro}</p>
         </FadeIn>
 
         {landing.slug === "nettoyage-fin-de-bail" ? (
@@ -224,7 +224,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         ) : null}
 
         {landing.relatedNote ? (
-          <p className="mt-6 max-w-2xl text-sm text-muted leading-relaxed">
+          <p className="mt-6 max-w-[65ch] text-base text-muted leading-relaxed">
             {landing.relatedNote.text}{" "}
             <TextLink href={landing.relatedNote.href}>
               {landing.relatedNote.linkLabel}
@@ -240,12 +240,12 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 {landing.sections.map((section) => {
                   const card = (
                     <>
-                      <h3 id={section.id} className="scroll-mt-28 font-medium text-foreground">
+                      <h3 id={section.id} className="scroll-mt-28 text-xl font-medium text-foreground">
                         {section.title}
                       </h3>
-                      <p className="mt-2 text-sm text-muted leading-relaxed">{section.body}</p>
+                      <p className="mt-2 text-base text-muted leading-relaxed">{section.body}</p>
                       {section.href ? (
-                        <span className="mt-3 inline-block text-sm font-medium text-accent">Voir →</span>
+                        <span className="mt-3 inline-block text-base font-medium text-accent">Voir →</span>
                       ) : null}
                     </>
                   );
@@ -276,7 +276,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   <h2 id={section.id} className={headingClass}>
                     {section.title}
                   </h2>
-                  <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
+                  <p className="mt-4 text-reading text-muted">{section.body}</p>
                 </ContentCard>
               ))}
             </div>
@@ -300,10 +300,10 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     : undefined
                 }
               >
-                <h3 className="text-sm font-medium text-foreground">{group.title}</h3>
+                <h3 className="text-xl font-medium text-foreground">{group.title}</h3>
                 <ul className="mt-3 space-y-2">
                   {group.items.map((item) => (
-                    <li key={item} className="text-sm text-muted leading-relaxed">
+                    <li key={item} className="text-base text-muted leading-relaxed">
                       {item}
                     </li>
                   ))}
@@ -330,10 +330,10 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             {landing.forWho.map((item) => (
               <li
                 key={item.profile}
-                className="grid gap-2 py-5 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8 lg:first:pt-0"
+                className="grid gap-2 py-5 last:pb-0 sm:grid-cols-[15rem_1fr] sm:gap-8 lg:first:pt-0"
               >
-                <h3 className="text-sm font-medium text-foreground">{item.profile}</h3>
-                <p className="text-sm text-muted leading-relaxed">{item.situation}</p>
+                <h3 className="text-xl font-medium text-foreground">{item.profile}</h3>
+                <p className="text-base text-muted leading-relaxed">{item.situation}</p>
               </li>
             ))}
           </ul>
@@ -347,7 +347,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               <h2 className="font-display text-display-sm text-foreground">
                 {landing.guarantee.title}
               </h2>
-              <div className="mt-6 space-y-4 text-muted leading-relaxed">
+              <div className="mt-6 space-y-4 text-reading text-muted">
                 {landing.guarantee.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
@@ -371,10 +371,10 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <h2 id={landing.priceSection.id} className={headingClass}>
               {landing.priceSection.title}
             </h2>
-            <p className="mt-4 max-w-2xl text-muted leading-relaxed">{landing.priceSection.body}</p>
+            <p className="mt-4 text-reading text-muted">{landing.priceSection.body}</p>
             <ul className="mt-6 space-y-3">
               {landing.priceSection.factors.map((factor) => (
-                <li key={factor} className="flex gap-3 text-sm text-muted leading-relaxed">
+                <li key={factor} className="flex gap-3 text-base text-muted leading-relaxed">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                   {factor}
                 </li>
@@ -396,14 +396,14 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors duration-200 hover:bg-surface hover:text-accent"
+                        className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-base text-muted transition-colors duration-200 hover:bg-surface hover:text-accent"
                       >
                         {item.label}
                       </Link>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-3 text-sm text-muted leading-relaxed">
+                <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">
                   Vevey, Crissier, Montreux et les autres communes sans page propre sont
                   indiquées dans les zones. Le siège est à Romont.
                 </p>
@@ -428,14 +428,14 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors duration-200 hover:bg-background hover:text-accent"
+                  className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-base text-muted transition-colors duration-200 hover:bg-background hover:text-accent"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <p className="mt-3 max-w-2xl text-sm text-muted leading-relaxed">
+          <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">
             Vevey, Crissier, Montreux et les autres communes sans page propre sont
             indiquées dans les zones. Le siège est à Romont.
           </p>
@@ -466,8 +466,8 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   : "rounded-xl border border-border/80 bg-white/70 p-6"
               }
             >
-              <h3 className="font-medium text-foreground">{item.title}</h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">{item.description}</p>
+              <h3 className="text-xl font-medium text-foreground">{item.title}</h3>
+              <p className="mt-2 text-base text-muted leading-relaxed">{item.description}</p>
             </li>
           ))}
         </ul>
@@ -481,7 +481,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           />
         ) : (
           <>
-            <Badge className="text-accent/90">FAQ</Badge>
+            <Badge className="text-accent">FAQ</Badge>
             <h2 className={`mt-4 ${headingClass}`}>
               {landing.faqHeading ?? `Questions fréquentes — ${service.shortTitle.toLowerCase()}`}
             </h2>
@@ -527,10 +527,10 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     </a>
                   ) : null}
                 </div>
-                <blockquote className="whitespace-pre-line text-sm text-muted leading-relaxed">
+                <blockquote className="whitespace-pre-line text-base text-muted leading-relaxed">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-4 text-sm font-medium text-foreground">
+                <figcaption className="mt-4 text-base font-medium text-foreground">
                   — {item.author}
                 </figcaption>
               </figure>
@@ -545,8 +545,8 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   : "mt-6 block rounded-xl border border-border/80 bg-white/70 p-5 transition-colors duration-200 hover:border-accent/40"
               }
             >
-              <p className="text-sm font-medium text-foreground">{landing.proofLink.label}</p>
-              <p className="mt-2 text-sm text-muted leading-relaxed">{landing.proofLink.detail}</p>
+              <p className="text-base font-medium text-foreground">{landing.proofLink.label}</p>
+              <p className="mt-2 text-base text-muted leading-relaxed">{landing.proofLink.detail}</p>
             </Link>
           ) : null}
         </PageMain>
@@ -555,7 +555,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
       <PageMain variant={closingVariant} density={bandDensity}>
         <div className={localWithPrice ? "grid gap-8" : "grid gap-8 lg:grid-cols-2"}>
           <ContentCard className={rhythm ? "border-border bg-background shadow-none" : undefined}>
-            <h2 className="font-display text-lg font-semibold text-foreground">Nos autres prestations</h2>
+            <h2 className="font-display text-xl font-semibold text-foreground">Nos autres prestations</h2>
             <ul className="mt-6 space-y-3">
               {relatedServices.map((item) => (
                 <li key={item.href}>
@@ -568,7 +568,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </ContentCard>
           {localWithPrice ? null : (
             <ContentCard className={rhythm ? "border-border bg-background shadow-none" : undefined}>
-              <h2 className="font-display text-lg font-semibold text-foreground">
+              <h2 className="font-display text-xl font-semibold text-foreground">
                 Nous intervenons aussi près de chez vous
               </h2>
               <ul className="mt-6 space-y-3">
@@ -576,7 +576,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm text-muted transition-colors hover:text-accent"
+                      className="text-base text-muted transition-colors hover:text-accent"
                     >
                       {item.label}
                     </Link>
