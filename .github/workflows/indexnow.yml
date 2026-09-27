@@ -26,6 +26,7 @@ jobs:
           node-version: "22"
 
       - name: Wait for Vercel production
+        if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
