@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { services } from "@/data/services";
 import { getServicePath } from "@/lib/service-paths";
 import { TextLink } from "@/components/ui/TextLink";
+
+function prestationImageAlt(src: string, label: string) {
+  return services.find((service) => service.image.src === src)?.image.alt ?? label;
+}
 
 const homePrestations = [
   {
@@ -69,7 +74,7 @@ export function HomePrestationsGrid() {
               <div className="relative hidden aspect-[4/3] overflow-hidden bg-surface sm:block">
                 <Image
                   src={item.image}
-                  alt=""
+                  alt={prestationImageAlt(item.image, item.label)}
                   fill
                   className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.03]"
                   sizes="176px"
