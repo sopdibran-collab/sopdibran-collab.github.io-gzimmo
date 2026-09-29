@@ -1,5 +1,5 @@
 import type { FaqContent, FaqItem } from "@/data/faq";
-import { faq, getFaqById, getFaqsByIds } from "@/data/faq";
+import { faq, getFaqsByIds } from "@/data/faq";
 import { finDeBailPriceFaqs } from "@/data/fin-de-bail-faq";
 import { featuredGoogleReview, googleReviews } from "@/data/google-reviews";
 import { getServicePath } from "@/lib/service-paths";
@@ -16,7 +16,10 @@ export type ServiceLanding = {
   audienceHeading?: string;
   whyHeading?: string;
   faqHeading?: string;
-  sections?: { id?: string; title: string; body: string; href?: string }[];
+  sections?: { id?: string; title: string; body: string; points?: string[]; href?: string }[];
+  inclusionHeading?: string;
+  zonesHeading?: string;
+  zonesNote?: string;
   /** Cartes courtes plutôt que paragraphes empilés. */
   sectionLayout?: "stack" | "grid";
   inclusionGroups?: { title: string; items: string[] }[];
@@ -171,20 +174,25 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-apres-chantier",
-    h1: "Nettoyage après chantier",
+    h1: "Nettoyage après rénovation, chantier et travaux",
     subtitle:
-      "Que ce soit après la construction d'une maison neuve ou la rénovation d'un appartement, notre équipe assure un nettoyage après travaux complet et rapide.",
-    metaTitle: "Nettoyage après chantier et rénovation | Gzimmo",
+      "Poussière fine, voile de ciment, traces de peinture : nous remettons le lieu en état pour que vous puissiez emménager ou livrer.",
+    metaTitle: "Nettoyage après rénovation et chantier | Gzimmo",
     metaDescription:
-      "Nettoyage après chantier, rénovation, construction ou travaux. Fin de chantier depuis Romont. Devis gratuit. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
+      "Devis gratuit sous 24 h pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg, Vaud, Neuchâtel.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
+    preferCallCta: true,
     showInterventionZones: true,
     processBeforeAudience: true,
     visualRhythm: true,
-    audienceHeading: "Pour qui ?",
+    audienceHeading: "Particuliers, promoteurs et régies",
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
+    inclusionHeading: "Checklist d'intervention : ce qui est inclus",
+    zonesHeading: "Zones d'intervention en Suisse romande",
+    zonesNote:
+      "Depuis Romont (FR), nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel : Bulle, Fribourg, Lausanne, Nyon et Yverdon, ainsi que les communes listées ci-dessous. Siège : Route de Raboud 8.",
     schemaServiceTypes: [
       "Nettoyage après chantier",
       "Nettoyage après rénovation",
@@ -193,151 +201,177 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage de fin de chantier",
     ],
     intro:
-      "On enlève ce que les artisans laissent — poussières fines, peinture, joints — pour que le lieu soit habitable ou livrable. Depuis Romont.",
-    sectionLayout: "grid",
+      "Le devis est gratuit et clair sous 24 h. Depuis Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Téléphone : 076 214 23 42.",
+    relatedNote: {
+      text: "Travaux dans un logement loué, puis état des lieux de sortie : la checklist régie est une autre prestation.",
+      linkLabel: "Nettoyage de fin de bail",
+      href: "/nettoyage-fin-de-bail",
+    },
+    sectionLayout: "stack",
     sections: [
       {
-        id: "renovation",
-        title: "Après une rénovation",
-        body: "Plâtre et peinture sur des surfaces neuves. Pour habiter.",
+        id: "renovation-interieur",
+        title: "Remise en état après rénovation d'intérieur (particuliers)",
+        body: "Vous venez de rénover un appartement ou une villa et vous voulez emménager sans poussière fine. Cuisine, salle de bain, peinture ou pose de carrelage laissent des résidus qu'un ménage habituel ne retire pas.",
+        points: [
+          "Cuisine : dégraissage, voile de ciment et laitance sur le carrelage neuf.",
+          "Salle de bain : traces de silicone, joints et sanitaires après la pose.",
+          "Peinture : projections sur sols, châssis, prises et interrupteurs.",
+          "Poussière de plâtre dans les placards, les radiateurs et les aérations.",
+        ],
       },
       {
-        id: "construction",
-        title: "Après une construction",
-        body: "Poussières et joints. Pour la réception d'un neuf.",
-      },
-      {
-        id: "travaux",
-        title: "Après des travaux",
-        body: "Poussière fine dans les radiateurs, les prises et les joints.",
-      },
-      {
-        id: "reception",
-        title: "Avant la réception",
-        body: "Le passage de fin de chantier, calé sur la date de livraison.",
-        href: "#fin-de-chantier",
-      },
-      {
-        id: "remise-des-cles",
-        title: "Avant la remise des clés",
-        body: "Autre besoin : l'état des lieux et la checklist régie.",
-        href: "/nettoyage-fin-de-bail",
+        id: "fin-de-chantier-pro",
+        title: "Nettoyage de fin de chantier et construction neuve (promoteurs et régies)",
+        body: "La réception d'un chantier neuf, la livraison d'un lot ou le passage avant un état des lieux demandent des finitions présentables. Promoteurs, entreprises générales et régies calent ce nettoyage sur la date de livraison.",
+        points: [
+          "Réception de chantier neuf et livraison de lots.",
+          "Remise en état après travaux locatifs, avant une relocation.",
+          "Vitres, châssis, sols et sanitaires repris avant la visite.",
+        ],
       },
     ],
     inclusionGroups: [
       {
-        title: "Surfaces",
-        items: ["Sols", "Carrelage", "Parquet", "Béton ciré", "Plinthes", "Menuiseries"],
+        title: "Sols",
+        items: [
+          "Décapage des sols (carrelage, parquet, béton ciré)",
+          "Laitance de carrelage et voile de ciment",
+          "Dégraissage des surfaces grasses",
+          "Plinthes",
+        ],
       },
       {
-        title: "Résidus de chantier",
-        items: ["Poussière de plâtre", "Ciment", "Sciure", "Traces de peinture", "Silicone", "Joints"],
+        title: "Vitres et châssis",
+        items: [
+          "Vitres intérieures et extérieures",
+          "Châssis, rails et encadrements",
+          "Projections et traces de peinture",
+          "Résidus de silicone",
+        ],
       },
       {
         title: "Équipements",
-        items: ["Vitres", "Sanitaires", "Cuisine", "Radiateurs", "Prises", "Interrupteurs"],
+        items: [
+          "Sanitaires et robinetterie",
+          "Radiateurs",
+          "Prises et interrupteurs",
+          "Intérieurs de placards",
+          "Cuisine : plans de travail et évier",
+        ],
+      },
+      {
+        title: "Dépoussiérage fin",
+        items: [
+          "Poussière fine de plâtre",
+          "Sciure de bois",
+          "Aérations, bouches de VMC et conduits accessibles",
+          "Menuiseries et surfaces en hauteur",
+        ],
       },
     ],
     forWho: [
       {
         profile: "Particulier",
         situation:
-          "Vous venez de rénover cuisine, salle de bain ou appartement et voulez habiter sans poussière fine.",
+          "Cuisine, salle de bain ou appartement rénové : vous emménagez dès que la poussière fine est partie.",
       },
       {
         profile: "Promoteur",
         situation:
-          "Vous livrez un lot et devez présenter des finitions propres à la réception. Les entreprises générales qui mandatent le nettoyage final avant cette réception suivent le même passage.",
+          "Vous livrez un lot et présentez des finitions propres à la réception. Les entreprises générales qui mandatent le passage final suivent le même calendrier.",
       },
       {
         profile: "Régie",
         situation:
-          "Remise en état après travaux locatifs, avant une remise en location. Si un état des lieux de fin de bail suit, cette checklist est une prestation distincte.",
+          "Remise en état après travaux locatifs, avant une relocation. L'état des lieux de fin de bail, lui, suit la checklist régie.",
       },
     ],
     process: {
       id: "fin-de-chantier",
-      title: "Comment ça se passe",
-      numbered: true,
+      title: "Comment se passe le passage",
       items: [
-        "Vous décrivez le chantier. Devis gratuit sous 24 h.",
-        "On cale le passage sur la date de réception, si le planning le permet.",
-        "Surfaces, résidus et équipements sont traités sans abîmer les finitions neuves.",
+        "Vous décrivez le chantier au 076 214 23 42. Devis gratuit et clair sous 24 h.",
+        "Le passage est calé sur la date de réception, si le planning le permet.",
+        "Sols, résidus et équipements sont traités sans abîmer les finitions neuves.",
         "Les déchets de nettoyage partent en fin d'intervention.",
       ],
     },
     priceSection: {
       id: "prix",
-      title: "Combien ça coûte ?",
-      body: "Il n'y a pas de forfait unique. Le devis est gratuit, sous 24 h, sans engagement : le tarif convenu est le tarif final. Le montant dépend du chantier réel, pas d'un prix au mètre carré publié.",
+      title: "Combien coûte un nettoyage après rénovation ou chantier ?",
+      body: "Il n'y a pas de forfait fixe au mètre carré. Le devis est gratuit, clair, établi sous 24 h, selon le niveau de poussière fine et le type de résidus. Le tarif convenu est le tarif final.",
       factors: [
-        "Surface à traiter",
-        "Type de travaux : plâtre, peinture, carrelage",
         "Niveau de poussière fine laissé par les artisans",
+        "Résidus : voile de ciment, laitance de carrelage, peinture, silicone, sciure",
+        "Surface du logement ou du lot, et date de réception",
       ],
     },
     whyGzimmo: [
       {
-        title: "Spécialistes de la poussière de rénovation",
+        title: "Poussière fine de rénovation",
         description:
-          "Ce n'est pas un ménage standard : on traite les zones où la poussière fine reste après les artisans.",
+          "Le passage vise les endroits où le plâtre, la peinture et la coupe restent : radiateurs, prises, joints, placards, aérations.",
       },
       {
-        title: "Avis Google après chantier",
+        title: "Avis Google après rénovation",
         description:
-          "Des clients ont noté notre intervention après rénovation sur Google Maps — détail et lieu prêt à être utilisé.",
+          "Des clients ont décrit sur Google le résultat après rénovation et fin de chantier : lieu prêt à être utilisé, détails soignés.",
       },
       {
-        title: "Planning calé sur la livraison",
+        title: "Date de réception",
         description:
-          "On intervient selon votre réception, pas « quand on peut ». Devis sous 24 h depuis Romont.",
+          "Le passage se cale sur la livraison ou l'état des lieux, lorsque la date est connue et que le planning le permet.",
       },
-      ...sharedWhy,
+      {
+        title: "Produits professionnels fournis",
+        description:
+          "Gzimmo amène les produits, choisis selon le matériau. Vous n'avez rien à fournir.",
+      },
     ],
     faqs: [
-      ...sharedFaqs,
       faq(
-        "apres-renovation-ou-chantier",
-        "prestations",
-        "Nettoyage après rénovation, construction ou travaux : quelle différence ?",
-        "Les résidus changent : plâtre et peinture après rénovation, poussières de construction sur un neuf, traces localisées après des travaux. Le nettoyage de fin de chantier est le passage commun — enlever ce que les artisans laissent, pour habiter ou livrer. La checklist s'adapte (plâtre, peinture, carrelage, menuiseries).",
-      ),
-      faq(
-        "poussiere-fine",
+        "menage-vs-renovation",
         "qualite",
-        "Pourquoi un ménage classique ne suffit-il pas après travaux ?",
-        "La poussière de plâtre et de coupe se loge dans les radiateurs, joints, prises et textiles. Sans aspiration ciblée et lessivage adapté, elle réapparaît dès qu'on ouvre une fenêtre ou qu'on chauffe.",
+        "Quelle différence entre un ménage classique et un nettoyage après rénovation ?",
+        "Un ménage classique enlève la poussière du quotidien. Après rénovation, chantier ou travaux, la poussière fine de plâtre et de coupe se loge dans les radiateurs, les joints, les prises, les placards et les textiles. Sans dépoussiérage ciblé et sans lessivage adapté aux finitions neuves, elle réapparaît dès que l'on aère ou que l'on chauffe.",
       ),
       faq(
-        "delai-livraison-chantier",
-        "delais",
-        "Pouvez-vous intervenir juste avant une livraison ou un état des lieux ?",
-        "Oui, si le planning le permet. Prévenez-nous dès que la date de réception est connue — idéalement quelques jours à l'avance. En urgence, contactez le 076 214 23 42.",
-      ),
-      faq(
-        "apres-chantier-ou-fin-bail",
+        "laitance-vmc",
         "prestations",
-        "Quelle différence entre nettoyage après chantier et fin de bail ?",
-        "Après chantier (rénovation, construction, travaux), on enlève poussières fines et résidus pour une livraison ou un emménagement. La fin de bail vise l'état des lieux et les standards de la régie — sanitaires, cuisine, joints, vitres — pour la remise des clés. Les deux peuvent se succéder sur un même logement.",
+        "Enlevez-vous la laitance de carrelage et la poussière fine dans les VMC ?",
+        "Oui. La laitance et le voile de ciment sur un carrelage neuf font partie du passage, de même que le dépoussiérage des aérations, des bouches de VMC et des conduits accessibles. Le traitement dépend du résidu et du matériau : il est précisé dans le devis.",
       ),
       faq(
-        "prix-apres-chantier",
-        "tarifs",
-        "Combien coûte un nettoyage après rénovation ou après chantier ?",
-        "Le tarif dépend de la surface, du type de travaux (plâtre, peinture, carrelage) et du niveau de poussière. Devis gratuit sous 24 h, sans engagement — pas de forfait unique, pour rester juste vis-à-vis de votre chantier.",
+        "delai-devis-chantier",
+        "delais",
+        "Sous quel délai recevons-nous le devis ?",
+        "Sous 24 h. Appelez le 076 214 23 42 et décrivez le logement ou le lot, le type de travaux et la date de réception. Le devis est gratuit, clair, sans engagement.",
       ),
-      getFaqById("apres-chantier")!,
+      faq(
+        "produits-apres-chantier",
+        "prestations",
+        "Fournissez-vous les produits professionnels ?",
+        "Oui. Gzimmo amène les produits, exclusivement professionnels, choisis selon les surfaces : carrelage, parquet, verre, sanitaires. Vous n'avez rien à fournir.",
+      ),
+      faq(
+        "passage-avant-reception",
+        "delais",
+        "Pouvez-vous passer avant la réception ou l'état des lieux ?",
+        "Oui, lorsque la date est connue à l'avance et que le planning le permet. Le passage de fin de chantier se cale avant la réception ou l'état des lieux. Prévenez-nous dès que le jour est fixé. La garantie de remise de bail — retour sans frais si la régie refuse un point — concerne le nettoyage de fin de bail, qui est une autre prestation.",
+      ),
     ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "conciergerie", "nettoyage-vitres"],
     relatedLocalLinks: [
       { label: "Romont", href: "/seo/nettoyage-romont" },
       { label: "Fribourg", href: "/seo/nettoyage-fribourg" },
       { label: "Bulle", href: "/seo/nettoyage-bulle" },
-      { label: "Payerne", href: "/seo/nettoyage-payerne" },
       { label: "Lausanne", href: "/seo/nettoyage-lausanne" },
-      { label: "Yverdon", href: "/seo/nettoyage-yverdon-les-bains" },
-      { label: "Morges", href: "/seo/nettoyage-morges" },
       { label: "Nyon", href: "/seo/nettoyage-nyon" },
+      { label: "Yverdon", href: "/seo/nettoyage-yverdon-les-bains" },
+      { label: "Payerne", href: "/seo/nettoyage-payerne" },
+      { label: "Morges", href: "/seo/nettoyage-morges" },
+      { label: "Neuchâtel", href: "/seo/nettoyage-neuchatel" },
     ],
     testimonials: [
       {

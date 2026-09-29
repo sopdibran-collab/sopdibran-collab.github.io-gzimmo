@@ -123,6 +123,10 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
     landing.testimonials.length > 0 ? (rhythm ? "paper" : nextVariant()) : null;
   const closingVariant: BandVariant = rhythm ? "soft" : nextVariant();
   const localWithPrice = Boolean(landing.priceSection && landing.showInterventionZones);
+  const zonesHeading = landing.zonesHeading ?? "Où intervenons-nous ?";
+  const zonesNote =
+    landing.zonesNote ??
+    "Vevey, Crissier, Montreux et les autres communes sans page propre sont indiquées dans les zones. Le siège est à Romont.";
   const bandDensity = rhythm ? "band" : "default";
   const headingClass = "scroll-mt-28 font-display text-display-sm text-foreground";
 
@@ -277,6 +281,16 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     {section.title}
                   </h2>
                   <p className="mt-4 text-reading text-muted">{section.body}</p>
+                  {section.points?.length ? (
+                    <ul className="mt-4 space-y-3">
+                      {section.points.map((point) => (
+                        <li key={point} className="flex gap-3 text-base text-muted leading-relaxed">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </ContentCard>
               ))}
             </div>
@@ -288,18 +302,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
       {landing.inclusionGroups?.length ? (
         <PageMain variant={inclusVariant} density={bandDensity}>
           <h2 id="inclus" className={headingClass}>
-            Ce qui est inclus
+            {landing.inclusionHeading ?? "Ce qui est inclus"}
           </h2>
-          <div className="mt-8 grid gap-8 md:grid-cols-3">
-            {landing.inclusionGroups.map((group, index) => (
-              <div
-                key={group.title}
-                className={
-                  index > 0
-                    ? "border-t border-border pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-8"
-                    : undefined
-                }
-              >
+          <div className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2">
+            {landing.inclusionGroups.map((group) => (
+              <div key={group.title} className="bg-background p-6 sm:p-8">
                 <h3 className="text-xl font-medium text-foreground">{group.title}</h3>
                 <ul className="mt-3 space-y-2">
                   {group.items.map((item) => (
@@ -389,7 +396,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <>
               <div className="mt-12">
                 <h2 id="local" className={headingClass}>
-                  Où intervenons-nous ?
+                  {zonesHeading}
                 </h2>
                 <ul className="mt-5 flex flex-wrap gap-x-1 gap-y-2">
                   {landing.relatedLocalLinks.map((item) => (
@@ -403,10 +410,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">
-                  Vevey, Crissier, Montreux et les autres communes sans page propre sont
-                  indiquées dans les zones. Le siège est à Romont.
-                </p>
+                <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">{zonesNote}</p>
               </div>
               <InterventionZones
                 className="mt-8 border-t-0 pt-0"
@@ -421,7 +425,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
       {rhythm && localWithPrice ? (
         <PageMain variant="soft" density="band">
           <h2 id="local" className={headingClass}>
-            Où intervenons-nous ?
+            {zonesHeading}
           </h2>
           <ul className="mt-5 flex flex-wrap gap-x-1 gap-y-2">
             {landing.relatedLocalLinks.map((item) => (
@@ -435,10 +439,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </li>
             ))}
           </ul>
-          <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">
-            Vevey, Crissier, Montreux et les autres communes sans page propre sont
-            indiquées dans les zones. Le siège est à Romont.
-          </p>
+          <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">{zonesNote}</p>
           <InterventionZones
             className="mt-8 border-t-0 pt-0"
             compact
