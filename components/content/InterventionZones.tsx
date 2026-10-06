@@ -11,9 +11,18 @@ type InterventionZonesProps = {
   compact?: boolean;
   /** When rendered as its own page section, drop the top hairline separator. */
   className?: string;
-  /** Chips sur fond SOFT : le survol repasse au blanc, pas au même gris. */
+  /** Section parente sur fond gris : carte blanche, pastilles grises. */
   onSoft?: boolean;
 };
+
+function placeChipClass(onSoft: boolean, linked: boolean) {
+  return cn(
+    "inline-flex min-h-9 items-center rounded-md border border-border px-3 text-sm font-medium text-foreground transition-colors duration-200",
+    onSoft ? "bg-surface" : "bg-background",
+    linked &&
+      "hover:border-accent/40 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent",
+  );
+}
 
 /** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
 export function InterventionZones({
@@ -42,27 +51,25 @@ export function InterventionZones({
         </>
       )}
 
-      <div className={cn("grid gap-10 lg:grid-cols-2", compact ? "mt-8" : "mt-10")}>
+      <div className={cn("flex flex-col gap-4", compact ? "mt-8" : "mt-10")}>
         {interventionCantons.map((group) => (
-          <div key={group.id}>
+          <div
+            key={group.id}
+            className={cn(
+              "rounded-xl border border-border px-5 py-5 sm:px-6",
+              onSoft ? "bg-background" : "bg-surface",
+            )}
+          >
             <h3 className="font-display text-lg font-semibold text-foreground">{group.heading}</h3>
-            <ul className="mt-4 flex flex-wrap gap-x-1 gap-y-2">
+            <ul className="mt-4 flex flex-wrap gap-2">
               {group.places.map((place) => (
                 <li key={place.name}>
                   {place.href ? (
-                    <Link
-                      href={place.href}
-                      className={cn(
-                        "inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-sm text-muted transition-colors duration-200 hover:text-accent",
-                        onSoft ? "hover:bg-background" : "hover:bg-surface",
-                      )}
-                    >
+                    <Link href={place.href} className={placeChipClass(onSoft, true)}>
                       {place.name}
                     </Link>
                   ) : (
-                    <span className="inline-flex rounded-md px-2.5 py-1 text-sm text-muted">
-                      {place.name}
-                    </span>
+                    <span className={placeChipClass(onSoft, false)}>{place.name}</span>
                   )}
                 </li>
               ))}
