@@ -83,9 +83,9 @@ export const services: Service[] = [
     title: "Nettoyage après chantier",
     shortTitle: "Nettoyage après chantier",
     description:
-      "Remise en état après chantier, rénovation, construction ou travaux : poussières fines, sols, vitres.",
+      "Remise en état après rénovation, chantier ou travaux : poussière fine, laitance, sols et vitres.",
     intro:
-      "Nous transformons un chantier en espace prêt à être habité ou livré.",
+      "Après rénovation ou fin de chantier, le lieu est prêt à être habité ou livré.",
     benefits: [
       "Élimination des poussières fines",
       "Vitres, sols et surfaces traités",
