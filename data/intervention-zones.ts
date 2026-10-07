@@ -11,7 +11,10 @@ export type InterventionPlace = {
 export type InterventionCanton = {
   id: string;
   canton: string;
+  /** Abréviation cantonale, utile pour scanner les cartes. */
+  code: string;
   heading: string;
+  description: string;
   places: InterventionPlace[];
 };
 
@@ -19,7 +22,9 @@ export const interventionCantons: InterventionCanton[] = [
   {
     id: "fribourg",
     canton: "Fribourg",
+    code: "FR",
     heading: "Canton de Fribourg",
+    description: "Siège à Romont. Nettoyage et entretien dans le canton et les communes listées.",
     places: [
       { name: "Romont", href: "/seo/nettoyage-romont" },
       { name: "Fribourg", href: "/seo/nettoyage-fribourg" },
@@ -33,7 +38,9 @@ export const interventionCantons: InterventionCanton[] = [
   {
     id: "vaud",
     canton: "Vaud",
+    code: "VD",
     heading: "Canton de Vaud — de Bex à Nyon",
+    description: "Interventions dans le canton, y compris les communes sans page propre.",
     places: [
       { name: "Lausanne", href: "/seo/nettoyage-lausanne" },
       { name: "Yverdon-les-Bains", href: "/seo/nettoyage-yverdon-les-bains" },
@@ -52,7 +59,9 @@ export const interventionCantons: InterventionCanton[] = [
   {
     id: "neuchatel",
     canton: "Neuchâtel",
+    code: "NE",
     heading: "Canton de Neuchâtel",
+    description: "Intervention à Neuchâtel, depuis Romont.",
     places: [{ name: "Neuchâtel", href: "/seo/nettoyage-neuchatel" }],
   },
 ];

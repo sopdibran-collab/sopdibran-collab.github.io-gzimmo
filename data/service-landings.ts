@@ -190,7 +190,7 @@ export const serviceLandings: ServiceLanding[] = [
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     inclusionHeading: "Checklist d'intervention : ce qui est inclus",
-    zonesHeading: "Zones d'intervention en Suisse romande",
+    zonesHeading: "Nos zones d'intervention en Suisse romande",
     zonesNote:
       "Depuis Romont (FR), nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel : Bulle, Fribourg, Lausanne, Nyon et Yverdon, ainsi que les communes listées ci-dessous. Siège : Route de Raboud 8.",
     schemaServiceTypes: [

@@ -123,10 +123,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
     landing.testimonials.length > 0 ? (rhythm ? "paper" : nextVariant()) : null;
   const closingVariant: BandVariant = rhythm ? "soft" : nextVariant();
   const localWithPrice = Boolean(landing.priceSection && landing.showInterventionZones);
-  const zonesHeading = landing.zonesHeading ?? "Où intervenons-nous ?";
-  const zonesNote =
-    landing.zonesNote ??
-    "Vevey, Crissier, Montreux et les autres communes sans page propre sont indiquées dans les zones. Le siège est à Romont.";
+  const zonesHeading = landing.zonesHeading ?? "Nos zones d'intervention en Suisse romande";
   const bandDensity = rhythm ? "band" : "default";
   const headingClass = "scroll-mt-28 font-display text-display-sm text-foreground";
 
@@ -393,57 +390,23 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </ContentCard>
 
           {localWithPrice && !rhythm ? (
-            <>
-              <div className="mt-12">
-                <h2 id="local" className={headingClass}>
-                  {zonesHeading}
-                </h2>
-                <ul className="mt-5 flex flex-wrap gap-x-1 gap-y-2">
-                  {landing.relatedLocalLinks.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-base text-muted transition-colors duration-200 hover:bg-surface hover:text-accent"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">{zonesNote}</p>
-              </div>
-              <InterventionZones
-                className="mt-8 border-t-0 pt-0"
-                compact
-                servicePhrase="nettoyage après chantier"
-              />
-            </>
+            <InterventionZones
+              className="mt-12 border-t-0 pt-0"
+              heading={zonesHeading}
+              devisHref={`/contact?service=${landing.slug}`}
+              servicePhrase="nettoyage après chantier"
+            />
           ) : null}
         </PageMain>
       ) : null}
 
       {rhythm && localWithPrice ? (
         <PageMain variant="soft" density="band">
-          <h2 id="local" className={headingClass}>
-            {zonesHeading}
-          </h2>
-          <ul className="mt-5 flex flex-wrap gap-x-1 gap-y-2">
-            {landing.relatedLocalLinks.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-base text-muted transition-colors duration-200 hover:bg-background hover:text-accent"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-3 max-w-[65ch] text-base text-muted leading-relaxed">{zonesNote}</p>
           <InterventionZones
-            className="mt-8 border-t-0 pt-0"
-            compact
+            className="mt-0 border-0 pt-0"
             onSoft
+            heading={zonesHeading}
+            devisHref={`/contact?service=${landing.slug}`}
             servicePhrase="nettoyage après chantier"
           />
         </PageMain>
@@ -591,6 +554,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         {landing.showInterventionZones && !localWithPrice ? (
           <InterventionZones
             className="mt-16 border-t-0 pt-0"
+            devisHref={`/contact?service=${landing.slug}`}
             servicePhrase="nettoyage fin de bail"
           />
         ) : null}
