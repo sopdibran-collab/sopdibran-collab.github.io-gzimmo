@@ -39,9 +39,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300",
         solidChrome
-          ? "border-b border-white/10 bg-[#1e2227]/96 backdrop-blur-md"
+          ? "border-b border-white/10 bg-[#1e2227]"
           : "border-b border-transparent bg-transparent",
       )}
     >
