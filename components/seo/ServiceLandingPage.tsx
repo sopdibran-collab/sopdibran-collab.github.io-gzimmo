@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import type { ServiceLanding } from "@/data/service-landings";
 import { getRelatedServices } from "@/data/service-landings";
@@ -13,13 +14,13 @@ import { InterventionZones } from "@/components/content/InterventionZones";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/Badge";
-import { ContentCard } from "@/components/ui/ContentCard";
 import { ConversionCta } from "@/components/ui/ConversionCta";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { NapBlock, ReassuranceBand } from "@/components/ui/ReassuranceBand";
 import { TextLink } from "@/components/ui/TextLink";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/schema";
 import { getServicePath } from "@/lib/service-paths";
+import { cn } from "@/lib/utils";
 
 type ServiceLandingPageProps = {
   landing: ServiceLanding;
@@ -27,56 +28,78 @@ type ServiceLandingPageProps = {
 
 type BandVariant = "default" | "surface" | "paper" | "soft";
 
+function BandBlock({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <div className={cn("border-t-2 border-accent pt-8", className)}>{children}</div>;
+}
+
+function ProcessItems({ landing }: { landing: ServiceLanding }) {
+  const preview = landing.process.items.slice(0, 4);
+  const rest = landing.process.items.slice(4);
+  const numbered = Boolean(landing.process.numbered);
+
+  const list = (items: string[], start: number) =>
+    numbered ? (
+      <ol className="space-y-4" start={start}>
+        {items.map((item, index) => (
+          <li key={item} className="flex gap-4 text-base leading-relaxed text-muted">
+            <span className="font-display text-base font-semibold text-accent-ink" aria-hidden="true">
+              {start + index}
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ol>
+    ) : (
+      <ul className="space-y-3">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3 text-base leading-relaxed text-muted">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    );
+
+  return (
+    <>
+      <div className="mt-6">{list(preview, 1)}</div>
+      {rest.length > 0 ? (
+        <details className="mt-4 border-t border-border">
+          <summary className="flex min-h-11 cursor-pointer items-center py-3 text-sm font-medium text-foreground">
+            Suite de la checklist ({rest.length})
+          </summary>
+          <div className="pb-2">{list(rest, preview.length + 1)}</div>
+        </details>
+      ) : null}
+    </>
+  );
+}
+
 function ProcessSection({
   landing,
   variant,
-  rhythm = false,
 }: {
   landing: ServiceLanding;
   variant: BandVariant;
   rhythm?: boolean;
 }) {
   return (
-    <PageMain variant={variant} density={rhythm ? "band" : "default"}>
-      <ContentCard
-        className={
-          rhythm ? "max-w-3xl border-border bg-background shadow-none" : undefined
-        }
-      >
+    <PageMain variant={variant} density="band">
+      <BandBlock className="max-w-3xl">
         <h2
           id={landing.process.id}
           className="scroll-mt-28 font-display text-display-sm text-foreground"
         >
           {landing.process.title}
         </h2>
-        {landing.process.numbered ? (
-          <ol className="mt-6 space-y-4">
-            {landing.process.items.map((item, index) => (
-              <li key={item} className="flex gap-4 text-base text-muted leading-relaxed">
-                <span className="font-display text-base font-semibold text-accent" aria-hidden="true">
-                  {index + 1}
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <ul className="mt-6 space-y-3">
-            {landing.process.items.map((item) => (
-              <li key={item} className="flex gap-3 text-base text-muted leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        )}
-        <ConversionCta
-          className="mt-8"
-          devisHref={`/contact?service=${landing.slug}`}
-          devisLabel={landing.heroCtaLabel}
-          preferCall={landing.preferCallCta}
-        />
-      </ContentCard>
+        <ProcessItems landing={landing} />
+      </BandBlock>
     </PageMain>
   );
 }
@@ -124,7 +147,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
   const closingVariant: BandVariant = rhythm ? "soft" : nextVariant();
   const localWithPrice = Boolean(landing.priceSection && landing.showInterventionZones);
   const zonesHeading = landing.zonesHeading ?? "Nos zones d'intervention en Suisse romande";
-  const bandDensity = rhythm ? "band" : "default";
+  const bandDensity = "band" as const;
   const headingClass = "scroll-mt-28 font-display text-display-sm text-foreground";
 
   return (
@@ -152,7 +175,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         <FadeIn>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div className="max-w-xl">
-              <Badge className={rhythm ? "text-white/60" : "text-accent"}>
+              <Badge className={rhythm ? "text-white/60" : "text-accent-ink"}>
                 {service.shortTitle}
               </Badge>
               <h1
@@ -176,17 +199,13 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               <ConversionCta
                 className="mt-8"
                 devisHref={`/contact?service=${landing.slug}`}
-                devisLabel={landing.heroCtaLabel}
-                preferCall={landing.preferCallCta}
+                devisLabel={landing.heroCtaLabel ?? "Demander un devis gratuit"}
+                tone={rhythm ? "dark" : "default"}
               />
               <ReassuranceBand className="mt-8" tone={rhythm ? "dark" : "default"} />
             </div>
             <div
-              className={
-                rhythm
-                  ? "relative aspect-[2/1] overflow-hidden rounded-2xl border border-white/15 sm:aspect-[3/2] lg:aspect-[4/3]"
-                  : "relative aspect-[3/2] overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(30,34,39,0.1)] lg:aspect-[4/3]"
-              }
+              className="relative aspect-[3/2] overflow-hidden lg:aspect-[4/3]"
             >
               <Image
                 src={service.image.src}
@@ -198,12 +217,6 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              {rhythm ? null : (
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent"
-                />
-              )}
             </div>
           </div>
         </FadeIn>
@@ -246,13 +259,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                       </h3>
                       <p className="mt-2 text-base text-muted leading-relaxed">{section.body}</p>
                       {section.href ? (
-                        <span className="mt-3 inline-block text-base font-medium text-accent">Voir →</span>
+                        <span className="mt-3 inline-block text-base font-medium text-accent-ink">Voir →</span>
                       ) : null}
                     </>
                   );
-                  const cardFrame = rhythm
-                    ? "h-full rounded-xl border border-border bg-background p-5"
-                    : "h-full rounded-xl border border-border/80 bg-white/70 p-5";
+                  const cardFrame = "h-full border-t-2 border-accent bg-transparent pt-5";
                   return (
                     <li key={section.title}>
                       {section.href ? (
@@ -271,9 +282,9 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </ul>
             </div>
           ) : (
-            <div className="mt-12 space-y-8">
+            <div className="mt-12 space-y-10">
               {landing.sections.map((section) => (
-                <ContentCard key={section.title}>
+                <BandBlock key={section.title}>
                   <h2 id={section.id} className={headingClass}>
                     {section.title}
                   </h2>
@@ -281,14 +292,14 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   {section.points?.length ? (
                     <ul className="mt-4 space-y-3">
                       {section.points.map((point) => (
-                        <li key={point} className="flex gap-3 text-base text-muted leading-relaxed">
+                        <li key={point} className="flex gap-3 text-base leading-relaxed text-muted">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                           {point}
                         </li>
                       ))}
                     </ul>
                   ) : null}
-                </ContentCard>
+                </BandBlock>
               ))}
             </div>
           )
@@ -347,7 +358,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
       {offerVariant ? (
         <PageMain variant={offerVariant} density={bandDensity}>
           {landing.guarantee ? (
-            <ContentCard className="border-accent/20 bg-accent-muted/30">
+            <BandBlock>
               <h2 className="font-display text-display-sm text-foreground">
                 {landing.guarantee.title}
               </h2>
@@ -356,7 +367,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
               </div>
-            </ContentCard>
+            </BandBlock>
           ) : null}
 
           {landing.showPriceQuote ? (
@@ -367,27 +378,23 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
       {priceVariant && landing.priceSection ? (
         <PageMain variant={priceVariant} density={bandDensity}>
-          <ContentCard
-            className={
-              rhythm ? "max-w-3xl border-border bg-background shadow-none" : undefined
-            }
-          >
+          <BandBlock className="max-w-3xl">
             <h2 id={landing.priceSection.id} className={headingClass}>
               {landing.priceSection.title}
             </h2>
             <p className="mt-4 text-reading text-muted">{landing.priceSection.body}</p>
             <ul className="mt-6 space-y-3">
               {landing.priceSection.factors.map((factor) => (
-                <li key={factor} className="flex gap-3 text-base text-muted leading-relaxed">
+                <li key={factor} className="flex gap-3 text-base leading-relaxed text-muted">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                   {factor}
                 </li>
               ))}
             </ul>
-            <TextLink className="mt-8" href={`/contact?service=${landing.slug}`}>
+            <TextLink className="mt-6" href={`/contact?service=${landing.slug}`}>
               Demander un devis gratuit
             </TextLink>
-          </ContentCard>
+          </BandBlock>
 
           {localWithPrice && !rhythm ? (
             <InterventionZones
@@ -420,21 +427,17 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         <h2 className={headingClass}>
           {landing.whyHeading ?? "Pourquoi choisir Gzimmo ?"}
         </h2>
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+        <ul className="mt-8 divide-y divide-border border-t-2 border-accent">
           {landing.whyGzimmo.map((item) => (
-            <li
-              key={item.title}
-              className={
-                rhythm
-                  ? "rounded-xl border border-border bg-surface p-6"
-                  : "rounded-xl border border-border/80 bg-white/70 p-6"
-              }
-            >
+            <li key={item.title} className="py-5">
               <h3 className="text-xl font-medium text-foreground">{item.title}</h3>
-              <p className="mt-2 text-base text-muted leading-relaxed">{item.description}</p>
+              <p className="mt-2 text-base leading-relaxed text-muted">{item.description}</p>
             </li>
           ))}
         </ul>
+        <TextLink className="mt-6" href="/#pourquoi">
+          Pourquoi Gzimmo
+        </TextLink>
       </PageMain>
 
       <PageMain variant={faqVariant} density={bandDensity}>
@@ -445,14 +448,13 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           />
         ) : (
           <>
-            <Badge className="text-accent">FAQ</Badge>
+            <Badge className="text-accent-ink">FAQ</Badge>
             <h2 className={`mt-4 ${headingClass}`}>
-              {landing.faqHeading ?? `Questions fréquentes — ${service.shortTitle.toLowerCase()}`}
+              {landing.faqHeading ?? `Questions fréquentes : ${service.shortTitle.toLowerCase()}`}
             </h2>
             <div className="mt-8">
-              <FaqList items={landing.faqs} />
+              <FaqList items={landing.faqs} collapseAfter={4} />
             </div>
-            <ConversionCta className="mt-10" devisHref={`/contact?service=${landing.slug}`} />
           </>
         )}
       </PageMain>
@@ -464,11 +466,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             {landing.testimonials.map((item) => (
               <figure
                 key={item.author + item.quote.slice(0, 24)}
-                className={
-                  rhythm
-                    ? "rounded-xl border border-border bg-surface p-6"
-                    : "rounded-xl border border-border/80 bg-white/70 p-6"
-                }
+                className="border-t-2 border-accent pt-6"
               >
                 <div className="mb-4 flex flex-wrap items-center gap-3">
                   {featuredGoogleReview.rating ? (
@@ -485,7 +483,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-muted transition-colors hover:text-accent"
+                      className="text-xs text-muted transition-colors hover:text-accent-ink"
                     >
                       Voir sur Google →
                     </a>
@@ -495,7 +493,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-4 text-base font-medium text-foreground">
-                  — {item.author}
+                  {item.author}
                 </figcaption>
               </figure>
             ))}
@@ -503,11 +501,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           {landing.proofLink ? (
             <Link
               href={landing.proofLink.href}
-              className={
-                rhythm
-                  ? "mt-6 block rounded-xl border border-border bg-surface p-5 transition-colors duration-200 hover:border-accent/40"
-                  : "mt-6 block rounded-xl border border-border/80 bg-white/70 p-5 transition-colors duration-200 hover:border-accent/40"
-              }
+              className="mt-6 block min-h-11 border-t-2 border-accent py-4 transition-colors duration-200 hover:text-accent-ink"
             >
               <p className="text-base font-medium text-foreground">{landing.proofLink.label}</p>
               <p className="mt-2 text-base text-muted leading-relaxed">{landing.proofLink.detail}</p>
@@ -518,7 +512,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
       <PageMain variant={closingVariant} density={bandDensity}>
         <div className={localWithPrice ? "grid gap-8" : "grid gap-8 lg:grid-cols-2"}>
-          <ContentCard className={rhythm ? "border-border bg-background shadow-none" : undefined}>
+          <BandBlock>
             <h2 className="font-display text-xl font-semibold text-foreground">Nos autres prestations</h2>
             <ul className="mt-6 space-y-3">
               {relatedServices.map((item) => (
@@ -529,9 +523,9 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 </li>
               ))}
             </ul>
-          </ContentCard>
+          </BandBlock>
           {localWithPrice ? null : (
-            <ContentCard className={rhythm ? "border-border bg-background shadow-none" : undefined}>
+            <BandBlock>
               <h2 className="font-display text-xl font-semibold text-foreground">
                 Nous intervenons aussi près de chez vous
               </h2>
@@ -540,14 +534,14 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-base text-muted transition-colors hover:text-accent"
+                      className="text-base text-muted transition-colors hover:text-accent-ink"
                     >
                       {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </ContentCard>
+            </BandBlock>
           )}
         </div>
 
@@ -559,9 +553,9 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           />
         ) : null}
 
-        <ContentCard className={rhythm ? "mt-8 border-border bg-background shadow-none" : "mt-8"}>
+        <BandBlock className="mt-8">
           <NapBlock />
-        </ContentCard>
+        </BandBlock>
       </PageMain>
 
       <PageCta />

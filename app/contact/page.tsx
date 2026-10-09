@@ -81,7 +81,7 @@ export default async function ContactPage({
         <SectionDivider title="Nous trouver" className="mt-20">
           <p className="text-muted">Route de Raboud 8, 1680 Romont FR</p>
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <GoogleMapsLink className="text-sm font-medium text-foreground transition-colors hover:text-accent">
+            <GoogleMapsLink className="text-sm font-medium text-foreground transition-colors hover:text-accent-ink">
               Ouvrir dans Google Maps →
             </GoogleMapsLink>
           </div>

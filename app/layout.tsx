@@ -47,11 +47,14 @@ export default function RootLayout({
         <PlausibleScript />
       </head>
       <body className="min-h-screen antialiased pb-[calc(3.75rem+env(safe-area-inset-bottom))] lg:pb-0">
+        <a href="#contenu" className="skip-link">
+          Aller au contenu
+        </a>
         <GoogleTagManagerNoscript />
         <JsonLd data={organizationJsonLd()} />
         <Header />
         <HeaderOffset />
-        <main>{children}</main>
+        <main id="contenu">{children}</main>
         <Footer />
         <MobileBottomNav />
         <SpeedInsights />

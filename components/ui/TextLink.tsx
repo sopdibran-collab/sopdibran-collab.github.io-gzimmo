@@ -13,7 +13,7 @@ export function TextLink({ href, children, className, showArrow = true }: TextLi
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-2 text-base font-medium text-foreground transition-colors hover:text-accent",
+        "group inline-flex min-h-11 items-center gap-2 py-2 text-base font-medium text-foreground transition-colors hover:text-accent-ink",
         className,
       )}
     >
@@ -21,7 +21,7 @@ export function TextLink({ href, children, className, showArrow = true }: TextLi
       {showArrow ? (
         <span
           aria-hidden="true"
-          className="transition-transform duration-200 group-hover:translate-x-0.5"
+          className=""
         >
           →
         </span>

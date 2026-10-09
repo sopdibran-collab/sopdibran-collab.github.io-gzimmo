@@ -8,7 +8,7 @@ export function HomeZoneGrid() {
   return (
     <div>
       <FadeIn>
-        <Badge className="text-accent">Zones d&apos;intervention</Badge>
+        <Badge className="text-accent-ink">Zones d&apos;intervention</Badge>
         <h2 className="mt-4 font-display text-display-md text-foreground">
           Nous intervenons dans toute la Suisse romande
         </h2>
@@ -23,17 +23,17 @@ export function HomeZoneGrid() {
           <FadeIn key={zone.city} as="li" delay={index * 0.03} className="border-b border-border/80">
             <Link
               href={zone.href}
-              className="group flex min-h-11 items-center justify-between px-1 py-4 transition-colors duration-200 hover:text-accent"
+              className="group flex min-h-11 items-center justify-between px-1 py-4 transition-colors duration-200 hover:text-accent-ink"
             >
               <span>
-                <span className="font-medium text-foreground transition-colors group-hover:text-accent">
+                <span className="font-medium text-foreground transition-colors group-hover:text-accent-ink">
                   {zone.label}
                 </span>
                 {"note" in zone && zone.note ? (
-                  <span className="ml-2 text-xs text-accent">{zone.note}</span>
+                  <span className="ml-2 text-xs text-accent-ink">{zone.note}</span>
                 ) : null}
               </span>
-              <span className="text-muted transition-colors group-hover:text-accent" aria-hidden="true">
+              <span className="text-muted transition-colors group-hover:text-accent-ink" aria-hidden="true">
                 →
               </span>
             </Link>

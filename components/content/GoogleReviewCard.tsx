@@ -23,7 +23,7 @@ export function GoogleReviewCard({ review, className, "aria-hidden": ariaHidden 
           Avis Google
           <span className="sr-only">, vérifié</span>
         </span>
-        <StarRating rating={review.rating} className="text-sm tracking-[0.14em] text-accent" />
+        <StarRating rating={review.rating} className="text-sm tracking-[0.14em] text-accent-ink" />
       </header>
 
       <div className="mt-8">
@@ -48,7 +48,7 @@ export function GoogleReviewCard({ review, className, "aria-hidden": ariaHidden 
           href={review.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-medium text-accent underline decoration-accent/30 underline-offset-[3px] transition-colors hover:text-accent-hover hover:decoration-accent"
+          className="text-sm font-medium text-accent-ink underline decoration-accent/30 underline-offset-[3px] transition-colors hover:text-accent-hover hover:decoration-accent"
         >
           Voir l&apos;avis sur Google Maps
         </a>

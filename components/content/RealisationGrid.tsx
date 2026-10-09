@@ -34,7 +34,7 @@ export function RealisationGrid({
     <div>
       <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
         <h2 className="font-display text-display-md text-foreground lg:col-span-8">
-          Du terrain, pas des slides
+          Nos dernières réalisations
         </h2>
         <div className="lg:col-span-4 lg:justify-self-end">
           <TextLink href="/realisations">Toutes les réalisations</TextLink>
@@ -58,7 +58,7 @@ export function RealisationGrid({
 }
 
 function realisationAlt(item: Realisation) {
-  return `${item.title} — ${item.service} à ${item.location}`;
+  return `${item.title}, ${item.service} à ${item.location}`;
 }
 
 function RealisationFeatured({ item }: { item: Realisation }) {
@@ -70,7 +70,7 @@ function RealisationFeatured({ item }: { item: Realisation }) {
             src={item.image}
             alt={realisationAlt(item)}
             fill
-            className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.02]"
+            className="object-cover"
             sizes="(max-width: 1024px) 100vw, 66vw"
             priority
           />
@@ -90,7 +90,7 @@ function RealisationFeatured({ item }: { item: Realisation }) {
         <p className="mt-3 max-w-lg text-base leading-relaxed text-muted">{item.result}</p>
         <Link
           href="/contact"
-          className="mt-5 inline-block text-sm font-medium text-accent transition-colors duration-200 hover:text-accent-hover"
+          className="mt-5 inline-flex min-h-11 items-center text-sm font-medium text-accent-ink transition-colors duration-200 hover:text-accent-hover"
         >
           Même type d&apos;intervention →
         </Link>
@@ -108,7 +108,8 @@ function RealisationSide({ item }: { item: Realisation }) {
             src={item.image}
             alt={realisationAlt(item)}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="object-cover"
+            loading="eager"
             sizes="(max-width: 1024px) 100vw, 28vw"
           />
         </div>
@@ -166,7 +167,7 @@ function RealisationRow({ item }: { item: Realisation }) {
         </dl>
         <Link
           href="/contact"
-          className="mt-5 inline-block text-sm font-medium text-foreground transition-colors hover:text-accent"
+          className="mt-5 inline-flex min-h-11 items-center text-sm font-medium text-foreground transition-colors hover:text-accent-ink"
         >
           Demander un devis similaire
         </Link>

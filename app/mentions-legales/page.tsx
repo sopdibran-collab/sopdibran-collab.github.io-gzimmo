@@ -43,12 +43,12 @@ export default function MentionsLegalesPage() {
             </p>
             <p>
               E-mail :{" "}
-              <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
+              <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent-ink">
                 {company.email}
               </a>
               <br />
               Téléphone :{" "}
-              <a href={`tel:${company.phone}`} className="text-foreground hover:text-accent">
+              <a href={`tel:${company.phone}`} className="text-foreground hover:text-accent-ink">
                 {company.phoneDisplay}
               </a>
             </p>
@@ -74,7 +74,7 @@ export default function MentionsLegalesPage() {
                 href="https://vercel.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground hover:text-accent"
+                className="text-foreground hover:text-accent-ink"
               >
                 vercel.com
               </a>

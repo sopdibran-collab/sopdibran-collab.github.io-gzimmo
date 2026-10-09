@@ -45,7 +45,7 @@ export default function AvisPage() {
             href={googleReviewsProfileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-foreground underline decoration-border underline-offset-[3px] transition-colors hover:text-accent hover:decoration-accent/40"
+            className="font-medium text-foreground underline decoration-border underline-offset-[3px] transition-colors hover:text-accent-ink hover:decoration-accent/40"
           >
             Tous les avis {company.name} sur Google Maps
           </a>

@@ -33,7 +33,7 @@ export function Testimonial({
             href={reviewUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-muted transition-colors hover:text-accent"
+            className="text-xs text-muted transition-colors hover:text-accent-ink"
           >
             Voir l&apos;avis sur Google →
           </a>
@@ -63,7 +63,7 @@ export function Testimonial({
             href={googleReviewsProfileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-foreground transition-colors hover:text-accent"
+            className="text-sm font-medium text-foreground transition-colors hover:text-accent-ink"
           >
             Tous les avis {company.name} sur Google →
           </a>

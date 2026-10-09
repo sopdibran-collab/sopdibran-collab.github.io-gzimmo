@@ -12,7 +12,7 @@ export function ContactInfoCard() {
           <p className="font-medium text-foreground">Téléphone</p>
           <a
             href={formatPhoneHref(company.phone)}
-            className="mt-1 block text-muted hover:text-accent"
+            className="mt-1 block text-muted hover:text-accent-ink"
           >
             {company.phoneDisplay}
           </a>
@@ -23,13 +23,13 @@ export function ContactInfoCard() {
         </div>
         <div>
           <p className="font-medium text-foreground">E-mail</p>
-          <a href={`mailto:${company.email}`} className="mt-1 block text-muted hover:text-accent">
+          <a href={`mailto:${company.email}`} className="mt-1 block text-muted hover:text-accent-ink">
             {company.email}
           </a>
         </div>
         <div>
           <p className="font-medium text-foreground">Adresse</p>
-          <GoogleMapsLink className="mt-1 block text-muted hover:text-accent">
+          <GoogleMapsLink className="mt-1 block text-muted hover:text-accent-ink">
             {formatAddress()}
           </GoogleMapsLink>
         </div>

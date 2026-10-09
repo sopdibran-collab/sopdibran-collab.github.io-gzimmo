@@ -84,7 +84,7 @@ export function Logo({
     <Link
       href="/"
       className="inline-flex max-w-full min-w-0 shrink items-center"
-      aria-label={`${company.name} — Accueil`}
+      aria-label={`${company.name}, accueil`}
     >
       {image}
     </Link>

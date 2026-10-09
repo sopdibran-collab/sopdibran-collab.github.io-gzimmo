@@ -13,8 +13,8 @@ export function ContentCard({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border/80 bg-white/85 shadow-[0_8px_32px_rgba(30,34,39,0.05)]",
-        padded && "p-8 md:p-10",
+        "border-t-2 border-accent",
+        padded && "pt-8",
         className,
       )}
     >

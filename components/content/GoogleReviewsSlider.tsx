@@ -141,7 +141,7 @@ export function GoogleReviewsSlider({
             type="button"
             onClick={goPrev}
             aria-label="Avis précédent"
-            className="inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-border/80 bg-background text-foreground transition-colors hover:border-border hover:text-accent focus-visible:outline-offset-4"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-border/80 bg-background text-foreground transition-colors hover:border-border hover:text-accent-ink focus-visible:outline-offset-4"
           >
             <ChevronIcon direction="left" />
           </button>
@@ -173,7 +173,7 @@ export function GoogleReviewsSlider({
             type="button"
             onClick={goNext}
             aria-label="Avis suivant"
-            className="inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-border/80 bg-background text-foreground transition-colors hover:border-border hover:text-accent focus-visible:outline-offset-4"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-border/80 bg-background text-foreground transition-colors hover:border-border hover:text-accent-ink focus-visible:outline-offset-4"
           >
             <ChevronIcon direction="right" />
           </button>

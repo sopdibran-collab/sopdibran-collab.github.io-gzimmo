@@ -27,11 +27,11 @@ export function LocalMoneyLinks() {
           <FadeIn key={link.href} as="li" delay={index * 0.03}>
             <Link
               href={link.href}
-              className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-accent"
+              className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-accent-ink"
             >
               {link.label}
               {"note" in link && link.note ? (
-                <span className="ml-1.5 text-xs text-accent">({link.note})</span>
+                <span className="ml-1.5 text-xs text-accent-ink">({link.note})</span>
               ) : null}
               <span aria-hidden="true"> →</span>
             </Link>

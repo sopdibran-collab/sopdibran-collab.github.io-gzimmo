@@ -41,7 +41,7 @@ export function MobileBottomNav() {
     <nav
       className={cn(
         "fixed inset-x-0 bottom-0 z-40 lg:hidden",
-        "border-t border-border/70 bg-[#ffffff]/80 backdrop-blur-md",
+        "border-t border-border bg-background",
         "pb-[env(safe-area-inset-bottom)]",
       )}
       aria-label="Navigation mobile"
@@ -59,7 +59,7 @@ export function MobileBottomNav() {
                 className={cn(
                   "flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-md px-1 py-2",
                   "transition-colors duration-200",
-                  active ? "text-accent" : "text-muted hover:text-foreground",
+                  active ? "text-accent-ink" : "text-muted hover:text-foreground",
                 )}
               >
                 <Icon className="size-[18px] stroke-[1.5]" aria-hidden />
@@ -74,10 +74,10 @@ export function MobileBottomNav() {
         <li className="min-w-0 flex-1">
           <a
             href={callHref}
-            aria-label={`Appeler le ${company.phoneDisplay}`}
+            aria-label={`Appel, ${company.phoneDisplay}`}
             className={cn(
               "flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-md px-1 py-2",
-              "text-muted transition-colors duration-200 hover:text-accent",
+              "text-muted transition-colors duration-200 hover:text-accent-ink",
             )}
           >
             <Phone className="size-[18px] stroke-[1.5]" aria-hidden />

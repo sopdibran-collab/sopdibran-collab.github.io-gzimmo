@@ -32,22 +32,22 @@ export function LocalSeoBody({ location }: { location: Location }) {
         <aside className="lg:col-span-5">
           <FadeIn delay={0.1}>
             <ContentCard>
-              <Badge className="text-accent">Contact</Badge>
+              <Badge className="text-accent-ink">Contact</Badge>
               <p className="mt-4 text-sm font-medium text-foreground">Coordonnées</p>
               <address className="mt-4 space-y-2 text-sm not-italic text-muted">
                 <p className="font-medium text-foreground">{company.legalName}</p>
                 {location.isHeadquarters ? (
-                  <GoogleMapsLink className="hover:text-accent">{formatAddress()}</GoogleMapsLink>
+                  <GoogleMapsLink className="hover:text-accent-ink">{formatAddress()}</GoogleMapsLink>
                 ) : (
                   <p>Siège : {formatAddress()}</p>
                 )}
                 <p>
-                  <a href={`mailto:${company.email}`} className="hover:text-accent">
+                  <a href={`mailto:${company.email}`} className="hover:text-accent-ink">
                     {company.email}
                   </a>
                 </p>
                 <p>
-                  <a href={formatPhoneHref(company.phone)} className="hover:text-accent">
+                  <a href={formatPhoneHref(company.phone)} className="hover:text-accent-ink">
                     {company.phoneDisplay}
                   </a>
                 </p>
@@ -72,7 +72,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
 
       {location.servicesHighlight.length > 0 ? (
         <div className="mt-16 border-t border-border/80 pt-16">
-          <Badge className="text-accent">Prestations</Badge>
+          <Badge className="text-accent-ink">Prestations</Badge>
           <h2 className="mt-4 font-display text-display-sm text-foreground">
             Prestations à {location.city}
           </h2>
@@ -80,7 +80,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
             {location.servicesHighlight.map((service) => (
               <li
                 key={service}
-                className="max-w-full break-words rounded-full border border-border/80 bg-white/70 px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:border-accent/30 hover:text-accent sm:px-4"
+                className="max-w-full break-words rounded-full border border-border/80 bg-white/70 px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:border-accent/30 hover:text-accent-ink sm:px-4"
               >
                 {service}
               </li>
@@ -97,7 +97,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-accent"
+                  className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-accent-ink"
                 >
                   {link.label} →
                 </Link>
@@ -109,7 +109,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
 
       {location.faqs.length > 0 ? (
         <div className="mt-16 border-t border-border/80 pt-16">
-          <Badge className="text-accent">FAQ</Badge>
+          <Badge className="text-accent-ink">FAQ</Badge>
           <h2 className="mt-4 font-display text-display-sm text-foreground">
             Questions fréquentes — {location.city}
           </h2>
@@ -137,7 +137,7 @@ export function LocalAreaLinks({
           <li key={loc.slug} className="mb-2 break-inside-avoid">
             <Link
               href={`/seo/${loc.slug}`}
-              className="text-muted transition-colors hover:text-accent"
+              className="text-muted transition-colors hover:text-accent-ink"
             >
               {loc.city}
             </Link>

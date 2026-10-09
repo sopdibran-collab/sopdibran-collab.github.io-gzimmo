@@ -57,7 +57,7 @@ const sharedWhy = [
   {
     title: "Produits professionnels fournis",
     description:
-      "Gzimmo fournit l'ensemble des produits — exclusivement professionnels, adaptés à chaque type de surface et de matériau.",
+      "Gzimmo fournit l'ensemble des produits, exclusivement professionnels, adaptés à chaque type de surface et de matériau.",
   },
   {
     title: "Réactivité depuis Romont",
@@ -83,11 +83,11 @@ export const serviceLandings: ServiceLanding[] = [
     metaDescription:
       "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
     absoluteTitle: true,
-    heroCtaLabel: "Préférer nous écrire",
+    heroCtaLabel: "Demander un devis gratuit",
     showPriceQuote: true,
     showInterventionZones: true,
     useFinDeBailFaq: true,
-    preferCallCta: true,
+    preferCallCta: false,
     audienceHeading: "Locataires, régies et propriétaires",
     whyHeading: "Pourquoi les régies valident nos fins de bail",
     faqHeading: "Prix, devis et garantie de remise de bail",
@@ -102,11 +102,11 @@ export const serviceLandings: ServiceLanding[] = [
     sections: [
       {
         title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
-        body: "Le prix dépend de la surface, de l'état du logement et de ce que votre régie exige à l'état des lieux — pas d'un forfait unique en ligne. Appelez-nous : vous décrivez la situation, nous établissons un devis gratuit et détaillé. Le tarif convenu est le tarif final, avant la remise des clés.",
+        body: "Le prix dépend de la surface, de l'état du logement et de ce que votre régie exige à l'état des lieux, pas d'un forfait unique en ligne. Appelez-nous : vous décrivez la situation, nous établissons un devis gratuit et détaillé. Le tarif convenu est le tarif final, avant la remise des clés.",
       },
       {
         title: "Pour les régies : checklist, état des lieux, remise des clés",
-        body: "Nous travaillons pour des locataires et directement pour des régies : sorties de bail, appartements à remettre en location. La checklist suit les points qui bloquent le plus souvent une restitution — joints, four, traces sur vitres — pour limiter les reprises le jour de l'état des lieux.",
+        body: "Nous travaillons pour des locataires et directement pour des régies : sorties de bail, appartements à remettre en location. La checklist suit les points qui bloquent le plus souvent une restitution (joints, four, traces sur vitres) pour limiter les reprises le jour de l'état des lieux.",
       },
     ],
     forWho: [
@@ -182,7 +182,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Devis gratuit sous 24 h pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg, Vaud, Neuchâtel.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
-    preferCallCta: true,
+    preferCallCta: false,
     showInterventionZones: true,
     processBeforeAudience: true,
     visualRhythm: true,

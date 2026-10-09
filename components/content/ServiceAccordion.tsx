@@ -123,7 +123,7 @@ function ServiceRow({
                 <span
                   className={cn(
                     "font-display text-sm font-medium tabular-nums transition-colors duration-300",
-                    isOpen ? "text-accent" : "text-muted/70 group-hover:text-accent",
+                    isOpen ? "text-accent-ink" : "text-muted/70 group-hover:text-accent-ink",
                   )}
                 >
                   {String(index + 1).padStart(2, "0")}
@@ -131,7 +131,7 @@ function ServiceRow({
                 <h3
                   className={cn(
                     "text-[1.05rem] font-medium leading-snug transition-colors duration-300 md:text-lg",
-                    !isOpen && "group-hover:text-accent",
+                    !isOpen && "group-hover:text-accent-ink",
                     isOpen && "text-foreground",
                   )}
                 >

@@ -58,11 +58,11 @@ export function NapBlock({ className }: ReassuranceBandProps) {
       {company.address.street}, {company.address.postalCode} {company.address.city} (
       {company.address.region})
       <br />
-      <a href={`tel:${company.phone}`} className="text-foreground hover:text-accent">
+      <a href={`tel:${company.phone}`} className="text-foreground hover:text-accent-ink">
         {company.phoneDisplay}
       </a>
       <br />
-      <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
+      <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent-ink">
         {company.email}
       </a>
     </address>

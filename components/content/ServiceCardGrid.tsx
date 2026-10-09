@@ -42,7 +42,7 @@ export function ServiceCardGrid({
     <div className={className}>
       {!hideHeader && (badge || title || description) ? (
         <FadeIn>
-          {badge ? <Badge className="text-accent">{badge}</Badge> : null}
+          {badge ? <Badge className="text-accent-ink">{badge}</Badge> : null}
           {title ? (
             <h2
               className={cn(
@@ -77,19 +77,19 @@ export function ServiceCardGrid({
                   src={service.image.src}
                   alt={service.image.alt}
                   fill
-                  className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.03]"
+                  className="object-cover"
                   style={{ objectPosition: service.image.objectPosition }}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent">
+                <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent-ink">
                   {service.shortTitle}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {service.description}
                 </p>
-                <span className="mt-4 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-accent">
+                <span className="mt-4 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-accent-ink">
                   En savoir plus
                   <span aria-hidden="true"> →</span>
                 </span>

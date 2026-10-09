@@ -65,10 +65,9 @@ export function PageHero({
         className="object-cover"
         style={image.position ? { objectPosition: image.position } : undefined}
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-[#1e2227]/55" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/80 via-[#1e2227]/25 to-[#1e2227]/35"
+        className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/85 to-[#1e2227]/15"
       />
       <Container
         className={cn(
