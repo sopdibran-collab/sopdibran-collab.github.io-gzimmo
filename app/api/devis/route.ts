@@ -42,11 +42,18 @@ export async function POST(request: Request) {
 
   const parsed = parseDevisBody(raw);
   if (!parsed.ok) {
-    return NextResponse.json({ ok: false, error: parsed.error }, { status: 400 });
+    return NextResponse.json(
+      { ok: false, error: parsed.error, fields: parsed.fields ?? null },
+      { status: 400 },
+    );
   }
 
   // Honeypot filled → pretend success without sending
   if (parsed.honeypot) {
+    return NextResponse.json({ ok: true });
+  }
+
+  if (process.env.DEVIS_DELIVERY === "mock") {
     return NextResponse.json({ ok: true });
   }
 

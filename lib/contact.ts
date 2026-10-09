@@ -29,7 +29,19 @@ export type DevisPayload = {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_RE = /^[+0-9\s().-]{6,30}$/;
+const PHONE_CHARS_RE = /^[+0-9\s().-]{6,30}$/;
+
+export const DEVIS_FIELD_ORDER = [
+  "nom",
+  "telephone",
+  "email",
+  "prestation",
+  "commune",
+  "message",
+] as const;
+
+export type DevisFieldName = (typeof DEVIS_FIELD_ORDER)[number];
+export type DevisFieldErrors = Partial<Record<DevisFieldName, string>>;
 
 const SERVICE_SLUG_TO_PRESTATION: Record<string, PrestationValue> = {
   "nettoyage-fin-de-bail": "fin-de-bail",
@@ -56,9 +68,56 @@ function trim(value: unknown): string {
   return String(value ?? "").trim();
 }
 
+export function isValidPhone(value: string): boolean {
+  if (!PHONE_CHARS_RE.test(value)) return false;
+  const digits = value.replace(/\D/g, "").length;
+  return digits >= 8 && digits <= 15;
+}
+
+export function validateDevisFields(values: {
+  nom: string;
+  telephone: string;
+  email: string;
+  prestation: string;
+  commune: string;
+  message: string;
+}): DevisFieldErrors {
+  const errors: DevisFieldErrors = {};
+  const nom = values.nom.trim();
+  const telephone = values.telephone.trim();
+  const email = values.email.trim().toLowerCase();
+  const prestation = values.prestation.trim();
+  const commune = values.commune.trim();
+  const message = values.message.trim();
+
+  if (nom.length < 2 || nom.length > 120) {
+    errors.nom = "Indiquez votre nom (2 caractères minimum).";
+  }
+  if (!isValidPhone(telephone)) {
+    errors.telephone = "Indiquez un numéro de téléphone valide.";
+  }
+  if (!email || !EMAIL_RE.test(email) || email.length > 200) {
+    errors.email = "Indiquez une adresse e-mail valide.";
+  }
+  if (!PRESTATION_OPTIONS.some((option) => option.value === prestation)) {
+    errors.prestation = "Sélectionnez un type de prestation.";
+  }
+  if (commune.length < 2 || commune.length > 120) {
+    errors.commune = "Indiquez la commune d'intervention.";
+  }
+  if (message.length > 4000) {
+    errors.message = "Le message est trop long (4 000 caractères max).";
+  }
+  return errors;
+}
+
+export function firstDevisField(errors: DevisFieldErrors): DevisFieldName | undefined {
+  return DEVIS_FIELD_ORDER.find((name) => errors[name]);
+}
+
 export function parseDevisBody(raw: unknown):
   | { ok: true; data: DevisPayload; honeypot: boolean }
-  | { ok: false; error: string } {
+  | { ok: false; error: string; fields?: DevisFieldErrors } {
   if (!raw || typeof raw !== "object") {
     return { ok: false, error: "Données invalides." };
   }
@@ -76,23 +135,10 @@ export function parseDevisBody(raw: unknown):
     return { ok: true, honeypot: true, data: placeholderPayload() };
   }
 
-  if (!nom || nom.length < 2 || nom.length > 120) {
-    return { ok: false, error: "Indiquez votre nom (2 caractères minimum)." };
-  }
-  if (!telephone || !PHONE_RE.test(telephone)) {
-    return { ok: false, error: "Indiquez un numéro de téléphone valide." };
-  }
-  if (!email || !EMAIL_RE.test(email) || email.length > 200) {
-    return { ok: false, error: "Indiquez une adresse e-mail valide." };
-  }
-  if (!PRESTATION_OPTIONS.some((o) => o.value === prestation)) {
-    return { ok: false, error: "Sélectionnez un type de prestation." };
-  }
-  if (!commune || commune.length < 2 || commune.length > 120) {
-    return { ok: false, error: "Indiquez la commune d'intervention." };
-  }
-  if (message.length > 4000) {
-    return { ok: false, error: "Le message est trop long (4 000 caractères max)." };
+  const fields = validateDevisFields({ nom, telephone, email, prestation, commune, message });
+  const first = firstDevisField(fields);
+  if (first && fields[first]) {
+    return { ok: false, error: fields[first], fields };
   }
 
   return {
