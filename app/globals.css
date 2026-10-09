@@ -44,6 +44,14 @@
   --hero-photo-min-height: min(100svh, 860px);
 
   --ease-premium: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Header fixe : h-12 mobile, h-14 dès lg. Marge en plus pour WCAG 2.4.11. */
+  --header-height: 3rem;
+  --header-clearance: calc(var(--header-height) + 0.75rem);
+  /* Label text-sm + mb-2, pour que le focus d’un champ laisse aussi voir son intitulé. */
+  --field-scroll-offset: calc(var(--header-clearance) + 1.75rem);
+  /* Barre basse mobile (corps pb 3.75rem) + marge. */
+  --bottom-nav-clearance: calc(3.75rem + 0.75rem + env(safe-area-inset-bottom, 0px));
 }
 
 @layer base {
@@ -58,6 +66,29 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+  }
+
+  @media (min-width: 64rem) {
+    :root {
+      --header-height: 3.5rem;
+      --bottom-nav-clearance: 0.75rem;
+    }
+  }
+
+  /* Ancres : sous le header, avec une marge. Les utilitaires scroll-mt-* restent prioritaires. */
+  :where([id]) {
+    scroll-margin-top: var(--header-clearance);
+  }
+
+  :where(a, button) {
+    scroll-margin-top: var(--header-clearance);
+    scroll-margin-bottom: var(--bottom-nav-clearance);
+  }
+
+  /* Le focus cible le contrôle, pas le label : la marge inclut l’intitulé au-dessus. */
+  :where(input, select, textarea) {
+    scroll-margin-top: var(--field-scroll-offset);
+    scroll-margin-bottom: var(--bottom-nav-clearance);
   }
 
   body {
