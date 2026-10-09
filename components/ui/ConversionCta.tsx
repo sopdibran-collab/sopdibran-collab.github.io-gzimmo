@@ -1,7 +1,6 @@
 import { company } from "@/data/company";
-import { formatPhoneHref } from "@/lib/utils";
+import { formatPhoneHref, cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
 
 type ConversionCtaProps = {
   className?: string;
@@ -9,35 +8,21 @@ type ConversionCtaProps = {
   devisLabel?: string;
   callLabel?: string;
   compact?: boolean;
-  /** Phone first — devis sur mesure après un échange, pas un calculateur. */
+  /** Conservé pour les appelants. Le devis reste le bouton plein. */
   preferCall?: boolean;
+  tone?: "default" | "dark";
 };
 
 export function ConversionCta({
   className,
   devisHref = "/contact",
   devisLabel = "Demander un devis gratuit",
-  callLabel = `Appeler le ${company.phoneDisplay}`,
-  compact = false,
-  preferCall = false,
+  callLabel = `Appeler · ${company.phoneDisplay}`,
+  preferCall: _preferCall = false,
+  tone = "default",
 }: ConversionCtaProps) {
   const callHref = formatPhoneHref(company.phone);
-
-  const callButton = (
-    <Button
-      href={callHref}
-      external
-      variant={preferCall ? "primary" : "secondary"}
-      className="w-full sm:w-auto"
-    >
-      {callLabel}
-    </Button>
-  );
-  const devisButton = (
-    <Button href={devisHref} variant={preferCall ? "secondary" : "primary"} className="w-full sm:w-auto">
-      {devisLabel}
-    </Button>
-  );
+  const onDark = tone === "dark";
 
   return (
     <div
@@ -46,21 +31,25 @@ export function ConversionCta({
         className,
       )}
     >
-      {preferCall ? (
-        <>
-          {callButton}
-          {devisButton}
-        </>
-      ) : (
-        <>
-          {devisButton}
-          {callButton}
-        </>
-      )}
+      <Button href={devisHref} className="w-full sm:w-auto">
+        {devisLabel}
+      </Button>
+      <Button
+        href={callHref}
+        external
+        variant="secondary"
+        className={cn(
+          "w-full sm:w-auto",
+          onDark &&
+            "border-white/75 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white",
+        )}
+      >
+        {callLabel}
+      </Button>
     </div>
   );
 }
 
 export function InlineCta({ className, devisHref = "/contact" }: { className?: string; devisHref?: string }) {
-  return <ConversionCta className={className} devisHref={devisHref} compact />;
+  return <ConversionCta className={className} devisHref={devisHref} />;
 }

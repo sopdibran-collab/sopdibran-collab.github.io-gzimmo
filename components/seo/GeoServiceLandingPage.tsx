@@ -49,7 +49,7 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
         />
         <FadeIn>
           <div className="max-w-2xl">
-            <Badge className="text-accent">
+            <Badge className="text-accent-ink">
               {service.shortTitle} · {landing.city}
             </Badge>
             <h1 className="mt-5 font-display text-display-lg font-semibold text-foreground">
@@ -96,17 +96,13 @@ export function GeoServiceLandingPage({ landing }: GeoServiceLandingPageProps) {
       </PageMain>
 
       <PageMain variant="default">
-        <Badge className="text-accent">FAQ</Badge>
+        <Badge className="text-accent-ink">FAQ</Badge>
         <h2 className="mt-4 font-display text-display-sm text-foreground">
-          Questions fréquentes — fin de bail à {landing.city}
+          Questions fréquentes : fin de bail à {landing.city}
         </h2>
         <div className="mt-8">
-          <FaqList items={landing.faqs} />
+          <FaqList items={landing.faqs} collapseAfter={4} />
         </div>
-        <ConversionCta
-          className="mt-10"
-          devisHref={`/contact?service=${landing.serviceSlug}&ville=${landing.city}`}
-        />
       </PageMain>
 
       <PageMain variant="surface">

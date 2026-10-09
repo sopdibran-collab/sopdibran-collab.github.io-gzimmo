@@ -51,7 +51,7 @@ export function PageIntro({
   return (
     <header className="max-w-2xl">
       {badge ? (
-        <Badge className={onDark ? "text-white/70" : "text-accent"}>{badge}</Badge>
+        <Badge className={onDark ? "text-white/70" : "text-accent-ink"}>{badge}</Badge>
       ) : null}
       <h1
         className={

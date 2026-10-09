@@ -22,7 +22,7 @@ export function Stat({
           inverse ? "text-white" : "text-foreground",
         )}
       >
-        <span className={cn(inverse && "text-accent")}>{value}</span>
+        <span>{value}</span>
       </p>
       <p
         className={cn(

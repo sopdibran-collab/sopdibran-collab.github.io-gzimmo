@@ -4,10 +4,16 @@
   --color-background: #ffffff;
   --color-surface: #f5f7f8;
   --color-foreground: #1e2227;
-  --color-muted: #626262;
-  /* Teal marque un peu approfondi — blanc sur accent ≥ 4.5:1 (WCAG AA) */
+  /* Gris dérivé de #1E2227. AA sur blanc (7.5:1) et sur #F5F7F8. */
+  --color-muted: #4e555c;
+  /* Fonds et boutons. Blanc sur #368077 ≈ 4.66:1. */
   --color-accent: #368077;
-  --color-accent-hover: #2f6f68;
+  /* Texte et liens teal sur fond clair. #2F7068 ≥ 5:1 sur blanc, #F5F7F8, #EFF7F5 et #E8F3F1. */
+  --color-accent-ink: #2f7068;
+  /* Survol bouton et lien, plus sombre que l’encre. Blanc sur #245E58 ≈ 7.4:1. */
+  --color-accent-hover: #245e58;
+  --color-footer: #1a4f4a;
+  --color-danger: #8e2f2f;
   --color-success: #2fa36b;
   --color-border: #e8eaec;
   --color-border-subtle: #f0f2f4;
@@ -182,14 +188,22 @@
     }
   }
 
-  @keyframes hero-zoom {
-    from {
-      transform: scale(1.05);
-    }
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 60;
+    transform: translateY(-150%);
+    border-radius: var(--radius-md);
+    background: #ffffff;
+    color: var(--color-foreground);
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
 
-    to {
-      transform: scale(1.12);
-    }
+  .skip-link:focus {
+    transform: none;
   }
 
   .animate-fade-in-up {
@@ -211,11 +225,11 @@
   }
 
   .section-surface {
-    background: linear-gradient(180deg, #f5f7f8 0%, #f8f9fa 100%);
+    background: #f5f7f8;
   }
 
   .section-default {
-    background: linear-gradient(180deg, #ffffff 0%, #fafbfb 100%);
+    background: #ffffff;
   }
 
   .section-inverse {
@@ -228,9 +242,8 @@
       radial-gradient(ellipse 40% 50% at 10% 80%, rgba(54, 128, 119, 0.08), transparent 50%);
   }
 
-  /* Teal profond dérivé de l’accent logo — lisibilité footer */
   .section-footer {
-    background: #2f6f68;
+    background: var(--color-footer);
   }
 
   .section-footer-glow {

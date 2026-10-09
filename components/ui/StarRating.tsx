@@ -18,7 +18,7 @@ export function StarRating({ rating, max = 5, className, label }: StarRatingProp
         <span
           key={index}
           aria-hidden="true"
-          className={filled ? "text-accent" : "text-border"}
+          className={filled ? "text-accent-ink" : "text-border"}
         >
           ★
         </span>

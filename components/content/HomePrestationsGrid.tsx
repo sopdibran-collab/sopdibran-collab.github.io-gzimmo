@@ -12,7 +12,7 @@ const homePrestations = [
   {
     label: "Fin de bail",
     slug: "nettoyage-fin-de-bail",
-    detail: "État des lieux, remise des clés, checklist régie — devis avant intervention.",
+    detail: "État des lieux, remise des clés, checklist régie. Devis avant intervention.",
     image: "/images/services/nettoyage-fin-de-bail.webp",
   },
   {
@@ -24,13 +24,13 @@ const homePrestations = [
   {
     label: "Après chantier",
     slug: "nettoyage-apres-chantier",
-    detail: "Après rénovation, construction ou travaux — poussières fines, livraison prête.",
+    detail: "Après rénovation, construction ou travaux : poussières fines, livraison prête.",
     image: "/images/services/nettoyage-apres-chantier.webp",
   },
   {
     label: "Bureaux",
     slug: "nettoyage-bureaux",
-    detail: "Entretien hors heures — sols, sanitaires, espaces communs.",
+    detail: "Entretien hors heures : sols, sanitaires, espaces communs.",
     image: "/images/services/nettoyage-bureaux.webp",
   },
   {
@@ -42,7 +42,7 @@ const homePrestations = [
   {
     label: "Vitres",
     slug: "nettoyage-vitres",
-    detail: "Vitrines et façades — lisibilité et image soignée.",
+    detail: "Vitrines et façades, lisibilité et image soignée.",
     image: "/images/services/nettoyage-vitres.webp",
   },
 ] as const;
@@ -53,7 +53,7 @@ export function HomePrestationsGrid() {
       <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-10">
         <div className="lg:col-span-7">
           <h2 className="font-display text-display-md text-foreground">
-            Fin de bail, après chantier et entretien — depuis Romont
+            Fin de bail, après chantier et entretien, depuis Romont
           </h2>
         </div>
         <p className="max-w-sm text-muted leading-relaxed lg:col-span-5 lg:justify-self-end lg:text-right">
@@ -76,13 +76,13 @@ export function HomePrestationsGrid() {
                   src={item.image}
                   alt={prestationImageAlt(item.image, item.label)}
                   fill
-                  className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.03]"
+                  className="object-cover"
                   sizes="176px"
                 />
               </div>
 
               <div className="min-w-0">
-                <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent sm:text-xl">
+                <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent-ink sm:text-xl">
                   {item.label}
                 </h3>
                 <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted">
@@ -91,7 +91,7 @@ export function HomePrestationsGrid() {
               </div>
 
               <span
-                className="hidden text-muted transition-colors duration-200 group-hover:text-accent lg:inline"
+                className="hidden text-muted transition-colors duration-200 group-hover:text-accent-ink lg:inline"
                 aria-hidden="true"
               >
                 →

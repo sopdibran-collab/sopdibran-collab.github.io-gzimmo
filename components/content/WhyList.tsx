@@ -11,8 +11,8 @@ export function WhyList() {
         <h2 className="mt-4 font-display text-display-md text-foreground">
           Checklist régie, devis sous 24 h, équipe à Romont
         </h2>
-        <p className="mt-5 max-w-md text-muted leading-relaxed">
-          Expertise immobilière, rigueur et réactivité — notre exigence se lit dans chaque
+        <p className="mt-5 max-w-md leading-relaxed text-muted">
+          Expertise immobilière, rigueur et réactivité. Notre exigence se lit dans chaque
           intervention.
         </p>
 
@@ -23,6 +23,7 @@ export function WhyList() {
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 40vw"
+            loading="eager"
           />
         </div>
       </FadeIn>
@@ -34,7 +35,6 @@ export function WhyList() {
               key={item}
               className="py-5 text-base leading-relaxed text-foreground/90 first:pt-6 last:pb-6"
             >
-              <span className="mb-2 block font-display text-sm font-medium text-accent">—</span>
               {item}
             </li>
           ))}

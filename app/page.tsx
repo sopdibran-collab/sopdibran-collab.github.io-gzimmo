@@ -46,7 +46,7 @@ export default function HomePage() {
         <LocalMoneyLinks />
       </Section>
 
-      <Section variant="surface">
+      <Section id="pourquoi" variant="surface">
         <WhyList />
       </Section>
 
@@ -64,7 +64,7 @@ export default function HomePage() {
           description="Les questions que posent locataires et régies avant un état des lieux, une remise des clés ou une livraison de chantier."
         />
         <div className="mt-8">
-          <FaqList items={homepageFaq} />
+          <FaqList items={homepageFaq} collapseAfter={4} />
         </div>
       </Section>
 

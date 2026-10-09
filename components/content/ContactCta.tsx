@@ -19,7 +19,7 @@ export function ContactCta({ className }: ContactCtaProps) {
             Après travaux ou fin de bail,<br className="hidden sm:block" /> on s&apos;en charge.
           </h2>
           <p className="mt-4 max-w-md text-white/65 leading-relaxed">
-            Décrivez le bien ou le chantier — devis clair sous 24 h, sans engagement.
+            Décrivez le bien ou le chantier. Devis clair sous 24 h, sans engagement.
           </p>
           <GarantieRemiseBail
             variant="inline"
@@ -28,18 +28,17 @@ export function ContactCta({ className }: ContactCtaProps) {
           />
         </div>
         <div className="flex flex-col gap-3 sm:items-start lg:col-span-4 lg:items-end">
-          <Button
-            href="/contact"
-            className="w-full bg-white text-foreground shadow-none hover:bg-white/90 sm:w-auto"
-          >
-            Demander un devis
+          <Button href="/contact" className="w-full sm:w-auto">
+            Demander un devis gratuit
           </Button>
-          <a
+          <Button
             href={callHref}
-            className="text-sm font-medium text-white/60 transition-colors duration-200 hover:text-white"
+            external
+            variant="secondary"
+            className="w-full border-white/75 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white sm:w-auto"
           >
-            {company.phoneDisplay}
-          </a>
+            Appeler · {company.phoneDisplay}
+          </Button>
         </div>
       </div>
     </section>

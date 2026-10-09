@@ -31,7 +31,7 @@ const regionLinks = [
 
 /** Chips footer : contraste AA + zone tactile ≥ 24px (confort ~36–44). */
 const chipClass =
-  "inline-flex min-h-9 items-center rounded-md px-2.5 py-2 text-[12px] font-medium leading-none text-white/80 transition-colors hover:bg-white/15 hover:text-white";
+  "inline-flex min-h-11 items-center rounded-md px-2.5 py-2 text-[12px] font-medium leading-none text-white/80 transition-colors hover:bg-white/15 hover:text-white";
 
 /** Labels uppercase — blanc/70 sur fond teal sombre ≈ 5.5:1 (AA). */
 const labelClass =
@@ -61,7 +61,7 @@ export function Footer() {
 
   return (
     <footer
-      className="relative border-t border-white/10 bg-[#1a4f4a]/95 text-white backdrop-blur-md"
+      className="relative border-t border-white/10 bg-footer text-white"
       role="contentinfo"
     >
       <div className="mx-auto max-w-[1200px] space-y-3 px-container py-3 sm:py-4">
@@ -108,7 +108,7 @@ export function Footer() {
             <p className={labelClass}>Contact</p>
             <ul className="space-y-1 text-[12px] text-white/80">
               <li>
-                <GoogleMapsLink className="inline-flex min-h-9 items-start gap-1.5 py-1.5 transition-colors hover:text-white">
+                <GoogleMapsLink className="inline-flex min-h-11 items-start gap-1.5 py-2 transition-colors hover:text-white">
                   <MapPin className="mt-0.5 size-3.5 shrink-0 stroke-[1.5]" aria-hidden />
                   <span>{formatAddress()}</span>
                 </GoogleMapsLink>
@@ -116,7 +116,7 @@ export function Footer() {
               <li>
                 <a
                   href={callHref}
-                  className="inline-flex min-h-9 items-center gap-1.5 py-1.5 transition-colors hover:text-white"
+                  className="inline-flex min-h-11 items-center gap-1.5 py-2 transition-colors hover:text-white"
                 >
                   <Phone className="size-3.5 stroke-[1.5]" aria-hidden />
                   {company.phoneDisplay}
@@ -125,7 +125,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${company.email}`}
-                  className="inline-flex min-h-9 items-center gap-1.5 py-1.5 transition-colors hover:text-white"
+                  className="inline-flex min-h-11 items-center gap-1.5 py-2 transition-colors hover:text-white"
                 >
                   <Mail className="size-3.5 stroke-[1.5]" aria-hidden />
                   {company.email}
@@ -144,13 +144,13 @@ export function Footer() {
           <div className="flex flex-wrap gap-x-3">
             <Link
               href="/mentions-legales"
-              className="inline-flex min-h-9 items-center hover:text-white"
+              className="inline-flex min-h-11 items-center hover:text-white"
             >
               Mentions légales
             </Link>
             <Link
               href="/politique-confidentialite"
-              className="inline-flex min-h-9 items-center hover:text-white"
+              className="inline-flex min-h-11 items-center hover:text-white"
             >
               Confidentialité
             </Link>

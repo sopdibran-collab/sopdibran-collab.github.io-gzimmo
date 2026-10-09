@@ -9,7 +9,7 @@ const variants: Record<ButtonVariant, string> = {
     "bg-accent text-white hover:bg-accent-hover hover:text-white border border-transparent shadow-none",
   secondary:
     "bg-background text-foreground border border-border hover:border-foreground/20 hover:bg-surface",
-  ghost: "bg-transparent text-foreground hover:text-accent border border-transparent",
+  ghost: "bg-transparent text-foreground hover:text-accent-ink border border-transparent",
 };
 
 type ButtonProps = {
@@ -28,7 +28,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium transition-[color,background-color,border-color,box-shadow] duration-200 ease-out",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition-[color,background-color,border-color] duration-200 ease-out",
     variants[variant],
     className,
   );

@@ -46,7 +46,7 @@ export default function PolitiqueConfidentialitePage() {
               <br />
               {formatAddress()}
               <br />
-              <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
+              <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent-ink">
                 {company.email}
               </a>
             </p>
@@ -126,7 +126,7 @@ export default function PolitiqueConfidentialitePage() {
             </ul>
             <p>
               Pour exercer vos droits :{" "}
-              <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
+              <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent-ink">
                 {company.email}
               </a>
             </p>

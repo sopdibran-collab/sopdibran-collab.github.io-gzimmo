@@ -32,7 +32,7 @@ export default function MerciPage() {
             <div>
               <dt className="font-medium text-foreground">Téléphone</dt>
               <dd className="mt-1">
-                <a href={callHref} className="text-muted transition-colors duration-200 hover:text-accent">
+                <a href={callHref} className="text-muted transition-colors duration-200 hover:text-accent-ink">
                   {company.phoneDisplay}
                 </a>
               </dd>
@@ -42,7 +42,7 @@ export default function MerciPage() {
               <dd className="mt-1">
                 <a
                   href={`mailto:${company.email}`}
-                  className="text-muted transition-colors duration-200 hover:text-accent"
+                  className="text-muted transition-colors duration-200 hover:text-accent-ink"
                 >
                   {company.email}
                 </a>

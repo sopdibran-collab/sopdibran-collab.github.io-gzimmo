@@ -39,9 +39,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300",
         solidChrome
-          ? "border-b border-white/10 bg-[#1e2227]/96 backdrop-blur-md"
+          ? "border-b border-white/10 bg-[#1e2227]"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -77,7 +77,7 @@ export function Header() {
             external
             variant="secondary"
             aria-label={`Appeler le ${company.phoneDisplay}`}
-            className="h-11 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white shadow-none hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
+            className="min-h-11 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
           >
             <PhoneIcon className="size-4 shrink-0" />
             {company.phoneDisplay}
@@ -85,9 +85,9 @@ export function Header() {
           {/* Primaire : accent solide — un seul CTA fort */}
           <Button
             href="/contact"
-            className="h-11 whitespace-nowrap border-transparent bg-accent px-4 text-white shadow-none hover:bg-accent-hover hover:text-white"
+            className="whitespace-nowrap border-transparent bg-accent px-4 text-white hover:bg-accent-hover hover:text-white"
           >
-            Devis
+            Demander un devis
             <ArrowRightIcon className="size-4 shrink-0" />
           </Button>
         </div>

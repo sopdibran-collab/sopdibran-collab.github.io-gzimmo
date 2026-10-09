@@ -44,7 +44,7 @@ export function HomeFeaturedReview() {
           Ce qu&apos;on nous laisse sur Google
         </h2>
         <p className="mt-3 text-sm text-muted leading-relaxed">
-          Avis vérifiés — pas de témoignages inventés.
+          Avis vérifiés, pas de témoignages inventés.
         </p>
         <div className="mt-6">
           <TextLink href="/avis">Lire tous les avis</TextLink>
@@ -54,7 +54,7 @@ export function HomeFeaturedReview() {
       <blockquote className="lg:col-span-8">
         <StarRating
           rating={rating}
-          className="inline-flex text-base tracking-[0.16em] text-accent"
+          className="inline-flex text-base tracking-[0.16em] text-accent-ink"
         />
         <p className="mt-5 whitespace-pre-line font-display text-[1.35rem] leading-snug tracking-[-0.02em] text-foreground sm:text-2xl sm:leading-[1.35]">
           &ldquo;{quote}&rdquo;
@@ -64,7 +64,7 @@ export function HomeFeaturedReview() {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-accent"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-accent-ink"
           >
             <GoogleMark />
             <span>

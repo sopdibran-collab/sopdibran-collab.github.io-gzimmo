@@ -1,7 +1,6 @@
 import { finDeBailPriceFaqs } from "@/data/fin-de-bail-faq";
 import { FaqList } from "@/components/content/FaqList";
 import { Badge } from "@/components/ui/Badge";
-import { ConversionCta } from "@/components/ui/ConversionCta";
 import { cn } from "@/lib/utils";
 
 type FinDeBailPriceFaqProps = {
@@ -14,12 +13,11 @@ type FinDeBailPriceFaqProps = {
  * FAQ prix / fin de bail — le JSON-LD FAQPage est émis par la page.
  */
 export function FinDeBailPriceFaq({
-  devisHref = "/contact?service=nettoyage-fin-de-bail",
   className,
 }: FinDeBailPriceFaqProps) {
   return (
     <div className={cn("mt-16 border-t border-border/80 pt-16", className)}>
-      <Badge className="text-accent">FAQ</Badge>
+      <Badge className="text-accent-ink">FAQ</Badge>
       <h2 className="mt-4 font-display text-display-sm text-foreground">
         Prix, devis et garantie d&apos;état des lieux
       </h2>
@@ -29,14 +27,8 @@ export function FinDeBailPriceFaq({
         un devis sur mesure.
       </p>
       <div className="mt-8">
-        <FaqList items={finDeBailPriceFaqs} />
+        <FaqList items={finDeBailPriceFaqs} collapseAfter={4} />
       </div>
-      <ConversionCta
-        className="mt-10"
-        devisHref={devisHref}
-        devisLabel="Préférer nous écrire"
-        preferCall
-      />
     </div>
   );
 }
