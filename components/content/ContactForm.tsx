@@ -33,7 +33,9 @@ export function ContactForm({ defaultService = "", defaultCommune = "" }: Contac
   const defaultPrestation = mapServiceSlugToPrestation(defaultService);
 
   function focusField(name: DevisFieldName) {
-    document.getElementById(name)?.focus();
+    requestAnimationFrame(() => {
+      document.getElementById(name)?.focus();
+    });
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -199,7 +201,7 @@ export function ContactForm({ defaultService = "", defaultCommune = "" }: Contac
           </p>
         ) : null}
 
-        <Button type="submit" disabled={status === "submitting"}>
+        <Button type="submit" disabled={status === "submitting"} className="w-full sm:w-auto">
           {status === "submitting" ? "Envoi en cours…" : "Envoyer la demande"}
         </Button>
         <p className="text-sm text-muted">
