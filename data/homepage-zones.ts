@@ -24,11 +24,11 @@ export const homepageZones = [
   {
     city: "Yverdon-les-Bains",
     label: "Yverdon-les-Bains",
-    href: "/seo/nettoyage-yverdon-les-bains",
+    href: "/zones",
   },
   {
     city: "Morges",
     label: "Morges",
-    href: "/seo/nettoyage-morges",
+    href: "/zones",
   },
 ] as const;

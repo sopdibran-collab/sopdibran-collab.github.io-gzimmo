@@ -1,5 +1,4 @@
 import type { FaqContent } from "@/data/faq";
-import { faq, getFaqsByIds } from "@/data/faq";
 
 export type Location = {
   slug: string;
@@ -29,17 +28,17 @@ const romontFaqs: FaqContent[] = [
   {
     question: "Intervenez-vous rapidement autour de Romont ?",
     answer:
-      "Oui. Notre siège à Romont nous permet d'intervenir rapidement à Romont, Estavayer, Vuisternens-devant-Romont, Mézières, Ursy, Châtel-Saint-Denis et les communes voisines.",
+      "Oui. Le siège est à Romont. Nous couvrons Romont, Vuisternens-devant-Romont, Ursy, Mézières, Estavayer et Châtel-Saint-Denis. La date est fixée dans le devis.",
   },
   {
     question: "Proposez-vous le nettoyage fin de bail à Romont ?",
     answer:
-      "Oui. Nous réalisons des nettoyages de fin de bail conformes aux exigences des régies et propriétaires du canton de Fribourg. Devis gratuit avant intervention.",
+      "Oui. Cuisine, fenêtres, stores, balcon et salle de bain font partie du passage, selon la checklist de la régie. Si un point n'est pas accepté, nous revenons sans frais. Devis gratuit avant l'intervention.",
   },
   {
     question: "Gzimmo intervient-il hors de Romont ?",
     answer:
-      "Oui. Priorité aux cantons de Fribourg, Vaud et Neuchâtel. Siège : Route de Raboud 8, 1680 Romont FR.",
+      "Oui. Les cantons couverts sont Fribourg, Vaud et Neuchâtel. Siège : Route de Raboud 8, 1680 Romont FR.",
   },
 ];
 
@@ -59,13 +58,13 @@ export const locations: Location[] = [
     priority: 1,
     isHeadquarters: true,
     nearbyCommunes: [
-      "Estavayer",
       "Vuisternens-devant-Romont",
-      "Mézières",
       "Ursy",
-      "Châtel-Saint-Denis",
+      "Mézières",
       "Villarlod",
       "Massonnens",
+      "Estavayer",
+      "Châtel-Saint-Denis",
     ],
     servicesHighlight: [
       "Nettoyage fin de bail",
@@ -81,8 +80,8 @@ export const locations: Location[] = [
         body: "Gzimmo Sàrl est installée Route de Raboud 8 à Romont. Nous connaissons les attentes des particuliers, régies et entreprises du canton de Fribourg : ponctualité, discrétion et un résultat irréprochable à chaque passage.",
       },
       {
-        title: "Intervention en Glâne et en Suisse romande",
-        body: "Depuis notre siège romontais, nous intervenons en priorité dans le district de la Glâne, puis dans les cantons de Fribourg, Vaud et Neuchâtel. Que vous soyez à Romont, Estavayer ou Fribourg, la même exigence de qualité s'applique.",
+        title: "Autour de Romont",
+        body: "Depuis le siège, nous intervenons à Romont et dans les communes voisines : Vuisternens-devant-Romont, Ursy, Mézières, Villarlod, Massonnens, Estavayer et Châtel-Saint-Denis. Fribourg, Bulle, Lausanne et Neuchâtel sont couverts aussi. Le devis est gratuit.",
       },
       {
         title: "Pourquoi choisir Gzimmo à Romont ?",
@@ -92,6 +91,10 @@ export const locations: Location[] = [
         title: "Nos prestations depuis Romont",
         body: "Depuis le siège de Romont, nous proposons notamment le nettoyage de fin de bail, le nettoyage après chantier, l'entretien de bureaux et la conciergerie pour régies. Chaque prestation a sa page dédiée — le détail checklist et garantie se trouve sur les pages service.",
       },
+      {
+        title: "Nettoyage de fin de bail à Romont",
+        body: "Fin de bail réalisée à Romont : four et plaques dégraissés, fenêtres, encadrements et rails, stores lamelle par lamelle, balcon et vitrages, salle de bain détartrée. Le locataire et la gérance étaient très satisfaits.",
+      },
     ],
     faqs: romontFaqs,
     priorityLinks: [
@@ -99,102 +102,7 @@ export const locations: Location[] = [
       { label: "Nettoyage fin de bail (Suisse romande)", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Conciergerie pour régies", href: "/conciergerie" },
-    ],
-  },
-  {
-    slug: "nettoyage-estavayer",
-    city: "Estavayer",
-    canton: "FR",
-    cantonName: "Fribourg",
-    district: "Broye",
-    title: "Nettoyage professionnel à Estavayer",
-    description:
-      "Nettoyage professionnel à Estavayer et Estavayer-le-Lac. Gzimmo, basé à Romont : fin de bail, bureaux, locaux. Devis gratuit.",
-    intro:
-      "À 15 minutes de Romont, nous intervenons à Estavayer pour des prestations de nettoyage professionnel soignées et planifiées.",
-    geo: { latitude: 46.8492, longitude: 6.8467 },
-    priority: 0.9,
-    nearbyCommunes: ["Estavayer-le-Lac", "Châtonnaye", "Villarepos", "Lully"],
-    servicesHighlight: ["Nettoyage fin de bail", "Entretien de locaux", "Nettoyage vitres"],
-    sections: [
-      {
-        title: "Nettoyage à Estavayer et sur la Côte",
-        body: "Gzimmo dessert Estavayer, Estavayer-le-Lac et les communes de la Broye fribourgeoise depuis son siège à Romont. Particuliers, régies et PME : nous adaptons nos prestations à vos besoins.",
-      },
-      {
-        title: "Proximité et réactivité",
-        body: "La courte distance depuis Romont nous permet d'intervenir rapidement à Estavayer, que ce soit pour un entretien régulier ou une remise en état ponctuelle après travaux.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Intervenez-vous à Estavayer-le-Lac ?",
-        answer:
-          "Oui. Nous couvrons Estavayer, Estavayer-le-Lac et les communes environnantes du canton de Fribourg.",
-      },
-      {
-        question: "Comment obtenir un devis à Estavayer ?",
-        answer:
-          "Contactez-nous par téléphone au 076 214 23 42, par e-mail à info@gzimmo.ch ou via le formulaire en ligne. Devis gratuit, réponse sous 24 h.",
-      },
-    ],
-  },
-  {
-    slug: "nettoyage-chatel-saint-denis",
-    city: "Châtel-Saint-Denis",
-    canton: "FR",
-    cantonName: "Fribourg",
-    district: "Veveyse",
-    title: "Nettoyage professionnel à Châtel-Saint-Denis",
-    description:
-      "Entreprise de nettoyage à Châtel-Saint-Denis (FR). Gzimmo : appartements, bureaux, fin de bail. Basé à Romont, devis gratuit.",
-    intro:
-      "Châtel-Saint-Denis et la Veveyse : Gzimmo assure un nettoyage professionnel rigoureux, avec la réactivité d'une équipe basée à Romont.",
-    geo: { latitude: 46.5267, longitude: 6.9014 },
-    priority: 0.9,
-    nearbyCommunes: ["Semsales", "Granges", "Le Flon", "Remaufens"],
-    servicesHighlight: ["Nettoyage d'appartements", "Nettoyage bureaux", "Fin de bail"],
-    sections: [
-      {
-        title: "Service de nettoyage en Veveyse",
-        body: "Depuis Romont, nous intervenons régulièrement à Châtel-Saint-Denis pour l'entretien de logements, bureaux et locaux commerciaux. Un service discret, planifié selon vos disponibilités.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Couvrez-vous Châtel-Saint-Denis et la Veveyse ?",
-        answer:
-          "Oui. Châtel-Saint-Denis, Semsales, Granges et les communes de la Veveyse font partie de notre zone d'intervention depuis Romont.",
-      },
-    ],
-  },
-  {
-    slug: "nettoyage-vuisternens-devant-romont",
-    city: "Vuisternens-devant-Romont",
-    canton: "FR",
-    cantonName: "Fribourg",
-    district: "Glâne",
-    title: "Nettoyage à Vuisternens-devant-Romont",
-    description:
-      "Nettoyage professionnel à Vuisternens-devant-Romont. Gzimmo, entreprise voisine à Romont : fin de bail, maisons, locaux.",
-    intro:
-      "À deux pas de notre siège, Vuisternens-devant-Romont bénéficie d'interventions rapides et d'un service de proximité.",
-    geo: { latitude: 46.7183, longitude: 6.9189 },
-    priority: 0.95,
-    nearbyCommunes: ["Romont", "Villarlod", "Massonnens", "Ursy"],
-    servicesHighlight: ["Nettoyage maisons", "Fin de bail", "Entretien locaux"],
-    sections: [
-      {
-        title: "Proximité immédiate depuis Romont",
-        body: "Vuisternens-devant-Romont est l'une des communes les plus proches de notre siège. Nous y intervenons pour des nettoyages de fin de bail, l'entretien de maisons et de locaux professionnels.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Êtes-vous proches de Vuisternens-devant-Romont ?",
-        answer:
-          "Oui. Notre entreprise est basée à Romont, à quelques minutes de Vuisternens. C'est l'une de nos zones d'intervention prioritaires.",
-      },
+      { label: "Réalisations", href: "/realisations" },
     ],
   },
   {
@@ -219,23 +127,28 @@ export const locations: Location[] = [
       },
       {
         title: "Depuis Romont, pour Fribourg",
-        body: "Notre siège à Romont est idéalement situé pour desservir Fribourg et l'ensemble du canton. Même équipe, même exigence, devis gratuit sous 24 h.",
+        body: "Le siège est à Romont, Route de Raboud 8, pas à Fribourg. Fribourg, Marly, Villars-sur-Glâne, Givisiez et Matran sont couverts sur devis. La date du passage est fixée avant le déplacement.",
       },
       {
         title: "Fin de bail à Fribourg et agglomération",
-        body: "Nous réalisons des nettoyages de fin de bail conformes aux standards des régies fribourgeoises : sanitaires, cuisines, sols, vitres et détails souvent oubliés. Garantie de remise de bail incluse.",
+        body: "Le passage reprend les points qui bloquent souvent un état des lieux : four, plaques, sanitaires, joints, sols et vitres. Si la régie tique, nous revenons sans frais. Le détail est sur la page fin de bail à Fribourg.",
       },
     ],
     faqs: [
       {
         question: "Intervenez-vous dans l'agglomération fribourgeoise ?",
         answer:
-          "Oui : Fribourg, Marly, Villars-sur-Glâne, Givisiez et les communes limitrophes.",
+          "Oui : Fribourg, Marly, Villars-sur-Glâne, Givisiez et Matran. Siège : Route de Raboud 8, 1680 Romont.",
       },
       {
         question: "Proposez-vous le nettoyage fin de bail à Fribourg ?",
         answer:
-          "Oui. Nous intervenons régulièrement à Fribourg pour des fins de bail conformes aux exigences des régies. Devis gratuit avant intervention.",
+          "Oui. Cuisine, sanitaires, sols et vitres sont repris selon la checklist de la régie. Si un point n'est pas accepté, nous revenons sans frais. Devis gratuit avant l'intervention.",
+      },
+      {
+        question: "Quel délai pour un passage à Fribourg ?",
+        answer:
+          "Nous répondons sous 24 h. Le jour du passage dépend du planning et de votre date. Il est confirmé dans le devis.",
       },
     ],
     priorityLinks: [
@@ -254,7 +167,7 @@ export const locations: Location[] = [
     description:
       "Nettoyage professionnel à Bulle et en Gruyère. Gzimmo : locaux, fin de bail, vitres. Basé à Romont, devis gratuit.",
     intro:
-      "Bulle et la Gruyère : Gzimmo déploie son expertise en nettoyage professionnel depuis Romont, avec intervention rapide.",
+      "Bulle et la Gruyère sont couvertes depuis Romont. Fin de bail, locaux, après chantier et vitres. Devis gratuit.",
     geo: { latitude: 46.6175, longitude: 7.0569 },
     priority: 0.8,
     nearbyCommunes: ["La Tour-de-Trême", "Riaz", "Vuadens", "Broc"],
@@ -262,16 +175,37 @@ export const locations: Location[] = [
     sections: [
       {
         title: "Nettoyage en Gruyère",
-        body: "Bulle, carrefour de la Gruyère, accueille commerces et entreprises qui nécessitent un entretien régulier et fiable. Gzimmo intervient avec la même rigueur qu'à Romont. Pour un nettoyage après chantier ou une fin de chantier, le détail du passage est sur la page service.",
+        body: "Bulle, La Tour-de-Trême, Riaz, Vuadens et Broc sont desservis depuis le siège de Romont, Route de Raboud 8. Le devis est gratuit. La date est confirmée avant le passage.",
+      },
+      {
+        title: "Fin de bail et après chantier à Bulle",
+        body: "Pour une sortie de bail, le passage suit la checklist de la régie : cuisine, sanitaires, sols, vitres. Si un point n'est pas accepté, nous revenons sans frais. Après des travaux, il s'agit d'enlever la poussière fine et les résidus, pas de faire un ménage courant. Le détail est sur la page de la prestation.",
+      },
+      {
+        title: "Avant le déplacement",
+        body: "On regarde la surface, l'état du logement ou le type de chantier, et la date souhaitée. Le devis est gratuit. Il fixe le périmètre avant l'intervention.",
       },
     ],
     priorityLinks: [
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+      { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
     ],
     faqs: [
       {
         question: "Couvrez-vous la Gruyère depuis Romont ?",
-        answer: "Oui. Bulle, La Tour-de-Trême et les communes de la Gruyère font partie de notre zone d'intervention.",
+        answer:
+          "Oui. Bulle, La Tour-de-Trême, Riaz, Vuadens et Broc font partie de la zone. Siège : Route de Raboud 8, 1680 Romont.",
+      },
+      {
+        question: "Le devis pour Bulle est-il gratuit ?",
+        answer:
+          "Oui, sans engagement. Téléphone 076 214 23 42 ou info@gzimmo.ch. Réponse sous 24 h.",
+      },
+      {
+        question: "Faites-vous la fin de bail à Bulle ?",
+        answer:
+          "Oui. Si la régie ne valide pas un point de la checklist, nous revenons sans frais. Le détail du passage est sur la page fin de bail.",
       },
     ],
   },
@@ -283,9 +217,9 @@ export const locations: Location[] = [
     district: "Lausanne",
     title: "Nettoyage professionnel à Lausanne",
     description:
-      "Nettoyage professionnel à Lausanne et agglomération. Gzimmo : bureaux, appartements, fin de bail. Devis gratuit, Suisse romande.",
+      "Nettoyage professionnel à Lausanne et agglomération. Gzimmo : bureaux, appartements, fin de bail. Devis gratuit, depuis Romont.",
     intro:
-      "Lausanne et l'Ouest vaudois : une équipe expérimentée pour l'entretien de vos espaces professionnels et privés.",
+      "Lausanne, Renens, Pully, Prilly et Ecublens sont couverts depuis Romont. Bureaux, appartements et fin de bail. Devis gratuit.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
     nearbyCommunes: ["Renens", "Pully", "Prilly", "Ecublens"],
@@ -293,14 +227,37 @@ export const locations: Location[] = [
     sections: [
       {
         title: "Nettoyage professionnel à Lausanne",
-        body: "Lausanne, capitale vaudoise, demande des prestataires fiables et discrets. Gzimmo intervient pour l'entretien de bureaux, le nettoyage d'appartements et les fins de bail.",
+        body: "Nous intervenons à Lausanne pour l'entretien de bureaux, le nettoyage d'appartements et les fins de bail. Le siège est à Romont, Route de Raboud 8. Le devis fixe le jour avant le déplacement.",
       },
+      {
+        title: "Communes voisines",
+        body: "Renens, Pully, Prilly et Ecublens sont couverts avec Lausanne. Yverdon, Morges, Nyon, Payerne, Vevey et Montreux sont desservis aussi, depuis Romont.",
+      },
+      {
+        title: "Fin de bail et bureaux",
+        body: "Pour une remise de clés, cuisine, sanitaires, sols et vitres suivent la checklist de la régie. Si un point n'est pas accepté, nous revenons sans frais. L'entretien de bureaux peut se faire en dehors des heures d'activité, quand c'est convenu dans le devis.",
+      },
+    ],
+    priorityLinks: [
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+      { label: "Nettoyage de bureaux", href: "/nettoyage-bureaux" },
+      { label: "Zones d'intervention", href: "/zones" },
     ],
     faqs: [
       {
         question: "Intervenez-vous à Lausanne depuis Romont ?",
         answer:
-          "Oui. Nous couvrons Lausanne, Renens, Pully et l'agglomération lausannoise.",
+          "Oui. Lausanne, Renens, Pully, Prilly et Ecublens sont couverts. Siège : Route de Raboud 8, 1680 Romont. Devis gratuit au 076 214 23 42.",
+      },
+      {
+        question: "Proposez-vous la fin de bail à Lausanne ?",
+        answer:
+          "Oui. Le passage suit la checklist de la régie. Si un point n'est pas validé, nous revenons sans frais.",
+      },
+      {
+        question: "Sous quel délai répondez-vous pour Lausanne ?",
+        answer:
+          "Sous 24 h pour le devis. La date d'intervention dépend du planning et est confirmée avant le déplacement.",
       },
     ],
   },
@@ -311,9 +268,9 @@ export const locations: Location[] = [
     cantonName: "Neuchâtel",
     title: "Nettoyage professionnel à Neuchâtel",
     description:
-      "Nettoyage professionnel à Neuchâtel et canton. Gzimmo : entretien locaux, fin de bail. Équipe expérimentée, devis gratuit.",
+      "Nettoyage professionnel à Neuchâtel et dans le canton. Gzimmo, siège à Romont : locaux, fin de bail, vitres. Devis gratuit.",
     intro:
-      "Neuchâtel : un service de nettoyage professionnel discret et minutieux pour particuliers et entreprises.",
+      "Neuchâtel et le canton sont couverts depuis Romont. Entretien de locaux, fin de bail et vitres. Devis gratuit.",
     geo: { latitude: 46.99, longitude: 6.931 },
     priority: 0.7,
     nearbyCommunes: ["La Chaux-de-Fonds", "Colombier", "Peseux"],
@@ -321,159 +278,38 @@ export const locations: Location[] = [
     sections: [
       {
         title: "Nettoyage en canton de Neuchâtel",
-        body: "Gzimmo intervient à Neuchâtel et dans les communes du canton pour l'entretien de locaux et les nettoyages spécialisés.",
+        body: "Nous intervenons à Neuchâtel, La Chaux-de-Fonds, Colombier et Peseux. Les passages partent de Romont, Route de Raboud 8. Fribourg et Vaud sont les deux autres cantons couverts.",
+      },
+      {
+        title: "Locaux, fin de bail, vitres",
+        body: "L'entretien de locaux se planifie au rythme convenu. La fin de bail reprend cuisine, sanitaires, sols et vitres selon la checklist. Les vitres accessibles, cadres compris, se font sur devis. Si la régie n'accepte pas un point de fin de bail, nous revenons sans frais.",
+      },
+      {
+        title: "Devis avant le déplacement",
+        body: "Décrivez le lieu, la prestation et la date souhaitée au 076 214 23 42 ou à info@gzimmo.ch. Le devis est gratuit, avant le passage.",
       },
     ],
     faqs: [
       {
         question: "Intervenez-vous à Neuchâtel ?",
-        answer: "Oui. Neuchâtel et les communes du canton font partie de notre couverture Suisse romande.",
+        answer:
+          "Oui. Neuchâtel, La Chaux-de-Fonds, Colombier et Peseux sont couverts depuis Romont. Devis gratuit.",
       },
-    ],
-  },
-  {
-    slug: "nettoyage-yverdon-les-bains",
-    city: "Yverdon-les-Bains",
-    canton: "VD",
-    cantonName: "Vaud",
-    district: "Jura-Nord vaudois",
-    title: "Nettoyage professionnel à Yverdon-les-Bains",
-    description:
-      "Nettoyage professionnel à Yverdon-les-Bains et Nord vaudois. Gzimmo : appartements, bureaux, locaux.",
-    intro:
-      "Yverdon-les-Bains et le Nord vaudois : intervention rapide pour un résultat impeccable.",
-    geo: { latitude: 46.7785, longitude: 6.6412 },
-    priority: 0.7,
-    nearbyCommunes: ["Grandson", "Orbe", "Payerne"],
-    servicesHighlight: ["Appartements", "Bureaux", "Entretien locaux"],
-    sections: [
       {
-        title: "Nettoyage à Yverdon",
-        body: "Gzimmo intervient à Yverdon-les-Bains pour des nettoyages d'appartements, l'entretien de bureaux et de locaux professionnels.",
+        question: "La fin de bail est-elle possible dans le canton ?",
+        answer:
+          "Oui. Si un point de la checklist n'est pas accepté par la régie, nous revenons sans frais. Le détail est sur la page fin de bail.",
       },
-    ],
-    faqs: [
       {
-        question: "Intervenez-vous à Yverdon-les-Bains ?",
-        answer: "Oui. Yverdon et le Nord vaudois font partie de notre zone Suisse romande.",
-      },
-    ],
-  },
-  {
-    slug: "nettoyage-morges",
-    city: "Morges",
-    canton: "VD",
-    cantonName: "Vaud",
-    district: "Morges",
-    title: "Nettoyage professionnel à Morges",
-    description:
-      "Nettoyage professionnel à Morges et Côte vaudoise. Gzimmo : locaux, fin de bail, vitres.",
-    intro:
-      "Morges et la Côte : un accompagnement fiable pour particuliers et professionnels.",
-    geo: { latitude: 46.5112, longitude: 6.4985 },
-    priority: 0.7,
-    nearbyCommunes: ["Tolochenaz", "Lonay", "Préverenges"],
-    servicesHighlight: ["Après chantier", "Locaux", "Fin de bail", "Vitres"],
-    sections: [
-      {
-        title: "Nettoyage sur la Côte vaudoise",
-        body: "Morges et les communes de la Côte bénéficient de nos prestations d'entretien régulier et de nettoyage ponctuel. Après la rénovation d'un immeuble à Morges, notre équipe a remis les surfaces en état avant livraison — le détail du passage est sur la page après chantier.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Couvrez-vous Morges et la Côte ?",
-        answer: "Oui. Morges, Tolochenaz et la Côte vaudoise font partie de notre zone.",
+        question: "Comment obtenir un devis pour Neuchâtel ?",
+        answer:
+          "Par téléphone au 076 214 23 42 ou par e-mail à info@gzimmo.ch. Réponse sous 24 h. Siège : Route de Raboud 8, 1680 Romont FR.",
       },
     ],
     priorityLinks: [
-      { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
-      { label: "Réalisation à Morges", href: "/realisations" },
-    ],
-  },
-  {
-    slug: "nettoyage-nyon",
-    city: "Nyon",
-    canton: "VD",
-    cantonName: "Vaud",
-    district: "Nyon",
-    title: "Nettoyage professionnel à Nyon",
-    description:
-      "Nettoyage professionnel à Nyon et La Côte. Gzimmo : entretien régulier, prestations ponctuelles.",
-    intro:
-      "Nyon : des interventions planifiées avec précision pour habitants et entreprises.",
-    geo: { latitude: 46.3833, longitude: 6.2333 },
-    priority: 0.65,
-    nearbyCommunes: ["Gland", "Rolle", "Coppet"],
-    servicesHighlight: ["Entretien régulier", "Fin de bail", "Bureaux"],
-    sections: [
-      {
-        title: "Nettoyage à Nyon",
-        body: "Nyon et la région lémanique : Gzimmo assure entretien régulier et prestations ponctuelles avec la même exigence qu'à Romont.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Intervenez-vous à Nyon ?",
-        answer: "Oui. Nyon, Gland et la Côte font partie de notre couverture.",
-      },
-    ],
-  },
-  {
-    slug: "nettoyage-payerne",
-    city: "Payerne",
-    canton: "VD",
-    cantonName: "Vaud",
-    district: "Broye-Vully",
-    title: "Nettoyage professionnel à Payerne",
-    description:
-      "Nettoyage professionnel à Payerne et Broye vaudoise. Gzimmo, proche depuis Romont : devis gratuit.",
-    intro:
-      "Payerne et la Broye vaudoise : service flexible et soigné, à proximité de notre base fribourgeoise.",
-    geo: { latitude: 46.822, longitude: 6.939 },
-    priority: 0.8,
-    nearbyCommunes: ["Avenches", "Estavayer-le-Lac", "Fétigny"],
-    servicesHighlight: ["Fin de bail", "Locaux", "Maisons"],
-    sections: [
-      {
-        title: "Nettoyage en Broye vaudoise",
-        body: "Payerne, à la frontière fribourgeoise, est naturellement desservie depuis notre siège à Romont. Entretien de locaux, fin de bail et nettoyage de maisons.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Êtes-vous proches de Payerne ?",
-        answer:
-          "Oui. Payerne est à proximité de Romont. Nous y intervenons régulièrement pour des particuliers et des entreprises.",
-      },
-    ],
-  },
-  {
-    slug: "nettoyage-ursy",
-    city: "Ursy",
-    canton: "FR",
-    cantonName: "Fribourg",
-    district: "Glâne",
-    title: "Nettoyage professionnel à Ursy",
-    description:
-      "Nettoyage à Ursy et en Glâne. Gzimmo, entreprise à Romont : fin de bail, maisons, locaux. Intervention rapide.",
-    intro:
-      "Ursy et la Glâne : service de proximité depuis notre siège romontais.",
-    geo: { latitude: 46.735, longitude: 6.982 },
-    priority: 0.9,
-    nearbyCommunes: ["Romont", "Vauderens", "Siviriez", "Massonnens"],
-    servicesHighlight: ["Fin de bail", "Maisons", "Entretien locaux"],
-    sections: [
-      {
-        title: "Nettoyage à Ursy",
-        body: "Ursy fait partie du district de la Glâne, notre zone de prédilection depuis Romont. Nettoyage de maisons, fin de bail et entretien de locaux.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Intervenez-vous à Ursy ?",
-        answer: "Oui. Ursy et les communes de la Glâne sont couvertes en priorité depuis Romont.",
-      },
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+      { label: "Entretien de locaux", href: "/entretien-locaux" },
+      { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
     ],
   },
 ];
@@ -483,6 +319,3 @@ export function getLocationBySlug(slug: string) {
 }
 
 export const headquarters = locations.find((l) => l.isHeadquarters);
-export const romontRegionLocations = locations.filter(
-  (l) => l.canton === "FR" && (l.isHeadquarters || l.district === "Glâne" || l.district === "Broye" || l.district === "Veveyse"),
-);

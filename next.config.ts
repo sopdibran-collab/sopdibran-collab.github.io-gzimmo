@@ -42,6 +42,18 @@ const outOfZoneRedirects = [
   permanent: true,
 }));
 
+/** Pages locales trop minces : 301 vers la page forte ou le hub /zones. */
+const thinLocalRedirects = [
+  { source: "/seo/nettoyage-estavayer", destination: "/seo/nettoyage-romont" },
+  { source: "/seo/nettoyage-chatel-saint-denis", destination: "/seo/nettoyage-romont" },
+  { source: "/seo/nettoyage-vuisternens-devant-romont", destination: "/seo/nettoyage-romont" },
+  { source: "/seo/nettoyage-ursy", destination: "/seo/nettoyage-romont" },
+  { source: "/seo/nettoyage-payerne", destination: "/zones" },
+  { source: "/seo/nettoyage-yverdon-les-bains", destination: "/zones" },
+  { source: "/seo/nettoyage-morges", destination: "/zones" },
+  { source: "/seo/nettoyage-nyon", destination: "/zones" },
+].map((redirect) => ({ ...redirect, permanent: true as const }));
+
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp"],
@@ -65,6 +77,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       ...outOfZoneRedirects,
+      ...thinLocalRedirects,
       ...serviceRedirects,
     ];
   },
