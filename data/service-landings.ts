@@ -367,11 +367,8 @@ export const serviceLandings: ServiceLanding[] = [
       { label: "Fribourg", href: "/seo/nettoyage-fribourg" },
       { label: "Bulle", href: "/seo/nettoyage-bulle" },
       { label: "Lausanne", href: "/seo/nettoyage-lausanne" },
-      { label: "Nyon", href: "/seo/nettoyage-nyon" },
-      { label: "Yverdon", href: "/seo/nettoyage-yverdon-les-bains" },
-      { label: "Payerne", href: "/seo/nettoyage-payerne" },
-      { label: "Morges", href: "/seo/nettoyage-morges" },
       { label: "Neuchâtel", href: "/seo/nettoyage-neuchatel" },
+      { label: "Toutes les zones", href: "/zones" },
     ],
     testimonials: [
       {
