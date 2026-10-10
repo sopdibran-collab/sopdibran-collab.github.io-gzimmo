@@ -8,7 +8,7 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Zones d'intervention — Fribourg, Vaud, Neuchâtel",
+  title: "Zones d'intervention : Fribourg, Vaud et Neuchâtel",
   description:
     "Gzimmo intervient depuis Romont dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis gratuit.",
   path: "/zones",
