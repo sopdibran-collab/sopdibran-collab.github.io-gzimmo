@@ -3,7 +3,7 @@ import { company, formatAddress } from "@/data/company";
 
 const defaultTitle = `${company.name} — Nettoyage professionnel Romont & Suisse romande`;
 const defaultDescription =
-    "Gzimmo Sàrl, Route de Raboud 8. Équipe expérimentée, fin de bail, bureaux, après chantier, conciergerie. Priorité Fribourg & Vaud. Devis gratuit — 076 214 23 42.";
+    "Gzimmo Sàrl, Route de Raboud 8. Fin de bail, bureaux, après chantier, conciergerie. Fribourg, Vaud et Neuchâtel. Devis gratuit — 076 214 23 42.";
 
 type PageMetadataOptions = {
   title?: string;

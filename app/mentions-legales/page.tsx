@@ -9,7 +9,7 @@ import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
   title: "Mentions légales",
-  description: `Mentions légales du site ${company.url} — ${company.legalName}, nettoyage professionnel à Romont (FR).`,
+  description: `Mentions légales — ${company.legalName}, IDE ${company.ide}, ${formatAddress()}. ${company.email}, ${company.phoneDisplay}.`,
   path: "/mentions-legales",
   keywords: ["mentions légales", "Gzimmo", "Romont"],
 });
@@ -35,7 +35,11 @@ export default function MentionsLegalesPage() {
         <ContentCard className="max-w-3xl">
           <LegalSection title="Éditeur du site">
             <p>
-              <strong className="text-foreground">{company.legalName}</strong>
+              Raison sociale : <strong className="text-foreground">{company.legalName}</strong>
+              <br />
+              Forme juridique : société à responsabilité limitée (Sàrl)
+              <br />
+              IDE : {company.ide}
               <br />
               {formatAddress()}
               <br />
@@ -52,7 +56,6 @@ export default function MentionsLegalesPage() {
                 {company.phoneDisplay}
               </a>
             </p>
-            <p>Forme juridique : société à responsabilité limitée (Sàrl)</p>
           </LegalSection>
 
           <LegalSection title="Responsable du contenu">

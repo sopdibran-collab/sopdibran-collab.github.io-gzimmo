@@ -62,7 +62,7 @@ const sharedWhy = [
   {
     title: "Réactivité depuis Romont",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons dans toute la Suisse romande. Devis sous 24 h.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis sous 24 h.",
   },
   {
     title: "Devis transparent avant intervention",
@@ -334,31 +334,37 @@ export const serviceLandings: ServiceLanding[] = [
         "menage-vs-renovation",
         "qualite",
         "Quelle différence entre un ménage classique et un nettoyage après rénovation ?",
-        "Un ménage classique enlève la poussière du quotidien. Après rénovation, chantier ou travaux, la poussière fine de plâtre et de coupe se loge dans les radiateurs, les joints, les prises, les placards et les textiles. Sans dépoussiérage ciblé et sans lessivage adapté aux finitions neuves, elle réapparaît dès que l'on aère ou que l'on chauffe.",
+        "Un ménage classique enlève la poussière du quotidien. Après rénovation ou chantier, la poussière fine de plâtre se loge dans les radiateurs, les joints, les prises et les placards. Sans dépoussiérage ciblé, elle revient dès qu'on aère ou qu'on chauffe.",
       ),
       faq(
-        "laitance-vmc",
+        "inclus-apres-chantier",
         "prestations",
-        "Enlevez-vous la laitance de carrelage et la poussière fine dans les VMC ?",
-        "Oui. La laitance et le voile de ciment sur un carrelage neuf font partie du passage, de même que le dépoussiérage des aérations, des bouches de VMC et des conduits accessibles. Le traitement dépend du résidu et du matériau : il est précisé dans le devis.",
+        "Que comprend un passage après chantier ?",
+        "Sols, y compris la laitance et le voile de ciment sur un carrelage neuf, vitres, châssis, rails et encadrements, sanitaires, radiateurs, prises, placards, et le dépoussiérage des aérations accessibles. Le devis précise le périmètre selon les résidus.",
       ),
       faq(
         "delai-devis-chantier",
         "delais",
         "Sous quel délai recevons-nous le devis ?",
-        "Sous 24 h. Appelez le 076 214 23 42 et décrivez le logement ou le lot, le type de travaux et la date de réception. Le devis est gratuit, clair, sans engagement.",
+        "Sous 24 h, gratuit, sans engagement. Appelez le 076 214 23 42 et décrivez le logement ou le lot, le type de travaux et la date de réception.",
       ),
       faq(
-        "produits-apres-chantier",
-        "prestations",
-        "Fournissez-vous les produits professionnels ?",
-        "Oui. Gzimmo amène les produits, exclusivement professionnels, choisis selon les surfaces : carrelage, parquet, verre, sanitaires. Vous n'avez rien à fournir.",
+        "zones-apres-chantier",
+        "zone",
+        "Dans quels cantons intervenez-vous après un chantier ?",
+        "Fribourg, Vaud et Neuchâtel, depuis Romont, Route de Raboud 8. Le devis est gratuit.",
       ),
       faq(
         "passage-avant-reception",
         "delais",
-        "Pouvez-vous passer avant la réception ou l'état des lieux ?",
-        "Oui, lorsque la date est connue à l'avance et que le planning le permet. Le passage de fin de chantier se cale avant la réception ou l'état des lieux. Prévenez-nous dès que le jour est fixé. La garantie de remise de bail — retour sans frais si la régie refuse un point — concerne le nettoyage de fin de bail, qui est une autre prestation.",
+        "Pouvez-vous passer avant la réception ?",
+        "Oui, quand la date est connue et que le planning le permet. Prévenez-nous dès que le jour est fixé.",
+      ),
+      faq(
+        "garantie-vs-chantier",
+        "qualite",
+        "Si la régie tique, revenez-vous sans frais après un chantier ?",
+        "Cette garantie concerne le nettoyage de fin de bail. Après chantier, le devis décrit le passage convenu. Si un état des lieux de sortie suit des travaux dans un logement loué, c'est la prestation fin de bail.",
       ),
     ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "conciergerie", "nettoyage-vitres"],
@@ -496,7 +502,44 @@ export const serviceLandings: ServiceLanding[] = [
       ],
     },
     whyGzimmo: sharedWhy,
-    faqs: sharedFaqs,
+    faqs: [
+      faq(
+        "inclus-appartement",
+        "prestations",
+        "Que comprend un nettoyage d'appartement ?",
+        "Pièce par pièce : séjour, chambres, cuisine, sanitaires. Sols selon le revêtement, cuisine et sanitaires dégraissés, surfaces, plinthes et interrupteurs. Les vitres intérieures sont faites si le devis les prévoit.",
+      ),
+      faq(
+        "delai-appartement",
+        "delais",
+        "Quel délai pour un nettoyage d'appartement ?",
+        "Devis sous 24 h. Le jour du passage dépend du planning et de la date indiquée. Il est confirmé avant l'intervention.",
+      ),
+      faq(
+        "appartement-vs-fin-de-bail",
+        "prestations",
+        "Quelle différence avec une fin de bail ?",
+        "Le nettoyage d'appartement remet le logement en ordre. La fin de bail prépare l'état des lieux et la remise des clés, selon la checklist de la régie. Si la régie tique, on revient sans frais : cette garantie vaut pour la fin de bail.",
+      ),
+      faq(
+        "devis-appartement",
+        "tarifs",
+        "Le devis est-il gratuit ?",
+        "Oui, sans engagement. Téléphone 076 214 23 42 ou info@gzimmo.ch. Le devis dépend du logement.",
+      ),
+      faq(
+        "zones-appartement",
+        "zone",
+        "Où intervenez-vous ?",
+        "Dans les cantons de Fribourg, de Vaud et de Neuchâtel, depuis Romont, Route de Raboud 8.",
+      ),
+      faq(
+        "etat-des-lieux-appartement",
+        "qualite",
+        "Ce nettoyage suffit-il pour un état des lieux ?",
+        "Non. Pour quitter un logement, prenez la fin de bail : elle est prévue pour l'état des lieux. Le nettoyage d'appartement ne reprend pas la garantie de remise de bail.",
+      ),
+    ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "nettoyage-maisons", "nettoyage-vitres"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Lausanne", href: "/seo/nettoyage-lausanne" },
@@ -574,10 +617,10 @@ export const serviceLandings: ServiceLanding[] = [
     slug: "conciergerie",
     h1: "Services de conciergerie pour régies et immeubles",
     subtitle:
-      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, dans toute la Suisse romande.",
+      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud et à Neuchâtel.",
     metaTitle: "Conciergerie pour régies — Fribourg & Vaud",
     metaDescription:
-      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Toute la Suisse romande, depuis Romont. 076 214 23 42.",
+      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg, Vaud et Neuchâtel, depuis Romont. 076 214 23 42.",
     intro:
       "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
     forWho: [
@@ -609,7 +652,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         title: "Basés à Romont, actifs en Suisse romande",
         description:
-          "Proximité avec les immeubles de la Glâne, de Fribourg et du canton de Vaud — et intervention dans toute la Suisse romande.",
+          "Proximité en Glâne, à Fribourg et dans le canton de Vaud. Neuchâtel est couvert aussi.",
       },
       ...sharedWhy,
     ],
