@@ -91,10 +91,6 @@ export const locations: Location[] = [
         title: "Nos prestations depuis Romont",
         body: "Depuis le siège de Romont, nous proposons notamment le nettoyage de fin de bail, le nettoyage après chantier, l'entretien de bureaux et la conciergerie pour régies. Chaque prestation a sa page dédiée — le détail checklist et garantie se trouve sur les pages service.",
       },
-      {
-        title: "Nettoyage de fin de bail à Romont",
-        body: "Fin de bail réalisée à Romont : four et plaques dégraissés, fenêtres, encadrements et rails, stores lamelle par lamelle, balcon et vitrages, salle de bain détartrée. Le locataire et la gérance étaient très satisfaits.",
-      },
     ],
     faqs: romontFaqs,
     priorityLinks: [
