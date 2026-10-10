@@ -11,7 +11,7 @@ import { Section } from "@/components/layout/Section";
 export const metadata = createMetadata({
   title: "À propos",
   description:
-    "Gzimmo Sàrl : plus de 15 ans d'expérience cumulée en nettoyage, basée à Romont (FR), active dans toute la Suisse romande.",
+    "Gzimmo Sàrl : plus de 15 ans d'expérience cumulée en nettoyage, basée à Romont (FR). Fribourg, Vaud et Neuchâtel.",
   path: "/a-propos",
 });
 
@@ -26,7 +26,7 @@ const values = [
   },
   {
     title: "Fiabilité",
-    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises en Suisse romande.`,
+    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises à Fribourg, en Vaud et à Neuchâtel.`,
   },
 ];
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
           onDark
           badge="À propos"
           title="La maîtrise d'un espace parfaitement entretenu"
-          description={`${company.name} accompagne particuliers et professionnels en Suisse romande. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()} — avec rigueur, discrétion et le souci du détail.`}
+          description={`${company.name} accompagne particuliers et professionnels à Fribourg, en Vaud et à Neuchâtel. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()} — avec rigueur, discrétion et le souci du détail.`}
         />
       </PageHero>
 

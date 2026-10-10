@@ -620,10 +620,10 @@ export const serviceLandings: ServiceLanding[] = [
     slug: "conciergerie",
     h1: "Services de conciergerie pour régies et immeubles",
     subtitle:
-      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, dans toute la Suisse romande.",
+      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud et à Neuchâtel.",
     metaTitle: "Conciergerie pour régies — Fribourg & Vaud",
     metaDescription:
-      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Toute la Suisse romande, depuis Romont. 076 214 23 42.",
+      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg, Vaud et Neuchâtel, depuis Romont. 076 214 23 42.",
     intro:
       "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
     forWho: [
@@ -655,7 +655,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         title: "Basés à Romont, actifs en Suisse romande",
         description:
-          "Proximité avec les immeubles de la Glâne, de Fribourg et du canton de Vaud — et intervention dans toute la Suisse romande.",
+          "Proximité en Glâne, à Fribourg et dans le canton de Vaud. Neuchâtel est couvert aussi.",
       },
       ...sharedWhy,
     ],
