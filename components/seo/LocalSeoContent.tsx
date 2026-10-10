@@ -35,20 +35,28 @@ export function LocalSeoBody({ location }: { location: Location }) {
             <ContentCard>
               <Badge className="text-accent-ink">Contact</Badge>
               <p className="mt-4 text-sm font-medium text-foreground">Coordonnées</p>
-              <address className="mt-4 space-y-2 text-sm not-italic text-muted">
+              <address className="mt-4 space-y-1 text-sm not-italic text-muted">
                 <p className="font-medium text-foreground">{company.legalName}</p>
                 {location.isHeadquarters ? (
-                  <GoogleMapsLink className="hover:text-accent-ink">{formatAddress()}</GoogleMapsLink>
+                  <GoogleMapsLink className="inline-flex min-h-11 items-center hover:text-accent-ink">
+                    {formatAddress()}
+                  </GoogleMapsLink>
                 ) : (
                   <p>Siège : {formatAddress()}</p>
                 )}
                 <p>
-                  <a href={`mailto:${company.email}`} className="hover:text-accent-ink">
+                  <a
+                    href={`mailto:${company.email}`}
+                    className="inline-flex min-h-11 items-center hover:text-accent-ink"
+                  >
                     {company.email}
                   </a>
                 </p>
                 <p>
-                  <a href={formatPhoneHref(company.phone)} className="hover:text-accent-ink">
+                  <a
+                    href={formatPhoneHref(company.phone)}
+                    className="inline-flex min-h-11 items-center hover:text-accent-ink"
+                  >
                     {company.phoneDisplay}
                   </a>
                 </p>
