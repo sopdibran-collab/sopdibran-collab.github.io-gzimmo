@@ -82,7 +82,7 @@ export const faqItems: FaqItem[] = [
     id: "zone-suisse-romande",
     category: "zone",
     question: "Quelle zone couvrez-vous en Suisse romande ?",
-    answer: `Gzimmo intervient dans toute la Suisse romande depuis son siège à Romont. Les pages locales détaillent le canton de Fribourg (Romont, Glâne, Broye, Gruyère), le canton de Vaud (de Bex à Nyon, Yverdon, Payerne, Vevey, Montreux) et le canton de Neuchâtel. Siège : ${siege}.`,
+    answer: `Fribourg, Vaud et Neuchâtel, depuis le siège à Romont (${siege}). Fribourg : Romont, Glâne, Broye, Gruyère. Vaud : Lausanne et le canton, de Bex à Nyon. Neuchâtel : la ville et le canton.`,
   },
   {
     id: "entreprise-romont",
@@ -109,7 +109,7 @@ export const faqItems: FaqItem[] = [
     category: "qualite",
     question: "Que se passe-t-il si la régie refuse l'état des lieux ?",
     answer:
-      "Sur le nettoyage de fin de bail, Gzimmo applique une garantie de remise de bail : si un point n'est pas validé par la régie, nous revenons corriger sans frais supplémentaires. L'objectif est une remise des clés validée du premier coup.",
+      "Sur le nettoyage de fin de bail, si la régie tique, on revient sans frais. La garantie couvre un point non validé à l'état des lieux.",
   },
   {
     id: "zone-hors-prioritaire",
@@ -172,10 +172,11 @@ export function getFaqsByIds(ids: string[]) {
 
 /** FAQ affichée sur l'accueil (prix, chantier, garantie, zone). */
 export const homepageFaqIds = [
+  "devis-gratuit",
+  "delai-intervention",
+  "garantie-remise-bail",
   "cout-fin-de-bail",
   "apres-chantier",
-  "garantie-remise-bail",
-  "devis-gratuit",
   "zone-suisse-romande",
 ] as const;
 

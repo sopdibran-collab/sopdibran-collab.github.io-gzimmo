@@ -3,12 +3,7 @@ import { locations, getLocationBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import { getServicePath } from "@/lib/service-paths";
 import { localPageMetadata } from "@/lib/metadata";
-import {
-  breadcrumbSchema,
-  faqPageSchema,
-  localBusinessSchema,
-  locationPageSchema,
-} from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema, locationPageSchema } from "@/lib/schema";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
@@ -47,7 +42,6 @@ export default async function LocalSeoPage({ params }: Props) {
     <>
       <JsonLd
         data={[
-          localBusinessSchema(),
           locationPageSchema(location),
           faqPageSchema(location.faqs),
           breadcrumbSchema([
