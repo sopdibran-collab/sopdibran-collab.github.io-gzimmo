@@ -10,11 +10,11 @@ export function HomeZoneGrid() {
       <FadeIn>
         <Badge className="text-accent-ink">Zones d&apos;intervention</Badge>
         <h2 className="mt-4 font-display text-display-md text-foreground">
-          Nous intervenons dans toute la Suisse romande
+          Nous intervenons à Fribourg, en Vaud et à Neuchâtel
         </h2>
         <p className="mt-4 max-w-xl text-muted leading-relaxed">
-          Depuis notre siège à Romont (FR), nos équipes couvrent en priorité le canton de Fribourg
-          et le canton de Vaud, puis la Suisse romande.
+          Depuis notre siège à Romont (FR), nous couvrons les cantons de Fribourg, de Vaud et de
+          Neuchâtel.
         </p>
       </FadeIn>
 

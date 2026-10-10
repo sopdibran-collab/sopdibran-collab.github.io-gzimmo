@@ -5,7 +5,7 @@ import { JsonLd, PageIntro } from "@/components/seo/JsonLd";
 import { company } from "@/data/company";
 import { googleReviews, googleReviewsProfileUrl } from "@/data/google-reviews";
 import { createMetadata } from "@/lib/metadata";
-import { breadcrumbSchema, localBusinessSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = createMetadata({
   title: "Avis clients",
@@ -19,14 +19,10 @@ export default function AvisPage() {
   return (
     <>
       <JsonLd
-        data={[
-          breadcrumbSchema([
-            { name: "Accueil", path: "/" },
-            { name: "Avis clients", path: "/avis" },
-          ]),
-          // NAP visible uniquement — pas d'AggregateRating / Review Google (Vault).
-          localBusinessSchema(),
-        ]}
+        data={breadcrumbSchema([
+          { name: "Accueil", path: "/" },
+          { name: "Avis clients", path: "/avis" },
+        ])}
       />
 
       <PageHero>

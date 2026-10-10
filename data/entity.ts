@@ -17,7 +17,7 @@ export const entityIdentity = {
   email: company.email,
   site: company.url,
   zonePrincipale: "Romont / Fribourg (siège)",
-  zonesSecondaires: "Toute la Suisse romande, villes et villages inclus",
+  zonesSecondaires: "Fribourg, Vaud et Neuchâtel",
   /** Priorité documentée (pages locales et preuves) : FR, VD, NE. */
   prioriteDocumentee: "Fribourg, Vaud, Neuchâtel",
   experience: `Plus de ${company.teamExperienceYears} ans d'expérience cumulée dans le nettoyage`,
@@ -34,7 +34,7 @@ export const entityIdentity = {
  * sur le site). Chaque page doit pouvoir s’y rattacher.
  */
 export const entityDefinition =
-  "Gzimmo Sàrl est une entreprise de nettoyage et d’entretien basée à Romont, qui intervient dans toute la Suisse romande. Elle est spécialisée dans le nettoyage fin de bail, le nettoyage après chantier, l’entretien de locaux et la conciergerie, pour particuliers, régies, propriétaires et entreprises.";
+  "Gzimmo Sàrl est une entreprise de nettoyage et d’entretien basée à Romont, qui intervient dans les cantons de Fribourg, de Vaud et de Neuchâtel. Elle est spécialisée dans le nettoyage fin de bail, le nettoyage après chantier, l’entretien de locaux et la conciergerie, pour particuliers, régies, propriétaires et entreprises.";
 
 export type EntityServiceEntry = {
   slug: string;
