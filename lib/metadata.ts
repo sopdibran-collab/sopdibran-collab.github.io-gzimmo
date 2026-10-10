@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { company, formatAddress } from "@/data/company";
 
-const defaultTitle = `${company.name} — Nettoyage professionnel Romont & Suisse romande`;
+const defaultTitle = `${company.name} — Nettoyage professionnel à Romont, Fribourg, Vaud et Neuchâtel`;
 const defaultDescription =
     "Gzimmo Sàrl, Route de Raboud 8. Fin de bail, bureaux, après chantier, conciergerie. Fribourg, Vaud et Neuchâtel. Devis gratuit — 076 214 23 42.";
 

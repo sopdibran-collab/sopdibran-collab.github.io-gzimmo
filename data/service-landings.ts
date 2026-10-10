@@ -334,13 +334,13 @@ export const serviceLandings: ServiceLanding[] = [
         "menage-vs-renovation",
         "qualite",
         "Quelle différence entre un ménage classique et un nettoyage après rénovation ?",
-        "Un ménage classique enlève la poussière du quotidien. Après rénovation ou chantier, la poussière fine de plâtre se loge dans les radiateurs, les joints, les prises et les placards. Sans dépoussiérage ciblé, elle revient dès qu'on aère ou qu'on chauffe.",
+        "Un ménage classique enlève la poussière du quotidien. Après rénovation, chantier ou travaux, la poussière fine de plâtre et de coupe se loge dans les radiateurs, les joints, les prises, les placards et les textiles. Sans dépoussiérage ciblé et sans lessivage adapté aux finitions neuves, elle réapparaît dès que l'on aère ou que l'on chauffe.",
       ),
       faq(
-        "inclus-apres-chantier",
+        "laitance-vmc",
         "prestations",
-        "Que comprend un passage après chantier ?",
-        "Sols, y compris la laitance et le voile de ciment sur un carrelage neuf, vitres, châssis, rails et encadrements, sanitaires, radiateurs, prises, placards, et le dépoussiérage des aérations accessibles. Le devis précise le périmètre selon les résidus.",
+        "Enlevez-vous la laitance de carrelage et la poussière fine dans les VMC ?",
+        "Oui. La laitance et le voile de ciment sur un carrelage neuf font partie du passage, de même que le dépoussiérage des aérations, des bouches de VMC et des conduits accessibles. Le traitement dépend du résidu et du matériau : il est précisé dans le devis.",
       ),
       faq(
         "delai-devis-chantier",
@@ -361,10 +361,16 @@ export const serviceLandings: ServiceLanding[] = [
         "Oui, quand la date est connue et que le planning le permet. Prévenez-nous dès que le jour est fixé.",
       ),
       faq(
+        "produits-apres-chantier",
+        "prestations",
+        "Fournissez-vous les produits professionnels ?",
+        "Oui. Gzimmo amène les produits, exclusivement professionnels, choisis selon les surfaces : carrelage, parquet, verre, sanitaires. Vous n'avez rien à fournir.",
+      ),
+      faq(
         "garantie-vs-chantier",
         "qualite",
-        "Si la régie tique, revenez-vous sans frais après un chantier ?",
-        "Cette garantie concerne le nettoyage de fin de bail. Après chantier, le devis décrit le passage convenu. Si un état des lieux de sortie suit des travaux dans un logement loué, c'est la prestation fin de bail.",
+        "La garantie de remise de bail s'applique-t-elle après un chantier ?",
+        "Non. Elle concerne le nettoyage de fin de bail. Après chantier, le devis décrit le passage convenu. Si un état des lieux de sortie suit des travaux dans un logement loué, c'est la prestation fin de bail qu'il faut choisir.",
       ),
     ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "conciergerie", "nettoyage-vitres"],
@@ -507,7 +513,7 @@ export const serviceLandings: ServiceLanding[] = [
         "inclus-appartement",
         "prestations",
         "Que comprend un nettoyage d'appartement ?",
-        "Pièce par pièce : séjour, chambres, cuisine, sanitaires. Sols selon le revêtement, cuisine et sanitaires dégraissés, surfaces, plinthes et interrupteurs. Les vitres intérieures sont faites si le devis les prévoit.",
+        "Pièce par pièce : séjour, chambres, cuisine, sanitaires. Sols lessivés selon le revêtement, cuisine et sanitaires dégraissés. Vitres intérieures sur demande.",
       ),
       faq(
         "delai-appartement",
@@ -519,13 +525,13 @@ export const serviceLandings: ServiceLanding[] = [
         "appartement-vs-fin-de-bail",
         "prestations",
         "Quelle différence avec une fin de bail ?",
-        "Le nettoyage d'appartement remet le logement en ordre. La fin de bail prépare l'état des lieux et la remise des clés, selon la checklist de la régie. Si la régie tique, on revient sans frais : cette garantie vaut pour la fin de bail.",
+        "Le nettoyage d'appartement remet le logement en ordre. La fin de bail prépare l'état des lieux et la remise des clés, selon la checklist de la régie. La garantie de retour sans frais vaut uniquement pour la fin de bail.",
       ),
       faq(
         "devis-appartement",
         "tarifs",
         "Le devis est-il gratuit ?",
-        "Oui, sans engagement. Téléphone 076 214 23 42 ou info@gzimmo.ch. Le devis dépend du logement.",
+        "Oui, et sans engagement. Appelez le 076 214 23 42 ou écrivez à info@gzimmo.ch. Le montant dépend du logement.",
       ),
       faq(
         "zones-appartement",
@@ -537,7 +543,7 @@ export const serviceLandings: ServiceLanding[] = [
         "etat-des-lieux-appartement",
         "qualite",
         "Ce nettoyage suffit-il pour un état des lieux ?",
-        "Non. Pour quitter un logement, prenez la fin de bail : elle est prévue pour l'état des lieux. Le nettoyage d'appartement ne reprend pas la garantie de remise de bail.",
+        "Non. Pour quitter un logement, prenez la fin de bail : elle est prévue pour l'état des lieux. Le nettoyage d'appartement ne comprend pas la garantie de remise de bail.",
       ),
     ],
     relatedServiceSlugs: ["nettoyage-fin-de-bail", "nettoyage-maisons", "nettoyage-vitres"],
@@ -650,9 +656,9 @@ export const serviceLandings: ServiceLanding[] = [
     },
     whyGzimmo: [
       {
-        title: "Basés à Romont, actifs en Suisse romande",
+        title: "Basés à Romont, actifs à Fribourg, en Vaud et à Neuchâtel",
         description:
-          "Proximité en Glâne, à Fribourg et dans le canton de Vaud. Neuchâtel est couvert aussi.",
+          "Nous sommes proches des immeubles de la Glâne, de Fribourg et du canton de Vaud, et nous couvrons aussi Neuchâtel.",
       },
       ...sharedWhy,
     ],

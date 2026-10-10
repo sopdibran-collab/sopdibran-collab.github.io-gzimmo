@@ -82,7 +82,7 @@ export const faqItems: FaqItem[] = [
     id: "zone-suisse-romande",
     category: "zone",
     question: "Quelle zone couvrez-vous en Suisse romande ?",
-    answer: `Fribourg, Vaud et Neuchâtel, depuis le siège à Romont (${siege}). Fribourg : Romont, Glâne, Broye, Gruyère. Vaud : Lausanne et le canton, de Bex à Nyon. Neuchâtel : la ville et le canton.`,
+    answer: `Nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel, depuis notre siège à Romont (${siege}). Fribourg : Romont, Glâne, Broye, Gruyère. Vaud : Lausanne et tout le canton, de Bex à Nyon. Neuchâtel : la ville et le canton.`,
   },
   {
     id: "entreprise-romont",
@@ -109,7 +109,7 @@ export const faqItems: FaqItem[] = [
     category: "qualite",
     question: "Que se passe-t-il si la régie refuse l'état des lieux ?",
     answer:
-      "Sur le nettoyage de fin de bail, si la régie tique, on revient sans frais. La garantie couvre un point non validé à l'état des lieux.",
+      "Pour un nettoyage de fin de bail, si la régie refuse un point lors de l'état des lieux, nous revenons le corriger sans frais.",
   },
   {
     id: "zone-hors-prioritaire",

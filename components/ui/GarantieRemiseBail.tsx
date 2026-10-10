@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 export const GARANTIE_FAQ_HREF = "/faq#garantie-remise-bail";
 
 export const GARANTIE_REMISE_BAIL_COPY =
-  "Garantie de remise de bail : si la régie tique, on revient sans frais.";
+  "Garantie de remise de bail : si la régie refuse un point, nous revenons sans frais.";
 
 type GarantieRemiseBailProps = {
   className?: string;
