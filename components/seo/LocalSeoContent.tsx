@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Location } from "@/data/locations";
 import { FaqList } from "@/components/content/FaqList";
+import { RomontFinDeBailRealisation } from "@/components/content/RomontFinDeBailRealisation";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Badge } from "@/components/ui/Badge";
 import { ContentCard } from "@/components/ui/ContentCard";
@@ -105,6 +106,10 @@ export function LocalSeoBody({ location }: { location: Location }) {
             ))}
           </ul>
         </div>
+      ) : null}
+
+      {location.slug === "nettoyage-romont" ? (
+        <RomontFinDeBailRealisation className="mt-16" />
       ) : null}
 
       {location.faqs.length > 0 ? (

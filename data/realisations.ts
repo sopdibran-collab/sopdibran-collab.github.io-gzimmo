@@ -13,19 +13,6 @@ export type Realisation = {
 
 export const realisations: Realisation[] = [
   {
-    id: "fin-bail-romont",
-    title: "Nettoyage de fin de bail à Romont",
-    service: "Nettoyage fin de bail",
-    location: "Romont",
-    clientType: "Locataire",
-    problem:
-      "Logement à remettre à Romont : cuisine, fenêtres, stores, balcon et salle de bain.",
-    result:
-      "Four et plaques dégraissés, fenêtres, encadrements et rails, stores lamelle par lamelle, balcon et vitrages, salle de bain détartrée. Locataire et gérance très satisfaits.",
-    description:
-      "Fin de bail à Romont. Four et plaques, fenêtres et rails, stores, balcon, vitrages et salle de bain.",
-  },
-  {
     id: "bureaux-lausanne",
     title: "Entretien régulier de bureaux",
     service: "Nettoyage de bureaux",

@@ -90,10 +90,7 @@ export const entityServices: EntityServiceEntry[] = [
     zones: ["Suisse romande"],
     preuves: {
       avis: ["review-demenagement-express"],
-      realisations: [
-        { id: "fin-bail-romont", lieu: "Romont" },
-        { id: "fin-bail-fribourg", lieu: "Fribourg" },
-      ],
+      realisations: [{ id: "fin-bail-fribourg", lieu: "Fribourg" }],
     },
   },
   {

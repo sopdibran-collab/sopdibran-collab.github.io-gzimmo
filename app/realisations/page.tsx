@@ -4,6 +4,7 @@ import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
+import { RomontFinDeBailRealisation } from "@/components/content/RomontFinDeBailRealisation";
 
 export const metadata = createMetadata({
   title: "Réalisations",
@@ -41,7 +42,10 @@ export default function RealisationsPage() {
       </PageHero>
 
       <PageMain variant="surface">
-        <RealisationGrid showHeader={false} />
+        <RomontFinDeBailRealisation className="border-0 pt-0" />
+        <div className="mt-16 border-t border-border/80 pt-16">
+          <RealisationGrid showHeader={false} />
+        </div>
       </PageMain>
 
       <PageCta />
