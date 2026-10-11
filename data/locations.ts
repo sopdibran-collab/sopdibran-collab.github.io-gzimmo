@@ -28,12 +28,12 @@ const romontFaqs: FaqContent[] = [
   {
     question: "Intervenez-vous rapidement autour de Romont ?",
     answer:
-      "Oui. Le siège est à Romont. Nous couvrons Romont, Vuisternens-devant-Romont, Ursy, Mézières, Estavayer et Châtel-Saint-Denis. La date est fixée dans le devis.",
+      "Oui. Notre siège est à Romont et nous couvrons aussi Vuisternens-devant-Romont, Ursy, Mézières, Estavayer et Châtel-Saint-Denis. La date du passage figure dans le devis.",
   },
   {
     question: "Proposez-vous le nettoyage fin de bail à Romont ?",
     answer:
-      "Oui. Cuisine, fenêtres, stores, balcon et salle de bain font partie du passage, selon la checklist de la régie. Si un point n'est pas accepté, nous revenons sans frais. Devis gratuit avant l'intervention.",
+      "Oui. Nous nettoyons la cuisine, les fenêtres, les stores, le balcon et la salle de bain, selon la checklist de la régie. Si la régie refuse un point, nous revenons sans frais. Le devis est gratuit.",
   },
   {
     question: "Gzimmo intervient-il hors de Romont ?",
@@ -81,7 +81,7 @@ export const locations: Location[] = [
       },
       {
         title: "Autour de Romont",
-        body: "Depuis le siège, nous intervenons à Romont et dans les communes voisines : Vuisternens-devant-Romont, Ursy, Mézières, Villarlod, Massonnens, Estavayer et Châtel-Saint-Denis. Fribourg, Bulle, Lausanne et Neuchâtel sont couverts aussi. Le devis est gratuit.",
+        body: "Depuis notre siège, nous intervenons à Romont et dans les communes voisines : Vuisternens-devant-Romont, Ursy, Mézières, Villarlod, Massonnens, Estavayer et Châtel-Saint-Denis. Nous allons aussi à Fribourg, Bulle, Lausanne et Neuchâtel. Le devis est gratuit.",
       },
       {
         title: "Pourquoi choisir Gzimmo à Romont ?",
@@ -90,6 +90,10 @@ export const locations: Location[] = [
       {
         title: "Nos prestations depuis Romont",
         body: "Depuis le siège de Romont, nous proposons notamment le nettoyage de fin de bail, le nettoyage après chantier, l'entretien de bureaux et la conciergerie pour régies. Chaque prestation a sa page dédiée — le détail checklist et garantie se trouve sur les pages service.",
+      },
+      {
+        title: "Nettoyage de fin de bail à Romont",
+        body: "À Romont, nous avons préparé un appartement pour la remise des clés : four et plaques dégraissés, fenêtres, encadrements et rails nettoyés, stores lavés lamelle par lamelle, balcon et vitrages, salle de bain détartrée. Le locataire et la gérance étaient très satisfaits.",
       },
     ],
     faqs: romontFaqs,
@@ -123,28 +127,28 @@ export const locations: Location[] = [
       },
       {
         title: "Depuis Romont, pour Fribourg",
-        body: "Le siège est à Romont, Route de Raboud 8, pas à Fribourg. Fribourg, Marly, Villars-sur-Glâne, Givisiez et Matran sont couverts sur devis. La date du passage est fixée avant le déplacement.",
+        body: "Notre siège est à Romont, Route de Raboud 8. Nous intervenons à Fribourg, Marly, Villars-sur-Glâne et Givisiez, sur devis. La date du passage est fixée avant le déplacement.",
       },
       {
         title: "Fin de bail à Fribourg et agglomération",
-        body: "Le passage reprend les points qui bloquent souvent un état des lieux : four, plaques, sanitaires, joints, sols et vitres. Si la régie tique, nous revenons sans frais. Le détail est sur la page fin de bail à Fribourg.",
+        body: "Le passage reprend les points qui bloquent souvent un état des lieux : four, plaques, sanitaires, joints, sols et vitres. Si la régie refuse un point, nous revenons sans frais. Le détail est sur la page fin de bail à Fribourg.",
       },
     ],
     faqs: [
       {
         question: "Intervenez-vous dans l'agglomération fribourgeoise ?",
         answer:
-          "Oui : Fribourg, Marly, Villars-sur-Glâne, Givisiez et Matran. Siège : Route de Raboud 8, 1680 Romont.",
+          "Oui : Fribourg, Marly, Villars-sur-Glâne, Givisiez et les communes limitrophes. Siège : Route de Raboud 8, 1680 Romont.",
       },
       {
         question: "Proposez-vous le nettoyage fin de bail à Fribourg ?",
         answer:
-          "Oui. Cuisine, sanitaires, sols et vitres sont repris selon la checklist de la régie. Si un point n'est pas accepté, nous revenons sans frais. Devis gratuit avant l'intervention.",
+          "Oui. Nous reprenons la cuisine, les sanitaires, les sols et les vitres selon la checklist de la régie. Si la régie refuse un point, nous revenons sans frais. Le devis est gratuit.",
       },
       {
         question: "Quel délai pour un passage à Fribourg ?",
         answer:
-          "Nous répondons sous 24 h. Le jour du passage dépend du planning et de votre date. Il est confirmé dans le devis.",
+          "Nous répondons sous 24 h. Le jour du passage dépend de notre planning et de la date qui vous convient, et il est confirmé dans le devis.",
       },
     ],
     priorityLinks: [
@@ -163,7 +167,7 @@ export const locations: Location[] = [
     description:
       "Nettoyage professionnel à Bulle et en Gruyère. Gzimmo : locaux, fin de bail, vitres. Basé à Romont, devis gratuit.",
     intro:
-      "Bulle et la Gruyère sont couvertes depuis Romont. Fin de bail, locaux, après chantier et vitres. Devis gratuit.",
+      "Nous intervenons à Bulle et en Gruyère depuis Romont : fin de bail, entretien de locaux, après chantier et vitres. Le devis est gratuit.",
     geo: { latitude: 46.6175, longitude: 7.0569 },
     priority: 0.8,
     nearbyCommunes: ["La Tour-de-Trême", "Riaz", "Vuadens", "Broc"],
@@ -171,15 +175,15 @@ export const locations: Location[] = [
     sections: [
       {
         title: "Nettoyage en Gruyère",
-        body: "Bulle, La Tour-de-Trême, Riaz, Vuadens et Broc sont desservis depuis le siège de Romont, Route de Raboud 8. Le devis est gratuit. La date est confirmée avant le passage.",
+        body: "Nous intervenons à Bulle, La Tour-de-Trême, Riaz, Vuadens et Broc depuis notre siège de Romont. La date est confirmée avant le passage.",
       },
       {
         title: "Fin de bail et après chantier à Bulle",
-        body: "Pour une sortie de bail, le passage suit la checklist de la régie : cuisine, sanitaires, sols, vitres. Si un point n'est pas accepté, nous revenons sans frais. Après des travaux, il s'agit d'enlever la poussière fine et les résidus, pas de faire un ménage courant. Le détail est sur la page de la prestation.",
+        body: "Pour une sortie de bail, le passage suit la checklist de la régie : cuisine, sanitaires, sols, vitres. Si un point n'est pas accepté, nous revenons sans frais. Après des travaux, nous enlevons la poussière fine et les résidus de chantier. Le détail est sur la page de la prestation.",
       },
       {
         title: "Avant le déplacement",
-        body: "On regarde la surface, l'état du logement ou le type de chantier, et la date souhaitée. Le devis est gratuit. Il fixe le périmètre avant l'intervention.",
+        body: "Pour établir le devis, nous tenons compte de la surface, de l'état du logement ou du type de chantier, et de la date souhaitée. Le devis est gratuit et fixe ce qui sera fait.",
       },
     ],
     priorityLinks: [
@@ -196,7 +200,7 @@ export const locations: Location[] = [
       {
         question: "Le devis pour Bulle est-il gratuit ?",
         answer:
-          "Oui, sans engagement. Téléphone 076 214 23 42 ou info@gzimmo.ch. Réponse sous 24 h.",
+          "Oui, et sans engagement. Appelez le 076 214 23 42 ou écrivez à info@gzimmo.ch : nous répondons sous 24 h.",
       },
       {
         question: "Faites-vous la fin de bail à Bulle ?",
@@ -215,7 +219,7 @@ export const locations: Location[] = [
     description:
       "Nettoyage professionnel à Lausanne et agglomération. Gzimmo : bureaux, appartements, fin de bail. Devis gratuit, depuis Romont.",
     intro:
-      "Lausanne, Renens, Pully, Prilly et Ecublens sont couverts depuis Romont. Bureaux, appartements et fin de bail. Devis gratuit.",
+      "Nous intervenons à Lausanne, Renens, Pully, Prilly et Ecublens depuis Romont : bureaux, appartements et fin de bail. Le devis est gratuit.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
     nearbyCommunes: ["Renens", "Pully", "Prilly", "Ecublens"],
@@ -227,11 +231,11 @@ export const locations: Location[] = [
       },
       {
         title: "Communes voisines",
-        body: "Renens, Pully, Prilly et Ecublens sont couverts avec Lausanne. Yverdon, Morges, Nyon, Payerne, Vevey et Montreux sont desservis aussi, depuis Romont.",
+        body: "Renens, Pully, Prilly et Ecublens sont couverts avec Lausanne. Nous allons aussi à Yverdon, Morges, Nyon, Payerne, Vevey et Montreux.",
       },
       {
         title: "Fin de bail et bureaux",
-        body: "Pour une remise de clés, cuisine, sanitaires, sols et vitres suivent la checklist de la régie. Si un point n'est pas accepté, nous revenons sans frais. L'entretien de bureaux peut se faire en dehors des heures d'activité, quand c'est convenu dans le devis.",
+        body: "Pour une remise des clés, nous nettoyons la cuisine, les sanitaires, les sols et les vitres selon la checklist de la régie. Si un point n'est pas accepté, nous revenons sans frais.",
       },
     ],
     priorityLinks: [
@@ -253,7 +257,7 @@ export const locations: Location[] = [
       {
         question: "Sous quel délai répondez-vous pour Lausanne ?",
         answer:
-          "Sous 24 h pour le devis. La date d'intervention dépend du planning et est confirmée avant le déplacement.",
+          "Nous envoyons le devis sous 24 h. La date d'intervention dépend de notre planning et vous est confirmée avant le déplacement.",
       },
     ],
   },
@@ -266,7 +270,7 @@ export const locations: Location[] = [
     description:
       "Nettoyage professionnel à Neuchâtel et dans le canton. Gzimmo, siège à Romont : locaux, fin de bail, vitres. Devis gratuit.",
     intro:
-      "Neuchâtel et le canton sont couverts depuis Romont. Entretien de locaux, fin de bail et vitres. Devis gratuit.",
+      "Nous intervenons à Neuchâtel et dans le canton depuis Romont : entretien de locaux, fin de bail et vitres. Le devis est gratuit.",
     geo: { latitude: 46.99, longitude: 6.931 },
     priority: 0.7,
     nearbyCommunes: ["La Chaux-de-Fonds", "Colombier", "Peseux"],
@@ -274,11 +278,11 @@ export const locations: Location[] = [
     sections: [
       {
         title: "Nettoyage en canton de Neuchâtel",
-        body: "Nous intervenons à Neuchâtel, La Chaux-de-Fonds, Colombier et Peseux. Les passages partent de Romont, Route de Raboud 8. Fribourg et Vaud sont les deux autres cantons couverts.",
+        body: "Nous intervenons à Neuchâtel, La Chaux-de-Fonds, Colombier et Peseux. Nos équipes partent de Romont, Route de Raboud 8. Nous couvrons aussi les cantons de Fribourg et de Vaud.",
       },
       {
         title: "Locaux, fin de bail, vitres",
-        body: "L'entretien de locaux se planifie au rythme convenu. La fin de bail reprend cuisine, sanitaires, sols et vitres selon la checklist. Les vitres accessibles, cadres compris, se font sur devis. Si la régie n'accepte pas un point de fin de bail, nous revenons sans frais.",
+        body: "L'entretien de locaux suit le rythme convenu avec vous. Pour une fin de bail, nous reprenons la cuisine, les sanitaires, les sols et les vitres selon la checklist. Les vitres accessibles sont nettoyées sur devis. Si la régie refuse un point de fin de bail, nous revenons sans frais.",
       },
       {
         title: "Devis avant le déplacement",
@@ -292,9 +296,9 @@ export const locations: Location[] = [
           "Oui. Neuchâtel, La Chaux-de-Fonds, Colombier et Peseux sont couverts depuis Romont. Devis gratuit.",
       },
       {
-        question: "La fin de bail est-elle possible dans le canton ?",
+        question: "Faites-vous la fin de bail dans le canton de Neuchâtel ?",
         answer:
-          "Oui. Si un point de la checklist n'est pas accepté par la régie, nous revenons sans frais. Le détail est sur la page fin de bail.",
+          "Oui. Si la régie refuse un point de la checklist, nous revenons sans frais. Le détail est sur la page fin de bail.",
       },
       {
         question: "Comment obtenir un devis pour Neuchâtel ?",

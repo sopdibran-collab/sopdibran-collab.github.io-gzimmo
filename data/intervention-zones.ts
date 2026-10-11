@@ -40,7 +40,7 @@ export const interventionCantons: InterventionCanton[] = [
     canton: "Vaud",
     code: "VD",
     heading: "Canton de Vaud — de Bex à Nyon",
-    description: "Interventions dans le canton, y compris les communes listées ci-dessous.",
+    description: "Nous intervenons dans tout le canton, notamment dans les communes ci-dessous.",
     places: [
       { name: "Lausanne", href: "/seo/nettoyage-lausanne" },
       { name: "Yverdon-les-Bains" },
