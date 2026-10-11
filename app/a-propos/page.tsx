@@ -26,7 +26,7 @@ const values = [
   },
   {
     title: "Fiabilité",
-    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises à Fribourg, en Vaud et à Neuchâtel.`,
+    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises dans les cantons de Fribourg, de Vaud et de Neuchâtel.`,
   },
 ];
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
           onDark
           badge="À propos"
           title="La maîtrise d'un espace parfaitement entretenu"
-          description={`${company.name} accompagne particuliers et professionnels à Fribourg, en Vaud et à Neuchâtel. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()} — avec rigueur, discrétion et le souci du détail.`}
+          description={`${company.name} accompagne particuliers et professionnels dans les cantons de Fribourg, de Vaud et de Neuchâtel. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()}, avec rigueur, discrétion et le souci du détail.`}
         />
       </PageHero>
 

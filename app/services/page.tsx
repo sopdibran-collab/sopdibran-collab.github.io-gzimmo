@@ -33,7 +33,7 @@ const reassurance = [
   },
   {
     title: "Garantie régie",
-    text: "Si la régie tique sur une fin de bail, on revient sans frais.",
+    text: "Si la régie refuse un point, nous revenons sans frais.",
   },
 ];
 

@@ -21,24 +21,18 @@ export const finDeBailPriceFaqs: FaqItem[] = [
     "garantie-etat-des-lieux",
     "qualite",
     "Que couvre la garantie d'état des lieux ?",
-    "Si la régie tique, on revient sans frais. Cela vaut pour un point de la checklist non validé à l'état des lieux : sanitaires, cuisine, joints, vitres et les détails souvent repris.",
+    "Si un point de la checklist n'est pas validé à l'état des lieux, nous revenons le corriger sans frais. Cela couvre les sanitaires, la cuisine, les joints, les vitres et les détails souvent relevés par les régies.",
   ),
   faq(
     "fin-de-bail-regie-zones",
     "zone",
     "Intervenez-vous à Fribourg, en Vaud et pour les régies ?",
-    "Oui. Locataires et régies, dans les cantons de Fribourg, de Vaud et de Neuchâtel. Le passage suit la checklist de votre régie.",
+    "Oui. Nous travaillons pour des locataires et des régies dans les cantons de Fribourg, de Vaud et de Neuchâtel. Le passage suit la checklist de votre régie.",
   ),
   faq(
     "delai-fin-de-bail",
     "delais",
     "Combien de temps à l'avance réserver un nettoyage de fin de bail ?",
-    `Dès que la date de remise des clés est connue. Nous répondons sous 24 h et nous calons le passage selon le planning. Appelez le ${phoneDisplay}.`,
-  ),
-  faq(
-    "inclus-etat-des-lieux",
-    "prestations",
-    "Que comprend le nettoyage avant l'état des lieux ?",
-    "Sanitaires et joints, four, plaques et hotte, sols, vitres, plinthes, placards, radiateurs et interrupteurs. La liste suit la checklist de votre régie et figure sur le devis.",
+    `Dès que la date de remise des clés est connue. Nous répondons sous 24 h et nous fixons le passage selon notre planning. Appelez le ${phoneDisplay}.`,
   ),
 ];
