@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type ContextualLink = {
   href: string;
@@ -6,9 +7,15 @@ type ContextualLink = {
 };
 
 /** Liens de contexte entre services, villes, réalisations et avis. */
-export function ContextualLinks({ links }: { links: ContextualLink[] }) {
+export function ContextualLinks({
+  links,
+  className,
+}: {
+  links: ContextualLink[];
+  className?: string;
+}) {
   return (
-    <nav aria-label="Pages liées" className="mt-10 border-t border-border/80 pt-10">
+    <nav aria-label="Pages liées" className={cn("mt-10 border-t border-border/80 pt-10", className)}>
       <p className="text-sm font-medium text-foreground">Pages liées</p>
       <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3">
         {links.map((link) => (
