@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { company, formatAddress } from "@/data/company";
+import { getLocationPath } from "@/lib/location-paths";
 
 const defaultTitle = `${company.name} — Nettoyage professionnel à Romont, Fribourg, Vaud et Neuchâtel`;
 const defaultDescription =
@@ -98,7 +99,7 @@ export function localPageMetadata(location: {
   return createMetadata({
     title: location.title,
     description: location.description,
-    path: `/seo/${location.slug}`,
+    path: getLocationPath(location.slug),
     keywords: [
       `nettoyage ${location.city}`,
       `entreprise nettoyage ${location.city}`,

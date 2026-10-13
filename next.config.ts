@@ -42,16 +42,31 @@ const outOfZoneRedirects = [
   permanent: true,
 }));
 
-/** Pages locales trop minces : 301 vers la page forte ou le hub /zones. */
-const thinLocalRedirects = [
-  { source: "/seo/nettoyage-estavayer", destination: "/seo/nettoyage-romont" },
-  { source: "/seo/nettoyage-chatel-saint-denis", destination: "/seo/nettoyage-romont" },
-  { source: "/seo/nettoyage-vuisternens-devant-romont", destination: "/seo/nettoyage-romont" },
-  { source: "/seo/nettoyage-ursy", destination: "/seo/nettoyage-romont" },
+/**
+ * Anciennes pages /seo/<ville> → URL canonique, sans chaîne.
+ * Les communes sans page propre restent listées avant le rattrapage /seo/:path*.
+ */
+const seoCityRedirects = [
+  { source: "/seo/nettoyage-romont", destination: "/nettoyage-romont" },
+  { source: "/seo/nettoyage-fribourg", destination: "/nettoyage-fribourg" },
+  { source: "/seo/nettoyage-bulle", destination: "/nettoyage-bulle" },
+  { source: "/seo/nettoyage-lausanne", destination: "/nettoyage-lausanne" },
+  { source: "/seo/nettoyage-neuchatel", destination: "/nettoyage-neuchatel" },
+  { source: "/seo/nettoyage-estavayer", destination: "/nettoyage-romont" },
+  { source: "/seo/nettoyage-chatel-saint-denis", destination: "/nettoyage-romont" },
+  { source: "/seo/nettoyage-vuisternens-devant-romont", destination: "/nettoyage-romont" },
+  { source: "/seo/nettoyage-ursy", destination: "/nettoyage-romont" },
   { source: "/seo/nettoyage-payerne", destination: "/zones" },
   { source: "/seo/nettoyage-yverdon-les-bains", destination: "/zones" },
   { source: "/seo/nettoyage-morges", destination: "/zones" },
   { source: "/seo/nettoyage-nyon", destination: "/zones" },
+].map((redirect) => ({ ...redirect, permanent: true as const }));
+
+/** Doublons d'intention : une page ville, une page service fin de bail. */
+const duplicateIntentRedirects = [
+  { source: "/entreprise-nettoyage-romont", destination: "/nettoyage-romont" },
+  { source: "/nettoyage-fin-de-bail-romont", destination: "/nettoyage-romont" },
+  { source: "/nettoyage-fin-de-bail-fribourg", destination: "/nettoyage-fribourg" },
 ].map((redirect) => ({ ...redirect, permanent: true as const }));
 
 const nextConfig: NextConfig = {
@@ -67,17 +82,23 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/entreprise-nettoyage-romont",
-        destination: "/seo/nettoyage-romont",
-        permanent: true,
-      },
-      {
         source: "/valais/:path*",
         destination: "/zones",
         permanent: true,
       },
       ...outOfZoneRedirects,
-      ...thinLocalRedirects,
+      ...seoCityRedirects,
+      ...duplicateIntentRedirects,
+      {
+        source: "/seo",
+        destination: "/zones",
+        permanent: true,
+      },
+      {
+        source: "/seo/:path*",
+        destination: "/zones",
+        permanent: true,
+      },
       ...serviceRedirects,
     ];
   },

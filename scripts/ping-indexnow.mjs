@@ -38,7 +38,22 @@ const DISALLOWED_PREFIXES = [
   "/docs",
   "/cursor",
   "/.cursor",
+  "/seo",
+  "/seo/",
 ];
+
+/**
+ * Anciennes URL (301). Le sitemap ne les liste plus ; on les écarte si elles
+ * réapparaissent, pour ne soumettre que les canoniques.
+ */
+const RETIRED_PATHS = new Set([
+  "/entreprise-nettoyage-romont",
+  "/nettoyage-fin-de-bail-romont",
+  "/nettoyage-fin-de-bail-fribourg",
+  "/nettoyage-fin-de-bail-geneve",
+  "/geneve",
+  "/valais",
+]);
 
 const dryRun = process.argv.includes("--dry-run");
 
@@ -66,7 +81,8 @@ function decodeXml(value) {
 
 function isDisallowed(pathname) {
   const path = pathname.toLowerCase();
-  return DISALLOWED_PREFIXES.some((prefix) => path.startsWith(prefix));
+  if (RETIRED_PATHS.has(path)) return true;
+  return DISALLOWED_PREFIXES.some((prefix) => path === prefix || path.startsWith(prefix));
 }
 
 function acceptLoc(loc) {

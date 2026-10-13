@@ -23,10 +23,10 @@ const footerServices = [
 ] as const;
 
 const regionLinks = [
-  { label: "Romont", href: "/seo/nettoyage-romont" },
-  { label: "Fribourg", href: "/seo/nettoyage-fribourg" },
-  { label: "Lausanne", href: "/seo/nettoyage-lausanne" },
-  { label: "Neuchâtel", href: "/seo/nettoyage-neuchatel" },
+  { label: "Romont", href: "/nettoyage-romont" },
+  { label: "Fribourg", href: "/nettoyage-fribourg" },
+  { label: "Lausanne", href: "/nettoyage-lausanne" },
+  { label: "Neuchâtel", href: "/nettoyage-neuchatel" },
 ] as const;
 
 /** Chips footer : contraste AA + zone tactile ≥ 24px (confort ~36–44). */

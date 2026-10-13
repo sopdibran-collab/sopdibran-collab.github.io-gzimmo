@@ -1,6 +1,6 @@
 # Gzimmo Sàrl
 
-> Nettoyage professionnel — siège à Romont (FR), intervention dans toute la Suisse romande
+> Nettoyage professionnel — siège à Romont (FR), intervention à Fribourg, en Vaud et à Neuchâtel
 
 ## Identité
 - Nom : Gzimmo Sàrl
@@ -20,12 +20,12 @@ Nettoyage professionnel pour particuliers, régies et entreprises :
 - Services de conciergerie pour régies et immeubles
 
 ## Zone d'intervention
-Romont, district de la Glâne, canton de Fribourg (Fribourg, Broye, Gruyère), canton de Vaud (de Bex à Nyon, Lausanne, Morges, Yverdon-les-Bains, Payerne, Vevey, Montreux) et canton de Neuchâtel.
+Romont, district de la Glâne, canton de Fribourg (Fribourg, Broye, Gruyère), canton de Vaud (de Bex à Nyon, Lausanne, Morges, Yverdon-les-Bains, Payerne, Vevey, Montreux) et canton de Neuchâtel. Pas d'intervention à Genève ni en Valais.
 
 ## Points clés
 - Équipe avec plus de 15 ans d'expérience cumulée dans le nettoyage
 - Devis gratuit, réponse sous 24 h
-- Basé à Romont — intervention dans toute la Suisse romande
+- Basé à Romont — intervention à Fribourg, en Vaud et à Neuchâtel
 - Produits professionnels, finitions soignées
 - Garantie de remise de bail sur les prestations fin de bail
 
@@ -33,9 +33,12 @@ Romont, district de la Glâne, canton de Fribourg (Fribourg, Broye, Gruyère), c
 - Accueil : https://gzimmo.ch/
 - Contact / devis : https://gzimmo.ch/contact
 - Zones : https://gzimmo.ch/zones
-- Romont : https://gzimmo.ch/seo/nettoyage-romont
-- Fin de bail Romont : https://gzimmo.ch/nettoyage-fin-de-bail-romont
-- Fin de bail Fribourg : https://gzimmo.ch/nettoyage-fin-de-bail-fribourg
+- Romont : https://gzimmo.ch/nettoyage-romont
+- Fribourg : https://gzimmo.ch/nettoyage-fribourg
+- Bulle : https://gzimmo.ch/nettoyage-bulle
+- Lausanne : https://gzimmo.ch/nettoyage-lausanne
+- Neuchâtel : https://gzimmo.ch/nettoyage-neuchatel
+- Fin de bail : https://gzimmo.ch/nettoyage-fin-de-bail
 - Nettoyage après chantier : https://gzimmo.ch/nettoyage-apres-chantier
 - Conciergerie : https://gzimmo.ch/conciergerie
 - Services : https://gzimmo.ch/services
@@ -53,4 +56,4 @@ Q: Devis gratuit ?
 R: Oui, sans engagement, réponse sous 24 h.
 
 Q: Zone couverte ?
-R: Toute la Suisse romande, depuis Romont. Pages locales : Fribourg, Vaud et Neuchâtel.
+R: Fribourg, Vaud et Neuchâtel, depuis Romont. Pages : Romont, Fribourg, Bulle, Lausanne, Neuchâtel.

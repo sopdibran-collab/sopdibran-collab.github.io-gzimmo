@@ -4,6 +4,7 @@ import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/da
 import { extraSchemaCities } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
+import { getLocationPath } from "@/lib/location-paths";
 import { getServicePath } from "@/lib/service-paths";
 
 const romontGeo = {
@@ -177,7 +178,7 @@ export function zonesItemListSchema() {
       "@type": "ListItem",
       position: index + 1,
       name: location.title,
-      url: `${company.url}/seo/${location.slug}`,
+      url: `${company.url}${getLocationPath(location.slug)}`,
     })),
   };
 }
@@ -186,10 +187,10 @@ export function locationPageSchema(location: (typeof locations)[number]) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${company.url}/seo/${location.slug}`,
+    "@id": `${company.url}${getLocationPath(location.slug)}`,
     name: location.title,
     description: location.description,
-    url: `${company.url}/seo/${location.slug}`,
+    url: `${company.url}${getLocationPath(location.slug)}`,
     inLanguage: "fr-CH",
     isPartOf: { "@id": `${company.url}/#website` },
     about: {

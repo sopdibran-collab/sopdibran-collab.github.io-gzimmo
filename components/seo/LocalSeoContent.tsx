@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Location } from "@/data/locations";
+import { getLocationPath } from "@/lib/location-paths";
 import { FaqList } from "@/components/content/FaqList";
 import { RomontFinDeBailRealisation } from "@/components/content/RomontFinDeBailRealisation";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -149,7 +150,7 @@ export function LocalAreaLinks({
         {locs.map((loc) => (
           <li key={loc.slug} className="mb-2 break-inside-avoid">
             <Link
-              href={`/seo/${loc.slug}`}
+              href={getLocationPath(loc.slug)}
               className="text-muted transition-colors hover:text-accent-ink"
             >
               {loc.city}
