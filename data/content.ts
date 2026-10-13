@@ -4,7 +4,7 @@ export const whyItems = [
   "Gzimmo Sàrl est une entreprise de nettoyage à Romont, pas une régie immobilière.",
   "Expertise des exigences immobilières : régies, propriétaires, promoteurs.",
   "Checklist rigoureuse et devis transparent avant intervention",
-  `Plus de ${company.teamExperienceYears} ans d'expérience cumulée dans le nettoyage`,
+  `Plus de ${company.teamExperienceYears} ans d'expérience dans le nettoyage`,
   "Produits professionnels fournis, adaptés à chaque surface",
   "Réponse sous 24 h, depuis Romont, à Fribourg et en Vaud",
   "Sans frais de déplacement",
