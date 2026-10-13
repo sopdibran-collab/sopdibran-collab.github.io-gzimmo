@@ -9,6 +9,10 @@ import { company, formatAddress } from "@/data/company";
 import { formatPhoneHref } from "@/lib/utils";
 import { GoogleMap, GoogleMapsLink } from "@/components/seo/GoogleMap";
 
+function buildingFigure(body: string) {
+  return body.match(/59,8 %/)?.[0] ?? body.match(/82 321/)?.[0] ?? null;
+}
+
 function SourceList({ sources }: { sources: SourceLink[] }) {
   return (
     <ul className="mt-4 space-y-2">
@@ -38,6 +42,8 @@ function SourceList({ sources }: { sources: SourceLink[] }) {
 }
 
 export function LocalSeoBody({ location }: { location: Location }) {
+  const figure = location.building ? buildingFigure(location.building.body) : null;
+
   return (
     <>
       <div className="mx-auto max-w-prose">
@@ -63,40 +69,47 @@ export function LocalSeoBody({ location }: { location: Location }) {
           <h2 id="regles" className="font-display text-lg font-semibold text-foreground">
             {location.rules.title}
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted">{location.rules.body}</p>
+          <p className="mt-4 text-base leading-relaxed text-muted">{location.rules.body}</p>
           <SourceList sources={location.rules.sources} />
-        </section>
-
-        <section className="mt-10" aria-labelledby="distance">
-          <h2 id="distance" className="font-display text-display-sm text-foreground">
+          <h3 className="mt-6 font-display text-base font-semibold text-foreground">
             {location.remoteHandover.title}
-          </h2>
-          <p className="mt-4 text-reading leading-relaxed text-muted">{location.remoteHandover.body}</p>
+          </h3>
+          <p className="mt-2 text-base leading-relaxed text-muted">{location.remoteHandover.body}</p>
         </section>
 
-        <section className="mt-10" aria-labelledby="bati">
-          <h2 id="bati" className="font-display text-display-sm text-foreground">
-            Un chiffre de bâti
-          </h2>
-          <p className="mt-4 text-reading leading-relaxed text-muted">{location.building.body}</p>
-          <p className="mt-3 text-sm text-muted">{location.building.sourceLine}</p>
-          <SourceList sources={location.building.sources} />
-        </section>
+        {location.building ? (
+          <section className="mt-10" aria-labelledby="bati">
+            <h2 id="bati" className="font-display text-display-sm text-foreground">
+              Un chiffre de bâti
+            </h2>
+            {figure ? (
+              <p className="mt-4 font-display text-display-lg font-semibold leading-none text-accent-ink">
+                {figure}
+              </p>
+            ) : null}
+            <p className="mt-3 text-reading leading-relaxed text-muted">{location.building.body}</p>
+            <SourceList sources={location.building.sources} />
+          </section>
+        ) : null}
 
-        <section className="mt-10" aria-labelledby="exemple">
+        <section
+          className="mt-10"
+          aria-labelledby="exemple"
+          id={location.slug === "nettoyage-romont" ? "realisation-romont" : undefined}
+        >
           <h2 id="exemple" className="font-display text-display-sm text-foreground">
             Exemple fait à Romont
           </h2>
           {location.example.body ? (
             <p className="mt-4 text-reading leading-relaxed text-muted">{location.example.body}</p>
           ) : null}
-          <SourceList sources={location.example.sources} />
+          {location.slug === "nettoyage-romont" ? (
+            <RomontFinDeBailRealisation heading={false} />
+          ) : (
+            <SourceList sources={location.example.sources} />
+          )}
         </section>
       </div>
-
-      {location.slug === "nettoyage-romont" ? (
-        <RomontFinDeBailRealisation className="mx-auto mt-8 max-w-prose" />
-      ) : null}
 
       <div className="mx-auto mt-16 max-w-prose border-t border-border pt-10">
         <ContentCard>

@@ -29,7 +29,13 @@ export function ZoneBands() {
               {band.note ? (
                 <p className="max-w-prose text-sm leading-relaxed text-muted">{band.note}</p>
               ) : null}
-              <ul className={band.note ? "mt-4 flex flex-col" : "flex flex-col"}>
+              <ul
+                className={
+                  band.note
+                    ? "mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                }
+              >
                 {orderedPlaces(band.places).map((place) => (
                   <li key={place.name}>
                     {place.href ? (
