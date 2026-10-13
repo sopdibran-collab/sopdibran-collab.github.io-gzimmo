@@ -1,4 +1,4 @@
-import { company, formatAddress, teamExperienceLabel } from "@/data/company";
+import { company, formatAddress } from "@/data/company";
 import { entityKnowsAbout, entitySameAs } from "@/data/entity";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
 import { extraSchemaCities } from "@/data/intervention-zones";
@@ -54,7 +54,7 @@ export function localBusinessSchema() {
     "@id": `${company.url}/#organization`,
     name: company.legalName,
     alternateName: "Gzimmo",
-    description: `${company.tagline}. ${teamExperienceLabel()}.`,
+    description: `${company.tagline}. Fribourg, Vaud et Neuchâtel.`,
     url: company.url,
     email: company.email,
     telephone: company.phone,

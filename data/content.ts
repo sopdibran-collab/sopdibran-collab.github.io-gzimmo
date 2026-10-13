@@ -11,7 +11,7 @@ export const whyItems = [
 ];
 
 export const stats = [
-  { value: `${company.teamExperienceYears}+`, label: "ans dans le métier" },
+  { value: "3", label: "cantons : Fribourg, Vaud, Neuchâtel" },
   { value: "100%", label: "engagement qualité" },
   { value: "8", label: "services spécialisés" },
 ] as const;

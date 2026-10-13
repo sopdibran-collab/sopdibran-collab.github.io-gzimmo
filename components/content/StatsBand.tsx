@@ -1,5 +1,4 @@
 import { stats } from "@/data/content";
-import { teamExperienceLabel } from "@/data/company";
 import { Stat } from "@/components/ui/Stat";
 import { Badge } from "@/components/ui/Badge";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -10,8 +9,7 @@ export function StatsBand() {
       <FadeIn>
         <Badge className="text-accent-ink">Gzimmo en chiffres</Badge>
         <p className="mt-5 max-w-lg text-lg text-white/80 leading-relaxed">
-          {teamExperienceLabel(false)} au service de particuliers, régies et entreprises en Suisse
-          romande.
+          Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg, Vaud et Neuchâtel.
         </p>
       </FadeIn>
 

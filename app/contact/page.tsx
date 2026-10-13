@@ -15,7 +15,7 @@ import { HashScroll } from "@/components/ui/HashScroll";
 export const metadata = createMetadata({
   title: "Devis de nettoyage à Romont | Gzimmo",
   description:
-    "Demande de devis de nettoyage. Gzimmo Sàrl, Route de Raboud 8, 1680 Romont. Réponse sous 24 h. 076 214 23 42.",
+    "Demande de devis de nettoyage. Gzimmo Sàrl, Route de Raboud 8, 1680 Romont. 076 214 23 42.",
   absoluteTitle: true,
   path: "/contact",
 });
@@ -50,7 +50,7 @@ export default async function ContactPage({
           onDark
           badge="Contact"
           title="Devis de nettoyage à Romont"
-          description="Appelez-nous ou envoyez le formulaire — un échange suffit pour un devis sur mesure, sans engagement. Réponse sous 24 h."
+          description="Appelez-nous ou envoyez le formulaire. Un échange suffit pour un devis sur mesure, sans engagement."
         >
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
             <Button
