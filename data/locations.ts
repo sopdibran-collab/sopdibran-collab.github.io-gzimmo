@@ -338,9 +338,9 @@ export const locations: Location[] = [
     district: "Riviera-Pays-d'Enhaut",
     title: "Nettoyage à Vevey et Montreux",
     description:
-      "Vevey et Montreux sur la Riviera, Aigle dans le Chablais. Réponse sous 24 h, sans frais de déplacement.",
+      "Nettoyage fin de bail, appartements et vitres à Vevey, Montreux et Aigle. Devis gratuit, sans frais de déplacement.",
     intro:
-      "Vevey et Montreux sont sur la Riviera vaudoise. Aigle, dans le Chablais, est traité dans une section de cette page : il n'a pas d'adresse à lui seul.",
+      "Nous intervenons à Vevey et à Montreux, sur la Riviera, ainsi qu'à Aigle, dans le Chablais.",
     geo: { latitude: 46.4628, longitude: 6.8419 },
     priority: 0.72,
     nearbyCommunes: ["Montreux", "Aigle"],
@@ -350,12 +350,12 @@ export const locations: Location[] = [
     ],
     rules: {
       title: "Riviera et Chablais : la remise vaudoise",
-      body: "Vevey, Montreux et Aigle sont vaudois. La sortie de bail y suit les règles et usages locatifs du canton, pas le seul Code des obligations utilisé en Gruyère. L'article 36 place la remise à midi le jour de l'échéance, locaux vidés et sols contrôlables. L'article 37 demande toutes les clés, copies comprises. Le filtre de ventilation, les stores et les radiateurs se traitent quand le logement les a, selon le même texte. Une régie de la Riviera et une régie d'Aigle n'utilisent pas la même checklist : le devis reprend celle qui est envoyée.",
+      body: "Vevey, Montreux et Aigle sont vaudois. La sortie de bail y suit les règles et usages locatifs du canton, en plus du Code des obligations. L'article 36 place la remise à midi le jour de l'échéance, locaux vidés et sols contrôlables. L'article 37 demande toutes les clés, copies comprises. Le filtre de ventilation, les stores et les radiateurs se traitent quand le logement les a, selon le même texte.",
       sources: [vaudRulv],
     },
     remoteHandover: {
       title: "Fin de bail sur la Riviera et à Aigle",
-      body: "À Vevey, à Montreux et à Aigle, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
+      body: "Sur la Riviera comme à Aigle, envoyez-nous la checklist de votre régie. Nous fixons la date dans le devis.",
     },
     example: {
       body: "",
@@ -365,18 +365,11 @@ export const locations: Location[] = [
     faqs: [
       {
         question: "Montreux a-t-il une page à part ?",
-        answer:
-          "Non. Montreux est listé avec Vevey, sur la Riviera. Réponse sous 24 h, sans frais de déplacement.",
+        answer: "Non, Montreux est présenté avec Vevey sur cette page.",
       },
       {
-        question: "Pourquoi Aigle n'a-t-il pas sa page ?",
-        answer:
-          "Aigle est dans le Chablais et se lit dans la section de cette page. Il n'existe pas d'URL /nettoyage-aigle.",
-      },
-      {
-        question: "Où se fait l'état des lieux à Vevey ?",
-        answer:
-          "Avec la régie, selon sa checklist. La date est fixée dans le devis. Il en va de même à Montreux et à Aigle.",
+        question: "Intervenez-vous à Aigle ?",
+        answer: "Oui. Aigle, dans le Chablais, fait partie de cette zone.",
       },
     ],
     priorityLinks: [
