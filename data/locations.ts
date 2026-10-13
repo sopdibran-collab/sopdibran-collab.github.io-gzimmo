@@ -348,7 +348,7 @@ export const locations: Location[] = [
       {
         question: "Quelles communes accompagnent Lausanne ?",
         answer:
-          "Renens et Crissier. Pully, Prilly et Ecublens ne sont pas listées. Le siège est à Romont, Route de Raboud 8.",
+          "Renens et Crissier, avec Lausanne. Le siège est à Romont, Route de Raboud 8.",
       },
       {
         question: "Pourquoi cette page parle-t-elle de zone étendue ?",
