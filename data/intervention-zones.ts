@@ -1,5 +1,5 @@
 /**
- * Zones d'intervention — Fribourg, Vaud, Neuchâtel.
+ * Zones d'intervention — Fribourg et Vaud.
  * Lien vers une page locale existante, sinon libellé sans lien.
  */
 
@@ -55,14 +55,6 @@ export const interventionCantons: InterventionCanton[] = [
       { name: "Oron-la-Ville" },
       { name: "Palézieux" },
     ],
-  },
-  {
-    id: "neuchatel",
-    canton: "Neuchâtel",
-    code: "NE",
-    heading: "Canton de Neuchâtel",
-    description: "Intervention à Neuchâtel, depuis Romont.",
-    places: [{ name: "Neuchâtel", href: "/nettoyage-neuchatel" }],
   },
 ];
 

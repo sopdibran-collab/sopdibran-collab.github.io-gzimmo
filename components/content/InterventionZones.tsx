@@ -21,7 +21,7 @@ const reassurances = [
   {
     icon: MapPin,
     title: "Depuis Romont",
-    detail: "Fribourg, Vaud et Neuchâtel",
+    detail: "Fribourg et Vaud",
   },
   {
     icon: Clock,
@@ -44,10 +44,10 @@ function placeChipClass(onSoft: boolean, linked: boolean) {
   );
 }
 
-/** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
+/** Zones d'intervention — Fribourg et Vaud. */
 export function InterventionZones({
   servicePhrase = "nettoyage",
-  heading = "Nos zones d'intervention en Suisse romande",
+  heading = "Nos zones : Fribourg et Vaud",
   devisHref = "/contact",
   className,
   onSoft = false,
@@ -66,7 +66,7 @@ export function InterventionZones({
             {heading}
           </h2>
           <p className="mt-4 max-w-[62ch] text-base text-muted leading-relaxed">
-            Depuis Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel
+            Depuis Romont, nous intervenons dans les cantons de Fribourg et de Vaud
             pour votre {servicePhrase}.
           </p>
           <ul className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-4">
@@ -119,7 +119,7 @@ export function InterventionZones({
 
       <p className="mt-8 text-sm text-muted leading-relaxed">
         Siège : Route de Raboud 8, 1680 Romont FR. Une commune n&apos;apparaît pas dans la liste ?
-        Écrivez-nous. Nous confirmons le déplacement.
+        Écrivez-nous. Nous confirmons le déplacement. Réponse sous 24 h, sans frais de déplacement.
       </p>
       <div className="mt-4">
         <TextLink href="/zones">Voir toutes les pages locales</TextLink>
@@ -140,7 +140,7 @@ export function InterventionZones({
           >
             Demander un devis gratuit
           </Button>
-          <p className="mt-2 text-sm text-muted sm:text-right">Réponse sous 24 h · Sans engagement</p>
+          <p className="mt-2 text-sm text-muted sm:text-right">Réponse sous 24 h · Sans frais de déplacement</p>
         </div>
       </div>
     </section>

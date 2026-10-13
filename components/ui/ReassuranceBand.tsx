@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 const items = [
   "Réponse sous 24 h",
   "Devis gratuit",
-  "Suisse romande",
+  "Sans frais de déplacement",
+  "Fribourg et Vaud",
   teamExperienceLabel(true),
 ] as const;
 

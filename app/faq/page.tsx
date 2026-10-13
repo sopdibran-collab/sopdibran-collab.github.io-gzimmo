@@ -9,9 +9,10 @@ import { ConversionCta } from "@/components/ui/ConversionCta";
 import { HashScroll } from "@/components/ui/HashScroll";
 
 export const metadata = createMetadata({
-  title: "FAQ nettoyage — tarifs, zone, délais",
+  title: "FAQ nettoyage | Romont, FR, VD, NE",
   description:
-    "FAQ Gzimmo : tarifs fin de bail, zone Romont & Suisse romande, délais et garanties. Devis gratuit — 076 214 23 42.",
+    "Réponses de Gzimmo sur les tarifs, la zone (Fribourg et Vaud) et les délais. Siège à Romont. Devis gratuit.",
+  absoluteTitle: true,
   path: "/faq",
 });
 
@@ -40,7 +41,7 @@ export default function FaqPage() {
         <PageIntro
           onDark
           badge="FAQ"
-          title="Questions fréquentes"
+          title="Questions fréquentes sur le nettoyage"
           description="Tarifs, zone d'intervention, prestations et délais — des réponses claires pour préparer votre demande de devis."
         >
           <ConversionCta />

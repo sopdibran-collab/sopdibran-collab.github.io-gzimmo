@@ -10,9 +10,10 @@ import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 import { TextLink } from "@/components/ui/TextLink";
 
 export const metadata = createMetadata({
-  title: "Services de nettoyage",
+  title: "Services de nettoyage | Gzimmo à Romont",
   description:
-    "Services de nettoyage Gzimmo : fin de bail, après chantier, entretien de locaux, bureaux et vitres. Fribourg, Vaud et Neuchâtel. Devis sous 24 h.",
+    "Fin de bail, après chantier, locaux, bureaux, appartements, maisons, vitres et conciergerie. Gzimmo, Romont. Fribourg et Vaud.",
+  absoluteTitle: true,
   path: "/services",
 });
 
@@ -25,11 +26,11 @@ const prioritySlugs = [
 const reassurance = [
   {
     title: "Devis sous 24 h",
-    text: "Réponse claire et chiffrée — sans engagement, avant toute intervention.",
+    text: "Réponse claire et chiffrée — sans engagement, sans frais de déplacement, avant toute intervention.",
   },
   {
-    title: "Fribourg, Vaud, Neuchâtel",
-    text: "Basés à Romont. Nous intervenons dans ces trois cantons.",
+    title: "Fribourg et Vaud",
+    text: "Basés à Romont. Nous intervenons à Fribourg et en Vaud.",
   },
   {
     title: "Garantie régie",
@@ -58,7 +59,7 @@ export default function ServicesPage() {
         <PageIntro
           onDark
           badge="Services"
-          title="Des prestations précises, adaptées à chaque espace"
+          title="Services de nettoyage à Fribourg et Vaud"
           description="Chaque intervention est planifiée avec soin — du nettoyage régulier aux remises en état ponctuelles."
         >
           <div className="flex flex-col gap-4 sm:gap-5">

@@ -10,8 +10,8 @@ export function StatsBand() {
       <FadeIn>
         <Badge className="text-accent-ink">Gzimmo en chiffres</Badge>
         <p className="mt-5 max-w-lg text-lg text-white/80 leading-relaxed">
-          {teamExperienceLabel(false)} au service de particuliers, régies et entreprises en Suisse
-          romande.
+          {teamExperienceLabel(false)} au service de particuliers, régies et entreprises.
+          Fribourg et Vaud. Réponse sous 24 h, sans frais de déplacement.
         </p>
       </FadeIn>
 

@@ -39,7 +39,6 @@ Ce que nous avons apprécié, c'est le soin apporté aux détails et le fait que
 
 Très bonne expérience pour un nettoyage après chantier, nous referons appel à eux si besoin.`,
   author: "Patrick Eigenmann",
-  location: "Suisse romande",
   url: "https://maps.app.goo.gl/DiW8HsFLSv5CMwuk6",
   rating: 5,
 };
