@@ -671,7 +671,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         question: "Intervenez-vous pour des régies à Fribourg et dans le canton de Vaud ?",
         answer:
-          "Oui, depuis Romont. Fribourg et Matran sont dans la Sarine. Lausanne, Renens et Crissier sont dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
+          "Oui, depuis Romont. Fribourg et Matran sont dans la Sarine. Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
       },
     ],
     relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],
