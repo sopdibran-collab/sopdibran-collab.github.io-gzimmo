@@ -78,6 +78,11 @@ export const zoneBands: ZoneBand[] = [
     timeLabel: "Nord vaudois",
     places: [{ name: "Yverdon-les-Bains", href: "/nettoyage-yverdon" }],
   },
+  {
+    id: "lac",
+    timeLabel: "Lac",
+    places: [{ name: "Morat (Murten)", href: "/nettoyage-morat" }],
+  },
 ];
 
 /** Communes réellement listées comme desservies. Pas les cantons entiers. */
@@ -109,4 +114,5 @@ export const servedCommunes: { name: string; cantonName: string }[] = [
   { name: "Vevey", cantonName: "Vaud" },
   { name: "Montreux", cantonName: "Vaud" },
   { name: "Aigle", cantonName: "Vaud" },
+  { name: "Morat", cantonName: "Fribourg" },
 ];

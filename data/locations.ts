@@ -430,6 +430,59 @@ export const locations: Location[] = [
       { label: "Avis clients", href: "/avis" },
     ],
   },
+  {
+    slug: "nettoyage-morat",
+    city: "Morat (Murten)",
+    canton: "FR",
+    cantonName: "Fribourg",
+    district: "Lac",
+    title: "Nettoyage à Morat (Murten)",
+    description:
+      "Nettoyage fin de bail, appartements et parties communes à Morat (Murten), district du Lac. Devis gratuit, réponse sous 24 h.",
+    intro:
+      "Nous intervenons à Morat (Murten), dans le district du Lac, depuis notre siège de Romont.",
+    geo: { latitude: 46.928, longitude: 7.117 },
+    priority: 0.68,
+    nearbyCommunes: [],
+    communeGroups: [{ title: "District du Lac", names: ["Morat (Murten)"] }],
+    rules: {
+      title: "Au bord du lac, le bail reste fédéral",
+      body: "Morat est fribourgeoise, dans le district du Lac. Ce sont donc les règles fédérales qui s'appliquent, pas les usages vaudois. Le locataire rend le logement dans l'état d'un usage conforme au contrat. Le nettoyage en fait partie. Le bailleur signale immédiatement les défauts à la sortie, selon les art. 267 et 267a du Code des obligations.",
+      sources: [federalRestitution, federalCleaningNote],
+    },
+    remoteHandover: {
+      title: "Fin de bail à Morat",
+      body: "À Morat aussi, c'est la checklist de votre régie qui fait foi. Nous convenons de la date dans le devis.",
+    },
+    building: {
+      body: "Le canton compte, en 2025, 75 906 bâtiments d'habitation, dont 45 395 maisons individuelles (59,8 %). C'est un chiffre cantonal.",
+      sourceLine: "État de Fribourg, statistiques des bâtiments, 2025",
+      sources: [fribourgBuildings],
+    },
+    example: {
+      body: "",
+      sources: [romontExample],
+    },
+    servicesHighlight: ["Fin de bail", "Appartements", "Parties communes"],
+    faqs: [
+      {
+        question: "Pourquoi écrire Morat (Murten) ?",
+        answer: "Morat est le nom français, Murten le nom allemand de la même commune.",
+      },
+      {
+        question: "La remise à Morat suit-elle les usages vaudois ?",
+        answer:
+          "Non. Morat est dans le canton de Fribourg. La restitution suit les art. 267 et 267a du Code des obligations, pas la remise à midi du canton de Vaud.",
+      },
+    ],
+    priorityLinks: [
+      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+      { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
+      { label: "Zones d'intervention", href: "/zones" },
+      { label: "Avis clients", href: "/avis" },
+    ],
+  },
 ];
 
 export function getLocationBySlug(slug: string) {
