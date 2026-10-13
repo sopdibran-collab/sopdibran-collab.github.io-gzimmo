@@ -1,4 +1,4 @@
-import { company } from "@/data/company";
+import { company, teamExperienceLabel } from "@/data/company";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
@@ -11,7 +11,7 @@ import { Section } from "@/components/layout/Section";
 export const metadata = createMetadata({
   title: "À propos de Gzimmo, nettoyage à Romont",
   description:
-    "Gzimmo Sàrl est basée Route de Raboud 8 à Romont. Fribourg, Vaud et Neuchâtel.",
+    "Gzimmo Sàrl est basée Route de Raboud 8 à Romont. L'équipe cumule plus de 15 ans d'expérience. Fribourg, Vaud et Neuchâtel.",
   absoluteTitle: true,
   path: "/a-propos",
 });
@@ -27,7 +27,7 @@ const values = [
   },
   {
     title: "Fiabilité",
-    text: "Particuliers, régies et entreprises, depuis le siège de Romont. Cantons de Fribourg, de Vaud et de Neuchâtel.",
+    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises dans les cantons de Fribourg, de Vaud et de Neuchâtel. Sans frais de déplacement.`,
   },
 ];
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
           onDark
           badge="À propos"
           title="Gzimmo, entreprise de nettoyage à Romont"
-          description={`${company.name} accompagne particuliers et professionnels dans les cantons de Fribourg, de Vaud et de Neuchâtel. Le siège est à ${company.address.city} (${company.address.region}), Route de Raboud 8.`}
+          description={`${company.name} accompagne particuliers et professionnels dans les cantons de Fribourg, de Vaud et de Neuchâtel. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()}, avec rigueur, discrétion et le souci du détail. Sans frais de déplacement.`}
         />
       </PageHero>
 

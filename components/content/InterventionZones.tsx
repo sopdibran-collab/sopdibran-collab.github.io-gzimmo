@@ -119,7 +119,7 @@ export function InterventionZones({
 
       <p className="mt-8 text-sm text-muted leading-relaxed">
         Siège : Route de Raboud 8, 1680 Romont FR. Une commune n&apos;apparaît pas dans la liste ?
-        Écrivez-nous. Nous confirmons le déplacement.
+        Écrivez-nous. Nous confirmons le déplacement. Sans frais de déplacement.
       </p>
       <div className="mt-4">
         <TextLink href="/zones">Voir toutes les pages locales</TextLink>
@@ -140,7 +140,7 @@ export function InterventionZones({
           >
             Demander un devis gratuit
           </Button>
-          <p className="mt-2 text-sm text-muted sm:text-right">Réponse sous 24 h · Sans engagement</p>
+          <p className="mt-2 text-sm text-muted sm:text-right">Réponse sous 24 h · Sans frais de déplacement</p>
         </div>
       </div>
     </section>

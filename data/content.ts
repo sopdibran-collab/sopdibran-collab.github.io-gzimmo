@@ -7,11 +7,12 @@ export const whyItems = [
   `Plus de ${company.teamExperienceYears} ans d'expérience cumulée dans le nettoyage`,
   "Produits professionnels fournis, adaptés à chaque surface",
   "Réponse sous 24 h, depuis Romont, à Fribourg, en Vaud et à Neuchâtel",
+  "Sans frais de déplacement",
   "Garantie de remise de bail sur nos prestations fin de bail",
 ];
 
 export const stats = [
-  { value: "3", label: "cantons : Fribourg, Vaud, Neuchâtel" },
+  { value: `${company.teamExperienceYears}+`, label: "ans dans le métier" },
   { value: "100%", label: "engagement qualité" },
   { value: "8", label: "services spécialisés" },
 ] as const;

@@ -62,12 +62,12 @@ const sharedWhy = [
   {
     title: "Réactivité depuis Romont",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis sous 24 h.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis sous 24 h, sans frais de déplacement.",
   },
   {
     title: "Devis transparent avant intervention",
     description:
-      "Chaque prestation fait l'objet d'un devis détaillé et gratuit. Le tarif convenu est le tarif final.",
+      "Chaque prestation fait l'objet d'un devis détaillé et gratuit, sans frais de déplacement. Le tarif convenu est le tarif final.",
   },
 ];
 
@@ -178,7 +178,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Poussière fine, voile de ciment, traces de peinture : nous remettons le lieu en état pour que vous puissiez emménager ou livrer.",
     metaTitle: "Nettoyage après rénovation et chantier | Gzimmo",
     metaDescription:
-      "Devis gratuit sous 24 h pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg, Vaud, Neuchâtel.",
+      "Devis gratuit sous 24 h, sans frais de déplacement, pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg, Vaud, Neuchâtel.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     preferCallCta: false,
@@ -200,7 +200,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage de fin de chantier",
     ],
     intro:
-      "Le devis est gratuit et clair sous 24 h. Depuis Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Téléphone : 076 214 23 42.",
+      "Le devis est gratuit et clair sous 24 h, sans frais de déplacement. Depuis Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Téléphone : 076 214 23 42.",
     relatedNote: {
       text: "Travaux dans un logement loué, puis état des lieux de sortie : la checklist régie est une autre prestation.",
       linkLabel: "Nettoyage de fin de bail",
@@ -290,7 +290,7 @@ export const serviceLandings: ServiceLanding[] = [
       id: "fin-de-chantier",
       title: "Comment se passe le passage",
       items: [
-        "Vous décrivez le chantier au 076 214 23 42. Devis gratuit et clair sous 24 h.",
+        "Vous décrivez le chantier au 076 214 23 42. Devis gratuit et clair sous 24 h, sans frais de déplacement.",
         "Le passage est calé sur la date de réception, si le planning le permet.",
         "Sols, résidus et équipements sont traités sans abîmer les finitions neuves.",
         "Les déchets de nettoyage partent en fin d'intervention.",
@@ -299,7 +299,7 @@ export const serviceLandings: ServiceLanding[] = [
     priceSection: {
       id: "prix",
       title: "Combien coûte un nettoyage après rénovation ou chantier ?",
-      body: "Il n'y a pas de forfait fixe au mètre carré. Le devis est gratuit, clair, établi sous 24 h, selon le niveau de poussière fine et le type de résidus. Le tarif convenu est le tarif final.",
+      body: "Il n'y a pas de forfait fixe au mètre carré. Le devis est gratuit, clair, établi sous 24 h, sans frais de déplacement, selon le niveau de poussière fine et le type de résidus. Le tarif convenu est le tarif final.",
       factors: [
         "Niveau de poussière fine laissé par les artisans",
         "Résidus : voile de ciment, laitance de carrelage, peinture, silicone, sciure",
@@ -345,7 +345,7 @@ export const serviceLandings: ServiceLanding[] = [
         "delai-devis-chantier",
         "delais",
         "Sous quel délai recevons-nous le devis ?",
-        "Sous 24 h, gratuit, sans engagement. Appelez le 076 214 23 42 et décrivez le logement ou le lot, le type de travaux et la date de réception.",
+        "Sous 24 h, gratuit, sans engagement, sans frais de déplacement. Appelez le 076 214 23 42 et décrivez le logement ou le lot, le type de travaux et la date de réception.",
       ),
       faq(
         "zones-apres-chantier",
@@ -518,7 +518,7 @@ export const serviceLandings: ServiceLanding[] = [
         "delai-appartement",
         "delais",
         "Quel délai pour un nettoyage d'appartement ?",
-        "Devis sous 24 h. Le jour du passage dépend du planning et de la date indiquée. Il est confirmé avant l'intervention.",
+        "Devis sous 24 h, sans frais de déplacement. Le jour du passage dépend du planning et de la date indiquée. Il est confirmé avant l'intervention.",
       ),
       faq(
         "appartement-vs-fin-de-bail",
