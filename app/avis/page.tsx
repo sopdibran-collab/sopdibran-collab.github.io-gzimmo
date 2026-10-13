@@ -6,6 +6,7 @@ import { company } from "@/data/company";
 import { googleReviews, googleReviewsProfileUrl } from "@/data/google-reviews";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
   title: "Avis clients | nettoyage Gzimmo à Romont",
@@ -47,6 +48,13 @@ export default function AvisPage() {
             Tous les avis {company.name} sur Google Maps
           </a>
         </p>
+        <ContextualLinks
+          links={[
+            { label: "Réalisations", href: "/realisations" },
+            { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+            { label: "Nettoyage à Romont", href: "/nettoyage-romont" },
+          ]}
+        />
       </PageMain>
 
       <PageCta />

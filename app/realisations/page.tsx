@@ -5,6 +5,7 @@ import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { RomontFinDeBailRealisation } from "@/components/content/RomontFinDeBailRealisation";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
   title: "Réalisations de nettoyage à Romont",
@@ -47,6 +48,13 @@ export default function RealisationsPage() {
         <div className="mt-16 border-t border-border/80 pt-16">
           <RealisationGrid showHeader={false} />
         </div>
+        <ContextualLinks
+          links={[
+            { label: "Fin de bail à Romont", href: "/nettoyage-romont#realisation-romont" },
+            { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+            { label: "Avis clients", href: "/avis" },
+          ]}
+        />
       </PageMain>
 
       <PageCta />

@@ -22,16 +22,24 @@ export function JsonLd({ data }: JsonLdProps) {
 }
 
 export function PlausibleScript() {
-  if (process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN) {
-    return (
+  const domain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+  if (!domain) return null;
+
+  return (
+    <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            "window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}",
+        }}
+      />
       <script
         defer
-        data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
-        src="https://plausible.io/js/script.js"
+        data-domain={domain}
+        src="https://plausible.io/js/script.tagged-events.js"
       />
-    );
-  }
-  return null;
+    </>
+  );
 }
 
 export function PageIntro({

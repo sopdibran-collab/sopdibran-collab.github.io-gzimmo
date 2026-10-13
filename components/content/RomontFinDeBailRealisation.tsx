@@ -133,6 +133,7 @@ export function RomontFinDeBailRealisation({
         Vous déménagez dans la région de Romont ?{" "}
         <Link
           href="/contact?service=nettoyage-fin-de-bail&ville=Romont"
+          data-analytics="devis"
           className="font-medium text-accent-ink underline decoration-accent/40 underline-offset-4 transition-colors duration-200 hover:text-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         >
           Demandez votre devis gratuit.

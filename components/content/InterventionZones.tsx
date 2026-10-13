@@ -132,6 +132,7 @@ export function InterventionZones({
         <div className="shrink-0">
           <Button
             href={devisHref}
+            data-analytics="devis"
             className="w-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:w-auto"
           >
             Demander un devis gratuit

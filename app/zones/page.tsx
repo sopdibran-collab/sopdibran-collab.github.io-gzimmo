@@ -1,9 +1,10 @@
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, zonesItemListSchema } from "@/lib/schema";
-import { PageHero, PageCta } from "@/components/layout/PageLayout";
+import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ZoneBands } from "@/components/content/ZoneBands";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
   title: "Zones de nettoyage depuis Romont",
@@ -44,6 +45,16 @@ export default function ZonesPage() {
       </PageHero>
 
       <ZoneBands />
+
+      <PageMain variant="default">
+        <ContextualLinks
+          links={[
+            { label: "Services de nettoyage", href: "/services" },
+            { label: "Réalisations", href: "/realisations" },
+            { label: "Avis clients", href: "/avis" },
+          ]}
+        />
+      </PageMain>
 
       <PageCta />
     </>
