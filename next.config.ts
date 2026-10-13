@@ -14,7 +14,7 @@ const serviceSlugs = [
 const serviceRedirects = serviceSlugs.map((slug) => ({
   source: `/services/${slug}`,
   destination: `/${slug}`,
-  permanent: true,
+  statusCode: 301,
 }));
 
 /** Anciennes URLs locales sans page dédiée → hub zones (pas de pages reconstruites). */
@@ -39,7 +39,7 @@ const outOfZoneRedirects = [
 ].map((source) => ({
   source,
   destination: "/zones",
-  permanent: true,
+  statusCode: 301,
 }));
 
 /**
@@ -61,14 +61,14 @@ const seoCityRedirects = [
   { source: "/seo/nettoyage-yverdon-les-bains", destination: "/zones" },
   { source: "/seo/nettoyage-morges", destination: "/zones" },
   { source: "/seo/nettoyage-nyon", destination: "/zones" },
-].map((redirect) => ({ ...redirect, permanent: true as const }));
+].map((redirect) => ({ ...redirect, statusCode: 301 as const }));
 
 /** Doublons d'intention : une page ville, une page service fin de bail. */
 const duplicateIntentRedirects = [
   { source: "/entreprise-nettoyage-romont", destination: "/nettoyage-romont" },
   { source: "/nettoyage-fin-de-bail-romont", destination: "/nettoyage-romont" },
   { source: "/nettoyage-fin-de-bail-fribourg", destination: "/nettoyage-fribourg" },
-].map((redirect) => ({ ...redirect, permanent: true as const }));
+].map((redirect) => ({ ...redirect, statusCode: 301 as const }));
 
 const nextConfig: NextConfig = {
   images: {
@@ -80,12 +80,12 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "www.gzimmo.ch" }],
         destination: "https://gzimmo.ch/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/valais/:path*",
         destination: "/zones",
-        permanent: true,
+        statusCode: 301,
       },
       ...outOfZoneRedirects,
       ...seoCityRedirects,
@@ -93,12 +93,12 @@ const nextConfig: NextConfig = {
       {
         source: "/seo",
         destination: "/zones",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/seo/:path*",
         destination: "/zones",
-        permanent: true,
+        statusCode: 301,
       },
       ...serviceRedirects,
     ];
