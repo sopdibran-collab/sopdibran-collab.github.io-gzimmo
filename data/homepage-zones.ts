@@ -3,23 +3,23 @@ export const homepageZones = [
   {
     city: "Romont",
     label: "Romont",
-    href: "/seo/nettoyage-romont",
+    href: "/nettoyage-romont",
     note: "Siège",
   },
   {
     city: "Fribourg",
     label: "Fribourg",
-    href: "/seo/nettoyage-fribourg",
+    href: "/nettoyage-fribourg",
   },
   {
     city: "Bulle",
     label: "Bulle · Gruyère",
-    href: "/seo/nettoyage-bulle",
+    href: "/nettoyage-bulle",
   },
   {
     city: "Lausanne",
     label: "Lausanne",
-    href: "/seo/nettoyage-lausanne",
+    href: "/nettoyage-lausanne",
   },
   {
     city: "Yverdon-les-Bains",

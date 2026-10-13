@@ -5,16 +5,16 @@ import { TextLink } from "@/components/ui/TextLink";
 const moneyLinks = [
   {
     label: "Entreprise de nettoyage à Romont",
-    href: "/seo/nettoyage-romont",
+    href: "/nettoyage-romont",
     note: "Siège",
   },
   {
-    label: "Fin de bail à Romont",
-    href: "/nettoyage-fin-de-bail-romont",
+    label: "Nettoyage à Fribourg",
+    href: "/nettoyage-fribourg",
   },
   {
-    label: "Fin de bail à Fribourg",
-    href: "/nettoyage-fin-de-bail-fribourg",
+    label: "Nettoyage à Lausanne",
+    href: "/nettoyage-lausanne",
   },
 ] as const;
 

@@ -14,20 +14,19 @@ import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createMetadata({
-  title: "Gzimmo | Nettoyage fin de bail et après chantier à Romont",
+  title: "Entreprise de nettoyage à Romont | FR, VD, NE",
   description:
-    "Gzimmo Sàrl à Romont : nettoyage fin de bail et après chantier. Devis gratuit sous 24 h, garantie régie. Fribourg, Vaud et Neuchâtel — 076 214 23 42.",
+    "Gzimmo Sàrl, entreprise de nettoyage à Romont, Route de Raboud 8. Fribourg, Vaud et Neuchâtel. Devis gratuit — 076 214 23 42.",
   path: "/",
   absoluteTitle: true,
   keywords: [
+    "entreprise de nettoyage",
     "Gzimmo",
-    "nettoyage après rénovation",
-    "nettoyage après chantier",
-    "nettoyage après travaux",
-    "nettoyage fin de bail",
-    "devis nettoyage",
     "Romont",
     "Fribourg",
+    "Vaud",
+    "Neuchâtel",
+    "devis nettoyage",
   ],
 });
 

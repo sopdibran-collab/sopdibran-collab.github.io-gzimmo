@@ -26,9 +26,9 @@ export const interventionCantons: InterventionCanton[] = [
     heading: "Canton de Fribourg",
     description: "Siège à Romont. Nettoyage et entretien dans le canton et les communes listées.",
     places: [
-      { name: "Romont", href: "/seo/nettoyage-romont" },
-      { name: "Fribourg", href: "/seo/nettoyage-fribourg" },
-      { name: "Bulle", href: "/seo/nettoyage-bulle" },
+      { name: "Romont", href: "/nettoyage-romont" },
+      { name: "Fribourg", href: "/nettoyage-fribourg" },
+      { name: "Bulle", href: "/nettoyage-bulle" },
       { name: "Estavayer" },
       { name: "Vuisternens-devant-Romont" },
       { name: "Ursy" },
@@ -42,7 +42,7 @@ export const interventionCantons: InterventionCanton[] = [
     heading: "Canton de Vaud — de Bex à Nyon",
     description: "Nous intervenons dans tout le canton, notamment dans les communes ci-dessous.",
     places: [
-      { name: "Lausanne", href: "/seo/nettoyage-lausanne" },
+      { name: "Lausanne", href: "/nettoyage-lausanne" },
       { name: "Yverdon-les-Bains" },
       { name: "Morges" },
       { name: "Nyon" },
@@ -62,7 +62,7 @@ export const interventionCantons: InterventionCanton[] = [
     code: "NE",
     heading: "Canton de Neuchâtel",
     description: "Intervention à Neuchâtel, depuis Romont.",
-    places: [{ name: "Neuchâtel", href: "/seo/nettoyage-neuchatel" }],
+    places: [{ name: "Neuchâtel", href: "/nettoyage-neuchatel" }],
   },
 ];
 

@@ -98,8 +98,7 @@ export const locations: Location[] = [
     ],
     faqs: romontFaqs,
     priorityLinks: [
-      { label: "Nettoyage fin de bail à Romont", href: "/nettoyage-fin-de-bail-romont" },
-      { label: "Nettoyage fin de bail (Suisse romande)", href: "/nettoyage-fin-de-bail" },
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Conciergerie pour régies", href: "/conciergerie" },
       { label: "Réalisations", href: "/realisations" },
@@ -131,7 +130,7 @@ export const locations: Location[] = [
       },
       {
         title: "Fin de bail à Fribourg et agglomération",
-        body: "Le passage reprend les points qui bloquent souvent un état des lieux : four, plaques, sanitaires, joints, sols et vitres. Si la régie refuse un point, nous revenons sans frais. Le détail est sur la page fin de bail à Fribourg.",
+        body: "Le passage reprend les points qui bloquent souvent un état des lieux : four, plaques, sanitaires, joints, sols et vitres. Si la régie refuse un point, nous revenons sans frais. Le détail de la prestation est sur la page nettoyage fin de bail.",
       },
     ],
     faqs: [
@@ -153,8 +152,8 @@ export const locations: Location[] = [
     ],
     priorityLinks: [
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
-      { label: "Nettoyage fin de bail à Fribourg", href: "/nettoyage-fin-de-bail-fribourg" },
-      { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+      { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
     ],
   },
   {
@@ -189,7 +188,7 @@ export const locations: Location[] = [
     priorityLinks: [
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
-      { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
+      { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
     ],
     faqs: [
       {
@@ -309,7 +308,7 @@ export const locations: Location[] = [
     priorityLinks: [
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Entretien de locaux", href: "/entretien-locaux" },
-      { label: "Entreprise de nettoyage à Romont (siège)", href: "/seo/nettoyage-romont" },
+      { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
     ],
   },
 ];

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { locations, getLocationBySlug } from "@/data/locations";
 import { services } from "@/data/services";
+import { getLocationPath } from "@/lib/location-paths";
 import { getServicePath } from "@/lib/service-paths";
 import { localPageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, faqPageSchema, locationPageSchema } from "@/lib/schema";
@@ -16,6 +17,8 @@ import { ContentCard } from "@/components/ui/ContentCard";
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return locations.map((location) => ({ slug: location.slug }));
@@ -34,6 +37,7 @@ export default async function LocalSeoPage({ params }: Props) {
 
   if (!location) notFound();
 
+  const path = getLocationPath(location.slug);
   const relatedLocations = locations
     .filter((l) => l.slug !== location.slug && l.canton === location.canton)
     .slice(0, 6);
@@ -47,7 +51,7 @@ export default async function LocalSeoPage({ params }: Props) {
           breadcrumbSchema([
             { name: "Accueil", path: "/" },
             { name: "Zones", path: "/zones" },
-            { name: location.city, path: `/seo/${location.slug}` },
+            { name: location.city, path },
           ]),
         ]}
       />
