@@ -76,7 +76,7 @@ export const zoneBands: ZoneBand[] = [
   {
     id: "nord-vaudois",
     timeLabel: "Nord vaudois",
-    places: [{ name: "Yverdon-les-Bains" }],
+    places: [{ name: "Yverdon-les-Bains", href: "/nettoyage-yverdon" }],
   },
 ];
 

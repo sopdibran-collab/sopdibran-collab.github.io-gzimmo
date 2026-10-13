@@ -38,6 +38,7 @@ Bassins depuis Romont : Siège · Glâne et Broye, Gruyère et Veveyse, Sarine e
 - Bulle : https://gzimmo.ch/nettoyage-bulle
 - Lausanne : https://gzimmo.ch/nettoyage-lausanne
 - Vevey et Montreux : https://gzimmo.ch/nettoyage-vevey-montreux
+- Yverdon-les-Bains : https://gzimmo.ch/nettoyage-yverdon
 - Fin de bail : https://gzimmo.ch/nettoyage-fin-de-bail
 - Nettoyage après chantier : https://gzimmo.ch/nettoyage-apres-chantier
 - Conciergerie : https://gzimmo.ch/conciergerie
@@ -56,4 +57,4 @@ Q: Devis gratuit ?
 R: Oui, sans engagement, réponse sous 24 h, sans frais de déplacement.
 
 Q: Zone couverte ?
-R: Fribourg et Vaud, depuis Romont, par bassin. Pages : Romont, Fribourg, Bulle, Lausanne, Vevey et Montreux. Réponse sous 24 h, sans frais de déplacement. Neuchâtel, Genève et le Valais ne sont pas des zones publiées.
+R: Fribourg et Vaud, depuis Romont, par bassin. Pages : Romont, Fribourg, Bulle, Lausanne, Vevey et Montreux, Yverdon-les-Bains. Réponse sous 24 h, sans frais de déplacement. Neuchâtel, Genève et le Valais ne sont pas des zones publiées.
