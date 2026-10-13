@@ -65,6 +65,15 @@ export const zoneBands: ZoneBand[] = [
     ],
   },
   {
+    id: "riviera-chablais",
+    timeLabel: "Riviera et Chablais",
+    places: [
+      { name: "Vevey", href: "/nettoyage-vevey-montreux" },
+      { name: "Montreux" },
+      { name: "Aigle" },
+    ],
+  },
+  {
     id: "nord-vaudois",
     timeLabel: "Nord vaudois",
     places: [{ name: "Yverdon-les-Bains" }],
@@ -97,4 +106,7 @@ export const servedCommunes: { name: string; cantonName: string }[] = [
   { name: "Renens", cantonName: "Vaud" },
   { name: "Crissier", cantonName: "Vaud" },
   { name: "Yverdon-les-Bains", cantonName: "Vaud" },
+  { name: "Vevey", cantonName: "Vaud" },
+  { name: "Montreux", cantonName: "Vaud" },
+  { name: "Aigle", cantonName: "Vaud" },
 ];

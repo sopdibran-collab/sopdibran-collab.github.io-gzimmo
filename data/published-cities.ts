@@ -24,4 +24,9 @@ export const publishedCities = [
     homeLabel: "Nettoyage à Lausanne",
     href: "/nettoyage-lausanne",
   },
+  {
+    label: "Vevey",
+    homeLabel: "Nettoyage à Vevey et Montreux",
+    href: "/nettoyage-vevey-montreux",
+  },
 ] as const;

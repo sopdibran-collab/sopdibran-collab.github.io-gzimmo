@@ -330,6 +330,56 @@ export const locations: Location[] = [
       { label: "Avis clients", href: "/avis" },
     ],
   },
+  {
+    slug: "nettoyage-vevey-montreux",
+    city: "Vevey",
+    canton: "VD",
+    cantonName: "Vaud",
+    district: "Riviera-Pays-d'Enhaut",
+    title: "Nettoyage à Vevey et Montreux",
+    description:
+      "Nettoyage fin de bail, appartements et vitres à Vevey, Montreux et Aigle. Devis gratuit, sans frais de déplacement.",
+    intro:
+      "Nous intervenons à Vevey et à Montreux, sur la Riviera, ainsi qu'à Aigle, dans le Chablais.",
+    geo: { latitude: 46.4628, longitude: 6.8419 },
+    priority: 0.72,
+    nearbyCommunes: ["Montreux", "Aigle"],
+    communeGroups: [
+      { title: "Riviera", names: ["Vevey", "Montreux"] },
+      { title: "Chablais", names: ["Aigle"] },
+    ],
+    rules: {
+      title: "Riviera et Chablais : la remise vaudoise",
+      body: "Vevey, Montreux et Aigle sont vaudois. La sortie de bail y suit les règles et usages locatifs du canton, en plus du Code des obligations. L'article 36 place la remise à midi le jour de l'échéance, locaux vidés et sols contrôlables. L'article 37 demande toutes les clés, copies comprises. Le filtre de ventilation, les stores et les radiateurs se traitent quand le logement les a, selon le même texte.",
+      sources: [vaudRulv],
+    },
+    remoteHandover: {
+      title: "Fin de bail sur la Riviera et à Aigle",
+      body: "Sur la Riviera comme à Aigle, envoyez-nous la checklist de votre régie. Nous fixons la date dans le devis.",
+    },
+    example: {
+      body: "",
+      sources: [romontExample],
+    },
+    servicesHighlight: ["Fin de bail", "Appartements", "Vitres"],
+    faqs: [
+      {
+        question: "Montreux a-t-il une page à part ?",
+        answer: "Non, Montreux est présenté avec Vevey sur cette page.",
+      },
+      {
+        question: "Intervenez-vous à Aigle ?",
+        answer: "Oui. Aigle, dans le Chablais, fait partie de cette zone.",
+      },
+    ],
+    priorityLinks: [
+      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+      { label: "Nettoyage à Bulle", href: "/nettoyage-bulle" },
+      { label: "Zones d'intervention", href: "/zones" },
+      { label: "Avis clients", href: "/avis" },
+    ],
+  },
 ];
 
 export function getLocationBySlug(slug: string) {
