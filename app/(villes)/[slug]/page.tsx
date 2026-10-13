@@ -64,7 +64,12 @@ export default async function LocalSeoPage({ params }: Props) {
             { label: location.city },
           ]}
         />
-        <PageIntro badge={location.cantonName} title={location.title} description={location.intro}>
+        <PageIntro
+          badge={location.cantonName}
+          title={location.title}
+          subtitle={location.subtitle}
+          description={location.intro}
+        >
           <ConversionCta devisHref={`/contact?ville=${location.city}`} />
         </PageIntro>
       </PageHero>

@@ -10,7 +10,7 @@ export function HomeZoneGrid() {
       <FadeIn>
         <Badge className="text-accent-ink">Zones d&apos;intervention</Badge>
         <h2 className="mt-4 font-display text-display-md text-foreground">
-          Nous intervenons dans les cantons de Fribourg et de Vaud
+          Villes qui ont une page
         </h2>
         <p className="mt-4 max-w-xl text-muted leading-relaxed">
           Depuis le siège à Romont, les pages locales couvrent Fribourg et Vaud. Le détail est sur la page zones.
@@ -19,7 +19,7 @@ export function HomeZoneGrid() {
 
       <ul className="mt-10 grid gap-0 border-t border-border/80 sm:grid-cols-2 lg:grid-cols-3">
         {homepageZones.map((zone, index) => (
-          <FadeIn key={zone.city} as="li" delay={index * 0.03} className="border-b border-border/80">
+          <FadeIn key={zone.href} as="li" delay={index * 0.03} className="border-b border-border/80">
             <Link
               href={zone.href}
               className="group flex min-h-11 items-center justify-between px-1 py-4 transition-colors duration-200 hover:text-accent-ink"

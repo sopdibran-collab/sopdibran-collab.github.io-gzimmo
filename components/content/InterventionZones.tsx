@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, MapPin, Users } from "lucide-react";
-import { interventionCantons } from "@/data/intervention-zones";
+import { indicativeTimeNotice, zoneBands } from "@/data/intervention-zones";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { TextLink } from "@/components/ui/TextLink";
@@ -47,7 +47,7 @@ function placeChipClass(onSoft: boolean, linked: boolean) {
 /** Zones d'intervention — Fribourg et Vaud. */
 export function InterventionZones({
   servicePhrase = "nettoyage",
-  heading = "Nos zones : Fribourg et Vaud",
+  heading = "Temps de route depuis Romont",
   devisHref = "/contact",
   className,
   onSoft = false,
@@ -66,8 +66,7 @@ export function InterventionZones({
             {heading}
           </h2>
           <p className="mt-4 max-w-[62ch] text-base text-muted leading-relaxed">
-            Depuis Romont, nous intervenons dans les cantons de Fribourg et de Vaud
-            pour votre {servicePhrase}.
+            Depuis Romont, le {servicePhrase} suit les bandes de temps de route. {indicativeTimeNotice}
           </p>
           <ul className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-4">
             {reassurances.map((item) => (
@@ -93,13 +92,10 @@ export function InterventionZones({
       </div>
 
       <div className="mt-10 flex flex-col gap-4">
-        {interventionCantons.map((group) => (
+        {zoneBands.map((group) => (
           <article key={group.id} className={cardClass}>
-            <div className="flex items-baseline justify-between gap-4">
-              <h3 className="font-display text-lg font-semibold text-foreground">{group.heading}</h3>
-              <p className="shrink-0 text-xs font-medium tracking-[0.08em] text-muted">{group.code}</p>
-            </div>
-            <p className="mt-2 max-w-[62ch] text-base text-muted leading-relaxed">{group.description}</p>
+            <h3 className="font-display text-lg font-semibold text-foreground">{group.timeLabel}</h3>
+            {group.detail ? <p className="mt-1 text-sm text-muted">{group.detail}</p> : null}
             <ul className="mt-4 flex flex-wrap gap-2">
               {group.places.map((place) => (
                 <li key={place.name}>

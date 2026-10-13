@@ -37,12 +37,14 @@ export function PlausibleScript() {
 export function PageIntro({
   badge,
   title,
+  subtitle,
   description,
   children,
   onDark = false,
 }: {
   badge?: string;
   title: string;
+  subtitle?: string;
   description?: string;
   children?: ReactNode;
   /** Light typography for full-bleed dark-veil heroes */
@@ -62,6 +64,17 @@ export function PageIntro({
       >
         {title}
       </h1>
+      {subtitle ? (
+        <p
+          className={
+            onDark
+              ? "mt-3 text-sm font-medium text-white/80"
+              : "mt-3 text-sm font-medium text-accent-ink"
+          }
+        >
+          {subtitle}
+        </p>
+      ) : null}
       {description ? (
         <p
           className={
