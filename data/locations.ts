@@ -391,19 +391,19 @@ export const locations: Location[] = [
     description:
       "Yverdon-les-Bains, dans le Nord vaudois. Réponse sous 24 h, sans frais de déplacement.",
     intro:
-      "Yverdon-les-Bains est la ville publiée pour le Nord vaudois. Le siège est Route de Raboud 8 à Romont.",
+      "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains depuis notre siège de Romont.",
     geo: { latitude: 46.7785, longitude: 6.6412 },
     priority: 0.7,
     nearbyCommunes: [],
     communeGroups: [{ title: "Nord vaudois", names: ["Yverdon-les-Bains"] }],
     rules: {
       title: "Usages vaudois, au nord du canton",
-      body: "Yverdon-les-Bains dépend des règles et usages locatifs vaudois, comme Lausanne, mais les régies du Nord vaudois ne sont pas celles de la Riviera. La remise est à midi le jour de l'échéance. Le logement est vidé, les sols peuvent être contrôlés, et les clés — doubles compris — sont rendues. Le texte cantonal cite aussi, quand ils existent, le filtre de ventilation, les stores à lamelles et les radiateurs. Le devis reprend la checklist de la régie yverdonnoise, pas une liste fribourgeoise.",
+      body: "Yverdon-les-Bains dépend des règles et usages locatifs vaudois, comme Lausanne. La remise est à midi le jour de l'échéance. Le logement est vidé, les sols peuvent être contrôlés, et toutes les clés sont rendues, doubles compris. Le texte cantonal cite aussi, quand ils existent, le filtre de ventilation, les stores à lamelles et les radiateurs. Le devis reprend la checklist de votre régie.",
       sources: [vaudRulv],
     },
     remoteHandover: {
       title: "Fin de bail à Yverdon-les-Bains",
-      body: "À Yverdon-les-Bains, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
+      body: "À Yverdon-les-Bains, nous travaillons d'après la checklist de votre régie. Le devis fixe le jour du nettoyage.",
     },
     example: {
       body: "",
@@ -412,19 +412,14 @@ export const locations: Location[] = [
     servicesHighlight: ["Fin de bail", "Appartements", "Bureaux"],
     faqs: [
       {
-        question: "Le Nord vaudois inclut-il d'autres communes sur cette page ?",
+        question: "Intervenez-vous autour d'Yverdon ?",
         answer:
-          "La page nomme Yverdon-les-Bains. Les communes voisines ne sont pas listées tant qu'elles ne sont pas confirmées. Neuchâtel n'est pas une zone publiée. Réponse sous 24 h, sans frais de déplacement.",
+          "Pour une commune proche d'Yverdon-les-Bains, appelez-nous : nous vous dirons si nous pouvons venir. Nous n'intervenons pas dans le canton de Neuchâtel.",
       },
       {
         question: "Quelle heure de remise s'applique à Yverdon ?",
         answer:
           "Midi, le jour de l'échéance, selon les art. 36 et 37 des règles et usages locatifs vaudois. Les locaux sont propres et vidés, les clés et leurs doubles sont remises.",
-      },
-      {
-        question: "Où se fait l'état des lieux à Yverdon-les-Bains ?",
-        answer:
-          "Avec la régie, selon sa checklist. La date est fixée dans le devis.",
       },
     ],
     priorityLinks: [
