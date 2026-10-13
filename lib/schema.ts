@@ -1,7 +1,7 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { entityKnowsAbout, entitySameAs } from "@/data/entity";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
-import { extraSchemaCities } from "@/data/intervention-zones";
+import { servedCommunes } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
 import { getLocationPath } from "@/lib/location-paths";
@@ -13,35 +13,16 @@ const romontGeo = {
   longitude: 6.9111,
 };
 
-/**
- * Cantons desservis : Fribourg et Vaud.
- * Villes des pages locales, plus les communes listées sans page propre.
- */
+/** Communes desservies, pas les cantons entiers. */
 export function priorityAreaServed() {
-  const fromLandings = locations
-    .filter((location) => location.canton === "FR" || location.canton === "VD")
-    .map((location) => ({
-      "@type": "City",
-      name: location.city,
-      containedInPlace: {
-        "@type": "AdministrativeArea",
-        name: location.cantonName,
-      },
-    }));
-
-  const extras = extraSchemaCities.map((city) => ({
-    "@type": "City",
+  return servedCommunes.map((city) => ({
+    "@type": "City" as const,
     name: city.name,
     containedInPlace: {
-      "@type": "AdministrativeArea",
+      "@type": "AdministrativeArea" as const,
       name: city.cantonName,
     },
   }));
-
-  return [
-    ...fromLandings,
-    ...extras,
-  ];
 }
 
 export function localBusinessSchema() {
@@ -170,7 +151,7 @@ export function zonesItemListSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Zones de nettoyage Gzimmo — Fribourg et Vaud",
+    name: "Zones de nettoyage Gzimmo — bassins depuis Romont",
     itemListElement: zoneLocations.map((location, index) => ({
       "@type": "ListItem",
       position: index + 1,

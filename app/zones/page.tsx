@@ -1,26 +1,17 @@
-import Link from "next/link";
-import { interventionCantons } from "@/data/intervention-zones";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, zonesItemListSchema } from "@/lib/schema";
-import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
+import { PageHero, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
-import { ContentCard } from "@/components/ui/ContentCard";
+import { ZoneBands } from "@/components/content/ZoneBands";
 
 export const metadata = createMetadata({
-  title: "Zones de nettoyage : Fribourg et Vaud",
+  title: "Zones de nettoyage depuis Romont",
   description:
-    "Gzimmo intervient depuis Romont (Route de Raboud 8) dans les cantons de Fribourg et de Vaud. Devis gratuit.",
+    "Les communes où nous intervenons depuis Romont, de la Glâne à Lausanne. Réponse sous 24 h, sans frais de déplacement.",
   absoluteTitle: true,
   path: "/zones",
-  keywords: [
-    "zones intervention",
-    "Glâne",
-    "Romont",
-    "nettoyage Fribourg",
-    "nettoyage Vaud",
-    "nettoyage Vaud",
-  ],
+  keywords: ["zones intervention", "Glâne", "Romont", "nettoyage Fribourg", "nettoyage Vaud"],
 });
 
 export default function ZonesPage() {
@@ -46,38 +37,13 @@ export default function ZonesPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           onDark
-          badge="Fribourg et Vaud"
-          title="Zones de nettoyage : Fribourg et Vaud"
-          description="Basés à Romont (FR), nous intervenons dans les cantons de Fribourg et de Vaud."
+          badge="Depuis Romont"
+          title="Zones de nettoyage depuis Romont"
+          description="Depuis notre siège de Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Voici les communes desservies, région par région."
         />
       </PageHero>
 
-      <PageMain variant="surface">
-        {interventionCantons.map((canton, index) => (
-          <ContentCard key={canton.id} className={index > 0 ? "mt-8" : undefined}>
-            <nav aria-label={canton.heading}>
-              <h2 className="font-display text-display-sm text-foreground">{canton.heading}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{canton.description}</p>
-              <ul className="mt-6 columns-2 gap-x-8 text-sm md:columns-3">
-                {canton.places.map((place) => (
-                  <li key={place.name} className="mb-2 break-inside-avoid">
-                    {place.href ? (
-                      <Link
-                        href={place.href}
-                        className="text-muted transition-colors hover:text-accent-ink"
-                      >
-                        {place.name}
-                      </Link>
-                    ) : (
-                      <span className="text-muted">{place.name}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </ContentCard>
-        ))}
-      </PageMain>
+      <ZoneBands />
 
       <PageCta />
     </>

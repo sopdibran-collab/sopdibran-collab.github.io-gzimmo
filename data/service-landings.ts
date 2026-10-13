@@ -189,9 +189,9 @@ export const serviceLandings: ServiceLanding[] = [
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     inclusionHeading: "Checklist d'intervention : ce qui est inclus",
-    zonesHeading: "Nos zones : Fribourg et Vaud",
+    zonesHeading: "Bassins depuis Romont",
     zonesNote:
-      "Depuis Romont (FR), nous intervenons dans les cantons de Fribourg et de Vaud : Bulle, Fribourg, Lausanne, Nyon et Yverdon, ainsi que les communes listées ci-dessous. Siège : Route de Raboud 8.",
+      "Les communes sont regroupées par bassin depuis Route de Raboud 8. Réponse sous 24 h, sans frais de déplacement.",
     schemaServiceTypes: [
       "Nettoyage après chantier",
       "Nettoyage après rénovation",
@@ -671,7 +671,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         question: "Intervenez-vous pour des régies à Fribourg et dans le canton de Vaud ?",
         answer:
-          "Oui. Notre priorité géographique est le canton de Fribourg (Romont, Glâne, Fribourg) et le canton de Vaud (Lausanne, Morges, Yverdon et agglomérations).",
+          "Oui, depuis Romont. Fribourg et Matran sont dans la Sarine. Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
       },
     ],
     relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],

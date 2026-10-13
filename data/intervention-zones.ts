@@ -1,77 +1,100 @@
 /**
- * Zones d'intervention — Fribourg et Vaud.
- * Lien vers une page locale existante, sinon libellé sans lien.
+ * Bassins publiés depuis Romont. Aucune durée de route.
  */
 
-export type InterventionPlace = {
+export type ZonePlace = {
   name: string;
   href?: string;
 };
 
-export type InterventionCanton = {
+export type ZoneBand = {
   id: string;
-  canton: string;
-  /** Abréviation cantonale, utile pour scanner les cartes. */
-  code: string;
-  heading: string;
-  description: string;
-  places: InterventionPlace[];
+  timeLabel: string;
+  detail?: string;
+  note?: string;
+  places: ZonePlace[];
 };
 
-export const interventionCantons: InterventionCanton[] = [
+export const zoneBands: ZoneBand[] = [
   {
-    id: "fribourg",
-    canton: "Fribourg",
-    code: "FR",
-    heading: "Canton de Fribourg",
-    description: "Siège à Romont. Nettoyage et entretien dans le canton et les communes listées.",
+    id: "glane-broye",
+    timeLabel: "Siège · Glâne et Broye",
+    detail: "Route de Raboud 8, 1680 Romont",
     places: [
       { name: "Romont", href: "/nettoyage-romont" },
-      { name: "Fribourg", href: "/nettoyage-fribourg" },
-      { name: "Bulle", href: "/nettoyage-bulle" },
-      { name: "Estavayer" },
       { name: "Vuisternens-devant-Romont" },
       { name: "Ursy" },
+      { name: "Mézières" },
+      { name: "Massonnens" },
+      { name: "Estavayer-le-Lac" },
+      { name: "Moudon" },
+      { name: "Oron" },
+      { name: "Payerne" },
+    ],
+  },
+  {
+    id: "gruyere-veveyse",
+    timeLabel: "Gruyère et Veveyse",
+    places: [
+      { name: "Bulle", href: "/nettoyage-bulle" },
+      { name: "Riaz" },
+      { name: "Vuadens" },
+      { name: "Broc" },
       { name: "Châtel-Saint-Denis" },
     ],
   },
   {
-    id: "vaud",
-    canton: "Vaud",
-    code: "VD",
-    heading: "Canton de Vaud — de Bex à Nyon",
-    description: "Nous intervenons dans tout le canton, notamment dans les communes ci-dessous.",
+    id: "sarine-singine",
+    timeLabel: "Sarine et Singine",
+    places: [
+      { name: "Fribourg", href: "/nettoyage-fribourg" },
+      { name: "Matran" },
+      { name: "Marly" },
+      { name: "Villars-sur-Glâne" },
+      { name: "Givisiez" },
+      { name: "Düdingen (Guin)" },
+    ],
+  },
+  {
+    id: "lausanne",
+    timeLabel: "Lausanne et Ouest lausannois",
     places: [
       { name: "Lausanne", href: "/nettoyage-lausanne" },
-      { name: "Yverdon-les-Bains" },
-      { name: "Morges" },
-      { name: "Nyon" },
-      { name: "Payerne" },
+      { name: "Renens" },
       { name: "Crissier" },
-      { name: "Bex" },
-      { name: "Vevey" },
-      { name: "Montreux" },
-      { name: "Chexbres" },
-      { name: "Oron-la-Ville" },
-      { name: "Palézieux" },
     ],
+  },
+  {
+    id: "nord-vaudois",
+    timeLabel: "Nord vaudois",
+    places: [{ name: "Yverdon-les-Bains" }],
   },
 ];
 
-export const extraSchemaCities: { name: string; cantonName: string }[] = [
-  { name: "Estavayer", cantonName: "Fribourg" },
+/** Communes réellement listées comme desservies. Pas les cantons entiers. */
+export const servedCommunes: { name: string; cantonName: string }[] = [
+  { name: "Romont", cantonName: "Fribourg" },
   { name: "Vuisternens-devant-Romont", cantonName: "Fribourg" },
   { name: "Ursy", cantonName: "Fribourg" },
+  { name: "Mézières", cantonName: "Fribourg" },
+  { name: "Massonnens", cantonName: "Fribourg" },
+  { name: "Bulle", cantonName: "Fribourg" },
+  { name: "Riaz", cantonName: "Fribourg" },
+  { name: "Vuadens", cantonName: "Fribourg" },
+  { name: "Broc", cantonName: "Fribourg" },
   { name: "Châtel-Saint-Denis", cantonName: "Fribourg" },
-  { name: "Yverdon-les-Bains", cantonName: "Vaud" },
-  { name: "Morges", cantonName: "Vaud" },
-  { name: "Nyon", cantonName: "Vaud" },
+  { name: "Fribourg", cantonName: "Fribourg" },
+  { name: "Matran", cantonName: "Fribourg" },
+  { name: "Marly", cantonName: "Fribourg" },
+  { name: "Villars-sur-Glâne", cantonName: "Fribourg" },
+  { name: "Givisiez", cantonName: "Fribourg" },
+  { name: "Düdingen", cantonName: "Fribourg" },
+  { name: "Estavayer-le-Lac", cantonName: "Fribourg" },
+  { name: "Moudon", cantonName: "Vaud" },
+  { name: "Oron", cantonName: "Vaud" },
   { name: "Payerne", cantonName: "Vaud" },
+  { name: "Lausanne", cantonName: "Vaud" },
+  { name: "Renens", cantonName: "Vaud" },
   { name: "Crissier", cantonName: "Vaud" },
-  { name: "Bex", cantonName: "Vaud" },
-  { name: "Vevey", cantonName: "Vaud" },
-  { name: "Montreux", cantonName: "Vaud" },
-  { name: "Chexbres", cantonName: "Vaud" },
-  { name: "Oron-la-Ville", cantonName: "Vaud" },
-  { name: "Palézieux", cantonName: "Vaud" },
+  { name: "Yverdon-les-Bains", cantonName: "Vaud" },
 ];
