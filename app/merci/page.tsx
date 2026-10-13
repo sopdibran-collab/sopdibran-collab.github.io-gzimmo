@@ -2,7 +2,9 @@ import { company, formatAddress } from "@/data/company";
 import { createMetadata } from "@/lib/metadata";
 import { formatPhoneHref } from "@/lib/utils";
 import { PageHero, PageMain } from "@/components/layout/PageLayout";
-import { PageIntro } from "@/components/seo/JsonLd";
+import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumb } from "@/components/seo/Breadcrumb";
+import { breadcrumbSchema } from "@/lib/schema";
 import { Button } from "@/components/ui/Button";
 import { ContentCard } from "@/components/ui/ContentCard";
 
@@ -20,7 +22,21 @@ export default function MerciPage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Accueil", path: "/" },
+          { name: "Contact", path: "/contact" },
+          { name: "Demande reçue", path: "/merci" },
+        ])}
+      />
       <PageHero>
+        <Breadcrumb
+          items={[
+            { label: "Accueil", href: "/" },
+            { label: "Contact", href: "/contact" },
+            { label: "Demande reçue" },
+          ]}
+        />
         <PageIntro
           title="Demande de devis de nettoyage reçue"
           description={`Nous vous répondons sous 24 heures à l'adresse indiquée. Sans frais de déplacement. Pour une urgence, appelez le ${company.phoneDisplay}.`}

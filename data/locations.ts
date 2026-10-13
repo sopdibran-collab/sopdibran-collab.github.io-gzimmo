@@ -19,7 +19,7 @@ export type Location = {
   communeGroups: { title: string; names: string[] }[];
   rules: { title: string; body: string; sources: SourceLink[] };
   remoteHandover: { title: string; body: string };
-  building: { title?: string; body: string; sourceLine: string; sources: SourceLink[] };
+  building?: { title?: string; body: string; sourceLine: string; sources: SourceLink[] };
   example: { body: string; sources: SourceLink[] };
   servicesHighlight: string[];
   faqs: FaqContent[];

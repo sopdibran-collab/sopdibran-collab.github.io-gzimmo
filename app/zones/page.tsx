@@ -4,6 +4,7 @@ import { PageHero, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ZoneBands } from "@/components/content/ZoneBands";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
   title: "Zones de nettoyage depuis Romont",
@@ -44,6 +45,17 @@ export default function ZonesPage() {
       </PageHero>
 
       <ZoneBands />
+
+      <div className="mx-auto w-full max-w-[1200px] px-container pb-10">
+        <ContextualLinks
+          className="mt-0"
+          links={[
+            { label: "Services de nettoyage", href: "/services" },
+            { label: "Réalisations", href: "/realisations" },
+            { label: "Avis clients", href: "/avis" },
+          ]}
+        />
+      </div>
 
       <PageCta />
     </>

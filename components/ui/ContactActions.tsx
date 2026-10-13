@@ -24,7 +24,11 @@ export function ContactActions({
         className,
       )}
     >
-      {showDevis ? <Button href="/contact">{devisLabel}</Button> : null}
+      {showDevis ? (
+        <Button href="/contact" data-analytics="devis">
+          {devisLabel}
+        </Button>
+      ) : null}
       <Button variant={showDevis ? "secondary" : "primary"} href={callHref} external>
         Appeler
       </Button>

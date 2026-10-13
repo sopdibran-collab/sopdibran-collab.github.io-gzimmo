@@ -39,7 +39,7 @@ export function HomeHero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="/contact" className="w-full sm:w-auto">
+            <Button href="/contact" data-analytics="devis" className="w-full sm:w-auto">
               Demander un devis gratuit
             </Button>
             <Button

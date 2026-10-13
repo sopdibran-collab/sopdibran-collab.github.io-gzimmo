@@ -1,35 +1,20 @@
 import Link from "next/link";
+import { publishedCities } from "@/data/published-cities";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { TextLink } from "@/components/ui/TextLink";
-
-const moneyLinks = [
-  {
-    label: "Entreprise de nettoyage à Romont",
-    href: "/nettoyage-romont",
-    note: "Siège",
-  },
-  {
-    label: "Nettoyage à Fribourg",
-    href: "/nettoyage-fribourg",
-  },
-  {
-    label: "Nettoyage à Lausanne",
-    href: "/nettoyage-lausanne",
-  },
-] as const;
 
 export function LocalMoneyLinks() {
   return (
     <div className="mt-10 border-t border-border/80 pt-10">
       <p className="text-sm font-medium text-foreground">Recherches fréquentes</p>
       <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3">
-        {moneyLinks.map((link, index) => (
+        {publishedCities.map((link, index) => (
           <FadeIn key={link.href} as="li" delay={index * 0.03}>
             <Link
               href={link.href}
               className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-accent-ink"
             >
-              {link.label}
+              {link.homeLabel}
               {"note" in link && link.note ? (
                 <span className="ml-1.5 text-xs text-accent-ink">({link.note})</span>
               ) : null}
@@ -38,7 +23,8 @@ export function LocalMoneyLinks() {
           </FadeIn>
         ))}
       </ul>
-      <div className="mt-6">
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-8">
+        <TextLink href="/zones">Toutes les zones</TextLink>
         <TextLink href="/nettoyage-fin-de-bail">Tout sur le nettoyage fin de bail</TextLink>
       </div>
     </div>

@@ -8,6 +8,7 @@ import { ValueCards } from "@/components/content/ValueCards";
 import { ConversionCta } from "@/components/ui/ConversionCta";
 import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 import { TextLink } from "@/components/ui/TextLink";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
   title: "Services de nettoyage | Gzimmo à Romont",
@@ -92,6 +93,14 @@ export default function ServicesPage() {
 
       <PageMain variant="default">
         <ValueCards items={reassurance} />
+        <ContextualLinks
+          links={[
+            { label: "Nettoyage à Romont", href: "/nettoyage-romont" },
+            { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
+            { label: "Réalisations", href: "/realisations" },
+            { label: "Avis clients", href: "/avis" },
+          ]}
+        />
       </PageMain>
 
       <PageCta />

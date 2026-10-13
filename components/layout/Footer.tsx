@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { company, formatAddress } from "@/data/company";
+import { publishedCities } from "@/data/published-cities";
 import { footerNav } from "@/data/navigation";
 import { getServicePath } from "@/lib/service-paths";
 import { formatPhoneHref } from "@/lib/utils";
@@ -23,12 +24,9 @@ const footerServices = [
 ] as const;
 
 const regionLinks = [
-  { label: "Romont", href: "/nettoyage-romont" },
-  { label: "Fribourg", href: "/nettoyage-fribourg" },
-  { label: "Lausanne", href: "/nettoyage-lausanne" },
-  { label: "Bulle", href: "/nettoyage-bulle" },
+  ...publishedCities.map((city) => ({ label: city.label, href: city.href })),
   { label: "Toutes les zones", href: "/zones" },
-] as const;
+];
 
 /** Chips footer : contraste AA + zone tactile ≥ 24px (confort ~36–44). */
 const chipClass =

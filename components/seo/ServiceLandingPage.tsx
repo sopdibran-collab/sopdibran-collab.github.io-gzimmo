@@ -391,7 +391,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 </li>
               ))}
             </ul>
-            <TextLink className="mt-6" href={`/contact?service=${landing.slug}`}>
+            <TextLink className="mt-6" href={`/contact?service=${landing.slug}`} analytics="devis">
               Demander un devis gratuit
             </TextLink>
           </BandBlock>
@@ -530,7 +530,13 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 Nous intervenons aussi près de chez vous
               </h2>
               <ul className="mt-6 space-y-3">
-                {landing.relatedLocalLinks.map((item) => (
+                {[
+                  ...landing.relatedLocalLinks,
+                  { label: "Réalisations", href: "/realisations" },
+                  { label: "Avis clients", href: "/avis" },
+                ]
+                  .filter((item, index, list) => list.findIndex((entry) => entry.href === item.href) === index)
+                  .map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
