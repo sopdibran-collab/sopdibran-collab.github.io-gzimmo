@@ -378,7 +378,6 @@ export const serviceLandings: ServiceLanding[] = [
       { label: "Fribourg", href: "/nettoyage-fribourg" },
       { label: "Bulle", href: "/nettoyage-bulle" },
       { label: "Lausanne", href: "/nettoyage-lausanne" },
-      { label: "Zones d'intervention", href: "/zones" },
       { label: "Toutes les zones", href: "/zones" },
     ],
     testimonials: [
