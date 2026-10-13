@@ -34,4 +34,9 @@ export const publishedCities = [
     homeLabel: "Nettoyage à Yverdon-les-Bains",
     href: "/nettoyage-yverdon",
   },
+  {
+    label: "Morat (Murten)",
+    homeLabel: "Nettoyage à Morat (Murten)",
+    href: "/nettoyage-morat",
+  },
 ] as const;

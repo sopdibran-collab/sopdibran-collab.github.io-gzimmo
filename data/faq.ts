@@ -82,7 +82,7 @@ export const faqItems: FaqItem[] = [
     id: "zone-suisse-romande",
     category: "zone",
     question: "Comment se définit votre zone d'intervention ?",
-    answer: `Nous partons de notre siège de Romont (${siege}) et intervenons en Glâne et dans la Broye, en Gruyère et en Veveyse, en Sarine et en Singine, à Lausanne et dans l'Ouest lausannois, sur la Riviera et dans le Chablais, dans le Nord vaudois et dans le district du Lac. Nous n'intervenons pas à Neuchâtel, à Genève ni en Valais.`,
+    answer: `Nous partons de notre siège de Romont (${siege}) et intervenons en Glâne et dans la Broye, en Gruyère et en Veveyse, en Sarine et en Singine, à Lausanne et dans l'Ouest lausannois, sur la Riviera et dans le Chablais, dans le Nord vaudois et à Morat. Nous n'intervenons pas à Neuchâtel, à Genève ni en Valais.`,
   },
   {
     id: "entreprise-romont",

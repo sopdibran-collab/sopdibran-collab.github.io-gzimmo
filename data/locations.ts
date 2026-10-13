@@ -430,6 +430,65 @@ export const locations: Location[] = [
       { label: "Avis clients", href: "/avis" },
     ],
   },
+  {
+    slug: "nettoyage-morat",
+    city: "Morat (Murten)",
+    canton: "FR",
+    cantonName: "Fribourg",
+    district: "Lac",
+    title: "Nettoyage à Morat (Murten)",
+    description:
+      "Morat (Murten), dans le district du Lac. Page en français seulement. Réponse sous 24 h, sans frais de déplacement.",
+    intro:
+      "Morat (Murten) est la commune publiée pour le district du Lac. Le nom allemand Murten est écrit à côté du nom français. Il n'y a pas de page en allemand.",
+    geo: { latitude: 46.928, longitude: 7.117 },
+    priority: 0.68,
+    nearbyCommunes: [],
+    communeGroups: [{ title: "District du Lac", names: ["Morat (Murten)"] }],
+    rules: {
+      title: "Au bord du lac, le bail reste fédéral",
+      body: "Morat est fribourgeoise, dans le district du Lac. La restitution n'y suit pas les usages vaudois de la remise à midi, même si le lac touche le canton de Vaud. Le locataire rend le logement dans l'état d'un usage conforme au contrat. Le nettoyage en fait partie. Le bailleur signale immédiatement les défauts à la sortie, selon les art. 267 et 267a du Code des obligations. Le canton de Fribourg ne publie pas, pour le Lac, une checklist de nettoyage distincte de ce texte.",
+      sources: [federalRestitution, federalCleaningNote],
+    },
+    remoteHandover: {
+      title: "Fin de bail à Morat",
+      body: "À Morat, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
+    },
+    building: {
+      body: "Le canton compte, en 2025, 75 906 bâtiments d'habitation, dont 45 395 maisons individuelles (59,8 %). Ce taux décrit le canton. Il ne compte pas les logements de la seule commune de Morat.",
+      sourceLine: "État de Fribourg, statistiques des bâtiments, 2025",
+      sources: [fribourgBuildings],
+    },
+    example: {
+      body: "",
+      sources: [romontExample],
+    },
+    servicesHighlight: ["Fin de bail", "Appartements", "Parties communes"],
+    faqs: [
+      {
+        question: "Pourquoi écrire Morat (Murten) ?",
+        answer:
+          "Morat est le nom français, Murten le nom allemand de la même commune, dans le district du Lac. La page est en français. Il n'existe pas d'URL en allemand.",
+      },
+      {
+        question: "La remise à Morat suit-elle les usages vaudois ?",
+        answer:
+          "Non. Morat est dans le canton de Fribourg. La restitution suit les art. 267 et 267a du Code des obligations, pas la remise à midi du canton de Vaud.",
+      },
+      {
+        question: "Où se fait l'état des lieux à Morat ?",
+        answer:
+          "Avec la régie, selon sa checklist. La date est fixée dans le devis.",
+      },
+    ],
+    priorityLinks: [
+      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+      { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
+      { label: "Zones d'intervention", href: "/zones" },
+      { label: "Avis clients", href: "/avis" },
+    ],
+  },
 ];
 
 export function getLocationBySlug(slug: string) {
