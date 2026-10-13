@@ -189,9 +189,9 @@ export const serviceLandings: ServiceLanding[] = [
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     inclusionHeading: "Checklist d'intervention : ce qui est inclus",
-    zonesHeading: "Temps de route depuis Romont",
+    zonesHeading: "Bassins depuis Romont",
     zonesNote:
-      "Les communes sont regroupées par temps de route depuis Route de Raboud 8. Ce temps est indicatif : ce n'est pas un délai d'intervention. Frais de déplacement indiqués dans le devis.",
+      "Les communes sont regroupées par bassin depuis Route de Raboud 8. Réponse sous 24 h, sans frais de déplacement.",
     schemaServiceTypes: [
       "Nettoyage après chantier",
       "Nettoyage après rénovation",
@@ -671,7 +671,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         question: "Intervenez-vous pour des régies à Fribourg et dans le canton de Vaud ?",
         answer:
-          "Oui, depuis Romont. Fribourg et Matran sont dans la Sarine. Lausanne, Renens et Crissier sont la zone étendue. Le détail des communes est sur la page zones.",
+          "Oui, depuis Romont. Fribourg et Matran sont dans la Sarine. Lausanne, Renens et Crissier sont dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
       },
     ],
     relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],

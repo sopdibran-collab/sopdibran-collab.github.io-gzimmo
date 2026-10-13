@@ -41,27 +41,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
   return (
     <>
       <div className="mx-auto max-w-prose">
-        <section aria-labelledby="trajet">
-          <h2 id="trajet" className="font-display text-display-sm text-foreground">
-            Temps de route depuis Romont
-          </h2>
-          <table className="mt-4 w-full text-sm">
-            <caption className="sr-only">Temps de route indicatifs depuis Route de Raboud 8</caption>
-            <tbody>
-              {location.travelRows.map((row) => (
-                <tr key={row.place} className="border-t border-border">
-                  <th scope="row" className="py-3 pr-4 text-left font-medium text-foreground">
-                    {row.place}
-                  </th>
-                  <td className="py-3 text-right text-muted">{row.time}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p className="mt-3 text-sm leading-relaxed text-muted">{location.travelNote}</p>
-        </section>
-
-        <section className="mt-10" aria-labelledby="communes">
+        <section aria-labelledby="communes">
           <h2 id="communes" className="font-display text-display-sm text-foreground">
             Communes du bassin
           </h2>
@@ -105,9 +85,11 @@ export function LocalSeoBody({ location }: { location: Location }) {
 
         <section className="mt-10" aria-labelledby="exemple">
           <h2 id="exemple" className="font-display text-display-sm text-foreground">
-            Exemple photographié à Romont
+            Exemple fait à Romont
           </h2>
-          <p className="mt-4 text-reading leading-relaxed text-muted">{location.example.body}</p>
+          {location.example.body ? (
+            <p className="mt-4 text-reading leading-relaxed text-muted">{location.example.body}</p>
+          ) : null}
           <SourceList sources={location.example.sources} />
         </section>
       </div>

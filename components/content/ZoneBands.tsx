@@ -5,7 +5,7 @@ function orderedPlaces(places: ZonePlace[]) {
   return [...places].sort((a, b) => Number(Boolean(b.href)) - Number(Boolean(a.href)));
 }
 
-/** Bandes verticales : temps à gauche, communes à droite. Sur mobile, le temps est au-dessus. */
+/** Bandes verticales : bassin à gauche, communes à droite. Sur mobile, le bassin est au-dessus. */
 export function ZoneBands() {
   return (
     <div>

@@ -1,6 +1,5 @@
 /**
- * Bandes de temps de route depuis Romont.
- * Seules les minutes du fichier géographique sont publiées.
+ * Bassins publiés depuis Romont. Aucune durée de route.
  */
 
 export type ZonePlace = {
@@ -16,13 +15,10 @@ export type ZoneBand = {
   places: ZonePlace[];
 };
 
-export const indicativeTimeNotice =
-  "Temps indicatif, pas un délai d'intervention garanti.";
-
 export const zoneBands: ZoneBand[] = [
   {
-    id: "siege",
-    timeLabel: "Siège · Glâne",
+    id: "glane-broye",
+    timeLabel: "Siège · Glâne et Broye",
     detail: "Route de Raboud 8, 1680 Romont",
     places: [
       { name: "Romont", href: "/nettoyage-romont" },
@@ -30,31 +26,29 @@ export const zoneBands: ZoneBand[] = [
       { name: "Ursy" },
       { name: "Mézières" },
       { name: "Massonnens" },
+      { name: "Estavayer-le-Lac" },
+      { name: "Moudon" },
+      { name: "Oron" },
+      { name: "Payerne" },
     ],
   },
   {
-    id: "quinze-vingt",
-    timeLabel: "~15–20 min",
-    note: "Bulle environ 15 minutes, Moudon environ 15, Matran environ 15 à 20, Oron environ 18, Payerne environ 20. Riaz, Vuadens et Broc sont desservies avec Bulle, sans minute séparée.",
+    id: "gruyere-veveyse",
+    timeLabel: "Gruyère et Veveyse",
     places: [
       { name: "Bulle", href: "/nettoyage-bulle" },
-      { name: "Moudon" },
-      { name: "Matran" },
-      { name: "Oron" },
-      { name: "Payerne" },
       { name: "Riaz" },
       { name: "Vuadens" },
       { name: "Broc" },
+      { name: "Châtel-Saint-Denis" },
     ],
   },
   {
-    id: "vingt-trente",
-    timeLabel: "~20–30 min",
-    note: "Châtel-Saint-Denis environ 20 à 25 minutes, Fribourg environ 25, Estavayer-le-Lac environ 25 à 30. Marly, Villars-sur-Glâne et Givisiez sont desservies avec Fribourg. Düdingen (Guin) aussi, sans minute publiée.",
+    id: "sarine-singine",
+    timeLabel: "Sarine et Singine",
     places: [
       { name: "Fribourg", href: "/nettoyage-fribourg" },
-      { name: "Châtel-Saint-Denis" },
-      { name: "Estavayer-le-Lac" },
+      { name: "Matran" },
       { name: "Marly" },
       { name: "Villars-sur-Glâne" },
       { name: "Givisiez" },
@@ -62,16 +56,18 @@ export const zoneBands: ZoneBand[] = [
     ],
   },
   {
-    id: "etendue",
-    timeLabel: "~35–40 min",
-    detail: "zone étendue",
-    note: "Les 35 à 40 minutes concernent Lausanne et Yverdon-les-Bains. Renens et Crissier sont dans la même zone étendue. Leur temps de route figure dans le devis.",
+    id: "lausanne",
+    timeLabel: "Lausanne et Ouest lausannois",
     places: [
       { name: "Lausanne", href: "/nettoyage-lausanne" },
       { name: "Renens" },
       { name: "Crissier" },
-      { name: "Yverdon-les-Bains" },
     ],
+  },
+  {
+    id: "nord-vaudois",
+    timeLabel: "Nord vaudois",
+    places: [{ name: "Yverdon-les-Bains" }],
   },
 ];
 

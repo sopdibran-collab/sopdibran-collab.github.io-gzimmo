@@ -16,8 +16,6 @@ export type Location = {
   priority: number;
   isHeadquarters?: boolean;
   nearbyCommunes: string[];
-  travelRows: { place: string; time: string }[];
-  travelNote: string;
   communeGroups: { title: string; names: string[] }[];
   rules: { title: string; body: string; sources: SourceLink[] };
   remoteHandover: { title: string; body: string };
@@ -67,7 +65,7 @@ export const locations: Location[] = [
     district: "Glâne",
     title: "Nettoyage à Romont, Glâne et Broye",
     description:
-      "Siège Route de Raboud 8, 1680 Romont. Glâne, Broye et Gros-de-Vaud : Moudon, Oron, Payerne, Estavayer-le-Lac. Frais de déplacement indiqués dans le devis.",
+      "Siège Route de Raboud 8, 1680 Romont. Glâne, Broye et Gros-de-Vaud : Moudon, Oron, Payerne, Estavayer-le-Lac. Réponse sous 24 h, sans frais de déplacement.",
     intro:
       "Le siège de Gzimmo Sàrl est Route de Raboud 8, 1680 Romont, dans le district de la Glâne. Les passages autour du siège partent de cette adresse.",
     geo: { latitude: 46.6917, longitude: 6.9111 },
@@ -83,14 +81,6 @@ export const locations: Location[] = [
       "Payerne",
       "Estavayer-le-Lac",
     ],
-    travelRows: [
-      { place: "Moudon", time: "environ 15 min" },
-      { place: "Oron", time: "environ 18 min" },
-      { place: "Payerne", time: "environ 20 min" },
-      { place: "Estavayer-le-Lac", time: "environ 25 à 30 min" },
-    ],
-    travelNote:
-      "Ces durées partent de Route de Raboud 8. Elles décrivent la route, pas l'heure à laquelle l'équipe sonne.",
     communeGroups: [
       {
         title: "Glâne",
@@ -107,16 +97,16 @@ export const locations: Location[] = [
       sources: [federalRestitution, federalCleaningNote, vaudRulv],
     },
     remoteHandover: {
-      title: "Fin de bail à Romont : clés et régie",
-      body: "Pour une fin de bail à Romont, l'équipe part de Route de Raboud 8. Les clés d'un logement de la Glâne peuvent être prises au siège ou remises le matin avec la régie, dans l'appartement. L'état des lieux se tient sur place. Le jour est celui écrit dans le devis.",
+      title: "Fin de bail à Romont",
+      body: "À Romont, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
     },
     building: {
-      body: "En 2025, le canton de Fribourg compte 75 906 bâtiments à usage d'habitation, dont 45 395 maisons individuelles, soit 59,8 %. Autour du siège, la Glâne est un district de maisons. Ce pourcentage décrit le canton, pas un décompte des maisons de la seule ville de Romont.",
+      body: "En 2025, le canton de Fribourg compte 75 906 bâtiments à usage d'habitation, dont 45 395 maisons individuelles, soit 59,8 %. Ce pourcentage décrit le canton, pas un décompte des maisons de la seule ville de Romont.",
       sourceLine: "État de Fribourg, statistiques des bâtiments, 2025",
       sources: [fribourgBuildings],
     },
     example: {
-      body: "Fin de bail réalisé à Romont : paroi de douche, stores et vitrage, avant et après.",
+      body: "",
       sources: [romontExample],
     },
     servicesHighlight: [
@@ -134,7 +124,7 @@ export const locations: Location[] = [
       {
         question: "Moudon, Oron, Payerne et Estavayer-le-Lac sont-ils sur cette page ?",
         answer:
-          "Oui, dans la section Broye et Gros-de-Vaud. Moudon est à environ 15 minutes, Oron à environ 18, Payerne à environ 20, Estavayer-le-Lac à environ 25 à 30. Ce ne sont pas des communes de la Glâne.",
+          "Oui, dans la section Broye et Gros-de-Vaud : Moudon, Oron, Payerne et Estavayer-le-Lac. Ce ne sont pas des communes de la Glâne.",
       },
       {
         question: "Pourquoi la règle change-t-elle entre Estavayer-le-Lac et Payerne ?",
@@ -144,7 +134,7 @@ export const locations: Location[] = [
       {
         question: "Où se fait l'état des lieux quand le logement est à Romont ?",
         answer:
-          "Dans le logement, avec la régie. Les clés peuvent être prises au siège, Route de Raboud 8, ou remises le matin sur place. Le jour figure dans le devis.",
+          "Dans le logement, avec la régie, selon sa checklist. La date est fixée dans le devis.",
       },
     ],
     priorityLinks: [
@@ -163,18 +153,12 @@ export const locations: Location[] = [
     district: "Gruyère",
     title: "Nettoyage à Bulle, Gruyère et Veveyse",
     description:
-      "Bulle, Riaz, Vuadens et Broc en Gruyère. Châtel-Saint-Denis en Veveyse, environ 20 à 25 minutes depuis Romont. Frais de déplacement indiqués dans le devis.",
+      "Bulle, Riaz, Vuadens et Broc en Gruyère. Châtel-Saint-Denis en Veveyse. Réponse sous 24 h, sans frais de déplacement.",
     intro:
       "Bulle est le centre de la Gruyère. Gzimmo y intervient depuis Romont : il n'y a pas de bureau à Bulle.",
     geo: { latitude: 46.6175, longitude: 7.0569 },
     priority: 0.8,
     nearbyCommunes: ["Riaz", "Vuadens", "Broc", "Châtel-Saint-Denis"],
-    travelRows: [
-      { place: "Bulle", time: "environ 15 min" },
-      { place: "Châtel-Saint-Denis", time: "environ 20 à 25 min" },
-    ],
-    travelNote:
-      "Bulle est sur l'A12, à environ 15 minutes du siège. Châtel-Saint-Denis, en Veveyse, demande environ 20 à 25 minutes. Ni l'une ni l'autre de ces durées n'est une heure de rendez-vous.",
     communeGroups: [
       { title: "Gruyère", names: ["Bulle", "Riaz", "Vuadens", "Broc"] },
       { title: "Veveyse", names: ["Châtel-Saint-Denis"] },
@@ -185,8 +169,8 @@ export const locations: Location[] = [
       sources: [federalRestitution, federalCleaningNote],
     },
     remoteHandover: {
-      title: "Préparer la sortie de bail avant de quitter Romont",
-      body: "Rien n'est stocké à Bulle. Avant de quitter Romont, on convient avec la régie de l'heure de l'état des lieux et de l'endroit où laisser les clés — souvent le logement lui-même, parfois l'agence à Bulle ou à Châtel-Saint-Denis. L'équipe apporte le matériel pour la checklist de cette régie.",
+      title: "Fin de bail en Gruyère et en Veveyse",
+      body: "À Bulle et à Châtel-Saint-Denis, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
     },
     building: {
       body: "Le recensement cantonal de 2025 donne 59,8 % de maisons individuelles, soit 45 395 bâtiments sur 75 906. Bulle, elle, est le centre urbain de la Gruyère : ce taux ne décrit pas le parc d'appartements de la ville.",
@@ -194,19 +178,19 @@ export const locations: Location[] = [
       sources: [fribourgBuildings],
     },
     example: {
-      body: "Les photos avant et après du site montrent un appartement nettoyé à Romont. Aucun chantier de la Gruyère n'est photographié ici.",
+      body: "",
       sources: [romontExample],
     },
     servicesHighlight: ["Après chantier", "Entretien de locaux", "Fin de bail"],
     faqs: [
       {
         question: "Quelles communes de la Gruyère sont listées avec Bulle ?",
-        answer: "Riaz, Vuadens et Broc, plus Bulle. Le départ se fait de Route de Raboud 8 à Romont, à environ 15 minutes de Bulle.",
+        answer: "Riaz, Vuadens et Broc, plus Bulle. Le siège est Route de Raboud 8 à Romont.",
       },
       {
         question: "Châtel-Saint-Denis est-il en Gruyère ?",
         answer:
-          "Non. Châtel-Saint-Denis est dans la Veveyse. Le trajet depuis Romont y est d'environ 20 à 25 minutes. Il n'y a pas de page séparée pour cette commune.",
+          "Non. Châtel-Saint-Denis est dans la Veveyse. Il n'y a pas de page séparée pour cette commune.",
       },
       {
         question: "La remise en Veveyse suit-elle les usages vaudois ?",
@@ -214,8 +198,8 @@ export const locations: Location[] = [
           "Non. Châtel-Saint-Denis est fribourgeois, comme Bulle. La restitution suit les art. 267 et 267a du Code des obligations. La remise à midi des usages vaudois ne s'applique pas.",
       },
       {
-        question: "Les photos du site ont-elles été prises à Bulle ?",
-        answer: "Non. Elles montrent un fin de bail réalisé à Romont.",
+        question: "Où voir un exemple ?",
+        answer: "Exemple fait à Romont.",
       },
     ],
     priorityLinks: [
@@ -235,18 +219,12 @@ export const locations: Location[] = [
     district: "Sarine",
     title: "Nettoyage à Fribourg, Matran et Guin",
     description:
-      "Fribourg et Matran dans la Sarine, Düdingen (Guin) dans la Singine. Marly, Villars-sur-Glâne, Givisiez. Frais de déplacement indiqués dans le devis.",
+      "Fribourg et Matran dans la Sarine, Düdingen (Guin) dans la Singine. Marly, Villars-sur-Glâne, Givisiez. Réponse sous 24 h, sans frais de déplacement.",
     intro:
       "Fribourg et Matran sont dans la Sarine. Matran n'est pas une commune de la Glâne. Düdingen (Guin) est dans la Singine ; cette page reste en français.",
     geo: { latitude: 46.8065, longitude: 7.1619 },
     priority: 0.85,
     nearbyCommunes: ["Matran", "Marly", "Villars-sur-Glâne", "Givisiez", "Düdingen (Guin)"],
-    travelRows: [
-      { place: "Matran", time: "environ 15 à 20 min" },
-      { place: "Fribourg", time: "environ 25 min" },
-    ],
-    travelNote:
-      "Matran est avant Fribourg sur l'A12 : environ 15 à 20 minutes depuis Romont, puis environ 25 minutes jusqu'à Fribourg. Düdingen (Guin) est desservie sans minute publiée : le devis indique le déplacement.",
     communeGroups: [
       {
         title: "Sarine",
@@ -260,16 +238,16 @@ export const locations: Location[] = [
       sources: [federalRestitution, federalCleaningNote],
     },
     remoteHandover: {
-      title: "Les clés restent à Fribourg ou à Guin",
-      body: "À Fribourg, les clés ne transitent pas par le siège de Romont. Elles sont remises à la régie sarinoise, ou à celle de Düdingen pour un logement à Guin, à l'heure de l'état des lieux. L'équipe arrive de Route de Raboud 8 pour ce rendez-vous. Le procès-verbal se signe dans le logement.",
+      title: "Fin de bail en Sarine et en Singine",
+      body: "À Fribourg, à Matran et à Düdingen (Guin), l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
     },
     building: {
-      body: "59,8 % des bâtiments d'habitation du canton sont des maisons individuelles en 2025, soit 45 395 sur 75 906. La ville de Fribourg et l'agglomération de la Sarine sont plus denses que ce taux, qui mélange ville et campagne. Aucun décompte séparé de la ville n'est repris ici.",
+      body: "59,8 % des bâtiments d'habitation du canton sont des maisons individuelles en 2025, soit 45 395 sur 75 906. Aucun décompte séparé de la ville n'est repris ici.",
       sourceLine: "État de Fribourg, statistiques des bâtiments, 2025",
       sources: [fribourgBuildings],
     },
     example: {
-      body: "L'avant/après publié a été pris à Romont, dans la Glâne, pas dans un logement de la Sarine ou de la Singine.",
+      body: "",
       sources: [romontExample],
     },
     servicesHighlight: ["Nettoyage de bureaux", "Fin de bail", "Après chantier"],
@@ -277,12 +255,12 @@ export const locations: Location[] = [
       {
         question: "Matran est-il une commune de la Glâne ?",
         answer:
-          "Non. Matran est dans la Sarine, avec Fribourg, Marly, Villars-sur-Glâne et Givisiez. Depuis Romont, Matran est à environ 15 à 20 minutes et Fribourg à environ 25.",
+          "Non. Matran est dans la Sarine, avec Fribourg, Marly, Villars-sur-Glâne et Givisiez.",
       },
       {
         question: "Pourquoi Düdingen (Guin) figure-t-il sur une page en français ?",
         answer:
-          "Düdingen est le nom officiel, Guin le nom français, dans le district de la Singine. Le nettoyage est décrit en français. Il n'y a pas de page en allemand. Aucune minute de route n'est publiée pour Guin.",
+          "Düdingen est le nom officiel, Guin le nom français, dans le district de la Singine. Le nettoyage est décrit en français. Il n'y a pas de page en allemand.",
       },
       {
         question: "Quelle règle fédérale vise la restitution à Fribourg ?",
@@ -290,9 +268,9 @@ export const locations: Location[] = [
           "Les art. 267 et 267a du Code des obligations : état conforme à un usage conforme au contrat, nettoyage compris, et signalement immédiat des défauts à la sortie.",
       },
       {
-        question: "Les clés d'un logement fribourgeois passent-elles par Romont ?",
+        question: "Où se fait l'état des lieux à Fribourg ?",
         answer:
-          "Non. Elles sont remises à la régie à Fribourg ou à Düdingen, à l'heure de l'état des lieux. L'équipe, elle, part de Route de Raboud 8.",
+          "Avec la régie, selon sa checklist. La date est fixée dans le devis.",
       },
     ],
     priorityLinks: [
@@ -310,20 +288,17 @@ export const locations: Location[] = [
     canton: "VD",
     cantonName: "Vaud",
     district: "Lausanne",
-    title: "Nettoyage à Lausanne, zone étendue",
-    subtitle: "zone étendue",
+    title: "Nettoyage à Lausanne et dans l'Ouest lausannois",
+    subtitle: "Ouest lausannois",
     description:
-      "Lausanne, Renens et Crissier. Environ 35 à 40 minutes de route jusqu'à Lausanne depuis Romont. Frais de déplacement indiqués dans le devis.",
+      "Lausanne, Renens et Crissier, dans l'Ouest lausannois. Réponse sous 24 h, sans frais de déplacement.",
     intro:
-      "Lausanne, Renens et Crissier forment une zone étendue, au-delà du bassin proche de Romont. Le siège reste Route de Raboud 8.",
+      "Lausanne, Renens et Crissier forment l'Ouest lausannois publié. Le siège reste Route de Raboud 8.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
     nearbyCommunes: ["Renens", "Crissier"],
-    travelRows: [{ place: "Lausanne", time: "environ 35 à 40 min" }],
-    travelNote:
-      "La fourchette concerne Lausanne. Renens et Crissier sont dans la même zone étendue ; leur temps de route n'est pas chiffré à part. Rien ici ne fixe une heure d'arrivée.",
     communeGroups: [
-      { title: "Zone étendue", names: ["Lausanne", "Renens", "Crissier"] },
+      { title: "Ouest lausannois", names: ["Lausanne", "Renens", "Crissier"] },
     ],
     rules: {
       title: "Remise vaudoise à midi",
@@ -331,8 +306,8 @@ export const locations: Location[] = [
       sources: [vaudRulv],
     },
     remoteHandover: {
-      title: "Clés remises sur place, pas ramenées à Romont",
-      body: "Le passage lausannois se cale sur l'état des lieux de la régie, souvent à midi selon les usages vaudois. Les clés, doubles compris, restent à Lausanne, à Renens ou à Crissier : on les remet à la régie sur place. L'équipe repart vers Romont après le logement prévu au devis.",
+      title: "Fin de bail à Lausanne, Renens et Crissier",
+      body: "À Lausanne, à Renens et à Crissier, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
     },
     building: {
       body: "Le portrait statistique 2025 de la Ville compte, pour 2024, 82 321 logements : 48 825 dans des maisons à plusieurs logements et 2 192 dans des maisons individuelles. C'est un chiffre de la commune de Lausanne, pas du canton de Vaud, ni de Renens ou de Crissier.",
@@ -340,7 +315,7 @@ export const locations: Location[] = [
       sources: [lausanneStats],
     },
     example: {
-      body: "L'exemple en photos est un fin de bail fait à Romont. Il ne documente pas un état des lieux à Lausanne, à Renens ou à Crissier.",
+      body: "",
       sources: [romontExample],
     },
     servicesHighlight: ["Nettoyage de bureaux", "Appartements", "Fin de bail"],
@@ -351,9 +326,9 @@ export const locations: Location[] = [
           "Renens et Crissier, avec Lausanne. Le siège est à Romont, Route de Raboud 8.",
       },
       {
-        question: "Pourquoi cette page parle-t-elle de zone étendue ?",
+        question: "Quelles communes de l'Ouest lausannois sont publiées ?",
         answer:
-          "Lausanne est à environ 35 à 40 minutes de route depuis Romont, au-delà des communes à moins de 30 minutes. Renens et Crissier sont dans la même zone. Les frais de déplacement sont indiqués dans le devis.",
+          "Lausanne, Renens et Crissier. Réponse sous 24 h, sans frais de déplacement.",
       },
       {
         question: "Que disent les usages vaudois sur l'heure de remise ?",
