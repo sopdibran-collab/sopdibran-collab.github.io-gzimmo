@@ -58,7 +58,7 @@ const seoCityRedirects = [
   { source: "/seo/nettoyage-vuisternens-devant-romont", destination: "/nettoyage-romont" },
   { source: "/seo/nettoyage-ursy", destination: "/nettoyage-romont" },
   { source: "/seo/nettoyage-payerne", destination: "/nettoyage-romont" },
-  { source: "/seo/nettoyage-yverdon-les-bains", destination: "/zones" },
+  { source: "/seo/nettoyage-yverdon-les-bains", destination: "/nettoyage-yverdon" },
   { source: "/seo/nettoyage-morges", destination: "/zones" },
   { source: "/seo/nettoyage-nyon", destination: "/zones" },
 ].map((redirect) => ({ ...redirect, statusCode: 301 as const }));

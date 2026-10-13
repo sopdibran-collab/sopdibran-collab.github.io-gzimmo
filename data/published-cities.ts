@@ -1,6 +1,6 @@
 /**
  * Villes qui ont une page. Footer et accueil lisent cette liste.
- * Yverdon n'y entre qu'avec la page /nettoyage-yverdon.
+ * Yverdon entre avec la page /nettoyage-yverdon.
  */
 export const publishedCities = [
   {
@@ -28,5 +28,10 @@ export const publishedCities = [
     label: "Vevey",
     homeLabel: "Nettoyage à Vevey et Montreux",
     href: "/nettoyage-vevey-montreux",
+  },
+  {
+    label: "Yverdon",
+    homeLabel: "Nettoyage à Yverdon-les-Bains",
+    href: "/nettoyage-yverdon",
   },
 ] as const;
