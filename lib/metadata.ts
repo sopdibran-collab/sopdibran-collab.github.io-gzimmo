@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { company, formatAddress } from "@/data/company";
 import { getLocationPath } from "@/lib/location-paths";
 
-const defaultTitle = `${company.name} — Nettoyage professionnel à Romont, Fribourg, Vaud et Neuchâtel`;
+const defaultTitle = "Entreprise de nettoyage à Romont | FR, VD, NE";
 const defaultDescription =
     "Gzimmo Sàrl, Route de Raboud 8. Fin de bail, bureaux, après chantier, conciergerie. Fribourg, Vaud et Neuchâtel. Devis gratuit — 076 214 23 42.";
 
@@ -38,7 +38,8 @@ export function createMetadata({
     "nettoyage professionnel",
     "entreprise de nettoyage",
     "Romont",
-    "Suisse romande",
+    "Vaud",
+    "Neuchâtel",
     "Fribourg",
     "fin de bail",
     "nettoyage bureaux",
@@ -66,7 +67,7 @@ export function createMetadata({
       siteName: company.name,
       title: pageTitle,
       description,
-      images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: `${company.name} — Nettoyage professionnel en Suisse romande` }],
+      images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: `${company.name} — Entreprise de nettoyage à Romont` }],
     },
     twitter: {
       card: "summary_large_image",

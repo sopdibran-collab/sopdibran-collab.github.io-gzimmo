@@ -30,10 +30,7 @@ export function HomeFeaturedReview() {
   const rating = featuredGoogleReview.rating ?? 5;
   const quote = featuredGoogleReview.quote;
   const url = featuredGoogleReview.url;
-  const meta = [
-    featuredGoogleReview.author,
-    featuredGoogleReview.location ?? "Google",
-  ]
+  const meta = [featuredGoogleReview.author, featuredGoogleReview.location]
     .filter(Boolean)
     .join(" · ");
 

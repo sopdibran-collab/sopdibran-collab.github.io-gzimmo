@@ -146,7 +146,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
     landing.testimonials.length > 0 ? (rhythm ? "paper" : nextVariant()) : null;
   const closingVariant: BandVariant = rhythm ? "soft" : nextVariant();
   const localWithPrice = Boolean(landing.priceSection && landing.showInterventionZones);
-  const zonesHeading = landing.zonesHeading ?? "Nos zones d'intervention en Suisse romande";
+  const zonesHeading = landing.zonesHeading ?? "Nos zones : Fribourg, Vaud et Neuchâtel";
   const bandDensity = "band" as const;
   const headingClass = "scroll-mt-28 font-display text-display-sm text-foreground";
 

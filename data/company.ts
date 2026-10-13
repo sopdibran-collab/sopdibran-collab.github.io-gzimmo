@@ -2,7 +2,7 @@ export const company = {
   name: "Gzimmo Sàrl",
   legalName: "Gzimmo Sàrl",
   ide: "CHE-420.601.239",
-  tagline: "Nettoyage professionnel en Suisse romande",
+  tagline: "Entreprise de nettoyage à Romont",
   email: "info@gzimmo.ch",
   phone: "+41762142342",
   phoneDisplay: "076 214 23 42",

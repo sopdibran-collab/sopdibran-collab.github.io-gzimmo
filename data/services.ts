@@ -20,7 +20,7 @@ export const services: Service[] = [
     title: "Entretien de locaux",
     shortTitle: "Entretien de locaux",
     description:
-      "Entretien régulier de locaux professionnels et commerciaux en Suisse romande.",
+      "Entretien régulier de locaux professionnels et commerciaux, depuis Romont.",
     intro:
       "Un entretien planifié, discret et rigoureux pour des espaces qui restent impeccables au quotidien.",
     benefits: [
@@ -41,7 +41,7 @@ export const services: Service[] = [
     title: "Nettoyage d'appartements",
     shortTitle: "Nettoyage d'appartements",
     description:
-      "Nettoyage complet d'appartements pour particuliers et régies en Suisse romande.",
+      "Nettoyage complet d'appartements pour particuliers et régies, depuis Romont.",
     intro:
       "Des appartements remis en ordre avec précision — surfaces, sols et détails traités avec soin.",
     benefits: [
@@ -125,7 +125,7 @@ export const services: Service[] = [
     title: "Nettoyage de bureaux",
     shortTitle: "Nettoyage de bureaux",
     description:
-      "Entretien de bureaux et espaces de travail pour entreprises en Suisse romande.",
+      "Entretien de bureaux et espaces de travail, depuis Romont.",
     intro:
       "Des espaces de travail propres, silencieux dans leur exécution, précis dans le résultat.",
     benefits: [

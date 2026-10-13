@@ -81,14 +81,14 @@ export const faqItems: FaqItem[] = [
   {
     id: "zone-suisse-romande",
     category: "zone",
-    question: "Quelle zone couvrez-vous en Suisse romande ?",
+    question: "Dans quels cantons intervenez-vous ?",
     answer: `Nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel, depuis notre siège à Romont (${siege}). Fribourg : Romont, Glâne, Broye, Gruyère. Vaud : Lausanne et tout le canton, de Bex à Nyon. Neuchâtel : la ville et le canton.`,
   },
   {
     id: "entreprise-romont",
     category: "zone",
     question: "Quelle entreprise de nettoyage choisir à Romont ?",
-    answer: `Gzimmo Sàrl est basée à Romont (${siege}). Équipe avec plus de 15 ans d'expérience cumulée dans le nettoyage, devis gratuit, intervention rapide en Glâne et en Suisse romande. ${phoneDisplay} · ${email}`,
+    answer: `Gzimmo Sàrl est basée à Romont (${siege}). Équipe avec plus de 15 ans d'expérience cumulée dans le nettoyage, devis gratuit. Intervention en Glâne, à Fribourg, en Vaud et à Neuchâtel. ${phoneDisplay} · ${email}`,
   },
   {
     id: "regies-entreprises",

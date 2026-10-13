@@ -98,7 +98,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Remise d'appartement",
     ],
     intro:
-      "Vous déménagez en Suisse romande ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl couvre les cantons de Fribourg, Vaud et Neuchâtel. Pour Romont ou Fribourg ville, des pages locales détaillent l'intervention près de chez vous.",
+      "Vous déménagez à Fribourg, en Vaud ou à Neuchâtel ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl est à Romont. Les pages de Romont, Fribourg, Bulle, Lausanne et Neuchâtel précisent les communes desservies.",
     sections: [
       {
         title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
@@ -189,7 +189,7 @@ export const serviceLandings: ServiceLanding[] = [
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     inclusionHeading: "Checklist d'intervention : ce qui est inclus",
-    zonesHeading: "Nos zones d'intervention en Suisse romande",
+    zonesHeading: "Nos zones : Fribourg, Vaud et Neuchâtel",
     zonesNote:
       "Depuis Romont (FR), nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel : Bulle, Fribourg, Lausanne, Nyon et Yverdon, ainsi que les communes listées ci-dessous. Siège : Route de Raboud 8.",
     schemaServiceTypes: [
@@ -401,12 +401,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-bureaux",
-    h1: "Nettoyage de bureaux pour entreprises en Suisse romande",
+    h1: "Nettoyage de bureaux à Fribourg, Vaud et Neuchâtel",
     subtitle:
       "Des espaces de travail propres, intervention discrète, horaires flexibles — pour des équipes qui méritent un environnement sain.",
-    metaTitle: "Nettoyage de bureaux en Suisse romande",
+    metaTitle: "Nettoyage de bureaux | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de bureaux et espaces de travail en Suisse romande. Horaires flexibles, discrétion, devis gratuit. Gzimmo Sàrl, Romont. 076 214 23 42.",
+      "Nettoyage de bureaux, horaires convenus au devis. Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg, Vaud et Neuchâtel. 076 214 23 42.",
     intro:
       "Un bureau propre améliore le bien-être des équipes et l'image de votre entreprise. Gzimmo assure l'entretien de vos espaces de travail avec discrétion, en dehors de vos heures d'activité si nécessaire.",
     forWho: [
@@ -443,12 +443,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "entretien-locaux",
-    h1: "Entretien de locaux professionnels en Suisse romande",
+    h1: "Entretien de locaux à Fribourg, Vaud et Neuchâtel",
     subtitle:
       "Un entretien planifié, discret et rigoureux pour des espaces commerciaux et professionnels impeccables au quotidien.",
-    metaTitle: "Entretien de locaux professionnels en Suisse romande",
+    metaTitle: "Entretien de locaux | Gzimmo, Romont",
     metaDescription:
-      "Entretien régulier de locaux professionnels et commerciaux en Suisse romande. Planning flexible, devis gratuit. Gzimmo Sàrl, Romont.",
+      "Entretien de locaux professionnels et commerciaux. Gzimmo Sàrl, siège à Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit.",
     intro:
       "Commerces, cabinets, locaux d'activité — un entretien régulier évite l'accumulation et préserve l'image de votre établissement. Gzimmo planifie des passages adaptés à votre activité.",
     forWho: [
@@ -478,12 +478,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-appartements",
-    h1: "Nettoyage d'appartements en Suisse romande",
+    h1: "Nettoyage d'appartements à Fribourg, Vaud et Neuchâtel",
     subtitle:
       "Un nettoyage complet et minutieux, pièce par pièce — pour particuliers et régies qui exigent un résultat visible.",
-    metaTitle: "Nettoyage d'appartements en Suisse romande",
+    metaTitle: "Nettoyage d'appartements | Gzimmo",
     metaDescription:
-      "Nettoyage complet d'appartements pour particuliers et régies en Suisse romande. Devis gratuit, intervention depuis Romont. 076 214 23 42.",
+      "Nettoyage d'appartements pour particuliers et régies, depuis Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit. 076 214 23 42.",
     intro:
       "Que ce soit pour une remise en état ponctuelle ou un entretien approfondi, Gzimmo traite chaque pièce avec méthode : sols, sanitaires, cuisine, surfaces et détails.",
     relatedNote: {
@@ -553,12 +553,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-maisons",
-    h1: "Nettoyage de maisons en Suisse romande",
+    h1: "Nettoyage de maisons à Fribourg, Vaud et Neuchâtel",
     subtitle:
       "Un service complet pour des intérieurs qui respirent la clarté — du rez-de-chaussée aux espaces de vie.",
-    metaTitle: "Nettoyage de maisons en Suisse romande",
+    metaTitle: "Nettoyage de maisons | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de maisons individuelles en Suisse romande. Tous volumes, matériaux respectés. Devis gratuit. Gzimmo Sàrl, Romont.",
+      "Nettoyage de maisons, depuis le siège de Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit. Gzimmo, 076 214 23 42.",
     intro:
       "Les maisons demandent une approche adaptée aux volumes, aux matériaux et aux espaces spécifiques (escaliers, caves, terrasses). Gzimmo prend en charge l'ensemble avec la même exigence de finition.",
     forWho: [
@@ -586,12 +586,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-vitres",
-    h1: "Nettoyage de vitres en Suisse romande",
+    h1: "Nettoyage de vitres à Fribourg, Vaud et Neuchâtel",
     subtitle:
       "Des vitres impeccables, sans traces — intérieur et extérieur, pour particuliers et professionnels.",
-    metaTitle: "Nettoyage de vitres en Suisse romande",
+    metaTitle: "Nettoyage de vitres | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de vitres intérieures et extérieures en Suisse romande. Techniques professionnelles, accès sécurisé. Devis gratuit. 076 214 23 42.",
+      "Nettoyage de vitres intérieures et extérieures accessibles. Gzimmo, siège à Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit.",
     intro:
       "Vitres intérieures, façades vitrées, baies vitrées — Gzimmo utilise des techniques professionnelles pour un résultat net et durable, sans rayures ni traces.",
     forWho: [
@@ -620,10 +620,10 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "conciergerie",
-    h1: "Services de conciergerie pour régies et immeubles",
+    h1: "Conciergerie pour régies à Fribourg, Vaud et Neuchâtel",
     subtitle:
       "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud et à Neuchâtel.",
-    metaTitle: "Conciergerie pour régies — Fribourg & Vaud",
+    metaTitle: "Conciergerie pour régies | Gzimmo",
     metaDescription:
       "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg, Vaud et Neuchâtel, depuis Romont. 076 214 23 42.",
     intro:
@@ -692,5 +692,5 @@ export function getRelatedServices(slugs: string[]) {
   return slugs
     .map((slug) => serviceLandings.find((l) => l.slug === slug))
     .filter((l): l is ServiceLanding => Boolean(l))
-    .map((l) => ({ title: l.h1.split(" en ")[0] ?? l.h1, href: getServicePath(l.slug) }));
+    .map((l) => ({ title: l.h1.split(" à ")[0] ?? l.h1, href: getServicePath(l.slug) }));
 }

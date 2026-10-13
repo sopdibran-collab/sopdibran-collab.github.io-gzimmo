@@ -47,7 +47,7 @@ function placeChipClass(onSoft: boolean, linked: boolean) {
 /** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
 export function InterventionZones({
   servicePhrase = "nettoyage",
-  heading = "Nos zones d'intervention en Suisse romande",
+  heading = "Nos zones : Fribourg, Vaud et Neuchâtel",
   devisHref = "/contact",
   className,
   onSoft = false,

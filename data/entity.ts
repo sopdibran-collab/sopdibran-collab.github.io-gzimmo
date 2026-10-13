@@ -67,7 +67,7 @@ export const entityServices: EntityServiceEntry[] = [
       "avant réception",
     ],
     clients: ["particuliers", "promoteurs", "entreprises générales", "régies"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: {
       avis: ["review-apres-renovation", "review-fin-de-chantier"],
       realisations: [{ id: "chantier-morges", lieu: "Morges" }],
@@ -87,7 +87,7 @@ export const entityServices: EntityServiceEntry[] = [
       "avant nouvelle entrée",
     ],
     clients: ["locataires", "régies", "propriétaires", "agences immobilières"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: {
       avis: ["review-demenagement-express"],
       realisations: [{ id: "fin-bail-fribourg", lieu: "Fribourg" }],
@@ -98,7 +98,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage d'appartements",
     contextes: ["remise en état", "entre deux locataires"],
     clients: ["particuliers", "régies", "propriétaires"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: { avis: ["review-appartements-commercial"] },
     renvoi: {
       vers: "/nettoyage-fin-de-bail",
@@ -110,7 +110,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage de maisons",
     contextes: ["grand nettoyage", "avant vente"],
     clients: ["propriétaires", "familles", "régies"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: {},
   },
   {
@@ -118,7 +118,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage de bureaux",
     contextes: ["entretien régulier", "espaces de travail"],
     clients: ["PME", "grandes entreprises", "coworkings", "cabinets professionnels"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: { realisations: [{ id: "bureaux-lausanne", lieu: "Lausanne" }] },
   },
   {
@@ -126,7 +126,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Entretien de locaux",
     contextes: ["entretien professionnel", "locaux commerciaux", "immeubles"],
     clients: ["commerces", "régies", "professions libérales"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: { avis: ["review-appartements-commercial"] },
   },
   {
@@ -134,7 +134,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Services de conciergerie",
     contextes: ["parties communes", "immeubles"],
     clients: ["régies immobilières", "syndics et PPE", "propriétaires institutionnels"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: {},
   },
   {
@@ -142,7 +142,7 @@ export const entityServices: EntityServiceEntry[] = [
     service: "Nettoyage de vitres",
     contextes: ["vitrines", "baies vitrées", "façades vitrées"],
     clients: ["particuliers", "commerces", "bureaux", "régies"],
-    zones: ["Suisse romande"],
+    zones: ["Fribourg", "Vaud", "Neuchâtel"],
     preuves: { realisations: [{ id: "vitres-romont", lieu: "Romont" }] },
   },
 ];
