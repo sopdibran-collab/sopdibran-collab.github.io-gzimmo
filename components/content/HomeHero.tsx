@@ -35,7 +35,7 @@ export function HomeHero() {
             Entreprise de nettoyage à Romont. Fribourg, Vaud et Neuchâtel.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-white/70">
-            Gzimmo Sàrl, Route de Raboud 8 à Romont. Plus de 15 ans d'expérience. Fribourg, Vaud et Neuchâtel. Devis sous 24 h, sans frais de déplacement.
+            Gzimmo Sàrl, Route de Raboud 8 à Romont. Plus de 15 ans d&apos;expérience. Fribourg, Vaud et Neuchâtel. Devis sous 24 h, sans frais de déplacement.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
