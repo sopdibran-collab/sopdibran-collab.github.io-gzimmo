@@ -9,7 +9,7 @@ import { ContentCard } from "@/components/ui/ContentCard";
 export const metadata = createMetadata({
   title: "Devis de nettoyage reçu | Gzimmo",
   description:
-    "Gzimmo a reçu votre demande de devis. Réponse sous 24 h, sans frais de déplacement. Urgence : 076 214 23 42, info@gzimmo.ch.",
+    "Gzimmo a reçu votre demande de devis. Frais de déplacement indiqués dans le devis. Urgence : 076 214 23 42, info@gzimmo.ch.",
   absoluteTitle: true,
   path: "/merci",
   noindex: true,
@@ -23,7 +23,7 @@ export default function MerciPage() {
       <PageHero>
         <PageIntro
           title="Demande de devis de nettoyage reçue"
-          description={`Nous vous répondons sous 24 heures à l'adresse indiquée. Le déplacement est sans frais. Pour une urgence, appelez le ${company.phoneDisplay}.`}
+          description={`Votre demande est enregistrée. Les frais de déplacement sont indiqués dans le devis. Pour une urgence, appelez le ${company.phoneDisplay}.`}
         />
       </PageHero>
 

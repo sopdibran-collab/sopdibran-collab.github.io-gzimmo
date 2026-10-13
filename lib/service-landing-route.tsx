@@ -16,7 +16,7 @@ export function createServiceLandingMetadata(slug: string) {
     title: landing.metaTitle,
     description: landing.metaDescription,
     path: getServicePath(slug),
-    keywords: [landing.slug.replace(/-/g, " "), "devis gratuit", "Fribourg", "Vaud", "Neuchâtel"],
+    keywords: [landing.slug.replace(/-/g, " "), "devis gratuit", "Fribourg", "Vaud"],
     absoluteTitle: true,
   });
 }

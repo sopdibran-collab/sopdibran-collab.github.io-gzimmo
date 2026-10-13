@@ -8,9 +8,9 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Zones de nettoyage : Fribourg, Vaud, Neuchâtel",
+  title: "Zones de nettoyage : Fribourg et Vaud",
   description:
-    "Gzimmo intervient depuis Romont (Route de Raboud 8) dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis gratuit.",
+    "Gzimmo intervient depuis Romont (Route de Raboud 8) dans les cantons de Fribourg et de Vaud. Devis gratuit.",
   absoluteTitle: true,
   path: "/zones",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata = createMetadata({
     "Romont",
     "nettoyage Fribourg",
     "nettoyage Vaud",
-    "nettoyage Neuchâtel",
+    "nettoyage Vaud",
   ],
 });
 
@@ -46,9 +46,9 @@ export default function ZonesPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           onDark
-          badge="Fribourg, Vaud, Neuchâtel"
-          title="Zones de nettoyage : Fribourg, Vaud et Neuchâtel"
-          description="Basés à Romont (FR), nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel."
+          badge="Fribourg et Vaud"
+          title="Zones de nettoyage : Fribourg et Vaud"
+          description="Basés à Romont (FR), nous intervenons dans les cantons de Fribourg et de Vaud."
         />
       </PageHero>
 

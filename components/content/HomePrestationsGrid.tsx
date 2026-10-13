@@ -58,7 +58,7 @@ export function HomePrestationsGrid() {
         </div>
         <p className="max-w-sm text-muted leading-relaxed lg:col-span-5 lg:justify-self-end lg:text-right">
           Locataires, régies et chantiers en Fribourg et dans le canton de Vaud : une équipe,
-          un devis sous 24 h, sans frais de déplacement.
+          un devis gratuit. Frais de déplacement indiqués dans le devis.
         </p>
       </div>
 

@@ -27,12 +27,12 @@ export const finDeBailPriceFaqs: FaqItem[] = [
     "fin-de-bail-regie-zones",
     "zone",
     "Intervenez-vous à Fribourg, en Vaud et pour les régies ?",
-    "Oui. Nous travaillons pour des locataires et des régies dans les cantons de Fribourg, de Vaud et de Neuchâtel. Le passage suit la checklist de votre régie.",
+    "Oui. Nous travaillons pour des locataires et des régies dans les cantons de Fribourg et de Vaud. Le passage suit la checklist de votre régie.",
   ),
   faq(
     "delai-fin-de-bail",
     "delais",
     "Combien de temps à l'avance réserver un nettoyage de fin de bail ?",
-    `Dès que la date de remise des clés est connue. Nous répondons sous 24 h, sans frais de déplacement, et nous fixons le passage selon notre planning. Appelez le ${phoneDisplay}.`,
+    `Dès que la date de remise des clés est connue. Le jour du passage est fixé dans le devis, selon le planning. Les frais de déplacement sont indiqués dans le devis. Appelez le ${phoneDisplay}.`,
   ),
 ];

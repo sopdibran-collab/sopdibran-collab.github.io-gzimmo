@@ -2,10 +2,9 @@ import { company, teamExperienceLabel } from "@/data/company";
 import { cn } from "@/lib/utils";
 
 const items = [
-  "Réponse sous 24 h",
   "Devis gratuit",
-  "Sans frais de déplacement",
-  "Fribourg, Vaud, Neuchâtel",
+  "Frais de déplacement indiqués dans le devis",
+  "Fribourg et Vaud",
   teamExperienceLabel(true),
 ] as const;
 

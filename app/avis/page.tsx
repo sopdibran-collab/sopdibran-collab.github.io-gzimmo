@@ -10,7 +10,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = createMetadata({
   title: "Avis clients | nettoyage Gzimmo à Romont",
   description:
-    "Avis Google publiés sur la fiche Gzimmo Sàrl, entreprise de nettoyage à Romont. Fribourg, Vaud et Neuchâtel.",
+    "Avis Google publiés sur la fiche Gzimmo Sàrl, entreprise de nettoyage à Romont. Fribourg et Vaud.",
   absoluteTitle: true,
   path: "/avis",
   keywords: ["avis Google", "témoignages clients", "nettoyage professionnel Romont"],

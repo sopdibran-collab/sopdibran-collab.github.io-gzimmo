@@ -32,10 +32,10 @@ export function HomeHero() {
       <div className="relative z-10 mx-auto flex min-h-hero-photo w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24">
         <div className="min-w-0 max-w-3xl animate-fade-in-up motion-reduce:animate-none">
           <h1 className="max-w-3xl text-balance font-display text-[clamp(1.85rem,6.5vw,3.25rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-white">
-            Entreprise de nettoyage à Romont. Fribourg, Vaud et Neuchâtel.
+            Entreprise de nettoyage à Romont. Fribourg et Vaud.
           </h1>
           <p className="mt-5 max-w-md text-base leading-relaxed text-white/70">
-            Gzimmo Sàrl, Route de Raboud 8 à Romont. Plus de 15 ans d&apos;expérience. Fribourg, Vaud et Neuchâtel. Devis sous 24 h, sans frais de déplacement.
+            Gzimmo Sàrl, Route de Raboud 8 à Romont. Plus de 15 ans d&apos;expérience. Fribourg et Vaud. Frais de déplacement indiqués dans le devis.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

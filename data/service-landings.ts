@@ -62,12 +62,12 @@ const sharedWhy = [
   {
     title: "Réactivité depuis Romont",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis sous 24 h, sans frais de déplacement.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Frais de déplacement indiqués dans le devis.",
   },
   {
     title: "Devis transparent avant intervention",
     description:
-      "Chaque prestation fait l'objet d'un devis détaillé et gratuit, sans frais de déplacement. Le tarif convenu est le tarif final.",
+      "Chaque prestation fait l'objet d'un devis détaillé et gratuit, frais de déplacement indiqués dans le devis. Le tarif convenu est le tarif final.",
   },
 ];
 
@@ -81,7 +81,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Appelez-nous, expliquez le logement et la date de remise des clés : devis gratuit, sur mesure, garantie d'état des lieux auprès de votre régie.",
     metaTitle: "Nettoyage fin de bail | Garantie d'état des lieux — Gzimmo",
     metaDescription:
-      "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
+      "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg et Vaud. 076 214 23 42.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     showPriceQuote: true,
@@ -98,7 +98,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Remise d'appartement",
     ],
     intro:
-      "Vous déménagez à Fribourg, en Vaud ou à Neuchâtel ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl est à Romont. Les pages de Romont, Fribourg, Bulle, Lausanne et Neuchâtel précisent les communes desservies.",
+      "Vous déménagez à Fribourg, en Vaud ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl est à Romont. Les pages de Romont, Fribourg, Bulle et Lausanne précisent les communes desservies.",
     sections: [
       {
         title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
@@ -133,7 +133,7 @@ export const serviceLandings: ServiceLanding[] = [
       title: "Garantie de remise de bail",
       paragraphs: [
         "Le nettoyage de fin de bail en Suisse requiert une rigueur absolue. Les régies immobilières appliquent des standards de restitution stricts : un oubli sur les joints de salle de bain, un four mal dégraissé ou des vitres laissées avec des traces peut entraîner une retenue sur la garantie locative.",
-        "Gzimmo connaît ces exigences. Nous travaillons avec des régies dans les cantons de Fribourg, de Vaud et de Neuchâtel. Checklist adaptée, devis clair avant intervention.",
+        "Gzimmo connaît ces exigences. Nous travaillons avec des régies dans les cantons de Fribourg et de Vaud. Checklist adaptée, devis clair avant intervention.",
         "Si un point n'est pas conforme aux attentes de la régie, nous intervenons à nouveau sans frais supplémentaires dans le cadre de notre garantie de remise de bail.",
       ],
     },
@@ -154,7 +154,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         title: "Expertise des régies immobilières",
         description:
-          "Nous connaissons les standards de restitution des régies fribourgeoises, vaudoises et neuchâteloises. Pas de mauvaise surprise à l'état des lieux.",
+          "Nous connaissons les standards de restitution des régies fribourgeoises, vaudoises. Pas de mauvaise surprise à l'état des lieux.",
       },
       ...sharedWhy,
     ],
@@ -178,7 +178,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Poussière fine, voile de ciment, traces de peinture : nous remettons le lieu en état pour que vous puissiez emménager ou livrer.",
     metaTitle: "Nettoyage après rénovation et chantier | Gzimmo",
     metaDescription:
-      "Devis gratuit sous 24 h, sans frais de déplacement, pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg, Vaud, Neuchâtel.",
+      "Devis gratuit. Frais de déplacement indiqués dans le devis, pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg et Vaud.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     preferCallCta: false,
@@ -189,9 +189,9 @@ export const serviceLandings: ServiceLanding[] = [
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     inclusionHeading: "Checklist d'intervention : ce qui est inclus",
-    zonesHeading: "Nos zones : Fribourg, Vaud et Neuchâtel",
+    zonesHeading: "Nos zones : Fribourg et Vaud",
     zonesNote:
-      "Depuis Romont (FR), nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel : Bulle, Fribourg, Lausanne, Nyon et Yverdon, ainsi que les communes listées ci-dessous. Siège : Route de Raboud 8.",
+      "Depuis Romont (FR), nous intervenons dans les cantons de Fribourg et de Vaud : Bulle, Fribourg, Lausanne, Nyon et Yverdon, ainsi que les communes listées ci-dessous. Siège : Route de Raboud 8.",
     schemaServiceTypes: [
       "Nettoyage après chantier",
       "Nettoyage après rénovation",
@@ -200,7 +200,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage de fin de chantier",
     ],
     intro:
-      "Le devis est gratuit et clair sous 24 h, sans frais de déplacement. Depuis Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Téléphone : 076 214 23 42.",
+      "Le devis est gratuit et clair. Frais de déplacement indiqués dans le devis. Depuis Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Téléphone : 076 214 23 42.",
     relatedNote: {
       text: "Travaux dans un logement loué, puis état des lieux de sortie : la checklist régie est une autre prestation.",
       linkLabel: "Nettoyage de fin de bail",
@@ -290,7 +290,7 @@ export const serviceLandings: ServiceLanding[] = [
       id: "fin-de-chantier",
       title: "Comment se passe le passage",
       items: [
-        "Vous décrivez le chantier au 076 214 23 42. Devis gratuit et clair sous 24 h, sans frais de déplacement.",
+        "Vous décrivez le chantier au 076 214 23 42. Devis gratuit et clair. Frais de déplacement indiqués dans le devis.",
         "Le passage est calé sur la date de réception, si le planning le permet.",
         "Sols, résidus et équipements sont traités sans abîmer les finitions neuves.",
         "Les déchets de nettoyage partent en fin d'intervention.",
@@ -299,7 +299,7 @@ export const serviceLandings: ServiceLanding[] = [
     priceSection: {
       id: "prix",
       title: "Combien coûte un nettoyage après rénovation ou chantier ?",
-      body: "Il n'y a pas de forfait fixe au mètre carré. Le devis est gratuit, clair, établi sous 24 h, sans frais de déplacement, selon le niveau de poussière fine et le type de résidus. Le tarif convenu est le tarif final.",
+      body: "Il n'y a pas de forfait fixe au mètre carré. Le devis est gratuit, clair, établi sans engagement. Frais de déplacement indiqués dans le devis, selon le niveau de poussière fine et le type de résidus. Le tarif convenu est le tarif final.",
       factors: [
         "Niveau de poussière fine laissé par les artisans",
         "Résidus : voile de ciment, laitance de carrelage, peinture, silicone, sciure",
@@ -344,14 +344,14 @@ export const serviceLandings: ServiceLanding[] = [
       faq(
         "delai-devis-chantier",
         "delais",
-        "Sous quel délai recevons-nous le devis ?",
-        "Sous 24 h, gratuit, sans engagement, sans frais de déplacement. Appelez le 076 214 23 42 et décrivez le logement ou le lot, le type de travaux et la date de réception.",
+        "Le devis après chantier est-il gratuit ?",
+        "Gratuit, sans engagement. Les frais de déplacement sont indiqués dans le devis. Appelez le 076 214 23 42 et décrivez le logement ou le lot, le type de travaux et la date de réception.",
       ),
       faq(
         "zones-apres-chantier",
         "zone",
         "Dans quels cantons intervenez-vous après un chantier ?",
-        "Fribourg, Vaud et Neuchâtel, depuis Romont, Route de Raboud 8. Le devis est gratuit.",
+        "Fribourg et Vaud, depuis Romont, Route de Raboud 8. Le devis est gratuit.",
       ),
       faq(
         "passage-avant-reception",
@@ -378,7 +378,7 @@ export const serviceLandings: ServiceLanding[] = [
       { label: "Fribourg", href: "/nettoyage-fribourg" },
       { label: "Bulle", href: "/nettoyage-bulle" },
       { label: "Lausanne", href: "/nettoyage-lausanne" },
-      { label: "Neuchâtel", href: "/nettoyage-neuchatel" },
+      { label: "Zones d'intervention", href: "/zones" },
       { label: "Toutes les zones", href: "/zones" },
     ],
     testimonials: [
@@ -401,12 +401,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-bureaux",
-    h1: "Nettoyage de bureaux à Fribourg, Vaud et Neuchâtel",
+    h1: "Nettoyage de bureaux à Fribourg et Vaud",
     subtitle:
       "Des espaces de travail propres, intervention discrète, horaires flexibles — pour des équipes qui méritent un environnement sain.",
     metaTitle: "Nettoyage de bureaux | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de bureaux, horaires convenus au devis. Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg, Vaud et Neuchâtel. 076 214 23 42.",
+      "Nettoyage de bureaux, horaires convenus au devis. Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg et Vaud. 076 214 23 42.",
     intro:
       "Un bureau propre améliore le bien-être des équipes et l'image de votre entreprise. Gzimmo assure l'entretien de vos espaces de travail avec discrétion, en dehors de vos heures d'activité si nécessaire.",
     forWho: [
@@ -443,12 +443,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "entretien-locaux",
-    h1: "Entretien de locaux à Fribourg, Vaud et Neuchâtel",
+    h1: "Entretien de locaux à Fribourg et Vaud",
     subtitle:
       "Un entretien planifié, discret et rigoureux pour des espaces commerciaux et professionnels impeccables au quotidien.",
     metaTitle: "Entretien de locaux | Gzimmo, Romont",
     metaDescription:
-      "Entretien de locaux professionnels et commerciaux. Gzimmo Sàrl, siège à Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit.",
+      "Entretien de locaux professionnels et commerciaux. Gzimmo Sàrl, siège à Romont. Fribourg et Vaud. Devis gratuit.",
     intro:
       "Commerces, cabinets, locaux d'activité — un entretien régulier évite l'accumulation et préserve l'image de votre établissement. Gzimmo planifie des passages adaptés à votre activité.",
     forWho: [
@@ -478,12 +478,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-appartements",
-    h1: "Nettoyage d'appartements à Fribourg, Vaud et Neuchâtel",
+    h1: "Nettoyage d'appartements à Fribourg et Vaud",
     subtitle:
       "Un nettoyage complet et minutieux, pièce par pièce — pour particuliers et régies qui exigent un résultat visible.",
     metaTitle: "Nettoyage d'appartements | Gzimmo",
     metaDescription:
-      "Nettoyage d'appartements pour particuliers et régies, depuis Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit. 076 214 23 42.",
+      "Nettoyage d'appartements pour particuliers et régies, depuis Romont. Fribourg et Vaud. Devis gratuit. 076 214 23 42.",
     intro:
       "Que ce soit pour une remise en état ponctuelle ou un entretien approfondi, Gzimmo traite chaque pièce avec méthode : sols, sanitaires, cuisine, surfaces et détails.",
     relatedNote: {
@@ -518,7 +518,7 @@ export const serviceLandings: ServiceLanding[] = [
         "delai-appartement",
         "delais",
         "Quel délai pour un nettoyage d'appartement ?",
-        "Devis sous 24 h, sans frais de déplacement. Le jour du passage dépend du planning et de la date indiquée. Il est confirmé avant l'intervention.",
+        "Frais de déplacement indiqués dans le devis. Le jour du passage dépend du planning et de la date indiquée. Il est confirmé avant l'intervention.",
       ),
       faq(
         "appartement-vs-fin-de-bail",
@@ -536,7 +536,7 @@ export const serviceLandings: ServiceLanding[] = [
         "zones-appartement",
         "zone",
         "Où intervenez-vous ?",
-        "Dans les cantons de Fribourg, de Vaud et de Neuchâtel, depuis Romont, Route de Raboud 8.",
+        "Dans les cantons de Fribourg et de Vaud, depuis Romont, Route de Raboud 8.",
       ),
       faq(
         "etat-des-lieux-appartement",
@@ -553,12 +553,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-maisons",
-    h1: "Nettoyage de maisons à Fribourg, Vaud et Neuchâtel",
+    h1: "Nettoyage de maisons à Fribourg et Vaud",
     subtitle:
       "Un service complet pour des intérieurs qui respirent la clarté — du rez-de-chaussée aux espaces de vie.",
     metaTitle: "Nettoyage de maisons | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de maisons, depuis le siège de Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit. Gzimmo, 076 214 23 42.",
+      "Nettoyage de maisons, depuis le siège de Romont. Fribourg et Vaud. Devis gratuit. Gzimmo, 076 214 23 42.",
     intro:
       "Les maisons demandent une approche adaptée aux volumes, aux matériaux et aux espaces spécifiques (escaliers, caves, terrasses). Gzimmo prend en charge l'ensemble avec la même exigence de finition.",
     forWho: [
@@ -586,12 +586,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-vitres",
-    h1: "Nettoyage de vitres à Fribourg, Vaud et Neuchâtel",
+    h1: "Nettoyage de vitres à Fribourg et Vaud",
     subtitle:
       "Des vitres impeccables, sans traces — intérieur et extérieur, pour particuliers et professionnels.",
     metaTitle: "Nettoyage de vitres | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de vitres intérieures et extérieures accessibles. Gzimmo, siège à Romont. Fribourg, Vaud et Neuchâtel. Devis gratuit.",
+      "Nettoyage de vitres intérieures et extérieures accessibles. Gzimmo, siège à Romont. Fribourg et Vaud. Devis gratuit.",
     intro:
       "Vitres intérieures, façades vitrées, baies vitrées — Gzimmo utilise des techniques professionnelles pour un résultat net et durable, sans rayures ni traces.",
     forWho: [
@@ -620,12 +620,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "conciergerie",
-    h1: "Conciergerie pour régies à Fribourg, Vaud et Neuchâtel",
+    h1: "Conciergerie pour régies à Fribourg et Vaud",
     subtitle:
-      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud et à Neuchâtel.",
+      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud.",
     metaTitle: "Conciergerie pour régies | Gzimmo",
     metaDescription:
-      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg, Vaud et Neuchâtel, depuis Romont. 076 214 23 42.",
+      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg et Vaud, depuis Romont. 076 214 23 42.",
     intro:
       "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
     forWho: [
@@ -655,9 +655,9 @@ export const serviceLandings: ServiceLanding[] = [
     },
     whyGzimmo: [
       {
-        title: "Basés à Romont, actifs à Fribourg, en Vaud et à Neuchâtel",
+        title: "Basés à Romont, actifs à Fribourg, en Vaud",
         description:
-          "Nous sommes proches des immeubles de la Glâne, de Fribourg et du canton de Vaud, et nous couvrons aussi Neuchâtel.",
+          "Nous partons de Romont, dans la Glâne. Les passages publiés vont jusqu'à Fribourg, Bulle et Lausanne.",
       },
       ...sharedWhy,
     ],

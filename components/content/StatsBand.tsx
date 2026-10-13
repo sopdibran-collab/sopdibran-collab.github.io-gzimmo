@@ -11,7 +11,7 @@ export function StatsBand() {
         <Badge className="text-accent-ink">Gzimmo en chiffres</Badge>
         <p className="mt-5 max-w-lg text-lg text-white/80 leading-relaxed">
           {teamExperienceLabel(false)} au service de particuliers, régies et entreprises.
-          Fribourg, Vaud et Neuchâtel. Sans frais de déplacement.
+          Fribourg et Vaud. Frais de déplacement indiqués dans le devis.
         </p>
       </FadeIn>
 

@@ -11,7 +11,7 @@ import { HashScroll } from "@/components/ui/HashScroll";
 export const metadata = createMetadata({
   title: "FAQ nettoyage | Romont, FR, VD, NE",
   description:
-    "Réponses de Gzimmo sur les tarifs, la zone (Fribourg, Vaud, Neuchâtel) et les délais. Siège à Romont. Devis gratuit.",
+    "Réponses de Gzimmo sur les tarifs, la zone (Fribourg et Vaud) et les délais. Siège à Romont. Devis gratuit.",
   absoluteTitle: true,
   path: "/faq",
 });
