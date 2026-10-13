@@ -8,7 +8,7 @@ import { ZoneBands } from "@/components/content/ZoneBands";
 export const metadata = createMetadata({
   title: "Zones de nettoyage depuis Romont",
   description:
-    "Bassins depuis Romont : Glâne et Broye, Gruyère et Veveyse, Sarine et Singine, Lausanne et Ouest lausannois, Nord vaudois. Réponse sous 24 h, sans frais de déplacement.",
+    "Les communes où nous intervenons depuis Romont, de la Glâne à Lausanne. Réponse sous 24 h, sans frais de déplacement.",
   absoluteTitle: true,
   path: "/zones",
   keywords: ["zones intervention", "Glâne", "Romont", "nettoyage Fribourg", "nettoyage Vaud"],
@@ -39,7 +39,7 @@ export default function ZonesPage() {
           onDark
           badge="Depuis Romont"
           title="Zones de nettoyage depuis Romont"
-          description="Siège en Glâne, puis les communes regroupées par bassin. Réponse sous 24 h, sans frais de déplacement."
+          description="Depuis notre siège de Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Voici les communes desservies, région par région."
         />
       </PageHero>
 

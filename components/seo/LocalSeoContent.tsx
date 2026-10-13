@@ -49,7 +49,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
       <div className="mx-auto max-w-prose">
         <section aria-labelledby="communes">
           <h2 id="communes" className="font-display text-display-sm text-foreground">
-            Communes du bassin
+            Communes desservies
           </h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             {location.communeGroups.map((group) => (
@@ -80,7 +80,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
         {location.building ? (
           <section className="mt-10" aria-labelledby="bati">
             <h2 id="bati" className="font-display text-display-sm text-foreground">
-              Un chiffre de bâti
+              {location.building.title ?? "Le logement dans le canton"}
             </h2>
             {figure ? (
               <p className="mt-4 font-display text-display-lg font-semibold leading-none text-accent-ink">
@@ -98,7 +98,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
           id={location.slug === "nettoyage-romont" ? "realisation-romont" : undefined}
         >
           <h2 id="exemple" className="font-display text-display-sm text-foreground">
-            Exemple fait à Romont
+            Un fin de bail réalisé à Romont
           </h2>
           {location.example.body ? (
             <p className="mt-4 text-reading leading-relaxed text-muted">{location.example.body}</p>
@@ -170,7 +170,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
         <div className="mx-auto mt-16 max-w-prose border-t border-border pt-16">
           <Badge className="text-accent-ink">FAQ</Badge>
           <h2 className="mt-4 font-display text-display-sm text-foreground">
-            Questions — {location.city}
+            Questions sur {location.city}
           </h2>
           <div className="mt-8">
             <FaqList items={location.faqs} />

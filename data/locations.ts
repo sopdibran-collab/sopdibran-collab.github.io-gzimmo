@@ -19,7 +19,7 @@ export type Location = {
   communeGroups: { title: string; names: string[] }[];
   rules: { title: string; body: string; sources: SourceLink[] };
   remoteHandover: { title: string; body: string };
-  building: { body: string; sourceLine: string; sources: SourceLink[] };
+  building: { title?: string; body: string; sourceLine: string; sources: SourceLink[] };
   example: { body: string; sources: SourceLink[] };
   servicesHighlight: string[];
   faqs: FaqContent[];
@@ -65,9 +65,9 @@ export const locations: Location[] = [
     district: "Glâne",
     title: "Nettoyage à Romont, Glâne et Broye",
     description:
-      "Siège Route de Raboud 8, 1680 Romont. Glâne, Broye et Gros-de-Vaud : Moudon, Oron, Payerne, Estavayer-le-Lac. Réponse sous 24 h, sans frais de déplacement.",
+      "Entreprise de nettoyage à Romont, Route de Raboud 8. Nous intervenons en Glâne, dans la Broye et le Gros-de-Vaud : Moudon, Oron, Payerne, Estavayer-le-Lac. Réponse sous 24 h.",
     intro:
-      "Le siège de Gzimmo Sàrl est Route de Raboud 8, 1680 Romont, dans le district de la Glâne. Les passages autour du siège partent de cette adresse.",
+      "Notre siège est à la Route de Raboud 8, 1680 Romont, dans le district de la Glâne. C'est d'ici que nous partons pour toutes nos interventions.",
     geo: { latitude: 46.6917, longitude: 6.9111 },
     priority: 1,
     isHeadquarters: true,
@@ -93,15 +93,15 @@ export const locations: Location[] = [
     ],
     rules: {
       title: "Deux droits de restitution sur le même départ",
-      body: "Romont et Estavayer-le-Lac sont fribourgeoises. Le locataire y restitue le logement dans l'état d'un usage conforme au contrat : le nettoyage en fait partie, et le bailleur signale tout de suite les défauts qu'il impute au locataire. Moudon, Oron et Payerne sont vaudoises. Là, les règles et usages locatifs du canton de Vaud placent la remise à midi le jour de l'échéance : locaux propres et vidés, sols contrôlables, toutes les clés y compris les doubles. Le canton de Fribourg ne publie pas sur fr.ch une checklist de pièces à nettoyer.",
+      body: "Romont et Estavayer-le-Lac sont fribourgeoises. Le locataire y restitue le logement dans l'état d'un usage conforme au contrat : le nettoyage en fait partie, et le bailleur signale tout de suite les défauts qu'il impute au locataire. Moudon, Oron et Payerne sont vaudoises. Là, les règles et usages locatifs du canton de Vaud placent la remise à midi le jour de l'échéance : locaux propres et vidés, sols contrôlables, toutes les clés y compris les doubles.",
       sources: [federalRestitution, federalCleaningNote, vaudRulv],
     },
     remoteHandover: {
       title: "Fin de bail à Romont",
-      body: "À Romont, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
+      body: "À Romont, vous faites l'état des lieux avec la régie, qui suit sa propre checklist. Nous fixons la date du nettoyage dans le devis.",
     },
     building: {
-      body: "En 2025, le canton de Fribourg compte 75 906 bâtiments à usage d'habitation, dont 45 395 maisons individuelles, soit 59,8 %. Ce pourcentage décrit le canton, pas un décompte des maisons de la seule ville de Romont.",
+      body: "En 2025, le canton de Fribourg compte 75 906 bâtiments à usage d'habitation, dont 45 395 maisons individuelles, soit 59,8 %. C'est une moyenne cantonale : Romont n'a pas de chiffre séparé.",
       sourceLine: "État de Fribourg, statistiques des bâtiments, 2025",
       sources: [fribourgBuildings],
     },
@@ -119,22 +119,17 @@ export const locations: Location[] = [
       {
         question: "Quelles communes de la Glâne partent du siège ?",
         answer:
-          "Vuisternens-devant-Romont, Ursy, Mézières et Massonnens. Le siège est Route de Raboud 8, 1680 Romont. Téléphone 076 214 23 42.",
+          "Vuisternens-devant-Romont, Ursy, Mézières et Massonnens. Pour un devis : 076 214 23 42.",
       },
       {
-        question: "Moudon, Oron, Payerne et Estavayer-le-Lac sont-ils sur cette page ?",
+        question: "Intervenez-vous aussi à Moudon, Oron, Payerne et Estavayer-le-Lac ?",
         answer:
-          "Oui, dans la section Broye et Gros-de-Vaud : Moudon, Oron, Payerne et Estavayer-le-Lac. Ce ne sont pas des communes de la Glâne.",
+          "Oui. Ces communes font partie de la Broye et du Gros-de-Vaud, que nous desservons depuis Romont.",
       },
       {
         question: "Pourquoi la règle change-t-elle entre Estavayer-le-Lac et Payerne ?",
         answer:
           "Estavayer-le-Lac est en Broye fribourgeoise : Code des obligations, art. 267. Payerne, Moudon et Oron sont vaudois : règles et usages locatifs, art. 36 et 37, remise à midi.",
-      },
-      {
-        question: "Où se fait l'état des lieux quand le logement est à Romont ?",
-        answer:
-          "Dans le logement, avec la régie, selon sa checklist. La date est fixée dans le devis.",
       },
     ],
     priorityLinks: [
@@ -153,9 +148,9 @@ export const locations: Location[] = [
     district: "Gruyère",
     title: "Nettoyage à Bulle, Gruyère et Veveyse",
     description:
-      "Bulle, Riaz, Vuadens et Broc en Gruyère. Châtel-Saint-Denis en Veveyse. Réponse sous 24 h, sans frais de déplacement.",
+      "Nettoyage à Bulle, Riaz, Vuadens et Broc en Gruyère, et à Châtel-Saint-Denis en Veveyse. Devis gratuit, sans frais de déplacement.",
     intro:
-      "Bulle est le centre de la Gruyère. Gzimmo y intervient depuis Romont : il n'y a pas de bureau à Bulle.",
+      "Bulle est le centre de la Gruyère. Nous y venons depuis notre siège de Romont.",
     geo: { latitude: 46.6175, longitude: 7.0569 },
     priority: 0.8,
     nearbyCommunes: ["Riaz", "Vuadens", "Broc", "Châtel-Saint-Denis"],
@@ -170,10 +165,10 @@ export const locations: Location[] = [
     },
     remoteHandover: {
       title: "Fin de bail en Gruyère et en Veveyse",
-      body: "À Bulle et à Châtel-Saint-Denis, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
+      body: "En Gruyère comme en Veveyse, nous nettoyons d'après la checklist de votre régie. Le devis indique la date du passage.",
     },
     building: {
-      body: "Le recensement cantonal de 2025 donne 59,8 % de maisons individuelles, soit 45 395 bâtiments sur 75 906. Bulle, elle, est le centre urbain de la Gruyère : ce taux ne décrit pas le parc d'appartements de la ville.",
+      body: "Le recensement cantonal de 2025 donne 59,8 % de maisons individuelles, soit 45 395 bâtiments sur 75 906. Ce taux vaut pour l'ensemble du canton.",
       sourceLine: "État de Fribourg, statistiques des bâtiments, 2025",
       sources: [fribourgBuildings],
     },
@@ -185,21 +180,16 @@ export const locations: Location[] = [
     faqs: [
       {
         question: "Quelles communes de la Gruyère sont listées avec Bulle ?",
-        answer: "Riaz, Vuadens et Broc, plus Bulle. Le siège est Route de Raboud 8 à Romont.",
+        answer: "Bulle, Riaz, Vuadens et Broc.",
       },
       {
         question: "Châtel-Saint-Denis est-il en Gruyère ?",
-        answer:
-          "Non. Châtel-Saint-Denis est dans la Veveyse. Il n'y a pas de page séparée pour cette commune.",
+        answer: "Non, Châtel-Saint-Denis est dans la Veveyse. Nous le présentons sur cette page avec Bulle.",
       },
       {
         question: "La remise en Veveyse suit-elle les usages vaudois ?",
         answer:
           "Non. Châtel-Saint-Denis est fribourgeois, comme Bulle. La restitution suit les art. 267 et 267a du Code des obligations. La remise à midi des usages vaudois ne s'applique pas.",
-      },
-      {
-        question: "Où voir un exemple ?",
-        answer: "Exemple fait à Romont.",
       },
     ],
     priorityLinks: [
@@ -219,9 +209,9 @@ export const locations: Location[] = [
     district: "Sarine",
     title: "Nettoyage à Fribourg, Matran et Guin",
     description:
-      "Fribourg et Matran dans la Sarine, Düdingen (Guin) dans la Singine. Marly, Villars-sur-Glâne, Givisiez. Réponse sous 24 h, sans frais de déplacement.",
+      "Nettoyage à Fribourg, Marly, Villars-sur-Glâne, Givisiez et Matran (Sarine), et à Düdingen (Guin) en Singine. Réponse sous 24 h.",
     intro:
-      "Fribourg et Matran sont dans la Sarine. Matran n'est pas une commune de la Glâne. Düdingen (Guin) est dans la Singine ; cette page reste en français.",
+      "Nous intervenons à Fribourg et dans les communes voisines de la Sarine, ainsi qu'à Düdingen (Guin), en Singine.",
     geo: { latitude: 46.8065, longitude: 7.1619 },
     priority: 0.85,
     nearbyCommunes: ["Matran", "Marly", "Villars-sur-Glâne", "Givisiez", "Düdingen (Guin)"],
@@ -234,15 +224,15 @@ export const locations: Location[] = [
     ],
     rules: {
       title: "Sarine et Singine sous le Code des obligations",
-      body: "Fribourg, Matran, Marly, Villars-sur-Glâne et Givisiez sont dans la Sarine. Düdingen (Guin) est dans la Singine. Le nom de la commune est allemand, et il n'existe pas de page en allemand : le bail se lit ici en français. L'article 267 du Code des obligations vise l'état conforme au contrat, nettoyage compris. L'article 267a oblige le bailleur à signaler immédiatement les défauts à la restitution. Le canton ne publie pas de liste de pièces à nettoyer à la place de ce texte.",
+      body: "Fribourg, Matran, Marly, Villars-sur-Glâne et Givisiez sont dans la Sarine. Düdingen (Guin) est dans la Singine. L'article 267 du Code des obligations vise l'état conforme au contrat, nettoyage compris. L'article 267a oblige le bailleur à signaler immédiatement les défauts à la restitution.",
       sources: [federalRestitution, federalCleaningNote],
     },
     remoteHandover: {
       title: "Fin de bail en Sarine et en Singine",
-      body: "À Fribourg, à Matran et à Düdingen (Guin), l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
+      body: "Votre régie remet sa checklist d'état des lieux, et nous la suivons point par point. La date du nettoyage figure dans le devis.",
     },
     building: {
-      body: "59,8 % des bâtiments d'habitation du canton sont des maisons individuelles en 2025, soit 45 395 sur 75 906. Aucun décompte séparé de la ville n'est repris ici.",
+      body: "59,8 % des bâtiments d'habitation du canton sont des maisons individuelles en 2025, soit 45 395 sur 75 906. Ce chiffre porte sur tout le canton.",
       sourceLine: "État de Fribourg, statistiques des bâtiments, 2025",
       sources: [fribourgBuildings],
     },
@@ -253,24 +243,18 @@ export const locations: Location[] = [
     servicesHighlight: ["Nettoyage de bureaux", "Fin de bail", "Après chantier"],
     faqs: [
       {
-        question: "Matran est-il une commune de la Glâne ?",
-        answer:
-          "Non. Matran est dans la Sarine, avec Fribourg, Marly, Villars-sur-Glâne et Givisiez.",
+        question: "Quelles communes autour de Fribourg ?",
+        answer: "Marly, Villars-sur-Glâne, Givisiez et Matran, dans la Sarine.",
       },
       {
         question: "Pourquoi Düdingen (Guin) figure-t-il sur une page en français ?",
         answer:
-          "Düdingen est le nom officiel, Guin le nom français, dans le district de la Singine. Le nettoyage est décrit en français. Il n'y a pas de page en allemand.",
+          "Düdingen est le nom officiel, Guin le nom français. La commune est dans le district de la Singine.",
       },
       {
         question: "Quelle règle fédérale vise la restitution à Fribourg ?",
         answer:
           "Les art. 267 et 267a du Code des obligations : état conforme à un usage conforme au contrat, nettoyage compris, et signalement immédiat des défauts à la sortie.",
-      },
-      {
-        question: "Où se fait l'état des lieux à Fribourg ?",
-        answer:
-          "Avec la régie, selon sa checklist. La date est fixée dans le devis.",
       },
     ],
     priorityLinks: [
@@ -289,16 +273,17 @@ export const locations: Location[] = [
     cantonName: "Vaud",
     district: "Lausanne",
     title: "Nettoyage à Lausanne et dans l'Ouest lausannois",
-    subtitle: "Ouest lausannois",
+    subtitle: "Renens et Crissier dans l'Ouest lausannois",
     description:
-      "Lausanne, Renens et Crissier, dans l'Ouest lausannois. Réponse sous 24 h, sans frais de déplacement.",
+      "Nettoyage à Lausanne, Renens et Crissier. Devis gratuit, réponse sous 24 h, sans frais de déplacement.",
     intro:
-      "Lausanne, Renens et Crissier forment l'Ouest lausannois publié. Le siège reste Route de Raboud 8.",
+      "Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois, depuis notre siège de Romont.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
     nearbyCommunes: ["Renens", "Crissier"],
     communeGroups: [
-      { title: "Ouest lausannois", names: ["Lausanne", "Renens", "Crissier"] },
+      { title: "Lausanne", names: ["Lausanne"] },
+      { title: "Ouest lausannois", names: ["Renens", "Crissier"] },
     ],
     rules: {
       title: "Remise vaudoise à midi",
@@ -307,10 +292,11 @@ export const locations: Location[] = [
     },
     remoteHandover: {
       title: "Fin de bail à Lausanne, Renens et Crissier",
-      body: "À Lausanne, à Renens et à Crissier, l'état des lieux se fait avec la régie, selon sa checklist. La date est fixée dans le devis.",
+      body: "Pour une remise à midi, la date et l'heure de notre passage sont fixées dans le devis, d'après la checklist de votre régie.",
     },
     building: {
-      body: "Le portrait statistique 2025 de la Ville compte, pour 2024, 82 321 logements : 48 825 dans des maisons à plusieurs logements et 2 192 dans des maisons individuelles. C'est un chiffre de la commune de Lausanne, pas du canton de Vaud, ni de Renens ou de Crissier.",
+      title: "Le logement à Lausanne",
+      body: "Le portrait statistique 2025 de la Ville compte, pour 2024, 82 321 logements : 48 825 dans des maisons à plusieurs logements et 2 192 dans des maisons individuelles. Ce chiffre concerne la seule commune de Lausanne.",
       sourceLine: "Ville de Lausanne, Portrait statistique 2025, logements 2024",
       sources: [lausanneStats],
     },
@@ -321,14 +307,8 @@ export const locations: Location[] = [
     servicesHighlight: ["Nettoyage de bureaux", "Appartements", "Fin de bail"],
     faqs: [
       {
-        question: "Quelles communes accompagnent Lausanne ?",
-        answer:
-          "Renens et Crissier, avec Lausanne. Le siège est à Romont, Route de Raboud 8.",
-      },
-      {
-        question: "Quelles communes de l'Ouest lausannois sont publiées ?",
-        answer:
-          "Lausanne, Renens et Crissier. Réponse sous 24 h, sans frais de déplacement.",
+        question: "Où intervenez-vous autour de Lausanne ?",
+        answer: "À Lausanne, avec Renens et Crissier dans l'Ouest lausannois.",
       },
       {
         question: "Que disent les usages vaudois sur l'heure de remise ?",
@@ -336,9 +316,9 @@ export const locations: Location[] = [
           "À midi le jour de l'échéance, les locaux sont propres, vidés, et les sols contrôlables. Les clés, y compris les doubles, sont remises. Source : règles et usages locatifs du canton de Vaud, art. 36 et 37.",
       },
       {
-        question: "Le portrait statistique compte-t-il les logements de Renens ?",
+        question: "Combien de logements compte Lausanne ?",
         answer:
-          "Non. Les 82 321 logements de 2024 sont ceux de la commune de Lausanne : 48 825 en immeubles et 2 192 en maisons individuelles. Source : Portrait statistique 2025.",
+          "82 321 en 2024, dont 48 825 en immeubles et 2 192 en maisons individuelles. Ces chiffres concernent la seule commune de Lausanne. Source : Portrait statistique 2025.",
       },
     ],
     priorityLinks: [
