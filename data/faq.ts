@@ -75,20 +75,20 @@ export const faqItems: FaqItem[] = [
   {
     id: "devis-gratuit",
     category: "tarifs",
-    question: "Le devis est-il gratuit ?",
-    answer: `Oui, sans engagement. Les frais de déplacement sont indiqués dans le devis. Le plus simple est d'appeler le ${phoneDisplay} : vous expliquez la situation, nous établissons un devis sur mesure. E-mail ou formulaire restent possibles. ${email}`,
+    question: "Le devis est-il gratuit et sous quel délai répondez-vous ?",
+    answer: `Oui, sans engagement, sans frais de déplacement. Le plus simple est d'appeler le ${phoneDisplay} : vous expliquez la situation, nous établissons un devis sur mesure. E-mail ou formulaire restent possibles — réponse sous 24 heures. ${email}`,
   },
   {
     id: "zone-suisse-romande",
     category: "zone",
     question: "Comment se définit votre zone d'intervention ?",
-    answer: `Par le temps de route depuis le siège de Romont (${siege}), pas par la frontière cantonale. Ces durées sont indicatives : elles ne garantissent pas une heure d'arrivée. Siège en Glâne. Environ 15 à 20 minutes : Bulle, Moudon, Matran, Oron, Payerne. Environ 20 à 30 minutes : Châtel-Saint-Denis, Fribourg, Estavayer-le-Lac. Environ 35 à 40 minutes, en zone étendue : Lausanne et Yverdon-les-Bains. Düdingen (Guin) est desservie avec Fribourg, sans minute publiée. Pas d'intervention publiée à Neuchâtel, à Genève ni en Valais.`,
+    answer: `Par bassin, depuis le siège de Romont (${siege}). Siège · Glâne et Broye. Gruyère et Veveyse. Sarine et Singine. Lausanne et Ouest lausannois. Riviera et Chablais. Nord vaudois. Lac. Pas d'intervention publiée à Neuchâtel, à Genève ni en Valais.`,
   },
   {
     id: "entreprise-romont",
     category: "zone",
     question: "Quelle entreprise de nettoyage choisir à Romont ?",
-    answer: `Gzimmo Sàrl est basée à Romont (${siege}). Équipe avec plus de 15 ans d'expérience cumulée dans le nettoyage, devis gratuit, frais de déplacement indiqués dans le devis. Intervention en Glâne, à Fribourg, en Vaud. ${phoneDisplay} · ${email}`,
+    answer: `Gzimmo Sàrl est basée à Romont (${siege}). Équipe avec plus de 15 ans d'expérience cumulée dans le nettoyage, devis gratuit, réponse sous 24 h, sans frais de déplacement. Intervention en Glâne, à Fribourg, en Vaud. ${phoneDisplay} · ${email}`,
   },
   {
     id: "regies-entreprises",
@@ -136,7 +136,7 @@ export const faqItems: FaqItem[] = [
     category: "delais",
     question: "Quel délai pour obtenir une intervention ?",
     answer:
-      "Le jour du passage est celui du devis, selon le planning. Aucun délai d'intervention n'est promis. Les frais de déplacement sont indiqués dans le devis.",
+      "Nous nous efforçons de répondre sous 24 h et de planifier l'intervention selon vos contraintes. Depuis Romont, nous sommes particulièrement réactifs en Glâne et en Fribourg. Sans frais de déplacement.",
   },
   {
     id: "duree-intervention",
@@ -156,7 +156,7 @@ export const faqItems: FaqItem[] = [
     id: "contact-devis",
     category: "qualite",
     question: "Comment contacter Gzimmo pour un devis ?",
-    answer: `Par téléphone au ${phoneDisplay}, par e-mail à ${email}, ou via le formulaire sur gzimmo.ch/contact. Devis gratuit, frais de déplacement indiqués dans le devis.`,
+    answer: `Par téléphone au ${phoneDisplay}, par e-mail à ${email}, ou via le formulaire sur gzimmo.ch/contact. Devis gratuit, réponse sous 24 h, sans frais de déplacement.`,
   },
 ];
 

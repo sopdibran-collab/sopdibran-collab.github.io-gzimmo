@@ -21,7 +21,7 @@ export const entityIdentity = {
   /** Priorité documentée (pages locales et preuves) : FR, VD, NE. */
   prioriteDocumentee: "Fribourg et Vaud",
   experience: `Plus de ${company.teamExperienceYears} ans d'expérience cumulée dans le nettoyage`,
-  devis: "Devis gratuit, frais de déplacement indiqués dans le devis",
+  devis: "Devis gratuit, réponse sous 24 h, sans frais de déplacement",
   langue: "français",
   /** Non publié : ne pas inventer, ne pas émettre. */
   whatsapp: null,

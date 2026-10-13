@@ -23,7 +23,7 @@ const romontFaqs: FaqContent[] = [
   {
     question: "Quelle entreprise de nettoyage appeler à Romont (FR) ?",
     answer:
-      "Gzimmo Sàrl est basée à Romont, Route de Raboud 8. Nous intervenons en ville et dans tout le district de la Glâne. Devis gratuit au 076 214 23 42 ou via info@gzimmo.ch — frais de déplacement indiqués dans le devis.",
+      "Gzimmo Sàrl est basée à Romont, Route de Raboud 8. Nous intervenons en ville et dans tout le district de la Glâne. Devis gratuit au 076 214 23 42 ou via info@gzimmo.ch — réponse sous 24 h, sans frais de déplacement.",
   },
   {
     question: "Intervenez-vous rapidement autour de Romont ?",
@@ -53,7 +53,7 @@ export const locations: Location[] = [
     description:
       "Entreprise de nettoyage à Romont, Route de Raboud 8. Fin de bail, bureaux, après chantier en Glâne. Devis gratuit — 076 214 23 42.",
     intro:
-      "Basée à Romont, Gzimmo est votre entreprise de nettoyage de proximité en Glâne — équipe expérimentée, finitions soignées, devis gratuit. Frais de déplacement indiqués dans le devis.",
+      "Basée à Romont, Gzimmo est votre entreprise de nettoyage de proximité en Glâne — équipe expérimentée, finitions soignées, devis gratuit sous 24 h, sans frais de déplacement.",
     geo: { latitude: 46.6917, longitude: 6.9111 },
     priority: 1,
     isHeadquarters: true,
@@ -112,7 +112,7 @@ export const locations: Location[] = [
     district: "Sarine",
     title: "Nettoyage professionnel à Fribourg",
     description:
-      "Nettoyage professionnel à Fribourg et agglomération. Fin de bail, bureaux, après chantier depuis Romont. Devis gratuit  — 076 214 23 42.",
+      "Nettoyage professionnel à Fribourg et agglomération. Fin de bail, bureaux, après chantier depuis Romont. Devis gratuit sous 24 h, sans frais de déplacement — 076 214 23 42.",
     intro:
       "Depuis Romont, nous couvrons Fribourg et son agglomération avec des prestations de nettoyage professionnel planifiées et soignées.",
     geo: { latitude: 46.8065, longitude: 7.1619 },
@@ -147,7 +147,7 @@ export const locations: Location[] = [
       {
         question: "Quel délai pour un passage à Fribourg ?",
         answer:
-          "Le devis précise les frais de déplacement. Le jour du passage dépend de notre planning et de la date qui vous convient, et il est confirmé dans le devis.",
+          "Nous répondons sous 24 h, sans frais de déplacement. Le jour du passage dépend de notre planning et de la date qui vous convient, et il est confirmé dans le devis.",
       },
     ],
     priorityLinks: [
@@ -199,7 +199,7 @@ export const locations: Location[] = [
       {
         question: "Le devis pour Bulle est-il gratuit ?",
         answer:
-          "Oui, et sans engagement. Appelez le 076 214 23 42 ou écrivez à info@gzimmo.ch : le devis précise les frais de déplacement.",
+          "Oui, et sans engagement. Appelez le 076 214 23 42 ou écrivez à info@gzimmo.ch : nous répondons sous 24 h, sans frais de déplacement.",
       },
       {
         question: "Faites-vous la fin de bail à Bulle ?",
@@ -254,9 +254,9 @@ export const locations: Location[] = [
           "Oui. Le passage suit la checklist de la régie. Si un point n'est pas validé, nous revenons sans frais.",
       },
       {
-        question: "Comment est fixé le passage à Lausanne ?",
+        question: "Sous quel délai répondez-vous pour Lausanne ?",
         answer:
-          "Le devis est gratuit. La date dépend du planning et elle est confirmée avant le déplacement. Les frais de déplacement sont indiqués dans le devis.",
+          "Nous envoyons le devis sous 24 h, sans frais de déplacement. La date d'intervention dépend de notre planning et vous est confirmée dans le devis.",
       },
     ],
   },

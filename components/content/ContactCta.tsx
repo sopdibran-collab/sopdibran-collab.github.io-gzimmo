@@ -19,7 +19,7 @@ export function ContactCta({ className }: ContactCtaProps) {
             Après travaux ou fin de bail,<br className="hidden sm:block" /> on s&apos;en charge.
           </h2>
           <p className="mt-4 max-w-md text-white/65 leading-relaxed">
-            Décrivez le bien ou le chantier. Devis clair sans engagement. Frais de déplacement indiqués dans le devis.
+            Décrivez le bien ou le chantier. Devis clair sous 24 h, sans engagement, sans frais de déplacement.
           </p>
           <GarantieRemiseBail
             variant="inline"

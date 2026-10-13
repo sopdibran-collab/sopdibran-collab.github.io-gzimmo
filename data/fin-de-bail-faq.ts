@@ -33,6 +33,6 @@ export const finDeBailPriceFaqs: FaqItem[] = [
     "delai-fin-de-bail",
     "delais",
     "Combien de temps à l'avance réserver un nettoyage de fin de bail ?",
-    `Dès que la date de remise des clés est connue. Le jour du passage est fixé dans le devis, selon le planning. Les frais de déplacement sont indiqués dans le devis. Appelez le ${phoneDisplay}.`,
+    `Dès que la date de remise des clés est connue. Nous répondons sous 24 h et nous fixons le passage selon notre planning. Sans frais de déplacement. Appelez le ${phoneDisplay}.`,
   ),
 ];

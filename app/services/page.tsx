@@ -25,8 +25,8 @@ const prioritySlugs = [
 
 const reassurance = [
   {
-    title: "Devis gratuit",
-    text: "Réponse claire et chiffrée — sans engagement, frais de déplacement indiqués dans le devis, avant toute intervention.",
+    title: "Devis sous 24 h",
+    text: "Réponse claire et chiffrée — sans engagement, sans frais de déplacement, avant toute intervention.",
   },
   {
     title: "Fribourg et Vaud",

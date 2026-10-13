@@ -27,7 +27,7 @@ const values = [
   },
   {
     title: "Fiabilité",
-    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises dans les cantons de Fribourg et de Vaud. Frais de déplacement indiqués dans le devis.`,
+    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises dans les cantons de Fribourg et de Vaud. Réponse sous 24 h, sans frais de déplacement.`,
   },
 ];
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
           onDark
           badge="À propos"
           title="Gzimmo, entreprise de nettoyage à Romont"
-          description={`${company.name} accompagne particuliers et professionnels dans les cantons de Fribourg et de Vaud. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()}, avec rigueur, discrétion et le souci du détail. Frais de déplacement indiqués dans le devis.`}
+          description={`${company.name} accompagne particuliers et professionnels dans les cantons de Fribourg et de Vaud. Basée à ${company.address.city} (${company.address.region}), ${teamExperienceLabel().toLowerCase()}, avec rigueur, discrétion et le souci du détail. Réponse sous 24 h, sans frais de déplacement.`}
         />
       </PageHero>
 

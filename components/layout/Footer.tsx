@@ -69,7 +69,7 @@ export function Footer() {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Logo variant="monochromeInverse" size="footer" className="max-h-7 max-w-[140px]" />
           <p className="max-w-md text-[11px] leading-snug text-white/75">
-            {company.tagline} · Romont (FR) · {company.areaServed} · Frais de déplacement indiqués dans le devis
+            {company.tagline} · Romont (FR) · {company.areaServed} · Réponse sous 24 h, sans frais de déplacement
           </p>
         </div>
 

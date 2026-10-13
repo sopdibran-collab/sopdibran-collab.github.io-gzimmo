@@ -51,7 +51,7 @@ export function localBusinessSchema() {
     "@id": `${company.url}/#organization`,
     name: company.legalName,
     alternateName: "Gzimmo",
-    description: `${company.tagline}. ${teamExperienceLabel()}. Frais de déplacement indiqués dans le devis. Fribourg et Vaud.`,
+    description: `${company.tagline}. ${teamExperienceLabel()}. Réponse sous 24 h, sans frais de déplacement. Fribourg et Vaud.`,
     url: company.url,
     email: company.email,
     telephone: company.phone,
