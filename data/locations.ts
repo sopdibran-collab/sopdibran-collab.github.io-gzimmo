@@ -149,8 +149,7 @@ export const locations: Location[] = [
     title: "Nettoyage à Bulle, Gruyère et Veveyse",
     description:
       "Nettoyage à Bulle, Riaz, Vuadens et Broc en Gruyère, et à Châtel-Saint-Denis en Veveyse. Devis gratuit.",
-    intro:
-      "Bulle est le centre de la Gruyère. Nous y venons depuis notre siège de Romont.",
+    intro: "Bulle est le centre de la Gruyère.",
     geo: { latitude: 46.6175, longitude: 7.0569 },
     priority: 0.8,
     nearbyCommunes: ["Riaz", "Vuadens", "Broc", "Châtel-Saint-Denis"],
@@ -174,7 +173,7 @@ export const locations: Location[] = [
     },
     example: {
       body: "",
-      sources: [romontExample],
+      sources: [],
     },
     servicesHighlight: ["Après chantier", "Entretien de locaux", "Fin de bail"],
     faqs: [
@@ -193,10 +192,8 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
-      { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
       { label: "Réalisations", href: "/realisations" },
       { label: "Avis clients", href: "/avis" },
     ],
@@ -238,7 +235,7 @@ export const locations: Location[] = [
     },
     example: {
       body: "",
-      sources: [romontExample],
+      sources: [],
     },
     servicesHighlight: ["Nettoyage de bureaux", "Fin de bail", "Après chantier"],
     faqs: [
@@ -258,10 +255,8 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
-      { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
       { label: "Réalisations", href: "/realisations" },
       { label: "Avis clients", href: "/avis" },
     ],
@@ -277,7 +272,7 @@ export const locations: Location[] = [
     description:
       "Nettoyage à Lausanne, Renens et Crissier. Devis gratuit, réponse sous 24 h.",
     intro:
-      "Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois, depuis notre siège de Romont.",
+      "Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
     nearbyCommunes: ["Renens", "Crissier"],
@@ -302,7 +297,7 @@ export const locations: Location[] = [
     },
     example: {
       body: "",
-      sources: [romontExample],
+      sources: [],
     },
     servicesHighlight: ["Nettoyage de bureaux", "Appartements", "Fin de bail"],
     faqs: [
@@ -322,7 +317,6 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage de bureaux", href: "/nettoyage-bureaux" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -359,7 +353,7 @@ export const locations: Location[] = [
     },
     example: {
       body: "",
-      sources: [romontExample],
+      sources: [],
     },
     servicesHighlight: ["Fin de bail", "Appartements", "Vitres"],
     faqs: [
@@ -373,7 +367,6 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Bulle", href: "/nettoyage-bulle" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -391,7 +384,7 @@ export const locations: Location[] = [
     description:
       "Yverdon-les-Bains, dans le Nord vaudois. Réponse sous 24 h.",
     intro:
-      "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains depuis notre siège de Romont.",
+      "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains.",
     geo: { latitude: 46.7785, longitude: 6.6412 },
     priority: 0.7,
     nearbyCommunes: [],
@@ -407,7 +400,7 @@ export const locations: Location[] = [
     },
     example: {
       body: "",
-      sources: [romontExample],
+      sources: [],
     },
     servicesHighlight: ["Fin de bail", "Appartements", "Bureaux"],
     faqs: [
@@ -423,7 +416,6 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Lausanne", href: "/nettoyage-lausanne" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -440,7 +432,7 @@ export const locations: Location[] = [
     description:
       "Nettoyage fin de bail, appartements et parties communes à Morat (Murten), district du Lac. Devis gratuit, réponse sous 24 h.",
     intro:
-      "Nous intervenons à Morat (Murten), dans le district du Lac, depuis notre siège de Romont.",
+      "Nous intervenons à Morat (Murten), dans le district du Lac.",
     geo: { latitude: 46.928, longitude: 7.117 },
     priority: 0.68,
     nearbyCommunes: [],
@@ -461,7 +453,7 @@ export const locations: Location[] = [
     },
     example: {
       body: "",
-      sources: [romontExample],
+      sources: [],
     },
     servicesHighlight: ["Fin de bail", "Appartements", "Parties communes"],
     faqs: [
@@ -476,7 +468,6 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
       { label: "Zones d'intervention", href: "/zones" },

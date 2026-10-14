@@ -92,23 +92,17 @@ export function LocalSeoBody({ location }: { location: Location }) {
           </section>
         ) : null}
 
-        <section
-          className="mt-10"
-          aria-labelledby="exemple"
-          id={location.slug === "nettoyage-romont" ? "realisation-romont" : undefined}
-        >
-          <h2 id="exemple" className="font-display text-display-sm text-foreground">
-            Une fin de bail réalisée à Romont
-          </h2>
-          {location.example.body ? (
-            <p className="mt-4 text-reading leading-relaxed text-muted">{location.example.body}</p>
-          ) : null}
-          {location.slug === "nettoyage-romont" ? (
+        {location.slug === "nettoyage-romont" ? (
+          <section className="mt-10" aria-labelledby="exemple" id="realisation-romont">
+            <h2 id="exemple" className="font-display text-display-sm text-foreground">
+              Une fin de bail réalisée à Romont
+            </h2>
+            {location.example.body ? (
+              <p className="mt-4 text-reading leading-relaxed text-muted">{location.example.body}</p>
+            ) : null}
             <RomontFinDeBailRealisation heading={false} />
-          ) : (
-            <SourceList sources={location.example.sources} />
-          )}
-        </section>
+          </section>
+        ) : null}
       </div>
 
       <div className="mx-auto mt-16 max-w-prose border-t border-border pt-10">
@@ -120,9 +114,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
               <GoogleMapsLink className="inline-flex min-h-11 items-center hover:text-accent-ink">
                 {formatAddress()}
               </GoogleMapsLink>
-            ) : (
-              <p>Siège : {formatAddress()}</p>
-            )}
+            ) : null}
             <p>
               <a
                 href={`mailto:${company.email}`}
@@ -152,7 +144,12 @@ export function LocalSeoBody({ location }: { location: Location }) {
         <div className="mx-auto mt-10 max-w-prose">
           <p className="text-sm font-medium text-foreground">Pages utiles</p>
           <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-y-3">
-            {location.priorityLinks.map((link) => (
+            {location.priorityLinks
+              .filter(
+                (link) =>
+                  location.slug === "nettoyage-romont" || !link.label.includes("Romont"),
+              )
+              .map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
