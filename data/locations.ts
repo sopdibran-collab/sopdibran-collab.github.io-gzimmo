@@ -124,7 +124,7 @@ export const locations: Location[] = [
       {
         question: "Intervenez-vous aussi à Moudon, Oron, Payerne et Estavayer-le-Lac ?",
         answer:
-          "Oui. Ces communes font partie de la Broye et du Gros-de-Vaud, que nous desservons depuis Romont.",
+          "Oui. Ces communes font partie de la Broye et du Gros-de-Vaud, que nous desservons.",
       },
       {
         question: "Pourquoi la règle change-t-elle entre Estavayer-le-Lac et Payerne ?",

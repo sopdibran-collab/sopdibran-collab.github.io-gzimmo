@@ -38,9 +38,8 @@ export default function ZonesPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           onDark
-          badge="Depuis Romont"
-          title="Zones de nettoyage depuis Romont"
-          description="Depuis notre siège de Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Voici les communes desservies, région par région."
+          title="Nos zones d'intervention"
+          description="Nous intervenons dans les cantons de Fribourg et de Vaud. Trouvez votre commune ci-dessous."
         />
       </PageHero>
 
