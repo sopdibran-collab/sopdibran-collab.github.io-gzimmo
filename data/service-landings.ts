@@ -178,7 +178,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Poussière fine, voile de ciment, traces de peinture : nous remettons le lieu en état pour que vous puissiez emménager ou livrer.",
     metaTitle: "Nettoyage après rénovation et chantier | Gzimmo",
     metaDescription:
-      "Devis gratuit sous 24 h, pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg et Vaud.",
+      "Devis gratuit sous 24 h pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg et Vaud.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     preferCallCta: false,

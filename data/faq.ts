@@ -88,7 +88,7 @@ export const faqItems: FaqItem[] = [
     id: "entreprise-romont",
     category: "zone",
     question: "Quelle entreprise de nettoyage choisir à Romont ?",
-    answer: `Gzimmo Sàrl est basée à Romont (${siege}) et compte plus de 15 ans d'expérience dans le nettoyage. Le devis est gratuit, et nous répondons sous 24 h. Nous intervenons dans les cantons de Fribourg et de Vaud. ${phoneDisplay} · ${email}`,
+    answer: `Gzimmo Sàrl est basée à Romont (${siege}) et compte plus de 15 ans d'expérience dans le nettoyage. Le devis est gratuit et nous répondons sous 24 h. Nous intervenons dans les cantons de Fribourg et de Vaud. ${phoneDisplay} · ${email}`,
   },
   {
     id: "regies-entreprises",

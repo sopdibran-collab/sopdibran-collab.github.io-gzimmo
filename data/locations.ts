@@ -193,7 +193,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
@@ -258,7 +258,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
@@ -322,7 +322,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage de bureaux", href: "/nettoyage-bureaux" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -373,7 +373,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Bulle", href: "/nettoyage-bulle" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -423,7 +423,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Lausanne", href: "/nettoyage-lausanne" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -476,7 +476,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail faite à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
       { label: "Zones d'intervention", href: "/zones" },
