@@ -76,7 +76,7 @@ export const faqItems: FaqItem[] = [
     id: "devis-gratuit",
     category: "tarifs",
     question: "Le devis est-il gratuit et sous quel délai répondez-vous ?",
-    answer: `Oui, sans engagement, sans frais de déplacement. Le plus simple est d'appeler le ${phoneDisplay} : vous nous décrivez le travail, nous établissons le devis. Vous pouvez aussi écrire par e-mail ou passer par le formulaire : nous répondons sous 24 heures. ${email}`,
+    answer: `Oui, sans engagement. Le plus simple est d'appeler le ${phoneDisplay} : vous nous décrivez le travail, nous établissons le devis. Vous pouvez aussi écrire par e-mail ou passer par le formulaire : nous répondons sous 24 heures. ${email}`,
   },
   {
     id: "zone-suisse-romande",
@@ -88,7 +88,7 @@ export const faqItems: FaqItem[] = [
     id: "entreprise-romont",
     category: "zone",
     question: "Quelle entreprise de nettoyage choisir à Romont ?",
-    answer: `Gzimmo Sàrl est basée à Romont (${siege}) et compte plus de 15 ans d'expérience dans le nettoyage. Le devis est gratuit, sans frais de déplacement, et nous répondons sous 24 h. Nous intervenons dans les cantons de Fribourg et de Vaud. ${phoneDisplay} · ${email}`,
+    answer: `Gzimmo Sàrl est basée à Romont (${siege}) et compte plus de 15 ans d'expérience dans le nettoyage. Le devis est gratuit, et nous répondons sous 24 h. Nous intervenons dans les cantons de Fribourg et de Vaud. ${phoneDisplay} · ${email}`,
   },
   {
     id: "regies-entreprises",
@@ -136,7 +136,7 @@ export const faqItems: FaqItem[] = [
     category: "delais",
     question: "Quel délai pour obtenir une intervention ?",
     answer:
-      "Nous répondons sous 24 h, puis nous fixons avec vous la date de l'intervention dans le devis. Il n'y a pas de frais de déplacement.",
+      "Nous répondons sous 24 h, puis nous fixons avec vous la date de l'intervention dans le devis.",
   },
   {
     id: "duree-intervention",
@@ -156,7 +156,7 @@ export const faqItems: FaqItem[] = [
     id: "contact-devis",
     category: "qualite",
     question: "Comment contacter Gzimmo pour un devis ?",
-    answer: `Par téléphone au ${phoneDisplay}, par e-mail à ${email}, ou via le formulaire sur gzimmo.ch/contact. Devis gratuit, réponse sous 24 h, sans frais de déplacement.`,
+    answer: `Par téléphone au ${phoneDisplay}, par e-mail à ${email}, ou via le formulaire sur gzimmo.ch/contact. Devis gratuit, réponse sous 24 h.`,
   },
 ];
 

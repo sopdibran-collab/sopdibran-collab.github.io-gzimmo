@@ -91,7 +91,7 @@ export function RomontFinDeBailRealisation({
   heading = true,
 }: {
   className?: string;
-  /** Pages ville : le titre est déjà « Un fin de bail réalisé à Romont ». */
+  /** Pages ville : le titre est déjà « Une fin de bail réalisée à Romont ». */
   heading?: boolean;
 }) {
   const Tag = heading ? "section" : "div";

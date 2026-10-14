@@ -148,7 +148,7 @@ export const locations: Location[] = [
     district: "Gruyère",
     title: "Nettoyage à Bulle, Gruyère et Veveyse",
     description:
-      "Nettoyage à Bulle, Riaz, Vuadens et Broc en Gruyère, et à Châtel-Saint-Denis en Veveyse. Devis gratuit, sans frais de déplacement.",
+      "Nettoyage à Bulle, Riaz, Vuadens et Broc en Gruyère, et à Châtel-Saint-Denis en Veveyse. Devis gratuit.",
     intro:
       "Bulle est le centre de la Gruyère. Nous y venons depuis notre siège de Romont.",
     geo: { latitude: 46.6175, longitude: 7.0569 },
@@ -193,7 +193,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
@@ -258,7 +258,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage après chantier", href: "/nettoyage-apres-chantier" },
       { label: "Entreprise de nettoyage à Romont (siège)", href: "/nettoyage-romont" },
@@ -275,7 +275,7 @@ export const locations: Location[] = [
     title: "Nettoyage à Lausanne et dans l'Ouest lausannois",
     subtitle: "Renens et Crissier dans l'Ouest lausannois",
     description:
-      "Nettoyage à Lausanne, Renens et Crissier. Devis gratuit, réponse sous 24 h, sans frais de déplacement.",
+      "Nettoyage à Lausanne, Renens et Crissier. Devis gratuit, réponse sous 24 h.",
     intro:
       "Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois, depuis notre siège de Romont.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
@@ -322,7 +322,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage de bureaux", href: "/nettoyage-bureaux" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -338,7 +338,7 @@ export const locations: Location[] = [
     district: "Riviera-Pays-d'Enhaut",
     title: "Nettoyage à Vevey et Montreux",
     description:
-      "Nettoyage fin de bail, appartements et vitres à Vevey, Montreux et Aigle. Devis gratuit, sans frais de déplacement.",
+      "Nettoyage fin de bail, appartements et vitres à Vevey, Montreux et Aigle. Devis gratuit.",
     intro:
       "Nous intervenons à Vevey et à Montreux, sur la Riviera, ainsi qu'à Aigle, dans le Chablais.",
     geo: { latitude: 46.4628, longitude: 6.8419 },
@@ -373,7 +373,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Bulle", href: "/nettoyage-bulle" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -389,7 +389,7 @@ export const locations: Location[] = [
     title: "Nettoyage à Yverdon-les-Bains",
     subtitle: "Nord vaudois",
     description:
-      "Yverdon-les-Bains, dans le Nord vaudois. Réponse sous 24 h, sans frais de déplacement.",
+      "Yverdon-les-Bains, dans le Nord vaudois. Réponse sous 24 h.",
     intro:
       "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains depuis notre siège de Romont.",
     geo: { latitude: 46.7785, longitude: 6.6412 },
@@ -423,7 +423,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Lausanne", href: "/nettoyage-lausanne" },
       { label: "Zones d'intervention", href: "/zones" },
@@ -476,7 +476,7 @@ export const locations: Location[] = [
       },
     ],
     priorityLinks: [
-      { label: "Photos d'un fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
+      { label: "Photos d'une fin de bail fait à Romont", href: "/nettoyage-romont#realisation-romont" },
       { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
       { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
       { label: "Zones d'intervention", href: "/zones" },

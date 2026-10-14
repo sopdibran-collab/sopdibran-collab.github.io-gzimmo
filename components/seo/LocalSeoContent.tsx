@@ -98,7 +98,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
           id={location.slug === "nettoyage-romont" ? "realisation-romont" : undefined}
         >
           <h2 id="exemple" className="font-display text-display-sm text-foreground">
-            Un fin de bail réalisé à Romont
+            Une fin de bail réalisée à Romont
           </h2>
           {location.example.body ? (
             <p className="mt-4 text-reading leading-relaxed text-muted">{location.example.body}</p>

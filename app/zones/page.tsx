@@ -9,7 +9,7 @@ import { ContextualLinks } from "@/components/content/ContextualLinks";
 export const metadata = createMetadata({
   title: "Zones de nettoyage depuis Romont",
   description:
-    "Les communes où nous intervenons depuis Romont, de la Glâne à Lausanne, Vevey, Yverdon et Morat. Réponse sous 24 h, sans frais de déplacement.",
+    "Les communes où nous intervenons depuis Romont, de la Glâne à Lausanne, Vevey, Yverdon et Morat. Réponse sous 24 h.",
   absoluteTitle: true,
   path: "/zones",
   keywords: ["zones intervention", "Glâne", "Romont", "nettoyage Fribourg", "nettoyage Vaud"],
