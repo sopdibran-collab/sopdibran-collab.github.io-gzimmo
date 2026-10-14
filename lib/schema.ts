@@ -1,7 +1,7 @@
 import { company, formatAddress, teamExperienceLabel } from "@/data/company";
 import { entityKnowsAbout, entitySameAs } from "@/data/entity";
 import { faqItems, normalizeFaqItems, type FaqContent, type FaqItem } from "@/data/faq";
-import { extraSchemaCities } from "@/data/intervention-zones";
+import { servedCommunes } from "@/data/intervention-zones";
 import { locations } from "@/data/locations";
 import { services } from "@/data/services";
 import { getLocationPath } from "@/lib/location-paths";
@@ -13,38 +13,16 @@ const romontGeo = {
   longitude: 6.9111,
 };
 
-/**
- * Cantons desservis : Fribourg, Vaud, Neuchâtel.
- * Villes des pages locales, plus les communes listées sans page propre.
- */
+/** Communes desservies, pas les cantons entiers. */
 export function priorityAreaServed() {
-  const fromLandings = locations
-    .filter((location) => location.canton === "FR" || location.canton === "VD" || location.canton === "NE")
-    .map((location) => ({
-      "@type": "City",
-      name: location.city,
-      containedInPlace: {
-        "@type": "AdministrativeArea",
-        name: location.cantonName,
-      },
-    }));
-
-  const extras = extraSchemaCities.map((city) => ({
-    "@type": "City",
+  return servedCommunes.map((city) => ({
+    "@type": "City" as const,
     name: city.name,
     containedInPlace: {
-      "@type": "AdministrativeArea",
+      "@type": "AdministrativeArea" as const,
       name: city.cantonName,
     },
   }));
-
-  return [
-    { "@type": "AdministrativeArea", name: "Canton de Fribourg" },
-    { "@type": "AdministrativeArea", name: "Canton de Vaud" },
-    { "@type": "AdministrativeArea", name: "Canton de Neuchâtel" },
-    ...fromLandings,
-    ...extras,
-  ];
 }
 
 export function localBusinessSchema() {
@@ -54,7 +32,7 @@ export function localBusinessSchema() {
     "@id": `${company.url}/#organization`,
     name: company.legalName,
     alternateName: "Gzimmo",
-    description: `${company.tagline}. ${teamExperienceLabel()}.`,
+    description: `${company.tagline}. ${teamExperienceLabel()}. Réponse sous 24 h. Fribourg et Vaud.`,
     url: company.url,
     email: company.email,
     telephone: company.phone,
@@ -167,13 +145,13 @@ export function serviceSchema(
 
 export function zonesItemListSchema() {
   const zoneLocations = locations.filter(
-    (location) => location.canton === "FR" || location.canton === "VD" || location.canton === "NE",
+    (location) => location.canton === "FR" || location.canton === "VD",
   );
 
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Zones d'intervention Gzimmo — Suisse romande",
+    name: "Zones de nettoyage Gzimmo",
     itemListElement: zoneLocations.map((location, index) => ({
       "@type": "ListItem",
       position: index + 1,

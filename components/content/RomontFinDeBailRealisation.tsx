@@ -86,12 +86,26 @@ function PhotoFrame({ photo }: { photo: Photo }) {
   );
 }
 
-export function RomontFinDeBailRealisation({ className }: { className?: string }) {
+export function RomontFinDeBailRealisation({
+  className,
+  heading = true,
+}: {
+  className?: string;
+  /** Pages ville : le titre est déjà « Une fin de bail réalisée à Romont ». */
+  heading?: boolean;
+}) {
+  const Tag = heading ? "section" : "div";
+
   return (
-    <section className={cn("border-t border-border/80 pt-16", className)} aria-labelledby="realisation-romont">
-      <h2 id="realisation-romont" className="font-display text-display-sm text-foreground">
-        Nettoyage de fin de bail à Romont
-      </h2>
+    <Tag
+      className={cn(heading && "border-t border-border/80 pt-16", className)}
+      aria-labelledby={heading ? "realisation-romont" : undefined}
+    >
+      {heading ? (
+        <h2 id="realisation-romont" className="font-display text-display-sm text-foreground">
+          Nettoyage de fin de bail à Romont
+        </h2>
+      ) : null}
       <p className="mt-4 max-w-2xl text-reading text-muted">
         Nous avons nettoyé cet appartement de Romont avant sa remise à la gérance. Le four et les
         plaques ont été dégraissés, les fenêtres nettoyées avec leurs encadrements et leurs rails,
@@ -119,11 +133,12 @@ export function RomontFinDeBailRealisation({ className }: { className?: string }
         Vous déménagez dans la région de Romont ?{" "}
         <Link
           href="/contact?service=nettoyage-fin-de-bail&ville=Romont"
+          data-analytics="devis"
           className="font-medium text-accent-ink underline decoration-accent/40 underline-offset-4 transition-colors duration-200 hover:text-accent-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         >
           Demandez votre devis gratuit.
         </Link>
       </p>
-    </section>
+    </Tag>
   );
 }

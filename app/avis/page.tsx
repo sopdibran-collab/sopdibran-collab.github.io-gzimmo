@@ -6,11 +6,13 @@ import { company } from "@/data/company";
 import { googleReviews, googleReviewsProfileUrl } from "@/data/google-reviews";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
-  title: "Avis clients",
+  title: "Avis clients | nettoyage Gzimmo à Romont",
   description:
-    "Avis Google de clients Gzimmo Sàrl : nettoyage d'appartements, locaux commerciaux et après chantier en Suisse romande. Ponctualité, rigueur et résultat irréprochable.",
+    "Avis Google publiés sur la fiche Gzimmo Sàrl, entreprise de nettoyage à Romont. Fribourg et Vaud.",
+  absoluteTitle: true,
   path: "/avis",
   keywords: ["avis Google", "témoignages clients", "nettoyage professionnel Romont"],
 });
@@ -29,8 +31,8 @@ export default function AvisPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Avis clients" }]} />
         <PageIntro
           badge="Avis clients"
-          title="Ce que disent nos clients"
-          description={`Des retours authentiques recueillis sur Google — interventions de nettoyage professionnel par ${company.name}, en Suisse romande.`}
+          title="Avis clients sur le nettoyage Gzimmo"
+          description={`Textes publiés sur la fiche Google de ${company.name}, entreprise de nettoyage à Romont.`}
         />
       </PageHero>
 
@@ -46,6 +48,13 @@ export default function AvisPage() {
             Tous les avis {company.name} sur Google Maps
           </a>
         </p>
+        <ContextualLinks
+          links={[
+            { label: "Réalisations", href: "/realisations" },
+            { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+            { label: "Nettoyage à Romont", href: "/nettoyage-romont" },
+          ]}
+        />
       </PageMain>
 
       <PageCta />

@@ -5,11 +5,13 @@ import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { RomontFinDeBailRealisation } from "@/components/content/RomontFinDeBailRealisation";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
-  title: "Réalisations",
+  title: "Réalisations de nettoyage à Romont",
   description:
-    "Découvrez les réalisations Gzimmo : nettoyage professionnel en Suisse romande, finitions soignées et résultats impeccables.",
+    "Photos et interventions Gzimmo, dont un nettoyage de fin de bail à Romont. Siège : Route de Raboud 8.",
+  absoluteTitle: true,
   path: "/realisations",
 });
 
@@ -36,8 +38,8 @@ export default function RealisationsPage() {
         <PageIntro
           onDark
           badge="Réalisations"
-          title="La précision, visible"
-          description="Chaque projet reflète notre exigence : des espaces remis en ordre avec méthode et discrétion."
+          title="Réalisations de nettoyage à Romont"
+          description="Un nettoyage de fin de bail à Romont, avec photos avant et après. Les autres interventions sont décrites plus bas."
         />
       </PageHero>
 
@@ -46,6 +48,13 @@ export default function RealisationsPage() {
         <div className="mt-16 border-t border-border/80 pt-16">
           <RealisationGrid showHeader={false} />
         </div>
+        <ContextualLinks
+          links={[
+            { label: "Fin de bail à Romont", href: "/nettoyage-romont#realisation-romont" },
+            { label: "Nettoyage fin de bail", href: "/nettoyage-fin-de-bail" },
+            { label: "Avis clients", href: "/avis" },
+          ]}
+        />
       </PageMain>
 
       <PageCta />

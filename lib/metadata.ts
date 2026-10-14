@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { company, formatAddress } from "@/data/company";
 import { getLocationPath } from "@/lib/location-paths";
 
-const defaultTitle = `${company.name} — Nettoyage professionnel à Romont, Fribourg, Vaud et Neuchâtel`;
+const defaultTitle = "Entreprise de nettoyage à Romont | Fribourg, Vaud";
 const defaultDescription =
-    "Gzimmo Sàrl, Route de Raboud 8. Fin de bail, bureaux, après chantier, conciergerie. Fribourg, Vaud et Neuchâtel. Devis gratuit — 076 214 23 42.";
+    "Gzimmo Sàrl, Route de Raboud 8. Fin de bail, bureaux, après chantier, conciergerie. Fribourg et Vaud. Devis gratuit — 076 214 23 42.";
 
 type PageMetadataOptions = {
   title?: string;
@@ -16,6 +16,10 @@ type PageMetadataOptions = {
   absoluteTitle?: boolean;
   /** Thank-you / utility pages — robots noindex,nofollow */
   noindex?: boolean;
+  /** Drop entries from the shared keyword list. City pages other than the siège omit « Romont ». */
+  excludeDefaultKeywords?: string[];
+  /** Shared logo: a neutral alt. City-specific alt only when the image itself is local. */
+  imageAlt?: string;
 };
 
 export function createMetadata({
@@ -26,6 +30,8 @@ export function createMetadata({
   geo,
   absoluteTitle = false,
   noindex = false,
+  excludeDefaultKeywords = [],
+  imageAlt = `${company.name} — Entreprise de nettoyage à Romont`,
 }: PageMetadataOptions = {}): Metadata {
   const pageTitle = title
     ? absoluteTitle
@@ -38,7 +44,7 @@ export function createMetadata({
     "nettoyage professionnel",
     "entreprise de nettoyage",
     "Romont",
-    "Suisse romande",
+    "Vaud",
     "Fribourg",
     "fin de bail",
     "nettoyage bureaux",
@@ -56,7 +62,10 @@ export function createMetadata({
   return {
     title: pageTitle,
     description,
-    keywords: [...defaultKeywords, ...keywords],
+    keywords: [
+      ...defaultKeywords.filter((keyword) => !excludeDefaultKeywords.includes(keyword)),
+      ...keywords,
+    ],
     metadataBase: new URL(company.url),
     alternates: { canonical: path || "/" },
     openGraph: {
@@ -66,7 +75,7 @@ export function createMetadata({
       siteName: company.name,
       title: pageTitle,
       description,
-      images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: `${company.name} — Nettoyage professionnel en Suisse romande` }],
+      images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
@@ -96,10 +105,14 @@ export function localPageMetadata(location: {
   canton: string;
   geo: { latitude: number; longitude: number };
 }) {
+  const isSiege = location.slug === "nettoyage-romont";
+
   return createMetadata({
     title: location.title,
     description: location.description,
     path: getLocationPath(location.slug),
+    excludeDefaultKeywords: isSiege ? [] : ["Romont"],
+    imageAlt: isSiege ? undefined : company.name,
     keywords: [
       `nettoyage ${location.city}`,
       `entreprise nettoyage ${location.city}`,

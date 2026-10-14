@@ -60,14 +60,14 @@ const sharedWhy = [
       "Gzimmo fournit l'ensemble des produits, exclusivement professionnels, adaptés à chaque type de surface et de matériau.",
   },
   {
-    title: "Réactivité depuis Romont",
+    title: "Réactivité",
     description:
-      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis sous 24 h.",
+      "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Devis sous 24 h.",
   },
   {
     title: "Devis transparent avant intervention",
     description:
-      "Chaque prestation fait l'objet d'un devis détaillé et gratuit. Le tarif convenu est le tarif final.",
+      "Chaque prestation fait l'objet d'un devis détaillé et gratuit, sous 24 h. Le tarif convenu est le tarif final.",
   },
 ];
 
@@ -81,7 +81,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Appelez-nous, expliquez le logement et la date de remise des clés : devis gratuit, sur mesure, garantie d'état des lieux auprès de votre régie.",
     metaTitle: "Nettoyage fin de bail | Garantie d'état des lieux — Gzimmo",
     metaDescription:
-      "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg, Vaud, Neuchâtel. 076 214 23 42.",
+      "Nettoyage fin de bail Gzimmo : devis gratuit, garantie d'état des lieux et remise des clés. Fribourg et Vaud. 076 214 23 42.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     showPriceQuote: true,
@@ -98,7 +98,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Remise d'appartement",
     ],
     intro:
-      "Vous déménagez en Suisse romande ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl couvre les cantons de Fribourg, Vaud et Neuchâtel. Pour Romont ou Fribourg ville, des pages locales détaillent l'intervention près de chez vous.",
+      "Vous déménagez à Fribourg, en Vaud ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl est à Romont. Les pages de Romont, Fribourg, Bulle et Lausanne précisent les communes desservies.",
     sections: [
       {
         title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
@@ -133,7 +133,7 @@ export const serviceLandings: ServiceLanding[] = [
       title: "Garantie de remise de bail",
       paragraphs: [
         "Le nettoyage de fin de bail en Suisse requiert une rigueur absolue. Les régies immobilières appliquent des standards de restitution stricts : un oubli sur les joints de salle de bain, un four mal dégraissé ou des vitres laissées avec des traces peut entraîner une retenue sur la garantie locative.",
-        "Gzimmo connaît ces exigences. Nous travaillons avec des régies dans les cantons de Fribourg, de Vaud et de Neuchâtel. Checklist adaptée, devis clair avant intervention.",
+        "Gzimmo connaît ces exigences. Nous travaillons avec des régies dans les cantons de Fribourg et de Vaud. Checklist adaptée, devis clair avant intervention.",
         "Si un point n'est pas conforme aux attentes de la régie, nous intervenons à nouveau sans frais supplémentaires dans le cadre de notre garantie de remise de bail.",
       ],
     },
@@ -154,7 +154,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         title: "Expertise des régies immobilières",
         description:
-          "Nous connaissons les standards de restitution des régies fribourgeoises, vaudoises et neuchâteloises. Pas de mauvaise surprise à l'état des lieux.",
+          "Nous connaissons les standards de restitution des régies fribourgeoises, vaudoises. Pas de mauvaise surprise à l'état des lieux.",
       },
       ...sharedWhy,
     ],
@@ -178,7 +178,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Poussière fine, voile de ciment, traces de peinture : nous remettons le lieu en état pour que vous puissiez emménager ou livrer.",
     metaTitle: "Nettoyage après rénovation et chantier | Gzimmo",
     metaDescription:
-      "Devis gratuit sous 24 h pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg, Vaud, Neuchâtel.",
+      "Devis gratuit sous 24 h pour retirer la poussière fine après rénovation ou chantier. Gzimmo, Romont — Fribourg et Vaud.",
     absoluteTitle: true,
     heroCtaLabel: "Demander un devis gratuit",
     preferCallCta: false,
@@ -189,9 +189,9 @@ export const serviceLandings: ServiceLanding[] = [
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     inclusionHeading: "Checklist d'intervention : ce qui est inclus",
-    zonesHeading: "Nos zones d'intervention en Suisse romande",
+    zonesHeading: "Zones d'intervention",
     zonesNote:
-      "Depuis Romont (FR), nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel : Bulle, Fribourg, Lausanne, Nyon et Yverdon, ainsi que les communes listées ci-dessous. Siège : Route de Raboud 8.",
+      "Les communes sont regroupées par bassin. Réponse sous 24 h.",
     schemaServiceTypes: [
       "Nettoyage après chantier",
       "Nettoyage après rénovation",
@@ -200,7 +200,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage de fin de chantier",
     ],
     intro:
-      "Le devis est gratuit et clair sous 24 h. Depuis Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel. Téléphone : 076 214 23 42.",
+      "Le devis est gratuit et clair sous 24 h. Nous intervenons dans les cantons de Fribourg et de Vaud. Téléphone : 076 214 23 42.",
     relatedNote: {
       text: "Travaux dans un logement loué, puis état des lieux de sortie : la checklist régie est une autre prestation.",
       linkLabel: "Nettoyage de fin de bail",
@@ -351,7 +351,7 @@ export const serviceLandings: ServiceLanding[] = [
         "zones-apres-chantier",
         "zone",
         "Dans quels cantons intervenez-vous après un chantier ?",
-        "Fribourg, Vaud et Neuchâtel, depuis Romont, Route de Raboud 8. Le devis est gratuit.",
+        "Fribourg et Vaud. Siège : Route de Raboud 8, Romont. Le devis est gratuit.",
       ),
       faq(
         "passage-avant-reception",
@@ -378,7 +378,6 @@ export const serviceLandings: ServiceLanding[] = [
       { label: "Fribourg", href: "/nettoyage-fribourg" },
       { label: "Bulle", href: "/nettoyage-bulle" },
       { label: "Lausanne", href: "/nettoyage-lausanne" },
-      { label: "Neuchâtel", href: "/nettoyage-neuchatel" },
       { label: "Toutes les zones", href: "/zones" },
     ],
     testimonials: [
@@ -401,12 +400,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-bureaux",
-    h1: "Nettoyage de bureaux pour entreprises en Suisse romande",
+    h1: "Nettoyage de bureaux à Fribourg et Vaud",
     subtitle:
       "Des espaces de travail propres, intervention discrète, horaires flexibles — pour des équipes qui méritent un environnement sain.",
-    metaTitle: "Nettoyage de bureaux en Suisse romande",
+    metaTitle: "Nettoyage de bureaux | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de bureaux et espaces de travail en Suisse romande. Horaires flexibles, discrétion, devis gratuit. Gzimmo Sàrl, Romont. 076 214 23 42.",
+      "Nettoyage de bureaux, horaires convenus au devis. Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg et Vaud. 076 214 23 42.",
     intro:
       "Un bureau propre améliore le bien-être des équipes et l'image de votre entreprise. Gzimmo assure l'entretien de vos espaces de travail avec discrétion, en dehors de vos heures d'activité si nécessaire.",
     forWho: [
@@ -443,12 +442,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "entretien-locaux",
-    h1: "Entretien de locaux professionnels en Suisse romande",
+    h1: "Entretien de locaux à Fribourg et Vaud",
     subtitle:
       "Un entretien planifié, discret et rigoureux pour des espaces commerciaux et professionnels impeccables au quotidien.",
-    metaTitle: "Entretien de locaux professionnels en Suisse romande",
+    metaTitle: "Entretien de locaux | Gzimmo, Romont",
     metaDescription:
-      "Entretien régulier de locaux professionnels et commerciaux en Suisse romande. Planning flexible, devis gratuit. Gzimmo Sàrl, Romont.",
+      "Entretien de locaux professionnels et commerciaux. Gzimmo Sàrl, siège à Romont. Fribourg et Vaud. Devis gratuit.",
     intro:
       "Commerces, cabinets, locaux d'activité — un entretien régulier évite l'accumulation et préserve l'image de votre établissement. Gzimmo planifie des passages adaptés à votre activité.",
     forWho: [
@@ -478,12 +477,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-appartements",
-    h1: "Nettoyage d'appartements en Suisse romande",
+    h1: "Nettoyage d'appartements à Fribourg et Vaud",
     subtitle:
       "Un nettoyage complet et minutieux, pièce par pièce — pour particuliers et régies qui exigent un résultat visible.",
-    metaTitle: "Nettoyage d'appartements en Suisse romande",
+    metaTitle: "Nettoyage d'appartements | Gzimmo",
     metaDescription:
-      "Nettoyage complet d'appartements pour particuliers et régies en Suisse romande. Devis gratuit, intervention depuis Romont. 076 214 23 42.",
+      "Nettoyage d'appartements pour particuliers et régies, basée à Romont. Fribourg et Vaud. Devis gratuit. 076 214 23 42.",
     intro:
       "Que ce soit pour une remise en état ponctuelle ou un entretien approfondi, Gzimmo traite chaque pièce avec méthode : sols, sanitaires, cuisine, surfaces et détails.",
     relatedNote: {
@@ -536,7 +535,7 @@ export const serviceLandings: ServiceLanding[] = [
         "zones-appartement",
         "zone",
         "Où intervenez-vous ?",
-        "Dans les cantons de Fribourg, de Vaud et de Neuchâtel, depuis Romont, Route de Raboud 8.",
+        "Dans les cantons de Fribourg et de Vaud. Siège : Route de Raboud 8, Romont.",
       ),
       faq(
         "etat-des-lieux-appartement",
@@ -553,12 +552,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-maisons",
-    h1: "Nettoyage de maisons en Suisse romande",
+    h1: "Nettoyage de maisons à Fribourg et Vaud",
     subtitle:
       "Un service complet pour des intérieurs qui respirent la clarté — du rez-de-chaussée aux espaces de vie.",
-    metaTitle: "Nettoyage de maisons en Suisse romande",
+    metaTitle: "Nettoyage de maisons | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de maisons individuelles en Suisse romande. Tous volumes, matériaux respectés. Devis gratuit. Gzimmo Sàrl, Romont.",
+      "Nettoyage de maisons, depuis le siège de Romont. Fribourg et Vaud. Devis gratuit. Gzimmo, 076 214 23 42.",
     intro:
       "Les maisons demandent une approche adaptée aux volumes, aux matériaux et aux espaces spécifiques (escaliers, caves, terrasses). Gzimmo prend en charge l'ensemble avec la même exigence de finition.",
     forWho: [
@@ -586,12 +585,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-vitres",
-    h1: "Nettoyage de vitres en Suisse romande",
+    h1: "Nettoyage de vitres à Fribourg et Vaud",
     subtitle:
       "Des vitres impeccables, sans traces — intérieur et extérieur, pour particuliers et professionnels.",
-    metaTitle: "Nettoyage de vitres en Suisse romande",
+    metaTitle: "Nettoyage de vitres | Gzimmo, Romont",
     metaDescription:
-      "Nettoyage de vitres intérieures et extérieures en Suisse romande. Techniques professionnelles, accès sécurisé. Devis gratuit. 076 214 23 42.",
+      "Nettoyage de vitres intérieures et extérieures accessibles. Gzimmo, siège à Romont. Fribourg et Vaud. Devis gratuit.",
     intro:
       "Vitres intérieures, façades vitrées, baies vitrées — Gzimmo utilise des techniques professionnelles pour un résultat net et durable, sans rayures ni traces.",
     forWho: [
@@ -620,12 +619,12 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "conciergerie",
-    h1: "Services de conciergerie pour régies et immeubles",
+    h1: "Conciergerie pour régies à Fribourg et Vaud",
     subtitle:
-      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud et à Neuchâtel.",
-    metaTitle: "Conciergerie pour régies — Fribourg & Vaud",
+      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud.",
+    metaTitle: "Conciergerie pour régies | Gzimmo",
     metaDescription:
-      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg, Vaud et Neuchâtel, depuis Romont. 076 214 23 42.",
+      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg et Vaud, basée à Romont. 076 214 23 42.",
     intro:
       "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
     forWho: [
@@ -655,9 +654,9 @@ export const serviceLandings: ServiceLanding[] = [
     },
     whyGzimmo: [
       {
-        title: "Basés à Romont, actifs à Fribourg, en Vaud et à Neuchâtel",
+        title: "Basés à Romont, actifs à Fribourg, en Vaud",
         description:
-          "Nous sommes proches des immeubles de la Glâne, de Fribourg et du canton de Vaud, et nous couvrons aussi Neuchâtel.",
+          "Nous partons de Romont, dans la Glâne. Les passages publiés vont jusqu'à Fribourg, Bulle et Lausanne.",
       },
       ...sharedWhy,
     ],
@@ -671,7 +670,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         question: "Intervenez-vous pour des régies à Fribourg et dans le canton de Vaud ?",
         answer:
-          "Oui. Notre priorité géographique est le canton de Fribourg (Romont, Glâne, Fribourg) et le canton de Vaud (Lausanne, Morges, Yverdon et agglomérations).",
+          "Oui. Fribourg et Matran sont dans la Sarine. Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
       },
     ],
     relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],
@@ -692,5 +691,5 @@ export function getRelatedServices(slugs: string[]) {
   return slugs
     .map((slug) => serviceLandings.find((l) => l.slug === slug))
     .filter((l): l is ServiceLanding => Boolean(l))
-    .map((l) => ({ title: l.h1.split(" en ")[0] ?? l.h1, href: getServicePath(l.slug) }));
+    .map((l) => ({ title: l.h1.split(" à ")[0] ?? l.h1, href: getServicePath(l.slug) }));
 }

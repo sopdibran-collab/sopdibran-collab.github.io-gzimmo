@@ -28,7 +28,7 @@ export function ContactCta({ className }: ContactCtaProps) {
           />
         </div>
         <div className="flex flex-col gap-3 sm:items-start lg:col-span-4 lg:items-end">
-          <Button href="/contact" className="w-full sm:w-auto">
+          <Button href="/contact" data-analytics="devis" className="w-full sm:w-auto">
             Demander un devis gratuit
           </Button>
           <Button

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { company, formatAddress } from "@/data/company";
+import { publishedCities } from "@/data/published-cities";
 import { footerNav } from "@/data/navigation";
 import { getServicePath } from "@/lib/service-paths";
 import { formatPhoneHref } from "@/lib/utils";
@@ -23,11 +24,9 @@ const footerServices = [
 ] as const;
 
 const regionLinks = [
-  { label: "Romont", href: "/nettoyage-romont" },
-  { label: "Fribourg", href: "/nettoyage-fribourg" },
-  { label: "Lausanne", href: "/nettoyage-lausanne" },
-  { label: "Neuchâtel", href: "/nettoyage-neuchatel" },
-] as const;
+  ...publishedCities.map((city) => ({ label: city.label, href: city.href })),
+  { label: "Toutes les zones", href: "/zones" },
+];
 
 /** Chips footer : contraste AA + zone tactile ≥ 24px (confort ~36–44). */
 const chipClass =
@@ -68,7 +67,7 @@ export function Footer() {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Logo variant="monochromeInverse" size="footer" className="max-h-7 max-w-[140px]" />
           <p className="max-w-md text-[11px] leading-snug text-white/75">
-            {company.tagline} · Romont (FR) · Suisse romande
+            {company.tagline} · Romont (FR) · {company.areaServed} · Réponse sous 24 h
           </p>
         </div>
 

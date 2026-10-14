@@ -90,6 +90,7 @@ function RealisationFeatured({ item }: { item: Realisation }) {
         <p className="mt-3 max-w-lg text-base leading-relaxed text-muted">{item.result}</p>
         <Link
           href="/contact"
+          data-analytics="devis"
           className="mt-5 inline-flex min-h-11 items-center text-sm font-medium text-accent-ink transition-colors duration-200 hover:text-accent-hover"
         >
           Même type d&apos;intervention →
@@ -167,6 +168,7 @@ function RealisationRow({ item }: { item: Realisation }) {
         </dl>
         <Link
           href="/contact"
+          data-analytics="devis"
           className="mt-5 inline-flex min-h-11 items-center text-sm font-medium text-foreground transition-colors hover:text-accent-ink"
         >
           Demander un devis similaire

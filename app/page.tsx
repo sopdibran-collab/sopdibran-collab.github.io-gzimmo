@@ -14,9 +14,9 @@ import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = createMetadata({
-  title: "Entreprise de nettoyage à Romont | FR, VD, NE",
+  title: "Entreprise de nettoyage à Romont | Fribourg, Vaud",
   description:
-    "Gzimmo Sàrl, entreprise de nettoyage à Romont, Route de Raboud 8. Fribourg, Vaud et Neuchâtel. Devis gratuit — 076 214 23 42.",
+    "Gzimmo Sàrl, entreprise de nettoyage à Romont, Route de Raboud 8. Fribourg et Vaud. Devis gratuit — 076 214 23 42.",
   path: "/",
   absoluteTitle: true,
   keywords: [
@@ -25,7 +25,6 @@ export const metadata = createMetadata({
     "Romont",
     "Fribourg",
     "Vaud",
-    "Neuchâtel",
     "devis nettoyage",
   ],
 });

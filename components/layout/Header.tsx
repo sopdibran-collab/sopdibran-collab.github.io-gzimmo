@@ -85,6 +85,7 @@ export function Header() {
           {/* Primaire : accent solide — un seul CTA fort */}
           <Button
             href="/contact"
+            data-analytics="devis"
             className="whitespace-nowrap border-transparent bg-accent px-4 text-white hover:bg-accent-hover hover:text-white"
           >
             Demander un devis

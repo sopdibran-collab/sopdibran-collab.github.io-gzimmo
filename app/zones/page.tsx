@@ -1,25 +1,18 @@
-import Link from "next/link";
-import { interventionCantons } from "@/data/intervention-zones";
 import { createMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, zonesItemListSchema } from "@/lib/schema";
-import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
+import { PageHero, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
-import { ContentCard } from "@/components/ui/ContentCard";
+import { ZoneBands } from "@/components/content/ZoneBands";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
-  title: "Zones d'intervention : Fribourg, Vaud et Neuchâtel",
+  title: "Zones de nettoyage depuis Romont",
   description:
-    "Gzimmo intervient depuis Romont dans les cantons de Fribourg, de Vaud et de Neuchâtel. Devis gratuit.",
+    "Les communes où nous intervenons depuis Romont, de la Glâne à Lausanne, Vevey, Yverdon et Morat. Réponse sous 24 h.",
+  absoluteTitle: true,
   path: "/zones",
-  keywords: [
-    "zones intervention",
-    "Glâne",
-    "Romont",
-    "nettoyage Fribourg",
-    "nettoyage Vaud",
-    "nettoyage Neuchâtel",
-  ],
+  keywords: ["zones intervention", "Glâne", "Romont", "nettoyage Fribourg", "nettoyage Vaud"],
 });
 
 export default function ZonesPage() {
@@ -45,38 +38,23 @@ export default function ZonesPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           onDark
-          badge="Fribourg, Vaud, Neuchâtel"
-          title="Où intervenons-nous ?"
-          description="Basés à Romont (FR), nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel."
+          title="Entreprise de nettoyage en Suisse romande"
+          description="Nous intervenons dans les cantons de Fribourg et de Vaud. Cherchez votre commune dans la liste ci-dessous."
         />
       </PageHero>
 
-      <PageMain variant="surface">
-        {interventionCantons.map((canton, index) => (
-          <ContentCard key={canton.id} className={index > 0 ? "mt-8" : undefined}>
-            <nav aria-label={canton.heading}>
-              <h2 className="font-display text-display-sm text-foreground">{canton.heading}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{canton.description}</p>
-              <ul className="mt-6 columns-2 gap-x-8 text-sm md:columns-3">
-                {canton.places.map((place) => (
-                  <li key={place.name} className="mb-2 break-inside-avoid">
-                    {place.href ? (
-                      <Link
-                        href={place.href}
-                        className="text-muted transition-colors hover:text-accent-ink"
-                      >
-                        {place.name}
-                      </Link>
-                    ) : (
-                      <span className="text-muted">{place.name}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </ContentCard>
-        ))}
-      </PageMain>
+      <ZoneBands />
+
+      <div className="mx-auto w-full max-w-[1200px] px-container pb-10">
+        <ContextualLinks
+          className="mt-0"
+          links={[
+            { label: "Services de nettoyage", href: "/services" },
+            { label: "Réalisations", href: "/realisations" },
+            { label: "Avis clients", href: "/avis" },
+          ]}
+        />
+      </div>
 
       <PageCta />
     </>

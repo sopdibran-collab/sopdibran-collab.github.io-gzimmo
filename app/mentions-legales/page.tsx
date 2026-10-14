@@ -8,8 +8,9 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Mentions légales",
-  description: `Mentions légales — ${company.legalName}, IDE ${company.ide}, ${formatAddress()}. ${company.email}, ${company.phoneDisplay}.`,
+  title: "Mentions légales | Gzimmo Sàrl, Romont",
+  description: `Mentions légales de ${company.legalName}, IDE ${company.ide}, ${formatAddress()}. ${company.email}.`,
+  absoluteTitle: true,
   path: "/mentions-legales",
   keywords: ["mentions légales", "Gzimmo", "Romont"],
 });
@@ -28,7 +29,7 @@ export default function MentionsLegalesPage() {
         <Breadcrumb
           items={[{ label: "Accueil", href: "/" }, { label: "Mentions légales" }]}
         />
-        <PageIntro badge="Légal" title="Mentions légales" />
+        <PageIntro badge="Légal" title="Mentions légales de Gzimmo à Romont" />
       </PageHero>
 
       <PageMain variant="surface">

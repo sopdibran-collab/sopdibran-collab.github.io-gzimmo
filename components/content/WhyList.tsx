@@ -12,8 +12,7 @@ export function WhyList() {
           Checklist régie, devis sous 24 h, équipe à Romont
         </h2>
         <p className="mt-5 max-w-md leading-relaxed text-muted">
-          Expertise immobilière, rigueur et réactivité. Notre exigence se lit dans chaque
-          intervention.
+          Expertise immobilière et rigueur. Notre exigence se lit dans chaque intervention.
         </p>
 
         <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-lg bg-surface">

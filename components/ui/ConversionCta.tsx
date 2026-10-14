@@ -31,7 +31,7 @@ export function ConversionCta({
         className,
       )}
     >
-      <Button href={devisHref} className="w-full sm:w-auto">
+      <Button href={devisHref} data-analytics="devis" className="w-full sm:w-auto">
         {devisLabel}
       </Button>
       <Button

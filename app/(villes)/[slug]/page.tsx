@@ -40,6 +40,7 @@ export default async function LocalSeoPage({ params }: Props) {
   const path = getLocationPath(location.slug);
   const relatedLocations = locations
     .filter((l) => l.slug !== location.slug && l.canton === location.canton)
+    .filter((l) => location.slug === "nettoyage-romont" || !l.city.includes("Romont"))
     .slice(0, 6);
 
   return (
@@ -64,7 +65,12 @@ export default async function LocalSeoPage({ params }: Props) {
             { label: location.city },
           ]}
         />
-        <PageIntro badge={location.cantonName} title={location.title} description={location.intro}>
+        <PageIntro
+          badge={location.cantonName}
+          title={location.title}
+          subtitle={location.subtitle}
+          description={location.intro}
+        >
           <ConversionCta devisHref={`/contact?ville=${location.city}`} />
         </PageIntro>
       </PageHero>

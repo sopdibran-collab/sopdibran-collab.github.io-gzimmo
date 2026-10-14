@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, MapPin, Users } from "lucide-react";
-import { interventionCantons } from "@/data/intervention-zones";
+import { zoneBands } from "@/data/intervention-zones";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { TextLink } from "@/components/ui/TextLink";
@@ -20,8 +20,8 @@ type InterventionZonesProps = {
 const reassurances = [
   {
     icon: MapPin,
-    title: "Depuis Romont",
-    detail: "Fribourg, Vaud et Neuchâtel",
+    title: "Siège à Romont (FR)",
+    detail: "Fribourg et Vaud",
   },
   {
     icon: Clock,
@@ -44,10 +44,10 @@ function placeChipClass(onSoft: boolean, linked: boolean) {
   );
 }
 
-/** Zones d'intervention — Fribourg, Vaud, Neuchâtel. */
+/** Zones d'intervention — Fribourg et Vaud. */
 export function InterventionZones({
   servicePhrase = "nettoyage",
-  heading = "Nos zones d'intervention en Suisse romande",
+  heading = "Zones d'intervention",
   devisHref = "/contact",
   className,
   onSoft = false,
@@ -66,8 +66,7 @@ export function InterventionZones({
             {heading}
           </h2>
           <p className="mt-4 max-w-[62ch] text-base text-muted leading-relaxed">
-            Depuis Romont, nous intervenons dans les cantons de Fribourg, de Vaud et de Neuchâtel
-            pour votre {servicePhrase}.
+            Le {servicePhrase} est proposé dans les communes listées ci-dessous. Réponse sous 24 h.
           </p>
           <ul className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-4">
             {reassurances.map((item) => (
@@ -93,13 +92,10 @@ export function InterventionZones({
       </div>
 
       <div className="mt-10 flex flex-col gap-4">
-        {interventionCantons.map((group) => (
+        {zoneBands.map((group) => (
           <article key={group.id} className={cardClass}>
-            <div className="flex items-baseline justify-between gap-4">
-              <h3 className="font-display text-lg font-semibold text-foreground">{group.heading}</h3>
-              <p className="shrink-0 text-xs font-medium tracking-[0.08em] text-muted">{group.code}</p>
-            </div>
-            <p className="mt-2 max-w-[62ch] text-base text-muted leading-relaxed">{group.description}</p>
+            <h3 className="font-display text-lg font-semibold text-foreground">{group.timeLabel}</h3>
+            {group.detail ? <p className="mt-1 text-sm text-muted">{group.detail}</p> : null}
             <ul className="mt-4 flex flex-wrap gap-2">
               {group.places.map((place) => (
                 <li key={place.name}>
@@ -119,7 +115,7 @@ export function InterventionZones({
 
       <p className="mt-8 text-sm text-muted leading-relaxed">
         Siège : Route de Raboud 8, 1680 Romont FR. Une commune n&apos;apparaît pas dans la liste ?
-        Écrivez-nous. Nous confirmons le déplacement.
+        Écrivez-nous. Réponse sous 24 h.
       </p>
       <div className="mt-4">
         <TextLink href="/zones">Voir toutes les pages locales</TextLink>
@@ -136,11 +132,12 @@ export function InterventionZones({
         <div className="shrink-0">
           <Button
             href={devisHref}
+            data-analytics="devis"
             className="w-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:w-auto"
           >
             Demander un devis gratuit
           </Button>
-          <p className="mt-2 text-sm text-muted sm:text-right">Réponse sous 24 h · Sans engagement</p>
+          <p className="mt-2 text-sm text-muted sm:text-right">Réponse sous 24 h</p>
         </div>
       </div>
     </section>

@@ -8,8 +8,9 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ContentCard } from "@/components/ui/ContentCard";
 
 export const metadata = createMetadata({
-  title: "Politique de confidentialité",
-  description: `Politique de confidentialité de ${company.legalName} — protection des données personnelles (nLPD).`,
+  title: "Confidentialité | Gzimmo Sàrl, Romont",
+  description: `Politique de confidentialité de ${company.legalName} à Romont : données du formulaire de devis, droits nLPD, hébergement.`,
+  absoluteTitle: true,
   path: "/politique-confidentialite",
   keywords: ["confidentialité", "données personnelles", "nLPD", "Gzimmo"],
 });
@@ -33,7 +34,7 @@ export default function PolitiqueConfidentialitePage() {
         />
         <PageIntro
           badge="Légal"
-          title="Politique de confidentialité"
+          title="Politique de confidentialité de Gzimmo"
           description="Comment nous traitons vos données personnelles, conformément à la législation suisse (nLPD)."
         />
       </PageHero>

@@ -6,6 +6,7 @@ import { HeaderOffset } from "@/components/layout/HeaderOffset";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { JsonLd, PlausibleScript } from "@/components/seo/JsonLd";
+import { PlausibleEvents } from "@/components/seo/PlausibleEvents";
 import {
   GoogleTagManagerNoscript,
   GoogleTagManagerScript,
@@ -27,8 +28,11 @@ const sora = Sora({
   display: "swap",
 });
 
+const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
+
 export const metadata: Metadata = {
   ...createMetadata(),
+  ...(gscVerification ? { verification: { google: gscVerification } } : {}),
   icons: {
     icon: [{ url: "/icon_only.png", type: "image/png" }],
     apple: [{ url: "/icon_only.png", type: "image/png" }],
@@ -47,6 +51,7 @@ export default function RootLayout({
         <PlausibleScript />
       </head>
       <body className="min-h-screen antialiased pb-[calc(3.75rem+env(safe-area-inset-bottom))] lg:pb-0">
+        <PlausibleEvents />
         <a href="#contenu" className="skip-link">
           Aller au contenu
         </a>
