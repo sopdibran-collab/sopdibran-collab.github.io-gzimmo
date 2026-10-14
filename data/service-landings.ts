@@ -60,7 +60,7 @@ const sharedWhy = [
       "Gzimmo fournit l'ensemble des produits, exclusivement professionnels, adaptés à chaque type de surface et de matériau.",
   },
   {
-    title: "Réactivité depuis Romont",
+    title: "Réactivité",
     description:
       "Basés Route de Raboud 8 à Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Devis sous 24 h.",
   },
@@ -189,9 +189,9 @@ export const serviceLandings: ServiceLanding[] = [
     whyHeading: "Pourquoi Gzimmo",
     faqHeading: "Questions fréquentes",
     inclusionHeading: "Checklist d'intervention : ce qui est inclus",
-    zonesHeading: "Bassins depuis Romont",
+    zonesHeading: "Zones d'intervention",
     zonesNote:
-      "Les communes sont regroupées par bassin depuis Route de Raboud 8. Réponse sous 24 h.",
+      "Les communes sont regroupées par bassin. Réponse sous 24 h.",
     schemaServiceTypes: [
       "Nettoyage après chantier",
       "Nettoyage après rénovation",
@@ -200,7 +200,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Nettoyage de fin de chantier",
     ],
     intro:
-      "Le devis est gratuit et clair sous 24 h. Depuis Romont, nous intervenons dans les cantons de Fribourg et de Vaud. Téléphone : 076 214 23 42.",
+      "Le devis est gratuit et clair sous 24 h. Nous intervenons dans les cantons de Fribourg et de Vaud. Téléphone : 076 214 23 42.",
     relatedNote: {
       text: "Travaux dans un logement loué, puis état des lieux de sortie : la checklist régie est une autre prestation.",
       linkLabel: "Nettoyage de fin de bail",
@@ -351,7 +351,7 @@ export const serviceLandings: ServiceLanding[] = [
         "zones-apres-chantier",
         "zone",
         "Dans quels cantons intervenez-vous après un chantier ?",
-        "Fribourg et Vaud, depuis Romont, Route de Raboud 8. Le devis est gratuit.",
+        "Fribourg et Vaud. Siège : Route de Raboud 8, Romont. Le devis est gratuit.",
       ),
       faq(
         "passage-avant-reception",
@@ -482,7 +482,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Un nettoyage complet et minutieux, pièce par pièce — pour particuliers et régies qui exigent un résultat visible.",
     metaTitle: "Nettoyage d'appartements | Gzimmo",
     metaDescription:
-      "Nettoyage d'appartements pour particuliers et régies, depuis Romont. Fribourg et Vaud. Devis gratuit. 076 214 23 42.",
+      "Nettoyage d'appartements pour particuliers et régies, basée à Romont. Fribourg et Vaud. Devis gratuit. 076 214 23 42.",
     intro:
       "Que ce soit pour une remise en état ponctuelle ou un entretien approfondi, Gzimmo traite chaque pièce avec méthode : sols, sanitaires, cuisine, surfaces et détails.",
     relatedNote: {
@@ -535,7 +535,7 @@ export const serviceLandings: ServiceLanding[] = [
         "zones-appartement",
         "zone",
         "Où intervenez-vous ?",
-        "Dans les cantons de Fribourg et de Vaud, depuis Romont, Route de Raboud 8.",
+        "Dans les cantons de Fribourg et de Vaud. Siège : Route de Raboud 8, Romont.",
       ),
       faq(
         "etat-des-lieux-appartement",
@@ -624,7 +624,7 @@ export const serviceLandings: ServiceLanding[] = [
       "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud.",
     metaTitle: "Conciergerie pour régies | Gzimmo",
     metaDescription:
-      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg et Vaud, depuis Romont. 076 214 23 42.",
+      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg et Vaud, basée à Romont. 076 214 23 42.",
     intro:
       "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
     forWho: [
@@ -670,7 +670,7 @@ export const serviceLandings: ServiceLanding[] = [
       {
         question: "Intervenez-vous pour des régies à Fribourg et dans le canton de Vaud ?",
         answer:
-          "Oui, depuis Romont. Fribourg et Matran sont dans la Sarine. Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
+          "Oui. Fribourg et Matran sont dans la Sarine. Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
       },
     ],
     relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],

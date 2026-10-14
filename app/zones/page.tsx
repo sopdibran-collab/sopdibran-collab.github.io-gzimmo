@@ -38,8 +38,8 @@ export default function ZonesPage() {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Zones" }]} />
         <PageIntro
           onDark
-          title="Nos zones d'intervention"
-          description="Nous intervenons dans les cantons de Fribourg et de Vaud. Trouvez votre commune ci-dessous."
+          title="Entreprise de nettoyage en Suisse romande"
+          description="Nous intervenons dans les cantons de Fribourg et de Vaud. Cherchez votre commune dans la liste ci-dessous."
         />
       </PageHero>
 

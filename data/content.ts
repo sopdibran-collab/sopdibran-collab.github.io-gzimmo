@@ -6,7 +6,7 @@ export const whyItems = [
   "Checklist rigoureuse et devis transparent avant intervention",
   `Plus de ${company.teamExperienceYears} ans d'expérience dans le nettoyage`,
   "Produits professionnels fournis, adaptés à chaque surface",
-  "Réponse sous 24 h, depuis Romont, à Fribourg et en Vaud",
+  "Basés à Romont, réponse sous 24 h dans les cantons de Fribourg et de Vaud.",
   "Garantie de remise de bail sur nos prestations fin de bail",
 ];
 

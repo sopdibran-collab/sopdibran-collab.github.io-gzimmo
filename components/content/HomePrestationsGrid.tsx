@@ -53,12 +53,11 @@ export function HomePrestationsGrid() {
       <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-10">
         <div className="lg:col-span-7">
           <h2 className="font-display text-display-md text-foreground">
-            Fin de bail, après chantier et entretien, depuis Romont
+            Fin de bail, après chantier et entretien
           </h2>
         </div>
         <p className="max-w-sm text-muted leading-relaxed lg:col-span-5 lg:justify-self-end lg:text-right">
-          Locataires, régies et chantiers en Fribourg et dans le canton de Vaud : une équipe,
-          un devis sous 24 h.
+          Basés à Romont, réponse sous 24 h dans les cantons de Fribourg et de Vaud.
         </p>
       </div>
 

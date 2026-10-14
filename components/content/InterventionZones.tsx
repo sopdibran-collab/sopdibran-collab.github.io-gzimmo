@@ -20,7 +20,7 @@ type InterventionZonesProps = {
 const reassurances = [
   {
     icon: MapPin,
-    title: "Depuis Romont",
+    title: "Siège à Romont (FR)",
     detail: "Fribourg et Vaud",
   },
   {
@@ -47,7 +47,7 @@ function placeChipClass(onSoft: boolean, linked: boolean) {
 /** Zones d'intervention — Fribourg et Vaud. */
 export function InterventionZones({
   servicePhrase = "nettoyage",
-  heading = "Bassins depuis Romont",
+  heading = "Zones d'intervention",
   devisHref = "/contact",
   className,
   onSoft = false,
@@ -66,7 +66,7 @@ export function InterventionZones({
             {heading}
           </h2>
           <p className="mt-4 max-w-[62ch] text-base text-muted leading-relaxed">
-            Depuis Romont, le {servicePhrase} suit les bassins publiés. Réponse sous 24 h.
+            Le {servicePhrase} est proposé dans les communes listées ci-dessous. Réponse sous 24 h.
           </p>
           <ul className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-4">
             {reassurances.map((item) => (

@@ -1,5 +1,5 @@
 /**
- * Bassins publiés depuis Romont. Aucune durée de route.
+ * Bassins publiés. Aucune durée de route.
  */
 
 export type ZonePlace = {

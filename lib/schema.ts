@@ -151,7 +151,7 @@ export function zonesItemListSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Zones de nettoyage Gzimmo — bassins depuis Romont",
+    name: "Zones de nettoyage Gzimmo",
     itemListElement: zoneLocations.map((location, index) => ({
       "@type": "ListItem",
       position: index + 1,
