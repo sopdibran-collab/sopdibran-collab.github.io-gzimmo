@@ -4,48 +4,18 @@ import { services } from "@/data/services";
 import { getServicePath } from "@/lib/service-paths";
 import { TextLink } from "@/components/ui/TextLink";
 
-function prestationImageAlt(src: string, label: string) {
-  return services.find((service) => service.image.src === src)?.image.alt ?? label;
-}
-
-const homePrestations = [
-  {
-    label: "Fin de bail",
-    slug: "nettoyage-fin-de-bail",
-    detail: "État des lieux, remise des clés, checklist régie. Devis avant intervention.",
-    image: "/images/services/nettoyage-fin-de-bail.webp",
-  },
-  {
-    label: "Régies & conciergerie",
-    slug: "conciergerie",
-    detail: "Interventions planifiées pour les entrées et sorties de locataires.",
-    image: "/images/services/entretien-locaux.webp",
-  },
-  {
-    label: "Après chantier",
-    slug: "nettoyage-apres-chantier",
-    detail: "Après rénovation, construction ou travaux : poussières fines, livraison prête.",
-    image: "/images/services/nettoyage-apres-chantier.webp",
-  },
-  {
-    label: "Bureaux",
-    slug: "nettoyage-bureaux",
-    detail: "Entretien hors heures : sols, sanitaires, espaces communs.",
-    image: "/images/services/nettoyage-bureaux.webp",
-  },
-  {
-    label: "Appartements",
-    slug: "nettoyage-appartements",
-    detail: "Remise en état profonde, cuisines et sanitaires inclus.",
-    image: "/images/services/nettoyage-appartements.webp",
-  },
-  {
-    label: "Vitres",
-    slug: "nettoyage-vitres",
-    detail: "Vitrines et façades, lisibilité et image soignée.",
-    image: "/images/services/nettoyage-vitres.webp",
-  },
+const homePrestationSlugs = [
+  "nettoyage-fin-de-bail",
+  "conciergerie",
+  "nettoyage-apres-chantier",
+  "nettoyage-bureaux",
+  "nettoyage-appartements",
+  "nettoyage-vitres",
 ] as const;
+
+const homePrestations = homePrestationSlugs
+  .map((slug) => services.find((service) => service.slug === slug))
+  .filter((service): service is (typeof services)[number] => Boolean(service));
 
 export function HomePrestationsGrid() {
   return (
@@ -61,40 +31,40 @@ export function HomePrestationsGrid() {
         </p>
       </div>
 
-      <ul className="mt-14 space-y-0">
-        {homePrestations.map((item) => (
-          <li key={item.slug}>
+      <ul className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {homePrestations.map((service) => (
+          <li key={service.slug} className="min-w-0">
             <Link
-              href={getServicePath(item.slug)}
-              className="group grid gap-5 border-t border-border py-7 transition-colors duration-200 last:border-b sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:items-center sm:gap-8 lg:grid-cols-[6rem_11rem_minmax(0,1fr)_auto] lg:gap-10 lg:py-8"
+              href={getServicePath(service.slug)}
+              className="group flex h-full flex-col overflow-hidden rounded-[12px] border border-border bg-background transition-colors duration-150 ease-out hover:border-accent/40"
             >
-              <span className="hidden h-px w-8 bg-accent sm:block" aria-hidden="true" />
-
-              <div className="relative hidden aspect-[4/3] overflow-hidden bg-surface sm:block">
+              <div className="relative aspect-[4/3] overflow-hidden bg-surface">
                 <Image
-                  src={item.image}
-                  alt={prestationImageAlt(item.image, item.label)}
+                  src={service.image.src}
+                  alt={service.image.alt}
                   fill
                   className="object-cover"
-                  sizes="176px"
+                  style={{ objectPosition: service.image.objectPosition }}
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                 />
               </div>
-
-              <div className="min-w-0">
-                <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent-ink sm:text-xl">
-                  {item.label}
+              <div className="flex flex-1 flex-col px-5 py-5">
+                <h3 className="font-display text-[20px] font-semibold leading-snug tracking-[-0.02em] text-foreground">
+                  {service.shortTitle}
                 </h3>
-                <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted">
-                  {item.detail}
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                  {service.description}
                 </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-foreground">
+                  Voir le service
+                  <span
+                    aria-hidden="true"
+                    className="hover-slide-arrow inline-block transition-transform duration-150 ease-out group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+                  >
+                    →
+                  </span>
+                </span>
               </div>
-
-              <span
-                className="hidden text-muted transition-colors duration-200 group-hover:text-accent-ink lg:inline"
-                aria-hidden="true"
-              >
-                →
-              </span>
             </Link>
           </li>
         ))}
