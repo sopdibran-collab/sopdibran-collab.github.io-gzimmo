@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ContactCta } from "@/components/content/ContactCta";
+import { HeroPhotoBackdrop } from "@/components/layout/HeroPhotoBackdrop";
 import { Container, Section } from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
@@ -15,7 +15,7 @@ export type PageHeroImage = {
 };
 
 /**
- * Full-bleed PageHero when `image` is set: soft décor photo + dark gray veil + light copy.
+ * Full-bleed PageHero when `image` is set: décor photo + same veil as HomeHero + light copy.
  * Same height token as HomeHero (`.min-h-hero-photo`) — no split grid.
  * Without `image`, keeps the soft section-hero gradient (legal / SEO).
  */
@@ -56,18 +56,11 @@ export function PageHero({
         className,
       )}
     >
-      <Image
+      <HeroPhotoBackdrop
         src={image.src}
         alt={image.alt}
-        fill
+        position={image.position}
         priority={image.priority ?? true}
-        sizes="100vw"
-        className="object-cover"
-        style={image.position ? { objectPosition: image.position } : undefined}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-[#1e2227]/85 to-[#1e2227]/15"
       />
       <Container
         className={cn(
