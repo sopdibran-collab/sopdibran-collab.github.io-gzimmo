@@ -5,10 +5,8 @@ import type { ComponentPropsWithoutRef } from "react";
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const variants: Record<ButtonVariant, string> = {
-  primary:
-    "bg-accent text-white hover:bg-accent-hover hover:text-white border border-transparent shadow-none",
-  secondary:
-    "bg-background text-foreground border border-border hover:border-foreground/20 hover:bg-surface",
+  primary: "btn-primary hover-lift bg-accent text-white border border-transparent shadow-none",
+  secondary: "btn-secondary bg-background text-foreground border border-border",
   ghost: "bg-transparent text-foreground hover:text-accent-ink border border-transparent",
 };
 
@@ -28,7 +26,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition-[color,background-color,border-color] duration-200 ease-out",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out motion-reduce:transition-[color,background-color,border-color,box-shadow] motion-reduce:hover:translate-y-0",
     variants[variant],
     className,
   );
