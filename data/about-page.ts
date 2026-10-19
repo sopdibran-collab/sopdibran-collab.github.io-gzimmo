@@ -10,6 +10,8 @@ export const aboutIdentityParagraphs = [
   `Le devis est gratuit et sans engagement, et nous répondons sous 24 h. Vous pouvez nous joindre au ${phoneDisplay} ou à ${email}. La page Zones liste les communes desservies et renvoie vers les pages villes.`,
 ];
 
+export const aboutValuesTitle = "Notre façon de travailler";
+
 export const aboutServicesTitle = "Les huit prestations";
 
 export const aboutServicesLead =
@@ -18,7 +20,7 @@ export const aboutServicesLead =
 export const aboutMethodTitle = "Comment se passe le travail";
 
 export const aboutMethodParagraphs = [
-  "Vous nous décrivez le logement, le local ou le chantier par téléphone, par e-mail ou avec le formulaire. Nous vous répondons sous 24 h, et le devis est gratuit. Le tarif convenu dans le devis est le tarif final, et la date du passage y figure. Nous convenons des horaires avec vous et apportons des produits professionnels pour le parquet, le carrelage, l'inox et le verre.",
+  "Vous nous décrivez le logement, le local ou le chantier par téléphone, par e-mail ou avec le formulaire. Le devis est gratuit. Le tarif convenu dans le devis est le tarif final, et la date du passage y figure. Nous convenons des horaires avec vous et apportons des produits professionnels pour le parquet, le carrelage, l'inox et le verre.",
   "Pour une fin de bail, nous suivons la checklist de la régie. Si un point est refusé à l'état des lieux, nous revenons sans frais. Cette garantie ne couvre pas le nettoyage après chantier, qui porte sur les poussières fines, la laitance, les sols et les vitres. L'entretien de locaux et de bureaux peut être régulier ou ponctuel. La conciergerie couvre les parties communes, pour les régies et les immeubles.",
 ];
 
@@ -46,13 +48,13 @@ export const aboutPageFaqs: FaqItem[] = [
     "apropos-qui",
     "qualite",
     "Qui est Gzimmo ?",
-    `${legalName} est une entreprise de nettoyage et d'entretien basée à Romont (Route de Raboud 8, 1680 Romont FR, IDE ${ide}). Notre équipe a plus de 15 ans d'expérience dans le nettoyage professionnel. Nous travaillons pour des particuliers, des régies et des entreprises dans les cantons de Fribourg et de Vaud. ${phoneDisplay} · ${email}`,
+    `${legalName} est une entreprise de nettoyage et d'entretien basée à Romont (Route de Raboud 8, 1680 Romont FR, IDE ${ide}). Nous travaillons pour des particuliers, des régies et des entreprises dans les cantons de Fribourg et de Vaud. ${phoneDisplay} · ${email}`,
   ),
   faq(
     "apropos-methode",
     "delais",
     "Comment se déroule une intervention ?",
-    "Vous nous décrivez le travail, nous vous répondons sous 24 h et établissons un devis gratuit. Le tarif convenu est le tarif final, et la date du passage figure dans le devis. Nous apportons les produits. Pour une fin de bail, si la régie refuse un point, nous revenons sans frais.",
+    "Vous nous décrivez le travail et nous établissons un devis gratuit. Le tarif convenu est le tarif final, et la date du passage figure dans le devis. Nous apportons les produits. Pour une fin de bail, si la régie refuse un point, nous revenons sans frais.",
   ),
   ...getFaqsByIds(["regies-entreprises"]),
 ];

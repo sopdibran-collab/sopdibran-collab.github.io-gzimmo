@@ -8,8 +8,10 @@ import { ZoneBands } from "@/components/content/ZoneBands";
 import { ContextualLinks } from "@/components/content/ContextualLinks";
 import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { HashScroll } from "@/components/ui/HashScroll";
+import { CtaPair } from "@/components/ui/ConversionCta";
 import {
-  zonesCantonParagraphs,
+  zonesCantonBullets,
+  zonesCantonParagraph,
   zonesCantonSources,
   zonesCantonTitle,
   zonesIntroParagraphs,
@@ -71,17 +73,25 @@ export default function ZonesPage() {
 
       <ZoneBands />
 
+      <div className="border-y border-border bg-background">
+        <div className="mx-auto max-w-[1200px] px-container py-8 md:py-10">
+          <CtaPair compact />
+        </div>
+      </div>
+
       <PageMain variant="default">
         <section aria-labelledby="zones-canton">
           <h2 id="zones-canton" className="font-display text-display-sm text-foreground">
             {zonesCantonTitle}
           </h2>
-          {zonesCantonParagraphs.map((paragraph) => (
-            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted">
-              {paragraph}
-            </p>
-          ))}
-          <ul className="mt-6 space-y-2">
+          <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-reading leading-relaxed text-muted">
+            {zonesCantonBullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="mt-4 text-reading leading-relaxed text-muted">{zonesCantonParagraph}</p>
+          <p className="mt-6 text-sm font-medium text-foreground">Sources</p>
+          <ul className="mt-2 space-y-2">
             {zonesCantonSources.map((source) => (
               <li key={source.href}>
                 {source.href.startsWith("/") ? (

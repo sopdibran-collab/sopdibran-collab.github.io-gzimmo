@@ -23,12 +23,13 @@ export const zonesIntroParagraphs = [
 export const zonesCantonTitle =
   "Fin de bail : ce qui change d'un canton à l'autre";
 
-export const zonesCantonParagraphs = [
-  "Les règles de restitution d'un logement ne sont pas les mêmes dans le canton de Fribourg et dans le canton de Vaud. Les pages villes les détaillent, sources à l'appui. Dans les deux cantons, nous suivons la checklist de votre régie, et la date du nettoyage est fixée dans le devis.",
-  "Dans le canton de Fribourg (Glâne, Broye fribourgeoise, Gruyère, Veveyse, Sarine, Singine, district du Lac), le locataire rend le logement dans l'état qui résulte d'un usage conforme au contrat, nettoyage compris. Le bailleur signale immédiatement les défauts constatés à la sortie. Source : Code des obligations, art. 267 et 267a.",
-  "Dans le canton de Vaud (Lausanne et Ouest lausannois, Riviera, Chablais, Nord vaudois, Moudon, Oron, Payerne), les règles et usages locatifs (art. 36 et 37) fixent la remise des locaux à midi le jour de l'échéance. Les locaux doivent être propres et vidés, les sols contrôlables, et toutes les clés rendues, doubles compris. Selon le logement, le texte mentionne aussi le filtre de ventilation, les stores et les radiateurs.",
-  "Près de la limite cantonale, vérifiez le canton de votre commune : Estavayer-le-Lac est fribourgeoise, alors que Payerne, Moudon et Oron sont vaudoises. Châtel-Saint-Denis, en Veveyse, est fribourgeoise comme Bulle, tout comme Morat (Murten), dans le district du Lac.",
+export const zonesCantonBullets = [
+  "Canton de Fribourg : Code des obligations, art. 267 — le locataire rend le logement dans l'état qui résulte d'un usage conforme au contrat, nettoyage compris.",
+  "Canton de Vaud : règles et usages locatifs (art. 36 et 37) — locaux propres et vidés à midi le jour de l'échéance.",
 ];
+
+export const zonesCantonParagraph =
+  "Les règles de restitution d'un logement ne sont pas les mêmes dans le canton de Fribourg et dans le canton de Vaud. Les pages villes les détaillent, sources à l'appui. Dans les deux cantons, nous suivons la checklist de votre régie, et la date du nettoyage est fixée dans le devis. Dans le canton de Fribourg (Glâne, Broye fribourgeoise, Gruyère, Veveyse, Sarine, Singine, district du Lac), le bailleur signale immédiatement les défauts constatés à la sortie. Dans le canton de Vaud (Lausanne et Ouest lausannois, Riviera, Chablais, Nord vaudois, Moudon, Oron, Payerne), les sols doivent être contrôlables, et toutes les clés rendues, doubles compris. Selon le logement, le texte mentionne aussi le filtre de ventilation, les stores et les radiateurs. Près de la limite cantonale, vérifiez le canton de votre commune : Estavayer-le-Lac est fribourgeoise, alors que Payerne, Moudon et Oron sont vaudoises. Châtel-Saint-Denis, en Veveyse, est fribourgeoise comme Bulle, tout comme Morat (Murten), dans le district du Lac.";
 
 export const zonesCantonSources: SourceLink[] = [
   federalRestitution,

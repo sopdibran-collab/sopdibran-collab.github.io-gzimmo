@@ -11,9 +11,11 @@ import {
   aboutPageFaqs,
   aboutServicesLead,
   aboutServicesTitle,
+  aboutValuesTitle,
   aboutZonesParagraphs,
   aboutZonesTitle,
 } from "@/data/about-page";
+import { CtaPair } from "@/components/ui/ConversionCta";
 import { services } from "@/data/services";
 import { getServicePath } from "@/lib/service-paths";
 import { createMetadata } from "@/lib/metadata";
@@ -47,7 +49,7 @@ const values = [
   },
   {
     title: "Fiabilité",
-    text: `Une équipe qui cumule plus de ${company.teamExperienceYears} ans d'expérience auprès de particuliers, régies et entreprises dans les cantons de Fribourg et de Vaud. Réponse sous 24 h.`,
+    text: "Nous travaillons pour des particuliers, des régies et des entreprises dans les cantons de Fribourg et de Vaud.",
   },
 ];
 
@@ -92,7 +94,11 @@ export default function AboutPage() {
             </p>
           ))}
         </section>
-        <ValueCards items={values} />
+        <ValueCards
+          items={values}
+          sectionTitle={aboutValuesTitle}
+          sectionId="a-propos-facon"
+        />
       </PageMain>
 
       <PageMain variant="default">
@@ -106,11 +112,11 @@ export default function AboutPage() {
               <li key={service.slug} className="py-5">
                 <Link
                   href={getServicePath(service.slug)}
-                  className="font-medium text-foreground transition-colors duration-200 hover:text-accent-ink"
+                  className="font-medium text-accent-ink underline decoration-accent-ink/70 underline-offset-4 transition-colors duration-200 hover:text-accent-hover"
                 >
                   {service.title}
                 </Link>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+                <p className="mt-2 max-w-2xl text-base leading-relaxed text-foreground">
                   {service.description}
                 </p>
               </li>
@@ -127,6 +133,7 @@ export default function AboutPage() {
               {paragraph}
             </p>
           ))}
+          <CtaPair compact className="mt-8" />
         </section>
 
         <section className="mt-16" aria-labelledby="a-propos-clients">
