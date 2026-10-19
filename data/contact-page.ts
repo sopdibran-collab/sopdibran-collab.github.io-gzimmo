@@ -5,29 +5,41 @@ const { phoneDisplay, email } = company;
 
 export const contactQuoteTitle = "Ce qu'il faut indiquer pour un devis";
 
-export const contactQuoteParagraphs = [
-  "Trois voies aboutissent au même devis gratuit, sans engagement : le téléphone (" +
+export const contactQuoteIntro = [
+  "Vous pouvez demander votre devis gratuit et sans engagement par téléphone au " +
     phoneDisplay +
-    "), l'e-mail (" +
+    ", par e-mail à " +
     email +
-    "), ou le formulaire ci-dessus. Le plus simple est souvent d'appeler : vous décrivez le travail, nous établissons le tarif ensemble.",
-  "Le formulaire demande le nom, le téléphone, l'e-mail, le type de prestation et la commune. Les prestations proposées sont : fin de bail, après chantier, entretien, vitres, ou autre. La commune permet de vérifier que le lieu est dans une zone desservie (cantons de Fribourg et de Vaud, listes sur la page Zones).",
-  "Le message est facultatif. Il accélère le devis s'il précise, selon le cas : le logement ou le local (pièces, état) ; la régie et la date de remise des clés pour une fin de bail ; le type de travaux et la date de réception pour un après-chantier. Le prix n'est pas un forfait unique : il dépend de la surface, de l'état et, en fin de bail, de la checklist de la régie.",
-  "Pour quitter un logement avec état des lieux, choisissez « Fin de bail » plutôt qu'« Entretien » : seule la fin de bail comprend la garantie de retour si la régie refuse un point. L'après-chantier est une autre prestation : le devis décrit alors le passage convenu, sans cette garantie.",
+    " ou avec le formulaire ci-dessus. Le plus simple est souvent d'appeler : vous nous décrivez le travail et nous établissons le devis.",
+  "Le formulaire demande votre nom, votre téléphone, votre e-mail, le type de prestation et la commune. Vous avez le choix entre fin de bail, après chantier, entretien, vitres ou autre. La commune nous permet de vérifier qu'elle se trouve dans une zone desservie (cantons de Fribourg et de Vaud, voir la liste sur la page Zones).",
+];
+
+export const contactQuoteMessageLead =
+  "Le message est facultatif, mais il nous aide à préparer le devis. Selon le cas, précisez :";
+
+export const contactQuoteMessageItems = [
+  "le logement ou le local (pièces, état) ;",
+  "pour une fin de bail, la régie et la date de remise des clés ;",
+  "pour un après-chantier, le type de travaux et la date de réception.",
+];
+
+export const contactQuoteRest = [
+  "Le prix n'est pas forfaitaire : il dépend de la surface, de l'état et, pour une fin de bail, de la checklist de la régie.",
+  "Si vous quittez un logement avec état des lieux, choisissez « Fin de bail » plutôt qu'« Entretien » : seule la fin de bail comprend notre garantie de retour si la régie refuse un point. Le nettoyage après chantier est une prestation distincte : le devis décrit le passage convenu, sans cette garantie.",
 ];
 
 export const contactAfterTitle = "Après l'envoi";
 
 export const contactAfterParagraphs = [
-  "Si l'envoi aboutit, vous arrivez sur une page de confirmation. Nous répondons sous 24 heures à l'adresse e-mail indiquée, avec un devis détaillé. Le tarif convenu est le tarif final. La date de l'intervention est ensuite fixée dans ce devis, selon le planning.",
-  "Pour une urgence, appelez le " +
+  "Une fois le formulaire envoyé, une page de confirmation s'affiche. Nous vous répondons sous 24 heures à l'adresse e-mail indiquée et établissons un devis détaillé. Le tarif convenu est le tarif final. La date de l'intervention est fixée dans le devis, selon notre planning.",
+  "Si l'envoi du formulaire échoue, vous pouvez nous joindre au " +
     phoneDisplay +
-    " plutôt que d'attendre le retour écrit. Si l'envoi du formulaire échoue, le même numéro et " +
+    " ou à " +
     email +
-    " restent disponibles. Les données du formulaire (nom, téléphone, e-mail, localité, type de prestation, message) servent à répondre à la demande de devis et à planifier l'intervention.",
-  "Siège : " +
+    ". Les données du formulaire (nom, téléphone, e-mail, commune, type de prestation, message) servent à répondre à votre demande de devis et à planifier l'intervention.",
+  "Notre siège se trouve " +
     formatAddress() +
-    ". Carte ci-dessous. Nous n'intervenons pas à Neuchâtel, à Genève ni en Valais. Une commune absente de la page Zones n'est pas pour autant refusée d'office : indiquez-la, nous vous dirons si nous pouvons venir.",
+    " (carte ci-dessous). Si votre commune ne figure pas sur la page Zones, indiquez-la quand même : nous vous dirons si nous pouvons venir.",
 ];
 
 export const contactPageFaqs: FaqItem[] = [
@@ -35,27 +47,25 @@ export const contactPageFaqs: FaqItem[] = [
     "contact-quoi-indiquer",
     "tarifs",
     "Que faut-il indiquer pour un devis ?",
-    `Nom, téléphone, e-mail, type de prestation et commune. Dans le message, utile selon le cas : pièces et état du logement, régie et date de remise des clés, type de travaux et date de réception. Le devis est gratuit. ${phoneDisplay} · ${email}`,
+    `Nom, téléphone, e-mail, type de prestation et commune. Selon le cas, ajoutez dans le message les pièces et l'état du logement, la régie et la date de remise des clés, ou le type de travaux et la date de réception. Le devis est gratuit. ${phoneDisplay} · ${email}`,
   ),
   faq(
     "contact-apres-envoi",
     "delais",
     "Que se passe-t-il après l'envoi du formulaire ?",
-    "Nous répondons sous 24 heures à l'e-mail indiqué, avec un devis sans engagement. Le tarif convenu est le tarif final. La date du passage est fixée dans le devis. Pour une urgence, appelez le " +
-      phoneDisplay +
-      ".",
+    "Nous vous répondons sous 24 heures à l'adresse e-mail indiquée et établissons un devis sans engagement. Le tarif convenu est le tarif final, et la date du passage est fixée dans le devis.",
   ),
   faq(
     "contact-telephone-ou-formulaire",
     "qualite",
     "Puis-je appeler plutôt que remplir le formulaire ?",
-    `Oui. Appelez le ${phoneDisplay} ou écrivez à ${email}. Un échange suffit pour un devis sur mesure, sans engagement. Réponse sous 24 h.`,
+    `Oui. Appelez le ${phoneDisplay} ou écrivez à ${email} : un échange suffit pour établir votre devis, sans engagement. Nous répondons sous 24 h.`,
   ),
   faq(
     "contact-fin-de-bail-ou-entretien",
     "prestations",
     "Fin de bail ou entretien : que choisir dans le formulaire ?",
-    "Fin de bail : état des lieux et remise des clés, checklist régie, garantie de retour sans frais si un point est refusé. Entretien : locaux, bureaux, appartements ou maisons sans cette garantie. Après chantier : poussières fines après travaux. Vitres : intérieur et extérieur accessibles.",
+    "Choisissez « Fin de bail » si vous quittez un logement avec état des lieux et remise des clés : nous suivons la checklist de la régie et revenons sans frais si un point est refusé. « Entretien » concerne les locaux, les bureaux, les appartements ou les maisons, sans cette garantie. « Après chantier » vise les poussières fines après travaux, et « Vitres » les surfaces intérieures et extérieures accessibles.",
   ),
-  ...getFaqsByIds(["devis-gratuit", "delai-intervention", "zone-hors-prioritaire"]),
+  ...getFaqsByIds(["devis-gratuit", "delai-intervention"]),
 ];

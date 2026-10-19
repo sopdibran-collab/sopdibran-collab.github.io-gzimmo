@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { company, teamExperienceLabel } from "@/data/company";
 import {
-  aboutClientsParagraphs,
+  aboutClientsAfter,
+  aboutClientsItems,
   aboutClientsTitle,
   aboutIdentityParagraphs,
   aboutIdentityTitle,
@@ -132,11 +133,12 @@ export default function AboutPage() {
           <h2 id="a-propos-clients" className="font-display text-display-sm text-foreground">
             {aboutClientsTitle}
           </h2>
-          {aboutClientsParagraphs.map((paragraph) => (
-            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted">
-              {paragraph}
-            </p>
-          ))}
+          <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-reading leading-relaxed text-muted">
+            {aboutClientsItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="mt-4 text-reading leading-relaxed text-muted">{aboutClientsAfter}</p>
         </section>
 
         <section className="mt-16" aria-labelledby="a-propos-zones">
@@ -168,7 +170,7 @@ export default function AboutPage() {
       <PageMain>
         <FaqSectionHeader
           title="Questions sur Gzimmo"
-          description="Identité, déroulement d'une intervention, clients et devis."
+          description="Identité, déroulement d'une intervention et clients."
         />
         <div className="mt-8">
           <FaqList items={aboutPageFaqs} />

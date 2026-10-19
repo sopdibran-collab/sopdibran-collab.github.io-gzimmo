@@ -5,7 +5,10 @@ import {
   contactAfterParagraphs,
   contactAfterTitle,
   contactPageFaqs,
-  contactQuoteParagraphs,
+  contactQuoteIntro,
+  contactQuoteMessageItems,
+  contactQuoteMessageLead,
+  contactQuoteRest,
   contactQuoteTitle,
 } from "@/data/contact-page";
 import { formatPhoneHref } from "@/lib/utils";
@@ -91,8 +94,19 @@ export default async function ContactPage({
         </div>
 
         <SectionDivider title={contactQuoteTitle} className="mt-20">
-          {contactQuoteParagraphs.map((paragraph) => (
+          {contactQuoteIntro.map((paragraph) => (
             <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted first:mt-0">
+              {paragraph}
+            </p>
+          ))}
+          <p className="mt-4 text-reading leading-relaxed text-muted">{contactQuoteMessageLead}</p>
+          <ul className="mt-3 max-w-2xl list-disc space-y-2 pl-5 text-reading leading-relaxed text-muted">
+            {contactQuoteMessageItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          {contactQuoteRest.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted">
               {paragraph}
             </p>
           ))}
@@ -109,7 +123,7 @@ export default async function ContactPage({
         <div className="mt-20">
           <FaqSectionHeader
             title="Questions pour un devis"
-            description="Informations à fournir, suite de l'envoi, téléphone ou formulaire."
+            description="Informations à fournir, suite de l'envoi, téléphone ou formulaire, devis gratuit."
           />
           <div className="mt-8">
             <FaqList items={contactPageFaqs} />

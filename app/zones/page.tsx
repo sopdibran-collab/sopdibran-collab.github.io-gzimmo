@@ -109,7 +109,7 @@ export default function ZonesPage() {
         <div className="mt-16">
           <FaqSectionHeader
             title="Questions sur les zones"
-            description="Commune, cantons voisins, pages villes et règles de fin de bail."
+            description="Commune, zones principales, pages villes et règles de fin de bail."
           />
           <div className="mt-8">
             <FaqList items={zonesPageFaqs} />
