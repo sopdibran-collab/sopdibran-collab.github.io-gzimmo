@@ -1,5 +1,7 @@
 export type Service = {
   slug: string;
+  /** Last editorial change (`git log -1 --format=%cI` on this service’s sources). Frozen — not the build date. */
+  updatedAt: string;
   title: string;
   shortTitle: string;
   description: string;
@@ -17,6 +19,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "entretien-locaux",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Entretien de locaux",
     shortTitle: "Entretien de locaux",
     description:
@@ -38,6 +41,7 @@ export const services: Service[] = [
   },
   {
     slug: "nettoyage-appartements",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Nettoyage d'appartements",
     shortTitle: "Nettoyage d'appartements",
     description:
@@ -59,6 +63,7 @@ export const services: Service[] = [
   },
   {
     slug: "nettoyage-maisons",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Nettoyage de maisons",
     shortTitle: "Nettoyage de maisons",
     description:
@@ -80,6 +85,7 @@ export const services: Service[] = [
   },
   {
     slug: "nettoyage-apres-chantier",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Nettoyage après chantier",
     shortTitle: "Nettoyage après chantier",
     description:
@@ -101,6 +107,7 @@ export const services: Service[] = [
   },
   {
     slug: "nettoyage-fin-de-bail",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Nettoyage fin de bail",
     shortTitle: "Nettoyage fin de bail",
     description:
@@ -122,6 +129,7 @@ export const services: Service[] = [
   },
   {
     slug: "nettoyage-bureaux",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Nettoyage de bureaux",
     shortTitle: "Nettoyage de bureaux",
     description:
@@ -143,6 +151,7 @@ export const services: Service[] = [
   },
   {
     slug: "nettoyage-vitres",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Nettoyage de vitres",
     shortTitle: "Nettoyage de vitres",
     description:
@@ -164,6 +173,7 @@ export const services: Service[] = [
   },
   {
     slug: "conciergerie",
+    updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Services de conciergerie",
     shortTitle: "Conciergerie",
     description:

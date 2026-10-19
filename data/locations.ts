@@ -14,6 +14,8 @@ export type Location = {
   subtitle?: string;
   geo: { latitude: number; longitude: number };
   priority: number;
+  /** Last editorial change (`git log -1 --format=%cI` on this entry). Frozen — not the build date. */
+  updatedAt: string;
   isHeadquarters?: boolean;
   nearbyCommunes: string[];
   communeGroups: { title: string; names: string[] }[];
@@ -70,6 +72,7 @@ export const locations: Location[] = [
       "Notre siège est à la Route de Raboud 8, 1680 Romont, dans le district de la Glâne. C'est d'ici que nous partons pour toutes nos interventions.",
     geo: { latitude: 46.6917, longitude: 6.9111 },
     priority: 1,
+    updatedAt: "2026-10-14T22:28:42+00:00",
     isHeadquarters: true,
     nearbyCommunes: [
       "Vuisternens-devant-Romont",
@@ -152,6 +155,7 @@ export const locations: Location[] = [
     intro: "Bulle est le centre de la Gruyère.",
     geo: { latitude: 46.6175, longitude: 7.0569 },
     priority: 0.8,
+    updatedAt: "2026-10-14T22:36:35+00:00",
     nearbyCommunes: ["Riaz", "Vuadens", "Broc", "Châtel-Saint-Denis"],
     communeGroups: [
       { title: "Gruyère", names: ["Bulle", "Riaz", "Vuadens", "Broc"] },
@@ -211,6 +215,7 @@ export const locations: Location[] = [
       "Nous intervenons à Fribourg et dans les communes voisines de la Sarine, ainsi qu'à Düdingen (Guin), en Singine.",
     geo: { latitude: 46.8065, longitude: 7.1619 },
     priority: 0.85,
+    updatedAt: "2026-10-14T22:36:35+00:00",
     nearbyCommunes: ["Matran", "Marly", "Villars-sur-Glâne", "Givisiez", "Düdingen (Guin)"],
     communeGroups: [
       {
@@ -275,6 +280,7 @@ export const locations: Location[] = [
       "Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
+    updatedAt: "2026-10-14T22:36:35+00:00",
     nearbyCommunes: ["Renens", "Crissier"],
     communeGroups: [
       { title: "Lausanne", names: ["Lausanne"] },
@@ -337,6 +343,7 @@ export const locations: Location[] = [
       "Nous intervenons à Vevey et à Montreux, sur la Riviera, ainsi qu'à Aigle, dans le Chablais.",
     geo: { latitude: 46.4628, longitude: 6.8419 },
     priority: 0.72,
+    updatedAt: "2026-10-14T22:36:35+00:00",
     nearbyCommunes: ["Montreux", "Aigle"],
     communeGroups: [
       { title: "Riviera", names: ["Vevey", "Montreux"] },
@@ -387,6 +394,7 @@ export const locations: Location[] = [
       "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains.",
     geo: { latitude: 46.7785, longitude: 6.6412 },
     priority: 0.7,
+    updatedAt: "2026-10-14T22:36:35+00:00",
     nearbyCommunes: [],
     communeGroups: [{ title: "Nord vaudois", names: ["Yverdon-les-Bains"] }],
     rules: {
@@ -435,6 +443,7 @@ export const locations: Location[] = [
       "Nous intervenons à Morat (Murten), dans le district du Lac.",
     geo: { latitude: 46.928, longitude: 7.117 },
     priority: 0.68,
+    updatedAt: "2026-10-14T22:36:35+00:00",
     nearbyCommunes: [],
     communeGroups: [{ title: "District du Lac", names: ["Morat (Murten)"] }],
     rules: {
