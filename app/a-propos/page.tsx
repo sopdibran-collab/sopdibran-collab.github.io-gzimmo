@@ -1,12 +1,31 @@
+import Link from "next/link";
 import { company, teamExperienceLabel } from "@/data/company";
+import {
+  aboutClientsParagraphs,
+  aboutClientsTitle,
+  aboutIdentityParagraphs,
+  aboutIdentityTitle,
+  aboutMethodParagraphs,
+  aboutMethodTitle,
+  aboutPageFaqs,
+  aboutServicesLead,
+  aboutServicesTitle,
+  aboutZonesParagraphs,
+  aboutZonesTitle,
+} from "@/data/about-page";
+import { services } from "@/data/services";
+import { getServicePath } from "@/lib/service-paths";
 import { createMetadata } from "@/lib/metadata";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ValueCards } from "@/components/content/ValueCards";
 import { StatsBand } from "@/components/content/StatsBand";
+import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { Section } from "@/components/layout/Section";
+import { HashScroll } from "@/components/ui/HashScroll";
+import { ContextualLinks } from "@/components/content/ContextualLinks";
 
 export const metadata = createMetadata({
   title: "À propos de Gzimmo, nettoyage à Romont",
@@ -34,11 +53,15 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <HashScroll />
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "Accueil", path: "/" },
-          { name: "À propos", path: "/a-propos" },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", path: "/" },
+            { name: "À propos", path: "/a-propos" },
+          ]),
+          faqPageSchema(aboutPageFaqs),
+        ]}
       />
 
       <PageHero
@@ -58,12 +81,99 @@ export default function AboutPage() {
       </PageHero>
 
       <PageMain>
+        <section aria-labelledby="a-propos-identite">
+          <h2 id="a-propos-identite" className="font-display text-display-sm text-foreground">
+            {aboutIdentityTitle}
+          </h2>
+          {aboutIdentityParagraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted">
+              {paragraph}
+            </p>
+          ))}
+        </section>
         <ValueCards items={values} />
+      </PageMain>
+
+      <PageMain variant="default">
+        <section aria-labelledby="a-propos-services">
+          <h2 id="a-propos-services" className="font-display text-display-sm text-foreground">
+            {aboutServicesTitle}
+          </h2>
+          <p className="mt-4 text-reading leading-relaxed text-muted">{aboutServicesLead}</p>
+          <ul className="mt-8 divide-y divide-border/80 border-y border-border/80">
+            {services.map((service) => (
+              <li key={service.slug} className="py-5">
+                <Link
+                  href={getServicePath(service.slug)}
+                  className="font-medium text-foreground transition-colors duration-200 hover:text-accent-ink"
+                >
+                  {service.title}
+                </Link>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+                  {service.description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-16" aria-labelledby="a-propos-methode">
+          <h2 id="a-propos-methode" className="font-display text-display-sm text-foreground">
+            {aboutMethodTitle}
+          </h2>
+          {aboutMethodParagraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted">
+              {paragraph}
+            </p>
+          ))}
+        </section>
+
+        <section className="mt-16" aria-labelledby="a-propos-clients">
+          <h2 id="a-propos-clients" className="font-display text-display-sm text-foreground">
+            {aboutClientsTitle}
+          </h2>
+          {aboutClientsParagraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted">
+              {paragraph}
+            </p>
+          ))}
+        </section>
+
+        <section className="mt-16" aria-labelledby="a-propos-zones">
+          <h2 id="a-propos-zones" className="font-display text-display-sm text-foreground">
+            {aboutZonesTitle}
+          </h2>
+          {aboutZonesParagraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted">
+              {paragraph}
+            </p>
+          ))}
+        </section>
+
+        <ContextualLinks
+          links={[
+            { label: "Services", href: "/services" },
+            { label: "Zones d'intervention", href: "/zones" },
+            { label: "Réalisations", href: "/realisations" },
+            { label: "Avis clients", href: "/avis" },
+            { label: "Contact", href: "/contact" },
+          ]}
+        />
       </PageMain>
 
       <Section variant="inverse">
         <StatsBand />
       </Section>
+
+      <PageMain>
+        <FaqSectionHeader
+          title="Questions sur Gzimmo"
+          description="Identité, déroulement d'une intervention, clients et devis."
+        />
+        <div className="mt-8">
+          <FaqList items={aboutPageFaqs} />
+        </div>
+      </PageMain>
 
       <PageCta />
     </>

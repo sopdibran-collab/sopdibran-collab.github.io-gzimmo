@@ -26,12 +26,12 @@ export type Location = {
   priorityLinks?: { label: string; href: string }[];
 };
 
-const federalRestitution: SourceLink = {
+export const federalRestitution: SourceLink = {
   href: "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267",
   label: "Code des obligations, art. 267 et 267a (Fedlex)",
 };
 
-const federalCleaningNote: SourceLink = {
+export const federalCleaningNote: SourceLink = {
   href: "https://www.rechtsratgeber-rassismus.admin.ch/pdf/FRB_Apres_la_resiliation.pdf",
   label: "Confédération : le nettoyage fait partie de la restitution (art. 267 CO)",
 };
@@ -41,7 +41,7 @@ const fribourgBuildings: SourceLink = {
   label: "État de Fribourg, bâtiments à usage d'habitation, 2025",
 };
 
-const vaudRulv: SourceLink = {
+export const vaudRulv: SourceLink = {
   href: "https://www.vd.ch/fileadmin/user_upload/themes/vie_privee/logement/fichiers_pdf/rulv.pdf",
   label: "Règles et usages locatifs du canton de Vaud, art. 36 et 37 (PDF du 14 novembre 2025)",
 };

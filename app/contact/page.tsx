@@ -1,12 +1,20 @@
 import { createMetadata } from "@/lib/metadata";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { company } from "@/data/company";
+import {
+  contactAfterParagraphs,
+  contactAfterTitle,
+  contactPageFaqs,
+  contactQuoteParagraphs,
+  contactQuoteTitle,
+} from "@/data/contact-page";
 import { formatPhoneHref } from "@/lib/utils";
 import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ContactForm } from "@/components/content/ContactForm";
 import { ContactInfoCard } from "@/components/content/ContactInfoCard";
+import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { GoogleMap, GoogleMapsLink } from "@/components/seo/GoogleMap";
 import { SectionDivider } from "@/components/ui/ContentCard";
 import { Button } from "@/components/ui/Button";
@@ -32,10 +40,13 @@ export default async function ContactPage({
     <>
       <HashScroll />
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "Accueil", path: "/" },
-          { name: "Contact", path: "/contact" },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: "Accueil", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+          faqPageSchema(contactPageFaqs),
+        ]}
       />
 
       <PageHero
@@ -76,6 +87,32 @@ export default async function ContactPage({
           </div>
           <div id="formulaire" className="scroll-mt-28 lg:col-span-7 lg:scroll-mt-24">
             <ContactForm defaultService={params.service} defaultCommune={params.ville} />
+          </div>
+        </div>
+
+        <SectionDivider title={contactQuoteTitle} className="mt-20">
+          {contactQuoteParagraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted first:mt-0">
+              {paragraph}
+            </p>
+          ))}
+        </SectionDivider>
+
+        <SectionDivider title={contactAfterTitle} className="mt-20">
+          {contactAfterParagraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-reading leading-relaxed text-muted first:mt-0">
+              {paragraph}
+            </p>
+          ))}
+        </SectionDivider>
+
+        <div className="mt-20">
+          <FaqSectionHeader
+            title="Questions pour un devis"
+            description="Informations à fournir, suite de l'envoi, téléphone ou formulaire."
+          />
+          <div className="mt-8">
+            <FaqList items={contactPageFaqs} />
           </div>
         </div>
 
