@@ -1,7 +1,6 @@
 import { company } from "@/data/company";
 import { faq, type FaqItem } from "@/data/faq";
 import {
-  federalCleaningNote,
   federalRestitution,
   vaudRulv,
   type SourceLink,
@@ -24,16 +23,15 @@ export const zonesCantonTitle =
   "Fin de bail : ce qui change d'un canton à l'autre";
 
 export const zonesCantonBullets = [
-  "Canton de Fribourg : Code des obligations, art. 267 — le locataire rend le logement dans l'état qui résulte d'un usage conforme au contrat, nettoyage compris.",
-  "Canton de Vaud : règles et usages locatifs (art. 36 et 37) — locaux propres et vidés à midi le jour de l'échéance.",
+  "Partout en Suisse : selon le Code des obligations (art. 267), le locataire rend le logement dans l'état qui résulte d'un usage conforme au contrat, nettoyage compris.",
+  "Dans le canton de Vaud, en plus : selon les règles et usages locatifs (art. 36 et 37), les locaux sont rendus propres et vidés à midi le jour de l'échéance.",
 ];
 
 export const zonesCantonParagraph =
-  "Les règles de restitution d'un logement ne sont pas les mêmes dans le canton de Fribourg et dans le canton de Vaud. Les pages villes les détaillent, sources à l'appui. Dans les deux cantons, nous suivons la checklist de votre régie, et la date du nettoyage est fixée dans le devis. Dans le canton de Fribourg (Glâne, Broye fribourgeoise, Gruyère, Veveyse, Sarine, Singine, district du Lac), le bailleur signale immédiatement les défauts constatés à la sortie. Dans le canton de Vaud (Lausanne et Ouest lausannois, Riviera, Chablais, Nord vaudois, Moudon, Oron, Payerne), les sols doivent être contrôlables, et toutes les clés rendues, doubles compris. Selon le logement, le texte mentionne aussi le filtre de ventilation, les stores et les radiateurs. Près de la limite cantonale, vérifiez le canton de votre commune : Estavayer-le-Lac est fribourgeoise, alors que Payerne, Moudon et Oron sont vaudoises. Châtel-Saint-Denis, en Veveyse, est fribourgeoise comme Bulle, tout comme Morat (Murten), dans le district du Lac.";
+  "Les pages villes détaillent ces règles, sources à l'appui, et nous suivons la checklist de votre régie. Près de la limite cantonale, vérifiez le canton de votre commune : Estavayer-le-Lac et Châtel-Saint-Denis sont fribourgeoises, alors que Payerne et Moudon sont vaudoises.";
 
 export const zonesCantonSources: SourceLink[] = [
   federalRestitution,
-  federalCleaningNote,
   vaudRulv,
 ];
 
@@ -60,6 +58,6 @@ export const zonesPageFaqs: FaqItem[] = [
     "zone-fin-de-bail-cantons",
     "zone",
     "Les règles de fin de bail sont-elles les mêmes à Fribourg et en Vaud ?",
-    "Non. Dans le canton de Fribourg, la restitution suit les art. 267 et 267a du Code des obligations : logement dans un état conforme au contrat, nettoyage compris, et défauts signalés tout de suite par le bailleur. Dans le canton de Vaud, les règles et usages locatifs (art. 36 et 37) prévoient une remise à midi, avec des locaux vidés, des sols contrôlables et toutes les clés, doubles compris. Dans les deux cas, nous nettoyons d'après la checklist de votre régie.",
+    "Non. Partout en Suisse, le Code des obligations (art. 267 et 267a) s'applique : logement dans un état conforme au contrat, nettoyage compris, et défauts signalés tout de suite par le bailleur. Dans le canton de Vaud, en plus, les règles et usages locatifs (art. 36 et 37) prévoient une remise à midi, avec des locaux vidés, des sols contrôlables et toutes les clés, doubles compris. Dans les deux cas, nous nettoyons d'après la checklist de votre régie.",
   ),
 ];
