@@ -4,7 +4,7 @@ import { faqPageSchema } from "@/lib/schema";
 import { Section } from "@/components/layout/Section";
 import { HomeHero } from "@/components/content/HomeHero";
 import { HomePrestationsGrid } from "@/components/content/HomePrestationsGrid";
-import { LocalMoneyLinks } from "@/components/content/LocalMoneyLinks";
+import { CityInterventionLine } from "@/components/content/CityInterventionLine";
 import { WhyList } from "@/components/content/WhyList";
 import { RealisationGrid } from "@/components/content/RealisationGrid";
 import { HomeFeaturedReview } from "@/components/content/HomeFeaturedReview";
@@ -41,7 +41,6 @@ export default function HomePage() {
 
       <Section variant="default">
         <HomePrestationsGrid />
-        <LocalMoneyLinks />
       </Section>
 
       <Section id="pourquoi" variant="surface">
@@ -65,6 +64,12 @@ export default function HomePage() {
           <FaqList items={homepageFaq} collapseAfter={4} />
         </div>
       </Section>
+
+      <div className="border-t border-border bg-background">
+        <div className="mx-auto max-w-[1200px] px-container py-8">
+          <CityInterventionLine />
+        </div>
+      </div>
 
       <ContactCta />
     </>
