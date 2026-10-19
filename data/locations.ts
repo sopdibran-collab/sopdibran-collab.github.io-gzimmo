@@ -28,12 +28,12 @@ export type Location = {
   priorityLinks?: { label: string; href: string }[];
 };
 
-const federalRestitution: SourceLink = {
+export const federalRestitution: SourceLink = {
   href: "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_267",
   label: "Code des obligations, art. 267 et 267a (Fedlex)",
 };
 
-const federalCleaningNote: SourceLink = {
+export const federalCleaningNote: SourceLink = {
   href: "https://www.rechtsratgeber-rassismus.admin.ch/pdf/FRB_Apres_la_resiliation.pdf",
   label: "Confédération : le nettoyage fait partie de la restitution (art. 267 CO)",
 };
@@ -43,7 +43,7 @@ const fribourgBuildings: SourceLink = {
   label: "État de Fribourg, bâtiments à usage d'habitation, 2025",
 };
 
-const vaudRulv: SourceLink = {
+export const vaudRulv: SourceLink = {
   href: "https://www.vd.ch/fileadmin/user_upload/themes/vie_privee/logement/fichiers_pdf/rulv.pdf",
   label: "Règles et usages locatifs du canton de Vaud, art. 36 et 37 (PDF du 14 novembre 2025)",
 };
@@ -96,7 +96,7 @@ export const locations: Location[] = [
     ],
     rules: {
       title: "Deux droits de restitution sur le même départ",
-      body: "Romont et Estavayer-le-Lac sont fribourgeoises. Le locataire y restitue le logement dans l'état d'un usage conforme au contrat : le nettoyage en fait partie, et le bailleur signale tout de suite les défauts qu'il impute au locataire. Moudon, Oron et Payerne sont vaudoises. Là, les règles et usages locatifs du canton de Vaud placent la remise à midi le jour de l'échéance : locaux propres et vidés, sols contrôlables, toutes les clés y compris les doubles.",
+      body: "Romont et Estavayer-le-Lac sont fribourgeoises. Le Code des obligations est le droit fédéral, applicable partout en Suisse : le locataire restitue le logement dans l'état d'un usage conforme au contrat ; le nettoyage en fait partie, et le bailleur signale tout de suite les défauts qu'il impute au locataire. Moudon, Oron et Payerne sont vaudoises. Là, en plus, les règles et usages locatifs du canton de Vaud placent la remise à midi le jour de l'échéance : locaux propres et vidés, sols contrôlables, toutes les clés y compris les doubles.",
       sources: [federalRestitution, federalCleaningNote, vaudRulv],
     },
     remoteHandover: {
@@ -132,7 +132,7 @@ export const locations: Location[] = [
       {
         question: "Pourquoi la règle change-t-elle entre Estavayer-le-Lac et Payerne ?",
         answer:
-          "Estavayer-le-Lac est en Broye fribourgeoise : Code des obligations, art. 267. Payerne, Moudon et Oron sont vaudois : règles et usages locatifs, art. 36 et 37, remise à midi.",
+          "Estavayer-le-Lac est en Broye fribourgeoise : le droit fédéral s'applique partout en Suisse (Code des obligations, art. 267). Payerne, Moudon et Oron sont vaudois : en plus, règles et usages locatifs, art. 36 et 37, remise à midi.",
       },
     ],
     priorityLinks: [
@@ -163,7 +163,7 @@ export const locations: Location[] = [
     ],
     rules: {
       title: "Gruyère et Veveyse : le même droit fédéral",
-      body: "Bulle, Riaz, Vuadens, Broc et Châtel-Saint-Denis sont dans le canton de Fribourg. La Gruyère et la Veveyse suivent donc le Code des obligations, pas les usages vaudois de la remise à midi. Le logement est rendu dans l'état qui résulte d'un usage conforme au contrat. Le nettoyage fait partie de cette restitution. Le bailleur contrôle l'état à la sortie et signale les défauts qu'il impute au locataire.",
+      body: "Bulle, Riaz, Vuadens, Broc et Châtel-Saint-Denis sont dans le canton de Fribourg. Le Code des obligations est le droit fédéral, applicable partout en Suisse ; les usages vaudois de la remise à midi ne s'appliquent pas. Le logement est rendu dans l'état qui résulte d'un usage conforme au contrat. Le nettoyage fait partie de cette restitution. Le bailleur contrôle l'état à la sortie et signale les défauts qu'il impute au locataire.",
       sources: [federalRestitution, federalCleaningNote],
     },
     remoteHandover: {
@@ -192,7 +192,7 @@ export const locations: Location[] = [
       {
         question: "La remise en Veveyse suit-elle les usages vaudois ?",
         answer:
-          "Non. Châtel-Saint-Denis est fribourgeois, comme Bulle. La restitution suit les art. 267 et 267a du Code des obligations. La remise à midi des usages vaudois ne s'applique pas.",
+          "Non. Châtel-Saint-Denis est fribourgeois, comme Bulle. La restitution suit le droit fédéral, applicable partout en Suisse (art. 267 et 267a du Code des obligations). La remise à midi des usages vaudois ne s'applique pas.",
       },
     ],
     priorityLinks: [
@@ -226,7 +226,7 @@ export const locations: Location[] = [
     ],
     rules: {
       title: "Sarine et Singine sous le Code des obligations",
-      body: "Fribourg, Matran, Marly, Villars-sur-Glâne et Givisiez sont dans la Sarine. Düdingen (Guin) est dans la Singine. L'article 267 du Code des obligations vise l'état conforme au contrat, nettoyage compris. L'article 267a oblige le bailleur à signaler immédiatement les défauts à la restitution.",
+      body: "Fribourg, Matran, Marly, Villars-sur-Glâne et Givisiez sont dans la Sarine. Düdingen (Guin) est dans la Singine. L'article 267 du Code des obligations, droit fédéral applicable partout en Suisse, vise l'état conforme au contrat, nettoyage compris. L'article 267a oblige le bailleur à signaler immédiatement les défauts à la restitution.",
       sources: [federalRestitution, federalCleaningNote],
     },
     remoteHandover: {
@@ -256,7 +256,7 @@ export const locations: Location[] = [
       {
         question: "Quelle règle fédérale vise la restitution à Fribourg ?",
         answer:
-          "Les art. 267 et 267a du Code des obligations : état conforme à un usage conforme au contrat, nettoyage compris, et signalement immédiat des défauts à la sortie.",
+          "Les art. 267 et 267a du Code des obligations, droit fédéral applicable partout en Suisse : état conforme à un usage conforme au contrat, nettoyage compris, et signalement immédiat des défauts à la sortie.",
       },
     ],
     priorityLinks: [
@@ -448,7 +448,7 @@ export const locations: Location[] = [
     communeGroups: [{ title: "District du Lac", names: ["Morat (Murten)"] }],
     rules: {
       title: "Au bord du lac, le bail reste fédéral",
-      body: "Morat est fribourgeoise, dans le district du Lac. Ce sont donc les règles fédérales qui s'appliquent, pas les usages vaudois. Le locataire rend le logement dans l'état d'un usage conforme au contrat. Le nettoyage en fait partie. Le bailleur signale immédiatement les défauts à la sortie, selon les art. 267 et 267a du Code des obligations.",
+      body: "Morat est fribourgeoise, dans le district du Lac. Le Code des obligations est le droit fédéral, applicable partout en Suisse ; les usages vaudois ne s'appliquent pas. Le locataire rend le logement dans l'état d'un usage conforme au contrat. Le nettoyage en fait partie. Le bailleur signale immédiatement les défauts à la sortie, selon les art. 267 et 267a du Code des obligations.",
       sources: [federalRestitution, federalCleaningNote],
     },
     remoteHandover: {
@@ -473,7 +473,7 @@ export const locations: Location[] = [
       {
         question: "La remise à Morat suit-elle les usages vaudois ?",
         answer:
-          "Non. Morat est dans le canton de Fribourg. La restitution suit les art. 267 et 267a du Code des obligations, pas la remise à midi du canton de Vaud.",
+          "Non. Morat est dans le canton de Fribourg. La restitution suit le droit fédéral, applicable partout en Suisse (art. 267 et 267a du Code des obligations), pas la remise à midi du canton de Vaud.",
       },
     ],
     priorityLinks: [
