@@ -45,8 +45,7 @@ export function ConversionCta({
         className={cn(
           "w-full sm:w-auto",
           size,
-          onDark &&
-            "border-white/75 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white",
+          onDark && "border-white/75 bg-transparent text-white",
         )}
       >
         {callLabel}

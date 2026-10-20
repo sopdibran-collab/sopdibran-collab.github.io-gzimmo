@@ -77,7 +77,7 @@ export function Header() {
             external
             variant="secondary"
             aria-label={`Appeler le ${company.phoneDisplay}`}
-            className="min-h-11 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
+            className="min-h-11 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white"
           >
             <PhoneIcon className="size-4 shrink-0" />
             {company.phoneDisplay}
@@ -86,7 +86,7 @@ export function Header() {
           <Button
             href="/contact"
             data-analytics="devis"
-            className="whitespace-nowrap border-transparent bg-accent px-4 text-white hover:bg-accent-hover hover:text-white"
+            className="whitespace-nowrap border-transparent bg-accent px-4 text-white"
           >
             Demander un devis
             <ArrowRightIcon className="size-4 shrink-0" />

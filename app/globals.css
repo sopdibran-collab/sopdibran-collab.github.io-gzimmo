@@ -131,8 +131,8 @@
   }
 
   :focus-visible {
-    outline: 2px solid rgba(54, 128, 119, 0.7);
-    outline-offset: 3px;
+    outline: 2px solid var(--color-accent-hover);
+    outline-offset: 2px;
   }
 }
 
@@ -178,6 +178,78 @@
   /** Shared frame for full-bleed décor photo heroes */
   .min-h-hero-photo {
     min-height: var(--hero-photo-min-height);
+  }
+
+  /**
+   * Photo treatment: 3px blur, saturate/brightness (no grayscale).
+   * Slight scale so the blur does not flash empty edges.
+   */
+  .hero-photo-media {
+    object-fit: cover;
+    transform: scale(1.04);
+    filter: blur(3px) saturate(0.7) brightness(1.05);
+  }
+
+  /** Specified veil: mobile top→bottom .55→.25; from 768px left→right .55→.15 */
+  .hero-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(30, 34, 39, 0.55),
+      rgba(30, 34, 39, 0.25)
+    );
+  }
+
+  @media (min-width: 768px) {
+    .hero-photo-overlay {
+      background: linear-gradient(
+        to right,
+        rgba(30, 34, 39, 0.55),
+        rgba(30, 34, 39, 0.15)
+      );
+    }
+  }
+
+  /**
+   * Extra pocket on the copy side only — white text needs ≥ 4.5:1 on the
+   * lightest wall behind the headline. The right / top of the photo stays
+   * on the lighter specified overlay.
+   */
+  .hero-copy-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(30, 34, 39, 0.82) 0%,
+      rgba(30, 34, 39, 0.5) 48%,
+      rgba(30, 34, 39, 0.12) 100%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .hero-copy-veil {
+      background: linear-gradient(
+        to right,
+        rgba(30, 34, 39, 0.78) 0%,
+        rgba(30, 34, 39, 0.62) 40%,
+        rgba(30, 34, 39, 0.45) 62%,
+        rgba(30, 34, 39, 0) 92%
+      );
+    }
+  }
+
+  .btn-primary:hover {
+    background-color: #2e6e66;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 34, 39, 0.15);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
   }
 
   .py-section {
@@ -305,6 +377,15 @@
     .animate-service-reveal {
       animation: none !important;
       transition-duration: 0.01ms !important;
+    }
+
+    .hover-lift:hover,
+    .btn-primary:hover {
+      transform: none;
+    }
+
+    .hover-slide-arrow {
+      transform: none !important;
     }
   }
 }

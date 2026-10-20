@@ -5,6 +5,7 @@ import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ZoneBands } from "@/components/content/ZoneBands";
+import { CityInterventionLine } from "@/components/content/CityInterventionLine";
 import { ContextualLinks } from "@/components/content/ContextualLinks";
 import { FaqList, FaqSectionHeader } from "@/components/content/FaqList";
 import { HashScroll } from "@/components/ui/HashScroll";
@@ -138,6 +139,7 @@ export default function ZonesPage() {
             { label: "FAQ", href: "/faq" },
           ]}
         />
+        <CityInterventionLine className="mt-8" hideRomont />
       </div>
 
       <PageCta />

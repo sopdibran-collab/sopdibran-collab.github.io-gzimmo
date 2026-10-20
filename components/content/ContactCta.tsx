@@ -35,7 +35,7 @@ export function ContactCta({ className }: ContactCtaProps) {
             href={callHref}
             external
             variant="secondary"
-            className="w-full border-white/75 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white sm:w-auto"
+            className="w-full border-white/75 bg-transparent text-white sm:w-auto"
           >
             Appeler · {company.phoneDisplay}
           </Button>

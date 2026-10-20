@@ -15,7 +15,7 @@ export function TextLink({ href, children, className, showArrow = true, analytic
       href={href}
       data-analytics={analytics}
       className={cn(
-        "group inline-flex min-h-11 items-center gap-2 py-2 text-base font-medium text-foreground transition-colors hover:text-accent-ink",
+        "group inline-flex min-h-11 items-center gap-2 py-2 text-base font-medium text-foreground transition-colors duration-150 ease-out hover:text-accent-ink",
         className,
       )}
     >
@@ -23,7 +23,7 @@ export function TextLink({ href, children, className, showArrow = true, analytic
       {showArrow ? (
         <span
           aria-hidden="true"
-          className=""
+          className="hover-slide-arrow inline-block transition-transform duration-150 ease-out group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
         >
           →
         </span>

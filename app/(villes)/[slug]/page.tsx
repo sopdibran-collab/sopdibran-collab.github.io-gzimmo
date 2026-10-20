@@ -9,6 +9,7 @@ import { PageHero, PageMain, PageCta } from "@/components/layout/PageLayout";
 import { PageIntro, JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { LocalAreaLinks, LocalSeoBody } from "@/components/seo/LocalSeoContent";
+import { CityInterventionLine } from "@/components/content/CityInterventionLine";
 import { TextLink } from "@/components/ui/TextLink";
 import { ConversionCta } from "@/components/ui/ConversionCta";
 import { Badge } from "@/components/ui/Badge";
@@ -100,6 +101,12 @@ export default async function LocalSeoPage({ params }: Props) {
             />
           </ContentCard>
         ) : null}
+
+        <CityInterventionLine
+          className="mt-12"
+          excludeHref={path}
+          hideRomont
+        />
       </PageMain>
 
       <PageCta />
