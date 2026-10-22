@@ -678,7 +678,7 @@ export const serviceLandings: ServiceLanding[] = [
       },
       {
         title: "Un contrat écrit",
-        description: "Des passages et des consignes écrits noir sur blanc dans le contrat.",
+        description: "Les passages et les consignes sont notés noir sur blanc dans le contrat.",
       },
     ],
     faqHeading: "Questions fréquentes : conciergerie d'immeuble et PPE",
