@@ -619,63 +619,94 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "conciergerie",
-    h1: "Conciergerie pour régies à Fribourg et Vaud",
+    h1: "Conciergerie et nettoyage d'immeubles pour régies et PPE",
     subtitle:
-      "Un interlocuteur unique pour l'entretien des parties communes, la coordination sur site et la réactivité au quotidien, à Fribourg, en Vaud.",
-    metaTitle: "Conciergerie pour régies | Gzimmo",
+      "Conciergerie d'immeuble et entretien des parties communes pour régies, gérances et PPE, à Fribourg, dans le canton de Vaud et en Suisse romande.",
+    metaTitle: "Conciergerie d'immeuble et PPE à Fribourg | Gzimmo",
+    absoluteTitle: true,
     metaDescription:
-      "Conciergerie pour régies et immeubles : parties communes, coordination, réactivité. Fribourg et Vaud, basée à Romont. 076 214 23 42.",
+      "Conciergerie d'immeuble pour régies et PPE : entretien des parties communes selon un contrat de conciergerie défini avec vous. Fribourg, Vaud. Réponse sous 24 h.",
     intro:
-      "Les régies et propriétaires d'immeubles ont besoin d'un prestataire fiable, réactif et discret. Gzimmo propose des services de conciergerie complémentaires au nettoyage : entretien des espaces communs, coordination des interventions, suivi des besoins du bâtiment et point de contact unique pour vos locataires et concierges.",
+      "Vous gérez un immeuble locatif ou une PPE et cherchez une entreprise pour la conciergerie et le nettoyage d'immeuble ? Gzimmo entretient les parties communes pour les régies, les gérances et les copropriétés. Ce qui est fait et à quelle fréquence, nous le fixons avec vous dans un contrat de conciergerie. Nous travaillons surtout dans les cantons de Fribourg et de Vaud, et dans toute la Suisse romande. Vous recevez une réponse à votre demande de devis sous 24 h.",
+    audienceHeading: "Pour les régies, gérances et PPE",
+    sections: [
+      {
+        id: "entretien-parties-communes",
+        title: "Entretien des parties communes",
+        body: "Cages d'escalier, halls d'entrée, espaces partagés : ce sont les endroits que locataires et copropriétaires voient tous les jours. Nous définissons avec vous les zones à entretenir, la fréquence des passages et les consignes de l'immeuble. Tout est écrit dans le contrat, pour que la régie ou l'administrateur de PPE sache ce qui est fait et quand.",
+      },
+      {
+        id: "contrat-conciergerie",
+        title: "Un contrat de conciergerie adapté à votre immeuble",
+        body: "Le contrat de conciergerie précise les prestations et le rythme des passages, selon la taille de l'immeuble, son usage et vos consignes.",
+      },
+    ],
     forWho: [
       {
-        profile: "Régies immobilières",
+        profile: "Régies et gérances",
         situation:
-          "Vous gérez un ou plusieurs immeubles et cherchez un partenaire pour l'entretien courant et la coordination.",
+          "Vous gérez un ou plusieurs immeubles et cherchez une entreprise pour la conciergerie et le nettoyage d'immeuble.",
       },
       {
-        profile: "Syndics et PPE",
-        situation: "Vous souhaitez externaliser le suivi des parties communes avec un prestataire local.",
+        profile: "PPE et administrateurs de PPE",
+        situation: "Vous voulez confier l'entretien des parties communes de la copropriété à une entreprise de la région.",
       },
       {
-        profile: "Propriétaires institutionnels",
-        situation: "Vous avez besoin d'une présence régulière et d'un interlocuteur unique sur site.",
+        profile: "Propriétaires d'immeubles",
+        situation: "Vous avez besoin d'un entretien régulier de votre immeuble locatif, défini par contrat.",
       },
     ],
     process: {
-      title: "Notre accompagnement conciergerie inclut :",
+      title: "Comment se met en place la conciergerie :",
+      numbered: true,
       items: [
-        "Entretien planifié des halls, cages d'escalier et espaces communs.",
-        "Coordination avec les autres corps de métier et prestataires du bâtiment.",
-        "Remontée des besoins et interventions ponctuelles selon votre planning.",
-        "Discrétion et respect des consignes de la régie.",
-        "Devis transparent et facturation claire.",
+        "Vous nous décrivez l'immeuble et vos besoins.",
+        "Nous vous répondons sous 24 h.",
+        "Nous fixons ensemble les prestations et la fréquence dans le contrat de conciergerie.",
+        "Les passages commencent selon le planning convenu.",
       ],
     },
+    whyHeading: "Pourquoi Gzimmo pour votre immeuble ?",
     whyGzimmo: [
       {
-        title: "Basés à Romont, actifs à Fribourg, en Vaud",
-        description:
-          "Nous partons de Romont, dans la Glâne. Les passages publiés vont jusqu'à Fribourg, Bulle et Lausanne.",
+        title: "Plus de 15 ans d'expérience",
+        description: "Plus de 15 ans d'expérience dans le nettoyage.",
       },
-      ...sharedWhy,
+      {
+        title: "Réponse sous 24 h",
+        description: "Une réponse sous 24 h à votre demande de devis.",
+      },
+      {
+        title: "Un contrat écrit",
+        description: "Des passages et des consignes écrits noir sur blanc dans le contrat.",
+      },
     ],
+    faqHeading: "Questions fréquentes : conciergerie d'immeuble et PPE",
     faqs: [
-      ...sharedFaqs,
       {
-        question: "Proposez-vous la conciergerie en complément du nettoyage ?",
+        question: "Que contient un contrat de conciergerie ?",
         answer:
-          "Oui. La conciergerie peut être combinée à l'entretien de locaux, au nettoyage des parties communes ou à des prestations ponctuelles selon votre immeuble.",
+          "Les parties communes à entretenir, la fréquence des passages et les consignes propres à l'immeuble. Son contenu est défini avec vous, selon l'immeuble et les besoins de la régie ou de la PPE.",
       },
       {
-        question: "Intervenez-vous pour des régies à Fribourg et dans le canton de Vaud ?",
+        question: "Intervenez-vous en dehors des heures de bureau ?",
         answer:
-          "Oui. Fribourg et Matran sont dans la Sarine. Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois. Le détail des communes est sur la page zones.",
+          "Les horaires d'intervention sont fixés avec vous dans le contrat. Indiquez vos contraintes dans votre demande de devis.",
       },
+      {
+        question: "Travaillez-vous pour les PPE comme pour les régies ?",
+        answer:
+          "Oui. Nous pouvons travailler directement avec l'administrateur de PPE, ou avec la régie ou la gérance de l'immeuble.",
+      },
+      {
+        question: "Dans quelles régions intervenez-vous pour les immeubles ?",
+        answer:
+          "Surtout dans les cantons de Fribourg et de Vaud, et dans toute la Suisse romande. Le détail des communes est sur la page zones.",
+      },
+      ...getFaqsByIds(["devis-gratuit"]),
     ],
-    relatedServiceSlugs: ["entretien-locaux", "nettoyage-bureaux", "nettoyage-fin-de-bail"],
+    relatedServiceSlugs: ["entretien-locaux", "nettoyage-vitres", "nettoyage-fin-de-bail"],
     relatedLocalLinks: [
-      { label: "Entreprise de nettoyage à Romont", href: "/nettoyage-romont" },
       { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
       { label: "Nettoyage à Lausanne", href: "/nettoyage-lausanne" },
     ],
