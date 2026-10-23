@@ -115,9 +115,8 @@ export const services: Service[] = [
     intro:
       "Des espaces de travail propres, silencieux dans leur exécution, précis dans le résultat.",
     benefits: [
-      "Horaires flexibles",
       "Bureaux, commerces et cabinets",
-      "Devis sous 24 h",
+      "Réponse sous 24 h",
     ],
     image: {
       src: "/images/services/nettoyage-bureaux.webp",

@@ -405,40 +405,40 @@ export const serviceLandings: ServiceLanding[] = [
       "Entretien régulier de bureaux, commerces et locaux d'entreprise à Fribourg, à Bulle, dans le canton de Vaud et en Suisse romande.",
     metaTitle: "Nettoyage de bureaux à Fribourg et Bulle | Gzimmo",
     metaDescription:
-      "Nettoyage de bureaux et locaux d'entreprise à Fribourg, Bulle et dans le canton de Vaud. Plus de 15 ans d'expérience. Devis sous 24 h.",
+      "Nettoyage de bureaux et locaux d'entreprise à Fribourg, Bulle et dans le canton de Vaud. Plus de 15 ans d'expérience. Réponse sous 24 h.",
     absoluteTitle: true,
     intro:
       "Vous cherchez une entreprise pour le nettoyage de vos bureaux ou de vos locaux d'entreprise à Fribourg ou à Bulle ? Gzimmo entretient les espaces de travail, les commerces et les cabinets, avec des passages planifiés selon votre activité. Nous travaillons surtout dans les cantons de Fribourg et de Vaud, et dans toute la Suisse romande.",
     forWho: [
-      { profile: "PME et entreprises", situation: "Vous souhaitez un entretien régulier de vos bureaux sans gérer vous-même le nettoyage." },
-      { profile: "Commerces", situation: "Vous accueillez du public et voulez des locaux propres au quotidien." },
-      { profile: "Cabinets et professions libérales", situation: "Vous recevez des clients et voulez des locaux entretenus entre les rendez-vous." },
-      { profile: "Coworkings et locaux partagés", situation: "Vous devez garder propres des espaces utilisés par plusieurs équipes." },
+      { profile: "PME et entreprises", situation: "Vous voulez un entretien régulier de vos bureaux sans organiser vous-même le nettoyage." },
+      { profile: "Commerces", situation: "Vous accueillez du public et voulez des locaux propres pour vos clients." },
+      { profile: "Cabinets et professions libérales", situation: "Vous recevez des clients et voulez des locaux entretenus." },
+      { profile: "Coworkings et locaux partagés", situation: "Vos espaces sont utilisés par plusieurs équipes et doivent rester propres." },
     ],
     process: {
       title: "Notre nettoyage de bureaux et de locaux inclut :",
       items: [
-        "Nettoyage des sols et tapis selon les matériaux.",
+        "Sols et tapis, nettoyés selon les matériaux.",
         "Sanitaires et espaces communs.",
         "Surfaces de travail, poignées et interrupteurs.",
         "Dépoussiérage des surfaces accessibles.",
         "Vidage des corbeilles et remplacement des sacs.",
         "Vitres intérieures sur demande.",
-        "Fréquence des passages (hebdomadaire, bi-mensuelle ou mensuelle) et horaires convenus au devis.",
+        "Fréquence (chaque semaine, toutes les deux semaines ou chaque mois) et horaires fixés au devis.",
       ],
     },
     whyGzimmo: [
       {
         title: "Plus de 15 ans d'expérience",
-        description: "Plus de 15 ans d'expérience dans le nettoyage, pour les particuliers comme pour les entreprises.",
+        description: "Dans le nettoyage, pour les particuliers comme pour les entreprises.",
       },
       {
         title: "Réponse sous 24 h",
-        description: "Vous recevez une réponse à votre demande de devis sous 24 h.",
+        description: "À votre demande de devis.",
       },
       {
         title: "Fribourg, Vaud et Suisse romande",
-        description: "Nous travaillons surtout dans les cantons de Fribourg et de Vaud, à Fribourg comme à Bulle, et dans toute la Suisse romande.",
+        description: "Nous intervenons notamment à Fribourg et à Bulle.",
       },
     ],
     faqs: [
