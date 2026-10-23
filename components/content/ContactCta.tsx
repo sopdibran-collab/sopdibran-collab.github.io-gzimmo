@@ -5,10 +5,14 @@ import { GarantieRemiseBail } from "@/components/ui/GarantieRemiseBail";
 
 type ContactCtaProps = {
   className?: string;
+  /** Variante par page (ex. /conciergerie). Sans props : bande d'origine inchangée. */
+  title?: string;
+  text?: string;
+  hideGuarantee?: boolean;
 };
 
 /** CTA final — un message, un bouton. */
-export function ContactCta({ className }: ContactCtaProps) {
+export function ContactCta({ className, title, text, hideGuarantee = false }: ContactCtaProps) {
   const callHref = formatPhoneHref(company.phone);
 
   return (
@@ -16,16 +20,22 @@ export function ContactCta({ className }: ContactCtaProps) {
       <div className="mx-auto grid w-full max-w-[1200px] min-w-0 gap-8 px-container py-16 sm:py-20 lg:grid-cols-12 lg:items-end lg:gap-10 lg:py-24">
         <div className="lg:col-span-8">
           <h2 className="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em]">
-            Après travaux ou fin de bail,<br className="hidden sm:block" /> on s&apos;en charge.
+            {title ?? (
+              <>
+                Après travaux ou fin de bail,<br className="hidden sm:block" /> on s&apos;en charge.
+              </>
+            )}
           </h2>
           <p className="mt-4 max-w-md text-white/65 leading-relaxed">
-            Décrivez le bien ou le chantier. Devis clair sous 24 h, sans engagement.
+            {text ?? "Décrivez le bien ou le chantier. Devis clair sous 24 h, sans engagement."}
           </p>
+          {hideGuarantee ? null : (
           <GarantieRemiseBail
             variant="inline"
             tone="dark"
             className="mt-6 max-w-xl border-white/15 bg-white/[0.06]"
           />
+          )}
         </div>
         <div className="flex flex-col gap-3 sm:items-start lg:col-span-4 lg:items-end">
           <Button href="/contact" data-analytics="devis" className="w-full sm:w-auto">

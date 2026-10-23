@@ -637,7 +637,7 @@ export const serviceLandings: ServiceLanding[] = [
     buildingGrid: {
       heading: "Pour régies, PPE et propriétaires",
       intro:
-        "Gzimmo entretient votre immeuble selon un contrat de conciergerie défini avec vous. Voici les prestations que nous assurons.",
+        "Gzimmo entretient votre immeuble selon un contrat de conciergerie défini avec vous. Le contrat peut comprendre les prestations ci-dessous.",
       cards: [
         {
           title: "Entretien des parties communes",
@@ -645,21 +645,21 @@ export const serviceLandings: ServiceLanding[] = [
         },
         {
           title: "Espaces verts",
-          body: "Entretien des espaces verts de l'immeuble, selon ce qui est prévu dans le contrat.",
+          body: "Les espaces verts de l'immeuble sont entretenus selon ce que prévoit le contrat.",
         },
         {
           title: "Petites réparations",
-          body: "Petites réparations dans l'immeuble, définies avec vous dans le contrat.",
+          body: "Les interventions sont définies avec vous dans le contrat.",
         },
         {
           title: "Nettoyage des vitres",
-          body: "Le nettoyage des vitres a sa propre page de service.",
+          body: "Vitres des parties communes, nettoyées à la fréquence fixée dans le contrat.",
           href: "/nettoyage-vitres",
           linkLabel: "Voir le nettoyage de vitres",
         },
         {
           title: "Vous cherchez plutôt l'entretien de vos bureaux ?",
-          body: "La conciergerie d'immeuble concerne les bâtiments. Pour vos bureaux, consultez notre page dédiée.",
+          body: "La conciergerie concerne les immeubles locatifs et en PPE. Pour vos bureaux, consultez notre page dédiée.",
           href: "/nettoyage-bureaux",
           linkLabel: "nettoyage de bureaux et locaux d'entreprise",
         },
@@ -707,7 +707,7 @@ export const serviceLandings: ServiceLanding[] = [
     whyGzimmo: [
       {
         title: "Plus de 15 ans d'expérience",
-        description: "Plus de 15 ans d'expérience dans le nettoyage.",
+        description: "",
       },
       {
         title: "Réponse sous 24 h",

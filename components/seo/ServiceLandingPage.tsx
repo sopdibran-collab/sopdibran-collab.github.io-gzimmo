@@ -21,6 +21,7 @@ import { TextLink } from "@/components/ui/TextLink";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/schema";
 import { getServicePath } from "@/lib/service-paths";
 import { cn } from "@/lib/utils";
+import { ContactCta } from "@/components/content/ContactCta";
 import { BuildingServicesGrid } from "@/components/content/BuildingServicesGrid";
 
 type ServiceLandingPageProps = {
@@ -166,7 +167,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             ]),
           ]}
         />
-        <PageHero tone="soft">
+        <PageHero tone="soft" className="py-8! lg:py-[49px]!">
           <Breadcrumb
             items={[
               { label: "Accueil", href: "/" },
@@ -174,31 +175,36 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               { label: service.shortTitle },
             ]}
           />
-          <h1 className="mt-5 max-w-3xl font-display text-display-lg font-semibold text-foreground">
+          <h1 className="mt-3 max-w-3xl font-display text-display-lg font-semibold text-foreground">
             {landing.h1}
           </h1>
         </PageHero>
         <BuildingServicesGrid heading={grid.heading} intro={grid.intro} cards={grid.cards} />
-        <PageCta />
         <PageMain variant="default" density={bandDensity}>
-          <Badge className="text-accent-ink">FAQ</Badge>
-          <h2 className={`mt-4 ${headingClass}`}>
-            {landing.faqHeading ?? `Questions fréquentes : ${service.shortTitle.toLowerCase()}`}
-          </h2>
-          <div className="mt-8">
-            <FaqList items={landing.faqs} collapseAfter={4} />
-          </div>
-        </PageMain>
-        <PageMain variant="surface" density={bandDensity}>
           <h2 className={headingClass}>{landing.whyHeading ?? "Pourquoi choisir Gzimmo ?"}</h2>
           <ul className="mt-8 divide-y divide-border border-t-2 border-accent">
             {landing.whyGzimmo.map((item) => (
               <li key={item.title} className="py-5">
                 <h3 className="text-xl font-medium text-foreground">{item.title}</h3>
-                <p className="mt-2 text-base leading-relaxed text-muted">{item.description}</p>
+                {item.description ? (
+                  <p className="mt-2 text-base leading-relaxed text-muted">{item.description}</p>
+                ) : null}
               </li>
             ))}
           </ul>
+        </PageMain>
+        <ContactCta
+          title="Un immeuble à confier ?"
+          text="Décrivez votre immeuble et vos besoins. Vous recevez une réponse à votre demande de devis sous 24 h."
+          hideGuarantee
+        />
+        <PageMain variant="surface" density={bandDensity}>
+          <h2 className={headingClass}>
+            {landing.faqHeading ?? `Questions fréquentes : ${service.shortTitle.toLowerCase()}`}
+          </h2>
+          <div className="mt-8">
+            <FaqList items={landing.faqs} collapseAfter={4} />
+          </div>
         </PageMain>
       </>
     );
