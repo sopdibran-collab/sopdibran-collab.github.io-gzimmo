@@ -116,18 +116,10 @@ export const entityServices: EntityServiceEntry[] = [
   {
     slug: "nettoyage-bureaux",
     service: "Nettoyage de bureaux",
-    contextes: ["entretien régulier", "espaces de travail"],
-    clients: ["PME", "grandes entreprises", "coworkings", "cabinets professionnels"],
+    contextes: ["entretien régulier", "espaces de travail", "locaux d'entreprise", "locaux commerciaux"],
+    clients: ["PME", "commerces", "coworkings", "cabinets professionnels"],
     zones: ["Fribourg", "Vaud"],
     preuves: { realisations: [{ id: "bureaux-lausanne", lieu: "Lausanne" }] },
-  },
-  {
-    slug: "entretien-locaux",
-    service: "Entretien de locaux",
-    contextes: ["entretien professionnel", "locaux commerciaux", "immeubles"],
-    clients: ["commerces", "régies", "professions libérales"],
-    zones: ["Fribourg", "Vaud"],
-    preuves: { avis: ["review-appartements-commercial"] },
   },
   {
     slug: "conciergerie",

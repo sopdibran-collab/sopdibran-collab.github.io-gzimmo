@@ -13,7 +13,7 @@ const navLinks = footerNav.pages.filter((item) =>
   ["/", "/realisations", "/avis", "/a-propos", "/contact"].includes(item.href),
 );
 
-/** 6 services principaux + voir tout (maisons et entretien-locaux via /services). */
+/** 6 services principaux + voir tout (maisons via /services). */
 const footerServices = [
   { slug: "nettoyage-fin-de-bail", label: "Fin de bail" },
   { slug: "nettoyage-apres-chantier", label: "Après chantier" },

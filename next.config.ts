@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const serviceSlugs = [
-  "entretien-locaux",
   "nettoyage-appartements",
   "nettoyage-maisons",
   "nettoyage-apres-chantier",
@@ -63,11 +62,13 @@ const seoCityRedirects = [
   { source: "/seo/nettoyage-nyon", destination: "/zones" },
 ].map((redirect) => ({ ...redirect, statusCode: 301 as const }));
 
-/** Doublons d'intention : une page ville, une page service fin de bail. */
+/** Doublons d'intention : une page ville, une page service (fin de bail, bureaux). */
 const duplicateIntentRedirects = [
   { source: "/entreprise-nettoyage-romont", destination: "/nettoyage-romont" },
   { source: "/nettoyage-fin-de-bail-romont", destination: "/nettoyage-romont" },
   { source: "/nettoyage-fin-de-bail-fribourg", destination: "/nettoyage-fribourg" },
+  { source: "/entretien-locaux", destination: "/nettoyage-bureaux" },
+  { source: "/services/entretien-locaux", destination: "/nettoyage-bureaux" },
 ].map((redirect) => ({ ...redirect, statusCode: 301 as const }));
 
 const nextConfig: NextConfig = {
