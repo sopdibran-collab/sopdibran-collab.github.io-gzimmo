@@ -51,6 +51,12 @@ export type ServiceLanding = {
   showInterventionZones?: boolean;
   useFinDeBailFaq?: boolean;
   preferCallCta?: boolean;
+  /** Mise en page immeuble : H1, H2 + intro, grille, bande devis, FAQ. */
+  buildingGrid?: {
+    heading: string;
+    intro: string;
+    cards: { title: string; body: string; href?: string; linkLabel?: string }[];
+  };
 };
 
 const sharedWhy = [
@@ -619,15 +625,46 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "conciergerie",
-    h1: "Conciergerie et nettoyage d'immeubles pour régies et PPE",
+    h1: "Service de conciergerie d'immeuble",
     subtitle:
       "Conciergerie d'immeuble et entretien des parties communes pour régies, gérances et PPE, à Fribourg, dans le canton de Vaud et en Suisse romande.",
-    metaTitle: "Conciergerie d'immeuble et PPE à Fribourg | Gzimmo",
+    metaTitle: "Service de conciergerie d'immeuble à Fribourg et Vaud | Gzimmo",
     absoluteTitle: true,
     metaDescription:
-      "Conciergerie d'immeuble pour régies et PPE : entretien des parties communes selon un contrat de conciergerie défini avec vous. Fribourg, Vaud. Réponse sous 24 h.",
+      "Service de conciergerie d'immeuble pour régies, PPE et propriétaires : parties communes, espaces verts, petites réparations. Fribourg, Vaud. Réponse sous 24 h.",
     intro:
       "Vous gérez un immeuble locatif ou une PPE et cherchez une entreprise pour la conciergerie et le nettoyage d'immeuble ? Gzimmo entretient les parties communes pour les régies, les gérances et les copropriétés. Ce qui est fait et à quelle fréquence, nous le fixons avec vous dans un contrat de conciergerie. Nous travaillons surtout dans les cantons de Fribourg et de Vaud, et dans toute la Suisse romande. Vous recevez une réponse à votre demande de devis sous 24 h.",
+    buildingGrid: {
+      heading: "Pour régies, PPE et propriétaires",
+      intro:
+        "Gzimmo entretient votre immeuble selon un contrat de conciergerie défini avec vous. Voici les prestations que nous assurons.",
+      cards: [
+        {
+          title: "Entretien des parties communes",
+          body: "Cages d'escalier, halls d'entrée et espaces partagés. Les zones et la fréquence des passages sont fixées dans le contrat.",
+        },
+        {
+          title: "Espaces verts",
+          body: "Entretien des espaces verts de l'immeuble, selon ce qui est prévu dans le contrat.",
+        },
+        {
+          title: "Petites réparations",
+          body: "Petites réparations dans l'immeuble, définies avec vous dans le contrat.",
+        },
+        {
+          title: "Nettoyage des vitres",
+          body: "Le nettoyage des vitres a sa propre page de service.",
+          href: "/nettoyage-vitres",
+          linkLabel: "Voir le nettoyage de vitres",
+        },
+        {
+          title: "Vous cherchez plutôt l'entretien de vos bureaux ?",
+          body: "La conciergerie d'immeuble concerne les bâtiments. Pour vos bureaux, consultez notre page dédiée.",
+          href: "/nettoyage-bureaux",
+          linkLabel: "nettoyage de bureaux et locaux d'entreprise",
+        },
+      ],
+    },
     audienceHeading: "Pour les régies, gérances et PPE",
     sections: [
       {
@@ -705,7 +742,7 @@ export const serviceLandings: ServiceLanding[] = [
       },
       ...getFaqsByIds(["devis-gratuit"]),
     ],
-    relatedServiceSlugs: ["entretien-locaux", "nettoyage-vitres", "nettoyage-fin-de-bail"],
+    relatedServiceSlugs: ["nettoyage-vitres", "nettoyage-fin-de-bail"],
     relatedLocalLinks: [
       { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
       { label: "Nettoyage à Lausanne", href: "/nettoyage-lausanne" },

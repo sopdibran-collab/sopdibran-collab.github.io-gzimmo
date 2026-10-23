@@ -21,6 +21,7 @@ import { TextLink } from "@/components/ui/TextLink";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/schema";
 import { getServicePath } from "@/lib/service-paths";
 import { cn } from "@/lib/utils";
+import { BuildingServicesGrid } from "@/components/content/BuildingServicesGrid";
 
 type ServiceLandingPageProps = {
   landing: ServiceLanding;
@@ -149,6 +150,59 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
   const zonesHeading = landing.zonesHeading ?? "Zones d'intervention";
   const bandDensity = "band" as const;
   const headingClass = "scroll-mt-28 font-display text-display-sm text-foreground";
+
+  if (landing.buildingGrid) {
+    const grid = landing.buildingGrid;
+    return (
+      <>
+        <JsonLd
+          data={[
+            serviceSchema(service, path, { serviceTypes: landing.schemaServiceTypes }),
+            faqPageSchema(landing.faqs),
+            breadcrumbSchema([
+              { name: "Accueil", path: "/" },
+              { name: "Services", path: "/services" },
+              { name: service.shortTitle, path },
+            ]),
+          ]}
+        />
+        <PageHero tone="soft">
+          <Breadcrumb
+            items={[
+              { label: "Accueil", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: service.shortTitle },
+            ]}
+          />
+          <h1 className="mt-5 max-w-3xl font-display text-display-lg font-semibold text-foreground">
+            {landing.h1}
+          </h1>
+        </PageHero>
+        <BuildingServicesGrid heading={grid.heading} intro={grid.intro} cards={grid.cards} />
+        <PageCta />
+        <PageMain variant="default" density={bandDensity}>
+          <Badge className="text-accent-ink">FAQ</Badge>
+          <h2 className={`mt-4 ${headingClass}`}>
+            {landing.faqHeading ?? `Questions fréquentes : ${service.shortTitle.toLowerCase()}`}
+          </h2>
+          <div className="mt-8">
+            <FaqList items={landing.faqs} collapseAfter={4} />
+          </div>
+        </PageMain>
+        <PageMain variant="surface" density={bandDensity}>
+          <h2 className={headingClass}>{landing.whyHeading ?? "Pourquoi choisir Gzimmo ?"}</h2>
+          <ul className="mt-8 divide-y divide-border border-t-2 border-accent">
+            {landing.whyGzimmo.map((item) => (
+              <li key={item.title} className="py-5">
+                <h3 className="text-xl font-medium text-foreground">{item.title}</h3>
+                <p className="mt-2 text-base leading-relaxed text-muted">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </PageMain>
+      </>
+    );
+  }
 
   return (
     <>
