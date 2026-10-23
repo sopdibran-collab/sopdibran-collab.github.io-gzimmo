@@ -162,7 +162,7 @@ export const serviceLandings: ServiceLanding[] = [
     relatedServiceSlugs: [
       "nettoyage-apres-chantier",
       "nettoyage-appartements",
-      "entretien-locaux",
+      "nettoyage-bureaux",
     ],
     relatedLocalLinks: [
       { label: "Nettoyage à Romont", href: "/nettoyage-romont" },
@@ -400,78 +400,67 @@ export const serviceLandings: ServiceLanding[] = [
   },
   {
     slug: "nettoyage-bureaux",
-    h1: "Nettoyage de bureaux à Fribourg et Vaud",
+    h1: "Nettoyage de bureaux et locaux d'entreprise à Fribourg",
     subtitle:
-      "Des espaces de travail propres, intervention discrète, horaires flexibles — pour des équipes qui méritent un environnement sain.",
-    metaTitle: "Nettoyage de bureaux | Gzimmo, Romont",
+      "Entretien régulier de bureaux, commerces et locaux d'entreprise à Fribourg, à Bulle, dans le canton de Vaud et en Suisse romande.",
+    metaTitle: "Nettoyage de bureaux à Fribourg et Bulle | Gzimmo",
     metaDescription:
-      "Nettoyage de bureaux, horaires convenus au devis. Gzimmo Sàrl, Route de Raboud 8 à Romont. Fribourg et Vaud. 076 214 23 42.",
+      "Nettoyage de bureaux et locaux d'entreprise à Fribourg, Bulle et dans le canton de Vaud. Plus de 15 ans d'expérience. Devis sous 24 h.",
+    absoluteTitle: true,
     intro:
-      "Un bureau propre améliore le bien-être des équipes et l'image de votre entreprise. Gzimmo assure l'entretien de vos espaces de travail avec discrétion, en dehors de vos heures d'activité si nécessaire.",
+      "Vous cherchez une entreprise pour le nettoyage de vos bureaux ou de vos locaux d'entreprise à Fribourg ou à Bulle ? Gzimmo entretient les espaces de travail, les commerces et les cabinets, avec des passages planifiés selon votre activité. Nous travaillons surtout dans les cantons de Fribourg et de Vaud, et dans toute la Suisse romande.",
     forWho: [
-      { profile: "PME", situation: "Vous souhaitez un entretien régulier sans gérer le personnel de nettoyage." },
-      { profile: "Grandes entreprises", situation: "Vous cherchez un prestataire fiable pour plusieurs sites." },
-      { profile: "Coworkings", situation: "Vous devez maintenir des espaces communs impeccables au quotidien." },
-      { profile: "Cabinets professionnels", situation: "Vous accueillez des clients et exigez des finitions soignées." },
+      { profile: "PME et entreprises", situation: "Vous souhaitez un entretien régulier de vos bureaux sans gérer vous-même le nettoyage." },
+      { profile: "Commerces", situation: "Vous accueillez du public et voulez des locaux propres au quotidien." },
+      { profile: "Cabinets et professions libérales", situation: "Vous recevez des clients et voulez des locaux entretenus entre les rendez-vous." },
+      { profile: "Coworkings et locaux partagés", situation: "Vous devez garder propres des espaces utilisés par plusieurs équipes." },
     ],
     process: {
-      title: "Notre prestation bureaux inclut :",
+      title: "Notre nettoyage de bureaux et de locaux inclut :",
       items: [
         "Nettoyage des sols et tapis selon les matériaux.",
         "Sanitaires et espaces communs.",
         "Surfaces de travail, poignées et interrupteurs.",
+        "Dépoussiérage des surfaces accessibles.",
         "Vidage des corbeilles et remplacement des sacs.",
         "Vitres intérieures sur demande.",
-        "Planning adapté à vos horaires (matin, soir, week-end).",
+        "Fréquence des passages (hebdomadaire, bi-mensuelle ou mensuelle) et horaires convenus au devis.",
       ],
     },
     whyGzimmo: [
       {
-        title: "Confidentialité et discrétion",
-        description: "Nos équipes interviennent avec professionnalisme dans des environnements sensibles.",
+        title: "Plus de 15 ans d'expérience",
+        description: "Plus de 15 ans d'expérience dans le nettoyage, pour les particuliers comme pour les entreprises.",
       },
-      ...sharedWhy,
+      {
+        title: "Réponse sous 24 h",
+        description: "Vous recevez une réponse à votre demande de devis sous 24 h.",
+      },
+      {
+        title: "Fribourg, Vaud et Suisse romande",
+        description: "Nous travaillons surtout dans les cantons de Fribourg et de Vaud, à Fribourg comme à Bulle, et dans toute la Suisse romande.",
+      },
     ],
-    faqs: sharedFaqs,
-    relatedServiceSlugs: ["entretien-locaux", "nettoyage-vitres", "nettoyage-fin-de-bail"],
+    faqs: [
+      faq(
+        "bureaux-locaux",
+        "prestations",
+        "Nettoyez-vous aussi les commerces et les locaux d'entreprise ?",
+        "Oui. En plus des bureaux, nous entretenons les commerces, les cabinets et les locaux d'activité. Le contenu et la fréquence des passages sont fixés au devis.",
+      ),
+      faq(
+        "bureaux-zone",
+        "zone",
+        "Intervenez-vous à Fribourg et à Bulle ?",
+        "Oui. Nous travaillons surtout dans les cantons de Fribourg et de Vaud, notamment à Fribourg et à Bulle, et dans toute la Suisse romande.",
+      ),
+      ...getFaqsByIds(["devis-gratuit"]),
+    ],
+    relatedServiceSlugs: ["nettoyage-vitres", "nettoyage-apres-chantier", "nettoyage-fin-de-bail"],
     relatedLocalLinks: [
-      { label: "Entreprise de nettoyage à Lausanne", href: "/nettoyage-lausanne" },
       { label: "Entreprise de nettoyage à Fribourg", href: "/nettoyage-fribourg" },
-    ],
-    testimonials: [],
-  },
-  {
-    slug: "entretien-locaux",
-    h1: "Entretien de locaux à Fribourg et Vaud",
-    subtitle:
-      "Un entretien planifié, discret et rigoureux pour des espaces commerciaux et professionnels impeccables au quotidien.",
-    metaTitle: "Entretien de locaux | Gzimmo, Romont",
-    metaDescription:
-      "Entretien de locaux professionnels et commerciaux. Gzimmo Sàrl, siège à Romont. Fribourg et Vaud. Devis gratuit.",
-    intro:
-      "Commerces, cabinets, locaux d'activité — un entretien régulier évite l'accumulation et préserve l'image de votre établissement. Gzimmo planifie des passages adaptés à votre activité.",
-    forWho: [
-      { profile: "Commerces", situation: "Vous accueillez du public et devez maintenir des locaux irréprochables." },
-      { profile: "Régies", situation: "Vous gérez des parties communes et espaces partagés." },
-      { profile: "Professions libérales", situation: "Vous souhaitez un entretien discret entre les consultations." },
-      { profile: "Locaux d'activité", situation: "Vous avez besoin d'un entretien régulier de vos locaux techniques." },
-    ],
-    process: {
-      title: "Notre entretien de locaux inclut :",
-      items: [
-        "Nettoyage des sols et surfaces de passage.",
-        "Sanitaires et espaces communs.",
-        "Dépoussiérage des surfaces accessibles.",
-        "Vidage des corbeilles.",
-        "Finitions soignées à chaque passage.",
-        "Planning hebdomadaire, bi-mensuel ou mensuel selon vos besoins.",
-      ],
-    },
-    whyGzimmo: sharedWhy,
-    faqs: sharedFaqs,
-    relatedServiceSlugs: ["nettoyage-bureaux", "nettoyage-apres-chantier", "nettoyage-vitres"],
-    relatedLocalLinks: [
-      { label: "Entreprise de nettoyage à Romont", href: "/nettoyage-romont" },
+      { label: "Entreprise de nettoyage à Bulle", href: "/nettoyage-bulle" },
+      { label: "Entreprise de nettoyage à Lausanne", href: "/nettoyage-lausanne" },
     ],
     testimonials: [],
   },
@@ -611,7 +600,7 @@ export const serviceLandings: ServiceLanding[] = [
     },
     whyGzimmo: sharedWhy,
     faqs: sharedFaqs,
-    relatedServiceSlugs: ["nettoyage-apres-chantier", "entretien-locaux", "nettoyage-bureaux"],
+    relatedServiceSlugs: ["nettoyage-apres-chantier", "nettoyage-bureaux"],
     relatedLocalLinks: [
       { label: "Entreprise de nettoyage à Romont", href: "/nettoyage-romont" },
     ],
@@ -705,7 +694,7 @@ export const serviceLandings: ServiceLanding[] = [
       },
       ...getFaqsByIds(["devis-gratuit"]),
     ],
-    relatedServiceSlugs: ["entretien-locaux", "nettoyage-vitres", "nettoyage-fin-de-bail"],
+    relatedServiceSlugs: ["nettoyage-bureaux", "nettoyage-vitres", "nettoyage-fin-de-bail"],
     relatedLocalLinks: [
       { label: "Nettoyage à Fribourg", href: "/nettoyage-fribourg" },
       { label: "Nettoyage à Lausanne", href: "/nettoyage-lausanne" },

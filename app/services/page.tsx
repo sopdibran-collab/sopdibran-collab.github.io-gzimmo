@@ -21,7 +21,7 @@ export const metadata = createMetadata({
 const prioritySlugs = [
   "nettoyage-fin-de-bail",
   "nettoyage-apres-chantier",
-  "entretien-locaux",
+  "nettoyage-bureaux",
 ] as const;
 
 const reassurance = [

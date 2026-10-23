@@ -46,7 +46,6 @@ export type DevisFieldErrors = Partial<Record<DevisFieldName, string>>;
 const SERVICE_SLUG_TO_PRESTATION: Record<string, PrestationValue> = {
   "nettoyage-fin-de-bail": "fin-de-bail",
   "nettoyage-apres-chantier": "apres-chantier",
-  "entretien-locaux": "entretien",
   "nettoyage-bureaux": "entretien",
   "nettoyage-appartements": "entretien",
   "nettoyage-maisons": "entretien",

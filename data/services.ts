@@ -18,28 +18,6 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "entretien-locaux",
-    updatedAt: "2026-10-14T22:28:42+00:00",
-    title: "Entretien de locaux",
-    shortTitle: "Entretien de locaux",
-    description:
-      "Entretien régulier de locaux professionnels et commerciaux.",
-    intro:
-      "Un entretien planifié, discret et rigoureux pour des espaces qui restent impeccables au quotidien.",
-    benefits: [
-      "Planning adapté à vos horaires",
-      "Intervention discrète et efficace",
-      "Finitions soignées à chaque passage",
-    ],
-    image: {
-      src: "/images/services/entretien-locaux.webp",
-      alt: "Entretien professionnel de locaux commerciaux",
-      width: 1500,
-      height: 919,
-      objectPosition: "center 45%",
-    },
-  },
-  {
     slug: "nettoyage-appartements",
     updatedAt: "2026-10-14T22:28:42+00:00",
     title: "Nettoyage d'appartements",
@@ -133,13 +111,13 @@ export const services: Service[] = [
     title: "Nettoyage de bureaux",
     shortTitle: "Nettoyage de bureaux",
     description:
-      "Entretien de bureaux et espaces de travail.",
+      "Nettoyage de bureaux et de locaux d'entreprise.",
     intro:
       "Des espaces de travail propres, silencieux dans leur exécution, précis dans le résultat.",
     benefits: [
       "Horaires flexibles",
-      "Confidentialité et discrétion",
-      "Environnement sain pour vos équipes",
+      "Bureaux, commerces et cabinets",
+      "Devis sous 24 h",
     ],
     image: {
       src: "/images/services/nettoyage-bureaux.webp",
