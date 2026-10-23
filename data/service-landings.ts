@@ -653,7 +653,7 @@ export const serviceLandings: ServiceLanding[] = [
         },
         {
           title: "Nettoyage des vitres",
-          body: "Vitres des parties communes, nettoyées à la fréquence fixée dans le contrat.",
+          body: "Pour les vitres de votre immeuble, voyez notre service de nettoyage de vitres.",
           href: "/nettoyage-vitres",
           linkLabel: "Voir le nettoyage de vitres",
         },

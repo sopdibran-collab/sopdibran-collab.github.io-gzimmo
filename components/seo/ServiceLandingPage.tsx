@@ -195,7 +195,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         </PageMain>
         <ContactCta
           title="Un immeuble à confier ?"
-          text="Décrivez votre immeuble et vos besoins. Vous recevez une réponse à votre demande de devis sous 24 h."
+          text="Décrivez votre immeuble et vos besoins. Vous recevez une réponse sous 24 h."
           hideGuarantee
         />
         <PageMain variant="surface" density={bandDensity}>
