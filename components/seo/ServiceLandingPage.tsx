@@ -249,7 +249,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         {landing.sections?.length ? (
           landing.sectionLayout === "grid" ? (
             <div className="mt-10">
-              <h2 className={headingClass}>Dans quelles situations ?</h2>
+              <h2 className={headingClass}>Dans quelles situations ?</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {landing.sections.map((section) => {
                   const card = (
@@ -257,7 +257,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                       <h3 id={section.id} className="scroll-mt-28 font-display text-display-h3 font-semibold text-foreground">
                         {section.title}
                       </h3>
-                      <p className="mt-2 text-base text-muted leading-relaxed">{section.body}</p>
+                      <p className="md:max-w-[65ch] mt-2 text-base text-muted leading-relaxed">{section.body}</p>
                       {section.href ? (
                         <span className="mt-3 inline-block text-base font-medium text-accent-ink">Voir →</span>
                       ) : null}

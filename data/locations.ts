@@ -162,7 +162,7 @@ export const locations: Location[] = [
       { title: "Veveyse", names: ["Châtel-Saint-Denis"] },
     ],
     rules: {
-      title: "Gruyère et Veveyse : le même droit fédéral",
+      title: "Gruyère et Veveyse : le même droit fédéral",
       body: "Bulle, Riaz, Vuadens, Broc et Châtel-Saint-Denis sont dans le canton de Fribourg. Le Code des obligations est le droit fédéral, applicable partout en Suisse ; les usages vaudois de la remise à midi ne s'appliquent pas. Le logement est rendu dans l'état qui résulte d'un usage conforme au contrat. Le nettoyage fait partie de cette restitution. Le bailleur contrôle l'état à la sortie et signale les défauts qu'il impute au locataire.",
       sources: [federalRestitution, federalCleaningNote],
     },
@@ -350,7 +350,7 @@ export const locations: Location[] = [
       { title: "Chablais", names: ["Aigle"] },
     ],
     rules: {
-      title: "Riviera et Chablais : la remise vaudoise",
+      title: "Riviera et Chablais : la remise vaudoise",
       body: "Vevey, Montreux et Aigle sont vaudois. La sortie de bail y suit les règles et usages locatifs du canton, en plus du Code des obligations. L'article 36 place la remise à midi le jour de l'échéance, locaux vidés et sols contrôlables. L'article 37 demande toutes les clés, copies comprises. Le filtre de ventilation, les stores et les radiateurs se traitent quand le logement les a, selon le même texte.",
       sources: [vaudRulv],
     },

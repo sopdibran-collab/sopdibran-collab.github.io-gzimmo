@@ -69,12 +69,12 @@ export function LocalSeoBody({ location }: { location: Location }) {
           <h2 id="regles" className="font-display text-display-lg font-semibold text-foreground">
             {location.rules.title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted">{location.rules.body}</p>
+          <p className="md:max-w-[65ch] mt-4 text-base leading-relaxed text-muted">{location.rules.body}</p>
           <SourceList sources={location.rules.sources} />
           <h3 className="mt-6 font-display text-display-h3 font-semibold text-foreground">
             {location.remoteHandover.title}
           </h3>
-          <p className="mt-2 text-base leading-relaxed text-muted">{location.remoteHandover.body}</p>
+          <p className="md:max-w-[65ch] mt-2 text-base leading-relaxed text-muted">{location.remoteHandover.body}</p>
         </section>
 
         {location.building ? (

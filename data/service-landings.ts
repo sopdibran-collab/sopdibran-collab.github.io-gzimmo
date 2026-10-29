@@ -101,11 +101,11 @@ export const serviceLandings: ServiceLanding[] = [
       "Vous déménagez à Fribourg, en Vaud ? Confiez-nous le nettoyage de fin de bail : checklist régie, état des lieux, remise des clés. Gzimmo Sàrl est à Romont. Les pages de Romont, Fribourg, Bulle et Lausanne précisent les communes desservies.",
     sections: [
       {
-        title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
+        title: "Prix d'un nettoyage de fin de bail : un devis après l'échange",
         body: "Le prix dépend de la surface, de l'état du logement et de ce que votre régie exige à l'état des lieux, pas d'un forfait unique en ligne. Appelez-nous : vous décrivez la situation, nous établissons un devis gratuit et détaillé. Le tarif convenu est le tarif final, avant la remise des clés.",
       },
       {
-        title: "Pour les régies : checklist, état des lieux, remise des clés",
+        title: "Pour les régies : checklist, état des lieux, remise des clés",
         body: "Nous travaillons pour des locataires et directement pour des régies : sorties de bail, appartements à remettre en location. La checklist suit les points qui bloquent le plus souvent une restitution (joints, four, traces sur vitres) pour limiter les reprises le jour de l'état des lieux.",
       },
     ],
@@ -298,7 +298,7 @@ export const serviceLandings: ServiceLanding[] = [
     },
     priceSection: {
       id: "prix",
-      title: "Combien coûte un nettoyage après rénovation ou chantier ?",
+      title: "Combien coûte un nettoyage après rénovation ou chantier ?",
       body: "Il n'y a pas de forfait fixe au mètre carré. Le devis est gratuit, clair, établi sous 24 h, selon le niveau de poussière fine et le type de résidus. Le tarif convenu est le tarif final.",
       factors: [
         "Niveau de poussière fine laissé par les artisans",
@@ -416,7 +416,7 @@ export const serviceLandings: ServiceLanding[] = [
       { profile: "Coworkings et locaux partagés", situation: "Vos espaces sont utilisés par plusieurs équipes et doivent rester propres." },
     ],
     process: {
-      title: "Notre nettoyage de bureaux et de locaux inclut :",
+      title: "Notre nettoyage de bureaux et de locaux inclut :",
       items: [
         "Sols et tapis, nettoyés selon les matériaux.",
         "Sanitaires et espaces communs.",
@@ -485,7 +485,7 @@ export const serviceLandings: ServiceLanding[] = [
       { profile: "Propriétaires", situation: "Vous préparez un bien avant mise en location." },
     ],
     process: {
-      title: "Notre nettoyage d'appartement inclut :",
+      title: "Notre nettoyage d'appartement inclut :",
       items: [
         "Nettoyage pièce par pièce (séjour, chambres, cuisine, sanitaires).",
         "Sols lessivés selon le revêtement.",
@@ -555,7 +555,7 @@ export const serviceLandings: ServiceLanding[] = [
       { profile: "Régies", situation: "Vous gérez des maisons locatives nécessitant un entretien ponctuel." },
     ],
     process: {
-      title: "Notre nettoyage de maison inclut :",
+      title: "Notre nettoyage de maison inclut :",
       items: [
         "Tous les niveaux et pièces de vie.",
         "Sols, escaliers et paliers.",
@@ -589,7 +589,7 @@ export const serviceLandings: ServiceLanding[] = [
       { profile: "Régies", situation: "Vous mandatez des nettoyages de parties communes vitrées." },
     ],
     process: {
-      title: "Notre nettoyage de vitres inclut :",
+      title: "Notre nettoyage de vitres inclut :",
       items: [
         "Vitres intérieures et extérieures accessibles.",
         "Cadres et rebords nettoyés.",
@@ -646,7 +646,7 @@ export const serviceLandings: ServiceLanding[] = [
       },
     ],
     process: {
-      title: "Comment se met en place la conciergerie :",
+      title: "Comment se met en place la conciergerie :",
       numbered: true,
       items: [
         "Vous nous décrivez l'immeuble et vos besoins.",
@@ -655,7 +655,7 @@ export const serviceLandings: ServiceLanding[] = [
         "Les passages commencent selon le planning convenu.",
       ],
     },
-    whyHeading: "Pourquoi Gzimmo pour votre immeuble ?",
+    whyHeading: "Pourquoi Gzimmo pour votre immeuble ?",
     whyGzimmo: [
       {
         title: "Plus de 15 ans d'expérience",
@@ -670,7 +670,7 @@ export const serviceLandings: ServiceLanding[] = [
         description: "Les passages et les consignes sont notés noir sur blanc dans le contrat.",
       },
     ],
-    faqHeading: "Questions fréquentes : conciergerie d'immeuble et PPE",
+    faqHeading: "Questions fréquentes : conciergerie d'immeuble et PPE",
     faqs: [
       {
         question: "Que contient un contrat de conciergerie ?",
