@@ -16,17 +16,34 @@ import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-inter",
   display: "swap",
 });
 
 const sora = Sora({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   weight: ["600"],
   variable: "--font-sora",
   display: "swap",
+});
+
+// latin-ext déclaré (unicode-range) mais non préchargé.
+const interExt = Inter({
+  subsets: ["latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter-ext",
+  display: "swap",
+  preload: false,
+});
+
+const soraExt = Sora({
+  subsets: ["latin-ext"],
+  weight: ["600"],
+  variable: "--font-sora-ext",
+  display: "swap",
+  preload: false,
 });
 
 const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
@@ -46,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr-CH" className={`${inter.variable} ${sora.variable}`}>
+    <html lang="fr-CH" className={`${inter.variable} ${interExt.variable} ${sora.variable} ${soraExt.variable}`}>
       <head>
         <GoogleTagManagerScript />
         <PlausibleScript />

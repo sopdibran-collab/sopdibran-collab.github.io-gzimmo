@@ -34,7 +34,7 @@ const chipClass =
 
 /** Labels uppercase — blanc/70 sur fond teal sombre ≈ 5.5:1 (AA). */
 const labelClass =
-  "mb-1.5 text-xs font-semibold uppercase leading-[1.3] tracking-[0.06em] text-white/70";
+  "mb-1.5 text-label font-semibold uppercase text-white/70";
 
 function LinkRow({
   label,

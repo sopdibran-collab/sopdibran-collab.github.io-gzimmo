@@ -31,7 +31,7 @@ function isNavActive(pathname: string, href: string) {
 
 /**
  * Navigation mobile native-style : barre basse ultra-compacte,
- * icônes Lucide fines + labels text-xs, blur + bordure légère.
+ * icônes Lucide fines + labels text-label, blur + bordure légère.
  */
 export function MobileBottomNav() {
   const pathname = usePathname();
@@ -52,7 +52,7 @@ export function MobileBottomNav() {
           const active = isNavActive(pathname, item.href);
 
           return (
-            <li key={item.href} className="min-w-0 flex-1">
+            <li key={item.href} className="min-w-0 flex-auto">
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
@@ -63,7 +63,7 @@ export function MobileBottomNav() {
                 )}
               >
                 <Icon className="size-[18px] stroke-[1.5]" aria-hidden />
-                <span className="max-w-full truncate text-xs font-semibold leading-none tracking-[-0.01em]">
+                <span className="max-w-full truncate text-label font-semibold leading-none tracking-normal">
                   {item.label}
                 </span>
               </Link>
@@ -71,7 +71,7 @@ export function MobileBottomNav() {
           );
         })}
 
-        <li className="min-w-0 flex-1">
+        <li className="min-w-0 flex-auto">
           <a
             href={callHref}
             aria-label={`Appel, ${company.phoneDisplay}`}
@@ -81,7 +81,7 @@ export function MobileBottomNav() {
             )}
           >
             <Phone className="size-[18px] stroke-[1.5]" aria-hidden />
-            <span className="text-xs font-semibold leading-none tracking-[-0.01em]">
+            <span className="text-label font-semibold leading-none tracking-normal">
               Appel
             </span>
           </a>
