@@ -9,7 +9,7 @@ export function HomeZoneGrid() {
     <div>
       <FadeIn>
         <Badge className="text-accent-ink">Zones d&apos;intervention</Badge>
-        <h2 className="mt-4 font-display text-display-md text-foreground">
+        <h2 className="mt-4 font-display text-display-lg text-foreground">
           Villes qui ont une page
         </h2>
         <p className="mt-4 max-w-xl text-muted leading-relaxed">

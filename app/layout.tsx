@@ -16,14 +16,15 @@ import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
   variable: "--font-inter",
   display: "swap",
 });
 
 const sora = Sora({
-  subsets: ["latin"],
-  weight: ["600", "700"],
+  subsets: ["latin", "latin-ext"],
+  weight: ["600"],
   variable: "--font-sora",
   display: "swap",
 });

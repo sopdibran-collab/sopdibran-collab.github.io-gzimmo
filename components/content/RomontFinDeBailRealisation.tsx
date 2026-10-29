@@ -102,7 +102,7 @@ export function RomontFinDeBailRealisation({
       aria-labelledby={heading ? "realisation-romont" : undefined}
     >
       {heading ? (
-        <h2 id="realisation-romont" className="font-display text-display-sm text-foreground">
+        <h2 id="realisation-romont" className="font-display text-display-lg text-foreground">
           Nettoyage de fin de bail à Romont
         </h2>
       ) : null}

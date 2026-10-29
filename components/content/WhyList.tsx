@@ -8,7 +8,7 @@ export function WhyList() {
     <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
       <FadeIn className="lg:col-span-5">
         <Badge>Pourquoi Gzimmo</Badge>
-        <h2 className="mt-4 font-display text-display-md text-foreground">
+        <h2 className="mt-4 font-display text-display-lg text-foreground">
           Checklist régie, devis sous 24 h, équipe à Romont
         </h2>
         <p className="mt-5 max-w-md leading-relaxed text-muted">

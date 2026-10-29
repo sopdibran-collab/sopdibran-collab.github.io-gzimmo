@@ -34,7 +34,7 @@ export function SectionDivider({
 }) {
   return (
     <div className={cn("border-t border-border/80 pt-16", className)}>
-      <h2 className="font-display text-display-sm text-foreground">{title}</h2>
+      <h2 className="font-display text-display-lg text-foreground">{title}</h2>
       <div className="mt-8">{children}</div>
     </div>
   );

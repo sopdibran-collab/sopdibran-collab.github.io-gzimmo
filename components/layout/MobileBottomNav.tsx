@@ -31,7 +31,7 @@ function isNavActive(pathname: string, href: string) {
 
 /**
  * Navigation mobile native-style : barre basse ultra-compacte,
- * icônes Lucide fines + labels text-[10px], blur + bordure légère.
+ * icônes Lucide fines + labels text-xs, blur + bordure légère.
  */
 export function MobileBottomNav() {
   const pathname = usePathname();
@@ -63,7 +63,7 @@ export function MobileBottomNav() {
                 )}
               >
                 <Icon className="size-[18px] stroke-[1.5]" aria-hidden />
-                <span className="max-w-full truncate text-[10px] font-medium leading-none tracking-[-0.01em]">
+                <span className="max-w-full truncate text-xs font-semibold leading-none tracking-[-0.01em]">
                   {item.label}
                 </span>
               </Link>
@@ -81,7 +81,7 @@ export function MobileBottomNav() {
             )}
           >
             <Phone className="size-[18px] stroke-[1.5]" aria-hidden />
-            <span className="text-[10px] font-medium leading-none tracking-[-0.01em]">
+            <span className="text-xs font-semibold leading-none tracking-[-0.01em]">
               Appel
             </span>
           </a>

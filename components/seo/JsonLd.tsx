@@ -66,8 +66,8 @@ export function PageIntro({
       <h1
         className={
           onDark
-            ? "mt-4 font-display text-display-md text-white"
-            : "mt-4 font-display text-display-md text-foreground"
+            ? "mt-4 font-display text-display-xl text-white"
+            : "mt-4 font-display text-display-xl text-foreground"
         }
       >
         {title}

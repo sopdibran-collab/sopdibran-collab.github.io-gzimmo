@@ -61,7 +61,7 @@ export default function ZonesPage() {
 
       <PageMain>
         <section aria-labelledby="zones-intro">
-          <h2 id="zones-intro" className="font-display text-display-sm text-foreground">
+          <h2 id="zones-intro" className="font-display text-display-lg text-foreground">
             {zonesIntroTitle}
           </h2>
           {zonesIntroParagraphs.map((paragraph) => (
@@ -82,7 +82,7 @@ export default function ZonesPage() {
 
       <PageMain variant="default">
         <section aria-labelledby="zones-canton">
-          <h2 id="zones-canton" className="font-display text-display-sm text-foreground">
+          <h2 id="zones-canton" className="font-display text-display-lg text-foreground">
             {zonesCantonTitle}
           </h2>
           <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-reading leading-relaxed text-muted">

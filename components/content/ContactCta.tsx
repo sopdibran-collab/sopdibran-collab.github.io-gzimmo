@@ -15,7 +15,7 @@ export function ContactCta({ className }: ContactCtaProps) {
     <section className={cn("bg-inverse text-white", className)}>
       <div className="mx-auto grid w-full max-w-[1200px] min-w-0 gap-8 px-container py-16 sm:py-20 lg:grid-cols-12 lg:items-end lg:gap-10 lg:py-24">
         <div className="lg:col-span-8">
-          <h2 className="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em]">
+          <h2 className="font-display text-display-lg font-semibold tracking-[-0.03em]">
             Après travaux ou fin de bail,<br className="hidden sm:block" /> on s&apos;en charge.
           </h2>
           <p className="mt-4 max-w-md text-white/65 leading-relaxed">

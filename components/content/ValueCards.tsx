@@ -35,7 +35,7 @@ export function ValueCards({
               className={
                 sectionTitle
                   ? "font-display text-xl font-semibold text-foreground"
-                  : "font-display text-display-sm text-foreground"
+                  : "font-display text-display-lg text-foreground"
               }
             >
               {value.title}
@@ -53,7 +53,7 @@ export function ValueCards({
 
   return (
     <section className="mt-16" aria-labelledby={sectionId}>
-      <h2 id={sectionId} className="font-display text-display-sm text-foreground">
+      <h2 id={sectionId} className="font-display text-display-lg text-foreground">
         {sectionTitle}
       </h2>
       {grid}

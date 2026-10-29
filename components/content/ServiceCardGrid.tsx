@@ -46,7 +46,7 @@ export function ServiceCardGrid({
           {title ? (
             <h2
               className={cn(
-                "font-display text-display-md text-foreground",
+                "font-display text-display-lg text-foreground",
                 badge ? "mt-4" : undefined,
               )}
             >
@@ -83,7 +83,7 @@ export function ServiceCardGrid({
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent-ink">
+                <h3 className="font-display text-display-h3 font-semibold tracking-[-0.02em] text-foreground transition-colors duration-200 group-hover:text-accent-ink">
                   {service.shortTitle}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">

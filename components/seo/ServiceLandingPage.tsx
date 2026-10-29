@@ -94,7 +94,7 @@ function ProcessSection({
       <BandBlock className="max-w-3xl">
         <h2
           id={landing.process.id}
-          className="scroll-mt-28 font-display text-display-sm text-foreground"
+          className="scroll-mt-28 font-display text-display-lg text-foreground"
         >
           {landing.process.title}
         </h2>
@@ -148,7 +148,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
   const localWithPrice = Boolean(landing.priceSection && landing.showInterventionZones);
   const zonesHeading = landing.zonesHeading ?? "Zones d'intervention";
   const bandDensity = "band" as const;
-  const headingClass = "scroll-mt-28 font-display text-display-sm text-foreground";
+  const headingClass = "scroll-mt-28 font-display text-display-lg text-foreground";
 
   return (
     <>
@@ -181,8 +181,8 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               <h1
                 className={
                   rhythm
-                    ? "mt-5 font-display text-display-lg font-semibold text-white"
-                    : "mt-5 font-display text-display-lg font-semibold text-foreground"
+                    ? "mt-5 font-display text-display-xl font-semibold text-white"
+                    : "mt-5 font-display text-display-xl font-semibold text-foreground"
                 }
               >
                 {landing.h1}
@@ -254,7 +254,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 {landing.sections.map((section) => {
                   const card = (
                     <>
-                      <h3 id={section.id} className="scroll-mt-28 text-xl font-medium text-foreground">
+                      <h3 id={section.id} className="scroll-mt-28 font-display text-display-h3 font-semibold text-foreground">
                         {section.title}
                       </h3>
                       <p className="mt-2 text-base text-muted leading-relaxed">{section.body}</p>
@@ -315,7 +315,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           <div className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2">
             {landing.inclusionGroups.map((group) => (
               <div key={group.title} className="bg-background p-6 sm:p-8">
-                <h3 className="text-xl font-medium text-foreground">{group.title}</h3>
+                <h3 className="font-display text-display-h3 font-semibold text-foreground">{group.title}</h3>
                 <ul className="mt-3 space-y-2">
                   {group.items.map((item) => (
                     <li key={item} className="text-base text-muted leading-relaxed">
@@ -347,7 +347,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                 key={item.profile}
                 className="grid gap-2 py-5 last:pb-0 sm:grid-cols-[15rem_1fr] sm:gap-8 lg:first:pt-0"
               >
-                <h3 className="text-xl font-medium text-foreground">{item.profile}</h3>
+                <h3 className="font-display text-display-h3 font-semibold text-foreground">{item.profile}</h3>
                 <p className="text-base text-muted leading-relaxed">{item.situation}</p>
               </li>
             ))}
@@ -359,7 +359,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         <PageMain variant={offerVariant} density={bandDensity}>
           {landing.guarantee ? (
             <BandBlock>
-              <h2 className="font-display text-display-sm text-foreground">
+              <h2 className="font-display text-display-lg text-foreground">
                 {landing.guarantee.title}
               </h2>
               <div className="mt-6 space-y-4 text-reading text-muted">
@@ -430,7 +430,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         <ul className="mt-8 divide-y divide-border border-t-2 border-accent">
           {landing.whyGzimmo.map((item) => (
             <li key={item.title} className="py-5">
-              <h3 className="text-xl font-medium text-foreground">{item.title}</h3>
+              <h3 className="font-display text-display-h3 font-semibold text-foreground">{item.title}</h3>
               <p className="mt-2 text-base leading-relaxed text-muted">{item.description}</p>
             </li>
           ))}
@@ -513,7 +513,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
       <PageMain variant={closingVariant} density={bandDensity}>
         <div className={localWithPrice ? "grid gap-8" : "grid gap-8 lg:grid-cols-2"}>
           <BandBlock>
-            <h2 className="font-display text-xl font-semibold text-foreground">Nos autres prestations</h2>
+            <h2 className="font-display text-display-lg font-semibold text-foreground">Nos autres prestations</h2>
             <ul className="mt-6 space-y-3">
               {relatedServices.map((item) => (
                 <li key={item.href}>

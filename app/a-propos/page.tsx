@@ -85,7 +85,7 @@ export default function AboutPage() {
 
       <PageMain>
         <section aria-labelledby="a-propos-identite">
-          <h2 id="a-propos-identite" className="font-display text-display-sm text-foreground">
+          <h2 id="a-propos-identite" className="font-display text-display-lg text-foreground">
             {aboutIdentityTitle}
           </h2>
           {aboutIdentityParagraphs.map((paragraph) => (
@@ -103,7 +103,7 @@ export default function AboutPage() {
 
       <PageMain variant="default">
         <section aria-labelledby="a-propos-services">
-          <h2 id="a-propos-services" className="font-display text-display-sm text-foreground">
+          <h2 id="a-propos-services" className="font-display text-display-lg text-foreground">
             {aboutServicesTitle}
           </h2>
           <p className="mt-4 text-reading leading-relaxed text-muted">{aboutServicesLead}</p>
@@ -125,7 +125,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-16" aria-labelledby="a-propos-methode">
-          <h2 id="a-propos-methode" className="font-display text-display-sm text-foreground">
+          <h2 id="a-propos-methode" className="font-display text-display-lg text-foreground">
             {aboutMethodTitle}
           </h2>
           {aboutMethodParagraphs.map((paragraph) => (
@@ -137,7 +137,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-16" aria-labelledby="a-propos-clients">
-          <h2 id="a-propos-clients" className="font-display text-display-sm text-foreground">
+          <h2 id="a-propos-clients" className="font-display text-display-lg text-foreground">
             {aboutClientsTitle}
           </h2>
           <ul className="mt-4 max-w-2xl list-disc space-y-2 pl-5 text-reading leading-relaxed text-muted">
@@ -149,7 +149,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-16" aria-labelledby="a-propos-zones">
-          <h2 id="a-propos-zones" className="font-display text-display-sm text-foreground">
+          <h2 id="a-propos-zones" className="font-display text-display-lg text-foreground">
             {aboutZonesTitle}
           </h2>
           {aboutZonesParagraphs.map((paragraph) => (

@@ -61,7 +61,7 @@ export function InterventionZones({
           <Badge className="text-accent-ink">Zones d&apos;intervention</Badge>
           <h2
             id="zones-intervention"
-            className="mt-4 scroll-mt-28 font-display text-display-sm text-foreground"
+            className="mt-4 scroll-mt-28 font-display text-display-lg text-foreground"
           >
             {heading}
           </h2>
@@ -94,7 +94,7 @@ export function InterventionZones({
       <div className="mt-10 flex flex-col gap-4">
         {zoneBands.map((group) => (
           <article key={group.id} className={cardClass}>
-            <h3 className="font-display text-lg font-semibold text-foreground">{group.timeLabel}</h3>
+            <h3 className="font-display text-display-h3 font-semibold text-foreground">{group.timeLabel}</h3>
             {group.detail ? <p className="mt-1 text-sm text-muted">{group.detail}</p> : null}
             <ul className="mt-4 flex flex-wrap gap-2">
               {group.places.map((place) => (

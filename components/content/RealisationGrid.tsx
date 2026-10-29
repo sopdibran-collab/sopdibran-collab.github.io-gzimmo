@@ -33,7 +33,7 @@ export function RealisationGrid({
   return (
     <div>
       <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
-        <h2 className="font-display text-display-md text-foreground lg:col-span-8">
+        <h2 className="font-display text-display-lg text-foreground lg:col-span-8">
           Nos dernières réalisations
         </h2>
         <div className="lg:col-span-4 lg:justify-self-end">
@@ -84,7 +84,7 @@ function RealisationFeatured({ item }: { item: Realisation }) {
           </span>
           {item.service}
         </p>
-        <h3 className="mt-2 max-w-xl font-display text-2xl font-semibold tracking-[-0.025em] text-foreground sm:text-[1.75rem]">
+        <h3 className="mt-2 max-w-xl font-display text-display-h3 font-semibold tracking-[-0.025em] text-foreground">
           {item.title}
         </h3>
         <p className="mt-3 max-w-lg text-base leading-relaxed text-muted">{item.result}</p>
@@ -123,7 +123,7 @@ function RealisationSide({ item }: { item: Realisation }) {
           </span>
           {item.service}
         </p>
-        <h3 className="mt-1.5 font-display text-lg font-semibold tracking-[-0.02em] text-foreground">
+        <h3 className="mt-1.5 font-display text-display-h3 font-semibold tracking-[-0.02em] text-foreground">
           {item.title}
         </h3>
         <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted">{item.result}</p>
@@ -155,7 +155,7 @@ function RealisationRow({ item }: { item: Realisation }) {
           <span aria-hidden="true">·</span>
           <span>{item.service}</span>
         </div>
-        <h3 className="mt-3 font-display text-display-sm text-foreground">{item.title}</h3>
+        <h3 className="mt-3 font-display text-display-lg text-foreground">{item.title}</h3>
         <dl className="mt-4 space-y-3 text-sm">
           <div>
             <dt className="font-medium text-foreground">Problème</dt>

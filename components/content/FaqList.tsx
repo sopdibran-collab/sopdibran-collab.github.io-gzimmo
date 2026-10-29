@@ -172,7 +172,7 @@ export function FaqSectionHeader({
   return (
     <>
       <Badge>FAQ</Badge>
-      <h2 className="mt-4 font-display text-display-md text-foreground">{title}</h2>
+      <h2 className="mt-4 font-display text-display-lg text-foreground">{title}</h2>
       {description ? (
         <p className="mt-4 max-w-2xl text-muted leading-relaxed">{description}</p>
       ) : null}
