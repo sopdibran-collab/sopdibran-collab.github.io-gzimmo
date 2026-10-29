@@ -48,13 +48,13 @@ export function LocalSeoBody({ location }: { location: Location }) {
     <>
       <div className="mx-auto max-w-prose">
         <section aria-labelledby="communes">
-          <h2 id="communes" className="font-display text-display-sm text-foreground">
+          <h2 id="communes" className="font-display text-display-lg text-foreground">
             Communes desservies
           </h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             {location.communeGroups.map((group) => (
               <div key={group.title}>
-                <h3 className="text-sm font-medium text-foreground">{group.title}</h3>
+                <h3 className="font-display text-display-h3 font-semibold text-foreground">{group.title}</h3>
                 <ul className="mt-2 space-y-1 text-sm text-muted">
                   {group.names.map((name) => (
                     <li key={name}>{name}</li>
@@ -66,20 +66,20 @@ export function LocalSeoBody({ location }: { location: Location }) {
         </section>
 
         <section className="mt-10 border border-accent p-6" aria-labelledby="regles">
-          <h2 id="regles" className="font-display text-lg font-semibold text-foreground">
+          <h2 id="regles" className="font-display text-display-lg font-semibold text-foreground">
             {location.rules.title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted">{location.rules.body}</p>
+          <p className="md:max-w-[65ch] mt-4 text-base leading-relaxed text-muted">{location.rules.body}</p>
           <SourceList sources={location.rules.sources} />
-          <h3 className="mt-6 font-display text-base font-semibold text-foreground">
+          <h3 className="mt-6 font-display text-display-h3 font-semibold text-foreground">
             {location.remoteHandover.title}
           </h3>
-          <p className="mt-2 text-base leading-relaxed text-muted">{location.remoteHandover.body}</p>
+          <p className="md:max-w-[65ch] mt-2 text-base leading-relaxed text-muted">{location.remoteHandover.body}</p>
         </section>
 
         {location.building ? (
           <section className="mt-10" aria-labelledby="bati">
-            <h2 id="bati" className="font-display text-display-sm text-foreground">
+            <h2 id="bati" className="font-display text-display-lg text-foreground">
               {location.building.title ?? "Le logement dans le canton"}
             </h2>
             {figure ? (
@@ -94,7 +94,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
 
         {location.slug === "nettoyage-romont" ? (
           <section className="mt-10" aria-labelledby="exemple" id="realisation-romont">
-            <h2 id="exemple" className="font-display text-display-sm text-foreground">
+            <h2 id="exemple" className="font-display text-display-lg text-foreground">
               Une fin de bail réalisée à Romont
             </h2>
             {location.example.body ? (
@@ -166,7 +166,7 @@ export function LocalSeoBody({ location }: { location: Location }) {
       {location.faqs.length > 0 ? (
         <div className="mx-auto mt-16 max-w-prose border-t border-border pt-16">
           <Badge className="text-accent-ink">FAQ</Badge>
-          <h2 className="mt-4 font-display text-display-sm text-foreground">
+          <h2 className="mt-4 font-display text-display-lg text-foreground">
             Questions sur {location.city}
           </h2>
           <div className="mt-8">
@@ -187,7 +187,7 @@ export function LocalAreaLinks({
 }) {
   return (
     <nav aria-label={title}>
-      <h2 className="font-display text-display-sm text-foreground">{title}</h2>
+      <h2 className="font-display text-display-lg text-foreground">{title}</h2>
       <ul className="mt-6 columns-2 gap-x-8 text-sm md:columns-3">
         {locs.map((loc) => (
           <li key={loc.slug} className="mb-2 break-inside-avoid">

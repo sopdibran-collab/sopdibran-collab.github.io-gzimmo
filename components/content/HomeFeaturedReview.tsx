@@ -37,7 +37,7 @@ export function HomeFeaturedReview() {
   return (
     <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
       <div className="lg:col-span-4">
-        <h2 className="font-display text-display-sm text-foreground">
+        <h2 className="font-display text-display-lg text-foreground">
           Ce qu&apos;on nous laisse sur Google
         </h2>
         <p className="mt-3 text-sm text-muted leading-relaxed">

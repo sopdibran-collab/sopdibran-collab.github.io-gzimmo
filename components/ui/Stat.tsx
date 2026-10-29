@@ -18,7 +18,7 @@ export function Stat({
     >
       <p
         className={cn(
-          "font-display text-[clamp(2.75rem,5.5vw,4.25rem)] font-semibold leading-none tracking-tight",
+          "font-display text-display-xl font-semibold tracking-tight",
           inverse ? "text-white" : "text-foreground",
         )}
       >

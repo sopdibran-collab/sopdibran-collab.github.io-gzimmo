@@ -10,7 +10,7 @@ type FinDeBailPriceQuoteProps = {
 export function FinDeBailPriceQuote({ className }: FinDeBailPriceQuoteProps) {
   return (
     <div className={cn("border-t-2 border-accent pt-8", className)}>
-      <h2 className="font-display text-display-sm text-foreground">
+      <h2 className="font-display text-display-lg text-foreground">
         Prix d&apos;un nettoyage de fin de bail
       </h2>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted">

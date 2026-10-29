@@ -122,7 +122,7 @@ function ServiceRow({
               <div className="flex min-w-0 items-baseline gap-5 transition-transform duration-500 group-hover:translate-x-1 md:gap-10">
                 <span
                   className={cn(
-                    "font-display text-sm font-medium tabular-nums transition-colors duration-300",
+                    "font-display text-sm font-semibold tabular-nums transition-colors duration-300",
                     isOpen ? "text-accent-ink" : "text-muted/70 group-hover:text-accent-ink",
                   )}
                 >

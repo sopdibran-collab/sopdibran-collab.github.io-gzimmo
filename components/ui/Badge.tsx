@@ -4,7 +4,7 @@ export function Badge({ children, className }: { children: React.ReactNode; clas
   return (
     <p
       className={cn(
-        "text-sm font-medium tracking-[0.12em] text-muted uppercase",
+        "text-label font-semibold uppercase text-muted",
         className,
       )}
     >

@@ -23,11 +23,11 @@ export function HomeHero() {
       />
 
       <div className="relative z-10 mx-auto flex min-h-hero-photo w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24">
-        <div className="min-w-0 max-w-3xl animate-fade-in-up motion-reduce:animate-none">
-          <h1 className="max-w-[18.2em] font-display text-[clamp(1.5625rem,4.8vw+0.35rem,2.25rem)] font-semibold leading-[1.14] tracking-[-0.03em] text-white">
+        <div className="min-w-0 max-w-4xl animate-fade-in-up motion-reduce:animate-none">
+          <h1 className="max-w-[32ch] text-balance font-display text-hero font-semibold tracking-[-0.03em] text-white">
             Entreprise de nettoyage à Fribourg et dans le canton de Vaud
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-white">
+          <p className="mt-5 max-w-[60ch] text-lead text-white">
             Basés à Romont, nous intervenons dans toute la Suisse romande.
           </p>
 

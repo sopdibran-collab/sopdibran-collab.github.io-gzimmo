@@ -11,7 +11,7 @@ export function BenefitsList({
   return (
     <div>
       <Badge className="text-accent-ink">Prestation</Badge>
-      <h2 className="mt-4 font-display text-display-sm text-foreground">{title}</h2>
+      <h2 className="mt-4 font-display text-display-lg text-foreground">{title}</h2>
       <ul className="mt-8 grid gap-3 sm:grid-cols-2">
         {benefits.map((benefit, index) => (
           <FadeIn

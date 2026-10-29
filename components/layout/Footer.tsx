@@ -34,7 +34,7 @@ const chipClass =
 
 /** Labels uppercase — blanc/70 sur fond teal sombre ≈ 5.5:1 (AA). */
 const labelClass =
-  "mb-1.5 text-[10px] font-medium uppercase tracking-[0.08em] text-white/70";
+  "mb-1.5 text-label font-semibold uppercase text-white/70";
 
 function LinkRow({
   label,
@@ -66,7 +66,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] space-y-3 px-container py-3 sm:py-4">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Logo variant="monochromeInverse" size="footer" className="max-h-7 max-w-[140px]" />
-          <p className="max-w-md text-[11px] leading-snug text-white/75">
+          <p className="max-w-md text-[13px] leading-[1.5] text-white/75">
             {company.tagline} · Romont (FR) · {company.areaServed} · Réponse sous 24 h
           </p>
         </div>
@@ -136,7 +136,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-x-4 gap-y-1 px-container py-2 text-[11px] text-white/70">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-x-4 gap-y-1 px-container py-2 text-[13px] leading-[1.5] text-white/70">
           <p>
             © {new Date().getFullYear()} {company.legalName}
           </p>

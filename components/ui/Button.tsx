@@ -26,7 +26,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out motion-reduce:transition-[color,background-color,border-color,box-shadow] motion-reduce:hover:translate-y-0",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-[15px] font-semibold leading-[1.2] sm:text-base transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out motion-reduce:transition-[color,background-color,border-color,box-shadow] motion-reduce:hover:translate-y-0",
     variants[variant],
     className,
   );

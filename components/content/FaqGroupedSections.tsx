@@ -13,7 +13,7 @@ export function FaqGroupedSections() {
             <div className="max-w-2xl">
               <h2
                 id={`faq-section-${group.id}`}
-                className="font-display text-display-sm text-foreground"
+                className="font-display text-display-lg text-foreground"
               >
                 {group.title}
               </h2>

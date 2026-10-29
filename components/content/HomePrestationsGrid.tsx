@@ -22,7 +22,7 @@ export function HomePrestationsGrid() {
     <div>
       <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-10">
         <div className="lg:col-span-7">
-          <h2 className="font-display text-display-md text-foreground">
+          <h2 className="font-display text-display-lg text-foreground">
             Fin de bail, après chantier et entretien
           </h2>
         </div>
@@ -49,7 +49,7 @@ export function HomePrestationsGrid() {
                 />
               </div>
               <div className="flex flex-1 flex-col px-5 py-5">
-                <h3 className="font-display text-[20px] font-semibold leading-snug tracking-[-0.02em] text-foreground">
+                <h3 className="font-display text-display-h3 font-semibold tracking-[-0.02em] text-foreground">
                   {service.shortTitle}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
