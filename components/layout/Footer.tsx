@@ -154,6 +154,17 @@ export function Footer() {
               Confidentialité
             </Link>
           </div>
+          <p className="w-full pb-2">
+            Site, développement et référencement :{" "}
+            <a
+              href="https://www.linkedin.com/in/dibransop"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex min-h-11 items-center underline decoration-white/30 underline-offset-2 transition-colors hover:text-white hover:decoration-white"
+            >
+              Dibran Sopjani
+            </a>
+          </p>
         </div>
       </div>
     </footer>
