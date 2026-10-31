@@ -111,6 +111,20 @@ export default function MentionsLegalesPage() {
             </p>
           </LegalSection>
 
+          <LegalSection title="Conception du site">
+            <p>
+              Site, développement et référencement :{" "}
+              <a
+                href="https://www.linkedin.com/in/dibransop"
+                target="_blank"
+                rel="noopener"
+                className="text-foreground hover:text-accent-ink"
+              >
+                Dibran Sopjani
+              </a>
+            </p>
+          </LegalSection>
+
           <LegalSection title="Droit applicable">
             <p>
               Le présent site et les présentes mentions légales sont soumis au droit suisse.
