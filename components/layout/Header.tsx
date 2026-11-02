@@ -77,7 +77,7 @@ export function Header() {
             external
             variant="secondary"
             aria-label={`Appeler le ${company.phoneDisplay}`}
-            className="min-h-11 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] text-white"
+            className="min-h-11 whitespace-nowrap border-white/25 bg-transparent px-3 text-[13px] leading-[1.2] text-white"
           >
             <PhoneIcon className="size-4 shrink-0" />
             {company.phoneDisplay}
