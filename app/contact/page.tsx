@@ -64,7 +64,7 @@ export default async function ContactPage({
           description="Appelez-nous ou envoyez le formulaire — un échange suffit pour un devis sur mesure, sans engagement. Réponse sous 24 h."
         >
           <ConversionCta
-            className="flex-row [&_a]:w-auto [&_a]:flex-1 max-lg:mb-16"
+            className="flex-row [&_a]:w-auto max-lg:mb-16"
             devisHref="#formulaire"
             devisLabel="Remplir le formulaire"
             callLabel="Appeler"
