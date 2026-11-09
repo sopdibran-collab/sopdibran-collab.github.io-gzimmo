@@ -5,7 +5,7 @@ import { HeroPhotoBackdrop } from "@/components/layout/HeroPhotoBackdrop";
 import { GoogleMapsLink } from "@/components/seo/GoogleMap";
 
 /**
- * Full-bleed home hero: décor photo + specified veil + white copy.
+ * Full-bleed home hero: sharp validated photo + veil behind the copy only.
  * Content-height on mobile; shared photo frame from tablet upwards.
  */
 export function HomeHero() {
@@ -17,9 +17,10 @@ export function HomeHero() {
       className="relative isolate min-h-0 md:min-h-[var(--hero-photo-min-height)] overflow-hidden bg-inverse"
     >
       <HeroPhotoBackdrop
-        src="/images/realisations/fin-de-bail.jpg"
-        alt="Remise en état fin de bail, nettoyage fin de bail à Fribourg"
-        position="center 45%"
+        src="/images/hero/accueil-appartement-lumineux.webp"
+        alt="Pièce d’appartement vide et lumineuse, fenêtres et carrelage clair"
+        position="45% 50%"
+        treatment="photo"
       />
 
       <div className="relative z-10 mx-auto flex min-h-0 md:min-h-[var(--hero-photo-min-height)] w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-24 sm:pb-20 sm:pt-32 lg:pb-24">
