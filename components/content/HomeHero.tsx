@@ -6,7 +6,7 @@ import { GoogleMapsLink } from "@/components/seo/GoogleMap";
 
 /**
  * Full-bleed home hero: décor photo + specified veil + white copy.
- * Height: shared `--hero-photo-min-height` / `.min-h-hero-photo` with image PageHero.
+ * Content-height on mobile; shared photo frame from tablet upwards.
  */
 export function HomeHero() {
   const callHref = formatPhoneHref(company.phone);
@@ -14,7 +14,7 @@ export function HomeHero() {
   return (
     <section
       id="home-hero"
-      className="relative isolate min-h-hero-photo overflow-hidden bg-inverse"
+      className="relative isolate min-h-0 md:min-h-[var(--hero-photo-min-height)] overflow-hidden bg-inverse"
     >
       <HeroPhotoBackdrop
         src="/images/realisations/fin-de-bail.jpg"
@@ -22,7 +22,7 @@ export function HomeHero() {
         position="center 45%"
       />
 
-      <div className="relative z-10 mx-auto flex min-h-hero-photo w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24">
+      <div className="relative z-10 mx-auto flex min-h-0 md:min-h-[var(--hero-photo-min-height)] w-full max-w-[1200px] min-w-0 flex-col justify-end px-container pb-16 pt-24 sm:pb-20 sm:pt-32 lg:pb-24">
         <div className="min-w-0 max-w-4xl animate-fade-in-up motion-reduce:animate-none">
           <h1 className="max-w-[32ch] text-balance font-display text-hero font-semibold tracking-[-0.03em] text-white">
             Entreprise de nettoyage à Fribourg et dans le canton de Vaud
