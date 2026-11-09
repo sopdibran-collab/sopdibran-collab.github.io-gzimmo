@@ -255,6 +255,18 @@
   }
 
   /**
+   * Tablet: the 16:9 photo already fills the frame height, so object-position
+   * cannot move it vertically. A bottom-anchored zoom trims the ceiling and
+   * light fitting and gives the floor more room.
+   */
+  @media (min-width: 48rem) and (max-width: 63.999rem) {
+    .hero-photo-media-sharp {
+      transform: scale(1.2);
+      transform-origin: 45% 100%;
+    }
+  }
+
+  /**
    * Veil behind the copy only. Below 1024px the copy spans the width, so the
    * veil fades out above the headline and below the address; from 1024px it
    * stays on the left column and leaves the right of the room untouched.
