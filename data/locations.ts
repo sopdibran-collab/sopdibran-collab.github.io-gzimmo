@@ -275,12 +275,12 @@ export const locations: Location[] = [
     title: "Nettoyage à Lausanne et dans l'Ouest lausannois",
     subtitle: "Renens et Crissier dans l'Ouest lausannois",
     description:
-      "Nettoyage à Lausanne, Renens et Crissier. Devis gratuit, réponse sous 24 h.",
+      "Nettoyage fin de bail à Lausanne, Renens et Crissier selon la checklist de votre régie, remise vaudoise à midi. Devis gratuit, réponse sous 24 h.",
     intro:
       "Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
-    updatedAt: "2026-10-14T22:36:35+00:00",
+    updatedAt: "2026-11-16T07:52:12+01:00",
     nearbyCommunes: ["Renens", "Crissier"],
     communeGroups: [
       { title: "Lausanne", names: ["Lausanne"] },
@@ -338,12 +338,12 @@ export const locations: Location[] = [
     district: "Riviera-Pays-d'Enhaut",
     title: "Nettoyage à Vevey et Montreux",
     description:
-      "Nettoyage fin de bail, appartements et vitres à Vevey, Montreux et Aigle. Devis gratuit.",
+      "Nettoyage fin de bail, appartements et vitres à Vevey, Montreux et Aigle, selon la checklist de votre régie. Devis gratuit, réponse sous 24 h.",
     intro:
       "Nous intervenons à Vevey et à Montreux, sur la Riviera, ainsi qu'à Aigle, dans le Chablais.",
     geo: { latitude: 46.4628, longitude: 6.8419 },
     priority: 0.72,
-    updatedAt: "2026-10-14T22:36:35+00:00",
+    updatedAt: "2026-11-16T07:52:12+01:00",
     nearbyCommunes: ["Montreux", "Aigle"],
     communeGroups: [
       { title: "Riviera", names: ["Vevey", "Montreux"] },
@@ -389,12 +389,12 @@ export const locations: Location[] = [
     title: "Nettoyage à Yverdon-les-Bains",
     subtitle: "Nord vaudois",
     description:
-      "Yverdon-les-Bains, dans le Nord vaudois. Réponse sous 24 h.",
+      "Nettoyage fin de bail à Yverdon-les-Bains selon la checklist de votre régie, remise vaudoise à midi. Devis gratuit, réponse sous 24 h.",
     intro:
       "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains.",
     geo: { latitude: 46.7785, longitude: 6.6412 },
     priority: 0.7,
-    updatedAt: "2026-11-16T00:00:00+00:00",
+    updatedAt: "2026-11-16T07:52:12+01:00",
     nearbyCommunes: [],
     communeGroups: [{ title: "Nord vaudois", names: ["Yverdon-les-Bains"] }],
     rules: {
