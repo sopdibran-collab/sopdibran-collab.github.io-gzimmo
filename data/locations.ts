@@ -280,7 +280,7 @@ export const locations: Location[] = [
       "Nous intervenons à Lausanne, avec Renens et Crissier dans l'Ouest lausannois.",
     geo: { latitude: 46.5197, longitude: 6.6323 },
     priority: 0.75,
-    updatedAt: "2026-11-16T07:52:12+01:00",
+    updatedAt: "2026-11-16T07:52:24+01:00",
     nearbyCommunes: ["Renens", "Crissier"],
     communeGroups: [
       { title: "Lausanne", names: ["Lausanne"] },
@@ -343,7 +343,7 @@ export const locations: Location[] = [
       "Nous intervenons à Vevey et à Montreux, sur la Riviera, ainsi qu'à Aigle, dans le Chablais.",
     geo: { latitude: 46.4628, longitude: 6.8419 },
     priority: 0.72,
-    updatedAt: "2026-11-16T07:52:12+01:00",
+    updatedAt: "2026-11-16T07:52:24+01:00",
     nearbyCommunes: ["Montreux", "Aigle"],
     communeGroups: [
       { title: "Riviera", names: ["Vevey", "Montreux"] },
@@ -394,7 +394,7 @@ export const locations: Location[] = [
       "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains.",
     geo: { latitude: 46.7785, longitude: 6.6412 },
     priority: 0.7,
-    updatedAt: "2026-11-16T07:52:12+01:00",
+    updatedAt: "2026-11-16T07:52:24+01:00",
     nearbyCommunes: [],
     communeGroups: [{ title: "Nord vaudois", names: ["Yverdon-les-Bains"] }],
     rules: {
