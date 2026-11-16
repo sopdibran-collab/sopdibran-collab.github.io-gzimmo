@@ -82,7 +82,7 @@ export const faqItems: FaqItem[] = [
     id: "zone-suisse-romande",
     category: "zone",
     question: "Comment se définit votre zone d'intervention ?",
-    answer: `Nous partons de notre siège de Romont (${siege}) et intervenons en Glâne et dans la Broye, en Gruyère et en Veveyse, en Sarine et en Singine, à Lausanne et dans l'Ouest lausannois, sur la Riviera et dans le Chablais, dans le Nord vaudois et à Morat. Nous n'intervenons pas à Neuchâtel, à Genève ni en Valais.`,
+    answer: `Nous partons de notre siège de Romont (${siege}) et intervenons en Glâne et dans la Broye, en Gruyère et en Veveyse, en Sarine et en Singine, à Lausanne et dans l'Ouest lausannois, sur la Riviera et dans le Chablais, dans le Nord vaudois et à Morat. Ailleurs en Suisse romande, écrivez-nous ou appelez-nous : nous vous dirons si nous pouvons intervenir.`,
   },
   {
     id: "entreprise-romont",
@@ -114,8 +114,8 @@ export const faqItems: FaqItem[] = [
   {
     id: "zone-hors-prioritaire",
     category: "zone",
-    question: "Intervenez-vous dans le canton de Neuchâtel ?",
-    answer: `Non, nous n'intervenons pas dans le canton de Neuchâtel, ni à Genève ou en Valais. La liste des communes desservies est sur la page Zones. Siège : ${siege}. ${phoneDisplay} · ${email}`,
+    question: "Intervenez-vous ailleurs en Suisse romande ?",
+    answer: `Nos zones principales sont les cantons de Fribourg et de Vaud, dans les communes listées sur la page Zones. Pour une commune ailleurs en Suisse romande, écrivez-nous ou appelez-nous : nous vous dirons si le mandat s'y prête. Siège : ${siege}. ${phoneDisplay} · ${email}`,
   },
   {
     id: "interventions-ponctuelles",
