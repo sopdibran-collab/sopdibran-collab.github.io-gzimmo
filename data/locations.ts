@@ -394,7 +394,7 @@ export const locations: Location[] = [
       "Dans le Nord vaudois, nous intervenons à Yverdon-les-Bains.",
     geo: { latitude: 46.7785, longitude: 6.6412 },
     priority: 0.7,
-    updatedAt: "2026-10-14T22:36:35+00:00",
+    updatedAt: "2026-11-16T00:00:00+00:00",
     nearbyCommunes: [],
     communeGroups: [{ title: "Nord vaudois", names: ["Yverdon-les-Bains"] }],
     rules: {
@@ -415,7 +415,7 @@ export const locations: Location[] = [
       {
         question: "Intervenez-vous autour d'Yverdon ?",
         answer:
-          "Pour une commune proche d'Yverdon-les-Bains, appelez-nous : nous vous dirons si nous pouvons venir. Nous n'intervenons pas dans le canton de Neuchâtel.",
+          "Pour une commune proche d'Yverdon-les-Bains, appelez-nous : nous vous dirons si nous pouvons venir.",
       },
       {
         question: "Quelle heure de remise s'applique à Yverdon ?",
