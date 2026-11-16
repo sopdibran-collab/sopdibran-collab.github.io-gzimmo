@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact", priority: 0.85, updatedAt: "2026-10-14T22:28:42+00:00" },
     { path: "/a-propos", priority: 0.8, updatedAt: "2026-10-14T22:28:42+00:00" },
     { path: "/avis", priority: 0.75, updatedAt: "2026-10-13T09:41:15+00:00" },
-    { path: "/faq", priority: 0.8, updatedAt: "2026-10-14T22:28:42+00:00" },
+    { path: "/faq", priority: 0.8, updatedAt: "2026-11-16T00:00:00+00:00" },
     { path: "/realisations", priority: 0.7, updatedAt: "2026-10-13T09:41:15+00:00" },
     { path: "/mentions-legales", priority: 0.3, updatedAt: "2026-10-13T08:40:54+00:00" },
     { path: "/politique-confidentialite", priority: 0.3, updatedAt: "2026-10-13T08:40:54+00:00" },
