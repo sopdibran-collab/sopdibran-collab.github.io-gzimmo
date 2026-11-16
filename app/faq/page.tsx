@@ -9,7 +9,7 @@ import { ConversionCta } from "@/components/ui/ConversionCta";
 import { HashScroll } from "@/components/ui/HashScroll";
 
 export const metadata = createMetadata({
-  title: "FAQ nettoyage | Romont, FR, VD, NE",
+  title: "FAQ nettoyage | Romont, Fribourg et Vaud",
   description:
     "Réponses de Gzimmo sur les tarifs, la zone (Fribourg et Vaud) et les délais. Siège à Romont. Devis gratuit.",
   absoluteTitle: true,
